@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Flight Information Regions (FIR) &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ADS-B data – OpenSky REST API" href="opensky_rest.html" />
+    <link rel="prev" title="Sample trajectories" href="samples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data.html">Sources of data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="airports.html">Airports and runways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aircraft.html">Aircraft database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Flight Information Regions (FIR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#firs-from-the-eurocontrol-area">FIRs from the Eurocontrol area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fir-and-artcc-from-the-faa">FIR and ARTCC from the FAA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="data.html">Sources of data</a> &raquo;</li>
+        
+      <li>Flight Information Regions (FIR)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/firs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flight-information-regions-fir">
+<h1>Flight Information Regions (FIR)<a class="headerlink" href="#flight-information-regions-fir" title="Permalink to this headline">¶</a></h1>
+<p>FIR stands for Flight Information Region.</p>
+<p>FIR are the largest regular division of airspace in use in the world today.
+Every portion of the atmosphere belongs to a specific FIR. Smaller countries’
+airspace is encompassed by a single FIR; larger countries’ airspace is
+subdivided into a number of regional FIRs. Some FIRs encompass the territorial
+airspace of several countries. Oceanic airspace is divided into Oceanic
+Information Regions and delegated to a controlling authority bordering that
+region.</p>
+<p>The division among authorities is done by international agreement
+through the International Civil Aviation Organization (ICAO). (<a class="reference external" href="https://en.wikipedia.org/wiki/Flight_information_region">source
+Wikipedia</a>)</p>
+<div class="section" id="firs-from-the-eurocontrol-area">
+<h2>FIRs from the Eurocontrol area<a class="headerlink" href="#firs-from-the-eurocontrol-area" title="Permalink to this headline">¶</a></h2>
+<p>FIRs of countries in the Eurocontrol area are available in the library.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">TransverseMercator</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+     <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">TransverseMercator</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">lakes</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">ocean</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fir</span> <span class="ow">in</span> <span class="n">eurofirs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">fir</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ENOB&quot;</span><span class="p">,</span> <span class="s2">&quot;LPPO&quot;</span><span class="p">,</span> <span class="s2">&quot;GCCC&quot;</span><span class="p">]:</span>
+        <span class="n">fir</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span>
+        <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">))</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/eurofirs.png"><img alt="FIRs in the Eurocontrol area" class="align-center" src="_images/eurofirs.png" style="width: 550.25px; height: 377.5px;" /></a>
+</div>
+<div class="section" id="fir-and-artcc-from-the-faa">
+<h2>FIR and ARTCC from the FAA<a class="headerlink" href="#fir-and-artcc-from-the-faa" title="Permalink to this headline">¶</a></h2>
+<p>The Federal Aviation Administration (FAA) publishes some data about their
+airspace in open data. The data is automatically downloaded the first time
+you try to access it.</p>
+<p>Find more about this service <a class="reference external" href="https://adds-faa.opendata.arcgis.com/">here</a>.
+On the following map, Air Route Traffic Control Centers (ARTCC) are displayed together with neighbouring FIRs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">faa</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">AlbersUSA</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">AlbersUSA</span><span class="p">())</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">lakes</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">ocean</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+
+<span class="c1"># just a hack to push walls (i.e. projection limits)</span>
+<span class="n">AlbersUSA</span><span class="o">.</span><span class="n">xlimits</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">3e6</span><span class="p">,</span> <span class="mf">3e6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">airspace</span> <span class="ow">in</span> <span class="n">faa</span><span class="o">.</span><span class="n">airspace_boundary</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+
+    <span class="k">if</span> <span class="n">airspace</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;ARTCC&quot;</span><span class="p">:</span>
+        <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">airspace</span><span class="o">.</span><span class="n">designator</span> <span class="o">!=</span> <span class="s2">&quot;ZAN&quot;</span><span class="p">:</span>  <span class="c1"># Anchorage</span>
+            <span class="n">airspace</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+                <span class="n">ax</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="n">airspace</span><span class="o">.</span><span class="n">designator</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span><span class="p">,</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+                <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">airspace</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;FIR&quot;</span> <span class="ow">and</span> <span class="n">airspace</span><span class="o">.</span><span class="n">designator</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">]:</span>
+        <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#aa3a3a&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">airspace</span><span class="o">.</span><span class="n">designator</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;CZEG&quot;</span><span class="p">,</span> <span class="s2">&quot;KZWY&quot;</span><span class="p">,</span> <span class="s2">&quot;KZAK&quot;</span><span class="p">]:</span>
+            <span class="n">airspace</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+                <span class="n">ax</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="n">airspace</span><span class="o">.</span><span class="n">designator</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#aa3a3a&quot;</span><span class="p">,</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+                <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/faa_artcc.png"><img alt="ARTCC in the Eurocontrol area" class="align-center" src="_images/faa_artcc.png" style="width: 429.0px; height: 359.25px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="opensky_rest.html" class="btn btn-neutral float-right" title="ADS-B data – OpenSky REST API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="samples.html" class="btn btn-neutral float-left" title="Sample trajectories" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

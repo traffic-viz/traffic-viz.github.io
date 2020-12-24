@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web services from Eurocontrol NM &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Algorithms" href="algorithms.html" />
+    <link rel="prev" title="DDR files from Eurocontrol NM" href="so6_usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data.html">Sources of data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="airports.html">Airports and runways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aircraft.html">Aircraft database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web services from Eurocontrol NM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="data.html">Sources of data</a> &raquo;</li>
+        
+      <li>Web services from Eurocontrol NM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/b2b_usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-services-from-eurocontrol-nm">
+<h1>Web services from Eurocontrol NM<a class="headerlink" href="#web-services-from-eurocontrol-nm" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://www.eurocontrol.int/service/network-manager-business-business-b2b-web-services">NM B2B web services</a>
+is an interface provided by the EUROCONTROL Network Manager (NM) for
+system-to-system access to its services and data, allowing users to
+retrieve and use the information in their own systems.</p>
+<p>We provide a basic API for some NM web services. They have been implemented
+on a per need basis: not everything is provided, but functionalities may be
+added in the future.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You have to own a B2B certificate granted by EUROCONTROL to get access to
+this data.</p>
+</div>
+<dl class="py class">
+<dt id="traffic.data.eurocontrol.b2b.NMB2B">
+<em class="property">class </em><code class="sig-prename descclassname">traffic.data.eurocontrol.b2b.</code><code class="sig-name descname">NMB2B</code><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main instance of this class is provided as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_b2b</span>
+</pre></div>
+</div>
+<p>A path to your certificate and your password must be set in the
+configuration file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
+<span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
+</pre></div>
+</div>
+<p>Then edit the following line accordingly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nmb2b</span><span class="p">]</span>
+<span class="n">pkcs12_filename</span> <span class="o">=</span>
+<span class="n">pkcs12_password</span> <span class="o">=</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="traffic.data.eurocontrol.b2b.NMB2B.flight_search">
+<code class="sig-name descname">flight_search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stop</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">callsign</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">origin</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; traffic.data.eurocontrol.b2b.flight.FlightPlanList<a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <strong>minimum set of information</strong> about flights.</p>
+<p>By default:</p>
+<ul class="simple">
+<li><p>the start parameter takes the current time.</p></li>
+<li><p>the stop parameter is one hour after the start parameter.</p></li>
+</ul>
+<p>The method must take at least one of:</p>
+<ul class="simple">
+<li><p>callsign (wildcard accepted)</p></li>
+<li><p>origin airport (ICAO 4 letter code)</p></li>
+<li><p>destination airport (ICAO 4 letter code)</p></li>
+</ul>
+<p>The return type has a representation similar to a pandas
+DataFrame and may be indexed by a flight_id in order to
+request full information about that flight.</p>
+<p><strong>Example usage:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All KLM flights out of Amsterdam Schiphol</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_search</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;KLM*&quot;</span><span class="p">)</span>
+
+<span class="c1"># All flights in a given day going to Kansai International Airport</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_search</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2019-12-22 00:00&quot;</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;2019-12-23 00:00&quot;</span><span class="p">,</span>
+    <span class="n">destination</span><span class="o">=</span><span class="s2">&quot;RJBB&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Get full information about one particular flight</span>
+<span class="n">flight_info</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;AT02478340&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>See also:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list">flight_list</a> which
+returns more comprehensive information about flights.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.eurocontrol.b2b.NMB2B.flight_list">
+<code class="sig-name descname">flight_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stop</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">airspace</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">origin</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">regulation</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.data.eurocontrol.b2b.flight.FlightList<span class="p">]</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns requested information about flights matching a criterion.</p>
+<p>By default:</p>
+<ul class="simple">
+<li><p>the start parameter takes the current time.</p></li>
+<li><p>the stop parameter is one hour after the start parameter.</p></li>
+</ul>
+<p>Exactly one of the following parameters must be passed:</p>
+<ul class="simple">
+<li><p>airspace: returns all flights going through a given airspace.</p></li>
+<li><p>airport: returns all flights flying from or to a given airport
+(ICAO 4 letter code).</p></li>
+<li><p>origin: returns all flights flying from a given airport
+(ICAO 4 letter code).</p></li>
+<li><p>destination: returns all flights flying to a given airport
+(ICAO 4 letter code).</p></li>
+<li><p>regulation: returns all flights impacted by a given regulation.</p></li>
+</ul>
+<p>By default, a set of (arguably) relevant fields are requested. More
+fields can be requested when passed to the field parameter.</p>
+<p><strong>Example usage:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all flights scheduled out of Paris CDG in a time frame.</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_list</span><span class="p">(</span>
+    <span class="s2">&quot;2019-12-22 10:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2019-12-22 10:30&quot;</span><span class="p">,</span>
+    <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;LFPG&quot;</span><span class="p">,</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;aircraftOperator&quot;</span><span class="p">,</span> <span class="s2">&quot;ctotLimitReason&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># Get **requested** information about one particular flight</span>
+<span class="n">flightinfo</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;AT02474519&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>See also:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get">flight_get</a> which
+returns full information about a given flight.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.eurocontrol.b2b.NMB2B.flight_get">
+<code class="sig-name descname">flight_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eobt</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">callsign</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">origin</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; traffic.data.eurocontrol.b2b.flight.FlightInfo<a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns full information about a given flight.</p>
+<p>This method requires all parameters:</p>
+<ul class="simple">
+<li><p>eobt: Estimated off-block time (as string, numeral or timestamp)</p></li>
+<li><p>callsign (<strong>NO</strong> wildcard accepted)</p></li>
+<li><p>origin airport (ICAO 4 letter code)</p></li>
+<li><p>destination airport (ICAO 4 letter code)</p></li>
+</ul>
+<p>It is recommended to use this method through an indexation
+on the return of a <a class="reference external" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search">flight_search</a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.eurocontrol.b2b.NMB2B.regulation_list">
+<code class="sig-name descname">regulation_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">stop</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">traffic_volumes</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">regulations</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.data.eurocontrol.b2b.flow.RegulationList<span class="p">]</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about a (set of) given regulation(s).</p>
+<p>By default:</p>
+<ul class="simple">
+<li><p>the start parameter takes the current time.</p></li>
+<li><p>the stop parameter is one hour after the start parameter.</p></li>
+</ul>
+<p>The method must take at least one of:
+- traffic_volumes: impacted by a given regulation;
+- regulations: identifiers related to a regulation;</p>
+<p>By default, a set of (arguably) relevant fields are requested. More
+fields can be requested when passed to the field parameter.</p>
+<p><strong>Example usage:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nm_b2b</span><span class="o">.</span><span class="n">regulation_list</span><span class="p">(</span>
+    <span class="s2">&quot;2019-12-22 10:00&quot;</span><span class="p">,</span> <span class="n">regulations</span><span class="o">=</span><span class="s2">&quot;LEMDA22A&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="algorithms.html" class="btn btn-neutral float-right" title="Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="so6_usage.html" class="btn btn-neutral float-left" title="DDR files from Eurocontrol NM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

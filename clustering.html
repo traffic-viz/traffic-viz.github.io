@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trajectory clustering &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Navigational events" href="navigation.html" />
+    <link rel="prev" title="Algorithms" href="algorithms.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="algorithms.html">Algorithms</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trajectory clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigational events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpa.html">Closest point of approach</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="algorithms.html">Algorithms</a> &raquo;</li>
+        
+      <li>Trajectory clustering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/clustering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trajectory-clustering">
+<h1>Trajectory clustering<a class="headerlink" href="#trajectory-clustering" title="Permalink to this headline">¶</a></h1>
+<p>An API for trajectory clustering is provided in the Traffic class. Regular
+clustering methods from scikit-learn can be passed as parameters, or any object
+implementing the fit(), predict() and fit_predict() methods (see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClusterMixin.html#sklearn.base.ClusterMixin">ClusterMixin</a>.)</p>
+<p>Data is prepared to match the input format of these methods, preprocessed with
+transformers (see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin">TransformerMixin</a>),
+e.g. MinMaxScaler() or StandardScaler(), and the result of the clustering is
+added to the Traffic DataFrame as a new <code class="docutils literal notranslate"><span class="pre">cluster</span></code> feature.</p>
+<p>The following illustrates the usage of the API on a sample dataset of traffic
+over Switzerland. The dataset contains flight trajectories over Switzerland on
+August 1st 2018, cleaned and resampled to one point every five seconds. The data
+is available as a basic import:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># see https://traffic-viz.github.io/samples.html if any issue on import</span>
+<span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">switzerland</span>
+</pre></div>
+</div>
+<p>The full dataset of trajectories can be displayed on a basic Switzerland map.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">CH1903</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">())</span>
+    <span class="n">switzerland</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/clustering_switzerland.png" class="align-center" src="_images/clustering_switzerland.png" />
+<p>It is often relevant to use the track angle when doing clustering on
+trajectories as it helps separating close trajectory flows heading in opposite
+directions. However a track angle may be problematic when crossing the 360°/0°
+(or -180°/180°) line.</p>
+<p><a class="reference external" href="traffic.core.flight.html#traffic.core.Flight.unwrap">Flight.unwrap()</a> is
+probably the most relevant method to apply:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_unwrapped</span> <span class="o">=</span> <span class="n">switzerland</span><span class="o">.</span><span class="n">assign_id</span><span class="p">()</span><span class="o">.</span><span class="n">unwrap</span><span class="p">()</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following snippet projects trajectories to a local projection, resample each
+trajectory to 15 sample points, apply scikit-learn’s StandardScaler() before
+calling a <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html">DBSCAN.fit_predict()</a>
+method.</p>
+<p>If a fitted DBSCAN instance is passed in parameter, the predict() method can be
+called on new data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">CH1903</span>
+
+<span class="n">t_dbscan</span> <span class="o">=</span> <span class="n">t_unwrapped</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span>
+    <span class="n">nb_samples</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">(),</span>
+    <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;track_unwrapped&quot;</span><span class="p">],</span>
+    <span class="n">clustering</span><span class="o">=</span><span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">StandardScaler</span><span class="p">(),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">t_dbscan</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;cluster&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;flight_id&quot;</span><span class="p">:</span> <span class="s2">&quot;nunique&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">flight_id</span><span class="p">)</span>
+
+<span class="go">{-1: 685, 0: 62, 1: 30, 2: 23, 3: 17, 4: 14, 5: 25, 6: 24, 7: 70, 8: 49, 9: 53,</span>
+<span class="go"> 10: 15, 11: 24, 12: 30, 13: 19, 14: 23, 15: 25, 16: 19, 17: 16, 18: 10, 19: 11}</span>
+</pre></div>
+</div>
+<p>The above distribution results from the DBSCAN prediction. We can compare the
+results with a Gaussian Mixture model for example. This model must be
+initialized with a number of components. We chose here 19 components to compare
+them with the result of the DBSCAN algorithm.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+
+<span class="n">t_gmm</span> <span class="o">=</span> <span class="n">t_unwrapped</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span>
+    <span class="n">nb_samples</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">(),</span>
+    <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;track_unwrapped&quot;</span><span class="p">],</span>
+    <span class="n">clustering</span><span class="o">=</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">19</span><span class="p">),</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">StandardScaler</span><span class="p">(),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">t_gmm</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;cluster&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;flight_id&quot;</span><span class="p">:</span> <span class="s2">&quot;nunique&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">flight_id</span><span class="p">)</span>
+
+<span class="go">{0: 94, 1: 76, 2: 46, 3: 145, 4: 47, 5: 89, 6: 76, 7: 50, 8: 143, 9: 57,</span>
+<span class="go"> 10: 31, 11: 108, 12: 35, 13: 75, 14: 35, 15: 55, 16: 12, 17: 13, 18: 57}</span>
+</pre></div>
+</div>
+<p>The following snippets visualises each trajectory cluster with a given color.
+Many outliers appear in shaded grey in the first quartet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span><span class="p">,</span> <span class="n">cycle</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
+
+<span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">t_dbscan</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># -- dealing with colours --</span>
+
+<span class="n">color_cycle</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span>
+    <span class="s2">&quot;#a6cee3 #1f78b4 #b2df8a #33a02c #fb9a99 #e31a1c &quot;</span>
+    <span class="s2">&quot;#fdbf6f #ff7f00 #cab2d6 #6a3d9a #ffff99 #b15928&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">color_cycle</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">))</span>
+<span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;#aaaaaa&quot;</span><span class="p">)</span>  <span class="c1"># color for outliers, if any</span>
+
+<span class="c1"># -- dealing with the grid --</span>
+
+<span class="n">nb_cols</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">nb_lines</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n_clusters</span><span class="p">)</span> <span class="o">//</span> <span class="n">nb_cols</span> <span class="o">+</span> <span class="p">(((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n_clusters</span><span class="p">)</span> <span class="o">%</span> <span class="n">nb_cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nb_lines</span><span class="p">,</span> <span class="n">nb_cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">):</span>
+        <span class="n">ax_</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[(</span><span class="n">cluster</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">nb_cols</span><span class="p">][(</span><span class="n">cluster</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">nb_cols</span><span class="p">]</span>
+        <span class="n">ax_</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">())</span>
+
+        <span class="n">t_dbscan</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cluster == </span><span class="si">{</span><span class="n">cluster</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">ax_</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span> <span class="k">if</span> <span class="n">cluster</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="n">ax_</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/clustering_dbscan.png" class="align-center" src="_images/clustering_dbscan.png" />
+<p>Gaussian Mixtures do not yield any outlier. The following clustering is balanced
+differently.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nb_lines</span><span class="p">,</span> <span class="n">nb_cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">):</span>
+        <span class="n">ax_</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[(</span><span class="n">cluster</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">nb_cols</span><span class="p">][(</span><span class="n">cluster</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">nb_cols</span><span class="p">]</span>
+        <span class="n">ax_</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">())</span>
+
+        <span class="n">t_gmm</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cluster == </span><span class="si">{</span><span class="n">cluster</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">ax_</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span> <span class="k">if</span> <span class="n">cluster</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="n">ax_</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/clustering_gmm.png" class="align-center" src="_images/clustering_gmm.png" />
+<p>The following map demonstrates how to use the <a class="reference external" href="traffic.core.traffic.html#traffic.core.Traffic.centroid">Traffic.centroid()</a> method, computed
+with the same parameters as the clustering.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">CH1903</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">()))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;#dedef4&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">lakes</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+
+        <span class="n">current_cluster</span> <span class="o">=</span> <span class="n">t_dbscan</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cluster == </span><span class="si">{</span><span class="n">cluster</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">centroid</span> <span class="o">=</span> <span class="n">current_cluster</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">())</span>
+        <span class="n">centroid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">centroid_mark</span> <span class="o">=</span> <span class="n">centroid</span><span class="o">.</span><span class="n">at_ratio</span><span class="p">(</span><span class="mf">0.45</span><span class="p">)</span>
+
+        <span class="n">centroid_mark</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">],</span>
+            <span class="n">marker</span><span class="o">=</span><span class="n">rotate_marker</span><span class="p">(</span><span class="n">aircraft</span><span class="p">,</span> <span class="n">centroid_mark</span><span class="o">.</span><span class="n">track</span><span class="p">),</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+            <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">),</span>  <span class="c1"># no text associated</span>
+        <span class="p">)</span>
+        <span class="n">sample_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_cluster</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">flight_id</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="n">current_cluster</span><span class="o">.</span><span class="n">flight_ids</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">):</span>
+            <span class="n">current_cluster</span><span class="p">[</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+            <span class="p">)</span>
+
+    <span class="n">swiss_airways</span> <span class="o">=</span> <span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span>
+        <span class="n">name</span>
+    <span class="p">)</span> <span class="ow">in</span> <span class="s2">&quot;UL613 UL856 UM729 UN491 UN850 UN851 UN853 UN869 UN871 UQ341 Z50&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">swiss_airways</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#34013f&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="s2">&quot;BSL GVA ZRH&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round&quot;</span>
+        <span class="p">)</span>
+        <span class="n">airports</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">atc_tower</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">swiss_navaids</span> <span class="o">=</span> <span class="n">navaids</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="s2">&quot;ABESI BENOT DEGES DITON ELMUR GERSA HOC MOLUS ODINA OLBEN &quot;</span>
+        <span class="s2">&quot;ORSUD RESIA ROLSA ROMIR RONAG SOPER SUREP TRA&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="p">):</span>
+        <span class="n">swiss_navaids</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;^&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#34013f&quot;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/clustering_output.png" class="align-center" src="_images/clustering_output.png" />
+<p>The result may be compared to the Blick newspaper great visualisation by Simon Huwiler
+and Priska Wallimann <a class="reference external" href="https://github.com/blickvisual/doData_quantum/blob/master/presentation/2018_Luftverkehr_fertig.pdf">here</a>.
+(<a class="reference external" href="https://github.com/blickvisual/doData_quantum">github repository</a>)</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="navigation.html" class="btn btn-neutral float-right" title="Navigational events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="algorithms.html" class="btn btn-neutral float-left" title="Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

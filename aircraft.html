@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Aircraft database &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Navigational beacons" href="navaids.html" />
+    <link rel="prev" title="Airports and runways" href="airports.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data.html">Sources of data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="airports.html">Airports and runways</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Aircraft database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="data.html">Sources of data</a> &raquo;</li>
+        
+      <li>Aircraft database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aircraft.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aircraft-database">
+<h1>Aircraft database<a class="headerlink" href="#aircraft-database" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="traffic.data.basic.aircraft.Aircraft">
+<em class="property">class </em><code class="sig-prename descclassname">traffic.data.basic.aircraft.</code><code class="sig-name descname">Aircraft</code><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://github.com/junzis/">&#64;junzis</a>’s <a class="reference external" href="https://junzisun.com/adb/download">database</a> is available by default in the
+library as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
+</pre></div>
+</div>
+<p>Basic requests can be made by the bracket notation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="p">[</span><span class="s2">&quot;F-GFKY&quot;</span><span class="p">]</span>
+<span class="go">      icao24 registration typecode             model    operator</span>
+<span class="go">3032  391558       F-GFKY     A320   Airbus A320-211  Air France</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="p">[</span><span class="s2">&quot;391558&quot;</span><span class="p">]</span>
+<span class="go">      icao24 registration typecode             model    operator</span>
+<span class="go">3032  391558       F-GFKY     A320   Airbus A320-211  Air France</span>
+</pre></div>
+</div>
+<p>A more comprehensive database can be manually downloaded or upgraded (the
+operation can take up to five minutes with a slow Internet connection):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">download_opensky</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.download_junzis">
+<code class="sig-name descname">download_junzis</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_junzis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the latest version of the aircraft database by &#64;junzis.</p>
+<p>url: <a class="reference external" href="https://junzisun.com/adb/download">https://junzisun.com/adb/download</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.download_opensky">
+<code class="sig-name descname">download_opensky</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the latest version of the OpenSky aircraft database.</p>
+<p>url: <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.model">
+<code class="sig-name descname">model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests an aircraft by model or typecode (fuzzy match).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;RJ85&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">     icao24 registration typecode serialnumber       model</span>
+<span class="go">39   0081fb       ZS-ASW     RJ85        E2313   Avro RJ85</span>
+<span class="go">40   0081fc       ZS-ASX     RJ85        E2314   Avro RJ85</span>
+<span class="go">41   0081fd       ZS-ASY     RJ85        E2316   Avro RJ85</span>
+<span class="go">42   0081fe       ZS-ASZ     RJ85        E2318   Avro RJ85</span>
+<span class="go">240  00b174       ZS-SSH     RJ85        E2285   Avro RJ85</span>
+<span class="go">    operator operatoricao                  owner</span>
+<span class="go">39   Airlink               South African Airlink</span>
+<span class="go">40   Airlink               South African Airlink</span>
+<span class="go">41   Airlink               South African Airlink</span>
+<span class="go">42   Airlink               South African Airlink</span>
+<span class="go">240  Airlink               South African Airlink</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.operator">
+<code class="sig-name descname">operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests an aircraft by owner or operator (fuzzy match).</p>
+<p>The query string may match the owner or operator (full name, ICAO
+code or IATA code)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">&quot;Speedbird&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">        icao24 registration typecode serialnumber           model</span>
+<span class="go">7041    400409       G-BNLJ     B744        24052  Boeing 747-436</span>
+<span class="go">7042    40040a       G-BNLK     B744        24053  Boeing 747-436</span>
+<span class="go">7043    40040d       G-BNLN     B744        24056  Boeing 747-436</span>
+<span class="go">7044    40040e       G-BNLO     B744        24057  Boeing 747-436</span>
+<span class="go">7045    40040f       G-BNLP     B744        24058  Boeing 747-436</span>
+<span class="go">               operator operatoricao            owner</span>
+<span class="go">7041    British Airways          BAW  British Airways</span>
+<span class="go">7042    British Airways          BAW  British Airways</span>
+<span class="go">7043    British Airways          BAW  British Airways</span>
+<span class="go">7044    British Airways          BAW  British Airways</span>
+<span class="go">7045    British Airways          BAW  British Airways</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.query">
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combines several requests.</p>
+<p>The keyword arguments correspond to the name of other methods.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">registration</span><span class="o">=</span><span class="s2">&quot;^F-ZB&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;EC45&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">   icao24 registration typecode serialnumber                   model</span>
+<span class="go">2  3b7b4a       F-ZBQK     EC45         9372  MBB-BK 117 C-2 (EC145)</span>
+<span class="go">3  3b7b4b       F-ZBQJ     EC45         9323  MBB-BK 117 C-2 (EC145)</span>
+<span class="go">4  3b7b50       F-ZBQI     EC45         9240  MBB-BK 117 C-2 (EC145)</span>
+<span class="go">5  3b7b51       F-ZBQH     EC45         9232  MBB-BK 117 C-2 (EC145)</span>
+<span class="go">6  3b7b52       F-ZBQG     EC45         9217  MBB-BK 117 C-2 (EC145)</span>
+<span class="go">                  operator operatoricao            owner</span>
+<span class="go">2          Securite Civile               Securite Civile</span>
+<span class="go">3          Securite Civile               Securite Civile</span>
+<span class="go">4          Securite Civile               Securite Civile</span>
+<span class="go">5          Securite Civile               Securite Civile</span>
+<span class="go">6          Securite Civile               Securite Civile</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.registration">
+<code class="sig-name descname">registration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests an aircraft by registration (fuzzy match).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span><span class="s2">&quot;F-ZB&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">        icao24 registration typecode serialnumber</span>
+<span class="go">5617    3b7b77       F-ZBAB     F406     406-0025</span>
+<span class="go">454188  3b7b6c       F-ZBFX     CL4T         2007</span>
+<span class="go">94647   3b7ba4       F-ZBPG     EC45         9013</span>
+<span class="go">245275  3b7b21       F-ZBGP     B350       FL-802</span>
+<span class="go">5626    3b7ba5       F-ZBPF     EC45         9012</span>
+<span class="go">                             model operator            owner</span>
+<span class="go">5617           Reims F406 Vigilant            French Customs</span>
+<span class="go">454188                    CL-415 T           Securite Civile</span>
+<span class="go">94647       MBB-BK 117 C-2 (EC145)           Securite Civile</span>
+<span class="go">245275               King Air B350            French Customs</span>
+<span class="go">5626    Eurocopter-Kawasaki EC-145           Securite Civile</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.aircraft.Aircraft.stats">
+<code class="sig-name descname">stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes stats of owned or operated aircraft (fuzzy match).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="s2">&quot;HOP&quot;</span><span class="p">)</span>
+<span class="go">                      model  icao24</span>
+<span class="go">typecode</span>
+<span class="go">AT45             ATR 42-500      13</span>
+<span class="go">AT75             ATR 72-500       9</span>
+<span class="go">AT76             ATR 72-600       5</span>
+<span class="go">CRJ1       Canadair CRJ-100       5</span>
+<span class="go">CRJ7       Canadair CRJ-700      13</span>
+<span class="go">CRJX      Canadair CRJ-1000      14</span>
+<span class="go">E145      Embraer ERJ-145MP      17</span>
+<span class="go">E170        Embraer ERJ-170      16</span>
+<span class="go">E190        Embraer ERJ-190      10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="navaids.html" class="btn btn-neutral float-right" title="Navigational beacons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="airports.html" class="btn btn-neutral float-left" title="Airports and runways" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugins &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Leaflet" href="leaflet.html" />
+    <link rel="prev" title="Graphical user interface" href="gui.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced.html">Advanced usage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html">Graphical user interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#plugin-activation">Plugin activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#available-plugins">Available plugins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="leaflet.html">Leaflet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kepler.html">Kepler.gl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cesium.html">CesiumJS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bluesky.html">BlueSky</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plugin-registration">Plugin registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="advanced.html">Advanced usage</a> &raquo;</li>
+        
+      <li>Plugins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/plugins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plugins">
+<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>Plugins are pieces of software which are designed to extend the
+basic functionalities of the traffic library. Plugins can be
+implemented through a <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">registration</a>
+mechanism and selectively activated in the configuration file.</p>
+<p>Some plugins are provided by the traffic library with visualisation
+facilities for Leaflet, Kepler.gl and CesiumJS.</p>
+<div class="section" id="plugin-activation">
+<h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this headline">¶</a></h2>
+<p>You may activate plugins in the configuration file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
+<span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
+</pre></div>
+</div>
+<p>Then edit the following line according to the plugins you want to
+activate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">plugins</span><span class="p">]</span>
+<span class="n">enabled_plugins</span> <span class="o">=</span> <span class="n">Leaflet</span><span class="p">,</span> <span class="n">Kepler</span><span class="p">,</span> <span class="n">CesiumJS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="available-plugins">
+<h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="leaflet.html">Leaflet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler.gl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cesium.html">CesiumJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bluesky.html">BlueSky</a></li>
+</ul>
+</div>
+<p>The examples are provided using the data produced in the
+<a class="reference external" href="/quickstart.html">Quickstart</a> page.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">quickstart</span><span class="p">,</span> <span class="n">lfbo_tma</span>
+
+<span class="k">def</span> <span class="nf">landing_trajectory</span><span class="p">(</span><span class="n">flight</span><span class="p">:</span> <span class="s2">&quot;Flight&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10_000</span> <span class="ow">and</span>
+        <span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical_rate&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">500</span>
+    <span class="p">)</span>
+
+<span class="n">demo</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">quickstart</span>
+    <span class="c1"># non intersecting flights are discarded</span>
+    <span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">lfbo_tma</span><span class="p">)</span>
+    <span class="c1"># intersecting flights are filtered</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="c1"># filtered flights not matching the condition are discarded</span>
+    <span class="o">.</span><span class="n">filter_if</span><span class="p">(</span><span class="n">landing_trajectory</span><span class="p">)</span>
+    <span class="c1"># stay below 25000ft</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;altitude &lt; 25000&#39;</span><span class="p">)</span>
+    <span class="c1"># final multiprocessed evaluation (4 cores) through one iteration</span>
+    <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plugin-registration">
+<h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline">¶</a></h2>
+<p>You may write your own plugins to monkey-patch the library and
+registrate them using entry points in your setup.py configuration.</p>
+<p>Write your code in a <code class="docutils literal notranslate"><span class="pre">my_traffic_plugin/plugin.py</span></code> and use the
+following sample setup.py to registrate your plugin. Then edit the
+configuration file and add <cite>MyPlugin</cite> to the list of enabled plugins.</p>
+<p>You may then <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code> your plugin. Put the
+monkey-patching in an <code class="docutils literal notranslate"><span class="pre">_onload()</span></code> function that will be called iff the
+plugin is enabled. (Check an example on the <a class="reference external" href="https://github.com/xoolive/traffic/blob/master/traffic/plugins/leaflet.py">github repository</a>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_traffic_plugin&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Antoine&quot;</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;saintex@aeropostale.fr&quot;</span><span class="p">,</span>
+    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;My first traffic plugin&quot;</span><span class="p">,</span>
+    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;traffic.plugins&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;MyPlugin = my_traffic_plugin.plugin&quot;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;traffic&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="leaflet.html" class="btn btn-neutral float-right" title="Leaflet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gui.html" class="btn btn-neutral float-left" title="Graphical user interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

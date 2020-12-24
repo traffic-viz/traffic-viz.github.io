@@ -1,0 +1,1422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Core structure" href="core_structure.html" />
+    <link rel="prev" title="Running traffic in a Docker container" href="docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-introduction">Basic introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-flight-structure">The <em>Flight</em> structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-traffic-structure">The <em>Traffic</em> structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-and-loading-data">Saving and loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualisation-of-data">Visualisation of data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#visualisation-of-trajectories">Visualisation of trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualisation-of-time-series">Visualisation of time series</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-use-case">A simple use case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lazy-iteration">Lazy iteration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>The motivation for this page/notebook is to take the reader through all
+basic functionalities of the traffic library. We will cover:</p>
+<ol class="arabic simple">
+<li><p>a <a class="reference external" href="#basic-introduction">basic introduction</a> about <code class="docutils literal notranslate"><span class="pre">Flight</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Traffic</span></code> structures;</p></li>
+<li><p>how to produce <a class="reference external" href="#visualisation-of-data">visualisations</a> of
+trajectory data;</p></li>
+<li><p>how to access basic <a class="reference external" href="#sources-of-data">sources of data</a>;</p></li>
+<li><p>a simple <a class="reference external" href="#a-simple-use-case">use case</a> to select
+trajectories landing at Toulouse airport;</p></li>
+<li><p>an introduction to <a class="reference external" href="#lazy-iteration">declarative descriptions</a> of
+data preprocessing through lazy iteration.</p></li>
+</ol>
+<p>This page is also available as a notebook which can be <a class="reference external" href="https://github.com/xoolive/traffic/tree/master/docs/quickstart.ipynb">downloaded</a> and executed locally; or loaded and executed in <a class="reference external" href="https://colab.research.google.com/github/xoolive/traffic/blob/master/docs/quickstart.ipynb">Google Colab</a>.</p>
+<div class="section" id="basic-introduction">
+<h2>Basic introduction<a class="headerlink" href="#basic-introduction" title="Permalink to this headline">¶</a></h2>
+<p>The traffic library provides natural methods and attributes that can be
+applied on trajectories and collection of trajectories, all represented
+as pandas DataFrames.</p>
+<div class="section" id="the-flight-structure">
+<h3>The <em>Flight</em> structure<a class="headerlink" href="#the-flight-structure" title="Permalink to this headline">¶</a></h3>
+<p><em>Flight</em> is the core class offering representations, methods and
+attributes to single trajectories. A comprehensive description of the
+API is available <a class="reference external" href="/traffic.core.flight.html">here</a>.</p>
+<p>Sample trajectories are provided in the library: <code class="docutils literal notranslate"><span class="pre">belevingsvlucht</span></code> is
+one of them, context is explained
+<a class="reference external" href="/samples.html#belevingsvlucht">here</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">belevingsvlucht</span>
+
+<span class="n">belevingsvlucht</span>
+</pre></div>
+</div>
+<b>Flight TRA051</b><ul><li><b>aircraft:</b> 484506 / PH-HZO (B738)</li><li><b>from:</b> 2018-05-30 15:21:38+00:00</li><li><b>to:</b> 2018-05-30 20:22:56+00:00</li></ul><div style="white-space: nowrap"><object data="_static/belevingsvlucht.svg" type="image/svg+xml"></object></div><p>Among available attributes, you may want to access:</p>
+<ul class="simple">
+<li><p>its <code class="docutils literal notranslate"><span class="pre">callsign</span></code> (the identifier of the flight displayed on ATC
+screens);</p></li>
+<li><p>its transponder unique identification number (<code class="docutils literal notranslate"><span class="pre">icao24</span></code>);</p></li>
+<li><p>its <code class="docutils literal notranslate"><span class="pre">registration</span></code> number (tail number);</p></li>
+<li><p>its <code class="docutils literal notranslate"><span class="pre">typecode</span></code> (i.e. the model of aircraft).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">callsign</span><span class="p">,</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">icao24</span><span class="p">,</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">registration</span><span class="p">,</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">typecode</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># (&#39;TRA051&#39;, &#39;484506&#39;, &#39;PH-HZO&#39;, &#39;B738&#39;)</span>
+</pre></div>
+</div>
+<p>Methods are provided to select relevant parts of the flight, e.g. based
+on timestamps.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> attributes refer to the timestamps of the
+first and last recorded samples. Note that all timestamps are by default
+set to universal time (UTC) as it is common practice in aviation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+
+<span class="c1"># (Timestamp(&#39;2018-05-30 15:21:38+0000&#39;, tz=&#39;UTC&#39;),</span>
+<span class="c1">#  Timestamp(&#39;2018-05-30 20:22:56+0000&#39;, tz=&#39;UTC&#39;))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first30</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">after19</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="s2">&quot;2018-05-30 19:00&quot;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Notice the &quot;strict&quot; comparison (&gt;) vs. &quot;or equal&quot; comparison (&gt;=)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;between </span><span class="si">{</span><span class="n">first30</span><span class="o">.</span><span class="n">start</span><span class="si">:</span><span class="s2">%H:%M:%S</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">first30</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M:%S</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;between </span><span class="si">{</span><span class="n">after19</span><span class="o">.</span><span class="n">start</span><span class="si">:</span><span class="s2">%H:%M:%S</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">after19</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M:%S</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># between 15:21:38 and 15:51:37</span>
+<span class="c1"># between 19:00:00 and 20:22:56</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">between1920</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">between</span><span class="p">(</span>
+    <span class="s2">&quot;2018-05-30 19:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2018-05-30 20:00&quot;</span>
+<span class="p">)</span>
+<span class="n">between1920</span>
+</pre></div>
+</div>
+<b>Flight TRA051</b><ul><li><b>aircraft:</b> 484506 / PH-HZO (B738)</li><li><b>from:</b> 2018-05-30 19:00:01+00:00</li><li><b>to:</b> 2018-05-30 19:59:59+00:00</li></ul><div style="white-space: nowrap"><object data="_static/quickstart_between.svg" type="image/svg+xml"></object></div><p>The underlying dataframe is always accessible.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">between1920</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>timestamp</th>
+      <th>icao24</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>groundspeed</th>
+      <th>track</th>
+      <th>vertical_rate</th>
+      <th>callsign</th>
+      <th>altitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11750</td>
+      <td>2018-05-30 19:00:01+00:00</td>
+      <td>484506</td>
+      <td>52.839973</td>
+      <td>5.793947</td>
+      <td>290</td>
+      <td>52</td>
+      <td>-1664</td>
+      <td>TRA051</td>
+      <td>8233</td>
+    </tr>
+    <tr>
+      <td>11751</td>
+      <td>2018-05-30 19:00:02+00:00</td>
+      <td>484506</td>
+      <td>52.840747</td>
+      <td>5.795680</td>
+      <td>290</td>
+      <td>52</td>
+      <td>-1664</td>
+      <td>TRA051</td>
+      <td>8200</td>
+    </tr>
+    <tr>
+      <td>11752</td>
+      <td>2018-05-30 19:00:03+00:00</td>
+      <td>484506</td>
+      <td>52.841812</td>
+      <td>5.797501</td>
+      <td>290</td>
+      <td>52</td>
+      <td>-1664</td>
+      <td>TRA051</td>
+      <td>8200</td>
+    </tr>
+    <tr>
+      <td>11753</td>
+      <td>2018-05-30 19:00:04+00:00</td>
+      <td>484506</td>
+      <td>52.842609</td>
+      <td>5.799133</td>
+      <td>290</td>
+      <td>52</td>
+      <td>-1599</td>
+      <td>TRA051</td>
+      <td>8149</td>
+    </tr>
+    <tr>
+      <td>11754</td>
+      <td>2018-05-30 19:00:05+00:00</td>
+      <td>484506</td>
+      <td>52.843277</td>
+      <td>5.801010</td>
+      <td>289</td>
+      <td>52</td>
+      <td>-1599</td>
+      <td>TRA051</td>
+      <td>8125</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+<div class="section" id="the-traffic-structure">
+<h3>The <em>Traffic</em> structure<a class="headerlink" href="#the-traffic-structure" title="Permalink to this headline">¶</a></h3>
+<p><em>Traffic</em> is the core class to represent collections of trajectories,
+which are all flattened in the same pandas DataFrame. A comprehensive
+description of the API is available
+<a class="reference external" href="/traffic.core.traffic.html">here</a>.</p>
+<p>We will demonstrate here with a sample of ADS-B data from the <a class="reference external" href="/opensky_usage.html">OpenSky
+Network</a>.</p>
+<p>The basic representation of a <em>Traffic</em> object is a summary view of the
+data: the structure tries to infer how to separate trajectories in the
+data structure based on customizable heuristics, and returns a number of
+sample points for each trajectory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">quickstart</span>
+
+<span class="n">quickstart</span>
+</pre></div>
+</div>
+<b>Traffic with 397 identifiers</b><style  type="text/css" >
+    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.3%, transparent 96.3%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 95.5%, transparent 95.5%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 94.6%, transparent 94.6%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 92.9%, transparent 92.9%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 91.4%, transparent 91.4%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.9%, transparent 90.9%);
+        }    #T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }</style><table id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >icao24</th>        <th class="index_name level1" >callsign</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >4ca84d</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row0" class="row_heading level1 row0" >RYR3YM</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >393320</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row1" class="row_heading level1 row1" >AFR27GH</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >505c98</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row2" class="row_heading level1 row2" >RAM667</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2752</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >3944ef</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row3" class="row_heading level1 row3" >HOP87DJ</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2731</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >4ca574</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row4" class="row_heading level1 row4" >IBK5111</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2706</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >393322</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row5" class="row_heading level1 row5" >AFR23FK</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >40643a</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row6" class="row_heading level1 row6" >EZY57FT</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >2656</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >394c18</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row7" class="row_heading level1 row7" >AFR140W</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >2613</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >344692</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row8" class="row_heading level1 row8" >VLG2972</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >2599</td>
+            </tr>
+            <tr>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level0_row9" class="row_heading level0 row9" >400cd1</th>
+                        <th id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753level1_row9" class="row_heading level1 row9" >EZY81GE</th>
+                        <td id="T_dc04a3bc_e2f5_11e9_bcf3_eb15e9e9d753row9_col0" class="data row9 col0" >2579</td>
+            </tr>
+    </tbody></table><p><em>Traffic</em> offers the ability to <strong>index</strong> and <strong>iterate</strong> on all flights
+contained in the structure. <em>Traffic</em> will use either:</p>
+<ul class="simple">
+<li><p>a combination of <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">icao24</span></code> (aircraft identifier) and
+<code class="docutils literal notranslate"><span class="pre">callsign</span></code> (mission identifier); or</p></li>
+<li><p>a customizable flight identifier (<code class="docutils literal notranslate"><span class="pre">flight_id</span></code>);</p></li>
+</ul>
+<p>as a way to separate and identify flights.</p>
+<p>Indexation will be made on either of <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">callsign</span></code> (or
+<code class="docutils literal notranslate"><span class="pre">flight_id</span></code> if available).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">]</span>  <span class="c1"># on callsign</span>
+<span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;393320&quot;</span><span class="p">]</span>  <span class="c1"># on icao24</span>
+</pre></div>
+</div>
+<b>Flight AFR27GH</b><ul><li><b>aircraft:</b> 393320 / F-GMZA (A321)</li><li><b>from:</b> 2017-07-16 19:30:00+00:00</li><li><b>to:</b> 2017-07-16 20:16:10+00:00</li></ul><div style="white-space: nowrap"><object data="_static/quickstart_afr27gh.svg" type="image/svg+xml"></object></div><p>A subset of trajectories can also be selected if a list is passed an
+index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quickstart</span><span class="p">[[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">,</span> <span class="s2">&quot;HOP87DJ&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<b>Traffic with 2 identifiers</b><style  type="text/css" >
+    #T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 98.6%, transparent 98.6%);
+        }</style><table id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >icao24</th>        <th class="index_name level1" >callsign</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >393320</th>
+                        <th id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753level1_row0" class="row_heading level1 row0" >AFR27GH</th>
+                        <td id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >3944ef</th>
+                        <th id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753level1_row1" class="row_heading level1 row1" >HOP87DJ</th>
+                        <td id="T_dc704eb4_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2731</td>
+            </tr>
+    </tbody></table><p>In many cases, <code class="docutils literal notranslate"><span class="pre">flight_id</span></code> are more convenient to access specific
+flights yielded by iteration. We may construct custom <code class="docutils literal notranslate"><span class="pre">flight_id</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+
+<span class="n">quickstart_id</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">flight</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">flight_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">flight</span><span class="o">.</span><span class="n">callsign</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">quickstart</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">quickstart_id</span>
+</pre></div>
+</div>
+<b>Traffic with 379 identifiers</b><style  type="text/css" >
+    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.3%, transparent 96.3%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 95.5%, transparent 95.5%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 94.6%, transparent 94.6%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 92.9%, transparent 92.9%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 91.4%, transparent 91.4%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.9%, transparent 90.9%);
+        }    #T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }</style><table id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >flight_id</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >RYR3YM_343</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >AFR27GH_046</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >RAM667_373</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2752</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >HOP87DJ_055</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2731</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >IBK5111_316</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2706</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >AFR23FK_048</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >EZY57FT_172</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >2656</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >AFR140W_064</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >2613</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >VLG2972_036</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >2599</td>
+            </tr>
+            <tr>
+                        <th id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753level0_row9" class="row_heading level0 row9" >EZY81GE_149</th>
+                        <td id="T_ded72dc6_e2f5_11e9_bcf3_eb15e9e9d753row9_col0" class="data row9 col0" >2579</td>
+            </tr>
+    </tbody></table><div class="line-block">
+<div class="line">or use the available <code class="docutils literal notranslate"><span class="pre">.assign_id()</span></code> method, which is implemented
+exactly that way.</div>
+<div class="line">(We will explain <code class="docutils literal notranslate"><span class="pre">eval()</span></code> further below)</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quickstart</span><span class="o">.</span><span class="n">assign_id</span><span class="p">()</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</pre></div>
+</div>
+<b>Traffic with 379 identifiers</b><style  type="text/css" >
+    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.3%, transparent 96.3%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 95.5%, transparent 95.5%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 94.6%, transparent 94.6%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 92.9%, transparent 92.9%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 91.4%, transparent 91.4%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.9%, transparent 90.9%);
+        }    #T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }</style><table id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >flight_id</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >RYR3YM_343</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >AFR27GH_046</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >RAM667_373</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2752</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >HOP87DJ_055</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2731</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >IBK5111_316</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2706</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >AFR23FK_048</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >EZY57FT_172</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >2656</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >AFR140W_064</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >2613</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >VLG2972_036</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >2599</td>
+            </tr>
+            <tr>
+                        <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row9" class="row_heading level0 row9" >EZY81GE_149</th>
+                        <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row9_col0" class="data row9 col0" >2579</td>
+            </tr>
+    </tbody></table></div>
+<div class="section" id="saving-and-loading-data">
+<h3>Saving and loading data<a class="headerlink" href="#saving-and-loading-data" title="Permalink to this headline">¶</a></h3>
+<p>Some processing operations are computationally expensive and time
+consuming. Therefore, it may be relevant to store intermediate results
+in files for sharing and reusing purposes.</p>
+<p>One option is to store <em>Traffic</em> and <em>Flight</em> underlying DataFrames in
+pickle format. Details about storage formats are presented
+<a class="reference external" href="https://traffic-viz.github.io/export.html">here</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quickstart_id</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s2">&quot;quickstart_id.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+
+<span class="c1"># load from file again</span>
+<span class="n">quickstart_id</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;quickstart_id.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualisation-of-data">
+<h2>Visualisation of data<a class="headerlink" href="#visualisation-of-data" title="Permalink to this headline">¶</a></h2>
+<p><em>traffic</em> offers facilities to leverage the power of common
+visualisation renderers including
+<a class="reference external" href="https://scitools.org.uk/cartopy/">Cartopy</a>, a map plotting library
+built around Matplotlib, and <a class="reference external" href="https://altair-viz.github.io/">Altair</a>.</p>
+<p>More visualisation renderers such as Leaflet are available as
+<a class="reference external" href="/plugins.html">plugins</a>.</p>
+<div class="section" id="visualisation-of-trajectories">
+<h3>Visualisation of trajectories<a class="headerlink" href="#visualisation-of-trajectories" title="Permalink to this headline">¶</a></h3>
+<p>When you choose to plot trajectories on a map, you have to make a choice
+concerning how to represent points at the surface of a sphere (more
+precisely, an oblate spheroid) on a 2D plane. This transformation is
+called a
+<a class="reference external" href="https://serialmentor.com/dataviz/geospatial-data.html#projections">projection</a>.</p>
+<p>The choice of the right projection depends on the data. The most basic
+projection (sometimes wrongly referred to as <em>no projection</em>) is the
+<code class="docutils literal notranslate"><span class="pre">PlateCarree()</span></code>, when you plot latitude on the y-axis and longitude on
+the x-axis. The famous <code class="docutils literal notranslate"><span class="pre">Mercator()</span></code> projection distorts the latitude
+so as lines with constant bearing appear as straight lines. Conformal
+projections are also convenient when plotting smaller areas (countries)
+as they preserve distances (locally).</p>
+<p>Many countries define official projections to produce maps of their
+territory. In general, they fall either in the conformal or in the
+Transverse Mercator category. <code class="docutils literal notranslate"><span class="pre">Lambert93()</span></code> projection is defined over
+France, <code class="docutils literal notranslate"><span class="pre">GaussKruger()</span></code> over Germany, <code class="docutils literal notranslate"><span class="pre">Amersfoort()</span></code> over the
+Netherlands, <code class="docutils literal notranslate"><span class="pre">OSGB()</span></code> over the British Islands, etc.</p>
+<p>When plotting trajectories over Western Europe, <code class="docutils literal notranslate"><span class="pre">EuroPP()</span></code> is a decent
+choice.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">airbus_tree</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">Amersfoort</span><span class="p">,</span> <span class="n">GaussKruger</span><span class="p">,</span> <span class="n">Lambert93</span><span class="p">,</span> <span class="n">EuroPP</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+    <span class="c1"># Choose the projection type</span>
+    <span class="n">ax0</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">Lambert93</span><span class="p">())</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">Amersfoort</span><span class="p">())</span>
+    <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">GaussKruger</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">())</span>
+        <span class="c1"># Maximum extent for the map</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+        <span class="c1"># Remove border and set transparency for background</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Flight.plot returns the result from Matplotlib as is</span>
+    <span class="c1"># Here we catch it to reuse the color of each trajectory</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax0</span><span class="p">)</span>
+    <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ret</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="n">ret</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax0</span><span class="p">)</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ret</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="n">ret</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">airbus_tree</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax0</span><span class="p">)</span>
+    <span class="n">airbus_tree</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ret</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="c1"># We reduce here the extent of the EuroPP() map</span>
+    <span class="c1"># between 8°W and 18°E, and 40°N and 60°N</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;EuroPP()&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Lambert93()&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Amersfoort()&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;GaussKruger()&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_map.png" src="_images/quickstart_map.png" />
+<p>Altair API is not very mature yet with geographical data, but basic
+visualisations are possible.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mercator projection is the default one with Altair</span>
+<span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">geoencode</span><span class="p">()</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;mercator&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_trajectory.png" src="_images/quickstart_trajectory.png" />
+</div>
+<div class="section" id="visualisation-of-time-series">
+<h3>Visualisation of time series<a class="headerlink" href="#visualisation-of-time-series" title="Permalink to this headline">¶</a></h3>
+<p>Facilities are provided to plot time series, after a basic cleaning of
+data (remove NaN values), both with Matplotlib and Altair. The traffic
+style context offers a convenient first style to customise further.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">between1920</span><span class="o">.</span><span class="n">plot_time</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;groundspeed&quot;</span><span class="p">],</span> <span class="n">secondary_y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;groundspeed&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_plottime.png" src="_images/quickstart_plottime.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;EZY81GE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;groundspeed&quot;</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;EZY743L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;groundspeed&quot;</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;AFR27GH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;groundspeed&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_altair.png" src="_images/quickstart_altair.png" />
+</div>
+</div>
+<div class="section" id="sources-of-data">
+<h2>Sources of data<a class="headerlink" href="#sources-of-data" title="Permalink to this headline">¶</a></h2>
+<p>Basic navigational data are embedded in the library, together with
+parsing facilities for most common sources of information, with a main
+focus on Europe at the time being.</p>
+<p>Airspaces are a key element of aviation: they are regulated by specific
+rules, whereby navigation is allowed to determined types of aircraft
+meeting strict requirements. Such volumes, assigned to air traffic
+controllers to ensure the safety of flights and proper separation
+between aircraft are most commonly described as a combination of
+extruded polygons. Flight Information Regions (FIR) are one of the basic
+form of airspaces.</p>
+<p>A non official list of European FIRs, airports, navaids and airways is
+available in the traffic library (Details <a class="reference external" href="/data.html">here</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
+
+<span class="c1"># LISBOA FIR</span>
+<span class="n">eurofirs</span><span class="p">[</span><span class="s2">&quot;LPPC&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">geoencode</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_lisboa.png" src="_images/quickstart_lisboa.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+
+<span class="n">airports</span><span class="p">[</span><span class="s2">&quot;AMS&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<b>Amsterdam Schiphol Airport</b> (Netherlands) <code>EHAM/AMS</code><div style="white-space: nowrap"><object data="_static/quickstart_eham.svg" type="image/svg+xml"></object></div><p>The details of airport representations are also available (fetched from
+OpenStreetMap) in their Matplotlib and Altair representation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;LFBO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">geoencode</span><span class="p">(</span><span class="n">runways</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_lfbo.png" src="_images/quickstart_lfbo.png" />
+<p>Intersections can be computed between trajectories and geometries
+(airports, airspaces). <code class="docutils literal notranslate"><span class="pre">Flight.intersects()</span></code> provides a fast boolean
+test; <code class="docutils literal notranslate"><span class="pre">Flight.clip()</span></code> trims the trajectory between the first point of
+entry in and last point of exit from the 2D footprint of the geometry.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">])</span>
+<span class="c1"># True</span>
+</pre></div>
+</div>
+<p>Of course, all these methods can be chained.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">geoencode</span><span class="p">(</span><span class="n">runways</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">geoencode</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_eham.png" src="_images/quickstart_eham.png" />
+</div>
+<div class="section" id="a-simple-use-case">
+<h2>A simple use case<a class="headerlink" href="#a-simple-use-case" title="Permalink to this headline">¶</a></h2>
+<p>The following use case showcases various preprocessing methods that can
+be chained to select all trajectories landing at Toulouse airport. We
+will need the coordinates of Toulouse Terminal Maneuvering Area (TMA)
+which is available in Eurocontrol AIRAC files.</p>
+<p>You may not be entitled access to these data but the coordinates of
+Toulouse TMA are public, so we provide them in this library for the sake
+of this example.</p>
+<p><strong>If you have set the configuration for the AIRAC files
+(details</strong> <a class="reference external" href="/airac_usage.html">here</a><strong>), you may uncomment the
+following cell.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># from traffic.data import nm_airspaces</span>
+<span class="c1"># lfbo_tma = nm_airspaces[&quot;LFBOTMA&quot;]</span>
+</pre></div>
+</div>
+<p>Since you may not be entitled access to these data and coordinates of
+Toulouse TMA are public, we provide them in this library for the sake of
+this example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">lfbo_tma</span>
+
+<span class="n">lfbo_tma</span>
+</pre></div>
+</div>
+<b>SIV TOULOUSE [SIV TOULOUSE] (AUA)</b><ul><li>0.0, 65.0</li><li>65.0, 115.0</li><li>115.0, 145.0</li></ul><div style="white-space: nowrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.0" height="100.0" viewBox="0.008666666666666656 42.25366666666667 2.9160000000000004 2.392111666666665" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,86.899445)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="0.05832000000000001" opacity="0.6" d="M 1.8583333333333334,44.166666666666664 L 2.6055550000000003,44.05833333333333 L 2.816666666666667,44.02388833333334 L 2.716666666666667,43.71666666666667 L 2.7069449999999997,43.2125 L 2.5722216666666666,43.25833333333333 L 2.275,43.0 L 2.0541666666666667,42.806666666666665 L 2.1002783333333332,42.38166666666667 L 2.0586116666666667,42.361666666666665 L 2.0083333333333333,42.366945 L 1.7280550000000001,42.504445000000004 L 1.696945,42.493055 L 1.6713883333333333,42.50388833333333 L 1.6475,42.471111666666665 L 1.5488883333333334,42.440555 L 1.5127783333333333,42.435278333333336 L 1.4647216666666667,42.441111666666664 L 1.4372216666666666,42.4775 L 1.4308333333333332,42.48527833333333 L 1.4641666666666666,42.516945 L 1.4477783333333332,42.540555000000005 L 1.4238883333333334,42.54222166666667 L 1.4266666666666665,42.591945 L 1.4402783333333333,42.606388333333335 L 1.375,42.694445 L 1.229445,42.724444999999996 L 1.1138883333333331,42.77527833333333 L 0.9972216666666667,42.774721666666665 L 0.8619450000000001,42.81583333333333 L 0.75,42.84527833333333 L 0.75,43.0 L 0.75,43.08972166666667 L 0.75,43.25138833333333 L 0.75,43.318888333333334 L 0.75,43.67388833333334 L 0.8727783333333333,43.766666666666666 L 0.2797216666666667,44.2125 L 0.2175,44.25861166666667 L 0.11666666666666667,44.333333333333336 L 0.17666666666666667,44.365278333333336 L 0.5011116666666667,44.537778333333335 L 0.5797216666666666,44.5 L 0.6061116666666667,44.5 L 1.036945,44.5 L 1.025555,44.346111666666665 L 1.2941666666666667,44.32722166666667 L 1.7488883333333334,44.295278333333336 L 1.804445,44.29333333333333 L 1.8583333333333334,44.166666666666664 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.0" height="100.0" viewBox="0.1782438666666667 42.26018886666667 2.7399006000000004 2.341288933333331" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,86.86166666666666)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="0.05479801200000001" opacity="0.6" d="M 1.8583333333333334,44.166666666666664 L 2.6055550000000003,44.05833333333333 L 2.816666666666667,44.02388833333334 L 2.716666666666667,43.71666666666667 L 2.7069449999999997,43.2125 L 2.5722216666666666,43.25833333333333 L 2.275,43.0 L 2.0541666666666667,42.806666666666665 L 2.1002783333333332,42.38166666666667 L 2.0586116666666667,42.361666666666665 L 2.0083333333333333,42.366945 L 1.7280550000000001,42.504445000000004 L 1.696945,42.493055 L 1.6713883333333333,42.50388833333333 L 1.6475,42.471111666666665 L 1.5488883333333334,42.440555 L 1.5127783333333333,42.435278333333336 L 1.4647216666666667,42.441111666666664 L 1.4372216666666666,42.4775 L 1.4308333333333332,42.48527833333333 L 1.4641666666666666,42.516945 L 1.4477783333333332,42.540555000000005 L 1.4238883333333334,42.54222166666667 L 1.4266666666666665,42.591945 L 1.4402783333333333,42.606388333333335 L 1.375,42.694445 L 1.229445,42.724444999999996 L 1.1138883333333331,42.77527833333333 L 0.9972216666666667,42.774721666666665 L 0.8619450000000001,42.81583333333333 L 0.75,42.84527833333333 L 0.75,43.0 L 0.75,43.08972166666667 L 0.75,43.25138833333333 L 0.75,43.318888333333334 L 0.75,43.67388833333334 L 0.8727783333333333,43.766666666666666 L 0.2797216666666667,44.2125 L 0.5797216666666666,44.5 L 0.6061116666666667,44.5 L 1.036945,44.5 L 1.025555,44.346111666666665 L 1.2941666666666667,44.32722166666667 L 1.7488883333333334,44.295278333333336 L 1.804445,44.29333333333333 L 1.8583333333333334,44.166666666666664 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.0" height="100.0" viewBox="0.1782438666666667 42.26018886666667 2.7399006000000004 2.3424005999999977" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,86.86277833333332)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="0.05479801200000001" opacity="0.6" d="M 2.275,43.0 L 2.6,42.712221666666665 L 2.75,42.583333333333336 L 2.691666666666667,42.416666666666664 L 2.533333333333333,42.4 L 2.2163883333333336,42.43333333333333 L 2.1666666666666665,42.38333333333333 L 2.104721666666667,42.3825 L 2.1002783333333332,42.38166666666667 L 2.0586116666666667,42.361666666666665 L 2.0083333333333333,42.366945 L 1.7280550000000001,42.504445000000004 L 1.696945,42.493055 L 1.6713883333333333,42.50388833333333 L 1.6475,42.471111666666665 L 1.5488883333333334,42.440555 L 1.5127783333333333,42.435278333333336 L 1.4647216666666667,42.441111666666664 L 1.4372216666666666,42.4775 L 1.4308333333333332,42.48527833333333 L 1.4641666666666666,42.516945 L 1.4477783333333332,42.540555000000005 L 1.4238883333333334,42.54222166666667 L 1.4266666666666665,42.591945 L 1.4402783333333333,42.606388333333335 L 1.375,42.694445 L 1.229445,42.724444999999996 L 1.1138883333333331,42.77527833333333 L 0.9972216666666667,42.774721666666665 L 0.8619450000000001,42.81583333333333 L 0.75,42.84527833333333 L 0.75,43.0 L 0.75,43.08972166666667 L 0.75,43.25138833333333 L 0.75,43.318888333333334 L 0.75,43.67388833333334 L 0.8727783333333333,43.766666666666666 L 0.2797216666666667,44.2125 L 0.5797216666666666,44.5 L 0.6061116666666667,44.5 L 1.036945,44.5 L 1.28,44.50111166666667 L 1.7166666666666666,44.5 L 2.6055550000000003,44.05833333333333 L 2.816666666666667,44.02388833333334 L 2.716666666666667,43.71666666666667 L 2.7069449999999997,43.2125 L 2.5722216666666666,43.25833333333333 L 2.275,43.0 z" /></g></svg></div><p>A first common necessary prepocessing concerns filtering of faulty
+values, esp. when data comes for a wide network of ADS-B sensors such as
+the OpenSky Network. A common pattern in such data is spikes in various
+signals, esp. altitude. Some filtering methods have been developped to
+take this faulty values out:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hop87dj</span> <span class="o">=</span> <span class="n">quickstart</span><span class="p">[</span><span class="s2">&quot;HOP87DJ&quot;</span><span class="p">]</span>
+<span class="c1"># Set a different callsign and identify signals on the visualisation</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="n">hop87dj</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;HOP87DJ+&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+
+<span class="c1"># Let&#39;s define a common y-scale for both flights</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40000</span><span class="p">))</span>
+
+<span class="n">visualisations</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">360</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="p">[</span><span class="n">hop87dj</span><span class="p">,</span> <span class="n">filtered</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">visualisations</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_filter.png" src="_images/quickstart_filter.png" />
+<p>Let’s select first trajectories intersecting Toulouse TMA, filter
+signals, then plot the results.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A progressbar may be convenient...</span>
+<span class="n">landing_trajectories</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">quickstart</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">flight</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">lfbo_tma</span><span class="p">):</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+        <span class="n">landing_trajectories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+<span class="n">t_tma</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span><span class="n">landing_trajectories</span><span class="p">)</span>
+<span class="n">t_tma</span>
+</pre></div>
+</div>
+<b>Traffic with 17 identifiers</b><style  type="text/css" >
+    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 92.9%, transparent 92.9%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 88.4%, transparent 88.4%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 76.3%, transparent 76.3%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 71.7%, transparent 71.7%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 61.9%, transparent 61.9%);
+        }    #T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 61.3%, transparent 61.3%);
+        }</style><table id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >icao24</th>        <th class="index_name level1" >callsign</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >4ca84d</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row0" class="row_heading level1 row0" >RYR3YM</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >393320</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row1" class="row_heading level1 row1" >AFR27GH</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >393322</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row2" class="row_heading level1 row2" >AFR23FK</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >40643a</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row3" class="row_heading level1 row3" >EZY57FT</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2656</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >400cd1</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row4" class="row_heading level1 row4" >EZY81GE</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2579</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >4ca2c9</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row5" class="row_heading level1 row5" >EIN056</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >2526</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >44ce6f</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row6" class="row_heading level1 row6" >BEL7NG</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >2182</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >406134</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row7" class="row_heading level1 row7" >EZY819T</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >2050</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >4010eb</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row8" class="row_heading level1 row8" >EZY743L</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >1769</td>
+            </tr>
+            <tr>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level0_row9" class="row_heading level0 row9" >4ca647</th>
+                        <th id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753level1_row9" class="row_heading level1 row9" >RYR3TL</th>
+                        <td id="T_f00c0d96_e2f5_11e9_bcf3_eb15e9e9d753row9_col0" class="data row9 col0" >1753</td>
+            </tr>
+    </tbody></table><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">location</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Lambert93</span><span class="p">()))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># We may add contours from OpenStreetMap</span>
+    <span class="c1"># (Occitanie is the name of the administrative region)</span>
+    <span class="n">location</span><span class="p">(</span><span class="s2">&quot;Occitanie&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="s2">&quot;Occitanie&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Plot the airport, the TMA</span>
+    <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;LFBO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">lfbo_tma</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+
+    <span class="c1"># and the resulting traffic</span>
+    <span class="n">t_tma</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_tma.png" src="_images/quickstart_tma.png" />
+<p>There is still one trajectory which does not seem to be coming to
+Toulouse airport. Also, we actually wanted to select landing
+trajectories. Let’s only select trajectories coming below 10,000 ft and
+with an average vertical speed below 1,000 ft/min.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">landing_trajectories</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">quickstart</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">flight</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">lfbo_tma</span><span class="p">):</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">filtered</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10_000</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">filtered</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical_rate&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span> <span class="mi">500</span><span class="p">:</span>
+                <span class="n">landing_trajectories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+<span class="n">t_tma</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span><span class="n">landing_trajectories</span><span class="p">)</span>
+<span class="n">t_tma</span>
+</pre></div>
+</div>
+<b>Traffic with 9 identifiers</b><style  type="text/css" >
+    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 76.3%, transparent 76.3%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 61.9%, transparent 61.9%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 57.5%, transparent 57.5%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 57.1%, transparent 57.1%);
+        }    #T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 50.7%, transparent 50.7%);
+        }</style><table id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >icao24</th>        <th class="index_name level1" >callsign</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >4ca84d</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row0" class="row_heading level1 row0" >RYR3YM</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >393320</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row1" class="row_heading level1 row1" >AFR27GH</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >393322</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row2" class="row_heading level1 row2" >AFR23FK</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >400cd1</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row3" class="row_heading level1 row3" >EZY81GE</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2579</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >44ce6f</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row4" class="row_heading level1 row4" >BEL7NG</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2182</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >4010eb</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row5" class="row_heading level1 row5" >EZY743L</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >1769</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >4ca589</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row6" class="row_heading level1 row6" >RYR17G</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >1643</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >405b67</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row7" class="row_heading level1 row7" >EZY43UC</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >1632</td>
+            </tr>
+            <tr>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >39b9eb</th>
+                        <th id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753level1_row8" class="row_heading level1 row8" >HOP47FK</th>
+                        <td id="T_f93e3e84_e2f5_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >1449</td>
+            </tr>
+    </tbody></table><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">location</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Lambert93</span><span class="p">()))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># We may add contours from OpenStreetMap</span>
+    <span class="c1"># (Occitanie is the name of the administrative region)</span>
+    <span class="n">location</span><span class="p">(</span><span class="s2">&quot;Occitanie&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="s2">&quot;Occitanie&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Plot the airport, the TMA</span>
+    <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;LFBO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">lfbo_tma</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+
+    <span class="c1"># and the resulting traffic</span>
+    <span class="n">t_tma</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t_tma</span><span class="p">:</span>
+        <span class="n">flight_before</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2017-07-16 20:00&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Avoid unnecessary noise on the map</span>
+        <span class="k">if</span> <span class="mi">1000</span> <span class="o">&lt;</span> <span class="n">flight_before</span><span class="o">.</span><span class="n">at</span><span class="p">()</span><span class="o">.</span><span class="n">altitude</span> <span class="o">&lt;</span> <span class="mi">20000</span><span class="p">:</span>
+
+            <span class="n">flight_before</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">)</span>
+            <span class="n">flight_before</span><span class="o">.</span><span class="n">at</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">flight</span><span class="o">.</span><span class="n">callsign</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="_images/quickstart_final.png" src="_images/quickstart_final.png" />
+</div>
+<div class="section" id="lazy-iteration">
+<h2>Lazy iteration<a class="headerlink" href="#lazy-iteration" title="Permalink to this headline">¶</a></h2>
+<p>Basic operations on Flights define a little language which enables to
+express programmatically any kind of preprocessing.</p>
+<p>The downside with programmatic preprocessing is that it may become
+unnecessarily complex and nested with loops and conditions to express
+even basic treatments. As a reference, here is the final code we came
+to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># unnecessary list</span>
+<span class="n">landing_trajectories</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">quickstart</span><span class="p">:</span>
+    <span class="c1"># loop</span>
+    <span class="k">if</span> <span class="n">flight</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">lfbo_tma</span><span class="p">):</span>
+        <span class="c1"># first condition</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">filtered</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10_000</span><span class="p">:</span>
+            <span class="c1"># second condition</span>
+            <span class="k">if</span> <span class="n">filtered</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical_rate&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1_000</span><span class="p">:</span>
+                <span class="c1"># third condition</span>
+                <span class="n">landing_trajectories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+<span class="n">t_tma</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span><span class="n">landing_trajectories</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As we define operations on single trajectories, we may also want to
+express operations, like filtering or intersections on collections of
+trajectories rather than single ones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traffic.filter() would be</span>
+<span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span> <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">quickstart</span>
+<span class="p">)</span>
+
+<span class="c1"># Traffic.intersects(airspace) would be</span>
+<span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">flight</span> <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">quickstart</span>
+    <span class="k">if</span> <span class="n">flight</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">airspace</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Such implementation would be very inefficient because Python would
+constantly start a new iteration for every single operation that is
+chained. To avoid this, a mechanism of <strong>lazy iteration</strong> has been
+implemented:</p>
+<ul class="simple">
+<li><p>Most <code class="docutils literal notranslate"><span class="pre">Flight</span></code> methods returning a <code class="docutils literal notranslate"><span class="pre">Flight</span></code>, a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+can be stacked on <code class="docutils literal notranslate"><span class="pre">Traffic</span></code> structures;</p></li>
+<li><p>When such a method is stacked, it is <strong>not</strong> evaluated, just pushed
+for later evaluation;</p></li>
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> call starts one single iteration and apply all
+stacked method to every <code class="docutils literal notranslate"><span class="pre">Flight</span></code> it can iterate on.</p></li>
+<li><p>If one of the methods returns <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, the <code class="docutils literal notranslate"><span class="pre">Flight</span></code>
+is discarded;</p></li>
+<li><p>If one of the methods returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, the <code class="docutils literal notranslate"><span class="pre">Flight</span></code> is passed as
+is not the next method.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A custom grammar can be defined</span>
+<span class="c1"># here we define conditions for detecting landing trajectories</span>
+
+<span class="k">def</span> <span class="nf">landing_trajectory</span><span class="p">(</span><span class="n">flight</span><span class="p">:</span> <span class="s2">&quot;Flight&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10_000</span> <span class="ow">and</span> <span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical_rate&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">500</span>
+
+
+<span class="n">t_tma</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">quickstart</span>
+    <span class="c1"># non intersecting flights are discarded</span>
+    <span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">lfbo_tma</span><span class="p">)</span>
+    <span class="c1"># intersecting flights are filtered</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="c1"># filtered flights not matching the condition are discarded</span>
+    <span class="o">.</span><span class="n">filter_if</span><span class="p">(</span><span class="n">landing_trajectory</span><span class="p">)</span>
+    <span class="c1"># final multiprocessed evaluation (4 cores) through one iteration</span>
+    <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">t_tma</span>
+</pre></div>
+</div>
+<b>Traffic with 9 identifiers</b><style  type="text/css" >
+    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 100.0%, transparent 100.0%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 96.9%, transparent 96.9%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 93.2%, transparent 93.2%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 90.2%, transparent 90.2%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 76.3%, transparent 76.3%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 61.9%, transparent 61.9%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 57.5%, transparent 57.5%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 57.1%, transparent 57.1%);
+        }    #T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#5fba7d 50.7%, transparent 50.7%);
+        }</style><table id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >count</th>    </tr>    <tr>        <th class="index_name level0" >icao24</th>        <th class="index_name level1" >callsign</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row0" class="row_heading level0 row0" >4ca84d</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row0" class="row_heading level1 row0" >RYR3YM</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row0_col0" class="data row0 col0" >2859</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row1" class="row_heading level0 row1" >393320</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row1" class="row_heading level1 row1" >AFR27GH</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row1_col0" class="data row1 col0" >2770</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row2" class="row_heading level0 row2" >393322</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row2" class="row_heading level1 row2" >AFR23FK</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row2_col0" class="data row2 col0" >2665</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row3" class="row_heading level0 row3" >400cd1</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row3" class="row_heading level1 row3" >EZY81GE</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row3_col0" class="data row3 col0" >2579</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row4" class="row_heading level0 row4" >44ce6f</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row4" class="row_heading level1 row4" >BEL7NG</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row4_col0" class="data row4 col0" >2182</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row5" class="row_heading level0 row5" >4010eb</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row5" class="row_heading level1 row5" >EZY743L</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row5_col0" class="data row5 col0" >1769</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row6" class="row_heading level0 row6" >4ca589</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row6" class="row_heading level1 row6" >RYR17G</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row6_col0" class="data row6 col0" >1643</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row7" class="row_heading level0 row7" >405b67</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row7" class="row_heading level1 row7" >EZY43UC</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row7_col0" class="data row7 col0" >1632</td>
+            </tr>
+            <tr>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level0_row8" class="row_heading level0 row8" >39b9eb</th>
+                        <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row8" class="row_heading level1 row8" >HOP47FK</th>
+                        <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >1449</td>
+            </tr>
+    </tbody></table></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="core_structure.html" class="btn btn-neutral float-right" title="Core structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docker.html" class="btn btn-neutral float-left" title="Running traffic in a Docker container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantitative Assessments of Runway Excursion Precursors using Mode S data" href="runway_excursion.html" />
+    <link rel="prev" title="Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods" href="sectflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_structure.html">Core structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Sources of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../publications.html">Publications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sectflow.html">Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-dataset">The dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-preparation">Data preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-learning">Machine-Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="runway_excursion.html">Quantitative Assessments of Runway Excursion Precursors using Mode S data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="squawk7700.html">Analysing in-flight emergencies using big data</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../publications.html">Publications</a> &raquo;</li>
+        
+      <li>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/paper/atc_detect.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection">
+<h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Permalink to this headline">¶</a></h1>
+<p>Xavier Olive, Jeremy Grignard, Thomas Dubot and Julie Saint-Lot</p>
+<div class="line-block">
+<div class="line"><em>This notebook comes with the paper published at Sesar Innovation Days
+2018.</em></div>
+<div class="line">Details are presented in the paper. The following code is provided for
+reproducibility concerns.</div>
+</div>
+<div class="section" id="the-dataset">
+<h2>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The basic dataset consists of one year of trajectories between Paris
+Orly and Toulouse Blagnac airports. A learning box is arbitrarily
+defined so as to include about 20 minutes of flight before entering the
+TMA.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+
+<span class="c1"># Data: one year of traffic between LFPO and LFBO</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/2017_lfpo_lfbo.pkl&quot;</span><span class="p">)</span>
+
+<span class="c1"># The learning box has been set manually on the data</span>
+<span class="n">learning_box</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span>
+    <span class="mf">0.9488888502120971</span><span class="p">,</span>
+    <span class="mf">44.287776947021484</span><span class="p">,</span>
+    <span class="mf">2.748888850212097</span><span class="p">,</span>
+    <span class="mf">45.537776947021484</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The data has been downloaded from the <a class="reference external" href="../opensky_usage.html">OpenSky Network Impala
+database</a>. The following recalls all the
+callsigns selected for this route.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pretty-print all the callsigns analysed</span>
+
+<span class="n">cs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">callsigns</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="mi">7</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AF128UU</span> <span class="n">AFR21ME</span> <span class="n">AFR22MT</span> <span class="n">AFR22SR</span> <span class="n">AFR26SA</span> <span class="n">AFR27GH</span> <span class="n">AFR38DV</span>
+<span class="n">AFR43LC</span> <span class="n">AFR47FW</span> <span class="n">AFR49DL</span> <span class="n">AFR51ZU</span> <span class="n">AFR52BW</span> <span class="n">AFR53TQ</span> <span class="n">AFR57XL</span>
+<span class="n">AFR59UB</span> <span class="n">AFR611H</span> <span class="n">AFR613R</span> <span class="n">AFR61JJ</span> <span class="n">AFR61UJ</span> <span class="n">AFR65WA</span> <span class="n">AFR77PQ</span>
+<span class="n">AFR88DM</span> <span class="n">EZY24EH</span> <span class="n">EZY289N</span> <span class="n">EZY353H</span> <span class="n">EZY4019</span> <span class="n">EZY4029</span> <span class="n">EZY98KP</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
+<p>The following plot explains how each trajectory is prepared. The basic
+idea is to clip the trajectory to the learning box, then to resample
+each trajectory to a fixed number of samples (15 on the figure, 150 for
+the machine learning method).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">navaids</span><span class="p">,</span> <span class="n">nm_airspaces</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">PlateCarree</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">()))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">learning_box</span><span class="p">],</span>
+        <span class="n">crs</span><span class="o">=</span><span class="n">PlateCarree</span><span class="p">(),</span>
+        <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># TMA of Toulouse Airport</span>
+    <span class="n">nm_airspaces</span><span class="p">[</span><span class="s2">&quot;LFBOTMA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;#cccccc&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Beacon marking the beginning of the STAR procedure</span>
+    <span class="n">navaids</span><span class="p">[</span><span class="s2">&quot;NARAK&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;^&quot;</span><span class="p">,</span>
+        <span class="n">shift</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;dots&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">15</span><span class="p">),</span>
+        <span class="n">text_kw</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="s2">&quot;NARAK&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;verticalalignment&quot;</span><span class="p">:</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bbox&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">),</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;LFBO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">shift</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;dots&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=-</span><span class="mi">15</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">s</span><span class="o">=</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span>
+            <span class="n">verticalalignment</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Few trajectories from the data set</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#aaaaaa&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=.</span><span class="mi">6</span><span class="p">,</span> <span class="n">nb_flights</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="c1"># Details of the data preparation</span>
+    <span class="n">t</span><span class="p">[</span><span class="s2">&quot;EZY24EH_2831&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;full trajectory&quot;</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">[</span><span class="s2">&quot;EZY24EH_2831&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">learning_box</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;cropped trajectory&quot;</span>
+    <span class="p">)</span>
+    <span class="n">t</span><span class="p">[</span><span class="s2">&quot;EZY24EH_2831&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">learning_box</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;resampled trajectory&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/atc_detect_map.png" class="align-center" src="../_images/atc_detect_map.png" />
+<p>The following applies the preprocessing to each trajectory in the
+dataset.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_clip</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">flight</span>
+    <span class="c1"># Median filters on all trajectories</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="c1"># Clipping to the learning box</span>
+    <span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">learning_box</span><span class="p">)</span>
+    <span class="c1"># Resample to 150 samples per flight</span>
+    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t</span>
+<span class="p">)</span>
+<span class="c1"># Backup to one file</span>
+<span class="n">t_clip</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s2">&quot;data/2017_lfpo_lfbo_prepared.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_clip</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/2017_lfpo_lfbo_prepared.pkl&quot;</span><span class="p">)</span>
+<span class="n">t_clip</span>
+</pre></div>
+</div>
+<b>Traffic with 3536 identifiers</b><style  type="text/css" >
+    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }</style>
+<table id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4" >
+<thead>    <tr>
+        <th class="blank level0" ></th>
+        <th class="col_heading level0 col0" >count</th>
+    </tr>    <tr>
+        <th class="index_name level0" >flight_id</th>
+        <th class="blank" ></th>
+    </tr></thead>
+<tbody>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row0" class="row_heading level0 row0" >AF128UU_073</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row0_col0" class="data row0 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row1" class="row_heading level0 row1" >AFR77PQ_1064</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row1_col0" class="data row1 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row2" class="row_heading level0 row2" >AFR77PQ_1012</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row2_col0" class="data row2 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row3" class="row_heading level0 row3" >AFR77PQ_1013</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row3_col0" class="data row3 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row4" class="row_heading level0 row4" >AFR77PQ_1014</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row4_col0" class="data row4 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row5" class="row_heading level0 row5" >AFR77PQ_1015</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row5_col0" class="data row5 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row6" class="row_heading level0 row6" >AFR77PQ_1016</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row6_col0" class="data row6 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row7" class="row_heading level0 row7" >AFR77PQ_1058</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row7_col0" class="data row7 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row8" class="row_heading level0 row8" >AFR77PQ_1059</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row8_col0" class="data row8 col0" >150</td>
+    </tr>    <tr>
+        <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row9" class="row_heading level0 row9" >AFR77PQ_1060</th>
+        <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row9_col0" class="data row9 col0" >150</td>
+    </tr></tbody>
+</table></div>
+<div class="section" id="machine-learning">
+<h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>The anomaly detection method is based on a shallow autoencoder
+(<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation). For the sake of
+this example, we focus on the track angle signal. At the end of the
+training period, we look at the distribution of the reconstruction
+errors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">minmax_scale</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">from_numpy</span><span class="p">,</span> <span class="n">nn</span><span class="p">,</span> <span class="n">optim</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<span class="kn">from</span> <span class="nn">tqdm.autonotebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="c1"># -- Autoencoder architecture --</span>
+
+<span class="k">class</span> <span class="nc">Autoencoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Basic shallow autoencoder.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+            <span class="c1"># Activation function</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+            <span class="c1"># Activation function</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="k">def</span> <span class="nf">anomalies</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">Traffic</span><span class="p">):</span>
+
+    <span class="n">flight_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">flight_id</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">t</span><span class="p">)</span>
+
+    <span class="c1"># For this example, we only work on the track angle signal</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">minmax_scale</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">track</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">t</span><span class="p">))</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Autoencoder</span><span class="p">()</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+
+    <span class="c1"># Basic training process (GPU)</span>
+    <span class="n">loss_evolution</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">)):</span>
+
+        <span class="n">v</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">loss_evolution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="c1"># Compute the reconstruction error for each flight</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">id_</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">id_</span><span class="p">,</span> <span class="n">err</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">flight_ids</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)(</span><span class="n">output</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">sqrt</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">errors</span><span class="p">,</span> <span class="n">loss_evolution</span>
+</pre></div>
+</div>
+<p>Now we apply the anomaly detection on the preprocessed data and analyse
+the distribution as explained in the paper.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span><span class="p">,</span> <span class="n">loss_evolution</span> <span class="o">=</span> <span class="n">anomalies</span><span class="p">(</span><span class="n">t_clip</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss_evolution</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">errors</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">errors</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">id_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;EZY24EH_3324&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AFR47FW_2174&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AFR61UJ_1321&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AFR27GH_348&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AFR51ZU_027&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">):</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span><span class="o">.</span><span class="n">callsign</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%b %d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="n">id_</span><span class="p">],</span> <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="nb">sum</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">errors</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="n">id_</span><span class="p">],</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc,angleA=180,armA=70,rad=10&quot;</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of epochs&quot;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Loss evolution&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of samples&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of samples&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Reconstruction error&quot;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/atc_detect_distribution.png"><img alt="../_images/atc_detect_distribution.png" class="align-center" src="../_images/atc_detect_distribution.png" style="width: 524.3px; height: 838.5999999999999px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="runway_excursion.html" class="btn btn-neutral float-right" title="Quantitative Assessments of Runway Excursion Precursors using Mode S data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sectflow.html" class="btn btn-neutral float-left" title="Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

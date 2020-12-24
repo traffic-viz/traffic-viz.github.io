@@ -1,0 +1,772 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quantitative Assessments of Runway Excursion Precursors using Mode S data &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysing in-flight emergencies using big data" href="squawk7700.html" />
+    <link rel="prev" title="Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection" href="atc_detect.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_structure.html">Core structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Sources of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../publications.html">Publications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sectflow.html">Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atc_detect.html">Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quantitative Assessments of Runway Excursion Precursors using Mode S data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-preparation">Data preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functional-principal-component-analysis">Functional Principal Component Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="squawk7700.html">Analysing in-flight emergencies using big data</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../publications.html">Publications</a> &raquo;</li>
+        
+      <li>Quantitative Assessments of Runway Excursion Precursors using Mode S data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/paper/runway_excursion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quantitative-assessments-of-runway-excursion-precursors-using-mode-s-data">
+<h1>Quantitative Assessments of Runway Excursion Precursors using Mode S data<a class="headerlink" href="#quantitative-assessments-of-runway-excursion-precursors-using-mode-s-data" title="Permalink to this headline">¶</a></h1>
+<p>Xavier Olive, Pierre Bieber</p>
+<div class="line-block">
+<div class="line"><em>This notebook comes with the paper published at ICRAT 2018.</em></div>
+<div class="line">Details are presented in the paper. The following code is provided for
+reproducibility concerns.</div>
+</div>
+<div class="section" id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
+<p>The dataset consists of one month of trajectories around Toulouse
+airport. The first step is to isolate trajectories landing. The
+following code is a suggestion to select such trajectories.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.autonotebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span><span class="p">,</span> <span class="n">Flight</span>
+
+<span class="n">february</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/lfbo_february.pkl.gz&quot;</span><span class="p">)</span>
+
+<span class="n">cumul</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flight</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># The first step is to assign a specific id to all trajectories</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">february</span><span class="o">.</span><span class="n">assign_id</span><span class="p">()):</span>
+
+    <span class="n">flight</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">item</span>
+        <span class="c1"># remove samples with no positional data</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;latitude == latitude&quot;</span><span class="p">)</span>
+        <span class="c1"># default median filters</span>
+        <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># remove trajectories with not enough samples</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># Keep flights landing at LFBO</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">guess_landing_airport</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">guess</span><span class="o">.</span><span class="n">airport</span><span class="o">.</span><span class="n">icao</span> <span class="o">!=</span> <span class="s2">&quot;LFBO&quot;</span> <span class="ow">or</span> <span class="n">guess</span><span class="o">.</span><span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">6000</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">cumul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>
+
+<span class="n">t_landing</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span><span class="n">cumul</span><span class="p">)</span>
+
+<span class="c1"># backup</span>
+<span class="c1"># t_landing.to_pickle(&quot;data/february_landing.pkl&quot;)</span>
+</pre></div>
+</div>
+<p>Since we want to focus on aircraft landing on runway 32, we need to
+apply a bit more filtering.</p>
+<p>The library offers a tool trying to guess the runway on which an
+aircraft lands (only on major airports). The heuristics must be
+perfectible: warnings are raised when the assigned runway looks dodgy.
+We remove by hand trajectories with a raised warning (this could be
+automated in a better way…)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cumul</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flight</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">t_landing</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">icao24</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;38413a&quot;</span><span class="p">,</span> <span class="s2">&quot;380efa&quot;</span><span class="p">,</span> <span class="s2">&quot;3801da&quot;</span><span class="p">,</span> <span class="s2">&quot;398588&quot;</span><span class="p">]:</span>
+        <span class="c1"># aircraft with buggy data</span>
+        <span class="k">continue</span>
+    <span class="n">flight</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="c1"># vertical_rate being NaN is often a sign of buggy data</span>
+        <span class="s2">&quot;~onground and vertical_rate == vertical_rate&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># extra sanity checks to take away invalid trajectories</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="ow">or</span> <span class="n">flight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">vertical_rate</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># only keep trajectories landing on runway 32</span>
+    <span class="n">runway</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">guess_landing_runway</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">runway</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;32&quot;</span><span class="p">):</span>
+        <span class="n">cumul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">flight</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">runway</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">runway</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="c1"># We remove the following id because the runway detection seems to have failed</span>
+<span class="n">t_32</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">final</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">flight_id</span> <span class="o">!=</span><span class="s1">&#39;AIB103_1754&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># backup</span>
+<span class="c1"># t_32.to_pickle(&quot;data/february_landing_32.pkl&quot;)</span>
+
+<span class="n">t_32</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span><span class="n">root</span><span class="p">:(</span><span class="n">AF118VA_2073</span><span class="p">)</span> <span class="n">Candidate</span> <span class="n">runway</span> <span class="mi">14</span><span class="n">L</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">consistent</span> <span class="k">with</span> <span class="n">average</span> <span class="n">track</span> <span class="mf">323.0394445508367</span><span class="o">.</span>
+<span class="n">WARNING</span><span class="p">:</span><span class="n">root</span><span class="p">:(</span><span class="n">AIB103_1754</span><span class="p">)</span> <span class="n">Candidate</span> <span class="n">runway</span> <span class="mi">32</span><span class="n">L</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">consistent</span> <span class="k">with</span> <span class="n">average</span> <span class="n">track</span> <span class="mf">142.5683970215894</span><span class="o">.</span>
+<span class="n">WARNING</span><span class="p">:</span><span class="n">root</span><span class="p">:(</span><span class="n">AIB1776_555</span><span class="p">)</span> <span class="n">Candidate</span> <span class="n">runway</span> <span class="mi">14</span><span class="n">L</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">consistent</span> <span class="k">with</span> <span class="n">average</span> <span class="n">track</span> <span class="mf">180.0</span><span class="o">.</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<b>Traffic with 1361 identifiers</b><style  type="text/css" >
+    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_37835ddc_f274_11e8_84c0_6fa57ff51d01row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }</style>
+<table id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01" >
+<thead>    <tr>
+        <th class="blank level0" ></th>
+        <th class="col_heading level0 col0" >count</th>
+    </tr>    <tr>
+        <th class="index_name level0" >flight_id</th>
+        <th class="blank" ></th>
+    </tr></thead>
+<tbody>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row0" class="row_heading level0 row0" >AAF733P_3907</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row0_col0" class="data row0 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row1" class="row_heading level0 row1" >DLH57A_353</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row1_col0" class="data row1 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row2" class="row_heading level0 row2" >DLH53U_4609</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row2_col0" class="data row2 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row3" class="row_heading level0 row3" >DLH53U_4660</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row3_col0" class="data row3 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row4" class="row_heading level0 row4" >DLH53U_4708</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row4_col0" class="data row4 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row5" class="row_heading level0 row5" >DLH53U_4709</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row5_col0" class="data row5 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row6" class="row_heading level0 row6" >DLH57A_320</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row6_col0" class="data row6 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row7" class="row_heading level0 row7" >DLH57A_323</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row7_col0" class="data row7 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row8" class="row_heading level0 row8" >DLH57A_333</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row8_col0" class="data row8 col0" >598</td>
+    </tr>    <tr>
+        <th id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01level0_row9" class="row_heading level0 row9" >DLH57A_336</th>
+        <td id="T_37835ddc_f274_11e8_84c0_6fa57ff51d01row9_col0" class="data row9 col0" >598</td>
+    </tr></tbody>
+</table><p>We end up with a dataset of 1361 trajectories landing at Toulouse
+airport in February 2017 on QFU32.</p>
+<p>However, trimming trajectories to final approaches requires a bit more
+work. We use here navigational beacons in the official procedures. Only
+main navaids are provided by the data source embedded in the library: we
+add the coordinates manually and automate some plotting for following
+figures.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core.mixins</span> <span class="kn">import</span> <span class="n">PointMixin</span>
+
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">PointMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This mixin provides the interface to plot the elements on maps.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="n">lat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="n">lon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+
+<span class="c1"># Coordinates for key positions for final approach in LFBO</span>
+<span class="n">procedure_points</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BO310&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.787917</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.200389</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BO310&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;BO410&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.465222</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.536195</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BO410&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;BO510&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.794389</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.188889</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BO510&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;BO610&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.468472</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.528195</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BO610&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;14L&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.6374315</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.3575536</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;14L&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;14R&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.6446126</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.3454186</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;14R&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;32L&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.6185805</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.3725227</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;32L&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;32R&quot;</span><span class="p">:</span> <span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">43.6156582</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mf">1.3802184</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;32R&quot;</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="n">point_id</span><span class="p">):</span>
+    <span class="n">left_side</span> <span class="o">=</span> <span class="n">point_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;BO610&quot;</span><span class="p">,</span> <span class="s2">&quot;32L&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">shift</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;dots&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=-</span><span class="mi">15</span> <span class="k">if</span> <span class="n">left_side</span> <span class="k">else</span> <span class="mi">15</span><span class="p">),</span>
+        <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">point_id</span><span class="p">,</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span> <span class="k">if</span> <span class="n">left_side</span> <span class="k">else</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;sandybrown&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">point_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;BO610&quot;</span><span class="p">,</span> <span class="s2">&quot;BO410&quot;</span><span class="p">,</span> <span class="s2">&quot;32L&quot;</span><span class="p">,</span> <span class="s2">&quot;32R&quot;</span><span class="p">]:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">procedure_points</span><span class="p">[</span><span class="n">point_id</span><span class="p">]</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="n">params</span><span class="p">(</span><span class="n">point_id</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>With the following map, we can position trajectories landing on QFU32 with
+respect to the above mentioned navigational beacons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">EuroPP</span>
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="n">airports</span><span class="p">[</span><span class="s1">&#39;LFBO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">t_32</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/runway_32.png"><img alt="../_images/runway_32.png" class="align-center" src="../_images/runway_32.png" style="width: 440.8px; height: 446.40000000000003px;" /></a>
+<p>First visual check: so far so good! Some trajectories seem to have their
+positions quite drifted.</p>
+<p>In order to select the final approach, we trim the trajectories between
+their closest timestamp near one of the BOx10 beacon, and near one of
+the two runway thresholds. We filter trajectories passing too far away
+from this beacons in order to get rid of trajectories seeming to have a
+wrong estimation of their position (probable drifting of the inertial
+navigation system). We eliminate a few more trajectories but consider it
+still acceptable for a statistical analysis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">geodesy</span>
+
+
+<span class="n">cumul</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">t_32</span><span class="p">):</span>
+    <span class="n">bo</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">closest_point</span><span class="p">([</span><span class="n">proc</span><span class="p">[</span><span class="s2">&quot;BO610&quot;</span><span class="p">],</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;BO410&quot;</span><span class="p">]])</span>
+    <span class="n">rw</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">closest_point</span><span class="p">([</span><span class="n">proc</span><span class="p">[</span><span class="s2">&quot;32L&quot;</span><span class="p">],</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;32R&quot;</span><span class="p">]])</span>
+    <span class="n">cumul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">flight_id</span><span class="o">=</span><span class="n">flight</span><span class="o">.</span><span class="n">flight_id</span><span class="p">,</span>
+            <span class="c1"># estimation of roll-out point (closest to BOx10)</span>
+            <span class="n">bo</span><span class="o">=</span><span class="n">bo</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">bo_ts</span><span class="o">=</span><span class="n">bo</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
+            <span class="n">bo_d</span><span class="o">=</span><span class="n">bo</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span>
+            <span class="c1"># time at runway threshold</span>
+            <span class="n">rw</span><span class="o">=</span><span class="n">rw</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">rw_ts</span><span class="o">=</span><span class="n">rw</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
+            <span class="n">rw_d</span><span class="o">=</span><span class="n">rw</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">cumul</span><span class="p">)</span>
+
+<span class="c1"># backup</span>
+<span class="c1"># analysis.to_pickle(&quot;analysis.pkl&quot;)</span>
+
+<span class="n">t_final</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">t_32</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">flight_id</span><span class="p">]</span>
+    <span class="c1"># trim the trajectory to final approach</span>
+    <span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bo_ts</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">rw_ts</span><span class="p">)</span>
+    <span class="c1"># add one column for distance to the proper runway threshold</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">distance</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">geodesy</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">[</span><span class="n">procedure_points</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">rw</span><span class="p">]</span><span class="o">.</span><span class="n">latitude</span><span class="p">],</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">[</span><span class="n">procedure_points</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">rw</span><span class="p">]</span><span class="o">.</span><span class="n">longitude</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># this last filtering removes flight with data which is erroneous or</span>
+    <span class="c1"># irrelevant to our current case study.</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rw_d &lt; 400 and bo_d &lt; 5000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="c1"># backup</span>
+<span class="c1"># t_final.to_pickle(&quot;data/february_landing_32_final.pkl&quot;)</span>
+
+<span class="n">t_final</span>
+</pre></div>
+</div>
+<b>Traffic with 1309 identifiers</b><style  type="text/css" >
+    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row0_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 100.0%, transparent 100.0%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row1_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 99.2%, transparent 99.2%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row2_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 93.3%, transparent 93.3%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row3_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 93.0%, transparent 93.0%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row4_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 92.8%, transparent 92.8%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row5_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 92.8%, transparent 92.8%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row6_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 91.4%, transparent 91.4%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row7_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 91.2%, transparent 91.2%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row8_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 90.1%, transparent 90.1%);
+        }    #T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row9_col0 {
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg, transparent 0%, transparent 0.0%, #5fba7d 0.0%, #5fba7d 89.8%, transparent 89.8%);
+        }</style>
+<table id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8" >
+<thead>    <tr>
+        <th class="blank level0" ></th>
+        <th class="col_heading level0 col0" >count</th>
+    </tr>    <tr>
+        <th class="index_name level0" >flight_id</th>
+        <th class="blank" ></th>
+    </tr></thead>
+<tbody>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row0" class="row_heading level0 row0" >BGA191A_2873</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row0_col0" class="data row0 col0" >374</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row1" class="row_heading level0 row1" >BGA241B_2939</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row1_col0" class="data row1 col0" >371</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row2" class="row_heading level0 row2" >BGA251B_2940</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row2_col0" class="data row2 col0" >349</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row3" class="row_heading level0 row3" >HOP41FK_4016</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row3_col0" class="data row3 col0" >348</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row4" class="row_heading level0 row4" >GAF612_4783</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row4_col0" class="data row4 col0" >347</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row5" class="row_heading level0 row5" >HOP17VJ_4101</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row5_col0" class="data row5 col0" >347</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row6" class="row_heading level0 row6" >HOP11VJ_4053</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row6_col0" class="data row6 col0" >342</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row7" class="row_heading level0 row7" >N721EE_7072</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row7_col0" class="data row7 col0" >341</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row8" class="row_heading level0 row8" >AIB07EO_1779</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row8_col0" class="data row8 col0" >337</td>
+    </tr>    <tr>
+        <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row9" class="row_heading level0 row9" >BGA121D_3023</th>
+        <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row9_col0" class="data row9 col0" >336</td>
+    </tr></tbody>
+</table><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">rivers</span>
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="n">airports</span><span class="p">[</span><span class="s1">&#39;LFBO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">t_final</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">,)</span>
+    <span class="n">t_final</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;distance &lt; 8 * 1852&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;crimson&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">,)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/runway_final.png"><img alt="../_images/runway_final.png" class="align-center" src="../_images/runway_final.png" style="width: 318.40000000000003px; height: 446.40000000000003px;" /></a>
+<p>Visual check: in the paper we consider the final 8 nautical miles (in
+red).</p>
+<p>For the following, the idea is to consider all track angle signals and
+to analyse their modes of variation. Here is the full dataset plotted.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Distance to runway threshold (in nm)&quot;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Track angle variation (in degrees)&quot;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t_final</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;distance &lt; 8*1852&#39;</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">flight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">distance</span><span class="o">/</span><span class="mi">1852</span><span class="p">,</span>
+            <span class="n">flight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">heading</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#aaaaaa&#39;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/runway_track.png"><img alt="../_images/runway_track.png" class="align-center" src="../_images/runway_track.png" style="width: 501.6px; height: 349.6px;" /></a>
+</div>
+<div class="section" id="functional-principal-component-analysis">
+<h2>Functional Principal Component Analysis<a class="headerlink" href="#functional-principal-component-analysis" title="Permalink to this headline">¶</a></h2>
+<p>We resample all trajectories to 50 points and fit a (functional) PCA on
+the dataset. The following plot displays some modes of variation around
+the average signal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="c1"># Prepare a dataset of track angles on final approach</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="c1"># for this demonstration we take 50 samples on final approach</span>
+        <span class="n">flight</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">track</span>
+        <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t_final</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;distance &lt; 8*1852&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># keep track of the identifier for each trajectory</span>
+<span class="n">flight_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">flight_id</span> <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t_final</span><span class="p">)</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span>
+<span class="n">X_t</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="n">m_theme</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ff7f0e&#39;</span><span class="p">)</span>
+    <span class="n">v_theme</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+
+        <span class="n">var_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">theta_i</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlim</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">mean_</span><span class="p">,</span> <span class="o">**</span><span class="n">m_theme</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average track angle&quot;</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlim</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">mean_</span> <span class="o">+</span> <span class="n">var_i</span> <span class="o">*</span> <span class="n">theta_i</span><span class="p">,</span> <span class="o">**</span><span class="n">v_theme</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Variation along component </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlim</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">mean_</span> <span class="o">-</span> <span class="n">var_i</span> <span class="o">*</span> <span class="n">theta_i</span><span class="p">,</span> <span class="o">**</span><span class="n">v_theme</span><span class="p">)</span>
+
+        <span class="n">a</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+    <span class="n">a</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/runway_modes.png"><img alt="../_images/runway_modes.png" class="align-center" src="../_images/runway_modes.png" style="width: 494.2px; height: 494.2px;" /></a>
+<p>One of the main ideas of the paper was to specifically select
+trajectories with strong components along these modes of variation. It
+appears they follow a specific pattern of late runway changes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">second_component</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_t</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">selected_flights</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_flights</span><span class="p">(</span>
+    <span class="n">t_final</span><span class="p">[</span><span class="n">flight_id</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">component</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flight_ids</span><span class="p">,</span> <span class="n">second_component</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">component</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">second_component</span><span class="p">,</span> <span class="mi">98</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">rivers</span>
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="n">airports</span><span class="p">[</span><span class="s1">&#39;LFBO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">selected_flights</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#aaaaaa&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">selected_flights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;distance &lt; 8 * 1852&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;crimson&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/runway_change.png"><img alt="../_images/runway_change.png" class="align-center" src="../_images/runway_change.png" style="width: 342.40000000000003px; height: 446.40000000000003px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="squawk7700.html" class="btn btn-neutral float-right" title="Analysing in-flight emergencies using big data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="atc_detect.html" class="btn btn-neutral float-left" title="Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1617 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>traffic.core.Flight &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="traffic.core.Traffic" href="traffic.core.traffic.html" />
+    <link rel="prev" title="Core structure" href="core_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> traffic
+          
+
+          
+            
+            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="core_structure.html">Core structure</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.Flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.Traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.Airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.FlightIterator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="core_structure.html">Core structure</a> &raquo;</li>
+        
+      <li>traffic.core.Flight</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/traffic.core.flight.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="traffic-core-flight">
+<h1>traffic.core.Flight<a class="headerlink" href="#traffic-core-flight" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="traffic.core.Flight">
+<em class="property">class </em><code class="sig-prename descclassname">traffic.core.</code><code class="sig-name descname">Flight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">pandas.DataFrame</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.HBoxMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.GeographyMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.ShapelyMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.algorithms.navigation.NavigationFeatures</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.algorithms.phases.FuzzyLogic</span></code></p>
+<p>Flight is the most basic class associated to a trajectory.
+Flights are the building block of all processing methods, built on top of
+pandas DataFrame. The minimum set of required features are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">icao24</span></code>: the ICAO transponder ID of an aircraft;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callsign</span></code>: an identifier which may be associated with the
+registration of an aircraft, with its mission (VOR calibration,
+firefighting) or with a route (for a commercial aircraft);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: timezone aware timestamps are preferable.
+Some methods may work with timezone naive timestamps but the behaviour
+is not guaranteed;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude</span></code>: in degrees, WGS84 (EPSG:4326);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">altitude</span></code>: in feet.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">flight_id</span></code> (identifier for a trajectory) may be used in place of
+a pair of (<code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">callsign</span></code>). More features may also be provided
+for further processing, e.g. <code class="docutils literal notranslate"><span class="pre">groundspeed</span></code>, <code class="docutils literal notranslate"><span class="pre">vertical_rate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">track</span></code>, <code class="docutils literal notranslate"><span class="pre">heading</span></code>, <code class="docutils literal notranslate"><span class="pre">IAS</span></code> (indicated airspeed) or <code class="docutils literal notranslate"><span class="pre">squawk</span></code>.</p>
+</div>
+<p><strong>Abridged contents:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>properties:
+<a class="reference external" href="#traffic.core.Flight.callsign">callsign</a>,
+<a class="reference external" href="#traffic.core.Flight.flight_id">flight_id</a>,
+<a class="reference external" href="#traffic.core.Flight.icao24">icao24</a>,
+<a class="reference external" href="#traffic.core.Flight.number">number</a>,
+<a class="reference external" href="#traffic.core.Flight.registration">registration</a>,
+<a class="reference external" href="#traffic.core.Flight.start">start</a>,
+<a class="reference external" href="#traffic.core.Flight.stop">stop</a>,
+<a class="reference external" href="#traffic.core.Flight.typecode">typecode</a></p></li>
+<li><p>time related methods:
+<a class="reference external" href="#traffic.core.Flight.after">after()</a>,
+<a class="reference external" href="#traffic.core.Flight.at">at()</a>,
+<a class="reference external" href="#traffic.core.Flight.at_ratio">at_ratio()</a>,
+<a class="reference external" href="#traffic.core.Flight.before">before()</a>,
+<a class="reference external" href="#traffic.core.Flight.between">between()</a>,
+<a class="reference external" href="#traffic.core.Flight.first">first()</a>,
+<a class="reference external" href="#traffic.core.Flight.last">last()</a>,
+<a class="reference external" href="#traffic.core.Flight.skip">skip()</a>,
+<a class="reference external" href="#traffic.core.Flight.shorten">shorten()</a></p></li>
+<li><p>geometry related methods:
+<a class="reference external" href="#traffic.core.Flight.airborne">airborne()</a>,
+<a class="reference external" href="#traffic.core.Flight.clip">clip()</a>,
+<a class="reference external" href="#traffic.core.Flight.compute_wind">compute_wind()</a>,
+<a class="reference external" href="#traffic.core.Flight.compute_xy">compute_xy()</a>,
+<a class="reference external" href="#traffic.core.Flight.distance">distance()</a>,
+<a class="reference external" href="#traffic.core.Flight.inside_bbox">inside_bbox()</a>,
+<a class="reference external" href="#traffic.core.Flight.intersects">intersects()</a>,
+<a class="reference external" href="#traffic.core.Flight.project_shape">project_shape()</a>,
+<a class="reference external" href="#traffic.core.Flight.simplify">simplify()</a>,
+<a class="reference external" href="#traffic.core.Flight.unwrap">unwrap()</a></p></li>
+<li><p>navigation related method:
+<a class="reference external" href="#traffic.core.Flight.closest_point">closest_point()</a>,
+<a class="reference external" href="#traffic.core.Flight.takeoff_airport">takeoff_airport()</a>,
+<a class="reference external" href="#traffic.core.Flight.landing_airport">landing_airport()</a>,
+<a class="reference external" href="#traffic.core.Flight.on_runway">on_runway()</a>,
+<a class="reference external" href="#traffic.core.Flight.aligned_on_runway">aligned_on_runway()</a>,
+<a class="reference external" href="#traffic.core.Flight.aligned_on_ils">aligned_on_ils()</a></p></li>
+<li><p>filtering and resampling methods:
+<a class="reference external" href="#traffic.core.Flight.comet">comet()</a>,
+<a class="reference external" href="#traffic.core.Flight.filter">filter()</a>,
+<a class="reference external" href="#traffic.core.Flight.resample">resample()</a>,</p></li>
+<li><p>visualisation with altair:
+<a class="reference external" href="#traffic.core.Flight.encode">encode()</a>,
+<a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a></p></li>
+<li><p>visualisation with leaflet: <a class="reference external" href="#traffic.core.Flight.layer">layer()</a></p></li>
+<li><p>visualisation with Matplotlib:
+<a class="reference external" href="#traffic.core.Flight.plot">plot()</a>,
+<a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a></p></li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sample flights are provided for testing purposes in module
+<code class="docutils literal notranslate"><span class="pre">traffic.data.samples</span></code></p>
+</div>
+<dl class="py method">
+<dt id="traffic.core.Flight.abs">
+<code class="sig-name descname">abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign absolute versions of features to new columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The two following commands are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">([</span><span class="s2">&quot;track&quot;</span><span class="p">,</span> <span class="s2">&quot;heading&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="s2">&quot;track_abs&quot;</span><span class="p">,</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;heading_abs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.after">
+<code class="sig-name descname">after</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.after" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the part of the trajectory flown after a given timestamp.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
+a Pandas timestamp.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.agg_time">
+<code class="sig-name descname">agg_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">freq</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'1T'</span></em>, <em class="sig-param"><span class="n">merge</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.agg_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate features on time windows.</p>
+<p>The following is performed:</p>
+<ul class="simple">
+<li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
+<li><p>the groupby/agg is operated with parameters passed in kwargs;</p></li>
+<li><p>if merge is True, the new column in merged into the Flight,
+otherwise a pd.DataFrame is returned.</p></li>
+</ul>
+<p>For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">agg_time</span><span class="p">(</span><span class="s1">&#39;3T&#39;</span><span class="p">,</span> <span class="n">groundspeed</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>returns a Flight with a new column groundspeed_mean with groundspeed
+averaged per intervals of 3 minutes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.agg_xy">
+<code class="sig-name descname">agg_xy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resolution</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">projection</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>pyproj.Proj<span class="p">, </span>cartopy.crs.Projection<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.core.Flight.agg_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates values of a traffic over a grid of x/y, with x and y
+computed by <cite>traffic.core.GeographyMixin.compute_xy()</cite>.</p>
+<p>The resolution of the grid is passed as a dictionary parameter.
+By default, the grid is made by rounding x and y to the lower ten
+kilometer values. <code class="docutils literal notranslate"><span class="pre">dict(x=5000,</span> <span class="pre">y=3000)</span></code> will take 1 value per 5000
+meters for x (10000, 15000, 20000, …) and 1 value per 3000 meters for
+y (9000, 12000, 15000, 18000, 20000, …).</p>
+<p>The kwargs specifies how to aggregate values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">altitude=&quot;mean&quot;</span></code> would average all values in the given cell;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp=&quot;count&quot;</span></code> would return the number of samples per cell;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">icao24=&quot;nunique&quot;</span></code> would return the number of different aircraft
+int the given cell.</p></li>
+</ul>
+<p>The returned pandas DataFrame is indexed over x and y values. It is
+conveniently chainable with the <code class="docutils literal notranslate"><span class="pre">.to_xarray()</span></code> method in order to
+plot density heatmaps.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">agg_xy</span><span class="p">(</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">3e3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">3e3</span><span class="p">),</span>
+    <span class="n">vertical_rate</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="o">=</span><span class="s2">&quot;count&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.airborne">
+<code class="sig-name descname">airborne</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.airborne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the airborne part of the Flight.</p>
+<p>The airborne part is determined by an <code class="docutils literal notranslate"><span class="pre">onground</span></code> flag or null values
+in the altitude column.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.aligned_on_ils">
+<code class="sig-name descname">aligned_on_ils</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>Airport<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.aligned_on_ils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on all segments of trajectory aligned with the ILS of the
+given airport. The runway number is appended as a new <code class="docutils literal notranslate"><span class="pre">ILS</span></code> column.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aligned</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s1">&#39;EHAM&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;ILS </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;ILS&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> until </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;ILS 06 until 20:17&#39;</span>
+</pre></div>
+</div>
+<p>Be aware that all segments are not necessarily yielded in order.
+Consider using <code class="docutils literal notranslate"><span class="pre">max(...,</span> <span class="pre">key=attrgetter('start'))</span></code> if you want the
+last landing attempt, or <code class="docutils literal notranslate"><span class="pre">sorted(...,</span> <span class="pre">key=attrgetter('start'))</span></code> for
+an ordered list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">aligned</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s1">&#39;EHLE&#39;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">aligned</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="go">2018-05-30 16:50:44+00:00</span>
+<span class="go">2018-05-30 18:13:02+00:00</span>
+<span class="go">2018-05-30 16:00:55+00:00</span>
+<span class="go">2018-05-30 17:21:17+00:00</span>
+<span class="go">2018-05-30 19:05:22+00:00</span>
+<span class="go">2018-05-30 19:42:36+00:00</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_aligned</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;EHLE&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.aligned_on_navpoint">
+<code class="sig-name descname">aligned_on_navpoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Navaid<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">angle_precision</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">time_precision</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'2T'</span></em>, <em class="sig-param"><span class="n">min_time</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'30s'</span></em>, <em class="sig-param"><span class="n">min_distance</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">80</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.aligned_on_navpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on segments of trajectories aligned with one of the given
+navigational beacons passed in parameter.</p>
+<p>The name of the navigational beacon is assigned in a new column
+<cite>navaid</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.aligned_on_runway">
+<code class="sig-name descname">aligned_on_runway</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Airport<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.aligned_on_runway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on all segments of trajectory matching a runway of the
+given airport.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.all">
+<code class="sig-name descname">all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the concatenation of segments returns by flight.method().</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.apply_time">
+<code class="sig-name descname">apply_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">freq</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'1T'</span></em>, <em class="sig-param"><span class="n">merge</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.apply_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply features on time windows.</p>
+<p>The following is performed:</p>
+<ul class="simple">
+<li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
+<li><p>the groupby/apply is operated with parameters passed in apply;</p></li>
+<li><p>if merge is True, the new column in merged into the Flight,
+otherwise a pd.DataFrame is returned.</p></li>
+</ul>
+<p>For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">agg_time</span><span class="p">(</span><span class="s2">&quot;10T&quot;</span><span class="p">,</span> <span class="n">straight</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">Flight</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>returns a Flight with a new column straight with the great circle
+distance between points sampled every 10 minutes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.area">
+<em class="property">property </em><code class="sig-name descname">area</code><a class="headerlink" href="#traffic.core.Flight.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the area of the shape, in square meters.
+The shape is projected to an equivalent local projection before
+computing a value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.assign">
+<code class="sig-name descname">assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">assign()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.assign_id">
+<code class="sig-name descname">assign_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'{self.callsign}_{idx:&gt;03}'</span></em>, <em class="sig-param"><span class="n">idx</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.assign_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a flight_id to a Flight.</p>
+<p>This method is more generally used by the corresponding Traffic and
+LazyTraffic methods but works fine on Flight as well.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.at">
+<code class="sig-name descname">at</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Position<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position in the trajectory at a given timestamp.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
+a Pandas timestamp.</p></li>
+<li><p>If no time is passed (default), the last know position is returned.</p></li>
+<li><p>If no position is available at the given timestamp, None is returned.
+If you expect a position at any price, consider <a class="reference external" href="#traffic.core.Flight.resample">Flight.resample</a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.at_ratio">
+<code class="sig-name descname">at_ratio</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ratio</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.5</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Position<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.at_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a position on the trajectory.</p>
+<p>This method is convenient to place a marker on the trajectory in
+visualisation output.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Flight.at_ratio(0)</span></code> is the first point in the trajectory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Flight.at_ratio(1)</span></code> is the last point of the trajectory
+(equivalent to <code class="docutils literal notranslate"><span class="pre">Flight.at()</span></code>)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.before">
+<code class="sig-name descname">before</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.before" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the part of the trajectory flown before a given timestamp.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
+a Pandas timestamp.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.between">
+<code class="sig-name descname">between</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">stop</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.datetime<span class="p">, </span>pandas.Timestamp<span class="p">, </span>datetime.timedelta<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the part of the trajectory flown between start and stop.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> can be passed as a string, an epoch, a Python
+datetime, or a Pandas timestamp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code> can also be passed as a timedelta.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#traffic.core.Flight.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bounds of the (bounding box of the) shape.
+Bounds are given in the following order in the origin crs:
+(west, south, east, north)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.callsign">
+<em class="property">property </em><code class="sig-name descname">callsign</code><a class="headerlink" href="#traffic.core.Flight.callsign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique callsign value(s) associated to the Flight.</p>
+<p>A callsign is an identifier sent by an aircraft during its flight. It
+may be associated with the registration of an aircraft, its mission or
+with a route for a commercial aircraft.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.centroid">
+<em class="property">property </em><code class="sig-name descname">centroid</code><a class="headerlink" href="#traffic.core.Flight.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the centroid of the shape as a shapely Point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.clip">
+<code class="sig-name descname">clip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>traffic.core.mixins.ShapelyMixin<span class="p">, </span>shapely.geometry.base.BaseGeometry<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.clip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clips the trajectory to a given shape.</p>
+<p>For a shapely Geometry, the first time of entry and the last time of
+exit are first computed before returning the part of the trajectory
+between the two timestamps.</p>
+<p>Most of the time, aircraft do not repeatedly come out and in an
+airspace, but computation errors may sometimes give this impression.
+As a consequence, the clipped trajectory may have points outside the
+shape.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Altitudes are not taken into account.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.closest_point">
+<code class="sig-name descname">closest_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">[</span>PointMixin<span class="p">]</span><span class="p">, </span>PointMixin<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; pandas.Series<a class="headerlink" href="#traffic.core.Flight.closest_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the closest point of the trajectory with respect to
+a point or list of points.</p>
+<p>The pd.Series returned by the function is enriched with two fields:
+distance (in meters) and point (containing the name of the closest
+point to the trajectory)</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">item</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">between</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;2018-05-30 16:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2018-05-30 17:00&quot;</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">closest_point</span><span class="p">(</span>  <span class="c1"># type: ignore</span>
+<span class="gp">... </span>    <span class="p">[</span>
+<span class="gp">... </span>        <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHLE&quot;</span><span class="p">],</span>  <span class="c1"># type: ignore</span>
+<span class="gp">... </span>        <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">],</span>  <span class="c1"># type: ignore</span>
+<span class="gp">... </span>        <span class="n">navaids</span><span class="p">[</span><span class="s2">&quot;NARAK&quot;</span><span class="p">],</span>  <span class="c1"># type: ignore</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">point</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">m&quot;</span>
+<span class="go">&quot;Lelystad Airport, 49.11m&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.comet">
+<code class="sig-name descname">comet</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.comet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a comet for a trajectory.</p>
+<p>The method uses the last position of a trajectory (method <a class="reference external" href="#traffic.core.Flight.at">at()</a>) and uses the <code class="docutils literal notranslate"><span class="pre">track</span></code> (in degrees),
+<code class="docutils literal notranslate"><span class="pre">groundspeed</span></code> (in knots) and <code class="docutils literal notranslate"><span class="pre">vertical_rate</span></code> (in ft/min) values to
+interpolate the trajectory in a straight line.</p>
+<p>The elements passed as kwargs as passed as is to the datetime.timedelta
+constructor.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flight</span><span class="o">.</span><span class="n">comet</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2018-12-24 23:55&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">comet</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Merry XMas!</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.compute_wind">
+<code class="sig-name descname">compute_wind</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.compute_wind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the wind triangle for each timestamp.</p>
+<p>This method requires <code class="docutils literal notranslate"><span class="pre">groundspeed</span></code>, <code class="docutils literal notranslate"><span class="pre">track</span></code>, true airspeed
+(<code class="docutils literal notranslate"><span class="pre">TAS</span></code>), and <code class="docutils literal notranslate"><span class="pre">heading</span></code> features. The groundspeed and the track angle
+are usually available in ADS-B messages; the heading and the true
+airspeed may be decoded in EHS messages.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check the <a class="reference external" href="#traffic.core.Flight.query_ehs">query_ehs()</a> method to
+find a way to enrich your flight with such features. Note that this
+data is not necessarily available depending on the location.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.compute_xy">
+<code class="sig-name descname">compute_xy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">projection</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>pyproj.Proj<span class="p">, </span>cartopy.crs.Projection<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.compute_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enrich the structure with new x and y columns computed through a
+projection of the latitude and longitude columns.</p>
+<p>The source projection is WGS84 (EPSG 4326).
+The default destination projection is a Lambert Conformal Conical
+projection centered on the data inside the dataframe.</p>
+<p>Other valid projections are available:</p>
+<ul class="simple">
+<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
+<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.cumulative_distance">
+<code class="sig-name descname">cumulative_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">compute_gs</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">compute_track</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.cumulative_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enrich the structure with new <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> column computed from
+latitude and longitude columns.</p>
+<p>The first <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> value is 0, then distances are computed (in
+<strong>nautical miles</strong>) and summed between consecutive positions. The last
+value is the total length of the trajectory.</p>
+<p>When the <code class="docutils literal notranslate"><span class="pre">compute_gs</span></code> flag is set to True (default), an additional
+<code class="docutils literal notranslate"><span class="pre">compute_gs</span></code> is also added. This value can be compared with the
+decoded <code class="docutils literal notranslate"><span class="pre">groundspeed</span></code> value in ADSB messages.</p>
+<p>When the <code class="docutils literal notranslate"><span class="pre">compute_track</span></code> flag is set to True (default), an additional
+<code class="docutils literal notranslate"><span class="pre">compute_track</span></code> is also added. This value can be compared with the
+decoded <code class="docutils literal notranslate"><span class="pre">track</span></code> value in ADSB messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.destination">
+<em class="property">property </em><code class="sig-name descname">destination</code><a class="headerlink" href="#traffic.core.Flight.destination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique destination value(s),
+None if not available in the DataFrame.</p>
+<p>The destination airport is usually represented as a ICAO or a IATA code.</p>
+<p>The ICAO code of an airport is represented by 4 letters (e.g. EHAM for
+Amsterdam Schiphol International Airport) and the IATA code is
+represented by 3 letters and more familiar to the public (e.g. AMS for
+Amsterdam)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.diff">
+<code class="sig-name descname">diff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign differential versions of features to new columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The two following commands are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">([</span><span class="s2">&quot;track&quot;</span><span class="p">,</span> <span class="s2">&quot;heading&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="s2">&quot;track_diff&quot;</span><span class="p">,</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;heading_diff&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.distance">
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">None</span> <span class="o">=</span> <span class="default_value">'None'</span></em>, <em class="sig-param"><span class="n">column_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">&quot;'distance'&quot;</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#traffic.core.Flight.distance" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace">Airspace</a><span class="p">, </span>shapely.geometry.Polygon<span class="p">, </span>traffic.core.mixins.PointMixin<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">column_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">&quot;'distance'&quot;</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a></dt>
+<dt>
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a></span></em>, <em class="sig-param"><span class="n">column_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">&quot;'distance'&quot;</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Computes the distance from a Flight to another entity.</p>
+<p>The behaviour is different according to the type of the second
+element:</p>
+<ul class="simple">
+<li><p>if the other element is None (i.e. flight.distance()), the method
+returns a distance in nautical miles between the first and last
+recorded positions in the DataFrame.</p></li>
+<li><p>if the other element is a Flight, the method returns a pandas
+DataFrame with corresponding data from both flights, aligned
+with their timestamps, and two new columns with <cite>lateral</cite> and
+<cite>vertical</cite> distances (resp. in nm and ft) separating them.</p></li>
+<li><p>otherwise, the same Flight is returned enriched with a new
+column (by default, named “distance”) with the distance of each
+point of the trajectory to the geometrical element.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>An Airspace is (currently) considered as its flattened
+representation</p></li>
+<li><p>Computing a distance to a polygon is quite slow at the moment.
+Consider a strict resampling (e.g. one point per minute, “1T”)
+before calling the method.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.diversion">
+<code class="sig-name descname">diversion</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.diversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the segment of trajectory after a possible decision
+of diversion.</p>
+<p>The method relies on the <cite>destination</cite> parameter to identify the
+intended destination.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.diverted">
+<em class="property">property </em><code class="sig-name descname">diverted</code><a class="headerlink" href="#traffic.core.Flight.diverted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique diverted value(s),
+None if not available in the DataFrame.</p>
+<p>The diverted airport is usually represented as a ICAO or a IATA code.</p>
+<p>The ICAO code of an airport is represented by 4 letters (e.g. EHAM for
+Amsterdam Schiphol International Airport) and the IATA code is
+represented by 3 letters and more familiar to the public (e.g. AMS for
+Amsterdam)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.drop">
+<code class="sig-name descname">drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.drop_duplicates">
+<code class="sig-name descname">drop_duplicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.duration">
+<em class="property">property </em><code class="sig-name descname">duration</code><a class="headerlink" href="#traffic.core.Flight.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the duration of the flight.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.emergency">
+<code class="sig-name descname">emergency</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.emergency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on emergency segments of trajectory.</p>
+<p>An emergency is defined with a 7700 squawk code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>altair.Y<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>altair.X<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'timestamp:T'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; altair.Chart<a class="headerlink" href="#traffic.core.Flight.encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the given features according to time.</p>
+<p>The method ensures:</p>
+<ul class="simple">
+<li><p>only non-NaN data are displayed (no gap in the plot);</p></li>
+<li><p>the timestamp is naively converted to UTC if not localized.</p></li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flight</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>
+<span class="c1"># or with several comparable features</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">encode</span><span class="p">([</span><span class="s1">&#39;groundspeed&#39;</span><span class="p">,</span> <span class="s1">&#39;IAS&#39;</span><span class="p">,</span> <span class="s1">&#39;TAS&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>No twin axes are available in altair/Vega charts.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See also <a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a> for the
+Matplotlib equivalent.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.extent">
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#traffic.core.Flight.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the extent of the (bounding box of the) shape.
+Extent is given in the following order in the origin crs:
+(west, east, south, north)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When plotting with Matplotlib and Cartopy, the extent property is
+convenient in the following use case:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">extent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.feature_gt">
+<code class="sig-name descname">feature_gt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.feature_gt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if feature(flight) is greater than value.</p>
+<p>This is fully equivalent to <cite>f.longer_than(“1 minute”)</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_gt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>This is equivalent to <cite>f.max(‘altitude’) &gt; 35000</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_gt</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">),</span> <span class="mi">35000</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The second one can be useful for stacking operations during
+lazy evaluation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.feature_lt">
+<code class="sig-name descname">feature_lt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.feature_lt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if feature(flight) is less than value.</p>
+<p>This is fully equivalent to <cite>f.shorter_than(“1 minute”)</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_lt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>This is equivalent to <cite>f.max(‘altitude’) &lt; 35000</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_lt</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">),</span> <span class="mi">35000</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The second one can be useful for stacking operations during
+lazy evaluation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.fillna">
+<code class="sig-name descname">fillna</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param">strategy: Optional[Callable[[pandas.DataFrame], pandas.DataFrame]] = &lt;function Flight.&lt;lambda&gt;&gt;, **kwargs</em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the trajectory given features with a median filter.</p>
+<p>The method first applies a median filter on each feature of the
+DataFrame. A default kernel size is applied for a number of features
+(resp. latitude, longitude, altitude, track, groundspeed, IAS, TAS) but
+other kernel values may be passed as kwargs parameters.</p>
+<p>Rather than returning averaged values, the method computes thresholds
+on sliding windows (as an average of squared differences) and replace
+unacceptable values with NaNs.</p>
+<p>Then, a strategy may be applied to fill the NaN values, by default a
+forward/backward fill. Other strategies may be passed, for instance <em>do
+nothing</em>: <code class="docutils literal notranslate"><span class="pre">None</span></code>; or <em>interpolate</em>: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x.interpolate()</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method if often more efficient when applied several times with
+different kernel values.Kernel values may be passed as integers, or
+list/tuples of integers for cascade of filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cascade of filters appears to work well on altitude</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">altitude</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">altitude</span><span class="o">=</span><span class="mi">53</span><span class="p">)</span>
+
+<span class="c1"># this is equivalent to the default value</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">altitude</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">53</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.first">
+<code class="sig-name descname">first</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first n days, hours, minutes or seconds of the Flight.</p>
+<p>The elements passed as kwargs as passed as is to the datetime.timedelta
+constructor.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.flight_id">
+<em class="property">property </em><code class="sig-name descname">flight_id</code><a class="headerlink" href="#traffic.core.Flight.flight_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique flight_id value(s) of the DataFrame.</p>
+<p>Neither the icao24 (the aircraft) nor the callsign (the route) is a
+reliable way to identify trajectories. You can either use an external
+source of data to assign flight ids (for example DDR files by
+Eurocontrol, identifiers by FlightRadar24, etc.) or assign a flight_id
+by yourself (see <code class="docutils literal notranslate"><span class="pre">Flight.assign_id(name:</span> <span class="pre">str)</span></code> method).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Traffic.assign_id()</span></code> method uses a heuristic based on the
+timestamps associated to callsign/icao24 pairs to automatically assign a
+<code class="docutils literal notranslate"><span class="pre">flight_id</span></code> and separate flights.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.from_file">
+<em class="property">classmethod </em><code class="sig-name descname">from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>pathlib.Path<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>T<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from various formats.</p>
+<p>This class method dispatches the loading of data in various format to
+the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
+filename.</p>
+<ul class="simple">
+<li><p>.pkl and .pkl.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
+<li><p>.parquet and .parquet.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.json and .json.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
+<li><p>.csv and .csv.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
+<li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
+</ul>
+<p>Other extensions return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
+method with the kwargs argument.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.geoencode">
+<code class="sig-name descname">geoencode</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; altair.Chart<a class="headerlink" href="#traffic.core.Flight.geoencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
+shape to be composed in an interactive visualization.
+Specific plot features, such as line widths, can be passed via <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs.
+See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.geojson">
+<code class="sig-name descname">geojson</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.geojson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the GeoJSON representation of the shape as a Dict.
+The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.go_around">
+<code class="sig-name descname">go_around</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>Airport<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Airports<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.go_around" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects go-arounds.</p>
+<p>The method yields pieces of trajectories with exactly two landing
+attempts (aligned on one runway) on the same airport separated by
+exactly one climbing phase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.groupby">
+<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
+DataFrame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.has">
+<code class="sig-name descname">has</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.has" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if flight.method() returns a non-empty iterator.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.holding_pattern">
+<code class="sig-name descname">holding_pattern</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_altitude</span><span class="o">=</span><span class="default_value">7000</span></em>, <em class="sig-param"><span class="n">turning_threshold</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">low_limit</span><span class="o">=</span><span class="default_value">pandas.Timedelta</span></em>, <em class="sig-param"><span class="n">high_limit</span><span class="o">=</span><span class="default_value">pandas.Timedelta</span></em>, <em class="sig-param"><span class="n">turning_limit</span><span class="o">=</span><span class="default_value">pandas.Timedelta</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.holding_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on parallel segments candidates for identifying
+a holding pattern.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This API is not stable yet. The interface may change in a near
+future.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.holes">
+<em class="property">property </em><code class="sig-name descname">holes</code><a class="headerlink" href="#traffic.core.Flight.holes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of ‘holes’ in a trajectory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.icao24">
+<em class="property">property </em><code class="sig-name descname">icao24</code><a class="headerlink" href="#traffic.core.Flight.icao24" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique icao24 value(s) of the DataFrame.</p>
+<p>icao24 (ICAO 24-bit address) is a unique identifier associated to a
+transponder. These identifiers correlate to the aircraft registration.</p>
+<p>For example icao24 code ‘ac82ec’ is associated to ‘N905NA’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.inside_bbox">
+<code class="sig-name descname">inside_bbox</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bounds</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>traffic.core.mixins.ShapelyMixin<span class="p">, </span>shapely.geometry.base.BaseGeometry<span class="p">, </span>Tuple<span class="p">[</span>float<span class="p">, </span>float<span class="p">, </span>float<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>T<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.inside_bbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the part of the DataFrame with coordinates located within the
+bounding box of the shape passed in parameter.</p>
+<blockquote>
+<div><p>The bounds parameter can be:</p>
+<ul class="simple">
+<li><p>an Airspace,</p></li>
+<li><p>a shapely Geometry,</p></li>
+<li><p>a tuple of floats (west, south, east, north)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method will use the Flight <a class="reference external" href="traffic.core.flight.html#traffic.core.Flight.inside_bbox">implementation</a> when
+stacked for lazy evaluation.</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.intersects">
+<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>traffic.core.mixins.ShapelyMixin<span class="p">, </span>shapely.geometry.base.BaseGeometry<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.intersects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the trajectory is inside the given shape.</p>
+<ul class="simple">
+<li><p>If an Airspace is passed, the 3D trajectory is compared to each layers
+constituting the airspace, with corresponding altitude limits.</p></li>
+<li><p>If a shapely Geometry is passed, the 2D trajectory alone is</p></li>
+</ul>
+<p>considered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.landing_airport">
+<code class="sig-name descname">landing_airport</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Airport<a class="headerlink" href="#traffic.core.Flight.landing_airport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most probable landing airport.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">()</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2018-05-30 20:00&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">()</span>
+<span class="go">NL-0024/nan: Middenmeer Aerodrome</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.landing_attempts">
+<code class="sig-name descname">landing_attempts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Airports<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.landing_attempts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on all landing attempts for current flight.</p>
+<p>First, candidates airports are identified in the neighbourhood
+of the segments of trajectory below 10,000 ft. By default, the
+full airport database is considered but it is possible to restrict
+it and pass a smaller database with the dataset parameter.</p>
+<p>If no runway information is available for the given airport, no
+trajectory segment will be provided.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This API is not stable yet. The interface may change in a near
+future.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.last">
+<code class="sig-name descname">last</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last n days, hours, minutes or seconds of the Flight.</p>
+<p>The elements passed as kwargs as passed as is to the datetime.timedelta
+constructor.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.longer_than">
+<code class="sig-name descname">longer_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.longer_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if flight duration is shorter than value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.max">
+<code class="sig-name descname">max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum value of given feature.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">35000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.max_split">
+<code class="sig-name descname">max_split</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'10T'</span></em>, <em class="sig-param"><span class="n">unit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">]</span><span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">operator.attrgetter('duration')</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.max_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the biggest (by default, longest) part of trajectory.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">elal747</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elal747</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;altitude &lt; 15000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max_split</span><span class="p">()</span>
+<span class="go">Flight ELY1747</span>
+<span class="go">aircraft: 738043 · 🇮🇱 4X-ELC (B744)</span>
+<span class="go">origin: LIRF (2019-11-03 12:14:40+00:00)</span>
+<span class="go">destination: LLBG (2019-11-03 14:13:00+00:00)</span>
+</pre></div>
+</div>
+<p>In this example, the fancy part of the trajectory occurs below
+15,000 ft. The command extracts the plane pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the average value of given feature.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;vertical_rate&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">-1000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.min">
+<code class="sig-name descname">min</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the minimum value of given feature.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">24000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.number">
+<em class="property">property </em><code class="sig-name descname">number</code><a class="headerlink" href="#traffic.core.Flight.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique number value(s) associated to the Flight.</p>
+<p>This field is reserved for the commercial number of the flight, prefixed
+by the two letter code of the airline.
+For instance, AFR292 is the callsign and AF292 is the flight number.</p>
+<p>Callsigns are often more complicated as they are designed to limit
+confusion on the radio: hence DLH02X can be the callsign associated
+to flight number LH1100.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.on_runway">
+<code class="sig-name descname">on_runway</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Airport<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.on_runway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the longest segment of trajectory which perfectly matches
+a runway at given airport.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">landing</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">landing</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span>
+<span class="go">-26.0</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span>
+<span class="go">437.27272727272725</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.origin">
+<em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#traffic.core.Flight.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique origin value(s),
+None if not available in the DataFrame.</p>
+<p>The origin airport is usually represented as a ICAO or a IATA code.</p>
+<p>The ICAO code of an airport is represented by 4 letters (e.g. EHAM for
+Amsterdam Schiphol International Airport) and the IATA code is
+represented by 3 letters and more familiar to the public (e.g. AMS for
+Amsterdam)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.phases">
+<code class="sig-name descname">phases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">twindow</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">60</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a><a class="headerlink" href="#traffic.core.Flight.phases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a flight phase to each timestamp of a flight
+using OpenAP phase detection fuzzy logic method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.pipe">
+<code class="sig-name descname">pipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span><span class="p">…</span><span class="p">]</span><span class="p">, </span>T<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ax</span><span class="p">:</span> <span class="n">cartopy.mpl.geoaxes.GeoAxesSubplot</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>matplotlib.artist.Artist<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the trajectory on a Matplotlib axis.</p>
+<p>The Flight supports Cartopy axis as well with automatic projection. If
+no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
+is applied.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">Mercator</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Mercator</span><span class="p">())</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See also <a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a> for the
+altair equivalent.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.plot_time">
+<code class="sig-name descname">plot_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib.axes._subplots.Axes</span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.plot_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the given features according to time.</p>
+<p>The method ensures:</p>
+<ul class="simple">
+<li><p>only non-NaN data are displayed (no gap in the plot);</p></li>
+<li><p>the timestamp is naively converted to UTC if not localized.</p></li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="c1"># most simple version</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s1">&#39;altitude&#39;</span><span class="p">)</span>
+<span class="c1"># or with several comparable features and twin axes</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;groundspeed, &#39;</span><span class="n">IAS</span><span class="s1">&#39;, &#39;</span><span class="n">TAS</span><span class="s1">&#39;],</span>
+    <span class="n">secondary_y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See also <a class="reference external" href="#traffic.core.Flight.encode">encode()</a> for the altair
+equivalent.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.plot_wind">
+<code class="sig-name descname">plot_wind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ax</span><span class="p">:</span> <span class="n">cartopy.mpl.geoaxes.GeoAxesSubplot</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>str<span class="p">, </span>Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'5T'</span></em>, <em class="sig-param"><span class="n">filtered</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>matplotlib.artist.Artist<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.plot_wind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the wind field seen by the aircraft on a Matplotlib axis.</p>
+<p>The Flight supports Cartopy axis as well with automatic projection. If
+no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
+is applied.</p>
+<p>The <cite>resolution</cite> argument may be:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>None for a raw plot;</p></li>
+<li><p>an integer or a string to pass to a <a class="reference external" href="#traffic.core.Flight.resample">Flight.resample()</a> method as a preprocessing
+before plotting;</p></li>
+<li><p>or a dictionary, e.g dict(latitude=4, longitude=4), if you
+want a grid with a resolution of 4 points per latitude and
+longitude degree.</p></li>
+</ul>
+</div></blockquote>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">Mercator</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Mercator</span><span class="p">()))</span>
+<span class="p">(</span>
+    <span class="n">flight</span>
+    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;altitude &gt; 10000&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">compute_wind</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot_wind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.project_shape">
+<code class="sig-name descname">project_shape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">projection</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>pyproj.Proj<span class="p">, </span>cartopy.crs.Projection<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; shapely.geometry.base.BaseGeometry<a class="headerlink" href="#traffic.core.Flight.project_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a projected representation of the shape.</p>
+<p>By default, an equivalent projection is applied. Equivalent projections
+locally respect areas, which is convenient for the area attribute.</p>
+<p>Other valid projections are available:</p>
+<ul class="simple">
+<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
+<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.query">
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_str</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>T<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.query_ehs">
+<code class="sig-name descname">query_ehs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>pandas.DataFrame<span class="p">, </span>RawData<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">failure_mode</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'warning'</span></em>, <em class="sig-param"><span class="n">progressbar</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>Iterable<span class="p">]</span><span class="p">, </span>Iterable<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight">Flight</a><a class="headerlink" href="#traffic.core.Flight.query_ehs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends data with extra columns from EHS messages.</p>
+<p>By default, raw messages are requested from the OpenSky Network
+database.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Making a lot of small requests can be very inefficient and may look
+like a denial of service. If you get the raw messages using a
+different channel, you can provide the resulting dataframe as a
+parameter. See the page about <a class="reference external" href="opensky_impala.html">OpenSky Impala access</a></p>
+</div>
+<p>The data parameter expect three columns: <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">rawmsg</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mintime</span></code>, in conformance with the OpenSky API.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.query_opensky">
+<code class="sig-name descname">query_opensky</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.query_opensky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data from the same Flight as stored in OpenSky database.</p>
+<p>This may be useful if you write your own parser for data from a
+different channel. The method will use the <code class="docutils literal notranslate"><span class="pre">callsign</span></code> and <code class="docutils literal notranslate"><span class="pre">icao24</span></code>
+attributes to build a request for current Flight in the OpenSky Network
+database.</p>
+<p>The kwargs argument helps overriding arguments from the query, namely
+start, stop, callsign and icao24.</p>
+<p>Returns None if no data is found.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.rename">
+<code class="sig-name descname">rename</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">rename()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.resample">
+<code class="sig-name descname">resample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'1s'</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.resample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resample the trajectory at a given frequency or number of points.</p>
+<p>If the rule is a string representing a pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases">time series frequency</a>
+is passed, then the data is resampled along the timestamp axis, then
+interpolated.</p>
+<p>If the rule is an integer, the trajectory is resampled to the given
+number of evenly distributed points per trajectory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.reset_index">
+<code class="sig-name descname">reset_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.reset_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.runway_change">
+<code class="sig-name descname">runway_change</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">airport</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>Airport<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Airports<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.runway_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects runway changes.</p>
+<p>The method yields pieces of trajectories with exactly two runway
+alignments on the same airport not separated by a climbing phase.</p>
+<p>In each piece of yielded trajectory, the <cite>ILS</cite> column contains the
+name of the runway targetted by the aircraft at each instant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.shorten">
+<code class="sig-name descname">shorten</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.shorten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the last n days, hours, minutes or seconds of the Flight.</p>
+<p>The elements passed as kwargs as passed as is to the datetime.timedelta
+constructor.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.shorter_than">
+<code class="sig-name descname">shorter_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">strict</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.Flight.shorter_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if flight duration is shorter than value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.simplify">
+<code class="sig-name descname">simplify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tolerance</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">altitude</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_factor</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">3.048</span></em>, <em class="sig-param"><span class="n">return_mask</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>numpy.ndarray<span class="p">, </span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies a trajectory with Douglas-Peucker algorithm.</p>
+<p>The method uses latitude and longitude, projects the trajectory to a
+conformal projection and applies the algorithm. If x and y features are
+already present in the DataFrame (after a call to <a class="reference external" href="#traffic.core.Flight.compute_xy">compute_xy()</a> for instance) then this projection
+is taken into account.</p>
+<ul class="simple">
+<li><p>By default, a 2D version is called, unless you pass a column name for
+<code class="docutils literal notranslate"><span class="pre">altitude</span></code>.</p></li>
+<li><p>You may scale the z-axis for more relevance (<code class="docutils literal notranslate"><span class="pre">z_factor</span></code>). The
+default value works well in most situations.</p></li>
+</ul>
+<p>The method returns a Flight unless you specify <code class="docutils literal notranslate"><span class="pre">return_mask=True</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.skip">
+<code class="sig-name descname">skip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>numbers.Real<span class="p">, </span>datetime.timedelta<span class="p">, </span>pandas.Timedelta<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><a class="headerlink" href="#traffic.core.Flight.skip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the first n days, hours, minutes or seconds of the Flight.</p>
+<p>The elements passed as kwargs as passed as is to the datetime.timedelta
+constructor.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.sort_values">
+<code class="sig-name descname">sort_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">by</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#traffic.core.Flight.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">unit</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator<a class="headerlink" href="#traffic.core.Flight.split" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">unit</span><span class="p">:</span> <span class="n">None</span> <span class="o">=</span> <span class="default_value">'None'</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.iterator.FlightIterator</dt>
+<dd><p>Iterates on legs of a Flight based on the distrution of timestamps.</p>
+<p>By default, the method stops a flight and yields a new one after a gap
+of 10 minutes without data.</p>
+<p>The length of the gap (here 10 minutes) can be expressed:</p>
+<ul class="simple">
+<li><p>in the NumPy style: <code class="docutils literal notranslate"><span class="pre">Flight.split(10,</span> <span class="pre">'m')</span></code> (see
+<code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code>);</p></li>
+<li><p>in the pandas style: <code class="docutils literal notranslate"><span class="pre">Flight.split('10T')</span></code> (see <code class="docutils literal notranslate"><span class="pre">pd.Timedelta</span></code>)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.squawk">
+<em class="property">property </em><code class="sig-name descname">squawk</code><a class="headerlink" href="#traffic.core.Flight.squawk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the unique squawk values in the trajectory.</p>
+<p>A squawk code is a four-digit number assigned by ATC and set on the
+transponder. Some squawk codes are reserved for specific situations and
+emergencies, e.g. 7700 for general emergency, 7600 for radio failure or
+7500 for hijacking.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.start">
+<em class="property">property </em><code class="sig-name descname">start</code><a class="headerlink" href="#traffic.core.Flight.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the minimum value of timestamp.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.stop">
+<em class="property">property </em><code class="sig-name descname">stop</code><a class="headerlink" href="#traffic.core.Flight.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum value of timestamp.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.sum">
+<code class="sig-name descname">sum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>Callable<span class="p">[</span><span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>traffic.core.flight.Flight<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#traffic.core.Flight.sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of segments returns by flight.method().</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.takeoff_airport">
+<code class="sig-name descname">takeoff_airport</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Airport<a class="headerlink" href="#traffic.core.Flight.takeoff_airport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most probable takeoff airport.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">()</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="s2">&quot;2018-05-30 15:30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">()</span>
+<span class="go">NL-0015/nan: Universitair Medisch Centrum Utrecht Heliport</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_csv">
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to CSV format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_excel">
+<code class="sig-name descname">to_excel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to Excel format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to HDF format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to JSON format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_parquet">
+<code class="sig-name descname">to_parquet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to parquet format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.to_pickle">
+<code class="sig-name descname">to_pickle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.Flight.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to pickle format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.core.Flight.unwrap">
+<code class="sig-name descname">unwrap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>None<span class="p">, </span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; traffic.core.flight.Flight<a class="headerlink" href="#traffic.core.Flight.unwrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unwraps angles in the DataFrame.</p>
+<p>All features representing angles may be unwrapped (through Numpy) to
+avoid gaps between 359° and 1°.</p>
+<p>The method applies by default to features <code class="docutils literal notranslate"><span class="pre">track</span></code> and <code class="docutils literal notranslate"><span class="pre">heading</span></code>.
+More or different features may be passed in parameter.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="traffic.core.traffic.html" class="btn btn-neutral float-right" title="traffic.core.Traffic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core_structure.html" class="btn btn-neutral float-left" title="Core structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Xavier Olive
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>
