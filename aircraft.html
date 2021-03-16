@@ -192,7 +192,7 @@
 <h1>Aircraft database<a class="headerlink" href="#aircraft-database" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="traffic.data.basic.aircraft.Aircraft">
-<em class="property">class </em><code class="sig-prename descclassname">traffic.data.basic.aircraft.</code><code class="sig-name descname">Aircraft</code><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.data.basic.aircraft.</span></code><code class="sig-name descname"><span class="pre">Aircraft</span></code><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="https://github.com/junzis/">&#64;junzis</a>’s <a class="reference external" href="https://junzisun.com/adb/download">database</a> is available by default in the
 library as:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
@@ -214,21 +214,21 @@ operation can take up to five minutes with a slow Internet connection):</p>
 </div>
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.download_junzis">
-<code class="sig-name descname">download_junzis</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_junzis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">download_junzis</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_junzis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the latest version of the aircraft database by &#64;junzis.</p>
 <p>url: <a class="reference external" href="https://junzisun.com/adb/download">https://junzisun.com/adb/download</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.download_opensky">
-<code class="sig-name descname">download_opensky</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">download_opensky</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the latest version of the OpenSky aircraft database.</p>
 <p>url: <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.model">
-<code class="sig-name descname">model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by model or typecode (fuzzy match).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;RJ85&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">     icao24 registration typecode serialnumber       model</span>
@@ -249,7 +249,7 @@ operation can take up to five minutes with a slow Internet connection):</p>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.operator">
-<code class="sig-name descname">operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">operator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by owner or operator (fuzzy match).</p>
 <p>The query string may match the owner or operator (full name, ICAO
 code or IATA code)</p>
@@ -272,7 +272,7 @@ code or IATA code)</p>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.query">
-<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines several requests.</p>
 <p>The keyword arguments correspond to the name of other methods.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">registration</span><span class="o">=</span><span class="s2">&quot;^F-ZB&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;EC45&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -294,7 +294,7 @@ code or IATA code)</p>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.registration">
-<code class="sig-name descname">registration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">registration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by registration (fuzzy match).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span><span class="s2">&quot;F-ZB&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">        icao24 registration typecode serialnumber</span>
@@ -315,7 +315,7 @@ code or IATA code)</p>
 
 <dl class="py method">
 <dt id="traffic.data.basic.aircraft.Aircraft.stats">
-<code class="sig-name descname">stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pandas.DataFrame<a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">stats</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes stats of owned or operated aircraft (fuzzy match).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="s2">&quot;HOP&quot;</span><span class="p">)</span>
 <span class="go">                      model  icao24</span>

@@ -185,7 +185,7 @@
 <h1>traffic.core.FlightIterator<a class="headerlink" href="#traffic-core-flightiterator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="traffic.core.FlightIterator">
-<em class="property">class </em><code class="sig-prename descclassname">traffic.core.</code><code class="sig-name descname">FlightIterator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">generator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.core.</span></code><code class="sig-name descname"><span class="pre">FlightIterator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A FlightIterator is a specific structure providing helpers after methods
 applied on a Flight return a sequence of pieces of trajectories.</p>
@@ -221,7 +221,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.all">
-<code class="sig-name descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.FlightIterator.all" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.FlightIterator.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the concatenation of elements in the FlightIterator.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </pre></div>
@@ -234,7 +234,7 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.has">
-<code class="sig-name descname">has</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#traffic.core.FlightIterator.has" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">has</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#traffic.core.FlightIterator.has" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the FlightIterator is not empty.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">emergency</span><span class="p">()</span><span class="o">.</span><span class="n">has</span><span class="p">()</span>
@@ -249,7 +249,7 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.max">
-<code class="sig-name descname">max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'duration'</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.FlightIterator.max" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">max</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'duration'</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.FlightIterator.max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the biggest element in the Iterator.</p>
 <p>By default, comparison is based on duration.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;altitude &lt; 5000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -263,7 +263,7 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.min">
-<code class="sig-name descname">min</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'duration'</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.FlightIterator.min" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">min</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'duration'</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.FlightIterator.min" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the shortest element in the Iterator.</p>
 <p>By default, comparison is based on duration.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;altitude &lt; 5000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
@@ -277,7 +277,7 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.next">
-<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight">Flight</a><span class="p">]</span><a class="headerlink" href="#traffic.core.FlightIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">next</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.FlightIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first/next element in the FlightIterator.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_attempt</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">runway_change</span><span class="p">()</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
@@ -291,14 +291,14 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.core.FlightIterator.plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.FlightIterator.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots all elements in the structure.</p>
 <p>Arguments as passed as is to the <cite>Flight.plot()</cite> method.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="traffic.core.FlightIterator.sum">
-<code class="sig-name descname">sum</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#traffic.core.FlightIterator.sum" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">sum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#traffic.core.FlightIterator.sum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the size of the FlightIterator.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">go_around</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>

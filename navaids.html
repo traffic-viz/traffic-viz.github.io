@@ -192,7 +192,7 @@
 <h1>Navigational beacons<a class="headerlink" href="#navigational-beacons" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="traffic.data.basic.navaid.Navaids">
-<em class="property">class </em><code class="sig-prename descclassname">traffic.data.basic.navaid.</code><code class="sig-name descname">Navaids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>pandas.DataFrame<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.data.basic.navaid.</span></code><code class="sig-name descname"><span class="pre">Navaids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/VHF_omnidirectional_range">VOR</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Distance_measuring_equipment">DME</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Non-directional_beacon">NDB</a> are short-range
 radio navigation systems for aircraft.  They help aircraft with a receiving
 unit to determine their position and stay on course.</p>
@@ -216,20 +216,20 @@ equipment.</p></li>
 </div>
 <dl class="py method">
 <dt id="traffic.data.basic.navaid.Navaids.download_data">
-<code class="sig-name descname">download_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#traffic.data.basic.navaid.Navaids.download_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">download_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.download_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the latest version of the navaid database from the
 repository.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="traffic.data.basic.navaid.Navaids.global_get">
-<code class="sig-name descname">global_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>traffic.core.structure.Navaid<span class="p">]</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.global_get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">global_get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.structure.Navaid</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.global_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for a navaid from all alternative data sources.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="traffic.data.basic.navaid.Navaids.search">
-<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids">traffic.data.basic.navaid.Navaids</a><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.search" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">search</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><span class="pre">traffic.data.basic.navaid.Navaids</span></a><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects the subset of airways matching name in the name or description
 field.</p>
 <div class="admonition warning">

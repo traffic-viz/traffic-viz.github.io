@@ -186,9 +186,7 @@
             
   <div class="section" id="is-this-a-plane">
 <h1>Is this a plane?<a class="headerlink" href="#is-this-a-plane" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center">
-<img alt="View from my seat" src="../_images/aircraft.jpg" />
-</div>
+<img alt="View from my seat" class="align-center" src="../_images/aircraft.jpg" />
 <p>On my way to the <a class="reference external" href="https://workshop.opensky-network.org/">Opensky Network workshop 2018</a>,
 I could catch a picture of this aircraft which looked really close.
 I wondered how close it came to us considering that the usual separation rule
@@ -199,7 +197,8 @@ between aircraft is of 5 nautical miles (horizontal) and 1000ft (vertical).</p>
 <span class="n">flight</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
     <span class="s2">&quot;2018-11-15 06:00&quot;</span><span class="p">,</span>  <span class="c1"># UTC</span>
     <span class="s2">&quot;2018-11-15 08:00&quot;</span><span class="p">,</span>
-    <span class="n">callsign</span><span class="o">=</span><span class="s1">&#39;DLH07F&#39;</span> <span class="c1"># of course, you need to know the callsign of your flight</span>
+    <span class="n">callsign</span><span class="o">=</span><span class="s1">&#39;DLH07F&#39;</span><span class="p">,</span> <span class="c1"># of course, you need to know the callsign of your flight</span>
+    <span class="n">return_flight</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -325,7 +324,7 @@ Tunis). Let’s plot their lateral distance vs. time.</p>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 
     <span class="n">flight</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">around</span><span class="p">[</span><span class="s1">&#39;AFR1084&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;d_horz&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lateral&#39;</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lateral distance between aircraft (in nm)&quot;</span>
     <span class="p">)</span>
 </pre></div>
@@ -375,7 +374,7 @@ altitude though.</p>
             <span class="p">),</span>
         <span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/aircraft_map.png"><img alt="Situational map" class="align-center" src="../_images/aircraft_map.png" style="width: 386.4px; height: 390.59999999999997px;" /></a>
