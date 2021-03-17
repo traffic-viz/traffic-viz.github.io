@@ -190,6 +190,94 @@
             
   <div class="section" id="airways-ats-routes">
 <h1>Airways, ATS routes<a class="headerlink" href="#airways-ats-routes" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="traffic.data.basic.airways.Airways">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.data.basic.airways.</span></code><code class="sig-name descname"><span class="pre">Airways</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.airways.Airways" title="Permalink to this definition">¶</a></dt>
+<dd><p>An ATS route is a specified route designed for channelling the flow of
+traffic as necessary for the provision of air traffic services.</p>
+<p>The term “ATS route” is used to mean variously, airway, advisory route,
+controlled or uncontrolled route, arrival or departure route, etc.</p>
+<p>An ATS route is defined by route specifications which include an ATS route
+designator, the track to or from significant points (waypoints), distance
+between significant points, reporting requirements and, as determined by the
+appropriate ATS authority, the lowest safe altitude. (ICAO Annex 11 - Air
+Traffic Services)</p>
+<p>A (deprecated) database of world ATS routes is available as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span>
+</pre></div>
+</div>
+<p>Any ATS route can be accessed by the bracket notation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="p">[</span><span class="s1">&#39;UN869&#39;</span><span class="p">]</span>
+<span class="go">UN869 (FTV, RUSIK, ADM, MABAP, PELAX, SLK, RBT, GALTO, PIMOS, MGA, BLN,</span>
+<span class="go">ANZAN, NASOS, ADUXO, EDIMU, PISUS, EXEMU, ZAR, ELSAP, XOMBO, TIVLI, AGN,</span>
+<span class="go">NARAK, NASEP, ROMAK, MINSO, MOKDI, LERGA, TITVA, REPSI, MEBAK, NINTU, MILPA,</span>
+<span class="go">GVA10, VEROX, NEMOS, BENOT, LUTIX, OLBEN, RINLI, NATOR, TEDGO, GUPIN, DKB,</span>
+<span class="go">ODEGU, AMOSA, KEGOS, ANELA, KEPOM, NOGRA, RONIG, OKG)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following snippet plots the (in)famous <a class="reference external" href="https://flugdienstberater.org/l888">Silk Road Airway (L888)</a> over the Himalaya mountains,
+which requires special qualifications.</p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">navaids</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">Orthographic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Orthographic</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span>    <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="n">airways</span><span class="p">[</span><span class="s2">&quot;L888&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">airways</span><span class="p">[</span><span class="s2">&quot;L888&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">navaids</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="n">navaids</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;^&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/airways_l888.png"><img alt="L888 route" class="align-center" src="_images/airways_l888.png" style="width: 414.5px; height: 414.5px;" /></a>
+<dl class="py method">
+<dt id="traffic.data.basic.airways.Airways.global_get">
+<code class="sig-name descname"><span class="pre">global_get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.structure.Route</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.data.basic.airways.Airways.global_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for a route from all alternative data sources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.airways.Airways.search">
+<code class="sig-name descname"><span class="pre">search</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.data.basic.airways.Airways" title="traffic.data.basic.airways.Airways"><span class="pre">traffic.data.basic.airways.Airways</span></a><a class="headerlink" href="#traffic.data.basic.airways.Airways.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the subset of airways matching name in the route name or in the
+passed navigational beacon.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s1">&#39;Switzerland&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Z50&quot;</span><span class="p">)</span>
+<span class="go">        route   id   navaid  lat          lon</span>
+<span class="go">101157  Z50     7    GERSA   47.039375    8.532114</span>
+<span class="go">101158  Z50     8    KELIP   46.956194    8.761667</span>
+<span class="go">101159  Z50     9    SOPER   46.889444    8.944444</span>
+<span class="go">101160  Z50     10   PELAD   46.598889    9.725833</span>
+<span class="go">101161  Z50     11   RESIA   46.478333    10.043333</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="traffic.data.basic.airways.Airways.through">
+<code class="sig-name descname"><span class="pre">through</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.structure.Route</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.data.basic.airways.Airways.through" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all routes going through the given navigational beacon.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">through</span><span class="p">(</span><span class="s1">&#39;NARAK&#39;</span><span class="p">)</span>
+<span class="go">[N869 (ROMAK, NASEP, NARAK),</span>
+<span class="go"> UN859 (PUMAL, ROCAN, LOMRA, GAI, NARAK, EVPOK, BALAN, AMB),</span>
+<span class="go"> UN869 (ELSAP, XOMBO, TIVLI, AGN, NARAK, NASEP, ROMAK, MINSO, MOKDI),</span>
+<span class="go"> UT122 (SECHE, NARAK, DITEV),</span>
+<span class="go"> UY155 (ETENU, NARAK),</span>
+<span class="go"> UZ365 (DIRMO, GUERE, NARAK)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
