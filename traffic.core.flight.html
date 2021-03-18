@@ -1190,6 +1190,13 @@ Amsterdam)</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="traffic.core.Flight.parking_position">
+<code class="sig-name descname"><span class="pre">parking_position</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_alt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">3000</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.parking_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first parking position of the aircraft</p>
+<p>TODO test/adapt for parking position after landing</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="traffic.core.Flight.phases">
 <code class="sig-name descname"><span class="pre">phases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twindow</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><a class="headerlink" href="#traffic.core.Flight.phases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a flight phase to each timestamp of a flight
