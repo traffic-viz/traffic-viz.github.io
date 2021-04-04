@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Plugins &mdash; traffic  documentation</title>
@@ -191,7 +192,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="plugins">
+  <section id="plugins">
 <h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>Plugins are pieces of software which are designed to extend the
 basic functionalities of the traffic library. Plugins can be
@@ -199,7 +200,7 @@ implemented through a <a class="reference external" href="https://setuptools.rea
 mechanism and selectively activated in the configuration file.</p>
 <p>Some plugins are provided by the traffic library with visualisation
 facilities for Leaflet, Kepler.gl and CesiumJS.</p>
-<div class="section" id="plugin-activation">
+<section id="plugin-activation">
 <h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this headline">¶</a></h2>
 <p>You may activate plugins in the configuration file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
@@ -213,8 +214,8 @@ activate:</p>
 <span class="n">enabled_plugins</span> <span class="o">=</span> <span class="n">Leaflet</span><span class="p">,</span> <span class="n">Kepler</span><span class="p">,</span> <span class="n">CesiumJS</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="available-plugins">
+</section>
+<section id="available-plugins">
 <h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -249,8 +250,8 @@ activate:</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="plugin-registration">
+</section>
+<section id="plugin-registration">
 <h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline">¶</a></h2>
 <p>You may write your own plugins to monkey-patch the library and
 registrate them using entry points in your setup.py configuration.</p>
@@ -278,8 +279,8 @@ plugin is enabled. (Check an example on the <a class="reference external" href="
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection &mdash; traffic  documentation</title>
@@ -186,7 +187,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection">
+  <section id="detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection">
 <h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Permalink to this headline">¶</a></h1>
 <p>Xavier Olive, Jeremy Grignard, Thomas Dubot and Julie Saint-Lot</p>
 <div class="line-block">
@@ -195,7 +196,7 @@
 <div class="line">Details are presented in the paper. The following code is provided for
 reproducibility concerns.</div>
 </div>
-<div class="section" id="the-dataset">
+<section id="the-dataset">
 <h2>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline">¶</a></h2>
 <p>The basic dataset consists of one year of trajectories between Paris
 Orly and Toulouse Blagnac airports. A learning box is arbitrarily
@@ -232,8 +233,8 @@ callsigns selected for this route.</p>
 <span class="n">AFR88DM</span> <span class="n">EZY24EH</span> <span class="n">EZY289N</span> <span class="n">EZY353H</span> <span class="n">EZY4019</span> <span class="n">EZY4029</span> <span class="n">EZY98KP</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-preparation">
+</section>
+<section id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
 <p>The following plot explains how each trajectory is prepared. The basic
 idea is to clip the trajectory to the learning box, then to resample
@@ -411,8 +412,8 @@ dataset.</p>
         <th id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4level0_row9" class="row_heading level0 row9" >AFR77PQ_1060</th>
         <td id="T_4bd393a4_f168_11e8_82cd_e0d55e6d4ab4row9_col0" class="data row9 col0" >150</td>
     </tr></tbody>
-</table></div>
-<div class="section" id="machine-learning">
+</table></section>
+<section id="machine-learning">
 <h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
 <p>The anomaly detection method is based on a shallow autoencoder
 (<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation). For the sake of
@@ -528,8 +529,8 @@ the distribution as explained in the paper.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/atc_detect_distribution.png"><img alt="../_images/atc_detect_distribution.png" class="align-center" src="../_images/atc_detect_distribution.png" style="width: 524.3px; height: 838.5999999999999px;" /></a>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

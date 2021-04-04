@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods &mdash; traffic  documentation</title>
@@ -185,7 +186,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="identifying-anomalies-in-past-en-route-trajectories-with-clustering-and-anomaly-detection-methods">
+  <section id="identifying-anomalies-in-past-en-route-trajectories-with-clustering-and-anomaly-detection-methods">
 <h1>Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods<a class="headerlink" href="#identifying-anomalies-in-past-en-route-trajectories-with-clustering-and-anomaly-detection-methods" title="Permalink to this headline">¶</a></h1>
 <p>Xavier Olive and Luis Basora</p>
 <div class="line-block">
@@ -193,7 +194,7 @@
 <div class="line">Details are presented in the paper. The following code is provided for
 reproducibility concerns.</div>
 </div>
-<div class="section" id="data-preparation">
+<section id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
@@ -297,8 +298,8 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 </pre></div>
 </div>
 <img alt="../_images/sectflow_cluster.png" class="align-center" src="../_images/sectflow_cluster.png" />
-</div>
-<div class="section" id="machine-learning">
+</section>
+<section id="machine-learning">
 <h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
 <p>The anomaly detection method is based on a stacked autoencoder
 (<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation).</p>
@@ -401,8 +402,8 @@ parameter helps reducing this trend.</p>
 </pre></div>
 </div>
 <img alt="../_images/sectflow_distribution.png" class="align-center" src="../_images/sectflow_distribution.png" />
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
