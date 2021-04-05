@@ -235,10 +235,10 @@
 </li>
       <li><a href="airways.html#traffic.data.basic.airways.Airways">Airways (class in traffic.data.basic.airways)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.aligned_on_ils">aligned_on_ils() (traffic.core.Flight method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.aligned_on_navpoint">aligned_on_navpoint() (traffic.core.Flight method)</a>
 </li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.aligned_on_runway">aligned_on_runway() (traffic.core.Flight method)</a>
@@ -280,6 +280,8 @@
       <ul>
         <li><a href="so6_usage.html#traffic.data.eurocontrol.ddr.so6.Flight.at">(traffic.data.eurocontrol.ddr.so6.Flight method)</a>
 </li>
+        <li><a href="so6_usage.html#traffic.data.SO6.at">(traffic.data.SO6 method)</a>
+</li>
       </ul></li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.at_ratio">at_ratio() (traffic.core.Flight method)</a>
 </li>
@@ -295,6 +297,8 @@
 
       <ul>
         <li><a href="so6_usage.html#traffic.data.eurocontrol.ddr.so6.Flight.between">(traffic.data.eurocontrol.ddr.so6.Flight method)</a>
+</li>
+        <li><a href="so6_usage.html#traffic.data.SO6.between">(traffic.data.SO6 method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -467,8 +471,6 @@
         <li><a href="traffic.core.traffic.html#traffic.core.Traffic.first">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="traffic.core.airspace.html#traffic.core.Airspace.flatten">flatten() (traffic.core.Airspace method)</a>
 </li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight">Flight (class in traffic.core)</a>
@@ -477,9 +479,17 @@
         <li><a href="so6_usage.html#traffic.data.eurocontrol.ddr.so6.Flight">(class in traffic.data.eurocontrol.ddr.so6)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="b2b_usage.html#traffic.data.eurocontrol.b2b.NMB2B.flight_get">flight_get() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.flight_id">flight_id() (traffic.core.Flight property)</a>
 </li>
       <li><a href="traffic.core.traffic.html#traffic.core.Traffic.flight_ids">flight_ids (traffic.core.Traffic attribute)</a>
+</li>
+      <li><a href="b2b_usage.html#traffic.data.eurocontrol.b2b.NMB2B.flight_list">flight_list() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+      <li><a href="b2b_usage.html#traffic.data.eurocontrol.b2b.NMB2B.flight_search">flight_search() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
 </li>
       <li><a href="traffic.core.iterator.html#traffic.core.FlightIterator">FlightIterator (class in traffic.core)</a>
 </li>
@@ -491,6 +501,8 @@
         <li><a href="export.html#traffic.core.mixins.DataFrameMixin.from_file">(traffic.core.mixins.DataFrameMixin class method)</a>
 </li>
         <li><a href="traffic.core.traffic.html#traffic.core.Traffic.from_file">(traffic.core.Traffic class method)</a>
+</li>
+        <li><a href="so6_usage.html#traffic.data.SO6.from_file">(traffic.data.SO6 class method)</a>
 </li>
       </ul></li>
       <li><a href="traffic.core.traffic.html#traffic.core.Traffic.from_flights">from_flights() (traffic.core.Traffic class method)</a>
@@ -568,11 +580,17 @@
       <ul>
         <li><a href="traffic.core.traffic.html#traffic.core.Traffic.inside_bbox">(traffic.core.Traffic method)</a>
 </li>
+        <li><a href="so6_usage.html#traffic.data.SO6.inside_bbox">(traffic.data.SO6 method)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.intersects">intersects() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="so6_usage.html#traffic.data.SO6.intersects">(traffic.data.SO6 method)</a>
 </li>
+      </ul></li>
       <li><a href="traffic.core.traffic.html#traffic.core.Traffic.iterate">iterate() (traffic.core.Traffic method)</a>
 </li>
       <li><a href="traffic.core.traffic.html#traffic.core.Traffic.iterate_lazy">iterate_lazy() (traffic.core.Traffic method)</a>
@@ -595,6 +613,12 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="traffic.core.airspace.html#traffic.core.Airspace.leaflet">leaflet() (traffic.core.Airspace method)</a>
+
+      <ul>
+        <li><a href="traffic.core.flight.html#traffic.core.Flight.leaflet">(traffic.core.Flight method)</a>
+</li>
+      </ul></li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.longer_than">longer_than() (traffic.core.Flight method)</a>
 
       <ul>
@@ -655,6 +679,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="b2b_usage.html#traffic.data.eurocontrol.b2b.NMB2B">NMB2B (class in traffic.data.eurocontrol.b2b)</a>
+</li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.number">number() (traffic.core.Flight property)</a>
 </li>
   </ul></td>
@@ -749,6 +775,8 @@
 </li>
       <li><a href="aircraft.html#traffic.data.basic.aircraft.Aircraft.registration">registration() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
+      <li><a href="b2b_usage.html#traffic.data.eurocontrol.b2b.NMB2B.regulation_list">regulation_list() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.rename">rename() (traffic.core.Flight method)</a>
 
       <ul>
@@ -805,6 +833,8 @@
       </ul></li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.skip">skip() (traffic.core.Flight method)</a>
 </li>
+      <li><a href="so6_usage.html#traffic.data.SO6">SO6 (class in traffic.data)</a>
+</li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.sort_values">sort_values() (traffic.core.Flight method)</a>
 
       <ul>
@@ -859,6 +889,12 @@
         <li><a href="export.html#traffic.core.mixins.DataFrameMixin.to_csv">(traffic.core.mixins.DataFrameMixin method)</a>
 </li>
         <li><a href="traffic.core.traffic.html#traffic.core.Traffic.to_csv">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="traffic.core.traffic.html#traffic.core.Traffic.to_czml">to_czml() (traffic.core.Traffic method)</a>
+
+      <ul>
+        <li><a href="so6_usage.html#traffic.data.SO6.to_czml">(traffic.data.SO6 method)</a>
 </li>
       </ul></li>
       <li><a href="traffic.core.flight.html#traffic.core.Flight.to_excel">to_excel() (traffic.core.Flight method)</a>
