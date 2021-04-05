@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Running traffic in a Docker container &mdash; traffic  documentation</title>
@@ -184,10 +183,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="running-traffic-in-a-docker-container">
+  <div class="section" id="running-traffic-in-a-docker-container">
 <h1>Running traffic in a Docker container<a class="headerlink" href="#running-traffic-in-a-docker-container" title="Permalink to this headline">¶</a></h1>
 <p>It is quite simple to run the traffic library in a Docker container. The following two examples show how you can use the traffic library in a docker with <a class="reference external" href="https://jupyter-docker-stacks.readthedocs.io/en/latest/">jupyter notebook</a>. If you are completely unfamiliar with Docker and how to modify a Docker image, you can find a good tutorial in the <a class="reference external" href="https://docs.docker.com/get-started/">official documentation</a>. Of course, you can base your Docker container on a different Dockerfile as the one used in the examples.</p>
-<section id="basic-docker-container">
+<div class="section" id="basic-docker-container">
 <h2>Basic Docker container<a class="headerlink" href="#basic-docker-container" title="Permalink to this headline">¶</a></h2>
 <p>In the simplest case when you just want to run the traffic library in a Docker container, you can install the library and its dependencies directly into the base environment of the container. In that case, the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look like the following:</p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">jupyter/minimal-notebook</span>
@@ -205,8 +204,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">8888</span>:8888 --name jupyter_traffic jupyter/traffic:latest
 </pre></div>
 </div>
-</section>
-<section id="docker-container-using-a-conda-environment">
+</div>
+<div class="section" id="docker-container-using-a-conda-environment">
 <h2>Docker container using a conda environment<a class="headerlink" href="#docker-container-using-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>Maybe you have already a working conda environment that you would like to use. In this case, you can install your existing environment into the Docker container. The <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could looks like the following:</p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">jupyter/minimal-notebook</span>
@@ -236,8 +235,8 @@
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traffic</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

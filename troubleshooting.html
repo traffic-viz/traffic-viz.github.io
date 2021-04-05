@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Troubleshooting &mdash; traffic  documentation</title>
@@ -185,11 +184,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="troubleshooting">
+  <div class="section" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <p>The following reported problems are not about the traffic library per
 se. Some are related to limitations set by dependencies.</p>
-<section id="i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy">
+<div class="section" id="i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy">
 <h2>I can’t access resources from the Internet as I am behind a proxy<a class="headerlink" href="#i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy" title="Permalink to this headline">¶</a></h2>
 <p>All network accesses are made with the <a class="reference external" href="https://requests.readthedocs.io/">requests</a> library (or the <a class="reference external" href="http://www.paramiko.org/">paramiko</a> library for the Impala shell). Usually, if your
 environment variables are properly set, you should not encounter any particular
@@ -216,8 +215,8 @@ according to your network configuration.</p>
 <span class="c1"># ssh.proxycommand = connect.exe -H proxy_ip:proxy_port data.opensky-network.org 2230</span>
 </pre></div>
 </div>
-</section>
-<section id="python-crashes-when-i-try-to-reproduce-plots-in-the-documentation">
+</div>
+<div class="section" id="python-crashes-when-i-try-to-reproduce-plots-in-the-documentation">
 <h2>Python crashes when I try to reproduce plots in the documentation<a class="headerlink" href="#python-crashes-when-i-try-to-reproduce-plots-in-the-documentation" title="Permalink to this headline">¶</a></h2>
 <p>(or, “My Jupyter kernel crashes…”)</p>
 <p>There must be something wrong with your Cartopy and/or shapely installation.
@@ -245,8 +244,8 @@ Anaconda distribution and install the following libraries <em>the conda way</em>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">binary</span> <span class="p">:</span><span class="nb">all</span><span class="p">:</span> <span class="n">cartopy</span> <span class="n">shapely</span>
 </pre></div>
 </div>
-</section>
-<section id="widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook">
+</div>
+<div class="section" id="widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook">
 <h2>Widgets do not display in Jupyter Lab or Jupyter Notebook<a class="headerlink" href="#widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <p>After executing a cell, you may see one of the following output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">Jupyter</span> <span class="n">Widget</span>
@@ -279,8 +278,8 @@ Anaconda distribution and install the following libraries <em>the conda way</em>
 </div></blockquote>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Quickstart &mdash; traffic  documentation</title>
@@ -190,7 +189,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="quickstart">
+  <div class="section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
 <p>The motivation for this page/notebook is to take the reader through all
 basic functionalities of the traffic library. We will cover:</p>
@@ -206,12 +205,12 @@ trajectories landing at Toulouse airport;</p></li>
 data preprocessing through lazy iteration.</p></li>
 </ol>
 <p>This page is also available as a notebook which can be <a class="reference external" href="https://github.com/xoolive/traffic/tree/master/docs/quickstart.ipynb">downloaded</a> and executed locally; or loaded and executed in <a class="reference external" href="https://colab.research.google.com/github/xoolive/traffic/blob/master/docs/quickstart.ipynb">Google Colab</a>.</p>
-<section id="basic-introduction">
+<div class="section" id="basic-introduction">
 <h2>Basic introduction<a class="headerlink" href="#basic-introduction" title="Permalink to this headline">¶</a></h2>
 <p>The traffic library provides natural methods and attributes that can be
 applied on trajectories and collection of trajectories, all represented
 as pandas DataFrames.</p>
-<section id="the-flight-structure">
+<div class="section" id="the-flight-structure">
 <h3>The <em>Flight</em> structure<a class="headerlink" href="#the-flight-structure" title="Permalink to this headline">¶</a></h3>
 <p><em>Flight</em> is the core class offering representations, methods and
 attributes to single trajectories. A comprehensive description of the
@@ -366,8 +365,8 @@ set to universal time (UTC) as it is common practice in aviation.</p>
     </tr>
   </tbody>
 </table>
-</div></section>
-<section id="the-traffic-structure">
+</div></div>
+<div class="section" id="the-traffic-structure">
 <h3>The <em>Traffic</em> structure<a class="headerlink" href="#the-traffic-structure" title="Permalink to this headline">¶</a></h3>
 <p><em>Traffic</em> is the core class to represent collections of trajectories,
 which are all flattened in the same pandas DataFrame. A comprehensive
@@ -698,8 +697,8 @@ exactly that way.</div>
                         <th id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753level0_row9" class="row_heading level0 row9" >EZY81GE_149</th>
                         <td id="T_e129183c_e2f5_11e9_bcf3_eb15e9e9d753row9_col0" class="data row9 col0" >2579</td>
             </tr>
-    </tbody></table></section>
-<section id="saving-and-loading-data">
+    </tbody></table></div>
+<div class="section" id="saving-and-loading-data">
 <h3>Saving and loading data<a class="headerlink" href="#saving-and-loading-data" title="Permalink to this headline">¶</a></h3>
 <p>Some processing operations are computationally expensive and time
 consuming. Therefore, it may be relevant to store intermediate results
@@ -716,9 +715,9 @@ pickle format. Details about storage formats are presented
 <span class="n">quickstart_id</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;quickstart_id.pkl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="visualisation-of-data">
+</div>
+</div>
+<div class="section" id="visualisation-of-data">
 <h2>Visualisation of data<a class="headerlink" href="#visualisation-of-data" title="Permalink to this headline">¶</a></h2>
 <p><em>traffic</em> offers facilities to leverage the power of common
 visualisation renderers including
@@ -726,7 +725,7 @@ visualisation renderers including
 built around Matplotlib, and <a class="reference external" href="https://altair-viz.github.io/">Altair</a>.</p>
 <p>More visualisation renderers such as Leaflet are available as
 <a class="reference external" href="/plugins.html">plugins</a>.</p>
-<section id="visualisation-of-trajectories">
+<div class="section" id="visualisation-of-trajectories">
 <h3>Visualisation of trajectories<a class="headerlink" href="#visualisation-of-trajectories" title="Permalink to this headline">¶</a></h3>
 <p>When you choose to plot trajectories on a map, you have to make a choice
 concerning how to represent points at the surface of a sphere (more
@@ -812,8 +811,8 @@ visualisations are possible.</p>
 </pre></div>
 </div>
 <img alt="_images/quickstart_trajectory.png" src="_images/quickstart_trajectory.png" />
-</section>
-<section id="visualisation-of-time-series">
+</div>
+<div class="section" id="visualisation-of-time-series">
 <h3>Visualisation of time series<a class="headerlink" href="#visualisation-of-time-series" title="Permalink to this headline">¶</a></h3>
 <p>Facilities are provided to plot time series, after a basic cleaning of
 data (remove NaN values), both with Matplotlib and Altair. The traffic
@@ -834,9 +833,9 @@ style context offers a convenient first style to customise further.</p>
 </pre></div>
 </div>
 <img alt="_images/quickstart_altair.png" src="_images/quickstart_altair.png" />
-</section>
-</section>
-<section id="sources-of-data">
+</div>
+</div>
+<div class="section" id="sources-of-data">
 <h2>Sources of data<a class="headerlink" href="#sources-of-data" title="Permalink to this headline">¶</a></h2>
 <p>Basic navigational data are embedded in the library, together with
 parsing facilities for most common sources of information, with a main
@@ -887,8 +886,8 @@ entry in and last point of exit from the 2D footprint of the geometry.</p>
 </pre></div>
 </div>
 <img alt="_images/quickstart_eham.png" src="_images/quickstart_eham.png" />
-</section>
-<section id="a-simple-use-case">
+</div>
+<div class="section" id="a-simple-use-case">
 <h2>A simple use case<a class="headerlink" href="#a-simple-use-case" title="Permalink to this headline">¶</a></h2>
 <p>The following use case showcases various preprocessing methods that can
 be chained to select all trajectories landing at Toulouse airport. We
@@ -1193,8 +1192,8 @@ with an average vertical speed below 1,000 ft/min.</p>
 </pre></div>
 </div>
 <img alt="_images/quickstart_final.png" src="_images/quickstart_final.png" />
-</section>
-<section id="lazy-iteration">
+</div>
+<div class="section" id="lazy-iteration">
 <h2>Lazy iteration<a class="headerlink" href="#lazy-iteration" title="Permalink to this headline">¶</a></h2>
 <p>Basic operations on Flights define a little language which enables to
 express programmatically any kind of preprocessing.</p>
@@ -1354,8 +1353,8 @@ is not the next method.</p></li>
                         <th id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753level1_row8" class="row_heading level1 row8" >HOP47FK</th>
                         <td id="T_02a44acc_e2f6_11e9_bcf3_eb15e9e9d753row8_col0" class="data row8 col0" >1449</td>
             </tr>
-    </tbody></table></section>
-</section>
+    </tbody></table></div>
+</div>
 
 
            </div>
