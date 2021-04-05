@@ -248,18 +248,6 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.leaflet">
-<code class="sig-name descname"><span class="pre">leaflet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">ipyleaflet.Polygon</span><a class="headerlink" href="#traffic.core.Airspace.leaflet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is only available if the Leaflet <a class="reference external" href="plugins.html">plugin</a> is
-activated. (true by default)</p>
-</div>
-<p>The elements passed as kwargs as passed as is to the Polygon constructor.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="traffic.core.Airspace.project_shape">
 <code class="sig-name descname"><span class="pre">project_shape</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">shapely.geometry.base.BaseGeometry</span><a class="headerlink" href="#traffic.core.Airspace.project_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
