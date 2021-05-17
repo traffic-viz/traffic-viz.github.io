@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -184,34 +187,34 @@
   <div class="section" id="traffic-core-airspace">
 <h1>traffic.core.Airspace<a class="headerlink" href="#traffic-core-airspace" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="traffic.core.Airspace">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.core.</span></code><code class="sig-name descname"><span class="pre">Airspace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.airspace.ExtrudedPolygon</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">designator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Airspace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">Airspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.airspace.ExtrudedPolygon</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">designator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Airspace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.ShapelyMixin</span></code></p>
-<dl class="py method">
-<dt id="traffic.core.Airspace.area">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">area</span></code><a class="headerlink" href="#traffic.core.Airspace.area" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.Airspace.area">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><a class="headerlink" href="#traffic.core.Airspace.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the area of the shape, in square meters.
 The shape is projected to an equivalent local projection before
 computing a value.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="traffic.core.Airspace.bounds">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bounds</span></code><a class="headerlink" href="#traffic.core.Airspace.bounds" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.Airspace.bounds">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple[float,</span> <span class="pre">float,</span> <span class="pre">float,</span> <span class="pre">float]</span></em><a class="headerlink" href="#traffic.core.Airspace.bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the bounds of the (bounding box of the) shape.
 Bounds are given in the following order in the origin crs:
 (west, south, east, north)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="traffic.core.Airspace.centroid">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">centroid</span></code><a class="headerlink" href="#traffic.core.Airspace.centroid" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.Airspace.centroid">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="pre">:</span> <span class="pre">shapely.geometry.Point</span></em><a class="headerlink" href="#traffic.core.Airspace.centroid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="traffic.core.Airspace.extent">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">extent</span></code><a class="headerlink" href="#traffic.core.Airspace.extent" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.Airspace.extent">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple[float,</span> <span class="pre">float,</span> <span class="pre">float,</span> <span class="pre">float]</span></em><a class="headerlink" href="#traffic.core.Airspace.extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the extent of the (bounding box of the) shape.
 Extent is given in the following order in the origin crs:
 (west, east, south, north)</p>
@@ -226,14 +229,14 @@ convenient in the following use case:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.flatten">
-<code class="sig-name descname"><span class="pre">flatten</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">shapely.geometry.Polygon</span><a class="headerlink" href="#traffic.core.Airspace.flatten" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace.flatten">
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">shapely.geometry.Polygon</span><a class="headerlink" href="#traffic.core.Airspace.flatten" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the 2D footprint of the airspace.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.geoencode">
-<code class="sig-name descname"><span class="pre">geoencode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">altair.Chart</span><a class="headerlink" href="#traffic.core.Airspace.geoencode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace.geoencode">
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">altair.Chart</span><a class="headerlink" href="#traffic.core.Airspace.geoencode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
 shape to be composed in an interactive visualization.
 Specific plot features, such as line widths, can be passed via <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs.
@@ -241,15 +244,15 @@ See <a class="reference external" href="https://altair-viz.github.io/user_guide/
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.geojson">
-<code class="sig-name descname"><span class="pre">geojson</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Airspace.geojson" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace.geojson">
+<span class="sig-name descname"><span class="pre">geojson</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Airspace.geojson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the GeoJSON representation of the shape as a Dict.
 The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.leaflet">
-<code class="sig-name descname"><span class="pre">leaflet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">ipyleaflet.Polygon</span><a class="headerlink" href="#traffic.core.Airspace.leaflet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace.leaflet">
+<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">ipyleaflet.Polygon</span><a class="headerlink" href="#traffic.core.Airspace.leaflet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -260,8 +263,8 @@ activated. (true by default)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Airspace.project_shape">
-<code class="sig-name descname"><span class="pre">project_shape</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">shapely.geometry.base.BaseGeometry</span><a class="headerlink" href="#traffic.core.Airspace.project_shape" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Airspace.project_shape">
+<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">shapely.geometry.base.BaseGeometry</span><a class="headerlink" href="#traffic.core.Airspace.project_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
 <p>By default, an equivalent projection is applied. Equivalent projections
 locally respect areas, which is convenient for the area attribute.</p>

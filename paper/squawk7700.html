@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -144740,10 +144743,11 @@ select flights meeting certain requirements:</p>
 </div><p>These flights are usually characterised by a rapid descent to around
 10,000ft.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">pressure</span><span class="p">[</span><span class="s2">&quot;RPA4599_20190719&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span>
+    <span class="n">pressure</span><span class="p">[</span><span class="s2">&quot;RPA4599_20190719&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">chart</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">))</span>
     <span class="o">+</span> <span class="nb">next</span><span class="p">(</span><span class="n">pressure</span><span class="p">[</span><span class="s2">&quot;RPA4599_20190719&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">emergency</span><span class="p">())</span>
     <span class="o">.</span><span class="n">assign_id</span><span class="p">(</span><span class="s2">&quot;emergency&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">chart</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">))</span>
 <span class="p">)</span>
 </pre></div>
 </div>

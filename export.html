@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -219,13 +222,13 @@ format.</p></li>
 </ul>
 <p>The <a class="reference external" href="traffic.core.flight.html">Flight</a> and <a class="reference external" href="traffic.core.traffic.html">Traffic</a> structures implement the following methods:</p>
 <dl class="py class">
-<dt id="traffic.core.mixins.DataFrameMixin">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></code><code class="sig-name descname"><span class="pre">DataFrameMixin</span></code><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>DataFrameMixin aggregates a pandas DataFrame and provides the same
 representation methods.</p>
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.from_file">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.from_file">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -247,8 +250,8 @@ method with the kwargs argument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.to_csv">
-<code class="sig-name descname"><span class="pre">to_csv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to CSV format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
 as args and kwargs arguments.</p>
@@ -256,8 +259,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.to_hdf">
-<code class="sig-name descname"><span class="pre">to_hdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to HDF format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
 as args and kwargs arguments.</p>
@@ -265,8 +268,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.to_json">
-<code class="sig-name descname"><span class="pre">to_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to JSON format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
 as args and kwargs arguments.</p>
@@ -274,8 +277,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.to_parquet">
-<code class="sig-name descname"><span class="pre">to_parquet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to parquet format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
 as args and kwargs arguments.</p>
@@ -283,8 +286,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.mixins.DataFrameMixin.to_pickle">
-<code class="sig-name descname"><span class="pre">to_pickle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to pickle format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
 as args and kwargs arguments.</p>

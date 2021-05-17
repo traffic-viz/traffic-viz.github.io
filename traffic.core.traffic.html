@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -184,8 +187,8 @@
   <div class="section" id="traffic-core-traffic">
 <h1>traffic.core.Traffic<a class="headerlink" href="#traffic-core-traffic" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="traffic.core.Traffic">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">traffic.core.</span></code><code class="sig-name descname"><span class="pre">Traffic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">Traffic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.HBoxMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.GeographyMixin</span></code></p>
 <p>Traffic is the abstraction representing a collection of <a class="reference external" href="traffic.core.flight.html">Flights</a>. When Flight objects are summed up, the
 resulting structure is a Traffic.</p>
@@ -204,8 +207,8 @@ collection, <strong>lazy iteration and evaluation</strong> is in place. This mea
 that applying such a method on a Traffic structure will only stack
 operations without evaluating them.</p>
 <dl class="py class">
-<dt id="traffic.core.lazy.Traffic.LazyTraffic">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">LazyTraffic</span></code><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.lazy.Traffic.LazyTraffic">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LazyTraffic</span></span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic" title="Permalink to this definition">¶</a></dt>
 <dd><p>In the following example, <code class="docutils literal notranslate"><span class="pre">lazy_t</span></code> is not evaluated:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lazy_t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;10s&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">t_lazy</span><span class="p">)</span>
@@ -213,8 +216,8 @@ operations without evaluating them.</p>
 </pre></div>
 </div>
 <dl class="py method">
-<dt id="traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval">
-<code class="sig-prename descclassname"><span class="pre">LazyTraffic.</span></code><code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval">
+<span class="sig-prename descclassname"><span class="pre">LazyTraffic.</span></span><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result can only be accessed after a call to <code class="docutils literal notranslate"><span class="pre">eval()</span></code>.</p>
 <dl>
 <dt>max_workers: int, default: 1</dt><dd><p>Multiprocessing is usually worth it. However, a sequential
@@ -257,8 +260,8 @@ default options.</p>
 <code class="docutils literal notranslate"><span class="pre">traffic.data.samples</span></code></p>
 </div>
 <dl class="py method">
-<dt id="traffic.core.Traffic.agg_latlon">
-<code class="sig-name descname"><span class="pre">agg_latlon</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.agg_latlon" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.agg_latlon">
+<span class="sig-name descname"><span class="pre">agg_latlon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.agg_latlon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregates values of a traffic over a grid of lat/lon.</p>
 <p>The resolution of the grid is passed as a dictionary parameter.
 By default, the grid is made by rounding latitudes and longitudes to
@@ -287,8 +290,8 @@ in order to plot density heatmaps.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.agg_time">
-<code class="sig-name descname"><span class="pre">agg_time</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.agg_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.agg_time">
+<span class="sig-name descname"><span class="pre">agg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.agg_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate features on time windows.</p>
 <p>The following is performed:</p>
 <ul class="simple">
@@ -310,8 +313,8 @@ averaged per intervals of 3 minutes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.agg_xy">
-<code class="sig-name descname"><span class="pre">agg_xy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.agg_xy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.agg_xy">
+<span class="sig-name descname"><span class="pre">agg_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.agg_xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregates values of a traffic over a grid of x/y, with x and y
 computed by <cite>traffic.core.GeographyMixin.compute_xy()</cite>.</p>
 <p>The resolution of the grid is passed as a dictionary parameter.
@@ -340,8 +343,8 @@ plot density heatmaps.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.airborne">
-<code class="sig-name descname"><span class="pre">airborne</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.traffic.Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.airborne" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.airborne">
+<span class="sig-name descname"><span class="pre">airborne</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><span class="pre">traffic.core.traffic.Traffic</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.airborne" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the airborne part of the Traffic.</p>
 <p>The airborne part is determined by an <code class="docutils literal notranslate"><span class="pre">onground</span></code> flag or null values
 in the altitude column.</p>
@@ -353,20 +356,20 @@ stacked for lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.aircraft">
-<code class="sig-name descname"><span class="pre">aircraft</span></code><a class="headerlink" href="#traffic.core.Traffic.aircraft" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.aircraft">
+<span class="sig-name descname"><span class="pre">aircraft</span></span><a class="headerlink" href="#traffic.core.Traffic.aircraft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all the different icao24 aircraft ids in the DataFrame</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.aircraft_data">
-<code class="sig-name descname"><span class="pre">aircraft_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.traffic.Traffic</span><a class="headerlink" href="#traffic.core.Traffic.aircraft_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.aircraft_data">
+<span class="sig-name descname"><span class="pre">aircraft_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><span class="pre">traffic.core.traffic.Traffic</span></a><a class="headerlink" href="#traffic.core.Traffic.aircraft_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add registration and aircraft typecode based on the <a class="reference external" href="aircraft.html">aircraft database</a>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.all">
-<code class="sig-name descname"><span class="pre">all</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.all">
+<span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the concatenation of segments returns by flight.method().</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
@@ -381,8 +384,8 @@ stacked for lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.apply_time">
-<code class="sig-name descname"><span class="pre">apply_time</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.apply_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.apply_time">
+<span class="sig-name descname"><span class="pre">apply_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.apply_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply features on time windows.</p>
 <p>The following is performed:</p>
 <ul class="simple">
@@ -404,15 +407,15 @@ distance between points sampled every 10 minutes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.assign">
-<code class="sig-name descname"><span class="pre">assign</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.assign" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.assign" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">assign()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.assign_id">
-<code class="sig-name descname"><span class="pre">assign_id</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.assign_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.assign_id">
+<span class="sig-name descname"><span class="pre">assign_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.assign_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns a <cite>flight_id</cite> to trajectories present in the structure.</p>
 <p>The heuristics with iterate on flights based on <code class="docutils literal notranslate"><span class="pre">flight_id</span></code> (if the
 feature is present) or of <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">callsign</span></code> and intervals of time
@@ -426,14 +429,14 @@ by default based on the callsign and an incremented index.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.callsigns">
-<code class="sig-name descname"><span class="pre">callsigns</span></code><a class="headerlink" href="#traffic.core.Traffic.callsigns" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.callsigns">
+<span class="sig-name descname"><span class="pre">callsigns</span></span><a class="headerlink" href="#traffic.core.Traffic.callsigns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all the different callsigns in the DataFrame</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.centroid">
-<code class="sig-name descname"><span class="pre">centroid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_samples</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">,</span> </span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TransformerProtocol</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><a class="headerlink" href="#traffic.core.Traffic.centroid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_samples</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">,</span> </span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TransformerProtocol</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><span class="pre">Flight</span></a><a class="headerlink" href="#traffic.core.Traffic.centroid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the trajectory in the Traffic that is the closest to all other
 trajectories.</p>
 <div class="admonition warning">
@@ -444,8 +447,8 @@ trajectories.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.clean_invalid">
-<code class="sig-name descname"><span class="pre">clean_invalid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.traffic.Traffic</span><a class="headerlink" href="#traffic.core.Traffic.clean_invalid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.clean_invalid">
+<span class="sig-name descname"><span class="pre">clean_invalid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><span class="pre">traffic.core.traffic.Traffic</span></a><a class="headerlink" href="#traffic.core.Traffic.clean_invalid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes irrelevant data from the Traffic DataFrame.</p>
 <p>Data that has been downloaded from the OpenSky Impala shell often
 contains faulty data, esp. because of faulty callsigns (wrongly decoded?
@@ -469,8 +472,8 @@ associated to aircraft icao24 <cite>02008b</cite> which could be easily removed.
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.clip">
-<code class="sig-name descname"><span class="pre">clip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.clip" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.clip">
+<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clips the trajectory to a given shape.</p>
 <p>For a shapely Geometry, the first time of entry and the last time of
 exit are first computed before returning the part of the trajectory
@@ -490,8 +493,8 @@ shape.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.closest_point_of_approach">
-<code class="sig-name descname"><span class="pre">closest_point_of_approach</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lateral_separation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_separation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">round_t</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">CPA</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.closest_point_of_approach" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.closest_point_of_approach">
+<span class="sig-name descname"><span class="pre">closest_point_of_approach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lateral_separation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_separation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">round_t</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">CPA</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.closest_point_of_approach" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a Closest Point of Approach (CPA) dataframe for all pairs of
 trajectories candidates for being separated by less than
 lateral_separation in vertical_separation.</p>
@@ -526,8 +529,8 @@ processors.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.clustering">
-<code class="sig-name descname"><span class="pre">clustering</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clustering</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClusteringProtocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_samples</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">,</span> </span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TransformerProtocol</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_traffic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.algorithms.clustering.Clustering</span><a class="headerlink" href="#traffic.core.Traffic.clustering" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.clustering">
+<span class="sig-name descname"><span class="pre">clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clustering</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClusteringProtocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_samples</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">,</span> </span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TransformerProtocol</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_traffic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.algorithms.clustering.Clustering</span><a class="headerlink" href="#traffic.core.Traffic.clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a clustering of the trajectories, add labels in a column
 <code class="docutils literal notranslate"><span class="pre">cluster</span></code>.</p>
 <p>The method:</p>
@@ -574,8 +577,8 @@ Traffic DataFrame with an additional <code class="docutils literal notranslate">
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.compute_wind">
-<code class="sig-name descname"><span class="pre">compute_wind</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.compute_wind" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.compute_wind">
+<span class="sig-name descname"><span class="pre">compute_wind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.compute_wind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the wind triangle for each timestamp.</p>
 <p>This method requires <code class="docutils literal notranslate"><span class="pre">groundspeed</span></code>, <code class="docutils literal notranslate"><span class="pre">track</span></code>, true airspeed
 (<code class="docutils literal notranslate"><span class="pre">TAS</span></code>), and <code class="docutils literal notranslate"><span class="pre">heading</span></code> features. The groundspeed and the track angle
@@ -594,8 +597,8 @@ data is not necessarily available depending on the location.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.compute_xy">
-<code class="sig-name descname"><span class="pre">compute_xy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.compute_xy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.compute_xy">
+<span class="sig-name descname"><span class="pre">compute_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span> </span><span class="pre">cartopy.crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.compute_xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enrich the structure with new x and y columns computed through a
 projection of the latitude and longitude columns.</p>
 <p>The source projection is WGS84 (EPSG 4326).
@@ -609,8 +612,8 @@ projection centered on the data inside the dataframe.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.cumulative_distance">
-<code class="sig-name descname"><span class="pre">cumulative_distance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.cumulative_distance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.cumulative_distance">
+<span class="sig-name descname"><span class="pre">cumulative_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.cumulative_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enrich the structure with new <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> column computed from
 latitude and longitude columns.</p>
 <p>The first <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> value is 0, then distances are computed (in
@@ -629,8 +632,8 @@ decoded <code class="docutils literal notranslate"><span class="pre">track</span
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.distance">
-<code class="sig-name descname"><span class="pre">distance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.distance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the distance from a Flight to another entity.</p>
 <p>The behaviour is different according to the type of the second
 element:</p>
@@ -663,28 +666,28 @@ before calling the method.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.drop">
-<code class="sig-name descname"><span class="pre">drop</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.drop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.drop">
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.drop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.drop_duplicates">
-<code class="sig-name descname"><span class="pre">drop_duplicates</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.drop_duplicates">
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.drop_duplicates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.end_time">
-<code class="sig-name descname"><span class="pre">end_time</span></code><a class="headerlink" href="#traffic.core.Traffic.end_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><a class="headerlink" href="#traffic.core.Traffic.end_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the latest timestamp in the DataFrame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.feature_gt">
-<code class="sig-name descname"><span class="pre">feature_gt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.feature_gt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.feature_gt">
+<span class="sig-name descname"><span class="pre">feature_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.feature_gt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if feature(flight) is greater than value.</p>
 <p>This is fully equivalent to <cite>f.longer_than(“1 minute”)</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_gt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
@@ -705,8 +708,8 @@ lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.feature_lt">
-<code class="sig-name descname"><span class="pre">feature_lt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.feature_lt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.feature_lt">
+<span class="sig-name descname"><span class="pre">feature_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.feature_lt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if feature(flight) is less than value.</p>
 <p>This is fully equivalent to <cite>f.shorter_than(“1 minute”)</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_lt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
@@ -727,15 +730,15 @@ lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.fillna">
-<code class="sig-name descname"><span class="pre">fillna</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.fillna" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.fillna">
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.fillna" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.filter">
-<code class="sig-name descname"><span class="pre">filter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.filter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filters the trajectory given features with a median filter.</p>
 <p>The method first applies a median filter on each feature of the
 DataFrame. A default kernel size is applied for a number of features
@@ -767,8 +770,8 @@ list/tuples of integers for cascade of filters:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.first">
-<code class="sig-name descname"><span class="pre">first</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.first" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.first">
+<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.first" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first n days, hours, minutes or seconds of the Flight.</p>
 <p>The elements passed as kwargs as passed as is to the datetime.timedelta
 constructor.</p>
@@ -785,14 +788,14 @@ constructor.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.flight_ids">
-<code class="sig-name descname"><span class="pre">flight_ids</span></code><a class="headerlink" href="#traffic.core.Traffic.flight_ids" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.flight_ids">
+<span class="sig-name descname"><span class="pre">flight_ids</span></span><a class="headerlink" href="#traffic.core.Traffic.flight_ids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all the different flight_id in the DataFrame</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.from_file">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TrafficTypeVar</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.from_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.from_file">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.traffic.TrafficTypeVar</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -814,15 +817,15 @@ method with the kwargs argument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.from_flights">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_flights</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.flight.Flight</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.traffic.Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.from_flights" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.from_flights">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">traffic.core.flight.Flight</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><span class="pre">traffic.core.traffic.Traffic</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.from_flights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Traffic structure from all flights passed as an
 iterator or iterable.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.geoencode">
-<code class="sig-name descname"><span class="pre">geoencode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.geoencode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.geoencode">
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.geoencode" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>This method is not implemented.</p>
@@ -830,15 +833,15 @@ iterator or iterable.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.groupby">
-<code class="sig-name descname"><span class="pre">groupby</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.groupby" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.groupby">
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
 DataFrame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.has">
-<code class="sig-name descname"><span class="pre">has</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.has" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.has">
+<span class="sig-name descname"><span class="pre">has</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.has" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if flight.method() returns a non-empty iterator.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
@@ -853,14 +856,14 @@ DataFrame.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.icao24">
-<code class="sig-name descname"><span class="pre">icao24</span></code><a class="headerlink" href="#traffic.core.Traffic.icao24" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.icao24">
+<span class="sig-name descname"><span class="pre">icao24</span></span><a class="headerlink" href="#traffic.core.Traffic.icao24" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all the different icao24 aircraft ids in the DataFrame</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.inside_bbox">
-<code class="sig-name descname"><span class="pre">inside_bbox</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.ShapelyMixin</span><span class="p"><span class="pre">,</span> </span><span class="pre">shapely.geometry.base.BaseGeometry</span><span class="p"><span class="pre">,</span> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.inside_bbox" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.inside_bbox">
+<span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.ShapelyMixin</span><span class="p"><span class="pre">,</span> </span><span class="pre">shapely.geometry.base.BaseGeometry</span><span class="p"><span class="pre">,</span> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.airspace.T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.inside_bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the part of the DataFrame with coordinates located within the
 bounding box of the shape passed in parameter.</p>
 <blockquote>
@@ -879,8 +882,8 @@ stacked for lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.iterate">
-<code class="sig-name descname"><span class="pre">iterate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.flight.Flight</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.iterate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.iterate">
+<span class="sig-name descname"><span class="pre">iterate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">traffic.core.flight.Flight</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.iterate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates over Flights contained in the Traffic structure.</p>
 <p>Default iteration calls this method with default arguments:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
@@ -902,8 +905,8 @@ data for a flight.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.iterate_lazy">
-<code class="sig-name descname"><span class="pre">iterate_lazy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tqdm_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.iterate_lazy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.iterate_lazy">
+<span class="sig-name descname"><span class="pre">iterate_lazy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tqdm_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.iterate_lazy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Triggers a lazy iteration on the Traffic structure.</p>
 <p>Default iteration calls this method with default arguments:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span>
@@ -925,8 +928,8 @@ progressbar.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.last">
-<code class="sig-name descname"><span class="pre">last</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.last" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.last">
+<span class="sig-name descname"><span class="pre">last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.last" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the last n days, hours, minutes or seconds of the Flight.</p>
 <p>The elements passed as kwargs as passed as is to the datetime.timedelta
 constructor.</p>
@@ -943,8 +946,8 @@ constructor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.longer_than">
-<code class="sig-name descname"><span class="pre">longer_than</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.longer_than" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.longer_than">
+<span class="sig-name descname"><span class="pre">longer_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.longer_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if flight duration is longer than value.
 .. warning:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
@@ -953,8 +956,8 @@ constructor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.max_split">
-<code class="sig-name descname"><span class="pre">max_split</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.max_split" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.max_split">
+<span class="sig-name descname"><span class="pre">max_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.max_split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the biggest (by default, longest) part of trajectory.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">elal747</span>
@@ -974,15 +977,15 @@ constructor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.merge">
-<code class="sig-name descname"><span class="pre">merge</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.merge" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.merge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.next">
-<code class="sig-name descname"><span class="pre">next</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.next" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
@@ -996,15 +999,15 @@ DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.pipe">
-<code class="sig-name descname"><span class="pre">pipe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">…</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.pipe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.pipe">
+<span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.plot">
-<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">cartopy.mpl.geoaxes.GeoAxesSubplot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">cartopy.mpl.geoaxes.GeoAxesSubplot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_flights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots each trajectory on a Matplotlib axis.</p>
 <p>Each Flight supports Cartopy axis as well with automatic projection. If
 no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
@@ -1012,14 +1015,14 @@ is applied.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">EuroPP</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">()))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.plot_wind">
-<code class="sig-name descname"><span class="pre">plot_wind</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">cartopy.mpl.geoaxes.GeoAxesSubplot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtered</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">matplotlib.artist.Artist</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.plot_wind" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.plot_wind">
+<span class="sig-name descname"><span class="pre">plot_wind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">cartopy.mpl.geoaxes.GeoAxesSubplot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtered</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">matplotlib.artist.Artist</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.plot_wind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the wind field seen by the aircraft on a Matplotlib axis.</p>
 <p>The Flight supports Cartopy axis as well with automatic projection. If
 no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
@@ -1042,22 +1045,22 @@ longitude degree.</p></li>
 <span class="gp">... </span>    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;altitude &gt; 10000&#39;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="o">.</span><span class="n">compute_wind</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-<span class="gp">... </span>    <span class="o">.</span><span class="n">plot_wind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">plot_wind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.query">
-<code class="sig-name descname"><span class="pre">query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.query" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Traffic.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.query_ehs">
-<code class="sig-name descname"><span class="pre">query_ehs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.query_ehs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.query_ehs">
+<span class="sig-name descname"><span class="pre">query_ehs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.query_ehs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extends data with extra columns from EHS messages.</p>
 <p>By default, raw messages are requested from the OpenSky Network
 database.</p>
@@ -1081,8 +1084,8 @@ parameter. See the page about <a class="reference external" href="opensky_impala
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.query_opensky">
-<code class="sig-name descname"><span class="pre">query_opensky</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.query_opensky" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.query_opensky">
+<span class="sig-name descname"><span class="pre">query_opensky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.query_opensky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns data from the same Flight as stored in OpenSky database.</p>
 <p>This may be useful if you write your own parser for data from a
 different channel. The method will use the <code class="docutils literal notranslate"><span class="pre">callsign</span></code> and <code class="docutils literal notranslate"><span class="pre">icao24</span></code>
@@ -1102,15 +1105,15 @@ start, stop, callsign and icao24.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.rename">
-<code class="sig-name descname"><span class="pre">rename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.rename" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.rename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">rename()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.resample">
-<code class="sig-name descname"><span class="pre">resample</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.resample" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.resample">
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the trajectory at a given frequency or number of points.</p>
 <p>If the rule is a string representing a pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases">time series frequency</a>
 is passed, then the data is resampled along the timestamp axis, then
@@ -1124,15 +1127,15 @@ number of evenly distributed points per trajectory.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.reset_index">
-<code class="sig-name descname"><span class="pre">reset_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.reset_index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.reset_index">
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.reset_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.shorter_than">
-<code class="sig-name descname"><span class="pre">shorter_than</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.shorter_than" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.shorter_than">
+<span class="sig-name descname"><span class="pre">shorter_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.shorter_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if flight duration is shorter than value.
 .. warning:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
@@ -1141,8 +1144,8 @@ DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.simplify">
-<code class="sig-name descname"><span class="pre">simplify</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.simplify" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.simplify">
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.simplify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplifies a trajectory with Douglas-Peucker algorithm.</p>
 <p>The method uses latitude and longitude, projects the trajectory to a
 conformal projection and applies the algorithm. If x and y features are
@@ -1162,29 +1165,29 @@ default value works well in most situations.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.sort_values">
-<code class="sig-name descname"><span class="pre">sort_values</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">T</span><a class="headerlink" href="#traffic.core.Traffic.sort_values" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.mixins.T</span><a class="headerlink" href="#traffic.core.Traffic.sort_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to the underlying pandas
 DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="traffic.core.Traffic.start_time">
-<code class="sig-name descname"><span class="pre">start_time</span></code><a class="headerlink" href="#traffic.core.Traffic.start_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><a class="headerlink" href="#traffic.core.Traffic.start_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the earliest timestamp in the DataFrame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.summary">
-<code class="sig-name descname"><span class="pre">summary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.summary" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.DataFrame</span><a class="headerlink" href="#traffic.core.Traffic.summary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a summary of the current Traffic structure containing
 featured attributes.</p>
 <p>Example usage (TODO)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_csv">
-<code class="sig-name descname"><span class="pre">to_csv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_csv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to CSV format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
 as args and kwargs arguments.</p>
@@ -1192,14 +1195,14 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_czml">
-<code class="sig-name descname"><span class="pre">to_czml</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">numbers.Real</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.Timestamp</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_czml" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_czml">
+<span class="sig-name descname"><span class="pre">to_czml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">numbers.Real</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.Timestamp</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_czml" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a CesiumJS scenario file.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_excel">
-<code class="sig-name descname"><span class="pre">to_excel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_excel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_excel">
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_excel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to Excel format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
 as args and kwargs arguments.</p>
@@ -1207,8 +1210,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_hdf">
-<code class="sig-name descname"><span class="pre">to_hdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to HDF format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
 as args and kwargs arguments.</p>
@@ -1216,8 +1219,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_json">
-<code class="sig-name descname"><span class="pre">to_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_json" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to JSON format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
 as args and kwargs arguments.</p>
@@ -1225,8 +1228,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_parquet">
-<code class="sig-name descname"><span class="pre">to_parquet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_parquet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to parquet format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
 as args and kwargs arguments.</p>
@@ -1234,8 +1237,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.to_pickle">
-<code class="sig-name descname"><span class="pre">to_pickle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#traffic.core.Traffic.to_pickle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to pickle format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
 as args and kwargs arguments.</p>
@@ -1243,8 +1246,8 @@ as args and kwargs arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="traffic.core.Traffic.unwrap">
-<code class="sig-name descname"><span class="pre">unwrap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.unwrap" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.unwrap">
+<span class="sig-name descname"><span class="pre">unwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.unwrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unwraps angles in the DataFrame.</p>
 <p>All features representing angles may be unwrapped (through Numpy) to
 avoid gaps between 359° and 1°.</p>

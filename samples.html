@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -358,7 +361,7 @@ Socata TBM 900 and shot the following video in 8k. Both trajectories are
 
 <span class="n">alt_chart</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">dreamliner_airfrance</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="s2">&quot;2017-12-01 14:40&quot;</span><span class="p">,</span> <span class="s2">&quot;2017-12-01 15:20&quot;</span><span class="p">):</span>
-    <span class="n">alt_chart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">))</span>
+    <span class="n">alt_chart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">chart</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)))</span>
 
 <span class="n">alt</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="o">*</span><span class="n">alt_chart</span><span class="p">)</span>
 </pre></div>

@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -264,13 +267,13 @@ by a trajectory (here from the so6 file)</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">nm_airspaces</span><span class="p">[</span><span class="s1">&#39;LFFFUIR&#39;</span><span class="p">])</span>
 
-    <span class="n">nm_airspaces</span><span class="p">[</span><span class="s1">&#39;LFFFUIR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+    <span class="n">nm_airspaces</span><span class="p">[</span><span class="s1">&#39;LFFFUIR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
     <span class="n">so6</span><span class="p">[</span><span class="s1">&#39;DAH1008&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 
     <span class="c1"># display elementary sectors (ES) crossed by the trajectory</span>
     <span class="k">for</span> <span class="n">airspace</span> <span class="ow">in</span> <span class="n">nm_airspaces</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;LF.*/ES&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">so6</span><span class="p">[</span><span class="s1">&#39;DAH1008&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">airspace</span><span class="p">):</span>
-            <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/airac_traj_sectors.png"><img alt="Trajectories over Bordeaux AAC" class="align-center" src="_images/airac_traj_sectors.png" style="width: 394.09999999999997px; height: 390.59999999999997px;" /></a>
@@ -297,10 +300,10 @@ at noon.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
 
-    <span class="n">nm_airspaces</span><span class="p">[</span><span class="s1">&#39;LFBBBDX&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">nm_airspaces</span><span class="p">[</span><span class="s1">&#39;LFBBBDX&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">so6_bdx_noon</span><span class="p">:</span>
-        <span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#aa3a3a&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#aa3a3a&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/airac_traj_bdx.png"><img alt="Trajectories over Bordeaux AAC" class="align-center" src="_images/airac_traj_bdx.png" style="width: 394.09999999999997px; height: 390.59999999999997px;" /></a>

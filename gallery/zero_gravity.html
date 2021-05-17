@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
 
   
@@ -32,6 +34,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -195,38 +198,38 @@
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+<span class="n">base</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">zero_gravity</span><span class="o">.</span><span class="n">phases</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
     <span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;45T&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s2">&quot;45T&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">data</span><span class="p">[[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;IAS&quot;</span><span class="p">,</span> <span class="s2">&quot;phase&quot;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">chart</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+            <span class="s2">&quot;utchoursminutesseconds(timestamp)&quot;</span><span class="p">,</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">altitude_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+<span class="n">altitude_data</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
         <span class="s2">&quot;altitude&quot;</span><span class="p">,</span>
         <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)),</span>
         <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">&quot;altitude (in ft)&quot;</span><span class="p">,</span>
-            <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
             <span class="n">labelColor</span><span class="o">=</span><span class="s2">&quot;#5276A7&quot;</span><span class="p">,</span>
-            <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
             <span class="n">titleColor</span><span class="o">=</span><span class="s2">&quot;#5276A7&quot;</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="p">),</span>
 <span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#5276A7&quot;</span><span class="p">)</span>
 
-<span class="n">ias_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+<span class="n">ias_data</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
         <span class="s2">&quot;IAS&quot;</span><span class="p">,</span>
         <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">350</span><span class="p">)),</span>
         <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">&quot;indicated airspeed (in kts)&quot;</span><span class="p">,</span>
-            <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
             <span class="n">labelColor</span><span class="o">=</span><span class="s2">&quot;#F18727&quot;</span><span class="p">,</span>
-            <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
             <span class="n">titleColor</span><span class="o">=</span><span class="s2">&quot;#F18727&quot;</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="p">),</span>
@@ -234,17 +237,20 @@
 
 
 <span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">altitude_data</span><span class="p">,</span> <span class="n">ias_data</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;independent&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="o">&amp;</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">titleFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">)),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">),),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">altitude_data</span><span class="p">,</span> <span class="n">ias_data</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;independent&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
+        <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">75</span><span class="p">),</span>
     <span class="p">)</span>
-    <span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
