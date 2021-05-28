@@ -106,6 +106,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="algorithms.html">Algorithms</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="clustering.html">Trajectory clustering</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Navigation events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-metadata">Basic metadata</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tma-events">TMA events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#airborne-events">Airborne events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ground-events">Ground events</a></li>
@@ -199,8 +200,8 @@ blocks and available on <a class="reference external" href="traffic.core.flight.
 <li><p><a class="reference external" href="#airborne-events">airborne events</a> are more general events during the cruise phase;</p></li>
 <li><p><a class="reference external" href="#ground-events">ground events</a> refer to all what happens when on ground at a given airport.</p></li>
 </ul>
-<div class="section" id="tma-events">
-<h2>TMA events<a class="headerlink" href="#tma-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-metadata">
+<h2>Basic metadata<a class="headerlink" href="#basic-metadata" title="Permalink to this headline">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.takeoff_airport">
 <span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">takeoff_airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Airport</span><a class="headerlink" href="#traffic.core.Flight.takeoff_airport" title="Permalink to this definition">¶</a></dt>
@@ -257,30 +258,186 @@ to specify a subset of airports as a keyword parameter.</p>
 <dd><p>Returns True if the flight takes off from the given airport.</p>
 </dd></dl>
 
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_ils()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">takeoff_from_runway()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">runway_change()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">go_around()</span></code></p></li>
-</ul>
+</div>
+<div class="section" id="tma-events">
+<h2>TMA events<a class="headerlink" href="#tma-events" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.takeoff_from_runway">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">takeoff_from_runway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_alt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone_length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">6000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">little_base</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opening</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.takeoff_from_runway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies the take-off runway for trajectories.</p>
+<p>Iterates on all segments of trajectory matching a zone around a runway
+of the  given airport. The takeoff runway number is appended as a new
+<code class="docutils literal notranslate"><span class="pre">runway</span></code> column.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.aligned_on_ils">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">aligned_on_ils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.aligned_on_ils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on all segments of trajectory aligned with the ILS of the
+given airport. The runway number is appended as a new <code class="docutils literal notranslate"><span class="pre">ILS</span></code> column.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aligned</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s1">&#39;EHAM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;ILS </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;ILS&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> until </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;ILS 06 until 20:17&#39;</span>
+</pre></div>
+</div>
+<p>Be aware that all segments are not necessarily yielded in order.
+Consider using <code class="docutils literal notranslate"><span class="pre">max(...,</span> <span class="pre">key=attrgetter('start'))</span></code> if you want the
+last landing attempt, or <code class="docutils literal notranslate"><span class="pre">sorted(...,</span> <span class="pre">key=attrgetter('start'))</span></code> for
+an ordered list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">aligned</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s1">&#39;EHLE&#39;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">aligned</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="go">2018-05-30 16:50:44+00:00</span>
+<span class="go">2018-05-30 18:13:02+00:00</span>
+<span class="go">2018-05-30 16:00:55+00:00</span>
+<span class="go">2018-05-30 17:21:17+00:00</span>
+<span class="go">2018-05-30 19:05:22+00:00</span>
+<span class="go">2018-05-30 19:42:36+00:00</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_aligned</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;EHLE&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.go_around">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">go_around</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Airports</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.go_around" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects go-arounds.</p>
+<p>The method yields pieces of trajectories with exactly two landing
+attempts (aligned on one runway) on the same airport separated by
+exactly one climbing phase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.runway_change">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">runway_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Airports</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.runway_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects runway changes.</p>
+<p>The method yields pieces of trajectories with exactly two runway
+alignments on the same airport not separated by a climbing phase.</p>
+<p>In each piece of yielded trajectory, the <cite>ILS</cite> column contains the
+name of the runway targetted by the aircraft at each instant.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="airborne-events">
 <h2>Airborne events<a class="headerlink" href="#airborne-events" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_navpoint()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">compute_navpoints()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">emergency()</span></code></p></li>
-</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.aligned_on_navpoint">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">aligned_on_navpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">PointMixin</span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">PointMixin</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">FlightPlan</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_precision</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_precision</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'2T'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.aligned_on_navpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on segments of trajectories aligned with one of the given
+navigational beacons passed in parameter.</p>
+<p>The name of the navigational beacon is assigned in a new column
+<cite>navaid</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.compute_navpoints">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">compute_navpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">navaids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Navaids</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.compute_navpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions recomputes the most probable alignments on
+navigational points on the trajectory.</p>
+<p>By default, all navaids of the default database are considered,
+but limited to a buffered bounding box around the trajectory.</p>
+<p>Once computed, the following Altair snippet may be useful to
+display the trajectory as a succession of segments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">compute_navpoints</span><span class="p">()</span>
+
+<span class="n">segments</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X2</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;navaid&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Navigational point&quot;</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">([</span><span class="s2">&quot;navaid&quot;</span><span class="p">,</span> <span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;shift_mean&quot;</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
+        <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
+        <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.emergency">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">emergency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.emergency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on emergency segments of trajectory.</p>
+<p>An emergency is defined with a 7700 squawk code.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="ground-events">
 <h2>Ground events<a class="headerlink" href="#ground-events" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_runway()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">on_parking_position()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pushback()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slow_taxi()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">moving()</span></code></p></li>
-</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.aligned_on_runway">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">aligned_on_runway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.aligned_on_runway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on all segments of trajectory matching a runway of the
+given airport.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.on_parking_position">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">on_parking_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0001</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.on_parking_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates possible parking positions at a given airport.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parking</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">on_parking_position</span><span class="p">(</span><span class="s1">&#39;LSZH&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="go"># returns the most probable parking position in terms of duration</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method has been well tested for aircraft taking off, but should
+be double checked for landing trajectories.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.pushback">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">pushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">21,</span> <span class="pre">'compute_track':</span> <span class="pre">21,</span> <span class="pre">'compute_track_unwrapped':</span> <span class="pre">21}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">90</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Flight</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.pushback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pushback part of the trajectory on ground.</p>
+<p>The method identifies the start of the movement, the parking_position
+and the moment the aircraft suddenly changes direction the computed
+track angle.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The method has poor performance when trajectory point on ground are
+lacking. This is often the case for data recorded from locations far
+from the airport.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.slow_taxi">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">slow_taxi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">numbers.Real</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.timedelta</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.Timedelta</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'60s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_diameter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">150</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a><a class="headerlink" href="#traffic.core.Flight.slow_taxi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holding segments are part of a trajectory where the aircraft stays more
+than min_duration (in s) within a circle of diameter max_diameter (in m)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.moving">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">moving</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed_threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">3}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample_rule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'5s'</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Flight</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.moving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the part of the trajectory after the aircraft starts moving.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method has been extensively tested on aircraft taxiing before
+take-off. It should be adapted/taken with extra care for
+trajectories after landing.</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
