@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Navigational events &mdash; traffic  documentation</title>
+  <title>Navigation events &mdash; traffic  documentation</title>
   
 
   
@@ -105,7 +105,12 @@
 <li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="algorithms.html">Algorithms</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="clustering.html">Trajectory clustering</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Navigational events</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Navigation events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tma-events">TMA events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#airborne-events">Airborne events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ground-events">Ground events</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="cpa.html">Closest point of approach</a></li>
 </ul>
 </li>
@@ -164,7 +169,7 @@
         
           <li><a href="algorithms.html">Algorithms</a> &raquo;</li>
         
-      <li>Navigational events</li>
+      <li>Navigation events</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,8 +188,100 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="navigational-events">
-<h1>Navigational events<a class="headerlink" href="#navigational-events" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="navigation-events">
+<h1>Navigation events<a class="headerlink" href="#navigation-events" title="Permalink to this headline">¶</a></h1>
+<p>The traffic library implements many functions to detect navigation events
+relevant from an operational point of view. These methods are all built on basic
+blocks and available on <a class="reference external" href="traffic.core.flight.html">Flight</a> structures.</p>
+<p>This page organises those methods by scope:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#tma-events">TMA events</a> refer to the airborne part of a trajectory in the terminal maneuvering area around an airport. They extract information from parts of trajectory before landing or after take-off;</p></li>
+<li><p><a class="reference external" href="#airborne-events">airborne events</a> are more general events during the cruise phase;</p></li>
+<li><p><a class="reference external" href="#ground-events">ground events</a> refer to all what happens when on ground at a given airport.</p></li>
+</ul>
+<div class="section" id="tma-events">
+<h2>TMA events<a class="headerlink" href="#tma-events" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.takeoff_airport">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">takeoff_airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Airport</span><a class="headerlink" href="#traffic.core.Flight.takeoff_airport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most probable takeoff airport based on the first location
+in the trajectory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">()</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="s2">&quot;2018-05-30 15:30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">()</span>
+<span class="go">NL-0015/nan: Universitair Medisch Centrum Utrecht Heliport</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">takeoff_airport</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.takeoff_from">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">takeoff_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#traffic.core.Flight.takeoff_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the flight takes off from the given airport.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.landing_airport">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">landing_airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Airport</span><a class="headerlink" href="#traffic.core.Flight.landing_airport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most probable landing airport based on the last location
+in the trajectory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">()</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2018-05-30 20:00&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">()</span>
+<span class="go">NL-0024/nan: Middenmeer Aerodrome</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">landing_airport</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">EHAM/AMS: Amsterdam  Schiphol</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.landing_at">
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">landing_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#traffic.core.Flight.landing_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the flight takes off from the given airport.</p>
+</dd></dl>
+
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_ils()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">takeoff_from_runway()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">runway_change()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">go_around()</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="airborne-events">
+<h2>Airborne events<a class="headerlink" href="#airborne-events" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_navpoint()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compute_navpoints()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emergency()</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="ground-events">
+<h2>Ground events<a class="headerlink" href="#ground-events" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aligned_on_runway()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_parking_position()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pushback()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slow_taxi()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moving()</span></code></p></li>
+</ul>
+</div>
 </div>
 
 
