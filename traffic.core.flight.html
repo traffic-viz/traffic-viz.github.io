@@ -552,32 +552,45 @@ multiple features on the same graph.</p>
 <p>For a more complex graph plotting similar physical quantities on the
 same graph, and other quantities on a different graph, the following
 snippet may be of use.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># More advanced with several plots on the same graph</span>
-<span class="n">base</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">flight</span><span class="o">.</span><span class="n">chart</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;groundspeed&quot;</span><span class="p">,</span> <span class="s2">&quot;IAS&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
-            <span class="s2">&quot;utcyearmonthdatehoursminutesseconds(timestamp)&quot;</span><span class="p">,</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">),</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="s1">&#39;datum.variable != &quot;altitude&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
-            <span class="s2">&quot;value:Q&quot;</span><span class="p">,</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;speed (in kts)&quot;</span><span class="p">),</span>
-            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-        <span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="s1">&#39;datum.variable == &quot;altitude&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;value:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;altitude (in ft)&quot;</span><span class="p">)</span>
-    <span class="p">),</span>
-<span class="p">)</span>
-</pre></div>
-</div>
+<blockquote>
+<div><p># More advanced with several plots on the same graph
+base = (</p>
+<blockquote>
+<div><p>flight.chart(“altitude”, “groundspeed”, “IAS”)
+.encode(</p>
+<blockquote>
+<div><dl class="simple">
+<dt>alt.X(</dt><dd><p>“utcyearmonthdatehoursminutesseconds(timestamp)”,
+axis=alt.Axis(title=None, format=”%H:%M”),</p>
+</dd>
+</dl>
+<p>)</p>
+</div></blockquote>
+<p>)
+.properties(height=200)</p>
+</div></blockquote>
+<p>)</p>
+<dl>
+<dt>alt.vconcat(</dt><dd><dl>
+<dt>base.transform_filter(‘datum.variable != “altitude”’).encode(</dt><dd><dl class="simple">
+<dt>alt.Y(</dt><dd><p>“value:Q”,
+axis=alt.Axis(title=”speed (in kts)”),
+scale=alt.Scale(zero=False),</p>
+</dd>
+</dl>
+<p>)</p>
+</dd>
+</dl>
+<p>),
+base.transform_filter(‘datum.variable == “altitude”’).encode(</p>
+<blockquote>
+<div><p>alt.Y(“value:Q”, title=”altitude (in ft)”)</p>
+</div></blockquote>
+<p>),</p>
+</dd>
+</dl>
+<p>)</p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See also <a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a> for the
