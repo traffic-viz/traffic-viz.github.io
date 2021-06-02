@@ -951,7 +951,7 @@ timestamps associated to callsign/icao24 pairs to automatically assign a
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.from_file">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.from_file" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.flight.T</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.Flight.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -967,7 +967,7 @@ filename.</p>
 Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
 method with the kwargs argument.</p>
 <p>Example usage:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Flight</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;example_flight.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
