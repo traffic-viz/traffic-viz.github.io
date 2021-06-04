@@ -217,7 +217,7 @@ operations without evaluating them.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval">
-<span class="sig-prename descclassname"><span class="pre">LazyTraffic.</span></span><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">LazyTraffic.</span></span><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Traffic</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result can only be accessed after a call to <code class="docutils literal notranslate"><span class="pre">eval()</span></code>.</p>
 <dl>
 <dt>max_workers: int, default: 1</dt><dd><p>Multiprocessing is usually worth it. However, a sequential
@@ -226,6 +226,9 @@ number of cores of your processor. If memory becomes a problem,
 stick to the default.</p>
 </dd>
 <dt>desc: str, default: None</dt><dd><p>If not None, a tqdm progressbar is displayed with this parameter.</p>
+</dd>
+<dt>cache_file: str, Path, default: None</dt><dd><p>If not None, store the results in cache_file and load the results
+from the file if it exists.</p>
 </dd>
 <dt>Example usage:</dt><dd><p>The following call</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t_lazy</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;preprocessing&quot;</span><span class="p">)</span>
@@ -625,6 +628,24 @@ decoded <code class="docutils literal notranslate"><span class="pre">groundspeed
 <p>When the <code class="docutils literal notranslate"><span class="pre">compute_track</span></code> flag is set to True (default), an additional
 <code class="docutils literal notranslate"><span class="pre">compute_track</span></code> is also added. This value can be compared with the
 decoded <code class="docutils literal notranslate"><span class="pre">track</span></code> value in ADSB messages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.diff">
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">traffic.core.lazy.LazyTraffic</span><a class="headerlink" href="#traffic.core.Traffic.diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign differential versions of features to new columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The two following commands are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">([</span><span class="s2">&quot;track&quot;</span><span class="p">,</span> <span class="s2">&quot;heading&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="s2">&quot;track_diff&quot;</span><span class="p">,</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;heading_diff&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
