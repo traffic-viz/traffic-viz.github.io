@@ -100,8 +100,13 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#latest-release">Latest release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-traffic">Updating traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-version">Development version</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
@@ -192,19 +197,53 @@ the operating system.</p>
 access to more projections and to data from OpenStreetMap. More dynamic
 visualisations in Jupyter Lab are accessible thanks to the <a class="reference external" href="https://altair-viz.github.io/">altair</a> and <a class="reference external" href="http://ipyleaflet.readthedocs.io/">ipyleaflet</a> libraries; other exports to various formats
 (including CesiumJS or Google Earth) are also available.</p>
+<div class="section" id="latest-release">
+<h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this headline">¶</a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="n">traffic</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recommended options if not set up yet</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+
+<span class="c1"># Installation</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="n">traffic</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>
 </div>
-<p>You may as well install traffic in an existing environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">traffic</span>
+<p>Adjust the Python version (&gt;=3.7) and append packages you may need for future works (e.g. <code class="docutils literal notranslate"><span class="pre">bpython</span></code>, <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>, etc.)</p>
+<p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>
 </div>
-<p>For the most recent development version:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please only report installation issues in fresh conda environments.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Consider using <a class="reference external" href="https://github.com/mamba-org/mamba">mamba</a> for a faster Conda experience.</p>
+</div>
+</div>
+<div class="section" id="updating-traffic">
+<h2>Updating traffic<a class="headerlink" href="#updating-traffic" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -n option is followed by the name of the environment</span>
+<span class="n">conda</span> <span class="n">update</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">traffic</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="development-version">
+<h2>Development version<a class="headerlink" href="#development-version" title="Permalink to this headline">¶</a></h2>
+<p>You may also install or update <code class="docutils literal notranslate"><span class="pre">traffic</span></code> in an existing environment with pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">traffic</span>
+</pre></div>
+</div>
+<p>For the most recent development version, clone the Github repository:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">xoolive</span><span class="o">/</span><span class="n">traffic</span>
 <span class="n">cd</span> <span class="n">traffic</span><span class="o">/</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>If you intend to file a pull request, please activate <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -213,6 +252,7 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
 </ul>
+</div>
 </div>
 </div>
 
