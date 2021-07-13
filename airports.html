@@ -19,7 +19,7 @@
 
   
   
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="shortcut icon" href="_static/_static/favicon.ico"/>
   
 
   
@@ -69,7 +69,7 @@
 
           
             
-            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+            <img src="_static/_static/logo_traffic.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -193,57 +193,6 @@
             
   <div class="section" id="airports-and-runways">
 <h1>Airports and runways<a class="headerlink" href="#airports-and-runways" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="traffic.data.basic.airports.Airports">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.airports.</span></span><span class="sig-name descname"><span class="pre">Airports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'open'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.airports.Airports" title="Permalink to this definition">¶</a></dt>
-<dd><p>An airport is accessible via its ICAO or IATA code. In case of doubt,
-use the search method.</p>
-<p>The representation of an airport is based on its geographical footprint.
-It subclasses namedtuple so all fields are accessible by the dot
-operator. It can also be displayed on Matplotlib maps. Contours are
-fetched from OpenStreetMap (you need an Internet connection the first
-time you call it) and put in cache.</p>
-<p>A database of major world airports is available as:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
-</pre></div>
-</div>
-<p>Any airport can be accessed by the bracket notation:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span>
-<span class="go">EHAM/AMS: Amsterdam Schiphol</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">latlon</span>
-<span class="go">(52.308609, 4.763889)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iata</span>
-<span class="go">AMS</span>
-</pre></div>
-</div>
-<p>Runways thresholds are also associated to most airports:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s1">&#39;LFPG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">runways</span><span class="o">.</span><span class="n">data</span>
-<span class="go">    latitude  longitude     bearing name</span>
-<span class="go">0  48.995664   2.552155   85.379257  08L</span>
-<span class="go">1  48.998757   2.610603  265.423366  26R</span>
-<span class="go">2  49.024736   2.524890   85.399341  09L</span>
-<span class="go">3  49.026678   2.561694  265.427128  27R</span>
-<span class="go">4  48.992929   2.565816   85.399430  08R</span>
-<span class="go">5  48.994863   2.602438  265.427067  26L</span>
-<span class="go">6  49.020645   2.513055   85.391641  09R</span>
-<span class="go">7  49.023665   2.570303  265.434861  27L</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.basic.airports.Airports.search">
-<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><span class="pre">traffic.data.basic.airports.Airports</span></a><a class="headerlink" href="#traffic.data.basic.airports.Airports.search" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selects the subset of airports matching the given IATA or ICAO code,
-containing the country name or the full name of the airport.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Tokyo&#39;</span><span class="p">)</span>
-<span class="go">    altitude country iata  icao   latitude   longitude                                name</span>
-<span class="go">3820       21   Japan  HND  RJTT  35.552250  139.779602  Tokyo Haneda International Airport</span>
-<span class="go">3821      135   Japan  NRT  RJAA  35.764721  140.386307  Tokyo Narita International Airport</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
 <p>Airports offer special display outputs in Jupyter Notebook based on their
 geographic footprint.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
