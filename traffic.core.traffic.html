@@ -791,6 +791,21 @@ list/tuples of integers for cascade of filters:</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.final">
+<span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.final" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.first">
 <span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.first" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first n days, hours, minutes or seconds of the Flight.</p>
@@ -824,6 +839,7 @@ filename.</p>
 <ul class="simple">
 <li><p>.pkl and .pkl.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
 <li><p>.parquet and .parquet.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.feather and .feather.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_feather</span></code>;</p></li>
 <li><p>.json and .json.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
 <li><p>.csv and .csv.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
 <li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
@@ -1251,6 +1267,15 @@ as args and kwargs arguments.</p>
 <span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.Traffic.to_excel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to Excel format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.to_feather">
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.Traffic.to_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to feather format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_feather</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 </dd></dl>
