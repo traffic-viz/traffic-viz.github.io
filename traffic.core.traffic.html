@@ -793,7 +793,8 @@ list/tuples of integers for cascade of filters:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.final">
 <span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.final" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
+<dd><p>Returns the final (last) segment of trajectory yielded by
+flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
