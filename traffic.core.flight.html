@@ -1010,6 +1010,15 @@ exactly one climbing phase.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.ground_trajectory">
+<span class="sig-name descname"><span class="pre">ground_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a></span></span><a class="headerlink" href="#traffic.core.Flight.ground_trajectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ground part of the trajectory limited to the apron
+of the airport passed in parameter.</p>
+<p>The same trajectory could use the apron several times, hence the safest
+option to return a FlightIterator.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.groupby">
 <span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
@@ -1304,6 +1313,12 @@ a runway at given airport.</p>
 <span class="go">437.27272727272725</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.on_taxiway">
+<span class="sig-name descname"><span class="pre">on_taxiway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport_or_taxiways</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">,</span> </span><span class="pre">Airport</span><span class="p"><span class="pre">,</span> </span><span class="pre">Overpass</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dist</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">85</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">traffic.core.iterator.FlightIterator</span></a></span></span><a class="headerlink" href="#traffic.core.Flight.on_taxiway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates on segments of trajectory matching a single runway label.</p>
 </dd></dl>
 
 <dl class="py property">
