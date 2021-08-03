@@ -1047,6 +1047,17 @@ DataFrame and get the result back in the same structure.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.phases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a flight phase to each timestamp of a flight
+using OpenAP phase detection fuzzy logic method.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.pipe">
 <span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.mixins.T</span></span></span><a class="headerlink" href="#traffic.core.Traffic.pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
