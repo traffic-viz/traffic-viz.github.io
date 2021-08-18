@@ -39118,12 +39118,11 @@ segments with a constant bearing with respect to the selected VOR.</p>
 </pre></div>
 </div>
 <p>We have all we need to enhance the interesting parts of the trajectory now:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">Lambert93</span><span class="p">,</span> <span class="n">countries</span>
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">Lambert93</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
 <span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
 
 <span class="n">point_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">))</span>

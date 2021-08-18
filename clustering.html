@@ -203,7 +203,7 @@ is available as a basic import:</p>
 <p>The full dataset of trajectories can be displayed on a basic Switzerland map.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">CH1903</span>
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
 <span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
@@ -230,7 +230,7 @@ method.</p>
 called on new data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">CH1903</span>
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
 
 <span class="n">t_dbscan</span> <span class="o">=</span> <span class="n">t_unwrapped</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span>
     <span class="n">nb_samples</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
@@ -329,8 +329,9 @@ differently.</p>
 with the same parameters as the clustering.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
 
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
 <span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
-<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">CH1903</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
 <span class="kn">from</span> <span class="nn">traffic.drawing.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>

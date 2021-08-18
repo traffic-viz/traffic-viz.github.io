@@ -211,8 +211,9 @@ Wikipedia</a>)</p>
 <div class="section" id="firs-from-the-eurocontrol-area">
 <h2>FIRs from the Eurocontrol area<a class="headerlink" href="#firs-from-the-eurocontrol-area" title="Permalink to this headline">¶</a></h2>
 <p>FIRs of countries in the Eurocontrol area are available in the library.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
-<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">TransverseMercator</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy.crs</span> <span class="kn">import</span> <span class="n">TransverseMercator</span>
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -246,8 +247,9 @@ airspace in open data. The data is automatically downloaded the first time
 you try to access it.</p>
 <p>Find more about this service <a class="reference external" href="https://adds-faa.opendata.arcgis.com/">here</a>.
 On the following map, Air Route Traffic Control Centers (ARTCC) are displayed together with neighbouring FIRs.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">faa</span>
-<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">AlbersUSA</span><span class="p">,</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">AlbersUSA</span>
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">faa</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span><span class="p">,</span> <span class="n">rivers</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
