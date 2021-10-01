@@ -193,6 +193,63 @@
             
   <div class="section" id="navigational-beacons">
 <h1>Navigational beacons<a class="headerlink" href="#navigational-beacons" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.navaid.</span></span><span class="sig-name descname"><span class="pre">Navaids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/VHF_omnidirectional_range">VOR</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Distance_measuring_equipment">DME</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Non-directional_beacon">NDB</a> are short-range
+radio navigation systems for aircraft.  They help aircraft with a receiving
+unit to determine their position and stay on course.</p>
+<p>The first airways were designed after the locations of these beacons. Recent
+progress in GNSS systems helped define more positions by their latitudes and
+longitudes, referred to as FIX.</p>
+<ul class="simple">
+<li><p>Read more <a class="reference external" href="https://aerosavvy.com/navigation-name-nonsense/">here</a> about
+navigational beacons and how FIX names are decided.</p></li>
+<li><p>Read more <a class="reference external" href="scenarios/calibration.html">here</a> about calibration of such
+equipment.</p></li>
+</ul>
+<p>A (deprecated) database of world navigational beacons is available as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">navaids</span>
+</pre></div>
+</div>
+<p>Any navigational beacon can be accessed by the bracket notation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;NARAK&#39;</span><span class="p">]</span>
+<span class="go">NARAK (FIX): 44.29527778 1.74888889</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.download_data">
+<span class="sig-name descname"><span class="pre">download_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.download_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the latest version of the navaid database from the
+repository.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.global_get">
+<span class="sig-name descname"><span class="pre">global_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.structure.Navaid</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.global_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for a navaid from all alternative data sources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><span class="pre">traffic.data.basic.navaid.Navaids</span></a></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the subset of airways matching name in the name or description
+field.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The same name may match several navigational beacons in the world.</p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;ZUE&quot;</span><span class="p">)</span>
+<span class="go">        name  type  lat       lon       alt     frequency     description</span>
+<span class="go">272107  ZUE   NDB   30.900000 20.068333 0.0     369.00  0.0   ZUEITINA NDB</span>
+<span class="go">275948  ZUE   VOR   47.592167 8.817667  1730.0  110.05  2.0   ZURICH EAST VOR-DME</span>
+<span class="go">290686  ZUE   DME   47.592167 8.817667  1730.0  110.05  NaN   ZURICH EAST VOR-DME</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
