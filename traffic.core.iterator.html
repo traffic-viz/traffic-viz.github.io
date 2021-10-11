@@ -188,7 +188,7 @@
 <h1>traffic.core.FlightIterator<a class="headerlink" href="#traffic-core-flightiterator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.FlightIterator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">FlightIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">FlightIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Flight</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A FlightIterator is a specific structure providing helpers after methods
 applied on a Flight that return a sequence of pieces of trajectories.</p>
@@ -308,7 +308,7 @@ FlightIterator in a variable.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.FlightIterator.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.FlightIterator.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.FlightIterator.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots all elements in the structure.</p>
 <p>Arguments as passed as is to the <cite>Flight.plot()</cite> method.</p>
 </dd></dl>

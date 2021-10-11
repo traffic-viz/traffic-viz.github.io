@@ -224,7 +224,7 @@ operation can take up to five minutes with a slow Internet connection):</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.download_opensky">
-<span class="sig-name descname"><span class="pre">download_opensky</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">download_opensky</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the latest version of the OpenSky aircraft database.</p>
 <p>url: <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
 </dd></dl>
@@ -275,7 +275,7 @@ code or IATA code)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines several requests.</p>
 <p>The keyword arguments correspond to the name of other methods.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">registration</span><span class="o">=</span><span class="s2">&quot;^F-ZB&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;EC45&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
