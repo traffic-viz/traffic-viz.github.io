@@ -205,16 +205,12 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 <div class="section" id="latest-release">
 <h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this headline">¶</a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recommended options if not set up yet</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-
-<span class="c1"># Installation</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation</span>
 <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="n">traffic</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>
 </div>
-<p>Adjust the Python version (&gt;=3.7) and append packages you may need for future works (e.g. <code class="docutils literal notranslate"><span class="pre">bpython</span></code>, <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>, etc.)</p>
+<p>Adjust the Python version (&gt;=3.7) and append packages you may need for future works (e.g. <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>, <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, etc.)</p>
 <p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>

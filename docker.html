@@ -202,10 +202,10 @@
 <div class="section" id="basic-docker-container">
 <h2>Basic Docker container<a class="headerlink" href="#basic-docker-container" title="Permalink to this headline">¶</a></h2>
 <p>In the simplest case when you just want to run the traffic library in a Docker container, you can install the library and its dependencies directly into the base environment of the container. In that case, the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look like the following:</p>
-<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">jupyter/minimal-notebook</span>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter/minimal-notebook</span>
 
-<span class="k">USER</span><span class="s"> jovyan</span>
-<span class="k">RUN</span> conda install -c conda-forge traffic
+<span class="k">USER</span><span class="w"> </span><span class="s">jovyan</span>
+<span class="k">RUN</span><span class="w"> </span>conda install -c conda-forge traffic
 </pre></div>
 </div>
 <p>To run this Docker, you first have to generate an image with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code>:</p>
@@ -220,25 +220,25 @@
 <div class="section" id="docker-container-using-a-conda-environment">
 <h2>Docker container using a conda environment<a class="headerlink" href="#docker-container-using-a-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>Maybe you have already a working conda environment that you would like to use. In this case, you can install your existing environment into the Docker container. The <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could looks like the following:</p>
-<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">jupyter/minimal-notebook</span>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter/minimal-notebook</span>
 
 <span class="c"># copy miniconda files to image</span>
-<span class="k">COPY</span> traffic_env.yml traffic_env.yml
+<span class="k">COPY</span><span class="w"> </span>traffic_env.yml traffic_env.yml
 
 <span class="c"># install nb_conda into the base python to allow the user to choose the environment in the jupyter notebook and install environment</span>
-<span class="k">USER</span><span class="s"> jovyan</span>
-<span class="k">RUN</span> conda install -y nb_conda
-<span class="k">RUN</span> conda env create -f traffic_env.yml
+<span class="k">USER</span><span class="w"> </span><span class="s">jovyan</span>
+<span class="k">RUN</span><span class="w"> </span>conda install -y nb_conda
+<span class="k">RUN</span><span class="w"> </span>conda env create -f traffic_env.yml
 </pre></div>
 </div>
 <p>Note that the environment file <code class="docutils literal notranslate"><span class="pre">traffic_env.yml</span></code> has to be in the same directory as the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>. The file <code class="docutils literal notranslate"><span class="pre">traffic_env.yml</span></code> could look like the following:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">traffic_env</span>
-<span class="nt">channels</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
-<span class="nt">dependencies</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traffic</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traffic_env</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traffic</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
