@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to use the traffic Graphical User Interface? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to run traffic in a Docker container?" href="docker.html" />
+    <link rel="prev" title="BlueSky" href="bluesky.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to use the traffic Graphical User Interface?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">How to run traffic in a Docker container?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to use the traffic Graphical User Interface?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user_guide/gui.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-the-traffic-graphical-user-interface">
+<h1>How to use the traffic Graphical User Interface?<a class="headerlink" href="#how-to-use-the-traffic-graphical-user-interface" title="Permalink to this headline">¶</a></h1>
+<p>The traffic library comes with a Qt Graphical user interface (GUI) designed
+to decode and explore historical and live data.</p>
+<p>The GUI can be installed as a plugin package and is accessible through
+the following command (clickable application icons are doable and will probably
+be automatically generated in future versions)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">traffic_qtgui</span>  <span class="c1"># first install the plugin</span>
+<span class="n">traffic</span> <span class="n">gui</span>
+</pre></div>
+</div>
+<p>The GUI consists of two panes:</p>
+<ul class="simple">
+<li><p>the <strong>display</strong> pane on the left-hand side, with a <em>map</em> and a <em>plots</em> tab;</p></li>
+<li><p>the <strong>command</strong> pane on the right-hand side, with selection and filtering
+buttons.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/gui_start.png"><img alt="Startup screen for the GUI" class="align-center" src="../_images/gui_start.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>By default, the tool opens with a EuroPP projection. Other projections like
+Mercator are also available by default: you can customize more projections in
+the configuration file, in the <code class="docutils literal notranslate"><span class="pre">[projections]</span></code> section:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">projections</span><span class="p">]</span>
+<span class="n">default</span> <span class="o">=</span> <span class="n">EuroPP</span>
+<span class="n">extra</span> <span class="o">=</span> <span class="n">Lambert93</span><span class="p">;</span> <span class="n">Amersfoort</span><span class="p">;</span> <span class="n">GaussKruger</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Available projections are default cartopy projections, completed by additional common European projections in the cartes <a class="reference external" href="https://github.com/xoolive/cartes/tree/master/cartes/crs">dependency module</a> (here <a class="reference external" href="https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert#Lambert_93">Lambert 93</a> is the official projection in France, <a class="reference external" href="https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten">Amersfoort</a> in the Netherlands and <a class="reference external" href="https://de.wikipedia.org/wiki/Gau%C3%9F-Kr%C3%BCger-Koordinatensystem">Gauss-Krüger</a> in Germany)</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can implement more projections as <a class="reference external" href="plugins.html">plugins</a>.</p>
+</div>
+<p>You can either pan and zoom the map. Zoom is operated by the mouse or trackpad scroll. Note that on MacOS, the trackpad scroll requires clicking.</p>
+<p>In order to explore data, click on <em>Open file</em> and select a .pkl file (like <code class="docutils literal notranslate"><span class="pre">sample_opensky.pkl</span></code> in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory) By default, a scatter of all last recorded points is displayed.</p>
+<a class="reference internal image-reference" href="../_images/gui_map.png"><img alt="Scatter plot" class="align-center" src="../_images/gui_map.png" style="width: 516.0px; height: 427.0px;" /></a>
+<ul class="simple">
+<li><p>You may select callsigns in order to plot trajectories.</p></li>
+<li><p>Date and altitude sliders operate filters on the full pandas DataFrame.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/gui_trajectory.png"><img alt="Trajectories" class="align-center" src="../_images/gui_trajectory.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>In the <em>Plots</em> tab, you may select one callsign with different signals (e.g.
+<em>altitude</em> on the left-hand side and <em>ground speed</em> on the righ-hand side)
+<strong>or (exclusive)</strong> several callsigns with one signal (e.g. <em>altitude</em>).</p>
+<a class="reference internal image-reference" href="../_images/gui_plots.png"><img alt="Trajectories" class="align-center" src="../_images/gui_plots.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>The application does not process raw signals from any 1090 MHz antenna. It
+relies on other tools and listen to a standard format of raw data broadcasted on
+specific ports. Specifically, you may run an instance of <a class="reference external" href="https://github.com/MalcolmRobb/dump1090/">dump1090</a> be running with appropriate
+options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dump1090</span> <span class="o">--</span><span class="n">interactive</span> <span class="o">--</span><span class="n">net</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Then, the second option in the <em>Open file</em> dropdown menu is <em>dump1090</em>.</div>
+<div class="line">You should be asked for a reference airport:</div>
+</div>
+<a class="reference internal image-reference" href="../_images/gui_reference.png"><img alt="Select a reference airport" class="align-center" src="../_images/gui_reference.png" style="width: 187.2px; height: 149.4px;" /></a>
+<p>Fill in the ICAO (LFPG, PHNL, RJBB, etc.) or IATA (SFO, AMS, HKG, etc.) code of
+the airport for reference coordinates of the antenna. The associated latitude
+and longitude coordinates are useful to process ground messages. If several
+airports are in your neighbourhood, choose any of them (the closest one?)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you use a different decoding device like <a class="reference external" href="https://wiki.jetvision.de/wiki/Radarcape:Contents">radarcape</a>, data is broadcasted
+on a different port (usually 10003). You may add the corresponding address
+(with airport) in your configuration file: this will add an option in the
+dropdown menu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">decoders</span><span class="p">]</span>
+<span class="n">radarcape</span> <span class="o">=</span> <span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="o">.</span><span class="n">xxx</span><span class="p">:</span><span class="mi">10003</span><span class="o">/</span><span class="n">LFBO</span>
+</pre></div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../_images/gui_live.png"><img alt="Live recording" class="align-center" src="../_images/gui_live.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>For more details on your map, you may enter a name in the <em>Area</em> field and click
+<em>Plot</em>. The corresponding boundaries will be downloaded from OpenStreetMap
+servers and added to the map.</p>
+<a class="reference internal image-reference" href="../_images/gui_openstreetmap.png"><img alt="Live recording with Openstreetmap contours" class="align-center" src="../_images/gui_openstreetmap.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>This also work with airports: enter the ICAO or IATA code in the <em>Area</em> field
+and click <em>Airport</em>. Data is downloaded (and cached) from OpenStreetMap servers.</p>
+<p>You can then select a callsign and follow its trajectory:</p>
+<a class="reference internal image-reference" href="../_images/gui_takeoff.png"><img alt="Live recording of a take-off" class="align-center" src="../_images/gui_takeoff.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>The second tab lets you plot other details of the trajectory for different
+signals: <em>altitude</em> shows the climbing profile. <em>Indicated Airspeed</em> (IAS) is
+plotted here so as to reflect the 250 knots limit under 10,000 ft.</p>
+<a class="reference internal image-reference" href="../_images/gui_climb.png"><img alt="Live recording and display of climb profile" class="align-center" src="../_images/gui_climb.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>You can automatically zoom to a geographical location by clicking <em>Extent</em> and
+observe ground movements on the airfield:</p>
+<a class="reference internal image-reference" href="../_images/gui_airport.png"><img alt="Zoom over airport" class="align-center" src="../_images/gui_airport.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>If you are closer to bigger airport with a good reception (from the rooftop
+viewing area), you may have fun looking at aircraft ground movements from your
+application.</p>
+<a class="reference internal image-reference" href="../_images/gui_schiphol.png"><img alt="Zoom over Schiphol airport" class="align-center" src="../_images/gui_schiphol.png" style="width: 516.0px; height: 427.0px;" /></a>
+<p>When it decodes data, the GUI also writes a CSV text file in your home
+directory. The first column in the file is a GPS timestamp (nano-second
+precision) and the second column the raw message.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head ADSB_EHS_RAW_20190225_dump1090.csv
+
+1551072485.607867,1a331339643b50b639903907fbc154da992c5cff2dbf13
+1551072485.609867,1a3313396459d5173a903907fbc254000016c354424d11
+1551072485.614405,1a331339649f1359418d45ce4699907294c83c1b5b7b99
+1551072485.647058,1a33133966915136258dab120b58d302fde3ffc1da0aab
+1551072485.725486,1a3313396b3e07ea38903907dbc23400000536e52a12b6
+</pre></div>
+</div>
+<p>After you close the GUI, you can decode the .pkl file for an offline exploration
+of the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">traffic</span> <span class="n">decode</span> <span class="n">ADSB_EHS_RAW_20190225_dump1090</span><span class="o">.</span><span class="n">csv</span> <span class="n">LFBO</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="docker.html" class="btn btn-neutral float-right" title="How to run traffic in a Docker container?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="bluesky.html" class="btn btn-neutral float-left" title="BlueSky" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

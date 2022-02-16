@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to export and store data? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to find flight phases on a trajectory?" href="../tutorial/flight_phases.html" />
+    <link rel="prev" title="Web services from Eurocontrol NM" href="../b2b_usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information, including runway information and apron layout?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aircraft.html">Aircraft database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navaids.html">Navigational beacons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../airways.html">Airways, ATS routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../samples.html">Sample trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firs.html">Flight Information Regions (FIR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../airac_usage.html">Airspaces from Eurocontrol NM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../so6_usage.html">DDR files from Eurocontrol NM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../b2b_usage.html">Web services from Eurocontrol NM</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to export and store data?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic-and-flight-structures">Traffic and Flight structures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to export and store data?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user_guide/export.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-export-and-store-data">
+<h1>How to export and store data?<a class="headerlink" href="#how-to-export-and-store-data" title="Permalink to this headline">¶</a></h1>
+<p>The traffic library is based on the <a class="reference external" href="https://pandas.pydata.org/">pandas</a> library for representing and manipulating trajectories and on the <a class="reference external" href="https://shapely.readthedocs.io/en/latest/">shapely</a> library for manipulating geographical information like airways, beacons, airports and airspaces.</p>
+<p>Various parsers are provided (feel free to file a PR if you use other tools
+with different data sources) but after applying different operations to
+imported data, you may want to export data for storing, sharing and loading
+again later.</p>
+<div class="section" id="traffic-and-flight-structures">
+<h2>Traffic and Flight structures<a class="headerlink" href="#traffic-and-flight-structures" title="Permalink to this headline">¶</a></h2>
+<p>The question applies to pandas dataframes as well, with many opinions
+available on the net. In general, the question boils down to whether you want
+to distribute the data, how fast you need to access it and how long you need
+to keep it.</p>
+<ul class="simple">
+<li><p>CSV (comma separated values) is a pretty standard and widely acknowledged
+format (modulo the definition of the separator). It is easy to parse but it
+can be slow when data gets large. Also it doesn’t contain information about
+types so you need to check dtypes and transform them manually if need be. A
+good rule of thumb could be to parse CSV data only once and to use another
+format for storing it for future use.</p></li>
+<li><p>JSON (JavaScript Object Notation) is another lightweight text notation,
+human readable, also slow to parse. The added value compared to CSV is that
+you can distinguish boolean, numerical and string values.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/pickle.html">Pickle</a> is the standard
+format for Python serialisation. The binary representation of data is dumped
+as is in a file, no question asked. It is fast to read and write and you are
+sure to recover your data after you restart your Python interpreter/kernel.
+The downside is that the serialisation format may change with Python and
+pandas versions so it is not a good format for sharing and storing data in
+the time.</p></li>
+<li><p>HDF (Hierarchical Data Format) is a cross platform and cross language
+standard format for storing very large amounts of data. You may need extra
+dependencies to read and write from this format.</p></li>
+<li><p><a class="reference external" href="https://parquet.apache.org/">Apache Parquet</a> is another columnar cross
+platform and cross language standard storage format. Its implementation
+inside pandas is very fast for both read and write operations and the
+resulting files are rather compact. Types are respected but all Python
+structures (like sets, lists and dictionaries) may not be directly
+exportable. You may need extra dependencies to read and write from this
+format.</p></li>
+</ul>
+<p>The <a class="reference external" href="traffic.core.flight.html">Flight</a> and <a class="reference external" href="traffic.core.traffic.html">Traffic</a> structures implement the following methods:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>DataFrameMixin aggregates a pandas DataFrame and provides the same
+representation methods.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from various formats.</p>
+<p>This class method dispatches the loading of data in various format to
+the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
+filename. Potential compression of the file is inferred by pandas itself
+based on the extension.</p>
+<ul class="simple">
+<li><p>.pkl[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
+<li><p>.parquet[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.feather[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_feather</span></code>;</p></li>
+<li><p>.json[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
+<li><p>.csv[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
+<li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
+</ul>
+<p>Other extensions return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
+method with the kwargs argument.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to CSV format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to HDF format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to JSON format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to parquet format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to pickle format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../tutorial/flight_phases.html" class="btn btn-neutral float-right" title="How to find flight phases on a trajectory?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../b2b_usage.html" class="btn btn-neutral float-left" title="Web services from Eurocontrol NM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

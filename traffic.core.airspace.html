@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The Airspace structure &mdash; traffic  documentation</title>
+  <title>The Airspace structure &mdash; traffic 2.6.6 documentation</title>
   
 
   
@@ -80,6 +80,10 @@
 
           
             
+            
+              <div class="version">
+                2.6.6
+              </div>
             
           
 
@@ -214,7 +218,7 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Airspace.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">shapely.geometry.Point</span></em><a class="headerlink" href="#traffic.core.Airspace.centroid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">shapely.geometry.point.Point</span></em><a class="headerlink" href="#traffic.core.Airspace.centroid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 </dd></dl>
 
@@ -236,7 +240,7 @@ convenient in the following use case:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Airspace.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">shapely.geometry.Polygon</span></span></span><a class="headerlink" href="#traffic.core.Airspace.flatten" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">shapely.geometry.polygon.Polygon</span></span></span><a class="headerlink" href="#traffic.core.Airspace.flatten" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the 2D footprint of the airspace.</p>
 </dd></dl>
 
@@ -258,7 +262,7 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Airspace.leaflet">
-<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ipyleaflet.Polygon</span></span></span><a class="headerlink" href="#traffic.core.Airspace.leaflet" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ipyleaflet.leaflet.Polygon</span></span></span><a class="headerlink" href="#traffic.core.Airspace.leaflet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -270,7 +274,7 @@ activated. (true by default)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Airspace.project_shape">
-<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.Proj</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">shapely.geometry.base.BaseGeometry</span></span></span><a class="headerlink" href="#traffic.core.Airspace.project_shape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pyproj.proj.Proj</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">crs.Projection</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">shapely.geometry.base.BaseGeometry</span></span></span><a class="headerlink" href="#traffic.core.Airspace.project_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
 <p>By default, an equivalent projection is applied. Equivalent projections
 locally respect areas, which is convenient for the area attribute.</p>

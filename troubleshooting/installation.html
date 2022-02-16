@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to troubleshoot installation issues? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to troubleshoot network issues?" href="network.html" />
+    <link rel="prev" title="How to run traffic in a Docker container?" href="../user_guide/docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to troubleshoot installation issues?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network.html">How to troubleshoot network issues?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_access.html">How to troubleshoot data access issues?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to troubleshoot installation issues?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/troubleshooting/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-troubleshoot-installation-issues">
+<h1>How to troubleshoot installation issues?<a class="headerlink" href="#how-to-troubleshoot-installation-issues" title="Permalink to this headline">¶</a></h1>
+<p>There are three installation processes:</p>
+<ul>
+<li><p>the <strong>Anaconda way (recommended)</strong>, the most simple way, with only one command
+to execute;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n traffic -c conda-forge <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 traffic
+</pre></div>
+</div>
+</li>
+<li><p>the pip way, but you are responsible for non Python dependency management.
+With Linux, you may check how the environment is created for GitHub Actions;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install traffic
+</pre></div>
+</div>
+</li>
+<li><p>the poetry way, recommended for development, which ensures the same versions
+of all dependencies are installed in a virtual environment on any computer
+running the library: this step is crucial for consistency in continuous
+integration.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry install
+</pre></div>
+</div>
+</li>
+</ul>
+<p>The following questions are the most common about installation issues:</p>
+<ul>
+<li><p><strong>Installation is really slow</strong>, <strong>conda stalls on the resolution process</strong></p>
+<p>Before filing a bug report, please try again:</p>
+<ul>
+<li><p>to start the installation from a fresh conda environment, please do not
+reuse a potentially corrupted environment (when conda loses track of
+dependency versions);</p></li>
+<li><p>to disable the <code class="docutils literal notranslate"><span class="pre">channel_priority</span></code> option with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --set channel_priority disabled
+</pre></div>
+</div>
+</li>
+</ul>
+<p>If you cannot see the end of the tunnel, consider running traffic with the
+provided <a class="reference external" href="docker.html">Dockerfile</a>.</p>
+</li>
+<li><p><strong>Python crashes when I try to reproduce plots in the documentation</strong></p>
+<p>Usually, this happens when there is something wrong with your Cartopy and/or
+shapely installation.  These libraries strongly depend on the <code class="docutils literal notranslate"><span class="pre">geos</span></code> and
+<code class="docutils literal notranslate"><span class="pre">proj</span></code> libraries. You must have shapely and Cartopy versions matching the
+correct versions of these libraries.</p>
+<p>The problem is sometimes hard to understand, and you may end up fixing it
+without really knowing how.</p>
+<p>If you don’t know how to install these dependencies, start with a <strong>fresh</strong>
+Anaconda distribution and install the following libraries <em>the conda way</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+</pre></div>
+</div>
+<p>If it still does not work, try something along:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+<span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+<span class="c1"># be sure to remove all previous versions before installing again</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+</pre></div>
+</div>
+<p>If it still does not work, try again with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+<span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+<span class="c1"># this forces the recompilation of the packages</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">binary</span> <span class="p">:</span><span class="nb">all</span><span class="p">:</span> <span class="n">cartopy</span> <span class="n">shapely</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Widgets do not display in Jupyter Lab or Jupyter Notebook</strong></p>
+<p>After executing a cell in a Jupyter environment, you may see one of the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">Jupyter</span> <span class="n">Widget</span>
+<span class="c1"># or</span>
+<span class="n">Error</span> <span class="n">displaying</span> <span class="n">widget</span>
+<span class="c1"># or</span>
+<span class="n">HBox</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">(</span><span class="n">IntProgress</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)))</span>
+<span class="c1"># or</span>
+<span class="n">Map</span><span class="p">(</span><span class="n">basemap</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://</span><span class="si">{s}</span><span class="s1">.tile.openstreetmap.org/…</span>
+</pre></div>
+</div>
+<p>You will need to activate the widgets extensions:</p>
+<ul>
+<li><p>with Jupyter Lab:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyter</span><span class="o">-</span><span class="n">widgets</span><span class="o">/</span><span class="n">jupyterlab</span><span class="o">-</span><span class="n">manager</span>
+<span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">leaflet</span>
+<span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="n">keplergl</span><span class="o">-</span><span class="n">jupyter</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>with Jupyter Notebook:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span> <span class="n">widgetsnbextension</span>
+<span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span> <span class="n">ipyleaflet</span>
+<span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span> <span class="n">keplergl</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="network.html" class="btn btn-neutral float-right" title="How to troubleshoot network issues?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../user_guide/docker.html" class="btn btn-neutral float-left" title="How to run traffic in a Docker container?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>
