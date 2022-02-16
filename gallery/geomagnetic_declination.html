@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Geomagnetic declination &mdash; traffic  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tour de France 2020" href="tour_de_france.html" />
+    <link rel="prev" title="Zero-gravity flights" href="zero_gravity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../gallery.html">Example gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="is_this_a_plane.html">Is this a plane?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatmaps.html">Flight density heatmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="landing_sequence.html">Landing sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="landing_configuration.html">Landing configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windfield.html">A Mode S based wind field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sun_elevation.html">Sun elevation along a flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration.html">Calibration flights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zero_gravity.html">Zero-gravity flights</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Geomagnetic declination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tour_de_france.html">Tour de France 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="covid19.html">Impact of COVID-19 on worldwide aviation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gallery.html#third-party-examples">Third-party examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../gallery.html">Example gallery</a> &raquo;</li>
+        
+      <li>Geomagnetic declination</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/gallery/geomagnetic_declination.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geomagnetic-declination">
+<h1>Geomagnetic declination<a class="headerlink" href="#geomagnetic-declination" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The following code snippets including experimental features which are not
+available in the library at the time of the writing, but may appear in a
+near future.</p>
+</div>
+<p>The following situation refers to a flight I boarded, bound for Kansai airport,
+Japan (RJBB). The flight encountered reasonable cross wind during final
+approach. The regular behaviour then is to perform a crab approach, then to
+remove the crab angle during the touchdown.</p>
+<p>Let’s have a look at the data. The following simply plots a map of the last
+minutes of flight, together with a reconstructed windfield. (code below)</p>
+<p>Together with timestamps corresponding to the catching of the ILS signal and of
+the landing, we can plot both track and heading angles of the aircraft. Both
+angles, together with ground and true air speed measures help construct
+windfields in general.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference external" href="/traffic.core.flight.html#traffic.core.Flight.compute_wind">Flight.compute_wind()</a> and
+<a class="reference external" href="/traffic.core.flight.html#traffic.core.Flight.plot_wind">Flight.plot_wind()</a>.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/magnetic_map.png"><img alt="Situational map" class="align-center" src="../_images/magnetic_map.png" style="width: 305.9px; height: 390.59999999999997px;" /></a>
+<p>Here, since we have very few measurements points for the heading angle, we did
+not resample the trajectories prior to treatments. Let’s observe the granular data as decoded onboard (code below)</p>
+<a class="reference internal image-reference" href="../_images/magnetic_delta.png"><img alt="Situational map" class="align-center" src="../_images/magnetic_delta.png" style="width: 421.4px; height: 261.8px;" /></a>
+<p>There are, for sure, few points requested with heading angles. Yet we can clearly see that:</p>
+<ul class="simple">
+<li><p>the differences between the two angles (about 16°) when the aircraft is aligned on the ILS reflects the crab approach;</p></li>
+<li><p>the moment when the aircraft removes the crab angle appears clearly after landing, yet it is not going down to zero (about 7.5°).</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The explanation lies in a subtle nuance in the Mode S specifications:</p>
+<ul class="simple">
+<li><p>ADS-B broadcasts a <strong>true track angle</strong> (i.e. with respect to the <strong>geographical North</strong>)</p></li>
+<li><p>BDS 5,0 replies with a <strong>magnetic heading</strong> (i.e. with respect to the <strong>magnetic North</strong>)</p></li>
+</ul>
+<p>Looking at the <a class="reference external" href="https://ngdc.noaa.gov/geomag/WMM/data/WMM2020/WMM2020_D_BoZ_MILL.pdf">World Magnetic Model</a> for the declination map, the resulting 7.5° looks conformal to the model!</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select the first segment aligned on any ILS for RJBB</span>
+<span class="n">ils</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;RJBB&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="c1"># Select the most reasonable runway used for landing or take-off.</span>
+<span class="n">rwy</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">on_runway</span><span class="p">(</span><span class="s2">&quot;RJBB&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">Mercator</span>
+
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">navaids</span>
+
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">location</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">aircraft</span>
+
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Mercator</span><span class="p">()))</span>
+
+    <span class="n">airports</span><span class="p">[</span><span class="s2">&quot;RJBB&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#0e1111&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+    <span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+    <span class="c1"># The segment aligned on ILS in one color</span>
+    <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">ils</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">)</span>
+    <span class="n">ils</span><span class="o">.</span><span class="n">at_ratio</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+        <span class="n">marker</span><span class="o">=</span><span class="n">rotate_marker</span><span class="p">(</span><span class="n">aircraft</span><span class="p">,</span> <span class="n">ils</span><span class="o">.</span><span class="n">at_ratio</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span><span class="o">.</span><span class="n">heading</span><span class="p">),</span>
+        <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="s2">&quot; aligned on 24L&quot;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># The segment when the aircraft is on the runway in another color</span>
+    <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">rwy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    <span class="n">rwy</span><span class="o">.</span><span class="n">at_ratio</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="n">rotate_marker</span><span class="p">(</span><span class="n">aircraft</span><span class="p">,</span> <span class="n">rwy</span><span class="o">.</span><span class="n">at_ratio</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span><span class="o">.</span><span class="n">heading</span> <span class="o">-</span> <span class="mf">7.56</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+        <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="s2">&quot; landed on 24L&quot;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="p">(</span>
+        <span class="n">flight</span>  <span class="c1"># .assign(heading=lambda df: df.heading - 7.56)</span>
+        <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">compute_wind</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;altitude &gt; 500&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">plot_wind</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">15</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0e1111&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="mf">135.2</span><span class="p">,</span> <span class="mf">135.4</span><span class="p">,</span> <span class="mf">34.4</span><span class="p">,</span> <span class="mf">34.62</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
+
+<span class="n">center_15</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="n">marker_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0b1111&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+    <span class="n">flight</span><span class="o">.</span><span class="n">plot_time</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;track&quot;</span><span class="p">,</span> <span class="s2">&quot;heading&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Annotate the different phases of landing</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">ils</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">ils</span><span class="o">.</span><span class="n">stop</span><span class="p">],</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span> <span class="mi">210</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0b1111&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">ils</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="s2">&quot;aligned on runway 24L&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">rwy</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">rwy</span><span class="o">.</span><span class="n">stop</span><span class="p">],</span> <span class="p">[</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0b1111&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">rwy</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="s2">&quot;landing on runway 24L&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span><span class="p">)</span>
+
+    <span class="c1"># Annotate the differences</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">ils</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ils</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,],</span>
+        <span class="p">[</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">),</span> <span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)],</span> <span class="o">**</span><span class="n">marker_style</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">rwy</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">rwy</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,],</span>
+        <span class="p">[</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">),</span> <span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)],</span> <span class="o">**</span><span class="n">marker_style</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+        <span class="n">ils</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
+        <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+        <span class="n">rwy</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
+        <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Simplify the formatting for dates on the x-axis</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tour_de_france.html" class="btn btn-neutral float-right" title="Tour de France 2020" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="zero_gravity.html" class="btn btn-neutral float-left" title="Zero-gravity flights" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-412789-3');
+</script>
+
+
+
+</body>
+</html>

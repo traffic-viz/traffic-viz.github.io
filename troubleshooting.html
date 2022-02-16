@@ -54,8 +54,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running traffic in a Docker container" href="docker.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Example gallery" href="gallery.html" />
+    <link rel="prev" title="How to run traffic in a Docker container?" href="docker.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,29 +104,22 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="installation.html#latest-release">Latest release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#updating-traffic">Updating traffic</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="installation.html#development-version">Development version</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy">I can’t access resources from the Internet as I am behind a proxy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#python-crashes-when-i-try-to-reproduce-plots-in-the-documentation">Python crashes when I try to reproduce plots in the documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook">Widgets do not display in Jupyter Lab or Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="user_guide.html#troubleshooting">Troubleshooting</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 </ul>
 
@@ -176,7 +169,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="installation.html">Installation</a> &raquo;</li>
+          <li><a href="user_guide.html">User guide</a> &raquo;</li>
         
       <li>Troubleshooting</li>
     
@@ -201,8 +194,65 @@
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <p>The following reported problems are not about the traffic library per
 se. Some are related to limitations set by dependencies.</p>
-<div class="section" id="i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy">
-<h2>I can’t access resources from the Internet as I am behind a proxy<a class="headerlink" href="#i-can-t-access-resources-from-the-internet-as-i-am-behind-a-proxy" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><strong>Installation is really slow</strong>, <strong>conda stalls on the resolution process</strong></p>
+<p>Before filing a bug report, did you try:</p>
+<ul>
+<li><p>to start the installation from a fresh conda environment?</p></li>
+<li><p>to disable the <code class="docutils literal notranslate"><span class="pre">channel_priority</span></code> option with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --set channel_priority disabled
+</pre></div>
+</div>
+</li>
+<li><p>to run traffic with the provided <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> <a class="reference external" href="docker.html">(documentation)</a></p></li>
+</ul>
+</li>
+<li><p><strong>I want to know more about Eurocontrol NM files</strong></p></li>
+</ul>
+<p>We download these files from Eurocontrol <a class="reference external" href="https://www.eurocontrol.int/ddr">Network Manager Demand Data Repository
+(DDR)</a> under Dataset Files &gt; Airspace
+Environment Datasets. <a class="reference external" href="https://www.eurocontrol.int/ddr#access-conditions">Access conditions</a> are managed by
+EUROCONTROL.</p>
+<p>Should you have no such access, basic data are also provided in the library.</p>
+<ul class="simple">
+<li><p><strong>I want to know more about Eurocontrol AIXM files</strong></p></li>
+</ul>
+<p>When you import <code class="docutils literal notranslate"><span class="pre">aixm_airspaces</span></code> from <code class="docutils literal notranslate"><span class="pre">traffic.data</span></code>, you need to set a path
+to a directory containing AIRAC files. These are XML files following the <a class="reference external" href="http://aixm.aero/">AIXM</a> standard and produced by Eurocontrol. We download these
+files from Eurocontrol <a class="reference external" href="https://eurocontrol.int/service/network-manager-business-business-b2b-web-services">Network Manager B2B web services</a>.
+You have to own a B2B certificate granted by EUROCONTROL to get access to this
+data.</p>
+<ul class="simple">
+<li><p><strong>What does AIRAC mean?</strong></p></li>
+</ul>
+<p>Aeronautical Information Publications are updated every 28 days according to
+fixed calendar. This cycle is known as AIRAC (Aeronautical Information
+Regulation And Control) cycle.</p>
+<ul class="simple">
+<li><p><strong>I queried data from the OpenSky Impala shell but it returns None</strong></p></li>
+</ul>
+<p>Please be aware that data requested is limited by the coverage and the storage
+capacity on OpenSky side. If your query returns None, it usually means that
+OpenSky returned empty results.</p>
+<p>This can be due to:</p>
+<ul class="simple">
+<li><p>the temporal extent of your query: try a similar request on a more recent day
+(e.g. January 1st of the current year);</p></li>
+<li><p>the coverage of the network at the time of the query: esp. if you ask for
+trajectories landing or taking off from a particular airport which is poorly
+covered by the network;</p></li>
+<li><p>an error in the generated query. Use the <code class="docutils literal notranslate"><span class="pre">cached=False</span></code> parameter and the
+<code class="docutils literal notranslate"><span class="pre">INFO</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> logging mode from your logger to manually check the
+generated query before it is executed.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>I can’t access resources from the Internet as I am behind a proxy</strong></p></li>
+</ul>
 <p>All network accesses are made with the <a class="reference external" href="https://requests.readthedocs.io/">requests</a> library (or the <a class="reference external" href="http://www.paramiko.org/">paramiko</a> library for the Impala shell). Usually, if your
 environment variables are properly set, you should not encounter any particular
 proxy issue. However, there are always situations where it may help to manually
@@ -228,9 +278,9 @@ according to your network configuration.</p>
 <span class="c1"># ssh.proxycommand = connect.exe -H proxy_ip:proxy_port data.opensky-network.org 2230</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="python-crashes-when-i-try-to-reproduce-plots-in-the-documentation">
-<h2>Python crashes when I try to reproduce plots in the documentation<a class="headerlink" href="#python-crashes-when-i-try-to-reproduce-plots-in-the-documentation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Python crashes when I try to reproduce plots in the documentation</strong></p></li>
+</ul>
 <p>(or, “My Jupyter kernel crashes…”)</p>
 <p>There must be something wrong with your Cartopy and/or shapely installation.
 These libraries strongly depend on the <code class="docutils literal notranslate"><span class="pre">geos</span></code> and <code class="docutils literal notranslate"><span class="pre">proj</span></code> libraries. You
@@ -257,9 +307,9 @@ Anaconda distribution and install the following libraries <em>the conda way</em>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">binary</span> <span class="p">:</span><span class="nb">all</span><span class="p">:</span> <span class="n">cartopy</span> <span class="n">shapely</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook">
-<h2>Widgets do not display in Jupyter Lab or Jupyter Notebook<a class="headerlink" href="#widgets-do-not-display-in-jupyter-lab-or-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Widgets do not display in Jupyter Lab or Jupyter Notebook</strong></p></li>
+</ul>
 <p>After executing a cell, you may see one of the following output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">Jupyter</span> <span class="n">Widget</span>
 <span class="c1"># or</span>
@@ -292,7 +342,6 @@ Anaconda distribution and install the following libraries <em>the conda way</em>
 </li>
 </ul>
 </div>
-</div>
 
 
            </div>
@@ -300,8 +349,8 @@ Anaconda distribution and install the following libraries <em>the conda way</em>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="docker.html" class="btn btn-neutral float-right" title="Running traffic in a Docker container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gallery.html" class="btn btn-neutral float-right" title="Example gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="docker.html" class="btn btn-neutral float-left" title="How to run traffic in a Docker container?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

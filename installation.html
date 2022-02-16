@@ -54,7 +54,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="next" title="Getting started" href="quickstart.html" />
     <link rel="prev" title="traffic – Air traffic data processing in Python" href="index.html" /> 
 </head>
 
@@ -107,21 +107,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#latest-release">Latest release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#updating-traffic">Updating traffic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-version">Development version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-version">Development version</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core_structure.html">Core structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">Sources of data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Exporting and storing data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios and use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 </ul>
 
@@ -210,7 +202,7 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>
 </div>
-<p>Adjust the Python version (&gt;=3.7) and append packages you may need for future works (e.g. <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>, <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, etc.)</p>
+<p>Adjust the Python version you need (&gt;=3.7) and append packages you need for working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 <p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
 </pre></div>
@@ -233,26 +225,15 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 </div>
 <div class="section" id="development-version">
 <h2>Development version<a class="headerlink" href="#development-version" title="Permalink to this headline">¶</a></h2>
-<p>You may also install or update <code class="docutils literal notranslate"><span class="pre">traffic</span></code> in an existing environment with pip:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">traffic</span>
-</pre></div>
-</div>
 <p>For the most recent development version, clone the Github repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">xoolive</span><span class="o">/</span><span class="n">traffic</span>
-<span class="n">cd</span> <span class="n">traffic</span><span class="o">/</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">.</span><span class="p">[</span><span class="n">dev</span><span class="p">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
+<span class="nb">cd</span> traffic/
+pip install .<span class="o">[</span>dev<span class="o">]</span>
 </pre></div>
 </div>
 <p>If you intend to file a pull request, please activate <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit install
 </pre></div>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Frequently Asked Questions</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Running traffic in a Docker container</a></li>
-</ul>
 </div>
 </div>
 </div>
@@ -263,7 +244,7 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="traffic – Air traffic data processing in Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
