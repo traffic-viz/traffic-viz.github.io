@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>How to export and store data? &mdash; traffic 2.6.6 documentation</title>
+  <title>How to export and store trajectory and airspace data? &mdash; traffic 2.6.6 documentation</title>
   
 
   
@@ -123,7 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../airac_usage.html">Airspaces from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../so6_usage.html">DDR files from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../b2b_usage.html">Web services from Eurocontrol NM</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">How to export and store data?</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to export and store trajectory and airspace data?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#traffic-and-flight-structures">Traffic and Flight structures</a></li>
 </ul>
 </li>
@@ -188,7 +188,7 @@
         
           <li><a href="../user_guide.html">User guide</a> &raquo;</li>
         
-      <li>How to export and store data?</li>
+      <li>How to export and store trajectory and airspace data?</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,9 +207,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="how-to-export-and-store-data">
-<h1>How to export and store data?<a class="headerlink" href="#how-to-export-and-store-data" title="Permalink to this headline">¶</a></h1>
-<p>The traffic library is based on the <a class="reference external" href="https://pandas.pydata.org/">pandas</a> library for representing and manipulating trajectories and on the <a class="reference external" href="https://shapely.readthedocs.io/en/latest/">shapely</a> library for manipulating geographical information like airways, beacons, airports and airspaces.</p>
+  <div class="section" id="how-to-export-and-store-trajectory-and-airspace-data">
+<h1>How to export and store trajectory and airspace data?<a class="headerlink" href="#how-to-export-and-store-trajectory-and-airspace-data" title="Permalink to this headline">¶</a></h1>
+<p>The traffic library is based on the <a class="reference external" href="https://pandas.pydata.org/">pandas</a>
+library for representing and manipulating trajectories and on the <a class="reference external" href="https://shapely.readthedocs.io/en/latest/">shapely</a> library for manipulating
+geographical information like airways, beacons, airports and airspaces.</p>
 <p>Various parsers are provided (feel free to file a PR if you use other tools
 with different data sources) but after applying different operations to
 imported data, you may want to export data for storing, sharing and loading
