@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to access beacons and airways information? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Flight Information Regions (FIR)" href="../firs.html" />
+    <link rel="prev" title="How to access aircraft information?" href="aircraft.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to access beacons and airways information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firs.html">Flight Information Regions (FIR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../airac_usage.html">Airspaces from Eurocontrol NM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../so6_usage.html">DDR files from Eurocontrol NM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../b2b_usage.html">Web services from Eurocontrol NM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">How to export and store trajectory and airspace data?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to access beacons and airways information?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/data_sources/navigation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-access-beacons-and-airways-information">
+<h1>How to access beacons and airways information?<a class="headerlink" href="#how-to-access-beacons-and-airways-information" title="Permalink to this headline">¶</a></h1>
+<p>Air navigation and communication with air traffic control (ATC) is mostly based
+on the use of navigational beacons and airways. In recent years, airways tend to
+be replaced by Free Route Areas (FRA), but airways are still bound to exist in
+some parts of the world, Oceanic areas, mountainous areas, and free route
+navigation remains based on navigational beacons.</p>
+<p>Navigational beacons (called <code class="docutils literal notranslate"><span class="pre">navaids</span></code> in the library) are of different types:
+historically the first ones were attached to VOR equipments, but we can mostly
+consider they are a name attached to geographic coordinates.</p>
+<p>Basic data of questionable accuracy is provided with the library:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
+</pre></div>
+</div>
+<p>However, if other sources of data are configured (e.g. <a class="reference external" href="eurocontrol.html">EUROCONTROL data files</a>), the library will look into all sources (with the basic
+data source set as lowest priority)</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.navaid.</span></span><span class="sig-name descname"><span class="pre">Navaids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pd.DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/VHF_omnidirectional_range">VOR</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Distance_measuring_equipment">DME</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Non-directional_beacon">NDB</a> are short-range
+radio navigation systems for aircraft.  They help aircraft with a receiving
+unit to determine their position and stay on course.</p>
+<p>The first airways were designed after the locations of these beacons. Recent
+progress in GNSS systems helped define more positions by their latitudes and
+longitudes, referred to as FIX.</p>
+<ul class="simple">
+<li><p>Read more about <a class="reference external" href="https://aerosavvy.com/navigation-name-nonsense/">navigational beacons</a> and how FIX names are
+decided.</p></li>
+<li><p>Read more about <a class="reference external" href="scenarios/calibration.html">calibration</a> of such
+equipment.</p></li>
+</ul>
+<p>A (deprecated) database of world navigational beacons is available as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">navaids</span>
+</pre></div>
+</div>
+<p>Any navigational beacon can be accessed by the bracket notation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;NARAK&#39;</span><span class="p">]</span>
+<span class="go">Navaid(&#39;NARAK&#39;, type=&#39;FIX&#39;, latitude=44.29527778, longitude=1.74888889)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.download_data">
+<span class="sig-name descname"><span class="pre">download_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.download_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the latest version of the navaid database from the
+repository.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.global_get">
+<span class="sig-name descname"><span class="pre">global_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Navaid</span></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.global_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for a navaid from all alternative data sources.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">global_get</span><span class="p">(</span><span class="s2">&quot;ZUE&quot;</span><span class="p">)</span>
+<span class="go">Navaid(</span>
+<span class="go">    &#39;ZUE&#39;,</span>
+<span class="go">    type=&#39;NDB&#39;,</span>
+<span class="go">    latitude=30.9,</span>
+<span class="go">    longitude=20.06833333,</span>
+<span class="go">    altitude=0.0,</span>
+<span class="go">    description=&#39;ZUEITINA NDB&#39;,</span>
+<span class="go">    frequency=&#39; 369.0kHz&#39;</span>
+<span class="go">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">global_get</span><span class="p">(</span><span class="s2">&quot;ZUE&quot;</span><span class="p">)</span>
+<span class="go">Navaid(</span>
+<span class="go">    &#39;ZUE&#39;,</span>
+<span class="go">    type=&#39;VOR&#39;,</span>
+<span class="go">    latitude=47.59216667,</span>
+<span class="go">    longitude=8.81766667,</span>
+<span class="go">    altitude=1730.0,</span>
+<span class="go">    description=&#39;ZURICH EAST VOR-DME&#39;,</span>
+<span class="go">    frequency=&#39;110.05MHz&#39;</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.navaid.Navaids.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><span class="pre">traffic.data.basic.navaid.Navaids</span></a></span></span><a class="headerlink" href="#traffic.data.basic.navaid.Navaids.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the subset of airways matching name in the name or description
+field.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The same name may match several navigational beacons in the world.
+Use the extent() method to limit the search to an area of interest.</p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;ZUE&quot;</span><span class="p">)</span>
+<span class="go">  name   type   latitude   longitude   altitude   frequency   description</span>
+<span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go">  ZUE    NDB    30.9       20.07       0          369         ZUEITINA NDB</span>
+<span class="go">  ZUE    VOR    47.59      8.818       1730       110         ZURICH EAST VOR-DME</span>
+<span class="go">  ZUE    DME    47.59      8.818       1730       110         ZURICH EAST VOR-DME</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;ZUE&quot;</span><span class="p">)</span>
+<span class="go">  name   type   latitude   longitude   altitude   frequency   description</span>
+<span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go">  ZUE    VOR    47.59      8.818       1730       110         ZURICH EAST VOR-DME</span>
+<span class="go">  ZUE    DME    47.59      8.818       1730       110         ZURICH EAST VOR-DME</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.basic.airways.Airways">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.airways.</span></span><span class="sig-name descname"><span class="pre">Airways</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pd.DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.airways.Airways" title="Permalink to this definition">¶</a></dt>
+<dd><p>An ATS route is a specified route designed for channelling the flow of
+traffic as necessary for the provision of air traffic services.</p>
+<p>The term “ATS route” is used to mean variously, airway, advisory route,
+controlled or uncontrolled route, arrival or departure route, etc.</p>
+<p>An ATS route is defined by route specifications which include an ATS route
+designator, the track to or from significant points (waypoints), distance
+between significant points, reporting requirements and, as determined by the
+appropriate ATS authority, the lowest safe altitude. (ICAO Annex 11 - Air
+Traffic Services)</p>
+<p>A (deprecated) database of world ATS routes is available as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span>
+</pre></div>
+</div>
+<p>Any ATS route can be accessed by the bracket notation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="p">[</span><span class="s1">&#39;Z50&#39;</span><span class="p">]</span>
+<span class="go">Route(&#39;Z50&#39;, navaids=[&#39;EGOBA&#39;, &#39;SOT&#39;, &#39;BULTI&#39;, &#39;AYE&#39;, &#39;AVMON&#39;, ...])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Occitanie&quot;</span><span class="p">)[</span><span class="s2">&quot;UN869&quot;</span><span class="p">]</span>
+<span class="go">Route(&#39;UN869&#39;, navaids=[&#39;XOMBO&#39;, &#39;TIVLI&#39;, &#39;AGN&#39;, &#39;NARAK&#39;, &#39;NASEP&#39;, ...])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following snippet plots the (in)famous <a class="reference external" href="https://flugdienstberater.org/l888">Silk Road Airway (L888)</a> over the Himalaya mountains,
+which requires special qualifications.</p>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span>
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">Orthographic</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+        <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Orthographic</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">30</span><span class="p">)),</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+
+    <span class="n">airways</span><span class="p">[</span><span class="s2">&quot;L888&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">navaid</span> <span class="ow">in</span> <span class="n">airways</span><span class="p">[</span><span class="s2">&quot;L888&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">navaids</span><span class="p">:</span>
+        <span class="n">navaid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">,</span>
+            <span class="n">text_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/navigation_0_1.png" src="../_images/navigation_0_1.png" />
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.airways.Airways.global_get">
+<span class="sig-name descname"><span class="pre">global_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Route</span></span></span><a class="headerlink" href="#traffic.data.basic.airways.Airways.global_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for a route from all alternative data sources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.basic.airways.Airways.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.basic.airways.Airways" title="traffic.data.basic.airways.Airways"><span class="pre">traffic.data.basic.airways.Airways</span></a></span></span><a class="headerlink" href="#traffic.data.basic.airways.Airways.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the subset of airways matching name in the route name or in the
+passed navigational beacon.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s1">&#39;Switzerland&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Z50&quot;</span><span class="p">)</span>
+<span class="go">  route   id   navaid   latitude   longitude</span>
+<span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go">  Z50     7    GERSA    47.04      8.532</span>
+<span class="go">  Z50     8    KELIP    46.96      8.762</span>
+<span class="go">  Z50     9    SOPER    46.89      8.944</span>
+<span class="go">  Z50     10   PELAD    46.6       9.726</span>
+<span class="go">  Z50     11   RESIA    46.48      10.04</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;NARAK&quot;</span><span class="p">)</span>
+<span class="go">  route   id   navaid   latitude   longitude</span>
+<span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go">  N869    88   NARAK    44.3       1.749</span>
+<span class="go">  UN859   15   NARAK    44.3       1.749</span>
+<span class="go">  UN869   23   NARAK    44.3       1.749</span>
+<span class="go">  UT122   15   NARAK    44.3       1.749</span>
+<span class="go">  UY155   2    NARAK    44.3       1.749</span>
+<span class="go">  UZ365   3    NARAK    44.3       1.749</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The same L888 route can also be plotted inside a Leaflet widget.</p>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyleaflet</span> <span class="kn">import</span> <span class="n">Map</span><span class="p">,</span> <span class="n">basemaps</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">32.3</span><span class="p">,</span> <span class="mi">99</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="n">basemaps</span><span class="o">.</span><span class="n">Stamen</span><span class="o">.</span><span class="n">Terrain</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">airways</span><span class="p">[</span><span class="s2">&quot;L888&quot;</span><span class="p">])</span>
+
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "bb91521f3e974c2e9ed51f2997b5a015"}
+</script></div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"9a77b0e8ccba483ea52e25de08c5e319": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "96ca2614843c4f9c87b39d0c5ae7f68f": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "81f4abadc26e48fe9c2c2f4517a71c75": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletTileLayerView", "attribution": "Map tiles by <a href=\"http://stamen.com/\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org/\">OpenStreetMap</a>, under <a href=\"http://creativecommons.org/licenses/by-sa/3.0\">CC BY SA</a>.", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 18, "min_native_zoom": 0, "min_zoom": 0, "name": "Stamen.Terrain", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://stamen-tiles-a.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png", "visible": true}}, "16fb196056b242c286bb0e8eebc1edaf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ce06887eb5d649e99ef7ab4030fdb943": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "bb91521f3e974c2e9ed51f2997b5a015": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [32.3, 99], "close_popup_on_click": true, "controls": ["IPY_MODEL_02ca12786ba0406ab43b37c1d85b8e94", "IPY_MODEL_4b7ba405359d4c56a71bc0957c024a17"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_9a77b0e8ccba483ea52e25de08c5e319", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_96ca2614843c4f9c87b39d0c5ae7f68f", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_81f4abadc26e48fe9c2c2f4517a71c75", "IPY_MODEL_486988457be44be1ade9cf517e465e54", "IPY_MODEL_ef783d70318841fdaa7d7ace1ddac6ad", "IPY_MODEL_68c849f97c6d412c887ad786b5259f86", "IPY_MODEL_e19b412de1cd4d8e9992b2a017e79071", "IPY_MODEL_e00b51465c4746a0b97ee9524d177ee1", "IPY_MODEL_1bf38beb10aa4205a86a688305762078", "IPY_MODEL_1494b2aa7fbd4cb0a6f51e4bed6f7047", "IPY_MODEL_4bdc19675de54b06aae388b57eaf8af8", "IPY_MODEL_264acf2f5c4d413db69f719bd0e4dc33", "IPY_MODEL_53f2f5389c6f41abbbdc24a07c6f7a0d", "IPY_MODEL_61d36ccce55445b7a3d5d0be0b7e9dbf", "IPY_MODEL_e23a46eac2024b54ad17d4beb226f7ac", "IPY_MODEL_b03ec6bab3984542b8de5ba8c703d56c", "IPY_MODEL_a7545d57e0214d60a9dd734fcb8038b0", "IPY_MODEL_582a301fac3a4fada5ab7df12cd87133", "IPY_MODEL_43efed1b44814684bf6184783ef5c1b0", "IPY_MODEL_e57879daa760462eab0ea2898b5aa7a3", "IPY_MODEL_40c29db8bf7646a7993f5335773bba08"], "layout": "IPY_MODEL_16fb196056b242c286bb0e8eebc1edaf", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_ce06887eb5d649e99ef7ab4030fdb943", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 4.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "02ca12786ba0406ab43b37c1d85b8e94": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "4b7ba405359d4c56a71bc0957c024a17": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "486988457be44be1ade9cf517e465e54": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[41.676667, 82.843333], [40.076667, 86.0], [38.575, 88.708333], [37.758333, 90.188333], [36.0, 93.258333], [35.451667, 94.203333], [34.108333, 96.5], [32.601667, 99.0], [32.0, 100.0], [30.928333, 100.0], [30.28, 100.0], [27.948333, 100.0], [26.0, 100.0], [25.138333, 100.256667], [25.045, 100.283333], [24.121667, 100.556667], [22.718333, 100.965]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "ef783d70318841fdaa7d7ace1ddac6ad": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [41.676667, 82.843333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_76b0be6d9eb441c8a28604cd51a817f0", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "XKC", "visible": true, "z_index_offset": 0}}, "e223519433f54bd8ad06e22dc3fcc58e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d5e2c4c359e645da8085443df8c5a281": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "76b0be6d9eb441c8a28604cd51a817f0": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e223519433f54bd8ad06e22dc3fcc58e", "placeholder": "\u200b", "style": "IPY_MODEL_d5e2c4c359e645da8085443df8c5a281", "value": "XKC (FIX): 41.676667 82.843333"}}, "68c849f97c6d412c887ad786b5259f86": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [40.076667, 86.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_a28d2d57254846679808e76599eba790", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "SADAN", "visible": true, "z_index_offset": 0}}, "8f1435b419364ee985ec501b0319c5ff": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2b5adeacd8c0400f9ec1ce59dca37c41": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a28d2d57254846679808e76599eba790": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8f1435b419364ee985ec501b0319c5ff", "placeholder": "\u200b", "style": "IPY_MODEL_2b5adeacd8c0400f9ec1ce59dca37c41", "value": "SADAN (FIX): 40.076667 86.0"}}, "e19b412de1cd4d8e9992b2a017e79071": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [38.575, 88.708333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_730cfc7a1f884f3ea670e8b1793bc3cb", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "NOLEP", "visible": true, "z_index_offset": 0}}, "1bbe2325e5454a5381513e96825a3ec7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "991804557afd40d39d1619665ef2c2a8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "730cfc7a1f884f3ea670e8b1793bc3cb": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1bbe2325e5454a5381513e96825a3ec7", "placeholder": "\u200b", "style": "IPY_MODEL_991804557afd40d39d1619665ef2c2a8", "value": "NOLEP (FIX): 38.575 88.708333"}}, "e00b51465c4746a0b97ee9524d177ee1": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [37.758333, 90.188333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_3613375194c3475e909a458abb08c9f3", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "TONAX", "visible": true, "z_index_offset": 0}}, "0addc939b6b7406dab8c722f0cee0aac": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b86ce8a6e5fa4b41b02fa997f232c7f9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3613375194c3475e909a458abb08c9f3": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0addc939b6b7406dab8c722f0cee0aac", "placeholder": "\u200b", "style": "IPY_MODEL_b86ce8a6e5fa4b41b02fa997f232c7f9", "value": "TONAX (FIX): 37.758333 90.188333"}}, "1bf38beb10aa4205a86a688305762078": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [36.0, 93.258333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_2e6aa76e8a6646adb4aef29d0b37e90e", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "LEBAK", "visible": true, "z_index_offset": 0}}, "c2592752619a42cd9b4050a38aa98648": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0e9b052a3881439ab184695e43bbd9c5": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "2e6aa76e8a6646adb4aef29d0b37e90e": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c2592752619a42cd9b4050a38aa98648", "placeholder": "\u200b", "style": "IPY_MODEL_0e9b052a3881439ab184695e43bbd9c5", "value": "LEBAK (FIX): 36.0 93.258333"}}, "1494b2aa7fbd4cb0a6f51e4bed6f7047": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [35.451667, 94.203333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_653adb3b2a114956aba63dab328b96ff", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "TEMOL", "visible": true, "z_index_offset": 0}}, "885a95820de14275a7db66dd11968958": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "87ef60856ea840ff93f2efedca3316e9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "653adb3b2a114956aba63dab328b96ff": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_885a95820de14275a7db66dd11968958", "placeholder": "\u200b", "style": "IPY_MODEL_87ef60856ea840ff93f2efedca3316e9", "value": "TEMOL (FIX): 35.451667 94.203333"}}, "4bdc19675de54b06aae388b57eaf8af8": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [34.108333, 96.5], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_f2160b428f5b46eba0acc3ad7e6db7ef", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "MUMAN", "visible": true, "z_index_offset": 0}}, "e4e18a08a05442d0afc31bdd994ffc10": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "19aa410b32a94fd38afece17f1b92148": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f2160b428f5b46eba0acc3ad7e6db7ef": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e4e18a08a05442d0afc31bdd994ffc10", "placeholder": "\u200b", "style": "IPY_MODEL_19aa410b32a94fd38afece17f1b92148", "value": "MUMAN (FIX): 34.108333 96.5"}}, "264acf2f5c4d413db69f719bd0e4dc33": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [32.601667, 99.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_16ce07eba86d4a1fb2d8108fe2b965fe", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "LUVAR", "visible": true, "z_index_offset": 0}}, "a74fe84412374912b4ff207786df00ee": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c429ac263dd14f85bc935877cb9091d2": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "16ce07eba86d4a1fb2d8108fe2b965fe": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a74fe84412374912b4ff207786df00ee", "placeholder": "\u200b", "style": "IPY_MODEL_c429ac263dd14f85bc935877cb9091d2", "value": "LUVAR (FIX): 32.601667 99.0"}}, "53f2f5389c6f41abbbdc24a07c6f7a0d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [32.0, 100.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_615ab65d4542428c9a6b7801c9f71bf5", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "SANLI", "visible": true, "z_index_offset": 0}}, "062a795d9e4442509b29dfe477384199": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "90c25e814807484492b8c38b30ebd2b4": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "615ab65d4542428c9a6b7801c9f71bf5": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_062a795d9e4442509b29dfe477384199", "placeholder": "\u200b", "style": "IPY_MODEL_90c25e814807484492b8c38b30ebd2b4", "value": "SANLI (FIX): 32.0 100.0"}}, "61d36ccce55445b7a3d5d0be0b7e9dbf": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [30.928333, 100.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_1ace902e38e74cdf8c3a31aaf216490e", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "PEXUN", "visible": true, "z_index_offset": 0}}, "9c9422188f3c495f800ab8481bb3e442": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "576b756412c444669e0e4f479a36b849": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1ace902e38e74cdf8c3a31aaf216490e": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9c9422188f3c495f800ab8481bb3e442", "placeholder": "\u200b", "style": "IPY_MODEL_576b756412c444669e0e4f479a36b849", "value": "PEXUN (FIX): 30.928333 100.0"}}, "e23a46eac2024b54ad17d4beb226f7ac": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [30.28, 100.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_9144c57cca8b4c4ebe4c0888c15c96cc", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "BIGOR", "visible": true, "z_index_offset": 0}}, "9dc02cda6d7d48e6bc023f2879bdda1f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5013d57fe1a440f8aeca994a2f4aed7f": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9144c57cca8b4c4ebe4c0888c15c96cc": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9dc02cda6d7d48e6bc023f2879bdda1f", "placeholder": "\u200b", "style": "IPY_MODEL_5013d57fe1a440f8aeca994a2f4aed7f", "value": "BIGOR (FIX): 30.28 100.0"}}, "b03ec6bab3984542b8de5ba8c703d56c": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [27.948333, 100.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_0e13be977608443d9559a368913e814c", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "LEVBA", "visible": true, "z_index_offset": 0}}, "1417d7be03994dc0a33dc5fe4c4a81e5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "236e01c99d7d4d3f980961522c1858eb": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0e13be977608443d9559a368913e814c": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1417d7be03994dc0a33dc5fe4c4a81e5", "placeholder": "\u200b", "style": "IPY_MODEL_236e01c99d7d4d3f980961522c1858eb", "value": "LEVBA (FIX): 27.948333 100.0"}}, "a7545d57e0214d60a9dd734fcb8038b0": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [26.0, 100.0], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_2b233163f79b4776937311b63b69dc9e", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "NIVUX", "visible": true, "z_index_offset": 0}}, "21c03e7b0fdf4524a2f5b607edf218f0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2b3c239bf71d474490659b1ec72de0c2": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "2b233163f79b4776937311b63b69dc9e": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_21c03e7b0fdf4524a2f5b607edf218f0", "placeholder": "\u200b", "style": "IPY_MODEL_2b3c239bf71d474490659b1ec72de0c2", "value": "NIVUX (FIX): 26.0 100.0"}}, "582a301fac3a4fada5ab7df12cd87133": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [25.138333, 100.256667], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_49292e3c7cca4a2eb997bce1e9db5cbe", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "UPGED", "visible": true, "z_index_offset": 0}}, "b1752d0eb1734b19aebc40b9db50d3de": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4586940dc00c4f64bb89c82e164bac66": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "49292e3c7cca4a2eb997bce1e9db5cbe": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_b1752d0eb1734b19aebc40b9db50d3de", "placeholder": "\u200b", "style": "IPY_MODEL_4586940dc00c4f64bb89c82e164bac66", "value": "UPGED (FIX): 25.138333 100.256667"}}, "43efed1b44814684bf6184783ef5c1b0": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [25.045, 100.283333], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_8debef001db642a198971ceae9c5d196", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "DONEN", "visible": true, "z_index_offset": 0}}, "7c61edc613b54b63ba20e55962451523": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5c9f5a989e9b45a19da17937ba667f53": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "8debef001db642a198971ceae9c5d196": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_7c61edc613b54b63ba20e55962451523", "placeholder": "\u200b", "style": "IPY_MODEL_5c9f5a989e9b45a19da17937ba667f53", "value": "DONEN (FIX): 25.045 100.283333"}}, "e57879daa760462eab0ea2898b5aa7a3": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [24.121667, 100.556667], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_b91c978defd94c9f8dd11e8f1ea442b4", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "MAKUL", "visible": true, "z_index_offset": 0}}, "726f0c7a988d4edcbf8c4bcaef3f10e9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "11d3f043286f4d9786538ba72bbbf8d1": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b91c978defd94c9f8dd11e8f1ea442b4": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_726f0c7a988d4edcbf8c4bcaef3f10e9", "placeholder": "\u200b", "style": "IPY_MODEL_11d3f043286f4d9786538ba72bbbf8d1", "value": "MAKUL (FIX): 24.121667 100.556667"}}, "40c29db8bf7646a7993f5335773bba08": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [22.718333, 100.965], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": "IPY_MODEL_5509cd6461fb474cbc9c1ee252db9563", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "BIDRU", "visible": true, "z_index_offset": 0}}, "abcc595413364fd88d2d05ff1f56a931": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bb87dd9807c1425e84cd1d9e959bb116": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5509cd6461fb474cbc9c1ee252db9563": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_abcc595413364fd88d2d05ff1f56a931", "placeholder": "\u200b", "style": "IPY_MODEL_bb87dd9807c1425e84cd1d9e959bb116", "value": "BIDRU (FIX): 22.718333 100.965"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../firs.html" class="btn btn-neutral float-right" title="Flight Information Regions (FIR)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="aircraft.html" class="btn btn-neutral float-left" title="How to access aircraft information?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
+</script>
+
+
+
+</body>
+</html>

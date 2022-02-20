@@ -45,8 +45,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -112,18 +110,18 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="user_guide.html#sources-of-data">Sources of data</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="user_guide/airports.html">How to access airport information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/aircraft.html">How to access aircraft information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/navigation.html">How to access beacons and airways information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">DDR files from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/export.html">How to export and store trajectory and airspace data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide.html#navigation-events">Navigation events</a></li>
@@ -213,7 +211,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.data.SO6">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.</span></span><span class="sig-name descname"><span class="pre">SO6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="user_guide/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.DataFrameMixin</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.DataFrameMixin</span></code></a></p>
 <p>Eurocontrol DDR files provide flight intentions of aircraft for a full
 day of traffic across Europe. This data cannot be shared so the file
 included in the repository has actually been generated from OpenSky
@@ -287,7 +285,7 @@ to parse .so6.7z files on the fly.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.SO6.inside_bbox">
-<span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">traffic.core.airspace.Airspace</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><span class="pre">traffic.data.eurocontrol.ddr.so6.SO6</span></a></span></span><a class="headerlink" href="#traffic.data.SO6.inside_bbox" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">traffic.core.airspace.Airspace</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><span class="pre">traffic.data.eurocontrol.ddr.so6.SO6</span></a></span></span><a class="headerlink" href="#traffic.data.SO6.inside_bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all Flights intersecting the bounding box of the given airspace.</p>
 <p>A tuple (west, south, east, north) is also accepted as a parameter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bdx_so6</span> <span class="o">=</span> <span class="n">so6</span><span class="o">.</span><span class="n">inside_bbox</span><span class="p">(</span><span class="n">nm_airspaces</span><span class="p">[</span><span class="s2">&quot;LFBBBDX&quot;</span><span class="p">])</span>
@@ -299,7 +297,7 @@ to parse .so6.7z files on the fly.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.SO6.intersects">
-<span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">traffic.core.airspace.Airspace</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><span class="pre">traffic.data.eurocontrol.ddr.so6.SO6</span></a></span></span><a class="headerlink" href="#traffic.data.SO6.intersects" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">traffic.core.airspace.Airspace</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><span class="pre">traffic.data.eurocontrol.ddr.so6.SO6</span></a></span></span><a class="headerlink" href="#traffic.data.SO6.intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all Flights intersecting the given airspace.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -341,7 +339,7 @@ chaining may not be safe for smaller airspaces.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.ddr.so6.</span></span><span class="sig-name descname"><span class="pre">Flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.flight.Flight</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.flight.Flight</span></code></a></p>
 <p>SO6 Flight inherit from <a class="reference external" href="/traffic.core.flight.html">traffic.core.Flight</a>
 and implement specificities of the SO6 format.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">so6</span><span class="p">[</span><span class="s1">&#39;HOP36PP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
@@ -529,16 +527,20 @@ shape.</p>
   
   
     
-  
- 
+    
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-412789-3');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
 </script>
 
 

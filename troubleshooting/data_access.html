@@ -45,8 +45,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -211,10 +209,9 @@ EUROCONTROL.</p>
 <p>Should you have no such access, basic data are also provided in the library.</p>
 </li>
 <li><p><strong>I want to know more about Eurocontrol AIXM files</strong></p>
-<p>When you import <code class="docutils literal notranslate"><span class="pre">aixm_airspaces</span></code> from <code class="docutils literal notranslate"><span class="pre">traffic.data</span></code>, you need to set a
-path to a directory containing AIRAC files. These are XML files following the
-<a class="reference external" href="http://aixm.aero/">AIXM</a> standard and produced by Eurocontrol. We download
-these files from Eurocontrol <a class="reference external" href="https://eurocontrol.int/service/network-manager-business-business-b2b-web-services">Network Manager B2B web services</a>.</p>
+<p>These are XML files following the <a class="reference external" href="http://aixm.aero/">AIXM</a> standard and
+produced by Eurocontrol. We download these files from Eurocontrol <a class="reference external" href="https://eurocontrol.int/service/network-manager-business-business-b2b-web-services">Network
+Manager B2B web services</a>.</p>
 <p>You have to own a B2B certificate granted by EUROCONTROL to get access to this
 data.</p>
 </li>
@@ -308,16 +305,20 @@ messages in the issue description.</p>
   
   
     
-  
- 
+    
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-412789-3');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
 </script>
 
 

@@ -45,8 +45,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -54,7 +52,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to access airport information?" href="user_guide/airports.html" />
+    <link rel="next" title="How to access sample trajectories?" href="data_sources/samples.html" />
     <link rel="prev" title="Getting started" href="quickstart.html" /> 
 </head>
 
@@ -112,18 +110,18 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sources-of-data">Sources of data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/airports.html">How to access airport information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/aircraft.html">How to access aircraft information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/navigation.html">How to access beacons and airways information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/export.html">How to export and store trajectory and airspace data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#navigation-events">Navigation events</a><ul>
@@ -234,18 +232,18 @@ approaches the problem with as many examples as possible.</p>
 <h2>Sources of data<a class="headerlink" href="#sources-of-data" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_guide/airports.html">How to access airport information?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide/aircraft.html">How to access aircraft information?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="navaids.html">Navigational beacons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="airways.html">Airways, ATS routes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample trajectories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/airports.html">How to access airport information?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/navigation.html">How to access beacons and airways information?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide/export.html">How to export and store trajectory and airspace data?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </div>
 </div>
@@ -299,7 +297,7 @@ approaches the problem with as many examples as possible.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="user_guide/airports.html" class="btn btn-neutral float-right" title="How to access airport information?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data_sources/samples.html" class="btn btn-neutral float-right" title="How to access sample trajectories?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="quickstart.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -338,16 +336,20 @@ approaches the problem with as many examples as possible.</p>
   
   
     
-  
- 
+    
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-412789-3');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
 </script>
 
 

@@ -45,8 +45,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager/dist/embed-amd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -113,11 +111,11 @@
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">Lazy iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">The Flight structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.traffic.html">The Traffic structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">The Airspace structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">The FlightIterator structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">Lazy iteration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation events</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Trajectory clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generation.html">Trajectory generation</a></li>
@@ -444,16 +442,20 @@ and Priska Wallimann <a class="reference external" href="https://github.com/blic
   
   
     
-  
- 
+    
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-412789-3');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
 </script>
 
 
