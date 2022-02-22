@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to access ADS-B data from OpenSky history database? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to configure EUROCONTROL data files?" href="eurocontrol.html" />
+    <link rel="prev" title="How to access ADS-B data from OpenSky live API?" href="opensky_rest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation.html">How to access beacons and airways information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airspaces.html">How to access airspace information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to access ADS-B data from OpenSky history database?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#historical-traffic-data">Historical traffic data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extended-mode-s-ehs">Extended Mode-S (EHS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flight-list-by-airport">Flight list by airport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#requests-for-raw-data">Requests for raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-requests">Custom requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">How to export and store trajectory and airspace data?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to access ADS-B data from OpenSky history database?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/data_sources/opensky_impala.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>../data/opensky_cache
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-access-ads-b-data-from-opensky-history-database">
+<h1>How to access ADS-B data from OpenSky history database?<a class="headerlink" href="#how-to-access-ads-b-data-from-opensky-history-database" title="Permalink to this headline">¶</a></h1>
+<p>For more advanced request or a dig in further history, you may be
+eligible for an direct access to the history database through their
+<a class="reference external" href="https://opensky-network.org/impala-guide">Impala</a> shell.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OpenSky data are subject to particular <a class="reference external" href="https://opensky-network.org/about/terms-of-use">terms of use</a>. In particular, if you plan
+to use data for commercial purposes, you should mention it when you ask for
+access</p>
+</div>
+<p>Provided functions are here to help:</p>
+<ul class="simple">
+<li><p>build appropriate and efficient requests without any SQL knowledge;</p></li>
+<li><p>split requests efficiently and store intermediary results in cache
+files;</p></li>
+<li><p>parse results with pandas and wrap results in appropriate data structures.</p></li>
+</ul>
+<p>The first thing to do is to put your credentials in you configuration
+file. Edit the following lines to your configuration file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">opensky</span><span class="p">]</span>
+<span class="n">username</span> <span class="o">=</span>
+<span class="n">password</span> <span class="o">=</span>
+</pre></div>
+</div>
+<p>You can check the path to your configuration file here. The path is
+different according to OS versions so do not assume anything and check
+the contents of the variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
+<span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
+</pre></div>
+</div>
+<div class="section" id="historical-traffic-data">
+<h2>Historical traffic data<a class="headerlink" href="#historical-traffic-data" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.opensky_impala.Impala.history">
+<span class="sig-prename descclassname"><span class="pre">Impala.</span></span><span class="sig-name descname"><span class="pre">history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">datetime.timedelta(seconds=3600)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_flight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao24</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_tables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nautical_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progressbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.opensky_impala.Impala.history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Traffic from the OpenSky Impala shell.</p>
+<p>You may pass requests based on time ranges, callsigns, aircraft, areas,
+serial numbers for receivers, or airports of departure or arrival.</p>
+<p>The method builds appropriate SQL requests, caches results and formats
+data into a proper pandas DataFrame. Requests are split by hour (by
+default) in case the connection fails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime (native
+Python or pandas)</p></li>
+<li><p><strong>stop</strong> (<em>None</em><em> | </em><em>timelike</em>) – a string (default to UTC), epoch or datetime (native Python
+or pandas), <em>by default, one day after start</em></p></li>
+<li><p><strong>date_delta</strong> (<em>timedelta</em>) – a timedelta representing how to split the requests,
+<em>by default: per hour</em></p></li>
+<li><p><strong>return_flight</strong> (<em>bool</em>) – returns a Flight instead of a Traffic structure if
+switched to True</p></li>
+</ul>
+</dd>
+</dl>
+<p>More arguments to filter resulting data:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callsign</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings (wildcards
+accepted, _ for any character, % for any sequence of characters);</p></li>
+<li><p><strong>icao24</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings identifying the transponder
+code of the aircraft;</p></li>
+<li><p><strong>serials</strong> (<em>None</em><em> | </em><em>int</em><em> | </em><em>Iterable</em><em>[</em><em>int</em><em>]</em>) – an integer or a list of integers identifying the sensors
+receiving the data;</p></li>
+<li><p><strong>bounds</strong> (<em>None</em><em> | </em><em>BaseGeometry</em><em> | </em><em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – sets a geographical footprint. Either an <strong>airspace or
+shapely shape</strong> (requires the bounds attribute); or a <strong>tuple of
+float</strong> (west, south, east, north);</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Airports</strong></p>
+<p>The following options build more complicated requests by merging
+information from two tables in the Impala database, resp.
+<code class="docutils literal notranslate"><span class="pre">state_vectors_data4</span></code> and <code class="docutils literal notranslate"><span class="pre">flights_data4</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>departure_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the
+airport. Selects flights departing from the airport between the two
+timestamps;</p></li>
+<li><p><strong>arrival_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport.
+Selects flights arriving at the airport between the two timestamps;</p></li>
+<li><p><strong>airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport. Selects
+flights departing from or arriving at the airport between the two
+timestamps;</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="#traffic.data.adsb.opensky_impala.Impala.flightlist">opensky.flightlist</a> if you do
+not need any trajectory information.</p></li>
+<li><p>If both departure_airport and arrival_airport are set, requested
+timestamps match the arrival time;</p></li>
+<li><p>If airport is set, departure_airport and arrival_airport cannot be
+specified (a RuntimeException is raised).</p></li>
+</ul>
+</div>
+<p><strong>Useful options for debug</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>bool</em>) – (default: False) add a column stating how many sensors
+received each record;</p></li>
+<li><p><strong>nautical_units</strong> (<em>bool</em>) – (default: True) convert data stored in Impala to
+standard nautical units (ft, ft/min, knots).</p></li>
+<li><p><strong>time_buffer</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>pd.Timedelta</em>) – (default: None) time buffer used to extend time
+bounds for flights in the OpenSky flight tables: requests will get
+flights between <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">-</span> <span class="pre">time_buffer</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">+</span> <span class="pre">time_buffer</span></code>.
+If no airport is specified, the parameter is ignored.</p></li>
+<li><p><strong>cached</strong> (<em>bool</em>) – (default: True) switch to False to force a new request to
+the database regardless of the cached files. This option also
+deletes previous cache files;</p></li>
+<li><p><strong>limit</strong> (<em>None</em><em> | </em><em>int</em>) – maximum number of records requested, LIMIT keyword in SQL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None | <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic">Traffic</a> | <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight">Flight</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="examples-of-requests">
+<h3>Examples of requests<a class="headerlink" href="#examples-of-requests" title="Permalink to this headline">¶</a></h3>
+<p>First, the <cite>opensky</cite> instance parses your configuration file upon import:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">opensky</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Then you may send requests:</p>
+<ul>
+<li><p>based on callsign:</p>
+<blockquote>
+<div><div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flight</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2017-02-05 15:45&quot;</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;2017-02-05 16:45&quot;</span><span class="p">,</span>
+    <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;EZY158T&quot;</span><span class="p">,</span>
+    <span class="c1"># returns a Flight instead of a Traffic</span>
+    <span class="n">return_flight</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "b48042d41a7141ef87d6d057fffb40ee"}
+</script><div class="output text_html"><b>Flight EZY158T</b><ul><li><b>aircraft:</b> 406d95 · 🇬🇧 G-EZOP (A320)</li><li><b>from:</b> 2017-02-05 15:45:00+00:00</li><li><b>to:</b> 2017-02-05 16:44:59+00:00</li></ul><div style="white-space: nowrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-41659.75180021722 -102150.01446988704 83499.45704836166 204392.32369636657" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,92.29475659248419)"><polyline fill="none" stroke="#66cc99" stroke-width="1362.6154913091104" points="23488.714002146997,94672.22316365114 22571.315321072492,82581.04127054884 21098.58886310034,64381.11923152272 18172.71674968569,27082.38506422584 18025.77136553102,26099.044297906872 17831.848485915853,25290.439199879507 17598.82753419964,24613.224808137482 16831.51545744726,22815.983787121404 16504.786737018992,21751.43439256019 16328.689402159289,20714.348488447806 16282.886704010112,19767.519067323 16399.525687244717,17895.159258102725 16827.38769471634,14016.188197811836 16978.328999944795,12242.144462631466 17828.75445734307,-6436.013550474854 18768.998619833375,-21807.69574653312 19371.144883444467,-30020.55650783392 19549.655972631015,-31250.82919465572 19858.044455222233,-32698.65510242614 21507.2089145512,-38823.80264054441 24003.237175573573,-48744.07962036775 24234.188246865655,-49882.5990657832 24390.13964625654,-51170.870759069556 24443.638785848136,-52800.039625417405 24409.762048608398,-55583.774508953786 24270.51635144412,-57018.62426545538 23975.089040020837,-59060.50267038135 23806.400577132757,-60011.03218867962 23541.668185212617,-61074.998818241926 22204.415812677686,-65397.68905698618 21941.532618157315,-66008.98510454789 21336.63672385012,-67009.12643687846 18811.574688164153,-70451.14244832275 18420.797396138743,-70819.46463700719 18003.264296398294,-71099.90710183841 17495.487541482344,-71308.14868991499 16966.19532744059,-71397.44420308783 16314.869480012116,-71393.8965687164 14725.958779165798,-71242.4253531896 8307.286575955735,-70451.80627343632 7311.726178023499,-70271.94260147911 6136.379383945869,-69867.01817194911 2498.4569009768325,-68361.73883261255 2154.3601561249648,-68165.31159513102 1657.8615547421948,-67779.25499164751 973.937568181251,-67079.40391512009 10.827850913886023,-65920.87398993484 -2460.1680401574654,-62672.521067090325 -12060.054717326435,-49925.9945378334 -15128.163014403808,-45772.310056861344 -16402.32049149602,-44214.81396088264 -18829.56887910669,-41490.208607544715 -19015.54669344123,-41191.5573306813 -19238.242481192767,-40625.1915518556 -19320.929259738932,-39974.99673001514 -19271.699793210093,-39440.536333818454 -19148.076257823534,-38942.930218644244 -18889.208058890345,-38365.70201797023 -18553.13758805661,-37856.09768796385 -18143.64743529556,-37405.646579343855 -17727.61799083102,-37054.67711397561 -17209.396742277888,-36725.32799120548 -15718.502687602953,-36052.598849696005 -9582.507263101847,-33621.53019520539 -8841.708714584156,-33445.73505637973 -8188.5091051183335,-33380.44778457834 -7381.164506507356,-33422.08805733617 -6759.02392595492,-33539.74285599461 -6186.514933386959,-33723.84991866549 -5643.414075906691,-33968.05944367991 -5083.08099366678,-34309.31373106349 -4570.729651283588,-34697.646108720226 817.0869394576259,-39546.04630973954 1517.1638536007597,-40221.65341940552 2145.5548211812347,-40911.34786479392 8472.088171424875,-48370.01208388443 8947.105610132901,-48984.8437827621 9474.074248911482,-49818.28124058576 9892.549866349163,-50582.35245066277 12424.867533507004,-55450.64314275948 12801.859969328554,-56453.394366265624 13254.015423768375,-58117.790561695896 15780.91849699399,-68015.09179543146 15890.91945866568,-68620.07704462379 15912.50935709675,-69001.48282600602 15897.144636397144,-69424.26838595152 15795.798380132253,-69932.51397236556 15682.062278472411,-70257.5153162651 15430.53167672639,-70742.0542205408 14932.954135475738,-71459.20001015434 13104.33186153595,-73895.28413929016 12665.379781144966,-74338.6137686561 12486.85199111523,-74464.11740462221 12058.096353207262,-74661.44924637295 11620.839935997648,-74732.13567442124 11258.553034025463,-74697.15466922823 10775.823448070143,-74539.5099227001 5455.484434931777,-71902.02972221686 4834.485197351506,-71485.45368161626 4326.20347143195,-71019.35217510315 3732.170774847803,-70331.62842915762 2635.309430905294,-68928.39680086359 -11699.12932623971,-49901.20739882824 -13226.037987045518,-47762.05786632672 -14038.258600721736,-46778.712631838884 -14460.162537581396,-46482.79506182794 -14950.01520959077,-46305.49641147193 -15783.13364706762,-46143.217989253564 -17570.832235854446,-45916.30784476492 -19054.502887549912,-45799.80037148413 -21067.55023875528,-45714.75430318125 -24501.432261702517,-45692.63593108859 -28739.43408501809,-45475.04541423145 -29481.523102424188,-45517.57303436446 -30322.508904631926,-45778.28621037789 -31324.173194287087,-46226.33757845512 -32207.948795316184,-46776.539933137974 -32911.87877737777,-47403.81460654729 -33353.59069868106,-47961.12454442792 -33625.0007821509,-48414.95261879191 -33817.12960093583,-48838.13694595145 -34010.0593682391,-49509.16779297942 -34070.72906949538,-49923.10056477207 -34089.66573738883,-50528.203147603395 -34018.91273692752,-51144.10927263164 -33915.43960507304,-51558.44804988688 -33754.71768847505,-52018.07720077431 -33428.32055343062,-52747.08093106628 -30749.897922404558,-57755.05410985327 -29561.547464598847,-60064.26746636897 -21010.01169820426,-77801.46099916668 -19910.256054513447,-80409.60126768201 -16996.807533391417,-87803.30952814076 -16704.112703951014,-88743.10100964343 -16607.405748199817,-89475.68785355223 -16608.794602715243,-90035.11404493517 -16706.82923600246,-90721.0101027623 -16937.02938837749,-91449.66885174808 -17166.682263726205,-91945.58465475014 -17658.29191475302,-92687.1590503615 -17980.95446896977,-93047.38226085305 -18546.812756304887,-93545.18092713306 -19121.65965408388,-93915.9365766568 -19831.761592439565,-94247.4543755307 -20584.495675435897,-94475.3289396437 -21213.278972705117,-94568.70019939136 -21849.473765767823,-94579.92840705866 -22481.569758567766,-94510.6016042688 -23330.966373930794,-94285.30584982283 -23893.31857668993,-94040.24523267403 -24324.514627433065,-93790.18444101031 -24769.62112641773,-93468.15509127332 -25170.298644675084,-93104.62921148427 -25420.85177615241,-92779.14674402802 -25585.547346309017,-92427.60654581281 -25676.206787793217,-92037.29839309884 -25692.277564909346,-91847.42792689869 -25636.03346110629,-91256.49443013573 -25490.883024634222,-90796.74818702143 -25198.673244585098,-90272.73202829451 -24839.43386798091,-89842.39119828091 -24506.156890400758,-89542.95812804477 -24178.583729528636,-89310.20575627392 -23690.165778424427,-89047.49429275987 -23131.477456791003,-88839.98555198846 -22472.665714676354,-88697.41671219078 -21547.13202296137,-88647.88077704194 -20541.38730617044,-88727.33143297628 -14180.461176881274,-89552.47297305627 -5453.000181669912,-90612.9354086944 2535.3879492281344,-91764.04122196168 3335.8420375813744,-91842.64724744689 4288.937933958493,-91839.43212517236 5207.106844484004,-91716.72454411484 11668.717507097872,-90315.09705477205 23356.57388354467,-87924.71380091718 34269.61918531604,-85634.8459958549" opacity="0.8" /></g></svg></div></div></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on bounding box:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># two hours of traffic over LFBB FIR</span>
+<span class="n">t_lfbb</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2018-10-01 11:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2018-10-01 13:00&quot;</span><span class="p">,</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on airports and callsigns (with wildcard):</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Airbus test flights from and to Toulouse airport</span>
+<span class="n">t_aib</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2019-11-01 09:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2019-11-01 12:00&quot;</span><span class="p">,</span>
+    <span class="n">departure_airport</span><span class="o">=</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span>
+    <span class="n">arrival_airport</span><span class="o">=</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span>
+    <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;AIB%&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on (own?) receiver’s identifier:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_sensor</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2019-11-11 10:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2019-11-11 12:00&quot;</span><span class="p">,</span>
+    <span class="n">serials</span><span class="o">=</span><span class="mi">1433801924</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>with information about coverage:</p>
+<blockquote>
+<div><div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">PlateCarree</span>
+<span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">countries</span>
+
+<span class="n">flight</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2018-06-11 15:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2018-06-11 17:00&quot;</span><span class="p">,</span>
+    <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;KLM1308&quot;</span><span class="p">,</span>
+    <span class="n">count</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">return_flight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">()))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># no specific method for that in traffic</span>
+    <span class="c1"># but switch back to pandas DataFrame for manual plot</span>
+    <span class="n">flight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+        <span class="n">c</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">PlateCarree</span><span class="p">(),</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/opensky_impala_4_1.png" src="../_images/opensky_impala_4_1.png" />
+</div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="extended-mode-s-ehs">
+<h2>Extended Mode-S (EHS)<a class="headerlink" href="#extended-mode-s-ehs" title="Permalink to this headline">¶</a></h2>
+<p>EHS messages are not automatically decoded for you in the OpenSky
+Database but you may access them and decode them from your computer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Some examples here may be outdated</strong>. To our knowledge at this time, only
+EHS data <strong>after January 1st 2020</strong> are available!</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Flight.query_ehs()</span></code> messages also takes a dataframe argument to avoid
+making possibly numerous requests to the Impala database.</div>
+<div class="line">Consider using <a class="reference external" href="#traffic.data.adsb.opensky_impala.Impala.extended">opensky.extended()</a> and request all
+necessary data, then pass the resulting dataframe as an argument.</div>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.opensky_impala.Impala.extended">
+<span class="sig-prename descclassname"><span class="pre">Impala.</span></span><span class="sig-name descname"><span class="pre">extended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.opensky_impala.Impala.extended" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get raw message from the OpenSky Impala shell.</p>
+<p>You may pass requests based on time ranges, callsigns, aircraft, areas,
+serial numbers for receivers, or airports of departure or arrival.</p>
+<p>The method builds appropriate SQL requests, caches results and formats
+data into a proper pandas DataFrame. Requests are split by hour (by
+default) in case the connection fails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime (native
+Python or pandas)</p></li>
+<li><p><strong>stop</strong> (<em>None</em><em> | </em><em>timelike</em>) – a string (default to UTC), epoch or datetime (native Python
+or pandas), <em>by default, one day after start</em></p></li>
+<li><p><strong>date_delta</strong> (<em>timedelta</em>) – a timedelta representing how to split the requests,
+<em>by default: per hour</em></p></li>
+</ul>
+</dd>
+</dl>
+<p>More arguments to filter resulting data:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callsign</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings (wildcards
+accepted, _ for any character, % for any sequence of characters);</p></li>
+<li><p><strong>icao24</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings identifying the transponder
+code of the aircraft;</p></li>
+<li><p><strong>serials</strong> (<em>None</em><em> | </em><em>int</em><em> | </em><em>Iterable</em><em>[</em><em>int</em><em>]</em>) – an integer or a list of integers identifying the sensors
+receiving the data;</p></li>
+<li><p><strong>bounds</strong> (<em>None</em><em> | </em><em>BaseGeometry</em><em> | </em><em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – sets a geographical footprint. Either an <strong>airspace or
+shapely shape</strong> (requires the bounds attribute); or a <strong>tuple of
+float</strong> (west, south, east, north);</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Airports</strong></p>
+<p>The following options build more complicated requests by merging
+information from two tables in the Impala database, resp.
+<code class="docutils literal notranslate"><span class="pre">rollcall_replies_data4</span></code> and <code class="docutils literal notranslate"><span class="pre">flights_data4</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>departure_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the
+airport. Selects flights departing from the airport between the two
+timestamps;</p></li>
+<li><p><strong>arrival_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport.
+Selects flights arriving at the airport between the two timestamps;</p></li>
+<li><p><strong>airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport. Selects
+flights departing from or arriving at the airport between the two
+timestamps;</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>If both departure_airport and arrival_airport are set, requested
+timestamps match the arrival time;</p></li>
+<li><p>If airport is set, departure_airport and arrival_airport cannot be
+specified (a RuntimeException is raised).</p></li>
+<li><p>It is not possible at the moment to filter both on airports and on
+geographical bounds (help welcome!).</p></li>
+</ul>
+</div>
+<p><strong>Useful options for debug</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cached</strong> (<em>bool</em>) – (default: True) switch to False to force a new request to
+the database regardless of the cached files. This option also
+deletes previous cache files;</p></li>
+<li><p><strong>limit</strong> (<em>None</em><em> | </em><em>int</em>) – maximum number of records requested, LIMIT keyword in SQL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None | RawData</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id1">
+<h3>Examples of requests<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>based on transponder identifier (icao24):</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">belevingsvlucht</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+    <span class="n">icao24</span><span class="o">=</span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">icao24</span>
+<span class="p">)</span>
+
+<span class="n">enriched</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">query_ehs</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on geographical bounds:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
+<span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">switzerland</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span>
+    <span class="n">switzerland</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+    <span class="n">switzerland</span><span class="o">.</span><span class="n">end_time</span><span class="p">,</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LSAS&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">enriched_ch</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">switzerland</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">query_ehs</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;1s&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on airports, together with traffic:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schiphol</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="s2">&quot;2019-11-11 12:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2019-11-11 14:00&quot;</span><span class="p">,</span>
+    <span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span>
+<span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span>
+    <span class="s2">&quot;2019-11-11 12:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2019-11-11 14:00&quot;</span><span class="p">,</span>
+    <span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span>
+<span class="p">)</span>
+
+<span class="n">enriched_eham</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">schiphol</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">query_ehs</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;1s&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="flight-list-by-airport">
+<h2>Flight list by airport<a class="headerlink" href="#flight-list-by-airport" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.opensky_impala.Impala.flightlist">
+<span class="sig-prename descclassname"><span class="pre">Impala.</span></span><span class="sig-name descname"><span class="pre">flightlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao24</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progressbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.opensky_impala.Impala.flightlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists flights departing or arriving at a given airport.</p>
+<p>You may pass requests based on time ranges, callsigns, aircraft, areas,
+serial numbers for receivers, or airports of departure or arrival.</p>
+<p>The method builds appropriate SQL requests, caches results and formats
+data into a proper pandas DataFrame. Requests are split by hour (by
+default) in case the connection fails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime (native
+Python or pandas)</p></li>
+<li><p><strong>stop</strong> (<em>None</em><em> | </em><em>timelike</em>) – a string (default to UTC), epoch or datetime (native Python
+or pandas), <em>by default, one day after start</em></p></li>
+</ul>
+</dd>
+</dl>
+<p>More arguments to filter resulting data:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>departure_airport</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string for the ICAO identifier of the
+airport. Selects flights departing from the airport between the two
+timestamps;</p></li>
+<li><p><strong>arrival_airport</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string for the ICAO identifier of the airport.
+Selects flights arriving at the airport between the two timestamps;</p></li>
+<li><p><strong>airport</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string for the ICAO identifier of the airport. Selects
+flights departing from or arriving at the airport between the two
+timestamps;</p></li>
+<li><p><strong>callsign</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings (wildcards
+accepted, _ for any character, % for any sequence of characters);</p></li>
+<li><p><strong>icao24</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings identifying the transponder
+code of the aircraft;</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>If both departure_airport and arrival_airport are set, requested
+timestamps match the arrival time;</p></li>
+<li><p>If airport is set, <code class="docutils literal notranslate"><span class="pre">departure_airport</span></code> and <code class="docutils literal notranslate"><span class="pre">arrival_airport</span></code>
+cannot be specified (a RuntimeException is raised).</p></li>
+</ul>
+</div>
+<p><strong>Useful options for debug</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cached</strong> (<em>bool</em>) – (default: True) switch to False to force a new request to
+the database regardless of the cached files. This option also
+deletes previous cache files;</p></li>
+<li><p><strong>limit</strong> (<em>None</em><em> | </em><em>int</em>) – maximum number of records requested, LIMIT keyword in SQL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="requests-for-raw-data">
+<h2>Requests for raw data<a class="headerlink" href="#requests-for-raw-data" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.opensky_impala.Impala.rawdata">
+<span class="sig-prename descclassname"><span class="pre">Impala.</span></span><span class="sig-name descname"><span class="pre">rawdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">datetime.timedelta(seconds=3600)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao24</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_tables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progressbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.opensky_impala.Impala.rawdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get raw message from the OpenSky Impala shell.</p>
+<p>You may pass requests based on time ranges, callsigns, aircraft, areas,
+serial numbers for receivers, or airports of departure or arrival.</p>
+<p>The method builds appropriate SQL requests, caches results and formats
+data into a proper pandas DataFrame. Requests are split by hour (by
+default) in case the connection fails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime (native
+Python or pandas)</p></li>
+<li><p><strong>stop</strong> (<em>None</em><em> | </em><em>timelike</em>) – a string (default to UTC), epoch or datetime (native Python
+or pandas), <em>by default, one day after start</em></p></li>
+<li><p><strong>date_delta</strong> (<em>timedelta</em>) – a timedelta representing how to split the requests,
+<em>by default: per hour</em></p></li>
+</ul>
+</dd>
+</dl>
+<p>More arguments to filter resulting data:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callsign</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings (wildcards
+accepted, _ for any character, % for any sequence of characters);</p></li>
+<li><p><strong>icao24</strong> (<em>None</em><em> | </em><em>str</em><em> | </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – a string or a list of strings identifying the transponder
+code of the aircraft;</p></li>
+<li><p><strong>serials</strong> (<em>None</em><em> | </em><em>int</em><em> | </em><em>Iterable</em><em>[</em><em>int</em><em>]</em>) – an integer or a list of integers identifying the sensors
+receiving the data;</p></li>
+<li><p><strong>bounds</strong> (<em>None</em><em> | </em><em>BaseGeometry</em><em> | </em><em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – sets a geographical footprint. Either an <strong>airspace or
+shapely shape</strong> (requires the bounds attribute); or a <strong>tuple of
+float</strong> (west, south, east, north);</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Airports</strong></p>
+<p>The following options build more complicated requests by merging
+information from two tables in the Impala database, resp.
+<code class="docutils literal notranslate"><span class="pre">rollcall_replies_data4</span></code> and <code class="docutils literal notranslate"><span class="pre">flights_data4</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>departure_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the
+airport. Selects flights departing from the airport between the two
+timestamps;</p></li>
+<li><p><strong>arrival_airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport.
+Selects flights arriving at the airport between the two timestamps;</p></li>
+<li><p><strong>airport</strong> (<em>None</em><em> | </em><em>str</em>) – a string for the ICAO identifier of the airport. Selects
+flights departing from or arriving at the airport between the two
+timestamps;</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>If both departure_airport and arrival_airport are set, requested
+timestamps match the arrival time;</p></li>
+<li><p>If airport is set, departure_airport and arrival_airport cannot be
+specified (a RuntimeException is raised).</p></li>
+<li><p>It is not possible at the moment to filter both on airports and on
+geographical bounds (help welcome!).</p></li>
+</ul>
+</div>
+<p><strong>Useful options for debug</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cached</strong> (<em>bool</em>) – (default: True) switch to False to force a new request to
+the database regardless of the cached files. This option also
+deletes previous cache files;</p></li>
+<li><p><strong>limit</strong> (<em>None</em><em> | </em><em>int</em>) – maximum number of records requested, LIMIT keyword in SQL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None | RawData</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="custom-requests">
+<h2>Custom requests<a class="headerlink" href="#custom-requests" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.opensky_impala.Impala.request">
+<span class="sig-prename descclassname"><span class="pre">Impala.</span></span><span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request_pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">datetime.timedelta(seconds=3600)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progressbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.opensky_impala.Impala.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits and sends a custom request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request_pattern</strong> (<em>str</em>) – a string containing the basic request you
+wish to make on Impala shell. Use {before_hour} and {after_hour}
+place holders to write your hour constraints: they will be
+automatically replaced by appropriate values.</p></li>
+<li><p><strong>start</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime (native
+Python or pandas)</p></li>
+<li><p><strong>stop</strong> (<em>timelike</em>) – a string (default to UTC), epoch or datetime
+(native Python or pandas), <em>by default, one day after start</em></p></li>
+<li><p><strong>columns</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the list of expected columns in the result. This
+helps naming the columns in the resulting dataframe.</p></li>
+<li><p><strong>date_delta</strong> (<em>timedelta</em>) – a timedelta representing how to split the requests,
+<em>by default: per hour</em></p></li>
+<li><p><strong>cached</strong> (<em>bool</em>) – (default: True) switch to False to force a new request to
+the database regardless of the cached files; delete previous cache
+files;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"4558eb6fe2d141f5aa88c5a99243d112": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5054ac4180394ced8f3c8e0c47f7d2d2": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "6f721f7012664a84aee2ce1914e74106": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4558eb6fe2d141f5aa88c5a99243d112", "max": 83431.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_5054ac4180394ced8f3c8e0c47f7d2d2", "value": 83431.0}}, "40dc2af65d254a1ab92cf10b212d6c17": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bfb253757b3746879564c3e698b44fa9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "18f98a52694847a39bb8c02ca922fc9e": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_40dc2af65d254a1ab92cf10b212d6c17", "placeholder": "\u200b", "style": "IPY_MODEL_bfb253757b3746879564c3e698b44fa9", "value": "download: 100%"}}, "e95d9f601ffb4b4b98f4a1df7c616753": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e7df95be336543dca9da02ac795044ee": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "992e4de4ee8d4e2e8b753b02ff7e60d0": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e95d9f601ffb4b4b98f4a1df7c616753", "placeholder": "\u200b", "style": "IPY_MODEL_e7df95be336543dca9da02ac795044ee", "value": " 83431/83431 [06:40&lt;00:00, 345.96it/s]"}}, "d73ae3e558e8442cbeb6fbc4a0567cdf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b48042d41a7141ef87d6d057fffb40ee": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_18f98a52694847a39bb8c02ca922fc9e", "IPY_MODEL_6f721f7012664a84aee2ce1914e74106", "IPY_MODEL_992e4de4ee8d4e2e8b753b02ff7e60d0"], "layout": "IPY_MODEL_d73ae3e558e8442cbeb6fbc4a0567cdf"}}, "fe18e05ac5a84681b29efecbda89e55a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "01808e0970ec4be0983be4a7cdefd2da": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "c067f6ec5f1146c49dfa8307ef475d20": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_fe18e05ac5a84681b29efecbda89e55a", "max": 2.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_01808e0970ec4be0983be4a7cdefd2da", "value": 2.0}}, "c797cb8fd6924cf5aed1f267685199ab": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "199faab3429d428cb67472cbcad181b8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "49499787c09d46ad98b111b728ac8980": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c797cb8fd6924cf5aed1f267685199ab", "placeholder": "\u200b", "style": "IPY_MODEL_199faab3429d428cb67472cbcad181b8", "value": "100%"}}, "497aa7745f29442abe92044954678473": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "729c6caa278b436b8a7a89db982d29bc": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5c0a355ceb7149918e1e0b1f24653c23": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_497aa7745f29442abe92044954678473", "placeholder": "\u200b", "style": "IPY_MODEL_729c6caa278b436b8a7a89db982d29bc", "value": " 2/2 [00:00&lt;00:00,  7.35it/s]"}}, "61f71a08786f47c18e5bf61d0cd0d60a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b77393676d3242398fa18fe003333491": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_49499787c09d46ad98b111b728ac8980", "IPY_MODEL_c067f6ec5f1146c49dfa8307ef475d20", "IPY_MODEL_5c0a355ceb7149918e1e0b1f24653c23"], "layout": "IPY_MODEL_61f71a08786f47c18e5bf61d0cd0d60a"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="eurocontrol.html" class="btn btn-neutral float-right" title="How to configure EUROCONTROL data files?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="opensky_rest.html" class="btn btn-neutral float-left" title="How to access ADS-B data from OpenSky live API?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
+</script>
+
+
+
+</body>
+</html>

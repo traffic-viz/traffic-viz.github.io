@@ -114,13 +114,11 @@
 <li class="toctree-l3"><a class="reference internal" href="data_sources/airports.html">How to access airport information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/aircraft.html">How to access aircraft information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/navigation.html">How to access beacons and airways information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/airspaces.html">How to access airspace information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </li>
@@ -132,9 +130,10 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#extend-the-library">Extend the library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#beyond-the-library">Beyond the library</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/own_data.html">How to bring your own data in the traffic library?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/plugins.html">How to use and write plugins for the traffic library?</a></li>
 </ul>
@@ -225,9 +224,18 @@
   <div class="section" id="user-guide">
 <h1>User guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
 <p>The user guide covers all of traffic by topic area.</p>
-<p>Each of the subsections introduces a topic (such as flight trajectory labelling,
-trajectory generation, statistical analysis, etc.) and discusses how traffic
-approaches the problem with as many examples as possible.</p>
+<p>Each of the entries introduces a topic (such as data sources, flight trajectory
+labelling, trajectory generation, statistical analysis, etc.) and discusses how
+traffic approaches the problem with as many examples as possible.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">There are obviously as many possible use cases as you can imagine for the
+library.</div>
+<div class="line"><strong>Contributions are open</strong> in this part of the documentation. Do consider
+sharing your experience with the library where it is the less documented.</div>
+</div>
+</div>
 <div class="section" id="sources-of-data">
 <h2>Sources of data<a class="headerlink" href="#sources-of-data" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -236,13 +244,15 @@ approaches the problem with as many examples as possible.</p>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/airports.html">How to access airport information?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/aircraft.html">How to access aircraft information?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/navigation.html">How to access beacons and airways information?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="firs.html">Flight Information Regions (FIR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/airspaces.html">How to access airspace information?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="airac_usage.html">Airspaces from Eurocontrol NM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="so6_usage.html">DDR files from Eurocontrol NM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b2b_usage.html">Web services from Eurocontrol NM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </div>
@@ -258,11 +268,12 @@ approaches the problem with as many examples as possible.</p>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 </ul>
 </div>
 </div>
-<div class="section" id="extend-the-library">
-<h2>Extend the library<a class="headerlink" href="#extend-the-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="beyond-the-library">
+<h2>Beyond the library<a class="headerlink" href="#beyond-the-library" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_guide/own_data.html">How to bring your own data in the traffic library?</a></li>

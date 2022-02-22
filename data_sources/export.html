@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How to find flight phases on a trajectory?" href="../tutorial/flight_phases.html" />
-    <link rel="prev" title="Web services from Eurocontrol NM" href="../b2b_usage.html" /> 
+    <link rel="prev" title="How to configure EUROCONTROL data files?" href="eurocontrol.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,21 +114,20 @@
 <li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aircraft.html">How to access aircraft information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation.html">How to access beacons and airways information?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../firs.html">Flight Information Regions (FIR)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../opensky_rest.html">ADS-B data – OpenSky REST API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../opensky_impala.html">ADS-B data – OpenSky Impala shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airspaces.html">How to access airspace information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../airac_usage.html">Airspaces from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../so6_usage.html">DDR files from Eurocontrol NM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../b2b_usage.html">Web services from Eurocontrol NM</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How to export and store trajectory and airspace data?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#traffic-and-flight-structures">Traffic and Flight structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#airspace-structures">Airspace structures</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#extend-the-library">Extend the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
 </ul>
@@ -220,43 +219,58 @@ again later.</p>
 available on the net. In general, the question boils down to whether you want
 to distribute the data, how fast you need to access it and how long you need
 to keep it.</p>
-<ul class="simple">
-<li><p>CSV (comma separated values) is a pretty standard and widely acknowledged
+<ul>
+<li><div class="line-block">
+<div class="line">CSV (comma separated values) is a pretty standard and widely acknowledged
 format (modulo the definition of the separator). It is easy to parse but it
 can be slow when data gets large. Also it doesn’t contain information about
 types so you need to check dtypes and transform them manually if need be. A
 good rule of thumb could be to parse CSV data only once and to use another
-format for storing it for future use.</p></li>
-<li><p>JSON (JavaScript Object Notation) is another lightweight text notation,
+format for storing it for future use.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">JSON (JavaScript Object Notation) is another lightweight text notation,
 human readable, also slow to parse. The added value compared to CSV is that
-you can distinguish boolean, numerical and string values.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/pickle.html">Pickle</a> is the standard
+you can distinguish boolean, numerical and string values.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference external" href="https://docs.python.org/3/library/pickle.html">Pickle</a> is the standard
 format for Python serialisation. The binary representation of data is dumped
 as is in a file, no question asked. It is fast to read and write and you are
 sure to recover your data after you restart your Python interpreter/kernel.
 The downside is that the serialisation format may change with Python and
 pandas versions so it is not a good format for sharing and storing data in
-the time.</p></li>
-<li><p>HDF (Hierarchical Data Format) is a cross platform and cross language
+the time.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">HDF (Hierarchical Data Format) is a cross platform and cross language
 standard format for storing very large amounts of data. You may need extra
-dependencies to read and write from this format.</p></li>
-<li><p><a class="reference external" href="https://parquet.apache.org/">Apache Parquet</a> is another columnar cross
+dependencies to read and write from this format.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference external" href="https://parquet.apache.org/">Apache Parquet</a> is another columnar cross
 platform and cross language standard storage format. Its implementation
 inside pandas is very fast for both read and write operations and the
 resulting files are rather compact. Types are respected but all Python
 structures (like sets, lists and dictionaries) may not be directly
 exportable. You may need extra dependencies to read and write from this
-format.</p></li>
+format.</div>
+</div>
+</li>
 </ul>
 <p>The <a class="reference external" href="traffic.core.flight.html">Flight</a> and <a class="reference external" href="traffic.core.traffic.html">Traffic</a> structures implement the following methods:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>DataFrameMixin aggregates a pandas DataFrame and provides the same
 representation methods.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">traffic.core.mixins.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -278,55 +292,117 @@ method with the kwargs argument.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
-<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to CSV format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
-<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to HDF format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to JSON format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
-<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to parquet format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
-<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports to pickle format.</p>
 <p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
 as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
+</div>
+<div class="section" id="airspace-structures">
+<h2>Airspace structures<a class="headerlink" href="#airspace-structures" title="Permalink to this headline">¶</a></h2>
+<p>Airspaces are manipulated as GeoPandas GeoDataFrame.</p>
+<p>The most appropriate format for exporting such data is probably the JSON format,
+which happens to also be compatible with many GIS toolsets and JavaScript
+visualisation libraries.</p>
+<p>However, there are two types of JSON formats for geometries:</p>
+<ul>
+<li><div class="line-block">
+<div class="line">the <strong>GeoJSON</strong> format is the closest to the data we parse. You can export
+it directly from any GeoDataFrame, with the <code class="docutils literal notranslate"><span class="pre">.to_json()</span></code>. The community
+tends to prefer the <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> suffix for this kind of files.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">the <strong>TopoJSON</strong> format presents many advantages over the GeoJSON format.
+Data is stored as arcs and objects, and a single segment (an arc) may be
+referenced by many objects. More advanced tricks help keeping a file size
+often about 6 times smaller than the size of a <strong>GeoJSON</strong>.</div>
+</div>
+</li>
+</ul>
+<p>Exports to TopoJSON may require the use of external libraries, such as <a class="reference external" href="https://github.com/mattijn/topojson">topojson</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The difficult part about exporting to TopoJSON is the detection of arcs
+which may be shared by several objects. If arcs are not exact matches for
+both sides of a border, this may lead to invalid topologies.  This is not a
+problem of the TopoJSON format, but a problem of data curation, under the
+responsibility of the data provider.</p>
+</div>
 </div>
 </div>
 
@@ -337,7 +413,7 @@ as args and kwargs arguments.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../tutorial/flight_phases.html" class="btn btn-neutral float-right" title="How to find flight phases on a trajectory?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../b2b_usage.html" class="btn btn-neutral float-left" title="Web services from Eurocontrol NM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="eurocontrol.html" class="btn btn-neutral float-left" title="How to configure EUROCONTROL data files?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -1,0 +1,1175 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to access airspace information? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to access flight plan information?" href="flightplans.html" />
+    <link rel="prev" title="How to access beacons and airways information?" href="navigation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation.html">How to access beacons and airways information?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to access airspace information?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#firs-from-countries-in-the-eurocontrol-area">FIRs from countries in the EUROCONTROL area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#firs-and-artcc-from-the-faa">FIRs and ARTCC from the FAA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#airspace-data-from-eurocontrol">Airspace data from EUROCONTROL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#free-route-areas-fra-from-eurocontrol">Free Route Areas (FRA) from EUROCONTROL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">How to export and store trajectory and airspace data?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to access airspace information?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/data_sources/airspaces.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-access-airspace-information">
+<h1>How to access airspace information?<a class="headerlink" href="#how-to-access-airspace-information" title="Permalink to this headline">¶</a></h1>
+<p>Each Air Control Center (ACC), in charge of providing air traffic control
+services to controlled flights within its airspace, is subdivided into
+elementary sectors that are used or combined to build control sectors operated
+by a pair of air traffic controllers.</p>
+<p>Airspace sectorisation consists in partitioning the overall ACC airspace into a
+given number of these control sectors. In most centres, the set of control
+sectors deployed, i.e. the sector configuration, varies throughout the day.
+Basically, sectors are split when controllers’ workload increases, and merged
+when it decreases.</p>
+<p>An <a class="reference external" href="../traffic.core.airspace.html">Airspace</a> is represented as a set of
+polygons of geographical coordinates, extruded to a lower and upper altitudes.
+Airspaces can be of different types, corresponding to different kinds of
+activities allowed (civil, military, glider, etc.) or services provided.</p>
+<ul>
+<li><div class="line-block">
+<div class="line">a <strong>Flight Information Region (FIR)</strong> is the largest regular division of
+airspace in use in the world today, roughly corresponding to a country,
+although some FIRs encompass several countries, and larger countries are
+subdivided into a number of regional FIRs.</div>
+<div class="line">Read more about <a class="reference external" href="https://observablehq.com/&#64;xoolive/flight-information-regions">FIRs of the world</a></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">a <strong>Terminal Maneuvering Area (TMA)</strong> is usually controlled by the airport it
+is attached to: this airspace is usually reserved for aircraft landing at or
+taking off from that airport;</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">an <strong>Air Route Traffic Control Center (ARTCC)</strong> or an <strong>Air Control Center
+(ACC)</strong> represents the area that is controlled by people located in the same
+center;</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">an <strong>elementary sector</strong> is usally the smallest subdivision of airspace that can
+be controlled by a pair of air traffic controllers.</div>
+</div>
+</li>
+</ul>
+<div class="section" id="firs-from-countries-in-the-eurocontrol-area">
+<h2>FIRs from countries in the EUROCONTROL area<a class="headerlink" href="#firs-from-countries-in-the-eurocontrol-area" title="Permalink to this headline">¶</a></h2>
+<p>Airspaces are usually handled as a wrapper around <a class="reference external" href="https://geopandas.readthedocs.io/">GeoDataFrame</a>, i.e.  Pandas data frames with a
+particular geometry feature.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
+
+<span class="n">eurofirs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>designator</th>
+      <th>name</th>
+      <th>type</th>
+      <th>upper</th>
+      <th>lower</th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POLYGON ((6.19247 49.96404, 6.19405 49.96043, ...</td>
+      <td>EBBU</td>
+      <td>BRUSSELS FIR</td>
+      <td>FIR</td>
+      <td>195.0</td>
+      <td>0.0</td>
+      <td>50.628406</td>
+      <td>4.600560</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POLYGON ((6.90560 45.67116, 6.90687 45.67508, ...</td>
+      <td>LIMM</td>
+      <td>MILANO FIR</td>
+      <td>FIR</td>
+      <td>195.0</td>
+      <td>0.0</td>
+      <td>45.030624</td>
+      <td>10.499386</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POLYGON ((6.12122 46.25472, 6.12455 46.25131, ...</td>
+      <td>LFMM</td>
+      <td>MARSEILLE FIR</td>
+      <td>FIR</td>
+      <td>195.0</td>
+      <td>0.0</td>
+      <td>42.845677</td>
+      <td>5.925558</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POLYGON ((-13.00000 45.00000, -13.00000 43.000...</td>
+      <td>LPPO</td>
+      <td>SANTA MARIA OCEANIC FIR</td>
+      <td>FIR</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>34.190600</td>
+      <td>-29.363399</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POLYGON ((30.56583 51.30833, 30.56722 51.31389...</td>
+      <td>UKBV</td>
+      <td>KYIV FIR</td>
+      <td>FIR</td>
+      <td>275.0</td>
+      <td>0.0</td>
+      <td>50.086590</td>
+      <td>30.888969</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As FIRs usually consist of a single polygon with an upper and a lower limit (in
+Flight Level, i.e. FL 300 corresponds to 30,000 ft), their representation is
+simple in a Jupyter environment.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eurofirs</span><span class="p">[</span><span class="s2">&quot;ENOB&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b>BODO OCEANIC FIR [ENOB] (FIR)</b><ul><li>lower: 0 | upper: inf</li></ul><div style="white-space: nowrap; width: 12%"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-837156.497229439 -1101922.293180197 1455408.0532593022 2287537.507542718" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,83692.92118232418)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="15250.250050284789" opacity="0.6" d="M -576516.201032192,-1013072.7708445241 L -664757.6668653495,-994957.0721207487 L -752432.885838968,-974273.9676496487 L -230807.21717565713,1100891.6029720502 L -169597.26095239562,1087641.3089288208 L -114557.01527537563,1079283.450686978 L -59120.68521964721,1074175.0510550204 L -3479.94358142434,1072333.7724785754 L 52172.83006846771,1073765.9812347968 L 114557.01527537564,1079283.450686978 L 169597.26095239565,1087641.3089288208 L 230807.21717565713,1100891.6029720502 L 533527.9446393921,-103411.92134659941 L 455588.60669083986,-83004.0271239359 L 351543.3923175253,-102884.77869287124 L 0.0,-282258.7442935348 L -363967.4015693967,-736114.0571394804 L -554376.1572300869,-1017198.681789726 L -576516.201032192,-1013072.7708445241 z" /></g></svg></div></div></div>
+</div>
+<p>Leaflet representations are also easily accessible:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eurofirs</span><span class="p">[</span><span class="s2">&quot;EKDK&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map_leaflet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5e1f1d03e04f4507bec23648ba428ec1"}
+</script></div>
+</div>
+<p>The following snippet plots the whole dataset:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">LambertConformal</span>
+<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span><span class="p">,</span> <span class="n">ocean</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">LambertConformal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">45</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">lakes</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">ocean</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fir</span> <span class="ow">in</span> <span class="n">eurofirs</span><span class="p">:</span>
+    <span class="n">fir</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fir</span><span class="o">.</span><span class="n">designator</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ENOB&quot;</span><span class="p">,</span> <span class="s2">&quot;LPPO&quot;</span><span class="p">,</span> <span class="s2">&quot;GCCC&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">fir</span><span class="o">.</span><span class="n">area</span> <span class="o">&gt;</span> <span class="mf">1e11</span><span class="p">:</span>
+        <span class="n">fir</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">fir</span><span class="o">.</span><span class="n">designator</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#3a3aaa&quot;</span><span class="p">,</span>
+            <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/airspaces_3_12.png" src="../_images/airspaces_3_12.png" />
+</div>
+</div>
+</div>
+<div class="section" id="firs-and-artcc-from-the-faa">
+<h2>FIRs and ARTCC from the FAA<a class="headerlink" href="#firs-and-artcc-from-the-faa" title="Permalink to this headline">¶</a></h2>
+<p>The Federal Aviation Administration (FAA) publishes some data about their
+airspace in open data. The data is automatically downloaded the first time
+you try to access it.</p>
+<p>Find more about this service <a class="reference external" href="https://adds-faa.opendata.arcgis.com/">here</a>.
+On the following map, Air Route Traffic Control Centers (ARTCC) are displayed
+together with neighbouring FIRs.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.faa</span> <span class="kn">import</span> <span class="n">airspace_boundary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">AzimuthalEquidistant</span>
+<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">AzimuthalEquidistant</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mi">100</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">countries</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">130</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">airspace</span> <span class="ow">in</span> <span class="n">airspace_boundary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s1">&#39;type == &quot;FIR&quot; and designator.str[0] in [&quot;C&quot;, &quot;M&quot;, &quot;T&quot;]&#39;</span>
+<span class="p">):</span>
+    <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#f58518&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">airspace</span> <span class="ow">in</span> <span class="n">airspace_boundary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s1">&#39;type == &quot;ARTCC&quot; and designator != &quot;ZAN&quot;&#39;</span>  <span class="c1"># Anchorage</span>
+<span class="p">)</span><span class="o">.</span><span class="n">at_level</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">airspace</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#4c78a8&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">airspace</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="n">ax</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">=</span><span class="n">airspace</span><span class="o">.</span><span class="n">designator</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4c78a8&quot;</span><span class="p">,</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/airspaces_5_2.png" src="../_images/airspaces_5_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="airspace-data-from-eurocontrol">
+<h2>Airspace data from EUROCONTROL<a class="headerlink" href="#airspace-data-from-eurocontrol" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Access conditions and configuration for these sources of data is detailed
+<a class="reference external" href="eurocontrol.html">here</a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>According to the source of data you may have access to, different parsers are
+implemented but they expose the same API.  Data is usually not exactly
+consistent (coordinates, types, etc.) but you should still be able to safely
+replace <code class="docutils literal notranslate"><span class="pre">nm_airspaces</span></code> with <code class="docutils literal notranslate"><span class="pre">aixm_airspaces</span></code> in the following examples.</p>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_airspaces</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="get-a-single-airspace">
+<h3>Get a single airspace<a class="headerlink" href="#get-a-single-airspace" title="Permalink to this headline">¶</a></h3>
+<p>In these files, airspaces being a composition of elementary airspaces are
+widespread. Their union is computed and yields a list of polygons associated
+with minimum and maximum flight levels.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_airspaces</span><span class="p">[</span><span class="s2">&quot;EDYYUTAX&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b>MUAC EXTENDED [EDYYUTAX] (CRAS)</b><ul><li>lower: 245 | upper: 255</li><li>lower: 255 | upper: 295</li><li>lower: 295 | upper: inf</li></ul><div style="white-space: nowrap; width: 12%"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-377246.58426997147 -375789.5021588188 729029.7802098496 752966.4941448667" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,1387.489827229001)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="5019.776627632445" opacity="0.6" d="M -21038.921875824897,-303570.6043595241 L -29182.535074766838,-312957.2251613553 L -53140.268709077856,-347901.85422752745 L -76982.07799146479,-345943.7031513195 L -86193.04140131065,-279203.9650872854 L -85616.65930290481,-266043.54315193405 L -113066.38718210263,-268927.2759276613 L -111997.16943937396,-265919.9031687272 L -114094.06857178622,-259752.6648845655 L -121536.07451822565,-254329.25731909534 L -125245.37143198722,-249263.41301475628 L -132347.1747991962,-246460.46154102948 L -144718.31918173228,-236855.06463025277 L -154046.53642409568,-236589.14546588308 L -152849.94453284965,-216207.37968537034 L -174367.94314637737,-216461.0854085247 L -180433.2083885884,-219039.68972404127 L -204485.54409059748,-214749.15158430758 L -201125.7649533869,-187675.2295390139 L -207018.0533977581,-177414.30056288137 L -222297.76532519708,-173901.936022195 L -236359.75474908357,-173093.25048008794 L -236572.65699506918,-164784.9573573254 L -238645.27266523562,-158372.49292413425 L -246978.90109961398,-152034.2165967958 L -256704.63442113402,-155090.03981139502 L -263601.5330567365,-141949.15088830152 L -271053.1317308929,-122198.62689820552 L -288622.90065220476,-131465.309402894 L -306049.29943346407,-117438.5735810267 L -308764.1578188343,-94336.96988904318 L -311206.80948604515,-86437.9827273832 L -349358.9363386801,-80239.60212463935 L -347190.57904992666,-48686.571301609954 L -250586.33372949308,-73857.06270068108 L -249327.11679953872,-51083.159447072714 L -265315.80865833076,-44721.680347193425 L -262593.7274826375,9251.160400037095 L -318575.9617633494,10834.618121661022 L -127962.97380737057,342178.1674646503 L 63987.51157542672,340861.1136405819 L 85178.80974826793,348623.2374816449 L 92531.88330150765,349289.34405475645 L 106852.08019719196,332366.08547269367 L 128428.03988495798,329784.66464236507 L 129515.27314240666,331083.1434139169 L 140856.37015690573,326800.9169942845 L 142820.9679794475,327324.65116518235 L 143566.0423890806,323974.5341719331 L 146652.30498280184,324627.24303453526 L 149085.05855336954,321114.50949408085 L 161584.93248004335,326511.78875222546 L 175958.00724847877,324059.1500329004 L 185796.5695835357,326420.5778353592 L 196438.0680066674,318373.0258242109 L 225703.71504956402,307799.90122393484 L 258001.5927266468,307914.7518430802 L 302234.10463616,290404.40128235915 L 313145.8970559377,289101.5007870752 L 323895.5480085867,290293.003827988 L 276921.9030403588,95407.81256096826 L 276654.2764004541,55552.7208178895 L 283474.594610832,4006.299861362152 L 289452.4050620262,-3154.1984044406463 L 256072.96089723217,-35592.131197394694 L 235666.65535223557,-62551.17762654481 L 234197.67779728398,-81919.45648268779 L 220512.88782958686,-88849.94513186582 L 212728.46375352674,-91503.93421469192 L 170623.8689554666,-91570.4944025483 L 170238.91647161898,-92852.92652962981 L 112946.26894806999,-94692.00492396932 L 98337.37168767705,-74195.36144811823 L 81925.4985231052,-81821.9313323317 L 66452.63105130848,-93653.14071960644 L 47896.833784689064,-112520.96093788974 L 57398.2060193621,-135506.15431898282 L 9113.253014160637,-149060.0830684842 L -8897.725416952822,-149338.88952308107 L -24865.416727168005,-185973.88345969032 L -35701.672872359726,-237618.2809070295 L -21038.921875824897,-303570.6043595241 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-377246.58426997147 -375789.5021588188 729029.7802098496 752966.4941448667" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,1387.489827229001)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="5019.776627632445" opacity="0.6" d="M -29362.992817283157,-265328.0828434337 L -21038.921875824897,-303570.6043595241 L -29182.535074766838,-312957.2251613553 L -53140.268709077856,-347901.85422752745 L -76982.07799146479,-345943.7031513195 L -86193.04140131065,-279203.9650872854 L -85616.65930290481,-266043.54315193405 L -113066.38718210263,-268927.2759276613 L -111997.16943937396,-265919.9031687272 L -114094.06857178622,-259752.6648845655 L -121536.07451822565,-254329.25731909534 L -125245.37143198722,-249263.41301475628 L -132347.1747991962,-246460.46154102948 L -144718.31918173228,-236855.06463025277 L -154046.53642409568,-236589.14546588308 L -152849.94453284965,-216207.37968537034 L -174367.94314637737,-216461.0854085247 L -180433.2083885884,-219039.68972404127 L -204485.54409059748,-214749.15158430758 L -201125.7649533869,-187675.2295390139 L -207018.0533977581,-177414.30056288137 L -222297.76532519708,-173901.936022195 L -236359.75474908357,-173093.25048008794 L -236572.65699506918,-164784.9573573254 L -238645.27266523562,-158372.49292413425 L -246978.90109961398,-152034.2165967958 L -256704.63442113402,-155090.03981139502 L -263601.5330567365,-141949.15088830152 L -271053.1317308929,-122198.62689820552 L -288622.90065220476,-131465.309402894 L -306049.29943346407,-117438.5735810267 L -308764.1578188343,-94336.96988904318 L -311206.80948604515,-86437.9827273832 L -349358.9363386801,-80239.60212463935 L -346430.95589665807,-37632.85202144991 L -312139.95546759537,-44833.64909187828 L -310892.7161701452,-24661.728001824904 L -265315.80865833076,-44721.680347193425 L -262593.7274826375,9251.160400037095 L -318575.9617633494,10834.618121661022 L -127962.97380737057,342178.1674646503 L 63987.51157542672,340861.1136405819 L 85178.80974826793,348623.2374816449 L 92531.88330150765,349289.34405475645 L 106852.08019719196,332366.08547269367 L 128428.03988495798,329784.66464236507 L 129515.27314240666,331083.1434139169 L 140856.37015690573,326800.9169942845 L 142820.9679794475,327324.65116518235 L 143566.0423890806,323974.5341719331 L 146652.30498280184,324627.24303453526 L 149085.05855336954,321114.50949408085 L 161584.93248004335,326511.78875222546 L 175958.00724847877,324059.1500329004 L 185796.5695835357,326420.5778353592 L 196438.0680066674,318373.0258242109 L 225703.71504956402,307799.90122393484 L 258001.5927266468,307914.7518430802 L 302234.10463616,290404.40128235915 L 313145.8970559377,289101.5007870752 L 323895.5480085867,290293.003827988 L 276921.9030403588,95407.81256096826 L 276654.2764004541,55552.7208178895 L 283474.594610832,4006.299861362152 L 289452.4050620262,-3154.1984044406463 L 256072.96089723217,-35592.131197394694 L 235666.65535223557,-62551.17762654481 L 234197.67779728398,-81919.45648268779 L 220512.88782958686,-88849.94513186582 L 212728.46375352674,-91503.93421469192 L 170623.8689554666,-91570.4944025483 L 170238.91647161898,-92852.92652962981 L 112946.26894806999,-94692.00492396932 L 98337.37168767705,-74195.36144811823 L 81925.4985231052,-81821.9313323317 L 66452.63105130848,-93653.14071960644 L 47896.833784689064,-112520.96093788974 L 57398.2060193621,-135506.15431898282 L 0.0,-151635.80205585793 L -13089.416863319553,-160250.2071094075 L -24865.416727168005,-185973.88345969032 L -35701.672872359726,-237618.2809070295 L -29362.992817283157,-265328.0828434337 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-377246.58426997147 -375789.5021588188 729029.7802098496 752966.4941448667" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,1387.489827229001)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="5019.776627632445" opacity="0.6" d="M -21038.921875824897,-303570.6043595241 L -29182.535074766838,-312957.2251613553 L -53140.268709077856,-347901.85422752745 L -76982.07799146479,-345943.7031513195 L -86193.04140131065,-279203.9650872854 L -85616.65930290481,-266043.54315193405 L -113066.38718210263,-268927.2759276613 L -111997.16943937396,-265919.9031687272 L -114094.06857178622,-259752.6648845655 L -121536.07451822565,-254329.25731909534 L -125245.37143198722,-249263.41301475628 L -132347.1747991962,-246460.46154102948 L -144718.31918173228,-236855.06463025277 L -154046.53642409568,-236589.14546588308 L -152849.94453284965,-216207.37968537034 L -174367.94314637737,-216461.0854085247 L -180433.2083885884,-219039.68972404127 L -204485.54409059748,-214749.15158430758 L -201125.7649533869,-187675.2295390139 L -207018.0533977581,-177414.30056288137 L -222297.76532519708,-173901.936022195 L -236359.75474908357,-173093.25048008794 L -236572.65699506918,-164784.9573573254 L -238645.27266523562,-158372.49292413425 L -246978.90109961398,-152034.2165967958 L -256704.63442113402,-155090.03981139502 L -263601.5330567365,-141949.15088830152 L -271053.1317308929,-122198.62689820552 L -288622.90065220476,-131465.309402894 L -306049.29943346407,-117438.5735810267 L -308764.1578188343,-94336.96988904318 L -311206.80948604515,-86437.9827273832 L -349358.9363386801,-80239.60212463935 L -346430.95589665807,-37632.85202144991 L -312139.95546759537,-44833.64909187828 L -310892.7161701452,-24661.728001824904 L -265315.80865833076,-44721.680347193425 L -262593.7274826375,9251.160400037095 L -318575.9617633494,10834.618121661022 L -127962.97380737057,342178.1674646503 L 63987.51157542672,340861.1136405819 L 85178.80974826793,348623.2374816449 L 92531.88330150765,349289.34405475645 L 106852.08019719196,332366.08547269367 L 128428.03988495798,329784.66464236507 L 129515.27314240666,331083.1434139169 L 140856.37015690573,326800.9169942845 L 142820.9679794475,327324.65116518235 L 143566.0423890806,323974.5341719331 L 146652.30498280184,324627.24303453526 L 149085.05855336954,321114.50949408085 L 161584.93248004335,326511.78875222546 L 175958.00724847877,324059.1500329004 L 185796.5695835357,326420.5778353592 L 196438.0680066674,318373.0258242109 L 225703.71504956402,307799.90122393484 L 258001.5927266468,307914.7518430802 L 302234.10463616,290404.40128235915 L 313145.8970559377,289101.5007870752 L 323895.5480085867,290293.003827988 L 276921.9030403588,95407.81256096826 L 276654.2764004541,55552.7208178895 L 283474.594610832,4006.299861362152 L 289452.4050620262,-3154.1984044406463 L 256072.96089723217,-35592.131197394694 L 235666.65535223557,-62551.17762654481 L 175152.2181136195,-65066.0950353361 L 170238.91647161898,-92852.92652962981 L 112946.26894806999,-94692.00492396932 L 98337.37168767705,-74195.36144811823 L 81925.4985231052,-81821.9313323317 L 66452.63105130848,-93653.14071960644 L 47896.833784689064,-112520.96093788974 L 57398.2060193621,-135506.15431898282 L 0.0,-151635.80205585793 L -13089.416863319553,-160250.2071094075 L -24865.416727168005,-185973.88345969032 L -35701.672872359726,-237618.2809070295 L -21038.921875824897,-303570.6043595241 z" /></g></svg></div></div></div>
+</div>
+<p>The Leaflet view and the Matplotlib view, flatten the polygon prior to displaying it:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_airspaces</span><span class="p">[</span><span class="s2">&quot;EDYYUTAX&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map_leaflet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "9c5e9f282d9349cabadf350f3b768e55"}
+</script></div>
+</div>
+</div>
+<div class="section" id="get-many-airspaces">
+<h3>Get many airspaces<a class="headerlink" href="#get-many-airspaces" title="Permalink to this headline">¶</a></h3>
+<p>Airspaces are stored as a GeoDataFrame, so all pandas operators may be applied
+to get a subset of them, for example based on their types or designator.</p>
+<p>All available airspace types can be accessed here:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_airspaces</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;AREA&#39;, &#39;FIR&#39;, &#39;NAS&#39;, &#39;AUAG&#39;, &#39;CS&#39;, &#39;ES&#39;, &#39;AUA&#39;, &#39;REG&#39;, &#39;CRSA&#39;,
+       &#39;ERSA&#39;, &#39;CRAS&#39;, &#39;ERAS&#39;, &#39;CLUS&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the following examples, we get all FIR spaces in the LF domain (France). You
+may notice that a single designator may be represented by several entries in the
+GeoDataFrame, but the representation of each shape you get through iteration,
+indexation or <code class="docutils literal notranslate"><span class="pre">__geo_interface__</span></code> attribute  (used in Altair) is properly
+computed.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">france_fir</span> <span class="o">=</span> <span class="n">nm_airspaces</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;FIR&quot; and designator.str.startswith(&quot;LF&quot;)&#39;</span><span class="p">)</span>
+<span class="n">france_fir</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>designator</th>
+      <th>component</th>
+      <th>name</th>
+      <th>type</th>
+      <th>geometry</th>
+      <th>upper</th>
+      <th>lower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>218607</th>
+      <td>LFBBFIR</td>
+      <td>LFBBFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((2.83333 46.75000, 2.83778 46.72917, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218615</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((6.00945 46.54361, 6.13250 46.58305, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218616</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((6.71667 47.05333, 6.64167 47.02445, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218617</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((5.99917 46.99861, 6.02639 46.98417, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218618</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((5.18333 46.70000, 5.33333 46.70000, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218619</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((6.39667 46.78222, 6.39167 46.74333, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218620</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((6.39667 46.78222, 6.44139 46.76000, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218621</th>
+      <td>LFEEFIR</td>
+      <td>LFEEFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((6.00000 49.45555, 6.05556 49.46667, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218626</th>
+      <td>LFFFFIR</td>
+      <td>LFFFFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((2.00000 51.11667, 2.24500 51.10139, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>218627</th>
+      <td>LFFFFIR</td>
+      <td>LFFFFIR</td>
+      <td>NaN</td>
+      <td>FIR</td>
+      <td>POLYGON ((2.81667 49.15000, 6.00000 49.45555, ...</td>
+      <td>195.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">france_fir</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span><span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="c1"># In this dataset, UIR and FIR are both tagged as FIR</span>
+    <span class="c1"># =&gt; we reconstruct the type and designator</span>
+    <span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;slice(datum.designator, -3)&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span><span class="n">designator</span><span class="o">=</span><span class="s2">&quot;slice(datum.designator, 0, -3)&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;designator:N&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;FIR&quot;</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="s2">&quot;datum.suffix == &#39;FIR&#39;&quot;</span><span class="p">),</span>
+            <span class="n">base</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                <span class="n">alt</span><span class="o">.</span><span class="n">Latitude</span><span class="p">(</span><span class="s2">&quot;latitude:Q&quot;</span><span class="p">),</span>
+                <span class="n">alt</span><span class="o">.</span><span class="n">Longitude</span><span class="p">(</span><span class="s2">&quot;longitude:Q&quot;</span><span class="p">),</span>
+                <span class="n">alt</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;designator:N&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="s2">&quot;datum.suffix == &#39;FIR&#39;&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;designator:N&quot;</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span><span class="s2">&quot;datum.suffix == &#39;UIR&#39;&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_view</span><span class="p">(</span><span class="n">stroke</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-238483aa4a81491bacee25ad2f3c686b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-238483aa4a81491bacee25ad2f3c686b") {
+      outputDiv = document.getElementById("altair-viz-238483aa4a81491bacee25ad2f3c686b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}, "legend": {"orient": "bottom", "titleFontSize": 14}}, "concat": [{"layer": [{"mark": {"type": "geoshape", "stroke": "white"}, "encoding": {"color": {"field": "designator", "title": "FIR", "type": "nominal"}}, "transform": [{"calculate": "slice(datum.designator, -3)", "as": "suffix"}, {"calculate": "slice(datum.designator, 0, -3)", "as": "designator"}, {"filter": "datum.suffix == 'FIR'"}], "width": 300}, {"mark": {"type": "text", "fontSize": 15}, "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "text": {"field": "designator", "type": "nominal"}}, "transform": [{"calculate": "slice(datum.designator, -3)", "as": "suffix"}, {"calculate": "slice(datum.designator, 0, -3)", "as": "designator"}, {"filter": "datum.suffix == 'FIR'"}], "width": 300}]}, {"mark": {"type": "geoshape", "stroke": "white"}, "encoding": {"color": {"field": "designator", "type": "nominal"}}, "transform": [{"calculate": "slice(datum.designator, -3)", "as": "suffix"}, {"calculate": "slice(datum.designator, 0, -3)", "as": "designator"}, {"filter": "datum.suffix == 'UIR'"}], "width": 300}], "data": {"name": "data-6a499b2d187bf2f2c1a51c882cdeba95"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-6a499b2d187bf2f2c1a51c882cdeba95": [{"designator": "LFBBFIR", "latitude": 44.854531955567055, "longitude": 0.6998066323181643, "lower": 0.0, "name": null, "type": "Feature", "upper": 195.0, "geometry": {"type": "Polygon", "coordinates": [[[2.8333333333333335, 46.75], [2.837778333333333, 46.729166666666664], [2.868055, 46.5775], [2.879166666666667, 46.541945000000005], [2.8858333333333333, 46.49916666666666], [2.9113883333333335, 46.37611166666667], [2.925, 46.255554999999994], [2.95, 46.06666666666667], [3.0152783333333333, 45.39833333333333], [3.0211116666666666, 45.223333333333336], [3.033333333333333, 45.15], [3.0486116666666665, 44.87583333333334], [3.040278333333333, 44.650555000000004], [3.033333333333333, 44.61666666666667], [2.9, 44.25], [2.816666666666667, 44.02388833333334], [2.716666666666667, 43.71666666666667], [2.7069449999999997, 43.2125], [2.5722216666666666, 43.25833333333333], [2.275, 43.0], [2.6, 42.712221666666665], [2.75, 42.583333333333336], [2.832221666666667, 42.45138833333333], [2.8108333333333335, 42.44611166666667], [2.691666666666667, 42.416666666666664], [2.533333333333333, 42.4], [2.381666666666667, 42.41583333333333], [2.2236116666666663, 42.4325], [2.2163883333333336, 42.43333333333333], [2.1666666666666665, 42.38333333333333], [2.104721666666667, 42.3825], [2.1002783333333332, 42.38166666666667], [2.0586116666666667, 42.361666666666665], [2.0083333333333333, 42.366945], [1.7280550000000001, 42.504445000000004], [1.696945, 42.493055], [1.6713883333333333, 42.50388833333333], [1.6475, 42.471111666666665], [1.5488883333333334, 42.440555], [1.5127783333333333, 42.435278333333336], [1.4647216666666667, 42.441111666666664], [1.4372216666666666, 42.4775], [1.4308333333333332, 42.48527833333333], [1.4641666666666666, 42.516945], [1.4477783333333332, 42.540555000000005], [1.4238883333333334, 42.54222166666667], [1.4266666666666665, 42.591945], [1.4402783333333333, 42.606388333333335], [1.375, 42.694445], [1.229445, 42.724444999999996], [1.1138883333333331, 42.77527833333333], [0.9972216666666667, 42.774721666666665], [0.8619450000000001, 42.81583333333333], [0.75, 42.84527833333333], [0.7333333333333333, 42.85], [0.5583333333333333, 42.693054999999994], [0.4166666666666667, 42.7], [0.36666666666666664, 42.7], [0.15111166666666667, 42.73222166666667], [-0.06666666666666667, 42.7], [-0.19361166666666665, 42.79666666666667], [-0.2, 42.799166666666665], [-0.27361166666666664, 42.839166666666664], [-0.295, 42.84666666666667], [-0.43666666666666665, 42.805], [-0.49583333333333335, 42.823888333333336], [-0.656945, 42.875], [-0.6649999999999999, 42.88], [-0.75, 42.93333333333333], [-0.8280550000000001, 42.95111166666666], [-0.9791666666666666, 42.973333333333336], [-1.0502783333333334, 42.995], [-1.108055, 43.00916666666667], [-1.3333333333333333, 43.05], [-1.4508333333333332, 43.05833333333333], [-1.4647216666666667, 43.07611166666666], [-1.470555, 43.211945], [-1.4733333333333334, 43.27111166666667], [-1.4913883333333333, 43.28388833333334], [-1.5725, 43.267221666666664], [-1.615555, 43.25833333333333], [-1.7211116666666666, 43.31388833333333], [-1.7402783333333334, 43.355000000000004], [-1.7805549999999999, 43.374721666666666], [-1.7833333333333334, 43.38333333333333], [-1.7833333333333334, 43.50611166666667], [-1.7833333333333334, 43.583333333333336], [-1.7666666666666666, 44.06666666666667], [-1.7583333333333333, 44.2], [-1.72, 44.81666666666667], [-1.678055, 45.56111166666667], [-1.671945, 45.7575], [-1.6622216666666667, 45.9375], [-1.6666666666666667, 45.981388333333335], [-1.6333333333333333, 46.5], [-1.5833333333333333, 46.5], [-1.5430549999999998, 46.5], [-1.4311116666666666, 46.5], [-1.3508333333333333, 46.5], [-1.1333333333333333, 46.5], [-1.1099999999999999, 46.5], [-0.8908333333333334, 46.5], [-0.7, 46.5], [-0.25, 46.5], [-0.25, 46.62583333333334], [-0.25, 46.62888833333333], [-0.25, 47.044445], [-0.25, 47.166666666666664], [0.051111666666666666, 47.166666666666664], [0.18000000000000002, 47.166666666666664], [0.255555, 47.166666666666664], [0.3, 47.166666666666664], [0.5708333333333333, 47.166945000000005], [0.8247216666666667, 47.166666666666664], [1.0583333333333333, 47.166666666666664], [1.4666666666666666, 47.166666666666664], [2.0, 47.166666666666664], [2.1688883333333333, 47.08222166666667], [2.8333333333333335, 46.75]]]}}, {"designator": "LFEEFIR", "latitude": 47.99500172255458, "longitude": 6.142071719209773, "lower": 0.0, "name": null, "type": "Feature", "upper": 195.0, "geometry": {"type": "Polygon", "coordinates": [[[6.009445, 46.54361166666667], [5.35, 46.5], [5.166666666666667, 46.5], [5.090554999999999, 46.5], [5.016666666666667, 46.5], [4.952778333333333, 46.5], [4.833333333333333, 46.5], [4.333333333333333, 47.416666666666664], [4.583333333333333, 47.65], [4.755833333333333, 47.800555], [4.9325, 47.956111666666665], [4.952778333333333, 47.97416666666666], [5.0, 48.016666666666666], [5.122778333333333, 48.12777833333334], [5.166666666666667, 48.166666666666664], [5.5, 48.21666666666667], [5.733333333333333, 48.25], [5.398611666666667, 48.50416666666667], [4.8, 48.95], [5.554166666666666, 49.266666666666666], [5.645278333333334, 49.301111666666664], [5.825, 49.37111166666667], [6.0, 49.455555], [6.055555, 49.46666666666667], [6.114999999999999, 49.47638833333333], [6.167778333333334, 49.49166666666667], [6.184445, 49.496388333333336], [6.206666666666666, 49.503055], [6.225, 49.50833333333333], [6.349166666666666, 49.46583333333333], [6.391666666666667, 49.46666666666667], [6.4, 49.46666666666667], [6.466666666666667, 49.46666666666667], [6.544445, 49.455555], [6.5597216666666665, 49.43277833333333], [6.67, 49.28027833333333], [6.683333333333334, 49.25], [6.711111666666667, 49.218055], [7.039445, 49.172221666666665], [7.1588883333333335, 49.15138833333333], [7.346666666666667, 49.12], [7.585, 49.08027833333333], [7.718333333333334, 49.05083333333334], [7.835278333333333, 49.047221666666665], [8.002221666666667, 49.01972166666667], [8.066666666666666, 49.0], [8.120555, 48.988055], [8.218611666666666, 48.97416666666666], [8.154166666666667, 48.916666666666664], [8.022221666666667, 48.775], [7.966666666666667, 48.71666666666667], [7.8, 48.520833333333336], [7.799445, 48.50611166666667], [7.7336116666666666, 48.434999999999995], [7.744721666666666, 48.32861166666667], [7.658333333333333, 48.21666666666667], [7.647778333333333, 48.19916666666666], [7.5775, 48.083333333333336], [7.590554999999999, 48.015], [7.616666666666666, 48.0], [7.617221666666667, 47.98777833333334], [7.597778333333333, 47.93833333333334], [7.583333333333333, 47.90833333333333], [7.560833333333333, 47.83638833333334], [7.555555, 47.83083333333333], [7.5319449999999994, 47.78333333333333], [7.5338883333333335, 47.68861166666667], [7.5, 47.632778333333334], [7.58, 47.60388833333333], [7.473611666666667, 47.497499999999995], [7.428888333333333, 47.49111166666667], [7.3811116666666665, 47.41388833333333], [7.2025, 47.425555], [7.142221666666667, 47.5], [6.989445, 47.49611166666667], [6.994445, 47.46972166666667], [6.964721666666667, 47.463055000000004], [6.899166666666667, 47.38111166666667], [7.0625, 47.344166666666666], [7.005833333333333, 47.32361166666667], [6.954445000000001, 47.24333333333333], [6.816666666666666, 47.13333333333333], [6.716666666666667, 47.05333333333333], [6.641666666666667, 47.024445], [6.523888333333333, 46.971945], [6.475833333333333, 46.960278333333335], [6.4325, 46.925555], [6.460278333333333, 46.854166666666664], [6.3966666666666665, 46.78222166666667], [6.441388333333333, 46.76], [6.410278333333333, 46.75138833333333], [6.391666666666667, 46.74333333333333], [6.322221666666667, 46.711945], [6.2905549999999995, 46.69972166666666], [6.275, 46.68333333333333], [6.2508333333333335, 46.67111166666667], [6.164445, 46.61138833333334], [6.132499999999999, 46.583054999999995], [6.090833333333333, 46.54611166666667], [6.009445, 46.54361166666667]]]}}, {"designator": "LFFFFIR", "latitude": 48.73771096374219, "longitude": 2.4769504552124837, "lower": 0.0, "name": null, "type": "Feature", "upper": 195.0, "geometry": {"type": "Polygon", "coordinates": [[[5.825, 49.37111166666667], [5.645278333333334, 49.301111666666664], [5.554166666666666, 49.266666666666666], [4.8, 48.95], [5.398611666666667, 48.50416666666667], [5.733333333333333, 48.25], [5.5, 48.21666666666667], [5.166666666666667, 48.166666666666664], [5.122778333333333, 48.12777833333334], [5.0, 48.016666666666666], [4.952778333333333, 47.97416666666666], [4.9325, 47.956111666666665], [4.755833333333333, 47.800555], [4.583333333333333, 47.65], [4.333333333333333, 47.416666666666664], [4.833333333333333, 46.5], [4.675, 46.5], [4.674721666666667, 46.5], [4.538055, 46.5], [4.4, 46.5], [3.6166666666666667, 46.5], [3.2666666666666666, 46.5], [3.2491666666666665, 46.49388833333333], [2.9113883333333335, 46.37611166666667], [2.8858333333333333, 46.49916666666666], [2.879166666666667, 46.541945000000005], [2.868055, 46.5775], [2.837778333333333, 46.729166666666664], [2.8333333333333335, 46.75], [2.1688883333333333, 47.08222166666667], [2.0, 47.166666666666664], [1.4666666666666666, 47.166666666666664], [1.0583333333333333, 47.166666666666664], [0.8247216666666667, 47.166666666666664], [0.5708333333333333, 47.166945000000005], [0.3, 47.166666666666664], [0.255555, 47.166666666666664], [0.18000000000000002, 47.166666666666664], [0.051111666666666666, 47.166666666666664], [-0.25, 47.166666666666664], [-0.25, 47.416666666666664], [-0.25, 47.444445], [-0.25, 47.771944999999995], [-0.25, 47.853055000000005], [-0.25, 47.93333333333333], [-0.25, 48.172221666666665], [-0.25, 48.461945], [-0.25, 48.550555], [-0.25, 48.65916666666667], [-0.25, 48.7375], [-0.25, 48.838055000000004], [-0.25, 48.88388833333333], [-0.25, 48.929721666666666], [-0.25, 48.95], [-0.25, 49.166666666666664], [-0.25, 49.446945], [-0.25, 49.526666666666664], [-0.25, 49.81666666666667], [-0.25, 50.0], [-0.11083333333333334, 50.055555], [0.0, 50.1], [0.1, 50.13333333333333], [0.2647216666666667, 50.204445], [0.4436116666666667, 50.274445], [0.6413883333333333, 50.35166666666667], [0.7697216666666667, 50.40138833333333], [0.8213883333333333, 50.42138833333333], [0.885, 50.445555], [0.9647216666666666, 50.47666666666667], [1.0, 50.5], [1.065555, 50.515], [1.099445, 50.533055], [1.225555, 50.575555], [1.3666666666666667, 50.63333333333333], [1.4036116666666667, 50.649721666666665], [1.416945, 50.653055], [1.4547216666666667, 50.66222166666667], [1.4666666666666666, 50.666666666666664], [1.4666666666666666, 50.75], [1.4666666666666666, 50.779445], [1.4666666666666666, 50.856945], [1.4666666666666666, 50.904445], [1.4666666666666666, 50.905555], [1.4666666666666666, 50.916111666666666], [1.4666666666666666, 50.92111166666667], [1.4666666666666666, 50.95777833333333], [1.4666666666666666, 50.96666666666667], [1.4666666666666666, 51.0], [1.615555, 51.03277833333333], [1.6697216666666668, 51.04472166666667], [1.7322216666666668, 51.05861166666667], [2.0, 51.11666666666667], [2.2449999999999997, 51.10138833333333], [2.55, 51.083333333333336], [2.591666666666667, 51.01388833333333], [2.647221666666667, 50.818888333333334], [2.65, 50.80833333333333], [2.9, 50.7], [2.908333333333333, 50.69166666666667], [3.15, 50.78333333333333], [3.2227783333333333, 50.678055], [3.27, 50.609721666666665], [3.2841666666666667, 50.59472166666667], [3.3616666666666664, 50.515], [3.3766666666666665, 50.495], [3.4847216666666667, 50.519445000000005], [3.5116666666666663, 50.526666666666664], [3.5541666666666667, 50.49722166666666], [3.600555, 50.48388833333333], [3.6333333333333333, 50.473333333333336], [3.6455550000000003, 50.451945], [3.6666666666666665, 50.416666666666664], [3.6666666666666665, 50.35], [3.675, 50.34222166666667], [3.7875, 50.33972166666667], [3.873055, 50.340555], [3.9266666666666667, 50.333888333333334], [3.973055, 50.32833333333333], [4.089721666666667, 50.314721666666664], [4.1188883333333335, 50.29666666666667], [4.178055, 50.22472166666667], [4.168055, 50.14888833333334], [4.145833333333333, 49.980554999999995], [4.1502783333333335, 49.98027833333333], [4.366666666666666, 49.961666666666666], [4.483333333333333, 49.95], [4.535278333333333, 49.965555], [4.566666666666666, 49.975], [4.866666666666666, 49.983333333333334], [4.857778333333333, 49.861945], [4.858333333333333, 49.8], [4.939445, 49.8], [4.988055, 49.8], [5.114999999999999, 49.73611166666667], [5.1205549999999995, 49.73416666666667], [5.163333333333333, 49.71666666666667], [5.262778333333333, 49.693054999999994], [5.291111666666667, 49.67722166666667], [5.315833333333333, 49.64833333333333], [5.371666666666667, 49.625278333333334], [5.383333333333334, 49.61666666666667], [5.420554999999999, 49.60111166666666], [5.442221666666667, 49.56777833333333], [5.451388333333333, 49.54611166666667], [5.4375, 49.51888833333333], [5.575278333333333, 49.5275], [5.75, 49.541666666666664], [5.755555, 49.54222166666667], [5.816111666666667, 49.549445], [5.824166666666667, 49.543054999999995], [5.833333333333333, 49.543054999999995], [5.845833333333333, 49.53], [5.889166666666667, 49.50916666666667], [6.0, 49.455555], [5.825, 49.37111166666667]]]}}, {"designator": "LFFFUIR", "latitude": 45.82306629772606, "longitude": 1.3036539435821612, "lower": 195.0, "name": null, "type": "Feature", "upper": Infinity, "geometry": {"type": "Polygon", "coordinates": [[[8.0, 40.916666666666664], [8.0, 40.86222166666666], [8.0, 40.745], [8.0, 40.608055], [8.0, 40.42472166666666], [8.0, 40.35], [8.0, 40.0], [8.0, 39.69861166666667], [8.0, 39.209444999999995], [8.0, 39.15], [8.0, 39.0], [7.961945, 39.0], [7.633333333333334, 39.0], [7.566666666666666, 39.0], [7.331111666666667, 39.0], [7.033333333333333, 39.0], [6.716666666666667, 39.0], [6.25, 39.0], [6.088333333333334, 39.0], [5.374721666666667, 39.0], [5.0, 39.0], [4.6850000000000005, 39.0], [4.666666666666667, 39.584444999999995], [4.666666666666667, 39.71666666666667], [4.666666666666667, 39.95666666666667], [4.666666666666667, 40.03111166666667], [4.666666666666667, 40.064721666666664], [4.666666666666667, 40.180278333333334], [4.666666666666667, 40.28222166666667], [4.666666666666667, 40.39111166666667], [4.666666666666667, 40.5], [4.666666666666667, 40.55222166666667], [4.666666666666667, 40.856945], [4.666666666666667, 40.97416666666666], [4.666666666666667, 41.0575], [4.666666666666667, 41.14083333333333], [4.666666666666667, 41.416666666666664], [4.666666666666667, 41.733333333333334], [4.666666666666667, 42.0], [4.4347216666666665, 42.068888333333334], [4.415, 42.079721666666664], [4.333333333333333, 42.09861166666667], [4.115555, 42.172221666666665], [4.0375, 42.197221666666664], [4.000278333333333, 42.20916666666667], [3.9222216666666667, 42.216945], [3.8286116666666667, 42.26027833333333], [3.5, 42.333333333333336], [3.375555, 42.374721666666666], [3.2008333333333336, 42.431111666666666], [3.1763883333333336, 42.43277833333333], [3.1666666666666665, 42.43333333333333], [3.128333333333333, 42.43222166666667], [3.1086116666666666, 42.43861166666667], [3.0777783333333333, 42.448888333333336], [2.9830550000000002, 42.48027833333333], [2.9074999999999998, 42.46583333333333], [2.832221666666667, 42.45138833333333], [2.8108333333333335, 42.44611166666667], [2.691666666666667, 42.416666666666664], [2.533333333333333, 42.4], [2.381666666666667, 42.41583333333333], [2.2236116666666663, 42.4325], [2.2163883333333336, 42.43333333333333], [2.1666666666666665, 42.38333333333333], [2.104721666666667, 42.3825], [2.1002783333333332, 42.38166666666667], [2.0586116666666667, 42.361666666666665], [2.0083333333333333, 42.366945], [1.7280550000000001, 42.504445000000004], [1.696945, 42.493055], [1.6713883333333333, 42.50388833333333], [1.6475, 42.471111666666665], [1.5488883333333334, 42.440555], [1.5127783333333333, 42.435278333333336], [1.4647216666666667, 42.441111666666664], [1.4372216666666666, 42.4775], [1.4308333333333332, 42.48527833333333], [1.4641666666666666, 42.516945], [1.4477783333333332, 42.540555000000005], [1.4238883333333334, 42.54222166666667], [1.4266666666666665, 42.591945], [1.4402783333333333, 42.606388333333335], [1.375, 42.694445], [1.229445, 42.724444999999996], [1.1138883333333331, 42.77527833333333], [0.9972216666666667, 42.774721666666665], [0.8619450000000001, 42.81583333333333], [0.75, 42.84527833333333], [0.7333333333333333, 42.85], [0.5583333333333333, 42.693054999999994], [0.4166666666666667, 42.7], [0.36666666666666664, 42.7], [0.15111166666666667, 42.73222166666667], [-0.06666666666666667, 42.7], [-0.19361166666666665, 42.79666666666667], [-0.2, 42.799166666666665], [-0.27361166666666664, 42.839166666666664], [-0.295, 42.84666666666667], [-0.43666666666666665, 42.805], [-0.49583333333333335, 42.823888333333336], [-0.656945, 42.875], [-0.6649999999999999, 42.88], [-0.75, 42.93333333333333], [-0.8280550000000001, 42.95111166666666], [-0.9791666666666666, 42.973333333333336], [-1.0502783333333334, 42.995], [-1.108055, 43.00916666666667], [-1.3333333333333333, 43.05], [-1.4508333333333332, 43.05833333333333], [-1.4647216666666667, 43.07611166666666], [-1.470555, 43.211945], [-1.4733333333333334, 43.27111166666667], [-1.4913883333333333, 43.28388833333334], [-1.5725, 43.267221666666664], [-1.615555, 43.25833333333333], [-1.7211116666666666, 43.31388833333333], [-1.7402783333333334, 43.355000000000004], [-1.7805549999999999, 43.374721666666666], [-1.7833333333333334, 43.38333333333333], [-1.7833333333333334, 43.50611166666667], [-1.7833333333333334, 43.583333333333336], [-1.9625, 43.646388333333334], [-2.015555, 43.66527833333334], [-2.066666666666667, 43.68333333333333], [-2.165833333333333, 43.719445], [-2.5194449999999997, 43.83888833333333], [-2.6302783333333335, 43.877221666666664], [-2.7288883333333334, 43.910833333333336], [-2.7386116666666664, 43.91416666666667], [-2.794445, 43.933054999999996], [-2.840278333333333, 43.94861166666667], [-2.9125, 43.97361166666667], [-3.0302783333333334, 44.01222166666666], [-3.150278333333333, 44.05138833333333], [-3.8916666666666666, 44.297221666666665], [-3.9875, 44.32888833333333], [-4.231388333333333, 44.37583333333334], [-4.436111666666666, 44.4125], [-4.606945, 44.443333333333335], [-4.947500000000001, 44.50527833333333], [-5.139444999999999, 44.54416666666667], [-5.553055, 44.609721666666665], [-5.625, 44.62222166666666], [-5.836666666666667, 44.65888833333334], [-6.916666666666667, 44.83472166666666], [-6.919721666666666, 44.835278333333335], [-7.405278333333333, 44.910555], [-7.885000000000001, 44.983055], [-8.0, 45.0], [-8.0, 45.5], [-8.0, 45.91861166666667], [-8.0, 45.965555], [-8.0, 46.0], [-8.0, 46.416666666666664], [-8.000833333333334, 46.486666666666665], [-8.0, 46.5], [-8.0, 46.922221666666665], [-8.0, 47.0], [-7.997778333333333, 47.006388333333334], [-8.0, 47.25], [-8.000833333333334, 47.479166666666664], [-8.0, 47.5], [-8.0, 47.594445], [-8.0, 47.666666666666664], [-8.0, 47.68333333333333], [-8.0, 47.825], [-8.0, 47.827778333333335], [-8.000833333333334, 47.96777833333333], [-8.0, 48.0], [-8.0, 48.09222166666667], [-8.0, 48.31666666666667], [-8.0, 48.453055], [-8.0, 48.4875], [-8.0, 48.5], [-8.0, 48.576945], [-8.0, 48.833333333333336], [-7.574445, 48.92833333333333], [-7.214721666666667, 49.007221666666666], [-6.873611666666666, 49.080555], [-6.143055, 49.23388833333333], [-5.859721666666667, 49.291666666666664], [-5.5, 49.36138833333334], [-5.2663883333333334, 49.410555], [-5.0325, 49.456111666666665], [-5.0, 49.4625], [-4.916388333333333, 49.478055000000005], [-4.606388333333333, 49.538055], [-4.45, 49.5675], [-4.330278333333334, 49.59027833333334], [-4.1675, 49.62083333333333], [-4.161388333333333, 49.62166666666667], [-4.001388333333334, 49.65138833333333], [-3.82, 49.68472166666666], [-3.529445, 49.73722166666666], [-3.259445, 49.78527833333333], [-3.1736116666666665, 49.80138833333333], [-3.068055, 49.81861166666667], [-3.0341666666666667, 49.82472166666666], [-3.0, 49.833333333333336], [-2.5086116666666665, 49.915555000000005], [-2.3711116666666663, 49.93833333333334], [-2.243333333333333, 49.95972166666666], [-2.1730549999999997, 49.971111666666665], [-2.1636116666666667, 49.97277833333333], [-2.1063883333333333, 49.982499999999995], [-2.005, 49.99916666666666], [-2.0, 50.0], [-1.9747216666666667, 50.0], [-1.8833333333333333, 50.0], [-1.8591666666666666, 50.0], [-1.845, 50.0], [-1.7833333333333334, 50.0], [-1.716945, 50.0], [-1.6913883333333333, 50.0], [-1.5102783333333332, 50.0], [-1.5, 50.0], [-1.380555, 50.0], [-1.2527783333333333, 50.0], [-1.190555, 50.0], [-1.158055, 50.0], [-1.0538883333333333, 50.0], [-1.0, 50.0], [-0.8333333333333334, 50.0], [-0.5333333333333333, 50.0], [-0.531945, 50.0], [-0.36833333333333335, 50.0], [-0.25, 50.0], [-0.11083333333333334, 50.055555], [0.0, 50.1], [0.1, 50.13333333333333], [0.2647216666666667, 50.204445], [0.4436116666666667, 50.274445], [0.6413883333333333, 50.35166666666667], [0.7697216666666667, 50.40138833333333], [0.8213883333333333, 50.42138833333333], [0.885, 50.445555], [0.9647216666666666, 50.47666666666667], [1.0, 50.5], [1.065555, 50.515], [1.099445, 50.533055], [1.225555, 50.575555], [1.3666666666666667, 50.63333333333333], [1.4036116666666667, 50.649721666666665], [1.416945, 50.653055], [1.4547216666666667, 50.66222166666667], [1.4666666666666666, 50.666666666666664], [1.4666666666666666, 50.75], [1.4666666666666666, 50.779445], [1.4666666666666666, 50.856945], [1.4666666666666666, 50.904445], [1.4666666666666666, 50.905555], [1.4666666666666666, 50.916111666666666], [1.4666666666666666, 50.92111166666667], [1.4666666666666666, 50.95777833333333], [1.4666666666666666, 50.96666666666667], [1.4666666666666666, 51.0], [1.615555, 51.03277833333333], [1.6697216666666668, 51.04472166666667], [1.7322216666666668, 51.05861166666667], [2.0, 51.11666666666667], [2.2449999999999997, 51.10138833333333], [2.55, 51.083333333333336], [2.591666666666667, 51.01388833333333], [2.647221666666667, 50.818888333333334], [2.65, 50.80833333333333], [2.9, 50.7], [2.908333333333333, 50.69166666666667], [3.15, 50.78333333333333], [3.2227783333333333, 50.678055], [3.27, 50.609721666666665], [3.2841666666666667, 50.59472166666667], [3.3616666666666664, 50.515], [3.3766666666666665, 50.495], [3.4847216666666667, 50.519445000000005], [3.5116666666666663, 50.526666666666664], [3.5541666666666667, 50.49722166666666], [3.600555, 50.48388833333333], [3.6333333333333333, 50.473333333333336], [3.6455550000000003, 50.451945], [3.6666666666666665, 50.416666666666664], [3.6666666666666665, 50.35], [3.675, 50.34222166666667], [3.7875, 50.33972166666667], [3.873055, 50.340555], [3.9266666666666667, 50.333888333333334], [3.973055, 50.32833333333333], [4.089721666666667, 50.314721666666664], [4.1188883333333335, 50.29666666666667], [4.178055, 50.22472166666667], [4.168055, 50.14888833333334], [4.145833333333333, 49.980554999999995], [4.1502783333333335, 49.98027833333333], [4.366666666666666, 49.961666666666666], [4.483333333333333, 49.95], [4.535278333333333, 49.965555], [4.566666666666666, 49.975], [4.866666666666666, 49.983333333333334], [4.857778333333333, 49.861945], [4.858333333333333, 49.8], [4.939445, 49.8], [4.988055, 49.8], [5.114999999999999, 49.73611166666667], [5.1205549999999995, 49.73416666666667], [5.163333333333333, 49.71666666666667], [5.262778333333333, 49.693054999999994], [5.291111666666667, 49.67722166666667], [5.315833333333333, 49.64833333333333], [5.371666666666667, 49.625278333333334], [5.383333333333334, 49.61666666666667], [5.420554999999999, 49.60111166666666], [5.442221666666667, 49.56777833333333], [5.451388333333333, 49.54611166666667], [5.4375, 49.51888833333333], [5.575278333333333, 49.5275], [5.75, 49.541666666666664], [5.755555, 49.54222166666667], [5.816111666666667, 49.549445], [5.824166666666667, 49.543054999999995], [5.833333333333333, 49.543054999999995], [5.845833333333333, 49.53], [5.889166666666667, 49.50916666666667], [6.0, 49.455555], [6.055555, 49.46666666666667], [6.114999999999999, 49.47638833333333], [6.167778333333334, 49.49166666666667], [6.184445, 49.496388333333336], [6.206666666666666, 49.503055], [6.225, 49.50833333333333], [6.349166666666666, 49.46583333333333], [6.391666666666667, 49.46666666666667], [6.4, 49.46666666666667], [6.466666666666667, 49.46666666666667], [6.544445, 49.455555], [6.5597216666666665, 49.43277833333333], [6.67, 49.28027833333333], [6.683333333333334, 49.25], [6.711111666666667, 49.218055], [7.039445, 49.172221666666665], [7.1588883333333335, 49.15138833333333], [7.346666666666667, 49.12], [7.585, 49.08027833333333], [7.718333333333334, 49.05083333333334], [7.835278333333333, 49.047221666666665], [8.002221666666667, 49.01972166666667], [8.066666666666666, 49.0], [8.120555, 48.988055], [8.218611666666666, 48.97416666666666], [8.154166666666667, 48.916666666666664], [8.022221666666667, 48.775], [7.966666666666667, 48.71666666666667], [7.8, 48.520833333333336], [7.799445, 48.50611166666667], [7.7336116666666666, 48.434999999999995], [7.744721666666666, 48.32861166666667], [7.658333333333333, 48.21666666666667], [7.647778333333333, 48.19916666666666], [7.5775, 48.083333333333336], [7.590554999999999, 48.015], [7.616666666666666, 48.0], [7.617221666666667, 47.98777833333334], [7.597778333333333, 47.93833333333334], [7.583333333333333, 47.90833333333333], [7.560833333333333, 47.83638833333334], [7.555555, 47.83083333333333], [7.5319449999999994, 47.78333333333333], [7.5338883333333335, 47.68861166666667], [7.5, 47.632778333333334], [7.58, 47.60388833333333], [7.473611666666667, 47.497499999999995], [7.428888333333333, 47.49111166666667], [7.3811116666666665, 47.41388833333333], [7.2025, 47.425555], [7.142221666666667, 47.5], [6.989445, 47.49611166666667], [6.994445, 47.46972166666667], [6.964721666666667, 47.463055000000004], [6.899166666666667, 47.38111166666667], [7.0625, 47.344166666666666], [7.005833333333333, 47.32361166666667], [6.954445000000001, 47.24333333333333], [6.816666666666666, 47.13333333333333], [6.716666666666667, 47.05333333333333], [6.641666666666667, 47.024445], [6.523888333333333, 46.971945], [6.475833333333333, 46.960278333333335], [6.4325, 46.925555], [6.460278333333333, 46.854166666666664], [6.3966666666666665, 46.78222166666667], [6.441388333333333, 46.76], [6.410278333333333, 46.75138833333333], [6.391666666666667, 46.74333333333333], [6.322221666666667, 46.711945], [6.2905549999999995, 46.69972166666666], [6.275, 46.68333333333333], [6.2508333333333335, 46.67111166666667], [6.164445, 46.61138833333334], [6.132499999999999, 46.583054999999995], [6.090833333333333, 46.54611166666667], [6.094721666666667, 46.52527833333333], [6.067778333333334, 46.417500000000004], [6.123333333333333, 46.33277833333333], [5.972221666666667, 46.19166666666667], [5.976111666666667, 46.14611166666667], [6.004721666666667, 46.14333333333333], [6.080278333333334, 46.18611166666667], [6.218333333333334, 46.205000000000005], [6.293333333333334, 46.320555], [6.4775, 46.384445], [6.5305550000000006, 46.36], [6.659721666666667, 46.365], [6.742221666666667, 46.34166666666667], [6.768055, 46.34111166666666], [6.784721666666667, 46.340555], [6.810833333333333, 46.2375], [6.807221666666666, 46.208054999999995], [6.8075, 46.141945], [6.985555000000001, 46.00416666666667], [7.049445, 45.90027833333333], [6.866666666666666, 45.75277833333334], [7.043333333333334, 45.480000000000004], [7.0319449999999994, 45.46666666666667], [7.021111666666667, 45.45638833333333], [7.086666666666667, 45.40333333333333], [6.958333333333333, 45.19166666666667], [6.644166666666666, 45.11388833333333], [6.777221666666667, 45.00861166666667], [6.899166666666667, 44.841388333333335], [7.0125, 44.8], [7.041666666666667, 44.65833333333333], [7.001666666666667, 44.58416666666667], [6.916666666666667, 44.44916666666666], [7.006945, 44.24], [7.081111666666667, 44.21388833333333], [7.2855550000000004, 44.142221666666664], [7.625278333333333, 44.145554999999995], [7.7127783333333335, 44.06111166666667], [7.666666666666667, 44.0], [7.583333333333333, 43.9], [7.533333333333333, 43.775], [7.683333333333334, 43.766666666666666], [7.713888333333333, 43.73416666666667], [7.8375, 43.701945], [8.321666666666667, 43.570278333333334], [8.544445, 43.505554999999994], [8.598611666666667, 43.49166666666667], [8.712221666666666, 43.462221666666665], [8.800555000000001, 43.4375], [8.819166666666666, 43.431666666666665], [8.958333333333334, 43.388333333333335], [9.175833333333333, 43.33166666666667], [9.75, 43.166666666666664], [9.75, 42.95388833333333], [9.75, 42.82277833333333], [9.75, 42.621388333333336], [9.75, 42.50083333333334], [9.75, 42.41166666666666], [9.75, 42.325833333333335], [9.75, 41.93333333333333], [9.75, 41.790555000000005], [9.75, 41.75], [9.75, 41.733333333333334], [9.75, 41.666666666666664], [9.75, 41.333333333333336], [9.616666666666667, 41.333333333333336], [9.5, 41.333333333333336], [9.316666666666666, 41.333333333333336], [9.268333333333334, 41.333333333333336], [9.106388333333333, 41.333333333333336], [9.036945, 41.333333333333336], [8.811666666666667, 41.333333333333336], [8.690833333333334, 41.333333333333336], [8.57, 41.333333333333336], [8.443888333333334, 41.333333333333336], [8.333333333333334, 41.333333333333336], [8.283333333333333, 41.28333333333333], [8.161388333333333, 41.161944999999996], [8.0, 41.0], [8.0, 40.916666666666664]]]}}, {"designator": "LFMMFIR", "latitude": 42.84541104841841, "longitude": 5.926693279468416, "lower": 0.0, "name": null, "type": "Feature", "upper": 195.0, "geometry": {"type": "Polygon", "coordinates": [[[8.283333333333333, 41.28333333333333], [8.161388333333333, 41.161944999999996], [8.0, 41.0], [8.0, 40.916666666666664], [8.0, 40.86222166666666], [8.0, 40.745], [8.0, 40.608055], [8.0, 40.42472166666666], [8.0, 40.35], [8.0, 40.0], [8.0, 39.69861166666667], [8.0, 39.209444999999995], [8.0, 39.15], [8.0, 39.0], [7.961945, 39.0], [7.633333333333334, 39.0], [7.566666666666666, 39.0], [7.331111666666667, 39.0], [7.033333333333333, 39.0], [6.716666666666667, 39.0], [6.25, 39.0], [6.088333333333334, 39.0], [5.374721666666667, 39.0], [5.0, 39.0], [4.6850000000000005, 39.0], [4.666666666666667, 39.584444999999995], [4.666666666666667, 39.71666666666667], [4.666666666666667, 39.95666666666667], [4.666666666666667, 40.03111166666667], [4.666666666666667, 40.064721666666664], [4.666666666666667, 40.180278333333334], [4.666666666666667, 40.28222166666667], [4.666666666666667, 40.39111166666667], [4.666666666666667, 40.5], [4.666666666666667, 40.55222166666667], [4.666666666666667, 40.856945], [4.666666666666667, 40.97416666666666], [4.666666666666667, 41.0575], [4.666666666666667, 41.14083333333333], [4.666666666666667, 41.416666666666664], [4.666666666666667, 41.733333333333334], [4.666666666666667, 42.0], [4.4347216666666665, 42.068888333333334], [4.415, 42.079721666666664], [4.333333333333333, 42.09861166666667], [4.115555, 42.172221666666665], [4.0375, 42.197221666666664], [4.000278333333333, 42.20916666666667], [3.9222216666666667, 42.216945], [3.8286116666666667, 42.26027833333333], [3.5, 42.333333333333336], [3.375555, 42.374721666666666], [3.2008333333333336, 42.431111666666666], [3.1763883333333336, 42.43277833333333], [3.1666666666666665, 42.43333333333333], [3.128333333333333, 42.43222166666667], [3.1086116666666666, 42.43861166666667], [3.0777783333333333, 42.448888333333336], [2.9830550000000002, 42.48027833333333], [2.9074999999999998, 42.46583333333333], [2.832221666666667, 42.45138833333333], [2.75, 42.583333333333336], [2.6, 42.712221666666665], [2.275, 43.0], [2.5722216666666666, 43.25833333333333], [2.7069449999999997, 43.2125], [2.716666666666667, 43.71666666666667], [2.816666666666667, 44.02388833333334], [2.9, 44.25], [3.033333333333333, 44.61666666666667], [3.040278333333333, 44.650555000000004], [3.0486116666666665, 44.87583333333334], [3.033333333333333, 45.15], [3.0211116666666666, 45.223333333333336], [3.0152783333333333, 45.39833333333333], [2.95, 46.06666666666667], [2.925, 46.255554999999994], [2.9113883333333335, 46.37611166666667], [3.2491666666666665, 46.49388833333333], [3.2666666666666666, 46.5], [3.6166666666666667, 46.5], [4.4, 46.5], [4.538055, 46.5], [4.674721666666667, 46.5], [4.675, 46.5], [4.833333333333333, 46.5], [4.952778333333333, 46.5], [5.016666666666667, 46.5], [5.090554999999999, 46.5], [5.166666666666667, 46.5], [5.35, 46.5], [6.009445, 46.54361166666667], [6.090833333333333, 46.54611166666667], [6.094721666666667, 46.52527833333333], [6.067778333333334, 46.417500000000004], [6.123333333333333, 46.33277833333333], [5.972221666666667, 46.19166666666667], [5.976111666666667, 46.14611166666667], [6.004721666666667, 46.14333333333333], [6.080278333333334, 46.18611166666667], [6.218333333333334, 46.205000000000005], [6.293333333333334, 46.320555], [6.4775, 46.384445], [6.5305550000000006, 46.36], [6.659721666666667, 46.365], [6.742221666666667, 46.34166666666667], [6.768055, 46.34111166666666], [6.784721666666667, 46.340555], [6.810833333333333, 46.2375], [6.807221666666666, 46.208054999999995], [6.8075, 46.141945], [6.985555000000001, 46.00416666666667], [7.049445, 45.90027833333333], [6.866666666666666, 45.75277833333334], [7.043333333333334, 45.480000000000004], [7.0319449999999994, 45.46666666666667], [7.021111666666667, 45.45638833333333], [7.086666666666667, 45.40333333333333], [6.958333333333333, 45.19166666666667], [6.644166666666666, 45.11388833333333], [6.777221666666667, 45.00861166666667], [6.899166666666667, 44.841388333333335], [7.0125, 44.8], [7.041666666666667, 44.65833333333333], [7.001666666666667, 44.58416666666667], [6.916666666666667, 44.44916666666666], [7.006945, 44.24], [7.081111666666667, 44.21388833333333], [7.2855550000000004, 44.142221666666664], [7.625278333333333, 44.145554999999995], [7.7127783333333335, 44.06111166666667], [7.666666666666667, 44.0], [7.583333333333333, 43.9], [7.533333333333333, 43.775], [7.683333333333334, 43.766666666666666], [7.713888333333333, 43.73416666666667], [7.8375, 43.701945], [8.321666666666667, 43.570278333333334], [8.544445, 43.505554999999994], [8.598611666666667, 43.49166666666667], [8.712221666666666, 43.462221666666665], [8.800555000000001, 43.4375], [8.819166666666666, 43.431666666666665], [8.958333333333334, 43.388333333333335], [9.175833333333333, 43.33166666666667], [9.75, 43.166666666666664], [9.75, 42.95388833333333], [9.75, 42.82277833333333], [9.75, 42.621388333333336], [9.75, 42.50083333333334], [9.75, 42.41166666666666], [9.75, 42.325833333333335], [9.75, 41.93333333333333], [9.75, 41.790555000000005], [9.75, 41.75], [9.75, 41.733333333333334], [9.75, 41.666666666666664], [9.75, 41.333333333333336], [9.616666666666667, 41.333333333333336], [9.5, 41.333333333333336], [9.316666666666666, 41.333333333333336], [9.268333333333334, 41.333333333333336], [9.106388333333333, 41.333333333333336], [9.036945, 41.333333333333336], [8.811666666666667, 41.333333333333336], [8.690833333333334, 41.333333333333336], [8.57, 41.333333333333336], [8.443888333333334, 41.333333333333336], [8.333333333333334, 41.333333333333336], [8.283333333333333, 41.28333333333333]]]}}, {"designator": "LFRRFIR", "latitude": 47.123535759801186, "longitude": -4.087352951206895, "lower": 0.0, "name": null, "type": "Feature", "upper": 195.0, "geometry": {"type": "Polygon", "coordinates": [[[-0.25, 48.95], [-0.25, 48.929721666666666], [-0.25, 48.88388833333333], [-0.25, 48.838055000000004], [-0.25, 48.7375], [-0.25, 48.65916666666667], [-0.25, 48.550555], [-0.25, 48.461945], [-0.25, 48.172221666666665], [-0.25, 47.93333333333333], [-0.25, 47.853055000000005], [-0.25, 47.771944999999995], [-0.25, 47.444445], [-0.25, 47.416666666666664], [-0.25, 47.166666666666664], [-0.25, 47.044445], [-0.25, 46.62888833333333], [-0.25, 46.62583333333334], [-0.25, 46.5], [-0.7, 46.5], [-0.8908333333333334, 46.5], [-1.1099999999999999, 46.5], [-1.1333333333333333, 46.5], [-1.3508333333333333, 46.5], [-1.4311116666666666, 46.5], [-1.5430549999999998, 46.5], [-1.5833333333333333, 46.5], [-1.6333333333333333, 46.5], [-1.6666666666666667, 45.981388333333335], [-1.6622216666666667, 45.9375], [-1.671945, 45.7575], [-1.678055, 45.56111166666667], [-1.72, 44.81666666666667], [-1.7583333333333333, 44.2], [-1.7666666666666666, 44.06666666666667], [-1.7833333333333334, 43.583333333333336], [-1.9625, 43.646388333333334], [-2.015555, 43.66527833333334], [-2.066666666666667, 43.68333333333333], [-2.165833333333333, 43.719445], [-2.5194449999999997, 43.83888833333333], [-2.6302783333333335, 43.877221666666664], [-2.7288883333333334, 43.910833333333336], [-2.7386116666666664, 43.91416666666667], [-2.794445, 43.933054999999996], [-2.840278333333333, 43.94861166666667], [-2.9125, 43.97361166666667], [-3.0302783333333334, 44.01222166666666], [-3.150278333333333, 44.05138833333333], [-3.8916666666666666, 44.297221666666665], [-3.9875, 44.32888833333333], [-4.231388333333333, 44.37583333333334], [-4.436111666666666, 44.4125], [-4.606945, 44.443333333333335], [-4.947500000000001, 44.50527833333333], [-5.139444999999999, 44.54416666666667], [-5.553055, 44.609721666666665], [-5.625, 44.62222166666666], [-5.836666666666667, 44.65888833333334], [-6.916666666666667, 44.83472166666666], [-6.919721666666666, 44.835278333333335], [-7.405278333333333, 44.910555], [-7.885000000000001, 44.983055], [-8.0, 45.0], [-8.0, 45.5], [-8.0, 45.91861166666667], [-8.0, 45.965555], [-8.0, 46.0], [-8.0, 46.416666666666664], [-8.000833333333334, 46.486666666666665], [-8.0, 46.5], [-8.0, 46.922221666666665], [-8.0, 47.0], [-7.997778333333333, 47.006388333333334], [-8.0, 47.25], [-8.000833333333334, 47.479166666666664], [-8.0, 47.5], [-8.0, 47.594445], [-8.0, 47.666666666666664], [-8.0, 47.68333333333333], [-8.0, 47.825], [-8.0, 47.827778333333335], [-8.000833333333334, 47.96777833333333], [-8.0, 48.0], [-8.0, 48.09222166666667], [-8.0, 48.31666666666667], [-8.0, 48.453055], [-8.0, 48.4875], [-8.0, 48.5], [-8.0, 48.576945], [-8.0, 48.833333333333336], [-7.574445, 48.92833333333333], [-7.214721666666667, 49.007221666666666], [-6.873611666666666, 49.080555], [-6.143055, 49.23388833333333], [-5.859721666666667, 49.291666666666664], [-5.5, 49.36138833333334], [-5.2663883333333334, 49.410555], [-5.0325, 49.456111666666665], [-5.0, 49.4625], [-4.916388333333333, 49.478055000000005], [-4.606388333333333, 49.538055], [-4.45, 49.5675], [-4.330278333333334, 49.59027833333334], [-4.1675, 49.62083333333333], [-4.161388333333333, 49.62166666666667], [-4.001388333333334, 49.65138833333333], [-3.82, 49.68472166666666], [-3.529445, 49.73722166666666], [-3.259445, 49.78527833333333], [-3.1736116666666665, 49.80138833333333], [-3.068055, 49.81861166666667], [-3.0341666666666667, 49.82472166666666], [-3.0, 49.833333333333336], [-2.5086116666666665, 49.915555000000005], [-2.3711116666666663, 49.93833333333334], [-2.243333333333333, 49.95972166666666], [-2.1730549999999997, 49.971111666666665], [-2.1636116666666667, 49.97277833333333], [-2.1063883333333333, 49.982499999999995], [-2.005, 49.99916666666666], [-2.0, 50.0], [-1.9747216666666667, 50.0], [-1.8833333333333333, 50.0], [-1.8591666666666666, 50.0], [-1.845, 50.0], [-1.7833333333333334, 50.0], [-1.716945, 50.0], [-1.6913883333333333, 50.0], [-1.5102783333333332, 50.0], [-1.5, 50.0], [-1.380555, 50.0], [-1.2527783333333333, 50.0], [-1.190555, 50.0], [-1.158055, 50.0], [-1.0538883333333333, 50.0], [-1.0, 50.0], [-0.8333333333333334, 50.0], [-0.5333333333333333, 50.0], [-0.531945, 50.0], [-0.36833333333333335, 50.0], [-0.25, 50.0], [-0.25, 49.81666666666667], [-0.25, 49.526666666666664], [-0.25, 49.446945], [-0.25, 49.166666666666664], [-0.25, 48.95]]]}}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+<div class="section" id="iterate-through-many-airspaces">
+<h3>Iterate through many airspaces<a class="headerlink" href="#iterate-through-many-airspaces" title="Permalink to this headline">¶</a></h3>
+<p>The following trick lets you return the largest CS sector with a designator
+starting with LFBB (Bordeaux FIR/ACC).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the largest CS in Bordeaux ACC</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+
+<span class="nb">max</span><span class="p">(</span>
+    <span class="n">nm_airspaces</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;CS&quot; and designator.str.startswith(&quot;LFBB&quot;)&#39;</span><span class="p">),</span>
+    <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;area&quot;</span><span class="p">),</span>  <span class="c1"># equivalent to `lambda x: x.area`</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b>BORDEAUX TOTAL [LFBBBDX] (CS)</b><ul><li>lower: 145 | upper: 195</li><li>lower: 195 | upper: 265</li><li>lower: 265 | upper: inf</li></ul><div style="white-space: nowrap; width: 12%"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-263745.12412445416 -341944.8899775285 429951.2347886352 577911.3355598155" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,-105978.44439524144)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="3852.7422370654367" opacity="0.6" d="M 108735.7303716601,-315758.67070376826 L 82599.22324105148,-312431.51272038295 L 78573.95812118024,-318034.98179398756 L 73109.25775089489,-318282.4355443784 L 69701.37177004344,-320540.76643827604 L 65553.8824892252,-319996.5672051034 L 42369.88785879144,-304909.60117943323 L 39820.792796603804,-306190.779875546 L 37713.25224125984,-304999.5316282066 L 35769.64206582365,-308651.6380652364 L 27675.086313813576,-312084.88652430865 L 20750.423205425854,-312048.27449450764 L 17949.156538394553,-307149.8693094514 L 20678.517553416015,-303623.88527564047 L 19324.313272195748,-301004.9159888942 L 17361.655999716615,-300825.17466976773 L 18687.687301491544,-293692.40321110765 L 13312.364253129299,-283921.25496408046 L 1387.4740639293805,-280600.9725789647 L -8067.527551480608,-274947.5107294631 L -17612.302639599515,-274990.8261883898 L -39151.6717015411,-266532.6565707557 L -53591.50083416411,-283872.1050364745 L -69284.88044306161,-282954.6651831774 L -86893.71731232034,-279166.1277120627 L -104778.1185224308,-282487.80837928655 L -114988.37376259558,-271574.87023038976 L -123175.0493678996,-265869.87535915145 L -134843.3553712838,-270273.13549916976 L -152671.27918579627,-262103.83100519225 L -160111.8279439591,-255442.52001121355 L -207280.92105819916,-241154.06401404497 L -216813.81022992515,-239919.85859410142 L -217858.54115868552,-216219.66994485506 L -219274.97486546828,-214751.2195165685 L -229439.8285572871,-217245.6582140314 L -237775.69646161245,-210768.20590779756 L -239161.47826268233,-206144.05092471803 L -242341.00058520175,-203832.88597770396 L -238379.9005079866,-126979.22908089483 L -222790.27155723848,85639.37990408021 L -166038.44410763297,109694.60092976352 L -112141.43548038305,140395.88533450814 L -110798.5628314654,214562.32204303463 L 59663.07883185005,213850.14649554947 L 123722.43128365213,168440.6559422775 L 130554.61948286631,126967.4308005396 L 134261.9629908675,92602.76794118574 L 142999.3931725129,-9237.741435970625 L 144801.98712492862,-64783.024865493986 L 121101.93451811532,-169173.7613715587 L 121356.28401877945,-225234.8253875164 L 110331.41382095356,-220333.65845211133 L 86593.32339065806,-249408.4774349922 L 126182.88324260131,-295079.45739915717 L 121735.01993498797,-313681.66104351263 L 108735.7303716601,-315758.67070376826 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-286185.4546909331 -342624.11341861606 564808.8924055176 596250.3684691808" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,-88997.85836805133)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="3975.002456461205" opacity="0.6" d="M 35769.64206582365,-308651.6380652364 L 27675.086313813576,-312084.88652430865 L 20750.423205425854,-312048.27449450764 L 17949.156538394553,-307149.8693094514 L 20678.517553416015,-303623.88527564047 L 19324.313272195748,-301004.9159888942 L 17361.655999716615,-300825.17466976773 L 18687.687301491544,-293692.40321110765 L 13312.364253129299,-283921.25496408046 L 1387.4740639293805,-280600.9725789647 L -8067.527551480608,-274947.5107294631 L -17612.302639599515,-274990.8261883898 L -39151.6717015411,-266532.6565707557 L -53591.50083416411,-283872.1050364745 L -69284.88044306161,-282954.6651831774 L -86893.71731232034,-279166.1277120627 L -104778.1185224308,-282487.80837928655 L -114988.37376259558,-271574.87023038976 L -123175.0493678996,-265869.87535915145 L -134843.3553712838,-270273.13549916976 L -152671.27918579627,-262103.83100519225 L -160111.8279439591,-255442.52001121355 L -207280.92105819916,-241154.06401404497 L -216813.81022992515,-239919.85859410142 L -217858.54115868552,-216219.66994485506 L -219274.97486546828,-214751.2195165685 L -229439.8285572871,-217245.6582140314 L -237775.69646161245,-210768.20590779756 L -239161.47826268233,-206144.05092471803 L -242341.00058520175,-203832.88597770396 L -241705.85927432837,-180645.5649536984 L -264102.1077105931,-168647.00828034492 L -238379.9005079866,-126979.22908089483 L -222790.27155723848,85639.37990408021 L -166038.44410763297,109694.60092976352 L -112141.43548038305,140395.88533450814 L -111044.73315172344,200966.41219138095 L -57668.92906874771,204342.78205402254 L -17160.521023206216,195503.75606120715 L 19256.610838828197,213589.62727746472 L 45820.325720570254,182020.48774149053 L 92534.06733604988,215618.76285536686 L 139964.64911869043,231542.90807022472 L 175176.80803379227,149279.60439106636 L 165328.80916770894,144277.56163787443 L 190775.46907701276,61910.8593088936 L 234659.79220323017,53562.4418976938 L 256540.0907342444,17540.88582566741 L 237394.23806748548,1388.0381794681161 L 226511.4211781505,-2814.9375380143833 L 170233.01233022835,-40969.09996407383 L 243395.5041236944,-86161.18534521606 L 240725.57508856658,-124851.64884028456 L 225842.5310512473,-156642.583594233 L 212085.20085475838,-179483.0061548733 L 163592.42907139787,-311178.1618753537 L 157625.62301337087,-311199.032591293 L 145557.80646550446,-306134.3890271005 L 121735.01993498797,-313681.66104351263 L 108735.7303716601,-315758.67070376826 L 82599.22324105148,-312431.51272038295 L 78573.95812118024,-318034.98179398756 L 73109.25775089489,-318282.4355443784 L 69701.37177004344,-320540.76643827604 L 65553.8824892252,-319996.5672051034 L 42369.88785879144,-304909.60117943323 L 39820.792796603804,-306190.779875546 L 37713.25224125984,-304999.5316282066 L 35769.64206582365,-308651.6380652364 z" /></g></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-289802.8961959213 -346241.55492360424 572043.7754154939 693921.2891038619" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,1438.1792566534132)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="4626.141927359079" opacity="0.6" d="M 35769.64206582365,-308651.6380652364 L 27675.086313813576,-312084.88652430865 L 20750.423205425854,-312048.27449450764 L 17949.156538394553,-307149.8693094514 L 20678.517553416015,-303623.88527564047 L 19324.313272195748,-301004.9159888942 L 17361.655999716615,-300825.17466976773 L 18687.687301491544,-293692.40321110765 L 13312.364253129299,-283921.25496408046 L 1387.4740639293805,-280600.9725789647 L -8067.527551480608,-274947.5107294631 L -17612.302639599515,-274990.8261883898 L -39151.6717015411,-266532.6565707557 L -53591.50083416411,-283872.1050364745 L -69284.88044306161,-282954.6651831774 L -86893.71731232034,-279166.1277120627 L -104778.1185224308,-282487.80837928655 L -114988.37376259558,-271574.87023038976 L -123175.0493678996,-265869.87535915145 L -134843.3553712838,-270273.13549916976 L -152671.27918579627,-262103.83100519225 L -160111.8279439591,-255442.52001121355 L -207280.92105819916,-241154.06401404497 L -216813.81022992515,-239919.85859410142 L -217858.54115868552,-216219.66994485506 L -219274.97486546828,-214751.2195165685 L -229439.8285572871,-217245.6582140314 L -237775.69646161245,-210768.20590779756 L -239161.47826268233,-206144.05092471803 L -242530.35423948424,-202867.76793062204 L -241705.85927432837,-180645.5649536984 L -264102.1077105931,-168647.00828034492 L -238379.9005079866,-126979.22908089483 L -222790.27155723848,85639.37990408021 L -166038.44410763297,109694.60092976352 L -112141.43548038305,140395.88533450814 L -111044.73315172344,200966.41219138095 L -57668.92906874771,204342.78205402254 L -17160.521023206216,195503.75606120715 L 19256.610838828197,213589.62727746472 L 31682.431426034003,256316.99092444027 L 37547.37153176312,301210.6207812779 L 42405.66157559128,321228.3933911475 L 104035.44766898506,321978.94569492945 L 139964.64911869043,231542.90807022472 L 175176.80803379227,149279.60439106636 L 165328.80916770894,144277.56163787443 L 190775.46907701276,61910.8593088936 L 234659.79220323017,53562.4418976938 L 256540.0907342444,17540.88582566741 L 237394.23806748548,1388.0381794681161 L 226511.4211781505,-2814.9375380143833 L 170233.01233022835,-40969.09996407383 L 243395.5041236944,-86161.18534521606 L 240725.57508856658,-124851.64884028456 L 225842.5310512473,-156642.583594233 L 212085.20085475838,-179483.0061548733 L 163592.42907139787,-311178.1618753537 L 157625.62301337087,-311199.032591293 L 145557.80646550446,-306134.3890271005 L 121735.01993498797,-313681.66104351263 L 108735.7303716601,-315758.67070376826 L 82599.22324105148,-312431.51272038295 L 78573.95812118024,-318034.98179398756 L 73109.25775089489,-318282.4355443784 L 69701.37177004344,-320540.76643827604 L 65553.8824892252,-319996.5672051034 L 42369.88785879144,-304909.60117943323 L 39820.792796603804,-306190.779875546 L 37713.25224125984,-304999.5316282066 L 35769.64206582365,-308651.6380652364 z" /></g></svg></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="free-route-areas-fra-from-eurocontrol">
+<h2>Free Route Areas (FRA) from EUROCONTROL<a class="headerlink" href="#free-route-areas-fra-from-eurocontrol" title="Permalink to this headline">¶</a></h2>
+<p>The Free Route information consists of regular airspace information:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_freeroute</span>
+<span class="n">nm_freeroute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>designator</th>
+      <th>upper</th>
+      <th>lower</th>
+      <th>name</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POLYGON ((27.69945 51.47972, 26.79833 51.76639...</td>
+      <td>BEL_FRA</td>
+      <td>660.0</td>
+      <td>275.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POLYGON ((-39.00000 63.50000, -34.25089 65.704...</td>
+      <td>BIRD_DOMESTIC</td>
+      <td>660.0</td>
+      <td>0.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POLYGON ((0.00039 63.01636, 0.00005 72.99989, ...</td>
+      <td>BODO_OCEANIC</td>
+      <td>660.0</td>
+      <td>0.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POLYGON ((18.06361 56.11861, 18.01861 56.09528...</td>
+      <td>BOREALIS</td>
+      <td>660.0</td>
+      <td>285.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POLYGON ((21.00000 59.00000, 20.91583 59.04783...</td>
+      <td>BOREALIS</td>
+      <td>660.0</td>
+      <td>95.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>POLYGON ((30.53333 43.68333, 29.03333 43.73333...</td>
+      <td>SEE_FRA_SOUTH</td>
+      <td>660.0</td>
+      <td>105.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>POLYGON ((-60.00000 65.00000, -59.97538 60.006...</td>
+      <td>SONDRESTROM</td>
+      <td>660.0</td>
+      <td>0.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>POLYGON ((29.68778 48.06472, 29.88445 48.19139...</td>
+      <td>UKOV_FRA</td>
+      <td>660.0</td>
+      <td>275.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>POLYGON ((27.85000 49.76167, 27.04389 50.18195...</td>
+      <td>UKRNESFRA</td>
+      <td>660.0</td>
+      <td>275.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>POLYGON ((25.77750 47.94056, 25.71667 47.93222...</td>
+      <td>UKRNESFRA</td>
+      <td>660.0</td>
+      <td>275.0</td>
+      <td></td>
+      <td>FRA</td>
+    </tr>
+  </tbody>
+</table>
+<p>68 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_freeroute</span><span class="p">[</span><span class="s2">&quot;BOREALIS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map_leaflet</span><span class="p">(</span><span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "71bfc30756114d27b01784a13209851c"}
+</script></div>
+</div>
+<p>However, in addition to these airspace, there is a database of points attached to a Free Route Area:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> refer to <strong>I</strong> ntermediate points in the middle of an airspace;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span></code> mark points of <strong>E</strong> ntry and e <strong>X</strong> it;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">D</span></code> refer to <strong>A</strong> rrival and <strong>D</strong> eparture and are attached to an airport.</p></li>
+</ul>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_freeroute</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;FRA == &quot;BOREALIS&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FRA</th>
+      <th>type</th>
+      <th>name</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>airport</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>BOREALIS</td>
+      <td>I</td>
+      <td>TUSRU</td>
+      <td>59.000000</td>
+      <td>6.266667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BOREALIS</td>
+      <td>I</td>
+      <td>EVGUN</td>
+      <td>58.266667</td>
+      <td>10.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BOREALIS</td>
+      <td>EX</td>
+      <td>EVGUN</td>
+      <td>58.266667</td>
+      <td>10.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>BOREALIS</td>
+      <td>I</td>
+      <td>VEKAB</td>
+      <td>70.250000</td>
+      <td>29.216667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>BOREALIS</td>
+      <td>I</td>
+      <td>NENLA</td>
+      <td>61.166667</td>
+      <td>9.333333</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2473</th>
+      <td>BOREALIS</td>
+      <td>AD</td>
+      <td>TUSAS</td>
+      <td>56.479444</td>
+      <td>25.171667</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2480</th>
+      <td>BOREALIS</td>
+      <td>A</td>
+      <td>ERKUL</td>
+      <td>59.093333</td>
+      <td>22.511111</td>
+      <td>EEKA</td>
+    </tr>
+    <tr>
+      <th>2482</th>
+      <td>BOREALIS</td>
+      <td>AD</td>
+      <td>DIVEG</td>
+      <td>62.912222</td>
+      <td>21.721389</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2499</th>
+      <td>BOREALIS</td>
+      <td>D</td>
+      <td>OLNOP</td>
+      <td>66.188611</td>
+      <td>24.705278</td>
+      <td>EFRO</td>
+    </tr>
+    <tr>
+      <th>2502</th>
+      <td>BOREALIS</td>
+      <td>D</td>
+      <td>ARMUV</td>
+      <td>59.140278</td>
+      <td>23.466944</td>
+      <td>EEKA</td>
+    </tr>
+  </tbody>
+</table>
+<p>2399 rows × 6 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"6b70224a03f54d9eb896adc7090bd2c3": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "880cfedddbce4bc2a70b7aee75c74036": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "cfac25045a40499a962330188a3b12ad": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletTileLayerView", "attribution": "Map data (c) <a href=\"https://openstreetmap.org\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "c247e2946ce846d281eab6b064c45306": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cfc39096006f41e19bf0608ad3e3cacb": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "5e1f1d03e04f4507bec23648ba428ec1": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [56.151135987198245, 9.078228764906962], "close_popup_on_click": true, "controls": ["IPY_MODEL_755e59f23d1a41d28aa616a92420839b", "IPY_MODEL_094de774a50742f2a80acf40b3f043ea"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_6b70224a03f54d9eb896adc7090bd2c3", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_880cfedddbce4bc2a70b7aee75c74036", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_cfac25045a40499a962330188a3b12ad", "IPY_MODEL_ea1b113a30124a41a71492c466905d34"], "layout": "IPY_MODEL_c247e2946ce846d281eab6b064c45306", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_cfc39096006f41e19bf0608ad3e3cacb", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 6.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "755e59f23d1a41d28aa616a92420839b": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "094de774a50742f2a80acf40b3f043ea": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "ea1b113a30124a41a71492c466905d34": {"model_name": "LeafletPolygonModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletPolygonModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletPolygonView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.2, "line_cap": "round", "line_join": "round", "locations": [[[54.879704, 9.628877], [54.887028, 9.592388], [54.886096, 9.584378], [54.841375, 9.4982], [54.837039, 9.482674], [54.831633, 9.463021], [54.833363, 9.460176], [54.832827, 9.449405], [54.827975, 9.437417], [54.827095, 9.435228], [54.827119, 9.428658], [54.83196, 9.420357], [54.832461, 9.418943], [54.832304, 9.417895], [54.833321, 9.416528], [54.834347, 9.41607], [54.835856, 9.416345], [54.836476, 9.418413], [54.838041, 9.418049], [54.842188, 9.411139], [54.842637, 9.408278], [54.8424, 9.407418], [54.838863, 9.403649], [54.840465, 9.402639], [54.839145, 9.397828], [54.83928, 9.397133], [54.838711, 9.395384], [54.838346, 9.391361], [54.838359, 9.387643], [54.839139, 9.382809], [54.837357, 9.380891], [54.83543, 9.381557], [54.835156, 9.380683], [54.834179, 9.38016], [54.833096, 9.378893], [54.83365, 9.376669], [54.833322, 9.374737], [54.832218, 9.374839], [54.831259, 9.374239], [54.830627, 9.375197], [54.829169, 9.376261], [54.828595, 9.37557], [54.827295, 9.375029], [54.82582, 9.375463], [54.824925, 9.374116], [54.82312, 9.37398], [54.822138, 9.372517], [54.821543, 9.372938], [54.821126, 9.373831], [54.819374, 9.370833], [54.818947, 9.367154], [54.818398, 9.366945], [54.817296, 9.363876], [54.816554, 9.362744], [54.815301, 9.363385], [54.815172, 9.362719], [54.815986, 9.362255], [54.816226, 9.360829], [54.815179, 9.356267], [54.814332, 9.354717], [54.806685, 9.346434], [54.807125, 9.343163], [54.80409, 9.342154], [54.803613, 9.341998], [54.802078, 9.345325], [54.800242, 9.343675], [54.804221, 9.330417], [54.805625, 9.329431], [54.808925, 9.293433], [54.80617, 9.291988], [54.80316, 9.295559], [54.801688, 9.294876], [54.804298, 9.286315], [54.809641, 9.284141], [54.809799, 9.281216], [54.811783, 9.273285], [54.812121, 9.270427], [54.810886, 9.265785], [54.810585, 9.258003], [54.809653, 9.250068], [54.817179, 9.245992], [54.826843, 9.238347], [54.83116, 9.235803], [54.835246, 9.235223], [54.839069, 9.238747], [54.843842, 9.244875], [54.849977, 9.240229], [54.853605, 9.223483], [54.859061, 9.20501], [54.859034, 9.195898], [54.859215, 9.194595], [54.860304, 9.191547], [54.861145, 9.187578], [54.863279, 9.185801], [54.866085, 9.172804], [54.868905, 9.160077], [54.870726, 9.15513], [54.873031, 9.142893], [54.873721, 9.136091], [54.872593, 9.12352], [54.872932, 9.118049], [54.873692, 9.113144], [54.873988, 9.110499], [54.871916, 9.099404], [54.871983, 9.09562], [54.870368, 9.09209], [54.870196, 9.091144], [54.870694, 9.085646], [54.871681, 9.078681], [54.871853, 9.075836], [54.871163, 9.071734], [54.87138, 9.06825], [54.871167, 9.063249], [54.872652, 9.058795], [54.872924, 9.05738], [54.871936, 9.048341], [54.87576, 9.036508], [54.878293, 9.029046], [54.880327, 9.029699], [54.886463, 9.014653], [54.89216, 8.984202], [54.895761, 8.977611], [54.896756, 8.973022], [54.898336, 8.965327], [54.899429, 8.963407], [54.899987, 8.961875], [54.901028, 8.957541], [54.901591, 8.952838], [54.902541, 8.947844], [54.902549, 8.941254], [54.902394, 8.940393], [54.90341, 8.923619], [54.903327, 8.922889], [54.902545, 8.921156], [54.902689, 8.918037], [54.903011, 8.91693], [54.902524, 8.916125], [54.902011, 8.913349], [54.90235, 8.913052], [54.90315, 8.913203], [54.903149, 8.912034], [54.903805, 8.910584], [54.903835, 8.904133], [54.904437, 8.902123], [54.903974, 8.894906], [54.904902, 8.892217], [54.903914, 8.889057], [54.902553, 8.887488], [54.902083, 8.883092], [54.90207, 8.880023], [54.902205, 8.879069], [54.90206, 8.87746], [54.901131, 8.875476], [54.899647, 8.873576], [54.899407, 8.872889], [54.899909, 8.865826], [54.899039, 8.864938], [54.898407, 8.863024], [54.89758, 8.862376], [54.897319, 8.860818], [54.896831, 8.860005], [54.897286, 8.848831], [54.897444, 8.848438], [54.899407, 8.844629], [54.901308, 8.841866], [54.905527, 8.836919], [54.906642, 8.833281], [54.906589, 8.832831], [54.90603, 8.832628], [54.906218, 8.831556], [54.905666, 8.829701], [54.905765, 8.829231], [54.906333, 8.829496], [54.906854, 8.82416], [54.905721, 8.823078], [54.905523, 8.822047], [54.903998, 8.818795], [54.904037, 8.814322], [54.904735, 8.812183], [54.904575, 8.811868], [54.905921, 8.811347], [54.90456, 8.799396], [54.90466, 8.798996], [54.902559, 8.799064], [54.902193, 8.795951], [54.901443, 8.793137], [54.899734, 8.790413], [54.898488, 8.786913], [54.897765, 8.781256], [54.897209, 8.781295], [54.896902, 8.780673], [54.895714, 8.778059], [54.895451, 8.776408], [54.892646, 8.776988], [54.89451, 8.759566], [54.89687, 8.754892], [54.896694, 8.750232], [54.895632, 8.749539], [54.893234, 8.738162], [54.893041, 8.735107], [54.892735, 8.727842], [54.895624, 8.718353], [54.896491, 8.716177], [54.897258, 8.716605], [54.898868, 8.709786], [54.900911, 8.707636], [54.902852, 8.700853], [54.903702, 8.69965], [54.904691, 8.696791], [54.905298, 8.696001], [54.908806, 8.687072], [54.910569, 8.680121], [54.91128, 8.671341], [54.911282, 8.668504], [54.908689, 8.659806], [54.91131, 8.637492], [54.916667, 8.566667], [55.01666666699998, 8.483333333000019], [55.05, 8.483333333000019], [55.06666666699999, 8.416666667000015], [55.06916666699999, 8.39194444399999], [55.06666666699999, 8.333333332999985], [55.0, 8.0], [55.0, 7.5], [55.0, 7.0], [55.0, 6.5], [55.0, 6.0], [55.0, 5.5], [55.0, 5.0], [57.0, 5.0], [57.0, 5.416666667000015], [57.0, 5.833333332999985], [57.0, 6.25], [57.0, 6.666666667000015], [57.0, 7.083333332999985], [57.0, 7.5], [58.5, 10.5], [56.21472222199998, 12.368055556], [56.16416666700002, 12.44], [56.118352777999974, 12.533580556], [56.055563888999984, 12.64448611099999], [56.032777778000025, 12.656944443999976], [55.98111111100002, 12.65194444399998], [55.925963889, 12.646880555999985], [55.891388888999984, 12.678333333000012], [55.86879166699998, 12.69005277799999], [55.83576666699997, 12.69928611099999], [55.73222222200002, 12.809444444], [55.698577778000015, 12.845791667000015], [55.643575, 12.89413055599999], [55.61361111100001, 12.88027777799999], [55.56555555599999, 12.780833332999975], [55.54023611100001, 12.728294444000028], [55.488569444, 12.714127777999977], [55.48277777800001, 12.70333333299999], [55.43106666699998, 12.609402778], [55.38, 12.626388889], [55.336666666999974, 12.64083333299999], [54.916666667000015, 12.85], [54.45, 12.0], [54.445833333, 11.833333332999985], [54.463888888999975, 11.666666667000015], [54.5, 11.5], [54.554166667, 11.333333332999985], [54.60277777800002, 11.166666667000015], [54.64444444399999, 11.0], [54.65277777799997, 10.833333332999985], [54.655555556000024, 10.666666667000015], [54.65833333299997, 10.5], [54.7, 10.333333332999985], [54.743055556, 10.166666667000015], [54.765, 10.053611111], [54.825, 9.94166666699999], [54.833333332999985, 9.916666667000015], [54.833333332999985, 9.894444443999987], [54.833333332999985, 9.783333332999973], [54.85, 9.616666667], [54.854853, 9.604838], [54.873332, 9.622014], [54.879704, 9.628877]]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": "IPY_MODEL_159112c2ece7404a98aa2f1e0050b4ec", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "fab52f54779e457a951b3c32184ae4a5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f5e7c95a273c47269dd543b724475506": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "159112c2ece7404a98aa2f1e0050b4ec": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_fab52f54779e457a951b3c32184ae4a5", "placeholder": "\u200b", "style": "IPY_MODEL_f5e7c95a273c47269dd543b724475506", "value": "EKDK"}}, "f9b3494a72be4f5abccd3749756cfd41": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "567fbd2010da4c75b66f28c132e186f8": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "b95c00453bc64d84adede2ff47d2dddc": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletTileLayerView", "attribution": "Map data (c) <a href=\"https://openstreetmap.org\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "c00e24b5fcc8447fa2659faabae07697": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d3f7b66610474084af1c07154ae57b08": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "9c5e9f282d9349cabadf350f3b768e55": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [52.56062745238256, 6.9543713293583735], "close_popup_on_click": true, "controls": ["IPY_MODEL_220bbc059eac4cff8cbb055f4d8ae16f", "IPY_MODEL_55ac303d92374f148d70b9a437a3837b"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_f9b3494a72be4f5abccd3749756cfd41", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_567fbd2010da4c75b66f28c132e186f8", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_b95c00453bc64d84adede2ff47d2dddc", "IPY_MODEL_2da29802b2bf42cdae1163ccaf5d6da3"], "layout": "IPY_MODEL_c00e24b5fcc8447fa2659faabae07697", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_d3f7b66610474084af1c07154ae57b08", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 6.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "220bbc059eac4cff8cbb055f4d8ae16f": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "55ac303d92374f148d70b9a437a3837b": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "2da29802b2bf42cdae1163ccaf5d6da3": {"model_name": "LeafletPolygonModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletPolygonModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletPolygonView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.2, "line_cap": "round", "line_join": "round", "locations": [[[49.13333333333333, 6.6], [48.8175, 6.276388333333333], [48.819445, 6.230278333333334], [48.832499999999996, 5.951388333333333], [49.34777833333333, 5.830555], [49.37111166666667, 5.825], [49.431111666666666, 5.811111666666666], [49.45388833333333, 5.811945], [49.549445, 5.816111666666667], [49.54222166666667, 5.755555], [49.541666666666664, 5.75], [49.5275, 5.575278333333333], [49.51888833333333, 5.4375], [49.54611166666667, 5.451388333333333], [49.56777833333333, 5.442221666666667], [49.60111166666666, 5.420554999999999], [49.61666666666667, 5.383333333333334], [49.625278333333334, 5.371666666666667], [49.64833333333333, 5.315833333333333], [49.67722166666667, 5.291111666666667], [49.693054999999994, 5.262778333333333], [49.71666666666667, 5.163333333333333], [49.73416666666667, 5.1205549999999995], [49.73611166666667, 5.114999999999999], [49.8, 4.988055], [49.8, 4.939445], [49.8, 4.858333333333333], [49.861945, 4.857778333333333], [49.983333333333334, 4.866666666666666], [49.975, 4.566666666666666], [49.965555, 4.535278333333333], [49.95, 4.483333333333333], [49.961666666666666, 4.366666666666666], [49.98027833333333, 4.1502783333333335], [49.980554999999995, 4.145833333333333], [50.14888833333334, 4.168055], [50.22472166666667, 4.178055], [50.29666666666667, 4.1188883333333335], [50.314721666666664, 4.089721666666667], [50.32833333333333, 3.973055], [50.333888333333334, 3.9266666666666667], [50.340555, 3.873055], [50.33972166666667, 3.7875], [50.34222166666667, 3.675], [50.35, 3.6666666666666665], [50.416666666666664, 3.6666666666666665], [50.451945, 3.6455550000000003], [50.473333333333336, 3.6333333333333333], [50.48388833333333, 3.600555], [50.49722166666666, 3.5541666666666667], [50.526666666666664, 3.5116666666666663], [50.519445000000005, 3.4847216666666667], [50.495, 3.3766666666666665], [50.515, 3.3616666666666664], [50.59472166666667, 3.2841666666666667], [50.609721666666665, 3.27], [50.678055, 3.2227783333333333], [50.78333333333333, 3.15], [50.69166666666667, 2.908333333333333], [50.7, 2.9], [50.80833333333333, 2.65], [50.818888333333334, 2.647221666666667], [51.01388833333333, 2.591666666666667], [51.083333333333336, 2.55], [51.10138833333333, 2.2449999999999997], [51.11666666666667, 2.0], [51.130833333333335, 2.0], [51.196945, 2.0], [51.211945, 2.0], [51.21527833333334, 2.0], [51.246388333333336, 2.0], [51.330000000000005, 2.0], [51.35916666666667, 2.0], [51.38333333333333, 2.0], [51.400555000000004, 2.0], [51.443054999999994, 2.0], [51.489445, 2.0], [51.5, 2.0], [51.4925, 2.0833333333333335], [51.475833333333334, 2.275], [51.471945, 2.316666666666667], [51.455555, 2.5], [51.548055, 2.5], [51.636945, 2.5], [51.598333333333336, 2.6666666666666665], [51.5, 3.1], [51.480554999999995, 3.1736116666666665], [51.554721666666666, 3.1733333333333333], [51.607499999999995, 3.1730549999999997], [51.732778333333336, 3.171945], [51.76416666666667, 3.171945], [51.84916666666666, 3.171945], [51.965555, 3.171945], [51.956945000000005, 2.6666666666666665], [51.95361166666667, 2.5], [51.950555, 2.3563883333333333], [52.103055000000005, 2.478055], [52.11472166666667, 2.488055], [52.122499999999995, 2.494445], [52.21777833333333, 2.571388333333333], [52.235, 2.5833333333333335], [52.250555, 2.5983333333333336], [52.30722166666667, 2.6438883333333334], [52.31722166666667, 2.6522216666666667], [52.365, 2.6913883333333337], [52.474444999999996, 2.778055], [52.53333333333333, 2.8311116666666667], [52.617778333333334, 2.8988883333333333], [52.732778333333336, 2.994445], [52.821945, 3.068611666666667], [52.916945000000005, 3.1483333333333334], [52.931111666666666, 3.1599999999999997], [53.04333333333333, 3.2550000000000003], [53.100833333333334, 3.303611666666667], [53.17472166666666, 3.366111666666667], [53.24916666666666, 3.4297216666666666], [53.4025, 3.5613883333333334], [53.46527833333334, 3.615555], [53.5, 3.6458333333333335], [53.569721666666666, 3.7061116666666667], [53.83972166666667, 3.9425000000000003], [53.86611166666667, 3.968611666666667], [54.0, 4.084721666666667], [54.105554999999995, 4.180000000000001], [54.5, 4.535833333333333], [55.0, 5.0], [55.0, 5.072500000000001], [55.0, 5.204721666666667], [55.0, 5.281388333333334], [55.0, 5.566666666666666], [55.0, 5.850555], [55.0, 5.858888333333334], [55.0, 5.867221666666667], [55.0, 5.9025], [55.0, 5.933333333333334], [55.0, 5.985278333333333], [55.0, 6.0405549999999995], [55.0, 6.147778333333333], [55.0, 6.35], [55.0, 6.420833333333333], [55.0, 6.5], [55.0, 6.615278333333333], [55.0, 6.656666666666666], [55.0, 6.819166666666666], [55.0, 7.155], [55.0, 7.25], [55.0, 7.370278333333333], [55.0, 7.415], [55.0, 7.6205549999999995], [55.0, 7.628888333333333], [55.0, 7.640555], [55.0, 7.655], [55.0, 7.704721666666667], [55.0, 7.715833333333333], [55.0, 7.722221666666667], [55.0, 7.8097216666666665], [55.0, 7.825833333333334], [55.0, 7.8761116666666675], [55.0, 7.9538883333333334], [55.0, 8.0], [55.01472166666667, 8.072778333333334], [55.02222166666666, 8.110278333333333], [55.04666666666667, 8.232778333333334], [55.06666666666667, 8.333333333333334], [55.06916666666667, 8.391945], [55.064166666666665, 8.416111666666668], [55.07138833333333, 8.448611666666666], [55.065000000000005, 8.457778333333334], [55.041666666666664, 8.490833333333333], [55.024721666666665, 8.514445], [54.99166666666667, 8.561111666666667], [54.916666666666664, 8.666666666666666], [54.899721666666665, 8.782778333333333], [54.88861166666666, 9.001945000000001], [54.9, 9.019445], [54.85861166666667, 9.194166666666666], [54.86277833333334, 9.225], [54.832499999999996, 9.235000000000001], [54.8375, 9.283333333333333], [54.805278333333334, 9.319445], [54.85, 9.516666666666667], [54.82333333333334, 9.738888333333334], [54.824445, 9.750555], [54.82472166666666, 9.751388333333333], [54.83638833333334, 9.852778333333333], [54.840555, 9.8875], [54.84111166666666, 9.893333333333334], [54.80861166666667, 9.961666666666668], [54.790555000000005, 10.0], [54.765, 10.053611666666665], [54.746388333333336, 10.15], [54.743055, 10.166666666666666], [54.734445, 10.199721666666667], [54.715555, 10.273611666666666], [54.7, 10.333333333333334], [54.69138833333333, 10.368333333333334], [54.65833333333333, 10.5], [54.656945, 10.583333333333334], [54.655555, 10.666666666666666], [54.65527833333333, 10.684721666666666], [54.65277833333334, 10.833333333333334], [54.644445000000005, 11.0], [54.622778333333336, 11.086111666666666], [54.60277833333334, 11.166666666666666], [54.59222166666667, 11.202778333333333], [54.57277833333333, 11.270000000000001], [54.559999999999995, 11.313611666666667], [54.55416666666667, 11.333333333333334], [54.533611666666665, 11.404445], [54.5, 11.5], [54.468333333333334, 11.648333333333333], [54.46388833333333, 11.666666666666666], [54.46138833333334, 11.69], [54.449445, 11.800278333333333], [54.44583333333333, 11.833333333333334], [54.44611166666667, 11.841388333333333], [54.45, 12.0], [54.289445, 11.913888333333334], [54.25, 11.892778333333332], [53.539721666666665, 11.518333333333334], [53.395554999999995, 11.443888333333332], [53.354445000000005, 11.4275], [53.197221666666664, 11.344721666666667], [52.884721666666664, 11.185554999999999], [52.730554999999995, 11.107221666666668], [52.649445, 11.099166666666667], [52.62166666666667, 11.095555], [52.479445000000005, 11.082221666666667], [52.4525, 11.078333333333335], [52.37361166666667, 11.070278333333333], [52.291666666666664, 11.080555], [52.208333333333336, 11.091666666666667], [51.97222166666666, 11.120000000000001], [51.931666666666665, 11.124721666666666], [51.90833333333333, 11.1275], [51.84111166666666, 11.208333333333334], [51.804445, 11.140278333333333], [51.747778333333336, 11.034166666666666], [51.732778333333336, 11.006388333333332], [51.721111666666665, 10.984721666666667], [51.56666666666667, 10.7], [51.525555000000004, 10.645000000000001], [51.486945, 10.5925], [51.333888333333334, 10.3875], [51.24916666666666, 10.370833333333334], [51.160833333333336, 10.353611666666666], [51.108333333333334, 10.168333333333333], [51.104166666666664, 10.153611666666666], [51.095, 10.055833333333334], [51.083333333333336, 10.040833333333333], [51.096945, 9.439445000000001], [51.085555, 9.433333333333334], [51.085555, 9.245278333333333], [51.085555, 8.909721666666666], [51.083333333333336, 8.614166666666668], [51.19638833333333, 8.491388333333333], [51.269999999999996, 8.411111666666667], [51.255554999999994, 8.358888333333333], [51.21583333333333, 8.215], [51.204166666666666, 8.173888333333332], [51.1475, 8.052221666666666], [51.1, 7.95], [50.9325, 7.682221666666666], [50.725278333333335, 7.813888333333334], [50.706945000000005, 7.727778333333333], [50.68333333333333, 7.6], [50.672221666666665, 7.5305550000000006], [50.66916666666667, 7.510000000000001], [50.64888833333334, 7.376666666666667], [50.623333333333335, 7.225278333333334], [50.621388333333336, 7.2144449999999996], [50.61027833333333, 7.151388333333333], [50.606388333333335, 7.128888333333333], [50.593055, 7.055000000000001], [50.583333333333336, 7.0], [50.552778333333336, 6.926945], [50.54027833333334, 6.8983333333333325], [50.505833333333335, 6.8152783333333335], [50.274445, 6.650833333333334], [50.056945000000006, 6.581666666666666], [49.809999999999995, 6.503611666666667], [49.793888333333335, 6.514444999999999], [49.56138833333333, 6.593888333333334], [49.218055, 6.711111666666667], [49.13333333333333, 6.6]]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": "IPY_MODEL_0e4be09edb93487f9e8ddb5065610126", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "096ddf6fc0df44c6bef7dc1562353c4e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "591de39d47c6497eb358817d22cebd8f": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0e4be09edb93487f9e8ddb5065610126": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_096ddf6fc0df44c6bef7dc1562353c4e", "placeholder": "\u200b", "style": "IPY_MODEL_591de39d47c6497eb358817d22cebd8f", "value": "EDYYUTAX"}}, "1a88312c1f494f9abcace358b5d655be": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "0924cf6159f74f3681b7163bdcf302b4": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "e363e25df814452197d2ba1fb397fcb3": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletTileLayerView", "attribution": "Map data (c) <a href=\"https://openstreetmap.org\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "27fa8518318d474c8b17201c050485bc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d25de85745e4449e87f1383c8c3a2638": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "71bfc30756114d27b01784a13209851c": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [62.656068101062075, 16.89360982252908], "close_popup_on_click": true, "controls": ["IPY_MODEL_2e41beeb73c34cc98b9d5023680e6318", "IPY_MODEL_3556466f2690400abb2453ad947b7cf5"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_1a88312c1f494f9abcace358b5d655be", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_0924cf6159f74f3681b7163bdcf302b4", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_e363e25df814452197d2ba1fb397fcb3", "IPY_MODEL_90ab2f306b624ac59f0400b7d0f625bf"], "layout": "IPY_MODEL_27fa8518318d474c8b17201c050485bc", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_d25de85745e4449e87f1383c8c3a2638", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 3.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "2e41beeb73c34cc98b9d5023680e6318": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "3556466f2690400abb2453ad947b7cf5": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "90ab2f306b624ac59f0400b7d0f625bf": {"model_name": "LeafletPolygonModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletPolygonModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletPolygonView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.2, "line_cap": "round", "line_join": "round", "locations": [[[68.91666666666667, 28.416666666666668], [68.65916666666666, 28.428333333333335], [68.50333333333333, 28.458333333333332], [68.1, 29.333333333333332], [67.7, 30.0], [66.96666666666667, 29.083333333333332], [66.7, 29.616666666666667], [66.39716666666666, 29.758666666666667], [66.16666666666667, 29.867], [66.022, 29.9545], [65.66666666666667, 30.166666666666668], [65.58333333333333, 29.666666666666668], [65.05633333333334, 29.625833333333333], [64.93333333333334, 29.616666666666667], [64.7, 30.083333333333332], [64.23333333333333, 30.5], [63.733333333333334, 30.016666666666666], [63.241166666666665, 31.174500000000002], [63.14666666666667, 31.265], [63.0, 31.5], [62.95, 31.55], [62.42166666666667, 31.108333333333334], [61.9195, 30.278666666666666], [61.8, 30.083333333333332], [61.43333333333333, 29.45], [61.25333333333333, 29.113666666666667], [61.075833333333335, 28.757], [60.858333333333334, 28.33833333333333], [60.75, 28.166666666666668], [60.345, 27.6495], [60.33166666666667, 27.628], [60.233333333333334, 27.475], [60.205000000000005, 27.3], [60.19383333333334, 27.221166666666665], [60.17166666666667, 26.94633333333333], [60.16133333333333, 26.838666666666665], [60.14966666666667, 26.717], [60.14416666666667, 26.661333333333335], [60.13333333333333, 26.55], [59.975, 26.111666666666668], [59.88333333333333, 25.866666666666667], [59.86666666666667, 25.975], [59.611666666666665, 27.636666666666667], [59.47166666666667, 28.043333333333333], [59.45666666666667, 28.0995], [59.38616666666667, 28.196666666666665], [58.843333333333334, 27.46783333333333], [58.7, 27.416666666666668], [58.3295, 27.514666666666667], [58.038333333333334, 27.62], [57.9, 27.816666666666666], [57.830000000000005, 27.559666666666665], [57.6, 27.383333333333333], [57.55, 27.7], [57.38033333333333, 27.685833333333335], [56.751666666666665, 27.901666666666664], [56.505, 28.128333333333334], [56.36, 28.2], [56.166666666666664, 28.15], [56.03888833333333, 27.821388333333335], [55.78472166666666, 27.566388333333336], [55.81283333333333, 26.978], [55.6805, 26.630499999999998], [55.800333333333334, 26.3105], [56.0, 25.866666666666667], [56.13883333333333, 25.57133333333333], [56.1545, 25.363833333333332], [56.175333333333334, 25.158666666666665], [56.3695, 24.958666666666666], [56.44833333333334, 24.895], [56.368833333333335, 24.630333333333333], [56.276666666666664, 24.505499999999998], [56.278666666666666, 24.065333333333335], [56.29883333333333, 24.03166666666667], [56.3395, 23.842166666666667], [56.37133333333334, 23.755499999999998], [56.36300000000001, 23.426333333333332], [56.372166666666665, 23.26033333333333], [56.38283333333333, 22.612833333333334], [56.394666666666666, 22.356166666666663], [56.4225, 22.162], [56.41466666666667, 22.0], [56.37466666666667, 21.944166666666668], [56.36966666666667, 21.848833333333335], [56.325, 21.608], [56.30716666666667, 21.558], [56.24166666666667, 21.434666666666665], [56.20616666666667, 21.312166666666666], [56.17966666666667, 21.279166666666665], [56.15416666666667, 21.227833333333333], [56.07383333333333, 21.093666666666664], [56.06916666666667, 21.0645], [56.06716666666667, 20.747833333333332], [56.06666666666667, 20.666666666666668], [56.090333333333334, 20.4955], [56.126666666666665, 20.226999999999997], [56.1325, 20.185333333333332], [56.146166666666666, 20.08216666666667], [56.212833333333336, 19.573333333333334], [56.24966666666667, 19.285], [56.252833333333335, 19.26033333333333], [56.34533333333333, 18.506333333333334], [56.22888833333333, 18.285555], [56.118611666666666, 18.063611666666667], [56.09527833333333, 18.01861166666667], [55.931666666666665, 17.701666666666664], [55.850316666666664, 17.55032333333333], [55.64555166666666, 17.189306666666667], [55.639109999999995, 17.162286666666667], [55.620891666666665, 17.147858333333332], [55.486801666666665, 16.880918333333334], [55.39874833333333, 16.713485], [55.27454, 16.501781666666666], [55.13333333333333, 16.233333333333334], [55.033611666666665, 16.070833333333333], [55.0, 16.0], [54.916666666666664, 15.866666666666667], [54.91638833333333, 15.844166666666666], [54.916666666666664, 15.655], [54.916666666666664, 15.296111666666667], [54.916666666666664, 15.140555], [54.90361166666666, 15.118888333333333], [54.89, 15.097221666666666], [54.87833333333333, 15.080555], [54.86666666666667, 15.059166666666666], [54.85583333333333, 15.036666666666667], [54.846111666666665, 15.013333333333332], [54.836945, 14.988611666666666], [54.82861166666667, 14.963055], [54.823055, 14.944166666666666], [54.815000000000005, 14.909721666666666], [54.809445, 14.881945], [54.805555, 14.857778333333332], [54.805278333333334, 14.853611666666666], [54.80166666666666, 14.825], [54.799445, 14.795833333333333], [54.798055, 14.766666666666667], [54.79777833333333, 14.737221666666667], [54.79861166666667, 14.708055], [54.800555, 14.678888333333333], [54.80333333333333, 14.65], [54.80722166666667, 14.621388333333334], [54.812221666666666, 14.593333333333334], [54.818054999999994, 14.566111666666666], [54.820190000000004, 14.557493333333333], [54.82472166666666, 14.539166666666667], [54.832499999999996, 14.513333333333332], [54.841388333333335, 14.488333333333333], [54.850833333333334, 14.464166666666667], [54.86138833333334, 14.441111666666666], [54.872499999999995, 14.419445], [54.884445, 14.398888333333334], [54.89722166666666, 14.379445], [54.916666666666664, 14.3575], [54.91688166666667, 13.750233333333334], [54.91658666666667, 13.660505], [54.916803333333334, 13.561963333333333], [54.916666666666664, 13.386111666666666], [54.91655166666667, 13.000891666666666], [54.916666666666664, 12.85], [54.87888833333333, 12.780278333333333], [54.78, 12.597778333333334], [54.734445, 12.514721666666667], [54.60861166666667, 12.285554999999999], [54.48638833333334, 12.065], [54.45, 12.0], [54.44611166666667, 11.841388333333333], [54.44583333333333, 11.833333333333334], [54.449445, 11.800278333333333], [54.46138833333334, 11.69], [54.46388833333333, 11.666666666666666], [54.468333333333334, 11.648333333333333], [54.5, 11.5], [54.533611666666665, 11.404445], [54.55416666666667, 11.333333333333334], [54.559999999999995, 11.313611666666667], [54.57277833333333, 11.270000000000001], [54.59222166666667, 11.202778333333333], [54.60277833333334, 11.166666666666666], [54.622778333333336, 11.086111666666666], [54.644445000000005, 11.0], [54.65277833333334, 10.833333333333334], [54.65527833333333, 10.684721666666666], [54.655555, 10.666666666666666], [54.656945, 10.583333333333334], [54.65833333333333, 10.5], [54.7, 10.333333333333334], [54.734445, 10.199721666666667], [54.743055, 10.166666666666666], [54.746388333333336, 10.15], [54.765, 10.053611666666665], [54.790555000000005, 10.0], [54.80861166666667, 9.961666666666668], [54.84111166666666, 9.893333333333334], [54.840555, 9.8875], [54.83638833333334, 9.852778333333333], [54.82472166666666, 9.751388333333333], [54.824445, 9.750555], [54.82333333333334, 9.738888333333334], [54.85, 9.516666666666667], [54.805278333333334, 9.319445], [54.8375, 9.283333333333333], [54.832499999999996, 9.235000000000001], [54.86277833333334, 9.225], [54.85861166666667, 9.194166666666666], [54.9, 9.019445], [54.891945, 9.001945000000001], [54.89722166666666, 8.855555], [54.899721666666665, 8.782778333333333], [54.916666666666664, 8.666666666666666], [55.024721666666665, 8.514445], [55.065000000000005, 8.457778333333334], [55.07138833333333, 8.448611666666666], [55.064166666666665, 8.416111666666668], [55.06916666666667, 8.391945], [55.06666666666667, 8.333333333333334], [55.04666666666667, 8.232778333333334], [55.02222166666666, 8.110278333333333], [55.01472166666667, 8.072778333333334], [55.0, 8.0], [55.0, 7.9538883333333334], [55.0, 7.8761116666666675], [55.0, 7.825833333333334], [55.0, 7.715833333333333], [55.0, 7.704721666666667], [55.0, 7.697221666666667], [55.0, 7.640555], [55.0, 7.6205549999999995], [55.0, 7.415], [55.0, 7.25], [55.0, 6.656666666666666], [55.0, 6.5], [55.0, 6.420833333333333], [55.0, 6.35], [55.0, 6.147778333333333], [55.0, 6.0405549999999995], [55.0, 5.985278333333333], [55.0, 5.933333333333334], [55.0, 5.867221666666667], [55.0, 5.858888333333334], [55.0, 5.850555], [55.0, 5.566666666666666], [55.0, 5.281388333333334], [55.0, 5.0], [55.08277833333333, 5.0], [55.12888833333333, 5.0], [55.179445, 5.0], [55.24472166666667, 5.0], [55.305555, 5.0], [55.343055, 5.0], [55.385555, 5.0], [55.488611666666664, 5.0], [55.583333333333336, 5.0], [55.606945, 5.0], [55.79638833333333, 5.0], [55.93888833333333, 5.0], [55.955000000000005, 5.0], [56.05333333333333, 5.0], [56.25, 5.0], [56.25083333333334, 5.0], [56.41722166666667, 5.0], [56.5375, 5.0], [56.583333333333336, 5.0], [57.0, 5.0], [60.0, 0.0], [61.0, -0.0], [61.21420166666667, -0.0011049999999999999], [61.484943333333334, -0.0025083333333333333], [61.999715, 0.00018333333333333334], [62.435671666666664, -3.8333333333333334e-05], [63.00004333333333, -0.00024333333333333333], [63.01636166666666, 0.00038833333333333336], [63.0, 0.5238883333333333], [63.0, 1.0], [63.000095, 1.27772], [63.0, 1.5], [63.000005, 2.00007], [62.999964999999996, 3.066225], [63.0, 3.5], [63.0, 3.7172166666666664], [63.0, 4.0], [63.20783333333333, 4.204716666666666], [63.35958166666667, 4.356363333333333], [63.555125, 4.552888333333333], [64.0, 5.0], [64.07333333333334, 5.093333333333334], [64.26565666666667, 5.298195000000001], [64.35783333333333, 5.39695], [64.38635666666667, 5.426986666666666], [64.42866666666666, 5.47805], [64.51366666666667, 5.566116666666667], [64.72251166666666, 5.798931666666666], [65.12866666666666, 6.2625], [65.16457166666666, 6.3033133333333335], [65.55089166666667, 6.759053333333333], [65.6011, 6.815881666666667], [65.749905, 7.000185], [66.03971833333334, 7.441765], [66.21116666666667, 7.7075], [66.38000000000001, 7.972216666666667], [67.03887166666667, 9.059368333333333], [67.25, 9.421116666666668], [67.42216666666667, 9.72445], [67.89627, 10.637386666666666], [68.09716666666667, 10.961383333333334], [68.19964166666666, 11.176723333333333], [68.49588333333332, 11.731065], [69.71367333333333, 14.326303333333334], [70.0, 15.0], [70.43815, 17.740405], [70.62158666666666, 19.009911666666667], [71.157, 23.5], [71.29644833333333, 24.64061333333333], [71.33333333333333, 25.0], [71.33307333333333, 27.351125000000003], [71.33318833333333, 27.598333333333336], [71.33333333333333, 28.0], [71.00272333333334, 29.98404], [71.0, 30.0], [70.67199000000001, 30.90792], [70.366635, 31.71682666666667], [70.25885166666667, 31.54324666666667], [70.06916, 31.241418333333336], [70.00005, 31.133463333333335], [69.79466666666667, 30.818666666666665], [69.53333333333333, 30.833333333333332], [69.54166666666667, 30.566666666666666], [69.67216666666667, 30.133333333333333], [69.65833333333333, 30.083333333333332], [69.422, 30.027833333333334], [69.33333333333333, 29.533333333333335], [69.30833333333334, 29.494500000000002], [69.01666666666667, 29.05], [68.91666666666667, 28.416666666666668]]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": "IPY_MODEL_d9e9aa95d72d42eb984bbefef10a35b8", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 3}}, "682889468b0c4a0ca164c8b64505bb18": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "760cd2c63e404b8486a62b14a142f446": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d9e9aa95d72d42eb984bbefef10a35b8": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_682889468b0c4a0ca164c8b64505bb18", "placeholder": "\u200b", "style": "IPY_MODEL_760cd2c63e404b8486a62b14a142f446", "value": "BOREALIS"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="flightplans.html" class="btn btn-neutral float-right" title="How to access flight plan information?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="navigation.html" class="btn btn-neutral float-left" title="How to access beacons and airways information?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
+</script>
+
+
+
+</body>
+</html>
