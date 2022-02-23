@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to decode raw ADS-B and Mode S data? &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to configure EUROCONTROL data files?" href="eurocontrol.html" />
+    <link rel="prev" title="How to access ADS-B data from OpenSky history database?" href="opensky_impala.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="samples.html">How to access sample trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airports.html">How to access airport information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aircraft.html">How to access aircraft information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation.html">How to access beacons and airways information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airspaces.html">How to access airspace information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to decode raw ADS-B and Mode S data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">How to export and store trajectory and airspace data?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
+        
+      <li>How to decode raw ADS-B and Mode S data?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/data_sources/decode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-traffic.data.adsb.decode">
+<span id="how-to-decode-raw-ads-b-and-mode-s-data"></span><h1>How to decode raw ADS-B and Mode S data?<a class="headerlink" href="#module-traffic.data.adsb.decode" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.adsb.decode.</span></span><span class="sig-name descname"><span class="pre">ModeS_Decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class implements the full data decoding process with the <a class="reference external" href="https://mode-s.org/api/">pyModeS
+library</a></p>
+<p>Data is first available as a list of messages per aircraft, but can be
+exported as a <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> object.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder.from_address" title="traffic.data.adsb.decode.ModeS_Decoder.from_address"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_address()</span></code></a>, <a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder.from_dump1090" title="traffic.data.adsb.decode.ModeS_Decoder.from_dump1090"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_dump1090()</span></code></a>, and <a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder.from_rtlsdr" title="traffic.data.adsb.decode.ModeS_Decoder.from_rtlsdr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_rtlsdr()</span></code></a>
+classmethods start a decoding thread on the creation of the object.  The
+thread can be stopped with a <code class="docutils literal notranslate"><span class="pre">decoder.thread.stop()</span></code> call.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>reference</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><em>Airport</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>]</em>) – <p>A reference location must be provided to decode ground
+messages. A reference can be set as:</p>
+<ul class="simple">
+<li><p>a tuple of latitude/longitude coordinates</p></li>
+<li><p>a str calling for an <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>
+structure</p></li>
+</ul>
+<p>If no reference is provided (None), then reference location (latitude=0,
+longitude=0) is considered until more data can be used to readjust the
+reference.</p>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder.from_address">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'~/ADSB_EHS_RAW_%Y%m%d_tcp.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'radarcape'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder.from_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode raw messages transmitted over a TCP network.</p>
+<p>The file should contain for each line at least a timestamp and an
+hexadecimal message, as a CSV-like format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the IP address of the host to connect</p></li>
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – the port of the host to connect</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]) – the reference location, as specified above</p></li>
+<li><p><strong>file_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <p>the filename where to dump received hexadecimal
+messages</p>
+<p>Timestamp format specifiers are accepted.</p>
+<div class="line-block">
+<div class="line">Default value: <code class="docutils literal notranslate"><span class="pre">&quot;~/ADSB_EHS_RAW_%Y%m%d_tcp.csv&quot;</span></code></div>
+<div class="line">(The <code class="docutils literal notranslate"><span class="pre">~</span></code> character gets expanded as your home directory)</div>
+</div>
+</p></li>
+<li><p><strong>time_fmt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">&quot;radarcape&quot;</span></code>)</p>
+<ul>
+<li><p>if set to <code class="docutils literal notranslate"><span class="pre">&quot;radarcape&quot;</span></code>, timestamp information included in the
+long message is assumed to be GPS adjusted and is therefore used
+to adjust the timestamp of each message;</p></li>
+<li><p>if set to <code class="docutils literal notranslate"><span class="pre">&quot;dump1090&quot;</span></code>, clock information provided by the
+software is used to adjust the timestamp of each message, but the
+first timestamp is based on the computer clock;</p></li>
+<li><p>if set to <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>, the timestamp from the computer is used
+for all decoded messages</p></li>
+</ul>
+</p></li>
+<li><p><strong>uncertainty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – if True, decode also <a class="reference external" href="https://mode-s.org/decode/content/ads-b/7-uncertainty.html">uncertainty information</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder" title="traffic.data.adsb.decode.ModeS_Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModeS_Decoder</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder.from_dump1090">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dump1090</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'~/ADSB_EHS_RAW_%Y%m%d_dump1090.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder.from_dump1090" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode raw messages dumped from <a class="reference external" href="https://github.com/MalcolmRobb/dump1090/">dump1090</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]) – the reference location, as specified above</p></li>
+<li><p><strong>file_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <p>the filename where to dump received hexadecimal
+messages</p>
+<p>Timestamp format specifiers are accepted.</p>
+<div class="line-block">
+<div class="line">Default value: <code class="docutils literal notranslate"><span class="pre">&quot;~/ADSB_EHS_RAW_%Y%m%d_dump1090.csv&quot;</span></code></div>
+<div class="line">(The <code class="docutils literal notranslate"><span class="pre">~</span></code> character gets expanded as your home directory)</div>
+</div>
+</p></li>
+<li><p><strong>uncertainty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <p>if True, decode also <a class="reference external" href="https://mode-s.org/decode/content/ads-b/7-uncertainty.html">uncertainty information</a></p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>dump1090 must be run the <code class="docutils literal notranslate"><span class="pre">--net</span></code> option.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder" title="traffic.data.adsb.decode.ModeS_Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModeS_Decoder</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time,</span> <span class="pre">longmsg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode raw messages dumped in a text file.</p>
+<p>The file should contain for each line at least a timestamp and an
+hexadecimal message, as a CSV-like format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><em>Path</em>) – the path to the file containing the data</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><em>Airport</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>]</em>) – the reference location, as specified above</p></li>
+<li><p><strong>uncertainty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – <p>if True, decode also <a class="reference external" href="https://mode-s.org/decode/content/ads-b/7-uncertainty.html">uncertainty information</a></p>
+</p></li>
+<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – <p>the header explaining how data is organised</p>
+<p>Three parameters are accepted:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> represents the timestamp in seconds (float)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shortmsg</span></code> represents the regular version of the ADS-B
+hexadecimal message (messages of length 28 for ADS-B)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">longmsg</span></code> represents messages containing timestamp information
+as a prefix, as dumped by many decoding softwares, such as
+<a class="reference external" href="https://github.com/MalcolmRobb/dump1090/">dump1090</a> or other
+receivers.</p></li>
+</ul>
+<p>By default, the expected format is <code class="docutils literal notranslate"><span class="pre">time,</span> <span class="pre">longmsg</span></code></p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder" title="traffic.data.adsb.decode.ModeS_Decoder">ModeS_Decoder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder.from_rtlsdr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_rtlsdr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'~/ADSB_EHS_RAW_%Y%m%d_rtlsdr.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder.from_rtlsdr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode raw messages dumped from a RTL-SDR receiver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]) – the reference location, as specified above</p></li>
+<li><p><strong>file_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <p>the filename where to dump received hexadecimal
+messages</p>
+<p>Timestamp format specifiers are accepted.</p>
+<div class="line-block">
+<div class="line">Default value: <code class="docutils literal notranslate"><span class="pre">&quot;~/ADSB_EHS_RAW_%Y%m%d_rtlsdr.csv&quot;</span></code></div>
+<div class="line">(The <code class="docutils literal notranslate"><span class="pre">~</span></code> character gets expanded as your home directory)</div>
+</div>
+</p></li>
+<li><p><strong>uncertainty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <p>if True, decode also <a class="reference external" href="https://mode-s.org/decode/content/ads-b/7-uncertainty.html">uncertainty information</a></p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method requires the <a class="reference external" href="https://github.com/roger-/pyrtlsdr">pyrtlsdr</a> optional dependency.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder" title="traffic.data.adsb.decode.ModeS_Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModeS_Decoder</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.data.adsb.decode.ModeS_Decoder.traffic">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">traffic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><span class="pre">Traffic</span></a></em><a class="headerlink" href="#traffic.data.adsb.decode.ModeS_Decoder.traffic" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None | <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic">Traffic</a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>All decoded data is converted into a
+<a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="eurocontrol.html" class="btn btn-neutral float-right" title="How to configure EUROCONTROL data files?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="opensky_impala.html" class="btn btn-neutral float-left" title="How to access ADS-B data from OpenSky history database?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
+</script>
+
+
+
+</body>
+</html>

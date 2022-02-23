@@ -118,18 +118,19 @@
 <li class="toctree-l3"><a class="reference internal" href="data_sources/flightplans.html">How to access flight plan information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_sources/decode.html">How to decode raw ADS-B and Mode S data?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_sources/export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#navigation-events">Navigation events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/flight_phases.html">How to find flight phases on a trajectory?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/go_around.html">How to select go-arounds from a set of trajectories?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/runway_changes.html">How to select runway changes from a set of trajectories?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/top_of_climb.html">How to compute the top of climb/top of descent of a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#statistical-analysis">Statistical analysis</a><ul>
@@ -140,12 +141,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#beyond-the-library">Beyond the library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/projection.html">How to pick a projection for a map?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/own_data.html">How to bring your own data in the traffic library?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/plugins.html">How to use and write plugins for the traffic library?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#standalone-applications">Standalone applications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/gui.html">How to use the traffic Graphical User Interface?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/cli_tui.html">How to use traffic command line interface tools?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/gui.html">How to use the traffic graphical user interface?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/docker.html">How to run traffic in a Docker container?</a></li>
 </ul>
 </li>
@@ -254,6 +257,7 @@ sharing your experience with the library where it is the less documented.</div>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/flightplans.html">How to access flight plan information?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_sources/opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources/decode.html">How to decode raw ADS-B and Mode S data?</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -268,12 +272,12 @@ sharing your experience with the library where it is the less documented.</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/flight_phases.html">How to find flight phases on a trajectory?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/go_around.html">How to select go-arounds from a set of trajectories?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/runway_changes.html">How to select runway changes from a set of trajectories?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/top_of_climb.html">How to compute the top of climb/top of descent of a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="airac_usage.html">How to find all the airspaces crossed by a trajectory?</a></li>
 </ul>
 </div>
 </div>
@@ -292,6 +296,7 @@ sharing your experience with the library where it is the less documented.</div>
 <h2>Beyond the library<a class="headerlink" href="#beyond-the-library" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/projection.html">How to pick a projection for a map?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide/own_data.html">How to bring your own data in the traffic library?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide/plugins.html">How to use and write plugins for the traffic library?</a></li>
 </ul>
@@ -301,7 +306,8 @@ sharing your experience with the library where it is the less documented.</div>
 <h2>Standalone applications<a class="headerlink" href="#standalone-applications" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_guide/gui.html">How to use the traffic Graphical User Interface?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/cli_tui.html">How to use traffic command line interface tools?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/gui.html">How to use the traffic graphical user interface?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide/docker.html">How to run traffic in a Docker container?</a></li>
 </ul>
 </div>

@@ -233,52 +233,65 @@ for further processing, e.g. <code class="docutils literal notranslate"><span cl
 <blockquote>
 <div><ul class="simple">
 <li><p>properties:
-<a class="reference external" href="#traffic.core.Flight.callsign">callsign</a>,
-<a class="reference external" href="#traffic.core.Flight.flight_id">flight_id</a>,
-<a class="reference external" href="#traffic.core.Flight.icao24">icao24</a>,
-<a class="reference external" href="#traffic.core.Flight.number">number</a>,
-<a class="reference external" href="#traffic.core.Flight.registration">registration</a>,
-<a class="reference external" href="#traffic.core.Flight.start">start</a>,
-<a class="reference external" href="#traffic.core.Flight.stop">stop</a>,
-<a class="reference external" href="#traffic.core.Flight.typecode">typecode</a></p></li>
+<a class="reference internal" href="#traffic.core.Flight.callsign" title="traffic.core.Flight.callsign"><code class="xref py py-meth docutils literal notranslate"><span class="pre">callsign()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.flight_id" title="traffic.core.Flight.flight_id"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_id()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.icao24" title="traffic.core.Flight.icao24"><code class="xref py py-meth docutils literal notranslate"><span class="pre">icao24()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.number" title="traffic.core.Flight.number"><code class="xref py py-meth docutils literal notranslate"><span class="pre">number()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.start" title="traffic.core.Flight.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.stop" title="traffic.core.Flight.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stop()</span></code></a>,</p></li>
 <li><p>time related methods:
-<a class="reference external" href="#traffic.core.Flight.after">after()</a>,
-<a class="reference external" href="#traffic.core.Flight.at">at()</a>,
-<a class="reference external" href="#traffic.core.Flight.at_ratio">at_ratio()</a>,
-<a class="reference external" href="#traffic.core.Flight.before">before()</a>,
-<a class="reference external" href="#traffic.core.Flight.between">between()</a>,
-<a class="reference external" href="#traffic.core.Flight.first">first()</a>,
-<a class="reference external" href="#traffic.core.Flight.last">last()</a>,
-<a class="reference external" href="#traffic.core.Flight.skip">skip()</a>,
-<a class="reference external" href="#traffic.core.Flight.shorten">shorten()</a></p></li>
+<a class="reference internal" href="#traffic.core.Flight.after" title="traffic.core.Flight.after"><code class="xref py py-meth docutils literal notranslate"><span class="pre">after()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.at" title="traffic.core.Flight.at"><code class="xref py py-meth docutils literal notranslate"><span class="pre">at()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.at_ratio" title="traffic.core.Flight.at_ratio"><code class="xref py py-meth docutils literal notranslate"><span class="pre">at_ratio()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.before" title="traffic.core.Flight.before"><code class="xref py py-meth docutils literal notranslate"><span class="pre">before()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.between" title="traffic.core.Flight.between"><code class="xref py py-meth docutils literal notranslate"><span class="pre">between()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.first" title="traffic.core.Flight.first"><code class="xref py py-meth docutils literal notranslate"><span class="pre">first()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.last" title="traffic.core.Flight.last"><code class="xref py py-meth docutils literal notranslate"><span class="pre">last()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.skip" title="traffic.core.Flight.skip"><code class="xref py py-meth docutils literal notranslate"><span class="pre">skip()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.shorten" title="traffic.core.Flight.shorten"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shorten()</span></code></a></p></li>
 <li><p>geometry related methods:
-<a class="reference external" href="#traffic.core.Flight.airborne">airborne()</a>,
-<a class="reference external" href="#traffic.core.Flight.clip">clip()</a>,
-<a class="reference external" href="#traffic.core.Flight.compute_wind">compute_wind()</a>,
-<a class="reference external" href="#traffic.core.Flight.compute_xy">compute_xy()</a>,
-<a class="reference external" href="#traffic.core.Flight.distance">distance()</a>,
-<a class="reference external" href="#traffic.core.Flight.inside_bbox">inside_bbox()</a>,
-<a class="reference external" href="#traffic.core.Flight.intersects">intersects()</a>,
-<a class="reference external" href="#traffic.core.Flight.project_shape">project_shape()</a>,
-<a class="reference external" href="#traffic.core.Flight.simplify">simplify()</a>,
-<a class="reference external" href="#traffic.core.Flight.unwrap">unwrap()</a></p></li>
+<a class="reference internal" href="#traffic.core.Flight.airborne" title="traffic.core.Flight.airborne"><code class="xref py py-meth docutils literal notranslate"><span class="pre">airborne()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.clip" title="traffic.core.Flight.clip"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clip()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.compute_wind" title="traffic.core.Flight.compute_wind"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_wind()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.compute_xy" title="traffic.core.Flight.compute_xy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_xy()</span></code></a>,
+<a class="reference internal" href="traffic.core.distance.html#module-traffic.core.distance" title="traffic.core.distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">distance()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.inside_bbox" title="traffic.core.Flight.inside_bbox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">inside_bbox()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.intersects" title="traffic.core.Flight.intersects"><code class="xref py py-meth docutils literal notranslate"><span class="pre">intersects()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.project_shape" title="traffic.core.Flight.project_shape"><code class="xref py py-meth docutils literal notranslate"><span class="pre">project_shape()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.simplify" title="traffic.core.Flight.simplify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simplify()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.unwrap" title="traffic.core.Flight.unwrap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unwrap()</span></code></a></p></li>
 <li><p>filtering and resampling methods:
-<a class="reference external" href="#traffic.core.Flight.comet">comet()</a>,
-<a class="reference external" href="#traffic.core.Flight.filter">filter()</a>,
-<a class="reference external" href="#traffic.core.Flight.resample">resample()</a>,</p></li>
+<a class="reference internal" href="#traffic.core.Flight.comet" title="traffic.core.Flight.comet"><code class="xref py py-meth docutils literal notranslate"><span class="pre">comet()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.filter" title="traffic.core.Flight.filter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.resample" title="traffic.core.Flight.resample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resample()</span></code></a></p></li>
+<li><p>TMA events:
+<a class="reference internal" href="#traffic.core.Flight.takeoff_from_runway" title="traffic.core.Flight.takeoff_from_runway"><code class="xref py py-meth docutils literal notranslate"><span class="pre">takeoff_from_runway()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.aligned_on_ils" title="traffic.core.Flight.aligned_on_ils"><code class="xref py py-meth docutils literal notranslate"><span class="pre">aligned_on_ils()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.go_around" title="traffic.core.Flight.go_around"><code class="xref py py-meth docutils literal notranslate"><span class="pre">go_around()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.runway_change" title="traffic.core.Flight.runway_change"><code class="xref py py-meth docutils literal notranslate"><span class="pre">runway_change()</span></code></a></p></li>
+<li><p>airborne events:
+<a class="reference internal" href="#traffic.core.Flight.aligned_on_navpoint" title="traffic.core.Flight.aligned_on_navpoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">aligned_on_navpoint()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.compute_navpoints" title="traffic.core.Flight.compute_navpoints"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_navpoints()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.emergency" title="traffic.core.Flight.emergency"><code class="xref py py-meth docutils literal notranslate"><span class="pre">emergency()</span></code></a></p></li>
+<li><p>ground trajectory methods:
+<a class="reference internal" href="#traffic.core.Flight.aligned_on_runway" title="traffic.core.Flight.aligned_on_runway"><code class="xref py py-meth docutils literal notranslate"><span class="pre">aligned_on_runway()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.on_parking_position" title="traffic.core.Flight.on_parking_position"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_parking_position()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.pushback" title="traffic.core.Flight.pushback"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pushback()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.slow_taxi" title="traffic.core.Flight.slow_taxi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">slow_taxi()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.moving" title="traffic.core.Flight.moving"><code class="xref py py-meth docutils literal notranslate"><span class="pre">moving()</span></code></a></p></li>
 <li><p>visualisation with altair:
-<a class="reference external" href="#traffic.core.Flight.chart">chart()</a>,
-<a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a></p></li>
-<li><p>visualisation with leaflet: <a class="reference external" href="leaflet.html">map_leaflet()</a></p></li>
+<a class="reference internal" href="#traffic.core.Flight.chart" title="traffic.core.Flight.chart"><code class="xref py py-meth docutils literal notranslate"><span class="pre">chart()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.geoencode" title="traffic.core.Flight.geoencode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">geoencode()</span></code></a></p></li>
+<li><p>visualisation with leaflet: <code class="xref py py-meth docutils literal notranslate"><span class="pre">map_leaflet()</span></code></p></li>
 <li><p>visualisation with Matplotlib:
-<a class="reference external" href="#traffic.core.Flight.plot">plot()</a>,
-<a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a></p></li>
+<a class="reference internal" href="#traffic.core.Flight.plot" title="traffic.core.Flight.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot()</span></code></a>,
+<a class="reference internal" href="#traffic.core.Flight.plot_time" title="traffic.core.Flight.plot_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot_time()</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Sample flights are provided for testing purposes in module
-<code class="docutils literal notranslate"><span class="pre">traffic.data.samples</span></code></p>
+<p><a class="reference internal" href="../data_sources/samples.html#how-to-access-sample-trajectories"><span class="std std-ref">Sample flights</span></a> are provided
+for testing purposes in module <code class="docutils literal notranslate"><span class="pre">traffic.data.samples</span></code></p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.abs">
@@ -747,7 +760,7 @@ point to the trajectory)</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -805,7 +818,7 @@ display the trajectory as a succession of segments:</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -914,7 +927,7 @@ Amsterdam)</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">traffic.core.airspace.Airspace</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">shapely.geometry.polygon.Polygon</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">traffic.core.mixins.PointMixin</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">traffic.core.flight.Flight</span></a></span></span></dt>
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">traffic.core.flight.Flight</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas.core.frame.DataFrame</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">traffic.core.flight.Flight</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><span class="pre">pandas.core.frame.DataFrame</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
 <dd><p>Computes the distance from a Flight to another entity.</p>
 <p>The behaviour is different according to the type of the second
 element:</p>
@@ -942,7 +955,7 @@ before calling the method.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1004,11 +1017,11 @@ DataFrame and get the result back in the same structure.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.duration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas._libs.tslibs.timedeltas.Timedelta</span></a></em><a class="headerlink" href="#traffic.core.Flight.duration" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><span class="pre">pandas._libs.tslibs.timedeltas.Timedelta</span></a></em><a class="headerlink" href="#traffic.core.Flight.duration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the duration of the flight.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2138,22 +2151,22 @@ emergencies, e.g. 7700 for general emergency, 7600 for radio failure or
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.start" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.stop" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+393.g70aabc6c3f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>

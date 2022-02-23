@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#latest-release">Latest release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#updating-traffic">Updating traffic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#development-version">Development version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute-to-traffic">Contribute to traffic</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
@@ -230,13 +231,45 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 <p>For the most recent development version, clone the Github repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
 <span class="nb">cd</span> traffic/
-pip install .<span class="o">[</span>dev<span class="o">]</span>
+pip install .
 </pre></div>
 </div>
-<p>If you intend to file a pull request, please activate <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit install
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It should be easier to install the development version inside your conda
+environment where you installed the latest release.</p>
+</div>
+</div>
+<div class="section" id="contribute-to-traffic">
+<h2>Contribute to traffic<a class="headerlink" href="#contribute-to-traffic" title="Permalink to this headline">¶</a></h2>
+<p>If you intend to contribute to traffic or file a pull request, the best way to
+ensure continuous integration does not break is to reproduce an environment with
+the same exact versions of all dependency libraries.</p>
+<p>The following steps <strong>are not mandatory</strong>, but they will ensure a swift
+reviewing process:</p>
+<ul>
+<li><p>install <a class="reference external" href="https://python-poetry.org/">poetry</a> on your workstation</p></li>
+<li><p>install traffic with poetry:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
+<span class="nb">cd</span> traffic/
+poetry install -E all
 </pre></div>
 </div>
+<p>Then, you may:</p>
+<ul class="simple">
+<li><p>prefix all your commands with <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code></p></li>
+<li><p>or run a shell with all environment variables properly set with <code class="docutils literal notranslate"><span class="pre">poetry</span>
+<span class="pre">shell</span></code></p></li>
+</ul>
+</li>
+<li><p>install the <a class="reference external" href="https://pre-commit.com/">pre-commit</a> hooks so a minimum set of
+sanity checks can be performed and so you can fix issues before continuous
+integration (GitHub Actions) fails.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run pre-commit install
+</pre></div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 
