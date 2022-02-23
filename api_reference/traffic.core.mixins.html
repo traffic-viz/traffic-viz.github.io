@@ -1,0 +1,1358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>traffic.core.mixins &mdash; traffic 2.6.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="traffic.core.structure" href="traffic.core.structure.html" />
+    <link rel="prev" title="traffic.core.lazy" href="traffic.core.lazy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> traffic
+          
+
+          
+            
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.aero.html">traffic.core.aero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api_reference.html">API reference</a> &raquo;</li>
+        
+      <li>traffic.core.mixins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api_reference/traffic.core.mixins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-traffic.core.mixins">
+<span id="traffic-core-mixins"></span><h1>traffic.core.mixins<a class="headerlink" href="#module-traffic.core.mixins" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>DataFrameMixin aggregates a pandas DataFrame and provides the same
+representation methods.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">assign()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.drop">
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.drop_duplicates">
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.fillna">
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from various formats.</p>
+<p>This class method dispatches the loading of data in various format to
+the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
+filename. Potential compression of the file is inferred by pandas itself
+based on the extension.</p>
+<ul class="simple">
+<li><p>.pkl[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
+<li><p>.parquet[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.feather[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_feather</span></code>;</p></li>
+<li><p>.json[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
+<li><p>.csv[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
+<li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
+</ul>
+<p>Other extensions return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
+method with the kwargs argument.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[T]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.groupby">
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
+DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.pipe">
+<span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">rename()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.reset_index">
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.reset_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to CSV format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_excel">
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to Excel format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_feather">
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to feather format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_feather</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to HDF format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to JSON format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to parquet format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to pickle format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeoDBMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.DataFrameMixin</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">assign()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.drop">
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.drop_duplicates">
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.extent">
+<span class="sig-name descname"><span class="pre">extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the subset of data inside the given extent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extent</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><em>ShapelyMixin</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>]</em>) – <p>The parameter extent may be passed as:</p>
+<ul>
+<li><p>a string to query OSM Nominatim service;</p></li>
+<li><p>the result of an OSM Nominatim query
+(<a class="reference internal" href="#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a>);</p></li>
+<li><p>any kind of shape (<a class="reference internal" href="#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a>,
+including <a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airspace</span></code></a>);</p></li>
+<li><p>extent in the order:  (west, east, south, north)</p></li>
+</ul>
+</p></li>
+<li><p><strong>buffer</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – As the extent of a given shape may be a little too strict to catch
+elements we may expect when we look into an area, the buffer
+parameter (by default, 0.5 degree) helps enlarging the area of
+interest.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This works with databases like
+<a class="reference internal" href="../data_sources/navigation.html#traffic.data.basic.airways.Airways" title="traffic.data.basic.airways.Airways"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airways</span></code></a>,
+<a class="reference internal" href="../data_sources/airports.html#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a> or
+<a class="reference internal" href="../data_sources/navigation.html#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><code class="xref py py-class docutils literal notranslate"><span class="pre">Navaids</span></code></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">])</span>
+<span class="go">  route    id   navaid   latitude    longitude</span>
+<span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go">  A25      6    GODAN    47.64       -1.96</span>
+<span class="go">  A25      7    TMA28    47.61       -1.935</span>
+<span class="go">  A25      8    NTS      47.16       -1.613</span>
+<span class="go">  A25      9    TIRAV    46.6        -1.391</span>
+<span class="go">  A25      10   LUSON    46.5        -1.351</span>
+<span class="go">  A25      11   OLERO    45.97       -1.15</span>
+<span class="go">  A25      12   MAREN    45.73       -1.062</span>
+<span class="go">  A25      13   ROYAN    45.67       -1.037</span>
+<span class="go">  A25      14   BMC      44.83       -0.7211</span>
+<span class="go">  A25      15   SAU      44.68       -0.1529</span>
+<span class="go"> ... (703 more lines)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Bornholm&quot;</span><span class="p">)</span>
+<span class="go"> name                 country   icao      iata   latitude   longitude</span>
+<span class="go">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="go"> Bodilsker Airstrip   Denmark   DK-0027   nan    55.06      15.05</span>
+<span class="go"> Bornholm Airport     Denmark   EKRN      RNN    55.06      14.76</span>
+<span class="go"> Ro Airport           Denmark   EKRR      nan    55.21      14.88</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">navaids</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;ZUE&#39;</span><span class="p">]</span>
+<span class="go">Navaid(</span>
+<span class="go">    &#39;ZUE&#39;,</span>
+<span class="go">    type=&#39;NDB&#39;,</span>
+<span class="go">    latitude=30.9,</span>
+<span class="go">    longitude=20.06833333,</span>
+<span class="go">    altitude=0.0,</span>
+<span class="go">    description=&#39;ZUEITINA NDB&#39;,</span>
+<span class="go">    frequency=&#39; 369.0kHz&#39;</span>
+<span class="go">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s1">&#39;Switzerland&#39;</span><span class="p">)[</span><span class="s1">&#39;ZUE&#39;</span><span class="p">]</span>
+<span class="go">Navaid(</span>
+<span class="go">    &#39;ZUE&#39;,</span>
+<span class="go">    type=&#39;VOR&#39;,</span>
+<span class="go">    latitude=47.59216667,</span>
+<span class="go">    longitude=8.81766667,</span>
+<span class="go">    altitude=1730.0,</span>
+<span class="go">    description=&#39;ZURICH EAST VOR-DME&#39;,</span>
+<span class="go">    frequency=&#39;110.05MHz&#39;</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[G]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.fillna">
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from various formats.</p>
+<p>This class method dispatches the loading of data in various format to
+the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
+filename. Potential compression of the file is inferred by pandas itself
+based on the extension.</p>
+<ul class="simple">
+<li><p>.pkl[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
+<li><p>.parquet[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.feather[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_feather</span></code>;</p></li>
+<li><p>.json[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
+<li><p>.csv[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
+<li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
+</ul>
+<p>Other extensions return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
+method with the kwargs argument.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[T]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.geoencode">
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.geoencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
+shape to be composed in an interactive visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.groupby">
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
+DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.pipe">
+<span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">rename()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.reset_index">
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.reset_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to CSV format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_excel">
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to Excel format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_feather">
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to feather format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_feather</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to HDF format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to JSON format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to parquet format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to pickle format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeographyMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.DataFrameMixin</span></code></a></p>
+<p>Adds Euclidean coordinates to a latitude/longitude DataFrame.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.agg_xy">
+<span class="sig-name descname"><span class="pre">agg_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.agg_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates values of a traffic over a grid of x/y, with x and y
+computed by <cite>traffic.core.GeographyMixin.compute_xy()</cite>.</p>
+<p>The resolution of the grid is passed as a dictionary parameter.
+By default, the grid is made by rounding x and y to the lower ten
+kilometer values. <code class="docutils literal notranslate"><span class="pre">dict(x=5000,</span> <span class="pre">y=3000)</span></code> will take 1 value per 5000
+meters for x (10000, 15000, 20000, …) and 1 value per 3000 meters for
+y (9000, 12000, 15000, 18000, 20000, …).</p>
+<p>The kwargs specifies how to aggregate values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">altitude=&quot;mean&quot;</span></code> would average all values in the given cell;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp=&quot;count&quot;</span></code> would return the number of samples per cell;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">icao24=&quot;nunique&quot;</span></code> would return the number of different aircraft
+int the given cell.</p></li>
+</ul>
+<p>The returned pandas DataFrame is indexed over x and y values. It is
+conveniently chainable with the <code class="docutils literal notranslate"><span class="pre">.to_xarray()</span></code> method in order to
+plot density heatmaps.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">agg_xy</span><span class="p">(</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">3e3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">3e3</span><span class="p">),</span>
+    <span class="n">vertical_rate</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="o">=</span><span class="s2">&quot;count&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">assign()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.compute_xy">
+<span class="sig-name descname"><span class="pre">compute_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.compute_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enrich the structure with new x and y columns computed through a
+projection of the latitude and longitude columns.</p>
+<p>The source projection is WGS84 (EPSG 4326).
+The default destination projection is a Lambert Conformal Conical
+projection centred on the data inside the dataframe.</p>
+<p>Other valid projections are available:</p>
+<ul class="simple">
+<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
+<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>T</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.drop">
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.drop_duplicates">
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.fillna">
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from various formats.</p>
+<p>This class method dispatches the loading of data in various format to
+the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
+filename. Potential compression of the file is inferred by pandas itself
+based on the extension.</p>
+<ul class="simple">
+<li><p>.pkl[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
+<li><p>.parquet[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
+<li><p>.feather[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_feather</span></code>;</p></li>
+<li><p>.json[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_json</span></code>;</p></li>
+<li><p>.csv[.gz,.bz2,…] dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>;</p></li>
+<li><p>.h5 dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf</span></code>.</p></li>
+</ul>
+<p>Other extensions return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Specific arguments may be passed to the underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code>
+method with the kwargs argument.</p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/sample_opensky.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[T]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.geoencode">
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.geoencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
+shape to be composed in an interactive visualization. Specific plot
+features, such as line widths, can be passed with the kwargs argument.
+See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.groupby">
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method to the underlying pandas
+DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.pipe">
+<span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">pipe()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">query()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">rename()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.reset_index">
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.reset_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pandas <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to the underlying pandas
+DataFrame and get the result back in the same structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_csv">
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to CSV format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_csv</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_excel">
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to Excel format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_excel</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_feather">
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to feather format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_feather</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to HDF format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_hdf</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to JSON format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_json</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_parquet">
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to parquet format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_parquet</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_pickle">
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports to pickle format.</p>
+<p>Options can be passed to <code class="docutils literal notranslate"><span class="pre">pandas.to_pickle</span></code>
+as args and kwargs arguments.</p>
+<p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.HBoxMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">HBoxMixin</span></span><a class="headerlink" href="#traffic.core.mixins.HBoxMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Enables a | operator for placing representations next to each other.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">ShapelyMixin</span></span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>ShapelyMixin expects a shape attribute as a Geometry and provides methods
+consistent with GIS geometries.</p>
+<p>However no plot method is provided at this level because it depends on the
+nature of the shape.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the area of the shape, in square meters.
+The shape is projected to an equivalent local projection before
+computing a value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.bounds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bounds of the (bounding box of the) shape.
+Bounds are given in the following order in the origin crs:
+(west, south, east, north)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.centroid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">shapely.geometry.point.Point</span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the centroid of the shape as a shapely Point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.extent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the extent of the (bounding box of the) shape.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When plotting with Matplotlib and Cartopy, the extent property is
+convenient in the following use case:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">extent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Extent is given in the following order in the origin crs:
+(west, east, south, north)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.geoencode">
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geoencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
+shape to be composed in an interactive visualization. Specific plot
+features, such as line widths, can be passed with the kwargs argument.
+See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.geojson">
+<span class="sig-name descname"><span class="pre">geojson</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geojson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the GeoJSON representation of the shape as a Dict.
+The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any] | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.project_shape">
+<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.project_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a projected representation of the shape.</p>
+<p>By default, an equivalent projection is applied. Equivalent projections
+locally respect areas, which is convenient for the area attribute.</p>
+<p>Other valid projections are available:</p>
+<ul class="simple">
+<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
+<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>base.BaseGeometry</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="traffic.core.structure.html" class="btn btn-neutral float-right" title="traffic.core.structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="traffic.core.lazy.html" class="btn btn-neutral float-left" title="traffic.core.lazy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, Xavier Olive.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-412789-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-412789-3");
+</script>
+
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The FlightIterator structure &mdash; traffic 2.6.6 documentation</title>
+  <title>traffic.core.iterate &mdash; traffic 2.6.6 documentation</title>
   
 
   
@@ -52,8 +52,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lazy iteration" href="traffic.core.lazy.html" />
-    <link rel="prev" title="The Airspace structure" href="traffic.core.airspace.html" /> 
+    <link rel="next" title="traffic.core.lazy" href="traffic.core.lazy.html" />
+    <link rel="prev" title="traffic.core.geodesy" href="traffic.core.geodesy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,15 +111,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">Lazy iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../navigation.html">Navigation events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../clustering.html">Trajectory clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../generation.html">Trajectory generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cpa.html">Closest point of approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.aero.html">traffic.core.aero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
@@ -173,7 +178,7 @@
         
           <li><a href="../api_reference.html">API reference</a> &raquo;</li>
         
-      <li>The FlightIterator structure</li>
+      <li>traffic.core.iterate</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,12 +197,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="the-flightiterator-structure">
-<h1>The FlightIterator structure<a class="headerlink" href="#the-flightiterator-structure" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="traffic-core-iterate">
+<h1>traffic.core.iterate<a class="headerlink" href="#traffic-core-iterate" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.FlightIterator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">FlightIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightIterator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A FlightIterator is a specific structure providing helpers after methods
 applied on a Flight that return a sequence of pieces of trajectories.</p>
 <p>Methods returning a FlightIterator include:</p>
@@ -243,7 +248,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -262,7 +267,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -282,7 +287,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -301,7 +306,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -320,7 +325,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -339,7 +344,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -351,7 +356,7 @@ FlightIterator in a variable.</p>
 <p>Arguments as passed as is to the <cite>Flight.plot()</cite> method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -371,7 +376,7 @@ FlightIterator in a variable.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -386,8 +391,8 @@ FlightIterator in a variable.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="traffic.core.lazy.html" class="btn btn-neutral float-right" title="Lazy iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="traffic.core.airspace.html" class="btn btn-neutral float-left" title="The Airspace structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="traffic.core.lazy.html" class="btn btn-neutral float-right" title="traffic.core.lazy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="traffic.core.geodesy.html" class="btn btn-neutral float-left" title="traffic.core.geodesy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

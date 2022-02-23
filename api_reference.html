@@ -52,7 +52,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="The Flight structure" href="api_reference/traffic.core.flight.html" />
+    <link rel="next" title="traffic.core.aero" href="api_reference/traffic.core.aero.html" />
     <link rel="prev" title="Impact of COVID-19 on worldwide aviation" href="gallery/covid19.html" /> 
 </head>
 
@@ -111,15 +111,20 @@
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.traffic.html">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">Lazy iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clustering.html">Trajectory clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generation.html">Trajectory generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpa.html">Closest point of approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.aero.html">traffic.core.aero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.traffic.html">traffic.core.traffic</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
@@ -194,35 +199,38 @@
 <h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>traffic</cite> library is based on three main core classes for handling:</p>
 <ul class="simple">
-<li><p>aircraft trajectories are accessible through
-<a class="reference external" href="traffic.core.flight.html">traffic.core.Flight</a>;</p></li>
-<li><p>collections of aircraft trajectories are
-<a class="reference external" href="traffic.core.traffic.html">traffic.core.Traffic</a>;</p></li>
-<li><p>airspaces and sectors are represented with
-<a class="reference external" href="traffic.core.airspace.html">traffic.core.Airspace</a>.</p></li>
+<li><p>aircraft trajectories are accessible through <a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Flight</span></code></a>;</p></li>
+<li><p>collections of aircraft trajectories are <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Traffic</span></code></a>;</p></li>
+<li><p>airspaces and sectors are represented with <a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Airspace</span></code></a>.</p></li>
 </ul>
-<p><a class="reference external" href="traffic.core.flight.html">Flight</a> and <a class="reference external" href="traffic.core.traffic.html">Traffic</a>
-are wrappers around <a class="reference external" href="https://pandas.pydata.org/">pandas DataFrames</a> with
-relevant efficiently implemented methods for trajectory analysis. Airspaces take
-advantage of <a class="reference external" href="https://shapely.readthedocs.io">shapely Geometries</a> for
-geometrical analysis.</p>
-<p><a class="reference external" href="traffic.core.iterator.html">FlightIterator</a> has been introduced in order to
+<p><a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> and <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> are wrappers
+around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
+for trajectory analysis. Airspaces take advantage of <a class="reference external" href="https://shapely.readthedocs.io">shapely Geometries</a> for geometrical analysis.</p>
+<p><a class="reference internal" href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a> have been introduced in order to
 deal with iteration over pieces of trajectories. This structure allows for more
 flexibility and accuracy when trying to identify specific events which may
 happen several times along a trajectory.</p>
-<p><a class="reference external" href="traffic.core.lazy.html">Lazy iteration</a> has been implemented on top of
-<a class="reference external" href="traffic.core.traffic.html">Traffic</a> structures in order to chain operations
-to be applied on every <a class="reference external" href="traffic.core.flight.html">Flight</a> in the collection
+<p><a class="reference internal" href="api_reference/traffic.core.lazy.html#module-traffic.core.lazy"><span class="std std-ref">Lazy iteration</span></a> has been implemented on top of
+<a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> structures in order to chain operations
+to be applied on every <a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>  in the collection
 and stack them before triggering only one iteration.</p>
-<p>Lastly, the <cite>algorithm</cite> module contains advanced implementations with methods
-being monkey-patched on <a class="reference external" href="traffic.core.flight.html">Flight</a> and <a class="reference external" href="traffic.core.traffic.html">Traffic</a> structures. Currently, they cover:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="navigation.html">navigation events</a> (e.g., holding patterns, go-arounds),</p></li>
-<li><p><a class="reference external" href="clustering.html">trajectory clustering</a>,</p></li>
-<li><p><a class="reference external" href="generation.html">trajection generation</a> and</p></li>
-<li><p><a class="reference external" href="cpa.html">closest point of approach</a>.</p></li>
-</ul>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.aero.html">traffic.core.aero</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.traffic.html">traffic.core.traffic</a></li>
+</ul>
 </div>
 </div>
 
@@ -232,7 +240,7 @@ being monkey-patched on <a class="reference external" href="traffic.core.flight.
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="api_reference/traffic.core.flight.html" class="btn btn-neutral float-right" title="The Flight structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api_reference/traffic.core.aero.html" class="btn btn-neutral float-right" title="traffic.core.aero" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="gallery/covid19.html" class="btn btn-neutral float-left" title="Impact of COVID-19 on worldwide aviation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

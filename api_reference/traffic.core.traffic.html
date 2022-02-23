@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The Traffic structure &mdash; traffic 2.6.6 documentation</title>
+  <title>traffic.core.traffic &mdash; traffic 2.6.6 documentation</title>
   
 
   
@@ -52,8 +52,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Airspace structure" href="traffic.core.airspace.html" />
-    <link rel="prev" title="The Flight structure" href="traffic.core.flight.html" /> 
+    <link rel="next" title="Publications" href="../publications.html" />
+    <link rel="prev" title="traffic.core.time" href="traffic.core.time.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,15 +111,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">Lazy iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../navigation.html">Navigation events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../clustering.html">Trajectory clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../generation.html">Trajectory generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cpa.html">Closest point of approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.aero.html">traffic.core.aero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.traffic</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
@@ -173,7 +178,7 @@
         
           <li><a href="../api_reference.html">API reference</a> &raquo;</li>
         
-      <li>The Traffic structure</li>
+      <li>traffic.core.traffic</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,12 +197,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="the-traffic-structure">
-<h1>The Traffic structure<a class="headerlink" href="#the-traffic-structure" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="traffic-core-traffic">
+<h1>traffic.core.traffic<a class="headerlink" href="#traffic-core-traffic" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.Traffic">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">Traffic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.HBoxMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.GeographyMixin</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.HBoxMixin" title="traffic.core.mixins.HBoxMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.HBoxMixin</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.GeographyMixin" title="traffic.core.mixins.GeographyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.GeographyMixin</span></code></a></p>
 <p>Traffic is the abstraction representing a collection of <a class="reference external" href="traffic.core.flight.html">Flights</a>. When Flight objects are summed up, the
 resulting structure is a Traffic.</p>
 <p>Data is all flattened into one single pandas DataFrame and methods are
@@ -223,22 +228,29 @@ operations without evaluating them.</p>
 <span class="go">traffic.core.lazy.LazyTraffic</span>
 </pre></div>
 </div>
+<p>You need to call the <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> method for that.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval">
 <span class="sig-prename descclassname"><span class="pre">LazyTraffic.</span></span><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result can only be accessed after a call to <code class="docutils literal notranslate"><span class="pre">eval()</span></code>.</p>
-<dl>
-<dt>max_workers: int, default: 1</dt><dd><p>Multiprocessing is usually worth it. However, a sequential
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_workers</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – (default: 1)
+Multiprocessing is usually worth it. However, a sequential
 processing is triggered by default. Keep the value close to the
 number of cores of your processor. If memory becomes a problem,
-stick to the default.</p>
+stick to the default.</p></li>
+<li><p><strong>desc</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – (default: None)
+If not None, a tqdm progressbar is displayed with this parameter.</p></li>
+<li><p><strong>cache_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><em>Path</em><em> | </em><em>None</em>) – (default: None)
+If not None, store the results in cache_file and load the results
+from the file if it exists.</p></li>
+</ul>
 </dd>
-<dt>desc: str, default: None</dt><dd><p>If not None, a tqdm progressbar is displayed with this parameter.</p>
-</dd>
-<dt>cache_file: str, Path, default: None</dt><dd><p>If not None, store the results in cache_file and load the results
-from the file if it exists.</p>
-</dd>
-<dt>Example usage:</dt><dd><p>The following call</p>
+</dl>
+<p><strong>Example usage:</strong></p>
+<p>The following call</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t_lazy</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;preprocessing&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -249,8 +261,6 @@ from the file if it exists.</p>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 <p>When many operations are stacked, this call is more efficient, esp. on
 large structures, than as many full iterations on the Traffic structure.</p>
 <p>Backward compatibility is ensured by an automatic call to eval() with
@@ -262,7 +272,7 @@ default options.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]</p>
+<dd class="field-odd"><p>None | ‘Traffic</p>
 </dd>
 </dl>
 </dd></dl>
@@ -305,14 +315,14 @@ in order to plot density heatmaps.</p>
 <p>See how to make <a class="reference external" href="/scenarios/heatmaps.html">flight density heatmaps</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.agg_time">
-<span class="sig-name descname"><span class="pre">agg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.agg_time" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">agg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.agg_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate features on time windows.</p>
 <p>The following is performed:</p>
 <ul class="simple">
@@ -333,7 +343,7 @@ averaged per intervals of 3 minutes.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -368,7 +378,7 @@ plot density heatmaps.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -381,12 +391,12 @@ plot density heatmaps.</p>
 in the altitude column.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method will use the Flight <a class="reference external" href="traffic.core.flight.html#traffic.core.Flight.airborne">implementation</a> when
-stacked for lazy evaluation.</p>
+<p>This method will use the :class:Flight implementation
+when stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -410,7 +420,7 @@ stacked for lazy evaluation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.all">
-<span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.all" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the concatenation of segments returned by flight.method().</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
@@ -424,14 +434,14 @@ stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.apply_time">
-<span class="sig-name descname"><span class="pre">apply_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.apply_time" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.apply_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply features on time windows.</p>
 <p>The following is performed:</p>
 <ul class="simple">
@@ -452,7 +462,7 @@ distance between points sampled every 10 minutes.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -464,14 +474,14 @@ distance between points sampled every 10 minutes.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.assign_id">
-<span class="sig-name descname"><span class="pre">assign_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.assign_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">assign_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.assign_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns a <cite>flight_id</cite> to trajectories present in the structure.</p>
 <p>The heuristics with iterate on flights based on <code class="docutils literal notranslate"><span class="pre">flight_id</span></code> (if the
 feature is present) or of <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">callsign</span></code> and intervals of time
@@ -484,7 +494,7 @@ by default based on the callsign and an incremented index.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -544,7 +554,7 @@ associated to aircraft icao24 <cite>02008b</cite> which could be easily removed.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.clip">
-<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.clip" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clips the trajectory to a given shape.</p>
 <p>For a shapely Geometry, the first time of entry and the last time of
 exit are first computed before returning the part of the trajectory
@@ -563,7 +573,7 @@ shape.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -604,7 +614,7 @@ processors.</p>
 <p>Returns a CPA DataFrame wrapper.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">CPA</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">CPA</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -664,7 +674,7 @@ Traffic DataFrame with an additional <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.compute_wind">
-<span class="sig-name descname"><span class="pre">compute_wind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.compute_wind" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compute_wind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.compute_wind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the wind triangle for each timestamp.</p>
 <p>This method requires <code class="docutils literal notranslate"><span class="pre">groundspeed</span></code>, <code class="docutils literal notranslate"><span class="pre">track</span></code>, true airspeed
 (<code class="docutils literal notranslate"><span class="pre">TAS</span></code>), and <code class="docutils literal notranslate"><span class="pre">heading</span></code> features. The groundspeed and the track angle
@@ -682,7 +692,7 @@ data is not necessarily available depending on the location.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -694,7 +704,7 @@ data is not necessarily available depending on the location.</p>
 projection of the latitude and longitude columns.</p>
 <p>The source projection is WGS84 (EPSG 4326).
 The default destination projection is a Lambert Conformal Conical
-projection centered on the data inside the dataframe.</p>
+projection centred on the data inside the dataframe.</p>
 <p>Other valid projections are available:</p>
 <ul class="simple">
 <li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
@@ -702,14 +712,14 @@ projection centered on the data inside the dataframe.</p>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p>T</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.cumulative_distance">
-<span class="sig-name descname"><span class="pre">cumulative_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.cumulative_distance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cumulative_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.cumulative_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enrich the structure with new <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> column computed from
 latitude and longitude columns.</p>
 <p>The first <code class="docutils literal notranslate"><span class="pre">cumdist</span></code> value is 0, then distances are computed (in
@@ -727,14 +737,14 @@ decoded <code class="docutils literal notranslate"><span class="pre">track</span
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.diff">
-<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.diff" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign differential versions of features to new columns.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
 </pre></div>
@@ -750,14 +760,14 @@ decoded <code class="docutils literal notranslate"><span class="pre">track</span
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.distance">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.distance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the distance from a Flight to another entity.</p>
 <p>The behaviour is different according to the type of the second
 element:</p>
@@ -789,7 +799,7 @@ before calling the method.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -801,7 +811,7 @@ before calling the method.</p></li>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -813,7 +823,7 @@ DataFrame and get the result back in the same structure.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -826,7 +836,7 @@ DataFrame and get the result back in the same structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.feature_gt">
-<span class="sig-name descname"><span class="pre">feature_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.feature_gt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">feature_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.feature_gt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if feature(flight) is greater than value.</p>
 <p>This is fully equivalent to <cite>f.longer_than(“1 minute”)</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_gt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
@@ -846,14 +856,14 @@ lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.feature_lt">
-<span class="sig-name descname"><span class="pre">feature_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.feature_lt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">feature_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.feature_lt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if feature(flight) is less than value.</p>
 <p>This is fully equivalent to <cite>f.shorter_than(“1 minute”)</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_lt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
@@ -873,7 +883,7 @@ lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -885,14 +895,14 @@ lazy evaluation.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.filter">
-<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.filter" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filters the trajectory given features with a median filter.</p>
 <p>The method first applies a median filter on each feature of the
 DataFrame. A default kernel size is applied for a number of features
@@ -923,14 +933,14 @@ list/tuples of integers for cascade of filters:</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.final">
-<span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.final" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.final" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the final (last) segment of trajectory yielded by
 flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
@@ -944,14 +954,14 @@ flight.method()</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.first">
-<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.first" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.first" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first n days, hours, minutes or seconds of the Flight.</p>
 <p>The elements passed as kwargs as passed as is to the datetime.timedelta
 constructor.</p>
@@ -967,7 +977,7 @@ constructor.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1004,7 +1014,7 @@ method with the kwargs argument.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">TrafficTypeVar</span></code>, bound= <a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>)]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">TrafficTypeVar</span></code>, bound= <a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>)]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1016,7 +1026,7 @@ method with the kwargs argument.</p>
 iterator or iterable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1039,7 +1049,7 @@ trajectories.</p></li>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../generation.html#traffic.algorithms.generation.Generation" title="traffic.algorithms.generation.Generation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generation</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../tutorial/generation.html#traffic.algorithms.generation.Generation" title="traffic.algorithms.generation.Generation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generation</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1053,7 +1063,7 @@ trajectories.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NoReturn" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1065,14 +1075,14 @@ trajectories.</p></li>
 DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.has">
-<span class="sig-name descname"><span class="pre">has</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.has" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.has" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if flight.method() returns a non-empty iterator.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
@@ -1086,7 +1096,7 @@ DataFrame.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1111,13 +1121,13 @@ bounding box of the shape passed in parameter.</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method will use the Flight <a class="reference external" href="traffic.core.flight.html#traffic.core.Flight.inside_bbox">implementation</a> when
-stacked for lazy evaluation.</p>
+<p>This method will use the :class:Flight implementation
+when stacked for lazy evaluation.</p>
 </div>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <code class="xref py py-class docutils literal notranslate"><span class="pre">GeographyMixin</span></code>)]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.GeographyMixin" title="traffic.core.mixins.GeographyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeographyMixin</span></code></a>)]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1145,7 +1155,7 @@ data for a flight.</p></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1173,29 +1183,29 @@ data for a flight.</p></li>
 progressbar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.landing_at">
-<span class="sig-name descname"><span class="pre">landing_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.landing_at" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the flight lands at the given airport.
-.. warning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
-</pre></div>
+<span class="sig-name descname"><span class="pre">landing_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.landing_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the flight lands at the given airport.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.last">
-<span class="sig-name descname"><span class="pre">last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.last" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.last" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the last n days, hours, minutes or seconds of the Flight.</p>
 <p>The elements passed as kwargs as passed as is to the datetime.timedelta
 constructor.</p>
@@ -1211,29 +1221,29 @@ constructor.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.longer_than">
-<span class="sig-name descname"><span class="pre">longer_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.longer_than" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if flight duration is longer than value.
-.. warning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
-</pre></div>
+<span class="sig-name descname"><span class="pre">longer_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.longer_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if flight duration is longer than value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.max_split">
-<span class="sig-name descname"><span class="pre">max_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.max_split" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.max_split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the biggest (by default, longest) part of trajectory.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">elal747</span>
@@ -1252,7 +1262,7 @@ constructor.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1264,14 +1274,14 @@ constructor.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.next">
-<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.next" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
@@ -1284,14 +1294,14 @@ DataFrame and get the result back in the same structure.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.phases">
-<span class="sig-name descname"><span class="pre">phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.phases" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.phases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a flight phase to each timestamp of a flight
 using OpenAP phase detection fuzzy logic method.</p>
 <div class="admonition warning">
@@ -1300,7 +1310,7 @@ using OpenAP phase detection fuzzy logic method.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1312,7 +1322,7 @@ using OpenAP phase detection fuzzy logic method.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1332,7 +1342,7 @@ is applied.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1368,7 +1378,7 @@ longitude degree.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1380,14 +1390,14 @@ longitude degree.</p></li>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.query_ehs">
-<span class="sig-name descname"><span class="pre">query_ehs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.query_ehs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">query_ehs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.query_ehs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extends data with extra columns from EHS messages.</p>
 <p>By default, raw messages are requested from the OpenSky Network
 database.</p>
@@ -1410,14 +1420,14 @@ parameter. See the page about <a class="reference external" href="opensky_impala
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.query_opensky">
-<span class="sig-name descname"><span class="pre">query_opensky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.query_opensky" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">query_opensky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.query_opensky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns data from the same Flight as stored in OpenSky database.</p>
 <p>This may be useful if you write your own parser for data from a
 different channel. The method will use the <code class="docutils literal notranslate"><span class="pre">callsign</span></code> and <code class="docutils literal notranslate"><span class="pre">icao24</span></code>
@@ -1436,7 +1446,7 @@ start, stop, callsign and icao24.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1448,14 +1458,14 @@ start, stop, callsign and icao24.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.resample">
-<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.resample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the trajectory at a given frequency or number of points.</p>
 <p>If the rule is a string representing a pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases">time series frequency</a>
 is passed, then the data is resampled along the timestamp axis, then
@@ -1468,7 +1478,7 @@ number of evenly distributed points per trajectory.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1480,29 +1490,29 @@ number of evenly distributed points per trajectory.</p>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.shorter_than">
-<span class="sig-name descname"><span class="pre">shorter_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.shorter_than" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if flight duration is shorter than value.
-.. warning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
-</pre></div>
+<span class="sig-name descname"><span class="pre">shorter_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.shorter_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if flight duration is shorter than value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.simplify">
-<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.simplify" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.simplify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplifies a trajectory with Douglas-Peucker algorithm.</p>
 <p>The method uses latitude and longitude, projects the trajectory to a
 conformal projection and applies the algorithm. If x and y features are
@@ -1521,7 +1531,7 @@ default value works well in most situations.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1533,7 +1543,7 @@ default value works well in most situations.</p></li>
 DataFrame and get the result back in the same structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1557,22 +1567,22 @@ featured attributes.</p>
 information in your summary DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.takeoff_from">
-<span class="sig-name descname"><span class="pre">takeoff_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.takeoff_from" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the flight takes off from the given airport.
-.. warning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stacked</span> <span class="k">for</span> <span class="n">lazy</span> <span class="n">evaluation</span><span class="o">.</span>  
-</pre></div>
+<span class="sig-name descname"><span class="pre">takeoff_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.takeoff_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the flight takes off from the given airport.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1586,7 +1596,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1597,7 +1607,7 @@ as args and kwargs arguments.</p>
 <dd><p>Generates a CesiumJS scenario file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1611,7 +1621,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1625,7 +1635,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1639,7 +1649,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1653,7 +1663,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1667,7 +1677,7 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1681,14 +1691,14 @@ as args and kwargs arguments.</p>
 <p>Read more about export formats in the <a class="reference external" href="./export.html">Exporting and Storing data</a> section</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.unwrap">
-<span class="sig-name descname"><span class="pre">unwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">traffic.core.lazy.LazyTraffic</span></span></span><a class="headerlink" href="#traffic.core.Traffic.unwrap" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">traffic.core.lazy.LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.unwrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unwraps angles in the DataFrame.</p>
 <p>All features representing angles may be unwrapped (through Numpy) to
 avoid gaps between 359° and 1°.</p>
@@ -1700,7 +1710,7 @@ More or different features may be passed in parameter.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1715,8 +1725,8 @@ More or different features may be passed in parameter.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="traffic.core.airspace.html" class="btn btn-neutral float-right" title="The Airspace structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="traffic.core.flight.html" class="btn btn-neutral float-left" title="The Flight structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../publications.html" class="btn btn-neutral float-right" title="Publications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="traffic.core.time.html" class="btn btn-neutral float-left" title="traffic.core.time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

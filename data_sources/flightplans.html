@@ -116,8 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation.html">How to access beacons and airways information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="airspaces.html">How to access airspace information?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How to access flight plan information?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#flight-plan-structures">Flight Plan structures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#eurocontrol-ddr-so6-files">EUROCONTROL DDR SO6 files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-traffic.data.eurocontrol.ddr.so6">EUROCONTROL DDR SO6 files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#eurocontrol-b2b-web-services">EUROCONTROL B2B web services</a></li>
 </ul>
 </li>
@@ -128,6 +127,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
@@ -207,66 +207,14 @@
             
   <div class="section" id="how-to-access-flight-plan-information">
 <h1>How to access flight plan information?<a class="headerlink" href="#how-to-access-flight-plan-information" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Documentation under refactoring, still work in progress</p>
-</div>
-<div class="section" id="flight-plan-structures">
-<h2>Flight Plan structures<a class="headerlink" href="#flight-plan-structures" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code> are structures designed to parse flight plans
+in the ICAO format. Access to such field may be complicated for non operational
+fellows, who may have access to different sources of data.</p>
+<div class="section" id="module-traffic.data.eurocontrol.ddr.so6">
+<span id="eurocontrol-ddr-so6-files"></span><h2>EUROCONTROL DDR SO6 files<a class="headerlink" href="#module-traffic.data.eurocontrol.ddr.so6" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="traffic.core.FlightPlan">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.</span></span><span class="sig-name descname"><span class="pre">FlightPlan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightPlan" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.ShapelyMixin</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.FlightPlan.leaflet">
-<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightPlan.leaflet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is only available if the Leaflet <a class="reference external" href="plugins.html">plugin</a> is
-activated. (true by default)</p>
-</div>
-<p>The elements passed as kwargs as passed as is to the PolyLine constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.FlightPlan.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.FlightPlan.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots the trajectory on a Matplotlib axis.</p>
-<p>FlightPlans support Cartopy axis as well with automatic projection. If
-no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
-is applied.</p>
-<p>Example usage:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.drawing</span> <span class="kn">import</span> <span class="n">Mercator</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Mercator</span><span class="p">())</span>
-<span class="n">flightplan</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See also <a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a> for the
-altair equivalent.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="eurocontrol-ddr-so6-files">
-<h2>EUROCONTROL DDR SO6 files<a class="headerlink" href="#eurocontrol-ddr-so6-files" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="traffic.data.SO6">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.</span></span><span class="sig-name descname"><span class="pre">SO6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.ddr.so6.</span></span><span class="sig-name descname"><span class="pre">SO6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.mixins.DataFrameMixin</span></code></a></p>
 <p>Eurocontrol DDR files provide flight intentions of aircraft for a full
 day of traffic across Europe. This data cannot be shared so the file
@@ -311,34 +259,34 @@ Flight from its unique ID or from its callsign</p>
  4754561.883957243 36435.06118046089,4774490.218033796
  -7225.479752635839,4777127.126136922" opacity="0.8" />
  </g></svg></div><dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.at">
-<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.at" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.at" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all segments of the SO6 dataframe with <code class="docutils literal notranslate"><span class="pre">time</span></code> included
 in the segment interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.between">
-<span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.between" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.between">
+<span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.between" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all segments of the SO6 dataframe with intervals intersecting
 [<code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>].</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">stop</span></code> argument may be also be written as a
 <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.from_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>In addition to <a class="reference external" href="export.html#traffic.core.mixins.DataFrameMixin">usual formats</a>, you can parse so6
 files as text files (.so6 extension) or as 7-zipped text files (.so6.7z
 extension).</p>
@@ -349,14 +297,14 @@ to parse .so6.7z files on the fly.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= <a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a>)]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= <a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a>)]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.inside_bbox">
-<span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.inside_bbox" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.inside_bbox">
+<span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.inside_bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all Flights intersecting the bounding box of the given airspace.</p>
 <p>A tuple (west, south, east, north) is also accepted as a parameter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bdx_so6</span> <span class="o">=</span> <span class="n">so6</span><span class="o">.</span><span class="n">inside_bbox</span><span class="p">(</span><span class="n">nm_airspaces</span><span class="p">[</span><span class="s2">&quot;LFBBBDX&quot;</span><span class="p">])</span>
@@ -366,14 +314,14 @@ to parse .so6.7z files on the fly.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.intersects">
-<span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.intersects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.intersects">
+<span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all Flights intersecting the given airspace.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -404,18 +352,18 @@ chaining may not be safe for smaller airspaces.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.SO6.to_czml">
-<span class="sig-name descname"><span class="pre">to_czml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.SO6.to_czml" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.to_czml">
+<span class="sig-name descname"><span class="pre">to_czml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.to_czml" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a CesiumJS scenario file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -423,8 +371,8 @@ chaining may not be safe for smaller airspaces.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.ddr.so6.</span></span><span class="sig-name descname"><span class="pre">Flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.ddr.so6.</span></span><span class="sig-name descname"><span class="pre">SO6Flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.flight.Flight</span></code></a></p>
 <p>SO6 Flight inherit from <a class="reference external" href="/traffic.core.flight.html">traffic.core.Flight</a>
 and implement specificities of the SO6 format.</p>
@@ -496,19 +444,19 @@ and implement specificities of the SO6 format.</p>
 </tbody>
 </table>
 </div><dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.airborne">
-<span class="sig-name descname"><span class="pre">airborne</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.airborne" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.airborne">
+<span class="sig-name descname"><span class="pre">airborne</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.airborne" title="Permalink to this definition">¶</a></dt>
 <dd><p>Identity method, available for consistency</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="traffic.data.eurocontrol.ddr.so6.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.at">
-<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.at" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.at" title="Permalink to this definition">¶</a></dt>
 <dd><p>Since DDR files contain few points on their trajectory, interpolation
 functions are provided:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">so6</span><span class="p">[</span><span class="s1">&#39;HOP36PP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="s2">&quot;2018/01/01 18:40&quot;</span><span class="p">)</span>
@@ -527,19 +475,22 @@ functions are provided:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.between">
-<span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.between" title="Permalink to this definition">¶</a></dt>
-<dd><p>WARNING: strict: bool = True is not taken into account yet.</p>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.between">
+<span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.between" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>strict: bool = True is not taken into account yet.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="traffic.data.eurocontrol.ddr.so6.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.clip">
-<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.clip" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.clip">
+<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clips the trajectory to a given shape.</p>
 <p>For a shapely Geometry, the first time of entry and the last time of
 exit are first computed before returning the part of the trajectory
@@ -554,52 +505,52 @@ shape.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="traffic.data.eurocontrol.ddr.so6.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.clip_altitude">
-<span class="sig-name descname"><span class="pre">clip_altitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.clip_altitude" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.clip_altitude">
+<span class="sig-name descname"><span class="pre">clip_altitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.clip_altitude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Splits a Flight in several segments comprised between altitudes
 <cite>min_</cite> and <cite>max_</cite>, with proper interpolations where needed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.Flight" title="traffic.data.eurocontrol.ddr.so6.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.resample">
-<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.resample" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.resample">
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>The resampling method is not available.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NoReturn" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.start" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.start">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.Flight.stop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.stop">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+392.gaafa7a9376)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -621,29 +572,9 @@ added in the future.</p>
 <p>You have to own a B2B certificate granted by EUROCONTROL to get access to
 this data.</p>
 </div>
-<dl class="py class">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.</span></span><span class="sig-name descname"><span class="pre">NMB2B</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B" title="Permalink to this definition">¶</a></dt>
-<dd><p>The main instance of this class is provided as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_b2b</span>
-</pre></div>
-</div>
-<p>A path to your certificate and your password must be set in the
-configuration file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
-<span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
-</pre></div>
-</div>
-<p>Then edit the following line accordingly:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nmb2b</span><span class="p">]</span>
-<span class="n">pkcs12_filename</span> <span class="o">=</span>
-<span class="n">pkcs12_password</span> <span class="o">=</span>
-</pre></div>
-</div>
-<dl class="py method">
+<span class="target" id="module-traffic.data.eurocontrol.b2b"></span><dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_search">
-<span class="sig-name descname"><span class="pre">flight_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <strong>minimum set of information</strong> about flights.</p>
 <p>By default:</p>
 <ul class="simple">
@@ -690,7 +621,7 @@ returns more comprehensive information about flights.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_list">
-<span class="sig-name descname"><span class="pre">flight_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airspace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airspace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns requested information about flights matching a criterion.</p>
 <p>By default:</p>
 <ul class="simple">
@@ -732,14 +663,14 @@ returns full information about a given flight.</p></li>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_get">
-<span class="sig-name descname"><span class="pre">flight_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eobt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eobt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns full information about a given flight.</p>
 <p>This method requires all parameters:</p>
 <ul class="simple">
@@ -759,7 +690,7 @@ on the return of a <a class="reference external" href="#traffic.data.eurocontrol
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.regulation_list">
-<span class="sig-name descname"><span class="pre">regulation_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">regulation_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information about a (set of) given regulation(s).</p>
 <p>By default:</p>
 <ul class="simple">
@@ -779,11 +710,31 @@ fields can be requested when passed to the field parameter.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.</span></span><span class="sig-name descname"><span class="pre">NMB2B</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main instance of this class is provided as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_b2b</span>
+</pre></div>
+</div>
+<p>A path to your certificate and your password must be set in the
+configuration file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
+<span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
+</pre></div>
+</div>
+<p>Then edit the following line accordingly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nmb2b</span><span class="p">]</span>
+<span class="n">pkcs12_filename</span> <span class="o">=</span>
+<span class="n">pkcs12_password</span> <span class="o">=</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>

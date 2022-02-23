@@ -7,21 +7,21 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Trajectory generation &mdash; traffic 2.6.6 documentation</title>
+  <title>How to implement trajectory generation? &mdash; traffic 2.6.6 documentation</title>
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
 
   
   
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
 
   
@@ -31,29 +31,29 @@
 
   
   <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/thebelab-helper.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Closest point of approach" href="cpa.html" />
-    <link rel="prev" title="Trajectory clustering" href="clustering.html" /> 
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to implement closest point of approach?" href="cpa.html" />
+    <link rel="prev" title="How to implement trajectory clustering?" href="../clustering.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -67,12 +67,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> traffic
+            <a href="../index.html" class="icon icon-home"> traffic
           
 
           
             
-            <img src="_static/logo_traffic.png" class="logo" alt="Logo"/>
+            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -87,7 +87,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -106,23 +106,26 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.traffic.html">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">Lazy iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clustering.html">Trajectory clustering</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Trajectory generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpa.html">Closest point of approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clustering.html">How to implement trajectory clustering?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to implement trajectory generation?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpa.html">How to implement closest point of approach?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
 </ul>
 
             
@@ -138,7 +141,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">traffic</a>
+          <a href="../index.html">traffic</a>
         
       </nav>
 
@@ -169,17 +172,17 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="api_reference.html">API reference</a> &raquo;</li>
+          <li><a href="../user_guide.html">User guide</a> &raquo;</li>
         
-      <li>Trajectory generation</li>
+      <li>How to implement trajectory generation?</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/generation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/generation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,8 +195,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="trajectory-generation">
-<h1>Trajectory generation<a class="headerlink" href="#trajectory-generation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-to-implement-trajectory-generation">
+<h1>How to implement trajectory generation?<a class="headerlink" href="#how-to-implement-trajectory-generation" title="Permalink to this headline">¶</a></h1>
 <p>(contribution by Adrien Lafage <a class="reference external" href="https://github.com/alafage/">&#64;alafage</a>)</p>
 <p>This library provide a <code class="docutils literal notranslate"><span class="pre">Generation</span></code> class for creating synthetic traffic data.
 It implements <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> methods that call the corresponding
@@ -208,7 +211,7 @@ methods in the generative model passed as argument.</p>
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>To instanciate such an object you can pass those arguments:</p>
+<p>To instantiate such an object you can pass those arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">generation</span></code>: Any object implementing <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> methods. It will define the generative model to use.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">features</span></code>: The list of the features to represent a trajectory.</p></li>
@@ -250,8 +253,8 @@ from the north.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "340c3280717d4e5cbe2f3098bf9c27c5"}
-</script><img alt="_images/generation_2_2.png" src="_images/generation_2_2.png" />
+{"version_major": 2, "version_minor": 0, "model_id": "dca4a073e71d4f8c83846502bfba2537"}
+</script><img alt="../_images/generation_2_2.png" src="../_images/generation_2_2.png" />
 </div>
 </div>
 <p>Before any fitting we enrich the Traffic DataFrame with the features we might
@@ -345,7 +348,7 @@ Mixture with two components.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/generation_7_0.png" src="_images/generation_7_0.png" />
+<img alt="../_images/generation_7_0.png" src="../_images/generation_7_0.png" />
 </div>
 </div>
 <div class="admonition warning">
@@ -355,7 +358,7 @@ Mixture with two components.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.generation.Generation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.generation.</span></span><span class="sig-name descname"><span class="pre">Generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.generation.Generation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Generation class to handle trajectory generation.</p>
 <dl class="simple">
 <dt>generation: GenerationProtocol</dt><dd><p>generation model, should implement <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code>
@@ -377,7 +380,7 @@ The scaler object should implement <code class="docutils literal notranslate"><s
 of features <code class="docutils literal notranslate"><span class="pre">self.features</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -415,7 +418,7 @@ the first coordinate of the trajectories or the last one. If
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -426,7 +429,7 @@ the first coordinate of the trajectories or the last one. If
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"9deebef3625d4879b799f4c9e8837d2b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "277dfa935a27466daf2b5c27d8c80367": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "673fe979174040c69a9b21f89952037b": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9deebef3625d4879b799f4c9e8837d2b", "max": 540369.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_277dfa935a27466daf2b5c27d8c80367", "value": 540369.0}}, "30e5933c50b6448dbdf8f5c9e51867ae": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2a2ac117a3b24950ba98dd9a933f7ff8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "53e7e04c6c6842b78f3221ef9aac5366": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_30e5933c50b6448dbdf8f5c9e51867ae", "placeholder": "\u200b", "style": "IPY_MODEL_2a2ac117a3b24950ba98dd9a933f7ff8", "value": "download: 100%"}}, "1906f2e705a64508abea23416c5d9003": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2d35b18be79c4db8bc98c29a7c607d4d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bc98ad564fbe4c9d9953da3da51088fa": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1906f2e705a64508abea23416c5d9003", "placeholder": "\u200b", "style": "IPY_MODEL_2d35b18be79c4db8bc98c29a7c607d4d", "value": " 540369/540369 [00:20&lt;00:00, 28040.53it/s]"}}, "8b5d67068878495c9db63e6b595d383b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "340c3280717d4e5cbe2f3098bf9c27c5": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_53e7e04c6c6842b78f3221ef9aac5366", "IPY_MODEL_673fe979174040c69a9b21f89952037b", "IPY_MODEL_bc98ad564fbe4c9d9953da3da51088fa"], "layout": "IPY_MODEL_8b5d67068878495c9db63e6b595d383b"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"e3e608e89aa6440eaa26e0e8e1a374cb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1f95949cd89542c7812f30af5b3b0c09": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "e1a72994c1a643bca3d7c8d384b72498": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e3e608e89aa6440eaa26e0e8e1a374cb", "max": 540369.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_1f95949cd89542c7812f30af5b3b0c09", "value": 540369.0}}, "1d4b4df4f20149ef9e70f18741b16d5e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ef9ebdc97403456ea35266f44a263b6f": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b8118c823d314f44bfe0b0202db9201d": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1d4b4df4f20149ef9e70f18741b16d5e", "placeholder": "\u200b", "style": "IPY_MODEL_ef9ebdc97403456ea35266f44a263b6f", "value": "download: 100%"}}, "629f18700ae543bb9cc3790e84007892": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "37be39bf99284ba082c066abfd320586": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d9c8e6f2a6054c2699fb31e4eb6c26d2": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_629f18700ae543bb9cc3790e84007892", "placeholder": "\u200b", "style": "IPY_MODEL_37be39bf99284ba082c066abfd320586", "value": " 540369/540369 [00:23&lt;00:00, 30000.72it/s]"}}, "fc653dcc8e0a419fade8c51f42450efa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dca4a073e71d4f8c83846502bfba2537": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_b8118c823d314f44bfe0b0202db9201d", "IPY_MODEL_e1a72994c1a643bca3d7c8d384b72498", "IPY_MODEL_d9c8e6f2a6054c2699fb31e4eb6c26d2"], "layout": "IPY_MODEL_fc653dcc8e0a419fade8c51f42450efa"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
@@ -436,8 +439,8 @@ the first coordinate of the trajectories or the last one. If
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cpa.html" class="btn btn-neutral float-right" title="Closest point of approach" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="clustering.html" class="btn btn-neutral float-left" title="Trajectory clustering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cpa.html" class="btn btn-neutral float-right" title="How to implement closest point of approach?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../clustering.html" class="btn btn-neutral float-left" title="How to implement trajectory clustering?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

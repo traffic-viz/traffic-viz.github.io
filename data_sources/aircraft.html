@@ -123,6 +123,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
@@ -272,7 +273,7 @@ from <a class="reference external" href="https://junzis.com/adb/">https://junzis
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -285,6 +286,11 @@ registration information as a dictionary. Only the first aircraft
 matching the pattern passed in parameter is returned.</p>
 <p>Country information are based on the icao24 identifier, category
 information are based on the registration information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the icao24 identifier or the tail number of the aircraft</p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">get_unique</span><span class="p">(</span><span class="s1">&#39;F-ZBQB&#39;</span><span class="p">)</span>
 <span class="go">{</span>
 <span class="go">    &#39;icao24&#39;: &#39;3b780f&#39;,</span>
@@ -303,7 +309,7 @@ information are based on the registration information.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</p>
+<dd class="field-odd"><p>None | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -312,6 +318,11 @@ information are based on the registration information.</p>
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.model">
 <span class="sig-name descname"><span class="pre">model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by model or typecode (fuzzy match).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the model or the typecode of the aircraft</p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;A320&quot;</span><span class="p">)</span>
 <span class="go">  icao24   registration   typecode   model         operator   owner</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
@@ -330,7 +341,7 @@ information are based on the registration information.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="#traffic.data.basic.aircraft.Aircraft" title="traffic.data.basic.aircraft.Aircraft"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aircraft</span></code></a>)]</p>
+<dd class="field-odd"><p>None | T</p>
 </dd>
 </dl>
 </dd></dl>
@@ -339,8 +350,11 @@ information are based on the registration information.</p>
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.operator">
 <span class="sig-name descname"><span class="pre">operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by owner or operator (fuzzy match).</p>
-<p>The query string may match the owner or operator (full name, ICAO
-code or IATA code)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the owner or operator of the aircraft</p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">&quot;British Antarctic&quot;</span><span class="p">)</span>
 <span class="go">  icao24   registration   typecode   model   operator</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
@@ -352,7 +366,7 @@ code or IATA code)</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="#traffic.data.basic.aircraft.Aircraft" title="traffic.data.basic.aircraft.Aircraft"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aircraft</span></code></a>)]</p>
+<dd class="field-odd"><p>None | T</p>
 </dd>
 </dl>
 </dd></dl>
@@ -361,7 +375,16 @@ code or IATA code)</p>
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.query">
 <span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines several requests.</p>
-<p>The keyword arguments correspond to the name of other methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query_str</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – (default: empty)
+if non empty, is passed to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code> method</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – all keyword arguments correspond to the name of
+other methods which are chained if query_str is non empty</p></li>
+</ul>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">registration</span><span class="o">=</span><span class="s2">&quot;^F-ZB&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;EC45&quot;</span><span class="p">)</span>
 <span class="go">  icao24   registration   typecode   model                     operator</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
@@ -380,7 +403,7 @@ code or IATA code)</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="#traffic.data.basic.aircraft.Aircraft" title="traffic.data.basic.aircraft.Aircraft"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aircraft</span></code></a>)]</p>
+<dd class="field-odd"><p>None | T</p>
 </dd>
 </dl>
 </dd></dl>
@@ -390,8 +413,11 @@ code or IATA code)</p>
 <span class="sig-name descname"><span class="pre">registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requests an aircraft by registration (fuzzy match).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= <a class="reference internal" href="#traffic.data.basic.aircraft.Aircraft" title="traffic.data.basic.aircraft.Aircraft"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aircraft</span></code></a>)]</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the tail number of the aircraft</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None | T</p>
 </dd>
 </dl>
 </dd></dl>
@@ -400,6 +426,11 @@ code or IATA code)</p>
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.stats">
 <span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes stats of owned or operated aircraft (fuzzy match).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the owner or operator of the aircraft</p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="s2">&quot;Air France&quot;</span><span class="p">)</span>
 <span class="go">                            model  icao24</span>
 <span class="go">typecode</span>
@@ -416,7 +447,7 @@ code or IATA code)</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>]</p>
+<dd class="field-odd"><p>None | pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>

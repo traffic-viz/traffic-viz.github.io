@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Trajectory clustering &mdash; traffic 2.6.6 documentation</title>
+  <title>How to implement trajectory clustering? &mdash; traffic 2.6.6 documentation</title>
   
 
   
@@ -52,8 +52,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Trajectory generation" href="generation.html" />
-    <link rel="prev" title="Navigation events" href="navigation.html" /> 
+    <link rel="next" title="How to implement trajectory generation?" href="tutorial/generation.html" />
+    <link rel="prev" title="How to compute an occupancy graph?" href="tutorial/occupancy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,20 +108,23 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">The Flight structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.traffic.html">The Traffic structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">The Airspace structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">The FlightIterator structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">Lazy iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation events</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Trajectory clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generation.html">Trajectory generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpa.html">Closest point of approach</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#navigation-events">Navigation events</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="user_guide.html#statistical-analysis">Statistical analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tutorial/occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to implement trajectory clustering?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/generation.html">How to implement trajectory generation?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/cpa.html">How to implement closest point of approach?</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#beyond-the-library">Beyond the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#standalone-applications">Standalone applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 </ul>
 
@@ -171,9 +174,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="api_reference.html">API reference</a> &raquo;</li>
+          <li><a href="user_guide.html">User guide</a> &raquo;</li>
         
-      <li>Trajectory clustering</li>
+      <li>How to implement trajectory clustering?</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,8 +195,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="trajectory-clustering">
-<h1>Trajectory clustering<a class="headerlink" href="#trajectory-clustering" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-to-implement-trajectory-clustering">
+<h1>How to implement trajectory clustering?<a class="headerlink" href="#how-to-implement-trajectory-clustering" title="Permalink to this headline">¶</a></h1>
 <p>An API for trajectory clustering is provided in the Traffic class. Regular
 clustering methods from scikit-learn can be passed as parameters, or any object
 implementing the fit(), predict() and fit_predict() methods (see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClusterMixin.html#sklearn.base.ClusterMixin">ClusterMixin</a>.)</p>
@@ -403,8 +406,8 @@ and Priska Wallimann <a class="reference external" href="https://github.com/blic
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="generation.html" class="btn btn-neutral float-right" title="Trajectory generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="navigation.html" class="btn btn-neutral float-left" title="Navigation events" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial/generation.html" class="btn btn-neutral float-right" title="How to implement trajectory generation?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial/occupancy.html" class="btn btn-neutral float-left" title="How to compute an occupancy graph?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
