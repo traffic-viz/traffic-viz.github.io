@@ -71,9 +71,6 @@
           
 
           
-            
-            <img src="../_static/logo_traffic.png" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -118,16 +115,16 @@
 <li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="decode.html">How to decode raw ADS-B and Mode S data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decode.html">How to decode ADS-B and Mode S data?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="eurocontrol.html">How to configure EUROCONTROL data files?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="export.html">How to export and store trajectory and airspace data?</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#good-practices">Good practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#beyond-the-library">Beyond the library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#standalone-applications">Standalone applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#frequently-asked-questions">Frequently asked questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
@@ -293,24 +290,12 @@ information are based on the registration information.</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">get_unique</span><span class="p">(</span><span class="s1">&#39;F-ZBQB&#39;</span><span class="p">)</span>
-<span class="go">{</span>
-<span class="go">    &#39;icao24&#39;: &#39;3b780f&#39;,</span>
-<span class="go">    &#39;registration&#39;: &#39;F-ZBQB&#39;,</span>
-<span class="go">    &#39;typecode&#39;: &#39;EC45&#39;,</span>
-<span class="go">    &#39;serial&#39;: &#39;9058&#39;,</span>
-<span class="go">    &#39;operator&#39;: &#39;French Securite Civile&#39;,</span>
-<span class="go">    &#39;model&#39;: &#39;Airbus Helicopters H145&#39;,</span>
-<span class="go">    &#39;country&#39;: &#39;France&#39;,</span>
-<span class="go">    &#39;flag&#39;: &#39;🇫🇷&#39;,</span>
-<span class="go">    &#39;pattern&#39;: &#39;^F-Z&#39;,</span>
-<span class="go">    &#39;category&#39;: &#39;State owned&#39;,</span>
-<span class="go">    [truncated]</span>
-<span class="go">}</span>
+<span class="go">Tail(icao24=&#39;3b780f&#39;, registration=&#39;F-ZBQB&#39;, typecode=&#39;EC45&#39;, flag=&#39;🇫🇷&#39;)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>]</p>
+<dd class="field-odd"><p>None | Tail</p>
 </dd>
 </dl>
 </dd></dl>
@@ -471,7 +456,7 @@ other methods which are chained if query_str is non empty</p></li>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, Xavier Olive.
+        &#169; Copyright 2022, Xavier Olive.
 
     </p>
   </div>
