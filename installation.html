@@ -106,7 +106,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#latest-release">Latest release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#updating-traffic">Updating traffic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-version">Development version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contribute-to-traffic">Contribute to traffic</a></li>
 </ul>
 </li>
@@ -197,14 +196,14 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 <div class="section" id="latest-release">
 <h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this headline">¶</a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation</span>
-<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="n">traffic</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation</span>
+conda create -n traffic -c conda-forge <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 traffic
+conda activate traffic
 </pre></div>
 </div>
 <p>Adjust the Python version you need (&gt;=3.7) and append packages you need for working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 <p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">traffic</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate traffic
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -218,14 +217,14 @@ visualisations in Jupyter Lab are accessible thanks to the <a class="reference e
 </div>
 <div class="section" id="updating-traffic">
 <h2>Updating traffic<a class="headerlink" href="#updating-traffic" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -n option is followed by the name of the environment</span>
-<span class="n">conda</span> <span class="n">update</span> <span class="o">-</span><span class="n">n</span> <span class="n">traffic</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">traffic</span>
+<ul>
+<li><p>To update traffic in your conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># -n option is followed by the name of the environment</span>
+conda update -n traffic -c conda-forge traffic
 </pre></div>
 </div>
-</div>
-<div class="section" id="development-version">
-<h2>Development version<a class="headerlink" href="#development-version" title="Permalink to this headline">¶</a></h2>
-<p>For the most recent development version, clone the Github repository:</p>
+</li>
+<li><p>For the most recent development version, clone the Github repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
 <span class="nb">cd</span> traffic/
 pip install .
@@ -236,6 +235,8 @@ pip install .
 <p>It should be easier to install the development version inside your conda
 environment where you installed the latest release.</p>
 </div>
+</li>
+</ul>
 </div>
 <div class="section" id="contribute-to-traffic">
 <h2>Contribute to traffic<a class="headerlink" href="#contribute-to-traffic" title="Permalink to this headline">¶</a></h2>
