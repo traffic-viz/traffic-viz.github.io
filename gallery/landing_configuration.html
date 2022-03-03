@@ -200,13 +200,13 @@ available in the traffic library.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1c86a94a111c473f9e2f23dc62e6a776"></div>
+<div id="altair-viz-c9e5d387726349f684d9a863cbd63508"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1c86a94a111c473f9e2f23dc62e6a776") {
-      outputDiv = document.getElementById("altair-viz-1c86a94a111c473f9e2f23dc62e6a776");
+    if (outputDiv.id !== "altair-viz-c9e5d387726349f684d9a863cbd63508") {
+      outputDiv = document.getElementById("altair-viz-c9e5d387726349f684d9a863cbd63508");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -355,7 +355,7 @@ available in the traffic library.</p>
 <span class="n">stats</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">landing_zurich_2019</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2019-10-10 00:00Z&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;aligned_on_ils(&#39;LSZH&#39;)&quot;</span><span class="p">,</span> <span class="n">flight_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{self.flight_id}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="o">.</span><span class="n">summary</span><span class="p">([</span><span class="s2">&quot;flight_id&quot;</span><span class="p">,</span> <span class="s2">&quot;stop&quot;</span><span class="p">,</span> <span class="s2">&quot;ILS_max&quot;</span><span class="p">])</span>
     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>
 <span class="p">)</span>
