@@ -287,7 +287,7 @@ features, such as line widths, can be passed with the kwargs argument.
 See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Altair v4.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -299,7 +299,7 @@ See <a class="reference external" href="https://altair-viz.github.io/user_guide/
 The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any] | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any]]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -373,16 +373,14 @@ activated. (true by default)</p>
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.project_shape">
 <span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport.project_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
-<p>By default, an equivalent projection is applied. Equivalent projections
-locally respect areas, which is convenient for the area attribute.</p>
-<p>Other valid projections are available:</p>
-<ul class="simple">
-<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
-<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
-</ul>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>base.BaseGeometry</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>projection</strong> (<em>None</em><em> | </em><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj" title="(in pyproj v3.3.0)"><em>pyproj.Proj</em></a><em> | </em><em>'crs.Projection</em>) – By default (None), an equivalent projection is
+applied. Equivalent projections locally respect areas, which is
+convenient for the area attribute.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>base.BaseGeometry</p>
 </dd>
 </dl>
 </dd></dl>
@@ -712,7 +710,7 @@ features, such as line widths, can be passed with the kwargs argument.
 See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Altair v4.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -724,7 +722,7 @@ See <a class="reference external" href="https://altair-viz.github.io/user_guide/
 The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any] | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a>, Any]]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -750,16 +748,14 @@ activated. (true by default)</p>
 <dt class="sig sig-object py" id="traffic.core.structure.Route.project_shape">
 <span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Route.project_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
-<p>By default, an equivalent projection is applied. Equivalent projections
-locally respect areas, which is convenient for the area attribute.</p>
-<p>Other valid projections are available:</p>
-<ul class="simple">
-<li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
-<li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
-</ul>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>base.BaseGeometry</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>projection</strong> (<em>None</em><em> | </em><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj" title="(in pyproj v3.3.0)"><em>pyproj.Proj</em></a><em> | </em><em>'crs.Projection</em>) – By default (None), an equivalent projection is
+applied. Equivalent projections locally respect areas, which is
+convenient for the area attribute.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>base.BaseGeometry</p>
 </dd>
 </dl>
 </dd></dl>
