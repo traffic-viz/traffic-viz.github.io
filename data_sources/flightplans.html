@@ -533,22 +533,22 @@ shape.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+501.g0453fdf4b8)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+501.g0453fdf4b8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+501.g0453fdf4b8)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><span class="pre">pandas._libs.tslibs.timestamps.Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+501.g0453fdf4b8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -562,135 +562,228 @@ shape.</p>
 is an interface provided by the EUROCONTROL Network Manager (NM) for
 system-to-system access to its services and data, allowing users to
 retrieve and use the information in their own systems.</p>
-<p>We provide a basic API for some NM web services. They have been implemented
-on a per need basis: not everything is provided, but functionalities may be
-added in the future.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You have to own a B2B certificate granted by EUROCONTROL to get access to
 this data.</p>
 </div>
-<span class="target" id="module-traffic.data.eurocontrol.b2b"></span><dl class="py class">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.</span></span><span class="sig-name descname"><span class="pre">NMB2B</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkcs12_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B" title="Permalink to this definition">¶</a></dt>
-<dd><p>The main instance of this class is provided as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_b2b</span>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Because of a hard compromise to make between documentation and
+confidentiality of data, any information which cannot be found or inferred
+from different public sources is obfuscated in the following examples.</p>
+</div>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>The main instance of this class is provided as:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">nm_b2b</span>
 </pre></div>
 </div>
-<p>A path to your certificate and your password must be set in the
-configuration file.</p>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>A path to your certificate and your password must be set in the configuration file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
 <span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
 </pre></div>
 </div>
-<p>Then edit the following line accordingly:</p>
+<p>Then edit the following lines accordingly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nmb2b</span><span class="p">]</span>
-<span class="n">pkcs12_filename</span> <span class="o">=</span>
+
+<span class="c1">## This section contains information to log in to Eurocontrol B2B services</span>
+<span class="c1">## https://traffic-viz.github.io/data_sources/flightplans.html</span>
+
+<span class="n">pkcs12_filename</span> <span class="o">=</span>  <span class="c1"># full path to the certificate file</span>
 <span class="n">pkcs12_password</span> <span class="o">=</span>
+<span class="c1"># mode = OPS  # default: PREOPS</span>
+<span class="c1"># version = 25.0.0  # default: 25.0.0</span>
 </pre></div>
 </div>
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_get">
-<span class="sig-name descname"><span class="pre">flight_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eobt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns full information about a given flight.</p>
-<p>This method requires all parameters:</p>
+<p>We provide a basic API for some NM web services. They have been implemented
+on a per need basis: not everything is provided, but functionalities may be
+added in the future:</p>
 <ul class="simple">
-<li><p>eobt: Estimated off-block time (as string, numeral or timestamp)</p></li>
-<li><p>callsign (<strong>NO</strong> wildcard accepted)</p></li>
-<li><p>origin airport (ICAO 4 letter code)</p></li>
-<li><p>destination airport (ICAO 4 letter code)</p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.aixm_dataset" title="traffic.data.eurocontrol.b2b.NMB2B.aixm_dataset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">aixm_dataset()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="traffic.data.eurocontrol.b2b.NMB2B.flight_list"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_list()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="traffic.data.eurocontrol.b2b.NMB2B.flight_search"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_search()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="traffic.data.eurocontrol.b2b.NMB2B.flight_get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_get()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="traffic.data.eurocontrol.b2b.NMB2B.regulation_list"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regulation_list()</span></code></a></p></li>
 </ul>
-<p>It is recommended to use this method through an indexation
-on the return of a <a class="reference external" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search">flight_search</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>File a <a class="reference external" href="https://github.com/xoolive/traffic/issues/new?assignees=&amp;labels=enhancement&amp;template=feature-request.md">feature request</a>
+if you wish to have access to more services provided by B2B.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.aixm_dataset">
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">aixm_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airac_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.aixm_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the EUROCONTROL data files following the AIXM standard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airac_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – the AIRAC cycle, e.g. 2201 (1st cycle of 2022)</p></li>
+<li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – where to download the data.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>See also</strong>: <a class="reference internal" href="eurocontrol.html#how-to-configure-eurocontrol-data-files"><span class="std std-ref">How to configure EUROCONTROL data files?</span></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightInfo</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_list">
-<span class="sig-name descname"><span class="pre">flight_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airspace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airspace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns requested information about flights matching a criterion.</p>
-<p>By default:</p>
-<ul class="simple">
-<li><p>the start parameter takes the current time.</p></li>
-<li><p>the stop parameter is one hour after the start parameter.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
 </ul>
+</dd>
+</dl>
 <p>Exactly one of the following parameters must be passed:</p>
-<ul class="simple">
-<li><p>airspace: returns all flights going through a given airspace.</p></li>
-<li><p>airport: returns all flights flying from or to a given airport
-(ICAO 4 letter code).</p></li>
-<li><p>origin: returns all flights flying from a given airport
-(ICAO 4 letter code).</p></li>
-<li><p>destination: returns all flights flying to a given airport
-(ICAO 4 letter code).</p></li>
-<li><p>regulation: returns all flights impacted by a given regulation.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airspace</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – the name of an airspace aircraft fly through</p></li>
+<li><p><strong>airport</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – flying from or to a given airport (ICAO 4 letter code).</p></li>
+<li><p><strong>origin</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – flying from a given airport (ICAO 4 letter code).</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – flying to a given airport (ICAO 4 letter code).</p></li>
+<li><p><strong>regulation</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – identifier of a regulation (see
+<a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="traffic.data.eurocontrol.b2b.NMB2B.regulation_list"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regulation_list()</span></code></a>)</p></li>
+<li><p><strong>fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – additional fields to request. By default, a set of
+(arguably) relevant fields are requested.</p></li>
 </ul>
-<p>By default, a set of (arguably) relevant fields are requested. More
-fields can be requested when passed to the field parameter.</p>
+</dd>
+</dl>
 <p><strong>Example usage:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all flights scheduled out of Paris CDG in a time frame.</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_list</span><span class="p">(</span>
-    <span class="s2">&quot;2019-12-22 10:00&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;2019-12-22 10:30&quot;</span><span class="p">,</span>
-    <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;LFPG&quot;</span><span class="p">,</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;aircraftOperator&quot;</span><span class="p">,</span> <span class="s2">&quot;ctotLimitReason&quot;</span><span class="p">],</span>
-<span class="p">)</span>
-
-<span class="c1"># Get **requested** information about one particular flight</span>
-<span class="n">flightinfo</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;AT02474519&quot;</span><span class="p">]</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all flights scheduled out of Paris CDG</span>
+<span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_list</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;LFPG&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;ns0:FlightListByAerodromeReply xmlns:ns0=&quot;eurocontrol/cfmu/b2b/FlightServices&quot;&gt;
+  &lt;requestReceptionTime&gt;2022-03-11 10:56:21&lt;/requestReceptionTime&gt;
+  &lt;requestId&gt;B2B_CUR:16126169&lt;/requestId&gt;
+  &lt;sendTime&gt;2022-03-11 10:56:21&lt;/sendTime&gt;
+  &lt;status&gt;OK&lt;/status&gt;
+  &lt;data&gt;
+    &lt;flights&gt;
+      &lt;flight&gt;
+        &lt;flightId&gt;
+          &lt;id&gt;AT06604769&lt;/id&gt;
+          &lt;keys&gt;
+            &lt;aircraftId&gt;AFR7740&lt;/aircraftId&gt;
+            &lt;aerodromeOfDeparture&gt;LFPG&lt;/aerodromeOfDeparture&gt;
+            &lt;nonICAOAerodromeOfDeparture&gt;false&lt;/nonICAOAerodromeOfDeparture&gt;
+            &lt;airFiled&gt;false&lt;/airFiled&gt;
+            &lt;aerodromeOfDestination&gt;LFRB&lt;/aerodromeOfDestination&gt;
+            &lt;nonICAOAerodromeOfDestination&gt;false&lt;/nonICAOAerodromeOfDestination&gt;
+            &lt;estimatedOffBlockTime&gt;2022-03-11 10:45&lt;/estimatedOffBlockTime&gt;
+          &lt;/keys&gt;
+        &lt;/flightId&gt;
+        &lt;aircraftType&gt;E170&lt;/aircraftType&gt;
+        &lt;actualOffBlockTime&gt;2022-03-11 10:41&lt;/actualOffBlockTime&gt;
+        &lt;estimatedTakeOffT...
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>See also:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference external" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get">flight_get</a> which
-returns full information about a given flight.</p></li>
+<li><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="traffic.data.eurocontrol.b2b.NMB2B.flight_get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_get()</span></code></a> returns
+full information about a given flight. It is also accessible by
+indexing a
+<a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightList" title="traffic.data.eurocontrol.b2b.flight.FlightList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code></a> object
+with the <code class="docutils literal notranslate"><span class="pre">flightId</span></code> field.</p></li>
 </ul>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightList" title="traffic.data.eurocontrol.b2b.flight.FlightList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_search">
-<span class="sig-name descname"><span class="pre">flight_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <strong>minimum set of information</strong> about flights.</p>
-<p>By default:</p>
-<ul class="simple">
-<li><p>the start parameter takes the current time.</p></li>
-<li><p>the stop parameter is one hour after the start parameter.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
 </ul>
+</dd>
+</dl>
 <p>The method must take at least one of:</p>
-<ul class="simple">
-<li><p>callsign (wildcard accepted)</p></li>
-<li><p>origin airport (ICAO 4 letter code)</p></li>
-<li><p>destination airport (ICAO 4 letter code)</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callsign</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – (wildcard accepted)</p></li>
+<li><p><strong>origin</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – flying from a given airport (ICAO 4 letter code).</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – flying to a given airport (ICAO 4 letter code).</p></li>
 </ul>
-<p>The return type has a representation similar to a pandas
-DataFrame and may be indexed by a flight_id in order to
-request full information about that flight.</p>
+</dd>
+</dl>
 <p><strong>Example usage:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All KLM flights out of Amsterdam Schiphol</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_search</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;KLM*&quot;</span><span class="p">)</span>
-
-<span class="c1"># All flights in a given day going to Kansai International Airport</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_search</span><span class="p">(</span>
-    <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2019-12-22 00:00&quot;</span><span class="p">,</span>
-    <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;2019-12-23 00:00&quot;</span><span class="p">,</span>
-    <span class="n">destination</span><span class="o">=</span><span class="s2">&quot;RJBB&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># Get full information about one particular flight</span>
-<span class="n">flight_info</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;AT02478340&quot;</span><span class="p">]</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># All KLM flights bound for Amsterdam Schiphol</span>
+<span class="n">nm_b2b</span><span class="o">.</span><span class="n">flight_search</span><span class="p">(</span><span class="n">destination</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;KLM*&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;data&gt;
+  &lt;summaries&gt;
+    &lt;lastValidFlightPlan&gt;
+      &lt;id&gt;
+        &lt;id&gt;AT06686326&lt;/id&gt;
+        &lt;keys&gt;
+          &lt;aircraftId&gt;KLM1010&lt;/aircraftId&gt;
+          &lt;aerodromeOfDeparture&gt;EGLL&lt;/aerodromeOfDeparture&gt;
+          &lt;nonICAOAerodromeOfDeparture&gt;false&lt;/nonICAOAerodromeOfDeparture&gt;
+          &lt;airFiled&gt;false&lt;/airFiled&gt;
+          &lt;aerodromeOfDestination&gt;EHAM&lt;/aerodromeOfDestination&gt;
+          &lt;nonICAOAerodromeOfDestination&gt;false&lt;/nonICAOAerodromeOfDestination&gt;
+          &lt;estimatedOffBlockTime&gt;2022-03-11 11:45&lt;/estimatedOffBlockTime&gt;
+        &lt;/keys&gt;
+      &lt;/id&gt;
+      &lt;status&gt;FILED&lt;/status&gt;
+    &lt;/lastValidFlightPlan&gt;
+  &lt;/summaries&gt;
+  &lt;summaries&gt;
+    &lt;lastValidFlightPlan&gt;
+      &lt;id&gt;
+        &lt;id&gt;AT06685616&lt;/id&gt;
+        &lt;keys&gt;
+          &lt;aircraftId&gt;KLM1074&lt;/aircraftId&gt;
+          &lt;aerodromeOfDeparture&gt;EGCC&lt;/aerodromeOfDeparture&gt;
+          &lt;nonICAOAerodromeOfDeparture&gt;false&lt;/nonICAOAerodromeOfDeparture&gt;
+          &lt;airFiled&gt;false&lt;/airFiled&gt;
+          &lt;aerodromeOfDestination&gt;EH...
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>See also:</strong></p>
 <blockquote>
@@ -701,39 +794,150 @@ returns more comprehensive information about flights.</p></li>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlanList</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightPlanList" title="traffic.data.eurocontrol.b2b.flight.FlightPlanList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlanList</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.flight_get">
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">flight_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EOBT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callsign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns full information about a given flight.</p>
+<p>This method requires all parameters:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>EOBT</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>]) – Estimated off-block time</p></li>
+<li><p><strong>callsign</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <strong>NO</strong> wildcard accepted</p></li>
+<li><p><strong>origin</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flying from a given airport (ICAO 4 letter code).</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flying to a given airport (ICAO 4 letter code).</p></li>
+</ul>
+</dd>
+</dl>
+<p>This method is called when indexing the return value of a
+<a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="traffic.data.eurocontrol.b2b.NMB2B.flight_search"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_search()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo" title="traffic.data.eurocontrol.b2b.flight.FlightInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightInfo</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.NMB2B.regulation_list">
-<span class="sig-name descname"><span class="pre">regulation_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NMB2B.</span></span><span class="sig-name descname"><span class="pre">regulation_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regulations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.NMB2B.regulation_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information about a (set of) given regulation(s).</p>
-<p>By default:</p>
-<ul class="simple">
-<li><p>the start parameter takes the current time.</p></li>
-<li><p>the stop parameter is one hour after the start parameter.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.5.0.dev0+506.g17dda440f9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
+<li><p><strong>traffic_volumes</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – impacted by a given regulation</p></li>
+<li><p><strong>regulations</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – identifier(s) related to a regulation</p></li>
+<li><p><strong>fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – additional fields to request. By default, a set of
+(arguably) relevant fields are requested.</p></li>
 </ul>
-<p>The method must take at least one of:
-- traffic_volumes: impacted by a given regulation;
-- regulations: identifiers related to a regulation;</p>
-<p>By default, a set of (arguably) relevant fields are requested. More
-fields can be requested when passed to the field parameter.</p>
+</dd>
+</dl>
 <p><strong>Example usage:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nm_b2b</span><span class="o">.</span><span class="n">regulation_list</span><span class="p">(</span>
-    <span class="s2">&quot;2019-12-22 10:00&quot;</span><span class="p">,</span> <span class="n">regulations</span><span class="o">=</span><span class="s2">&quot;LEMDA22A&quot;</span>
-<span class="p">)</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm_b2b</span><span class="o">.</span><span class="n">regulation_list</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;ns0:RegulationListReply xmlns:ns0=&quot;eurocontrol/cfmu/b2b/FlowServices&quot;&gt;
+  &lt;requestReceptionTime&gt;2022-03-11 10:56:26&lt;/requestReceptionTime&gt;
+  &lt;requestId&gt;B2B_CUR:16126222&lt;/requestId&gt;
+  &lt;sendTime&gt;2022-03-11 10:56:26&lt;/sendTime&gt;
+  &lt;status&gt;OK&lt;/status&gt;
+  &lt;data&gt;
+    &lt;planTransferred&gt;true&lt;/planTransferred&gt;
+    &lt;planCutOffReached&gt;true&lt;/planCutOffReached&gt;
+    &lt;dataset&gt;
+      &lt;type&gt;OPERATIONAL&lt;/type&gt;
+    &lt;/dataset&gt;
+    &lt;regulations&gt;
+      &lt;item&gt;
+        &lt;applicability&gt;
+          &lt;wef&gt;2022-03-11 08:30&lt;/wef&gt;
+          &lt;unt&gt;2022-03-11 12:00&lt;/unt&gt;
+        &lt;/applicability&gt;
+        &lt;subType&gt;GROUND_DELAY&lt;/subType&gt;
+        &lt;regulationId&gt;YHRHR11&lt;/regulationId&gt;
+        &lt;reason&gt;OTHERS&lt;/reason&gt;
+        &lt;location&gt;
+          &lt;referenceLocation-ReferenceLocationAirspace&gt;
+            &lt;type&gt;AIRSPACE&lt;/type&gt;
+            &lt;id&gt;EDYYHRHR&lt;/id&gt;
+          &lt;/referenceLocation-ReferenceLocationAirspace&gt;
+          &lt;id&gt;MASHRHR&lt;/id&gt;
+          &lt;flightLevels&gt;
+            &lt;min&gt;
+              &lt;unit&gt;F&lt;/unit&gt;
+  ...
+</pre></div>
+</div>
+</div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference internal" href="#traffic.data.eurocontrol.b2b.flow.RegulationList" title="traffic.data.eurocontrol.b2b.flow.RegulationList"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.flight.</span></span><span class="sig-name descname"><span class="pre">FlightInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightInfo.flight_plan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flight_plan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><span class="pre">traffic.core.flightplan.FlightPlan</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo.flight_plan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the flight plan in ICAO format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightInfo.parsePlan">
+<span class="sig-name descname"><span class="pre">parsePlan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo.parsePlan" title="Permalink to this definition">¶</a></dt>
+<dd><p>If available, parse the FTFM (m1), RTFM (m2) or CTFM (m3) profiles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – one of ftfmPointProfile, rtfmPointProfile, ctfmPointProfile</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.flight.</span></span><span class="sig-name descname"><span class="pre">FlightList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightPlanList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.flight.</span></span><span class="sig-name descname"><span class="pre">FlightPlanList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightPlanList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flow.RegulationInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.flow.</span></span><span class="sig-name descname"><span class="pre">RegulationInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flow.RegulationInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flow.RegulationList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.eurocontrol.b2b.flow.</span></span><span class="sig-name descname"><span class="pre">RegulationList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flow.RegulationList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 </div>
