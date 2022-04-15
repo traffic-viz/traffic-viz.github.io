@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>How to access airport information? &mdash; traffic 2.6.6 documentation</title>
+  <title>How to access airport information? &mdash; traffic 2.6.7 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -77,7 +77,7 @@
             
             
               <div class="version">
-                2.6.6
+                2.6.7
               </div>
             
           
@@ -253,7 +253,7 @@ first time you call it) and put in cache.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -265,7 +265,7 @@ first time you call it) and put in cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extent</strong> (<a class="reference external" href="https://docs.python.org/3/library/types.html#types.UnionType" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionType</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]) – <p>The parameter extent may be passed as:</p>
+<li><p><strong>extent</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="../api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – <p>The parameter extent may be passed as:</p>
 <ul>
 <li><p>a string to query OSM Nominatim service;</p></li>
 <li><p>the result of an OSM Nominatim query
@@ -658,13 +658,13 @@ be overridden if a dictionary is passed in place of the boolean;</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-217f75e30be14537856cef0a4a167695"></div>
+<div id="altair-viz-f7394c6d8abc407ab341815db82ac8ae"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-217f75e30be14537856cef0a4a167695") {
-      outputDiv = document.getElementById("altair-viz-217f75e30be14537856cef0a4a167695");
+    if (outputDiv.id !== "altair-viz-f7394c6d8abc407ab341815db82ac8ae") {
+      outputDiv = document.getElementById("altair-viz-f7394c6d8abc407ab341815db82ac8ae");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
