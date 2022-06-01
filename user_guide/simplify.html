@@ -196,13 +196,13 @@ respect to the 2D ground track.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3792f8df839c43f69b71a68d806630f9"></div>
+<div id="altair-viz-dfcfcc98cf554f43b1517678069cdcd0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3792f8df839c43f69b71a68d806630f9") {
-      outputDiv = document.getElementById("altair-viz-3792f8df839c43f69b71a68d806630f9");
+    if (outputDiv.id !== "altair-viz-dfcfcc98cf554f43b1517678069cdcd0") {
+      outputDiv = document.getElementById("altair-viz-dfcfcc98cf554f43b1517678069cdcd0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -315,7 +315,7 @@ respect to the 2D ground track.</p>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.flight.Flight.resample">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'interpolate'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.resample" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'interpolate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.resample" title="Permalink to this definition"></a></dt>
 <dd><p>Resample the trajectory at a given frequency or for a target number
 of samples.</p>
 <dl class="field-list simple">
@@ -323,7 +323,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v1.5.0.dev0+802.g0277a9c49f)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v1.5.0.dev0+850.g078e836884)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -336,6 +336,16 @@ given number of evenly distributed points per trajectory.</p></li>
 <li><p>When the parameter is a dictionary with keys as methods (e.g.
 <code class="docutils literal notranslate"><span class="pre">&quot;interpolate&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ffill&quot;</span></code>) and names of columns as values.
 Columns not included in any value are left as is.</p></li>
+</ul>
+</p></li>
+<li><p><strong>projection</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj" title="(in pyproj v3.3.1)"><em>pyproj.Proj</em></a><em> | </em><em>'crs.Projection</em>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<ul>
+<li><p>By default, lat/lon are resampled with a linear interpolation;</p></li>
+<li><p>If a projection is passed, the linear interpolation is applied on
+the x and y dimensions, then lat/lon are reprojected back;</p></li>
+<li><p>If the projection is a string parameter, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;lcc&quot;</span></code>, a
+projection is created on the fly, centred on the trajectory. This
+approach is helpful to fill gaps along a great circle.</p></li>
 </ul>
 </p></li>
 </ul>
@@ -379,13 +389,13 @@ preserved.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c35470e7c5c44d1b9ea2287c29e2efe7"></div>
+<div id="altair-viz-3575f215a42840e3950da291d6d47f07"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c35470e7c5c44d1b9ea2287c29e2efe7") {
-      outputDiv = document.getElementById("altair-viz-c35470e7c5c44d1b9ea2287c29e2efe7");
+    if (outputDiv.id !== "altair-viz-3575f215a42840e3950da291d6d47f07") {
+      outputDiv = document.getElementById("altair-viz-3575f215a42840e3950da291d6d47f07");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -497,13 +507,13 @@ time axis.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3fb325bade744e428d0011e9fadd612a"></div>
+<div id="altair-viz-d75c09328e9b488b8d489b29f985421a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3fb325bade744e428d0011e9fadd612a") {
-      outputDiv = document.getElementById("altair-viz-3fb325bade744e428d0011e9fadd612a");
+    if (outputDiv.id !== "altair-viz-d75c09328e9b488b8d489b29f985421a") {
+      outputDiv = document.getElementById("altair-viz-d75c09328e9b488b8d489b29f985421a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
