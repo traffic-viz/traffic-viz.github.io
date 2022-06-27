@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to implement trajectory generation? &mdash; traffic 2.7.0 documentation</title>
+  <title>How to implement trajectory generation? &mdash; traffic 2.8.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -40,7 +40,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.7.0
+                2.8.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -107,7 +107,7 @@ methods in the generative model passed as argument.</p>
 <p>You can import this class with the following code:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.algorithms.generation</span> <span class="kn">import</span> <span class="n">Generation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.algorithms.generation</span> <span class="kn">import</span> <span class="n">Generation</span>
 </pre></div>
 </div>
 </div>
@@ -132,7 +132,7 @@ with neural network-based generative models.</p>
 from the north.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">traffic.data.datasets</span> <span class="kn">import</span> <span class="n">landing_zurich_2019</span>
 <span class="kn">from</span> <span class="nn">traffic.core.projection</span> <span class="kn">import</span> <span class="n">EuroPP</span>
 
@@ -164,7 +164,7 @@ want to use to generate trajectories. For example, instead of working with
 and <code class="docutils literal notranslate"><span class="pre">y</span></code> respectively).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">compute_xy</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">compute_xy</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -176,7 +176,7 @@ for each trajectory coordinates, the difference in seconds with the beginning
 of the trajectory.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
 
 <span class="k">def</span> <span class="nf">compute_timedelta</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="s2">&quot;pd.DataFrame&quot;</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
@@ -192,7 +192,7 @@ of the trajectory.</p>
 Mixture with two components.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
 
 <span class="n">g1</span> <span class="o">=</span> <span class="n">Generation</span><span class="p">(</span>
@@ -211,7 +211,7 @@ Mixture with two components.</p>
 <p>This code is equivalent to the following call on the <code class="docutils literal notranslate"><span class="pre">Traffic</span></code> object:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">generation</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">generation</span><span class="p">(</span>
     <span class="n">generation</span><span class="o">=</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
     <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;timedelta&quot;</span><span class="p">],</span>
     <span class="n">scaler</span><span class="o">=</span><span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -230,7 +230,7 @@ Mixture with two components.</p>
 <p>Then we can sample the fitted model to produce new Traffic data.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_gen1</span> <span class="o">=</span> <span class="n">g1</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_gen1</span> <span class="o">=</span> <span class="n">g1</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
 <span class="n">t_gen2</span> <span class="o">=</span> <span class="n">g2</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">())</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
@@ -281,7 +281,7 @@ The scaler object should implement <code class="docutils literal notranslate"><s
 of features <code class="docutils literal notranslate"><span class="pre">self.features</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
+<dd class="field-odd"><p>Traffic</p>
 </dd>
 </dl>
 </dd></dl>
@@ -319,7 +319,7 @@ the first coordinate of the trajectories or the last one. If
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
+<dd class="field-odd"><p>Traffic</p>
 </dd>
 </dl>
 </dd></dl>

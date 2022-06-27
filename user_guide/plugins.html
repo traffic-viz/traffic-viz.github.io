@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to use and write plugins for the traffic library? &mdash; traffic 2.7.0 documentation</title>
+  <title>How to use and write plugins for the traffic library? &mdash; traffic 2.8.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,7 +28,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Leaflet" href="leaflet.html" />
+    <link rel="next" title="Kepler.gl" href="kepler.html" />
     <link rel="prev" title="How to implement closest point of approach?" href="../tutorial/cpa.html" /> 
 </head>
 
@@ -40,7 +40,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.7.0
+                2.8.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -110,7 +110,7 @@ basic functionalities of the traffic library. Plugins can be
 implemented through a <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">registration</a>
 mechanism and selectively activated in the configuration file.</p>
 <p>Some plugins are provided by the traffic library with visualisation
-facilities for Leaflet, Kepler.gl and CesiumJS.</p>
+facilities for Kepler.gl and CesiumJS.</p>
 <section id="plugin-activation">
 <h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this headline"></a></h2>
 <p>You may activate plugins in the configuration file:</p>
@@ -122,7 +122,7 @@ facilities for Leaflet, Kepler.gl and CesiumJS.</p>
 <p>Then edit the following line according to the plugins you want to
 activate:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">plugins</span><span class="p">]</span>
-<span class="n">enabled_plugins</span> <span class="o">=</span> <span class="n">Leaflet</span><span class="p">,</span> <span class="n">Kepler</span><span class="p">,</span> <span class="n">CesiumJS</span>
+<span class="n">enabled_plugins</span> <span class="o">=</span> <span class="n">Kepler</span><span class="p">,</span> <span class="n">CesiumJS</span>
 </pre></div>
 </div>
 </section>
@@ -130,7 +130,6 @@ activate:</p>
 <h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="leaflet.html">Leaflet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler.gl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cesium.html">CesiumJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bluesky.html">BlueSky</a></li>
@@ -171,7 +170,7 @@ following sample setup.py to registrate your plugin. Then edit the
 configuration file and add <cite>MyPlugin</cite> to the list of enabled plugins.</p>
 <p>You may then <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code> your plugin. Put the
 monkey-patching in an <code class="docutils literal notranslate"><span class="pre">_onload()</span></code> function that will be called iff the
-plugin is enabled. (Check an example on the <a class="reference external" href="https://github.com/xoolive/traffic/blob/master/traffic/plugins/leaflet.py">github repository</a>)</p>
+plugin is enabled.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
 <span class="n">setup</span><span class="p">(</span>
@@ -198,7 +197,7 @@ plugin is enabled. (Check an example on the <a class="reference external" href="
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../tutorial/cpa.html" class="btn btn-neutral float-left" title="How to implement closest point of approach?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="leaflet.html" class="btn btn-neutral float-right" title="Leaflet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kepler.html" class="btn btn-neutral float-right" title="Kepler.gl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

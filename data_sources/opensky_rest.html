@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.7.0 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.8.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -40,7 +40,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.7.0
+                2.8.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -140,7 +140,7 @@ position for all aircraft. This part actually does not require
 authentication.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span>
@@ -179,7 +179,7 @@ authentication.</p>
 bounds:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Have you seen Santa Claus coming to Toulouse?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Have you seen Santa Claus coming to Toulouse?</span>
 <span class="n">opensky</span><span class="o">.</span><span class="n">api_arrival</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-24 20:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-25 06:00&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -254,7 +254,7 @@ bounds:</p>
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or maybe leaving?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or maybe leaving?</span>
 <span class="n">opensky</span><span class="o">.</span><span class="n">api_departure</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-24 20:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-25 06:00&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -330,7 +330,7 @@ bounds:</p>
 <p>A basic route database is also accessible through the REST API:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opensky</span><span class="o">.</span><span class="n">api_routes</span><span class="p">(</span><span class="s2">&quot;AFR292&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opensky</span><span class="o">.</span><span class="n">api_routes</span><span class="p">(</span><span class="s2">&quot;AFR292&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

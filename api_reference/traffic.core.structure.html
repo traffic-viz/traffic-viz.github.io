@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.structure &mdash; traffic 2.7.0 documentation</title>
+  <title>traffic.core.structure &mdash; traffic 2.8.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -40,7 +40,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.7.0
+                2.8.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -140,11 +140,11 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">shapely.geometry.point.Point</span></em><a class="headerlink" href="#traffic.core.structure.Airport.centroid" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/geometry.html#shapely.geometry.Point" title="(in Shapely v0)"><span class="pre">shapely.geometry.Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.centroid" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://shapely.readthedocs.io/en/latest/geometry.html#shapely.geometry.Point" title="(in Shapely v0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -250,15 +250,10 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.leaflet">
 <span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport.leaflet" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is only available if the <a class="reference internal" href="../user_guide/leaflet.html#leaflet"><span class="std std-ref">Leaflet</span></a> plugin  is activated. (True
-by default)</p>
-</div>
 <p>The elements passed as kwargs as passed as is to the Marker constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/layers/geodata.html#ipyleaflet.leaflet.GeoData" title="(in ipyleaflet)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoData</span></code></a></p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoData</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -437,15 +432,10 @@ convenient for the area attribute.</p>
 <dt class="sig sig-object py" id="traffic.core.structure.Navaid.leaflet">
 <span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Navaid.leaflet" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is only available if the <a class="reference internal" href="../user_guide/leaflet.html#leaflet"><span class="std std-ref">Leaflet</span></a> plugin  is activated. (True
-by default)</p>
-</div>
 <p>The elements passed as kwargs as passed as is to the Marker constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/layers/marker.html#ipyleaflet.leaflet.Marker" title="(in ipyleaflet)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Marker</span></code></a></p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Marker</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -575,11 +565,11 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Route.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">shapely.geometry.point.Point</span></em><a class="headerlink" href="#traffic.core.structure.Route.centroid" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/geometry.html#shapely.geometry.Point" title="(in Shapely v0)"><span class="pre">shapely.geometry.Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Route.centroid" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></p>
+<dd class="field-odd"><p><a class="reference external" href="https://shapely.readthedocs.io/en/latest/geometry.html#shapely.geometry.Point" title="(in Shapely v0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -637,15 +627,11 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 <dt class="sig sig-object py" id="traffic.core.structure.Route.leaflet">
 <span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Route.leaflet" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is only available if the <a class="reference internal" href="../user_guide/leaflet.html#leaflet"><span class="std std-ref">Leaflet</span></a> plugin is activated. (True
-by default)</p>
-</div>
-<p>The elements passed as kwargs as passed as is to the PolyLine constructor.</p>
+<p>The elements passed as kwargs as passed as is to the PolyLine
+constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/layers/polyline.html#ipyleaflet.leaflet.Polyline" title="(in ipyleaflet)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
