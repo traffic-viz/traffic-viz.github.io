@@ -63,7 +63,12 @@
 <li class="toctree-l3"><a class="reference internal" href="plugins.html">How to use and write plugins for the traffic library?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli_tui.html">How to use traffic command line interface tools?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui.html">How to use the traffic graphical user interface?</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">How to run traffic in a Docker container?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to run traffic in a Docker container?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-a-jupyter-environment-with-traffic-latest">Run a Jupyter environment with traffic (latest)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-jupyter-in-a-custom-environment">Run Jupyter in a custom environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#develop-traffic-with-visual-code-and-poetry">Develop traffic with Visual Code and Poetry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#troubleshooting">Troubleshooting</a></li>
@@ -101,50 +106,62 @@
              
   <section id="how-to-run-traffic-in-a-docker-container">
 <h1>How to run traffic in a Docker container?<a class="headerlink" href="#how-to-run-traffic-in-a-docker-container" title="Permalink to this heading"></a></h1>
-<p>It is quite simple to run the traffic library in a Docker container. The following two examples show how you can use the traffic library in a docker with <a class="reference external" href="https://jupyter-docker-stacks.readthedocs.io/en/latest/">jupyter notebook</a>. If you are completely unfamiliar with Docker and how to modify a Docker image, you can find a good tutorial in the <a class="reference external" href="https://docs.docker.com/get-started/">official documentation</a>. Of course, you can base your Docker container on a different Dockerfile as the one used in the examples.</p>
-<p>In the simplest case when you just want to run the traffic library in a Docker container, you can install the library and its dependencies directly into the base environment of the container. In that case, the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look like the following:</p>
+<section id="run-a-jupyter-environment-with-traffic-latest">
+<h2>Run a Jupyter environment with traffic (latest)<a class="headerlink" href="#run-a-jupyter-environment-with-traffic-latest" title="Permalink to this heading"></a></h2>
+<p>It is quite simple to run the traffic library in a Docker container. The
+following two examples show how you can use the traffic library in a docker with
+<a class="reference external" href="https://jupyter-docker-stacks.readthedocs.io/en/latest/">jupyter notebook</a>.
+If you are completely unfamiliar with Docker and how to modify a Docker image,
+you can find a good tutorial in the <a class="reference external" href="https://docs.docker.com/get-started/">official documentation</a>. Of course, you can base your Docker
+container on a different Dockerfile as the one used in the examples.</p>
+<p>In the simplest case when you just want to run the traffic library in a Docker
+container, you can install the library and its dependencies directly into the
+base environment of the container. In that case, the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look
+like the following:</p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter/minimal-notebook</span>
 
 <span class="k">USER</span><span class="w"> </span><span class="s">jovyan</span>
 <span class="k">RUN</span><span class="w"> </span>mamba install -c conda-forge traffic
 
-<span class="c"># manually set environmet variable for PROJ when running in base environment</span>
+<span class="c"># manually set environment variable for PROJ when running in base environment</span>
 <span class="k">ENV</span><span class="w"> </span><span class="nv">PROJ_LIB</span><span class="o">=</span>/opt/conda/share/proj
 </pre></div>
 </div>
-<p>Note the last line, which sets a environment variable for PROJ. This is needed because the conda base environment never gets properly activated and this fixes the issue described <a class="reference external" href="https://gis.stackexchange.com/questions/364421/how-to-make-proj-work-via-anaconda-in-google-colab">here</a>.
+<p>Note the last line, which sets a environment variable for PROJ. This is needed
+because the conda base environment never gets properly activated and this fixes
+the issue described <a class="reference external" href="https://gis.stackexchange.com/questions/364421/how-to-make-proj-work-via-anaconda-in-google-colab">here</a>.
 To run this Docker, you first have to generate an image with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -f Dockerfile -t jupyter/traffic:latest .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -f jupyter.Dockerfile -t traffic/jupyter:latest .
 </pre></div>
 </div>
 <p>The Docker container can now be started:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">8888</span>:8888 --name jupyter_traffic jupyter/traffic:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">8888</span>:8888 traffic/jupyter:latest
 </pre></div>
 </div>
+</section>
+<section id="run-jupyter-in-a-custom-environment">
+<h2>Run Jupyter in a custom environment<a class="headerlink" href="#run-jupyter-in-a-custom-environment" title="Permalink to this heading"></a></h2>
 <p>If you have already a working conda environment that you would like to use, you
 can install your existing environment into the Docker container.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look like the following:</p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter/minimal-notebook</span>
 
 <span class="c"># copy conda environment file to image</span>
-<span class="k">COPY</span><span class="w"> </span>traffic_env.yml traffic_env.yml
+<span class="k">COPY</span><span class="w"> </span>traffic.yml traffic.yml
 
-<span class="c"># install nb_conda into the base python to allow the user to choose the environment in the jupyter notebook and install environment</span>
+<span class="c"># install nb_conda into the base python to allow the user to choose the</span>
+<span class="c"># environment in the jupyter notebook and install environment</span>
 <span class="k">USER</span><span class="w"> </span><span class="s">jovyan</span>
 <span class="k">RUN</span><span class="w"> </span>mamba install -y nb_conda
-<span class="k">RUN</span><span class="w"> </span>mamba env create -f traffic_env.yml
+<span class="k">RUN</span><span class="w"> </span>mamba env create -f traffic.yml
 </pre></div>
 </div>
-<p>Note that the environment file <code class="docutils literal notranslate"><span class="pre">traffic_env.yml</span></code> has to be in the same directory as the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>. The file <code class="docutils literal notranslate"><span class="pre">traffic_env.yml</span></code> could look like the following:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traffic_env</span><span class="w"></span>
-<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
-<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traffic</span><span class="w"></span>
-</pre></div>
-</div>
+<p>Note that the environment file <code class="docutils literal notranslate"><span class="pre">traffic.yml</span></code> has to be in the same directory
+as the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>: a sample version is provided in the <code class="docutils literal notranslate"><span class="pre">docker</span></code> folder.</p>
+</section>
+<section id="develop-traffic-with-visual-code-and-poetry">
+<h2>Develop traffic with Visual Code and Poetry<a class="headerlink" href="#develop-traffic-with-visual-code-and-poetry" title="Permalink to this heading"></a></h2>
+</section>
 </section>
 
 
