@@ -18,6 +18,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -100,23 +101,23 @@
            <div itemprop="articleBody">
              
   <section id="api-reference">
-<h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline"></a></h1>
+<h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
 <p>The <cite>traffic</cite> library is based on three main core classes for handling:</p>
 <ul class="simple">
-<li><p>aircraft trajectories are accessible through <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Flight</span></code>;</p></li>
-<li><p>collections of aircraft trajectories are <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Traffic</span></code>;</p></li>
-<li><p>airspaces and sectors are represented with <code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Airspace</span></code>.</p></li>
+<li><p>aircraft trajectories are accessible through <a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Flight</span></code></a>;</p></li>
+<li><p>collections of aircraft trajectories are <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Traffic</span></code></a>;</p></li>
+<li><p>airspaces and sectors are represented with <a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Airspace</span></code></a>.</p></li>
 </ul>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code> are wrappers
-around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+1047.g2b1184dd5b)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
+<p><a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> and <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> are wrappers
+around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0.dev0+1050.gf4ca4d3d0e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
 for trajectory analysis. Airspaces take advantage of <a class="reference external" href="https://shapely.readthedocs.io">shapely Geometries</a> for geometrical analysis.</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code> have been introduced in order to
+<p><a class="reference internal" href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a> have been introduced in order to
 deal with iteration over pieces of trajectories. This structure allows for more
 flexibility and accuracy when trying to identify specific events which may
 happen several times along a trajectory.</p>
 <p><a class="reference internal" href="api_reference/traffic.core.lazy.html#module-traffic.core.lazy"><span class="std std-ref">Lazy iteration</span></a> has been implemented on top of
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code> structures in order to chain operations
-to be applied on every <code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code>  in the collection
+<a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> structures in order to chain operations
+to be applied on every <a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>  in the collection
 and stack them before triggering only one iteration.</p>
 <div class="toctree-wrapper compound">
 <ul>

@@ -18,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -104,7 +105,7 @@
            <div itemprop="articleBody">
              
   <section id="how-to-use-and-write-plugins-for-the-traffic-library">
-<h1>How to use and write plugins for the traffic library?<a class="headerlink" href="#how-to-use-and-write-plugins-for-the-traffic-library" title="Permalink to this headline"></a></h1>
+<h1>How to use and write plugins for the traffic library?<a class="headerlink" href="#how-to-use-and-write-plugins-for-the-traffic-library" title="Permalink to this heading"></a></h1>
 <p>Plugins are pieces of software which are designed to extend the
 basic functionalities of the traffic library. Plugins can be
 implemented through a <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">registration</a>
@@ -112,7 +113,7 @@ mechanism and selectively activated in the configuration file.</p>
 <p>Some plugins are provided by the traffic library with visualisation
 facilities for Kepler.gl and CesiumJS.</p>
 <section id="plugin-activation">
-<h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this headline"></a></h2>
+<h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this heading"></a></h2>
 <p>You may activate plugins in the configuration file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
@@ -127,7 +128,7 @@ activate:</p>
 </div>
 </section>
 <section id="available-plugins">
-<h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this headline"></a></h2>
+<h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler.gl</a></li>
@@ -162,7 +163,7 @@ activate:</p>
 </div>
 </section>
 <section id="plugin-registration">
-<h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline"></a></h2>
+<h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Permalink to this heading"></a></h2>
 <p>You may write your own plugins to monkey-patch the library and
 registrate them using entry points in your setup.py configuration.</p>
 <p>Write your code in a <code class="docutils literal notranslate"><span class="pre">my_traffic_plugin/plugin.py</span></code> and use the

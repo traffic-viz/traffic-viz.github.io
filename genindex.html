@@ -17,6 +17,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -102,6 +103,8 @@
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -115,13 +118,41 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.agg_xy">agg_xy() (traffic.core.mixins.GeographyMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.abs">abs() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.after">after() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.agg_latlon">agg_latlon() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.agg_time">agg_time() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.agg_time">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.agg_xy">agg_xy() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.agg_xy">(traffic.core.mixins.GeographyMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.agg_xy">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.agg_xy">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.airborne">airborne() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.airborne">(traffic.core.Traffic method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.airborne">(traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
 </li>
       </ul></li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft">Aircraft (class in traffic.data.basic.aircraft)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.aircraft">aircraft (traffic.core.Traffic attribute)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.aircraft_data">aircraft_data() (traffic.core.Traffic method)</a>
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport">Airport (class in traffic.core.structure)</a>
 </li>
@@ -129,8 +160,28 @@
 </li>
       <li><a href="data_sources/airports.html#traffic.data.basic.airports.Airports">Airports (class in traffic.data.basic.airports)</a>
 </li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace">Airspace (class in traffic.core)</a>
+</li>
       <li><a href="data_sources/navigation.html#traffic.data.basic.airways.Airways">Airways (class in traffic.data.basic.airways)</a>
 </li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.NMB2B.aixm_dataset">aixm_dataset() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_ils">aligned_on_ils() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_navpoint">aligned_on_navpoint() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_runway">aligned_on_runway() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.all">all() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.all">(traffic.core.FlightIterator method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.all">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.altitude">altitude (traffic.core.structure.Airport attribute)</a>
 
       <ul>
@@ -141,28 +192,58 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.altitude">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.apply">apply() (in module traffic.core.lazy)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.area">area (traffic.core.mixins.ShapelyMixin property)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.apply_time">apply_time() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.apply_time">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.area">area (traffic.core.Airspace property)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.area">(traffic.core.Flight property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.area">(traffic.core.mixins.ShapelyMixin property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.area">(traffic.core.structure.Airport property)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.area">(traffic.core.structure.Route property)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.assign">assign() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.assign">assign() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.assign">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.assign">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.assign">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.assign">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.assign">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.assign_id">assign_id() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.assign_id">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.at">at() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6.at">(traffic.data.eurocontrol.ddr.so6.SO6 method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.at">(traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.at_ratio">at_ratio() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.atmos">atmos() (in module traffic.core.aero)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -171,16 +252,30 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.bearing">bearing() (in module traffic.core.geodesy)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.bounds">bounds (traffic.core.mixins.ShapelyMixin property)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.before">before() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.between">between() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6.between">(traffic.data.eurocontrol.ddr.so6.SO6 method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.between">(traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.bounds">bounds (traffic.core.Airspace property)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.bounds">(traffic.core.Flight property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.bounds">(traffic.core.mixins.ShapelyMixin property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.bounds">(traffic.core.structure.Airport property)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.bounds">(traffic.core.structure.Route property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tutorial/generation.html#traffic.algorithms.generation.Generation.build_traffic">build_traffic() (traffic.algorithms.generation.Generation method)</a>
 </li>
   </ul></td>
@@ -191,28 +286,84 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.cache.html#traffic.core.cache.cache_results">cache_results() (in module traffic.core.cache)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.centroid">centroid (traffic.core.mixins.ShapelyMixin property)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.callsign">callsign (traffic.core.Flight property)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.callsigns">callsigns (traffic.core.Traffic attribute)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.cas2mach">cas2mach() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.cas2tas">cas2tas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.centroid">centroid (traffic.core.Airspace property)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.centroid">(traffic.core.Flight property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.centroid">(traffic.core.mixins.ShapelyMixin property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.centroid">(traffic.core.structure.Airport property)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.centroid">(traffic.core.structure.Route property)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.compute_latlon_from_xy">compute_latlon_from_xy() (traffic.core.mixins.GeographyMixin method)</a>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.centroid">centroid() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.chart">chart() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.clean_invalid">clean_invalid() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.clip">clip() (traffic.core.Flight method)</a>
 
       <ul>
-        <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.compute_latlon_from_xy">(traffic.core.sv.StateVectors method)</a>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.clip">(traffic.core.Traffic method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.clip">(traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.compute_xy">compute_xy() (traffic.core.mixins.GeographyMixin method)</a>
-
-      <ul>
-        <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.compute_xy">(traffic.core.sv.StateVectors method)</a>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.clip_altitude">clip_altitude() (traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
 </li>
-      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.closest_point">closest_point() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.closest_point_of_approach">closest_point_of_approach() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.clustering">clustering() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.comet">comet() (traffic.core.Flight method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_DME_NSE">compute_DME_NSE() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_latlon_from_xy">compute_latlon_from_xy() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.compute_latlon_from_xy">(traffic.core.mixins.GeographyMixin method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.compute_latlon_from_xy">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.compute_latlon_from_xy">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_navpoints">compute_navpoints() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_TAS">compute_TAS() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_wind">compute_wind() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.compute_wind">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_xy">compute_xy() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.compute_xy">(traffic.core.mixins.GeographyMixin method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.compute_xy">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.compute_xy">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.count">count() (traffic.core.structure.Airport method)</a>
 
       <ul>
@@ -229,6 +380,12 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportNamedTuple.country">(traffic.core.structure.AirportNamedTuple attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.cumulative_distance">cumulative_distance() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.cumulative_distance">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -237,60 +394,108 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin">DataFrameMixin (class in traffic.core.mixins)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin">[1]</a>
 </li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.density">density() (in module traffic.core.aero)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.description">description (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.description">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.destination">destination (traffic.core.Flight property)</a>
+</li>
       <li><a href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.destination">destination() (in module traffic.core.geodesy)</a>
 </li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diff">diff() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.diff">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.distance">distance() (in module traffic.core.geodesy)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.distance">(traffic.core.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.distance">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diversion">diversion() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diverted">diverted (traffic.core.Flight property)</a>
 </li>
       <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids.download_data">download_data() (traffic.data.basic.navaid.Navaids method)</a>
 </li>
-      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.download_opensky">download_opensky() (traffic.data.basic.aircraft.Aircraft method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.drop">drop() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.download_opensky">download_opensky() (traffic.data.basic.aircraft.Aircraft method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.drop">drop() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.drop">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.drop">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.drop">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.drop">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.drop">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.drop_duplicates">drop_duplicates() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.drop_duplicates">drop_duplicates() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.drop_duplicates">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.drop_duplicates">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.drop_duplicates">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.drop_duplicates">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.drop_duplicates">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.duration">duration (traffic.core.Flight property)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic.eval">eval() (traffic.core.lazy.LazyTraffic method)</a>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.eas2tas">eas2tas() (in module traffic.core.aero)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.extent">extent (traffic.core.mixins.ShapelyMixin property)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.emergency">emergency() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.encode">encode() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.end_time">end_time (traffic.core.Traffic attribute)</a>
+</li>
+      <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic.eval">eval() (traffic.core.lazy.LazyTraffic method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval">(traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="data_sources/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.extended">extended() (traffic.data.adsb.opensky_impala.Impala method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.extent">extent (traffic.core.Airspace property)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.extent">(traffic.core.Flight property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.extent">(traffic.core.mixins.ShapelyMixin property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.extent">(traffic.core.structure.Airport property)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.extent">(traffic.core.structure.Route property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.extent">extent() (traffic.core.mixins.GeoDBMixin method)</a>
 
       <ul>
@@ -303,34 +508,116 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.fillna">fillna() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.feature_gt">feature_gt() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.feature_gt">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.feature_lt">feature_lt() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.feature_lt">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.fillna">fillna() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.fillna">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.fillna">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.fillna">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.fillna">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.fillna">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.filter">filter() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.filter">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.final">final() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.final">(traffic.core.FlightIterator method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.final">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.first">first() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.first">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.flatten">flatten() (traffic.core.Airspace method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight">Flight (class in traffic.core)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.NMB2B.flight_get">flight_get() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.flight_id">flight_id (traffic.core.Flight property)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.flight_ids">flight_ids (traffic.core.Traffic attribute)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.NMB2B.flight_list">flight_list() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flight.FlightInfo.flight_plan">flight_plan (traffic.data.eurocontrol.b2b.flight.FlightInfo property)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.NMB2B.flight_search">flight_search() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flight.FlightInfo">FlightInfo (class in traffic.data.eurocontrol.b2b.flight)</a>
+</li>
+      <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator">FlightIterator (class in traffic.core)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flight.FlightList">FlightList (class in traffic.data.eurocontrol.b2b.flight)</a>
+</li>
+      <li><a href="data_sources/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.flightlist">flightlist() (traffic.data.adsb.opensky_impala.Impala method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan">FlightPlan (class in traffic.core.flightplan)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flight.FlightPlanList">FlightPlanList (class in traffic.data.eurocontrol.b2b.flight)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.frequency">frequency (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.frequency">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.from_file">from_file() (traffic.core.mixins.DataFrameMixin class method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.from_file">[1]</a>
+      <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.from_address">from_address() (traffic.data.adsb.decode.ModeS_Decoder class method)</a>
+</li>
+      <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.from_dump1090">from_dump1090() (traffic.data.adsb.decode.ModeS_Decoder class method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.from_file">from_file() (traffic.core.Flight class method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.from_file">(traffic.core.mixins.DataFrameMixin class method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.from_file">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.from_file">(traffic.core.mixins.GeoDBMixin class method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.from_file">(traffic.core.mixins.GeographyMixin class method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.from_file">(traffic.core.sv.StateVectors class method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.from_file">(traffic.core.Traffic class method)</a>
+</li>
+        <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.from_file">(traffic.data.adsb.decode.ModeS_Decoder class method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6.from_file">(traffic.data.eurocontrol.ddr.so6.SO6 class method)</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.from_flights">from_flights() (traffic.core.Traffic class method)</a>
+</li>
+      <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.from_rtlsdr">from_rtlsdr() (traffic.data.adsb.decode.ModeS_Decoder class method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.fuelflow">fuelflow() (traffic.core.Flight method)</a>, <a href="tutorial/fuel_burn.html#traffic.core.Flight.fuelflow">[1]</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -339,11 +626,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tutorial/generation.html#traffic.algorithms.generation.Generation">Generation (class in traffic.algorithms.generation)</a>
 </li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.generation">generation() (traffic.core.Traffic method)</a>
+</li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin">GeoDBMixin (class in traffic.core.mixins)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.geoencode">geoencode() (traffic.core.mixins.GeoDBMixin method)</a>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.geoencode">geoencode() (traffic.core.Airspace method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.geoencode">(traffic.core.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.geoencode">(traffic.core.mixins.GeoDBMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.geoencode">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.geoencode">(traffic.core.mixins.ShapelyMixin method)</a>
@@ -354,12 +647,18 @@
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.geoencode">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.geoencode">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin">GeographyMixin (class in traffic.core.mixins)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.geojson">geojson() (traffic.core.mixins.ShapelyMixin method)</a>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.geojson">geojson() (traffic.core.Airspace method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.geojson">(traffic.core.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.geojson">(traffic.core.mixins.ShapelyMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.geojson">(traffic.core.structure.Airport method)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.geojson">(traffic.core.structure.Route method)</a>
@@ -375,16 +674,24 @@
         <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids.global_get">(traffic.data.basic.navaid.Navaids method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.go_around">go_around() (traffic.core.Flight method)</a>
+</li>
       <li><a href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.greatcircle">greatcircle() (in module traffic.core.geodesy)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.groupby">groupby() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.ground_trajectory">ground_trajectory() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.groupby">groupby() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.groupby">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.groupby">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.groupby">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.groupby">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.groupby">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -393,7 +700,23 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.has">has() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.has">(traffic.core.FlightIterator method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.has">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.HBoxMixin">HBoxMixin (class in traffic.core.mixins)</a>
+</li>
+      <li><a href="data_sources/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.history">history() (traffic.data.adsb.opensky_impala.Impala method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.holding_pattern">holding_pattern() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.holes">holes (traffic.core.Flight property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -413,8 +736,12 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportNamedTuple.icao">(traffic.core.structure.AirportNamedTuple attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.icao24">icao24 (traffic.core.Flight property)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.icao24">(traffic.core.Traffic attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.index">index() (traffic.core.structure.Airport method)</a>
 
       <ul>
@@ -426,11 +753,49 @@
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.inside_bbox">inside_bbox() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.inside_bbox">(traffic.core.Traffic method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6.inside_bbox">(traffic.data.eurocontrol.ddr.so6.SO6 method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.intersects">intersects() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6.intersects">(traffic.data.eurocontrol.ddr.so6.SO6 method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.is_from_inertial">is_from_inertial() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.iterate">iterate() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.iterate_lazy">iterate_lazy() (traffic.core.Traffic method)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_airport">landing_airport() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_at">landing_at() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.landing_at">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_attempts">landing_attempts() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.last">last() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.last">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.latitude">latitude (traffic.core.structure.Airport attribute)</a>
 
       <ul>
@@ -449,18 +814,30 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.lazy_evaluation">lazy_evaluation() (in module traffic.core.lazy)</a>
 </li>
-      <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic">LazyTraffic (class in traffic.core.lazy)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.leaflet">leaflet() (traffic.core.structure.Airport method)</a>
+      <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic">LazyTraffic (class in traffic.core.lazy)</a>
+</li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.leaflet">leaflet() (traffic.core.Airspace method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.leaflet">(traffic.core.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan.leaflet">(traffic.core.flightplan.FlightPlan method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.leaflet">(traffic.core.structure.Airport method)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.leaflet">(traffic.core.structure.Navaid method)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.leaflet">(traffic.core.structure.Route method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.leaflet">(traffic.core.sv.StateVectors method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.longer_than">longer_than() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.longer_than">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.longitude">longitude (traffic.core.structure.Airport attribute)</a>
@@ -479,30 +856,70 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.mach2cas">mach2cas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.mach2tas">mach2tas() (in module traffic.core.aero)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.magnetic_variation">magnetic_variation (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.magnetic_variation">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.merge">merge() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.max">max() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.max">(traffic.core.FlightIterator method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.max_split">max_split() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.max_split">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.mean">mean() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.merge">merge() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.merge">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.merge">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.merge">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.merge">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.merge">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.model">model() (traffic.data.basic.aircraft.Aircraft method)</a>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.metres_to_feet_rounded">metres_to_feet_rounded() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.metric_spd_to_knots_rounded">metric_spd_to_knots_rounded() (in module traffic.core.aero)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.min">min() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.min">(traffic.core.FlightIterator method)</a>
+</li>
+      </ul></li>
+      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.model">model() (traffic.data.basic.aircraft.Aircraft method)</a>
+</li>
+      <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder">ModeS_Decoder (class in traffic.data.adsb.decode)</a>
+</li>
       <li>
     module
 
       <ul>
+        <li><a href="api_reference/traffic.core.aero.html#module-traffic.core.aero">traffic.core.aero</a>
+</li>
+        <li><a href="api_reference/traffic.core.distance.html#module-traffic.core.distance">traffic.core.distance</a>
+</li>
+        <li><a href="api_reference/traffic.core.flightplan.html#module-traffic.core.flightplan">traffic.core.flightplan</a>
+</li>
         <li><a href="api_reference/traffic.core.geodesy.html#module-traffic.core.geodesy">traffic.core.geodesy</a>
 </li>
         <li><a href="api_reference/traffic.core.lazy.html#module-traffic.core.lazy">traffic.core.lazy</a>
@@ -515,7 +932,13 @@
 </li>
         <li><a href="api_reference/traffic.core.time.html#module-traffic.core.time">traffic.core.time</a>
 </li>
+        <li><a href="data_sources/decode.html#module-traffic.data.adsb.decode">traffic.data.adsb.decode</a>
+</li>
+        <li><a href="data_sources/flightplans.html#module-traffic.data.eurocontrol.ddr.so6">traffic.data.eurocontrol.ddr.so6</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.moving">moving() (traffic.core.Flight method)</a>
+</li>
       <li><a href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.mrr_diagonal">mrr_diagonal() (in module traffic.core.geodesy)</a>
 </li>
   </ul></td>
@@ -534,13 +957,23 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.name">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid">Navaid (class in traffic.core.structure)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids">Navaids (class in traffic.data.basic.navaid)</a>
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple">NavaidTuple (class in traffic.core.structure)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.next">next() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.next">(traffic.core.FlightIterator method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.next">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.number">number (traffic.core.Flight property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -548,7 +981,17 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_parking_position">on_parking_position() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_runway">on_runway() (traffic.core.Flight method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_taxiway">on_taxiway() (traffic.core.Flight method)</a>
+</li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.operator">operator() (traffic.data.basic.aircraft.Aircraft method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.origin">origin (traffic.core.Flight property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -556,19 +999,61 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.plot">plot() (traffic.core.sv.StateVectors method)</a>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flight.FlightInfo.parsePlan">parsePlan() (traffic.data.eurocontrol.b2b.flight.FlightInfo method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.project_shape">project_shape() (traffic.core.mixins.ShapelyMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.phases">phases() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.phases">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.pipe">pipe() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.pipe">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.plot">plot() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.plot">(traffic.core.FlightIterator method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan.plot">(traffic.core.flightplan.FlightPlan method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.plot">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.plot">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.plot_time">plot_time() (traffic.core.Flight method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.plot_wind">plot_wind() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.plot_wind">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.point_merge">point_merge() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.pressure">pressure() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.project_shape">project_shape() (traffic.core.Airspace method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.project_shape">(traffic.core.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin.project_shape">(traffic.core.mixins.ShapelyMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.project_shape">(traffic.core.structure.Airport method)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.project_shape">(traffic.core.structure.Route method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.cache.html#traffic.core.cache.property_cache">property_cache() (in module traffic.core.cache)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.pushback">pushback() (traffic.core.Flight method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -576,16 +1061,34 @@
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.query">query() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.query">query() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.query">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.query">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.query">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.query">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.query">(traffic.core.Traffic method)</a>
+</li>
         <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.query">(traffic.data.basic.aircraft.Aircraft method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.query_ehs">query_ehs() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.query_ehs">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.query_opensky">query_opensky() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.query_opensky">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -594,43 +1097,75 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_sources/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.rawdata">rawdata() (traffic.data.adsb.opensky_impala.Impala method)</a>
+</li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.registration">registration() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.rename">rename() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.NMB2B.regulation_list">regulation_list() (traffic.data.eurocontrol.b2b.NMB2B method)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flow.RegulationInfo">RegulationInfo (class in traffic.data.eurocontrol.b2b.flow)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.b2b.flow.RegulationList">RegulationList (class in traffic.data.eurocontrol.b2b.flow)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.rename">rename() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.rename">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.rename">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.rename">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.rename">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.rename">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.replace">replace() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.replace">replace() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.replace">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.replace">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.replace">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.replace">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.replace">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user_guide/simplify.html#traffic.core.flight.Flight.resample">resample() (traffic.core.flight.Flight method)</a>
+      <li><a href="data_sources/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.request">request() (traffic.data.adsb.opensky_impala.Impala method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.reset_index">reset_index() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.resample">resample() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="user_guide/simplify.html#traffic.core.flight.Flight.resample">(traffic.core.flight.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.resample">(traffic.core.Traffic method)</a>
+</li>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.resample">(traffic.data.eurocontrol.ddr.so6.SO6Flight method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.reset_index">reset_index() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.reset_index">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.reset_index">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.reset_index">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.reset_index">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.reset_index">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route">Route (class in traffic.core.structure)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.runway_change">runway_change() (traffic.core.Flight method)</a>
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.runways">runways (traffic.core.structure.Airport property)</a>
 </li>
@@ -652,23 +1187,75 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin">ShapelyMixin (class in traffic.core.mixins)</a>
 </li>
-      <li><a href="user_guide/simplify.html#traffic.core.flight.Flight.simplify">simplify() (traffic.core.flight.Flight method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.shorten">shorten() (traffic.core.Flight method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.sort_values">sort_values() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.shorter_than">shorter_than() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.shorter_than">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.simplify">simplify() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="user_guide/simplify.html#traffic.core.flight.Flight.simplify">(traffic.core.flight.Flight method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.simplify">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.skip">skip() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.slow_taxi">slow_taxi() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6">SO6 (class in traffic.data.eurocontrol.ddr.so6)</a>
+</li>
+      <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight">SO6Flight (class in traffic.data.eurocontrol.ddr.so6)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.sort_values">sort_values() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.sort_values">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.sort_values">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.sort_values">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.sort_values">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.sort_values">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.split">split() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.squawk">squawk (traffic.core.Flight property)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.start">start (traffic.core.Flight property)</a>
+
+      <ul>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.start">(traffic.data.eurocontrol.ddr.so6.SO6Flight property)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.start_time">start_time (traffic.core.Traffic attribute)</a>
+</li>
       <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors">StateVectors (class in traffic.core.sv)</a>
 </li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.stats">stats() (traffic.data.basic.aircraft.Aircraft method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.stop">stop (traffic.core.Flight property)</a>
+
+      <ul>
+        <li><a href="data_sources/flightplans.html#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop">(traffic.data.eurocontrol.ddr.so6.SO6Flight property)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.sum">sum() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.sum">(traffic.core.FlightIterator method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.summary">summary() (traffic.core.Traffic method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -676,76 +1263,147 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_csv">to_csv() (traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_csv">[1]</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_airport">takeoff_airport() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_from">takeoff_from() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.takeoff_from">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_from_runway">takeoff_from_runway() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.tas2cas">tas2cas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.tas2eas">tas2eas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.tas2mach">tas2mach() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.temp">temp() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_csv">to_csv() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_csv">(traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_csv">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_csv">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_csv">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_csv">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_csv">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_excel">to_excel() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_excel">to_excel() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_excel">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_excel">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_excel">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_excel">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_excel">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_feather">to_feather() (traffic.core.mixins.DataFrameMixin method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_feather">to_feather() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_feather">(traffic.core.mixins.DataFrameMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_feather">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_feather">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_feather">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_feather">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_hdf">to_hdf() (traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_hdf">[1]</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_hdf">to_hdf() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_hdf">(traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_hdf">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_hdf">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_hdf">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_hdf">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_hdf">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_json">to_json() (traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_json">[1]</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_json">to_json() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_json">(traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_json">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_json">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_json">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_json">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_json">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_parquet">to_parquet() (traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_parquet">[1]</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_parquet">to_parquet() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_parquet">(traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_parquet">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_parquet">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_parquet">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_parquet">(traffic.core.sv.StateVectors method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_parquet">(traffic.core.Traffic method)</a>
+</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_pickle">to_pickle() (traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_pickle">[1]</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_pickle">to_pickle() (traffic.core.Flight method)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin.to_pickle">(traffic.core.mixins.DataFrameMixin method)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin.to_pickle">[1]</a>
+</li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.to_pickle">(traffic.core.mixins.GeoDBMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeographyMixin.to_pickle">(traffic.core.mixins.GeographyMixin method)</a>
 </li>
         <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors.to_pickle">(traffic.core.sv.StateVectors method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_pickle">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic">Traffic (class in traffic.core)</a>
+</li>
+      <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.traffic">traffic (traffic.data.adsb.decode.ModeS_Decoder property)</a>
+</li>
+      <li>
+    traffic.core.aero
+
+      <ul>
+        <li><a href="api_reference/traffic.core.aero.html#module-traffic.core.aero">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.core.distance
+
+      <ul>
+        <li><a href="api_reference/traffic.core.distance.html#module-traffic.core.distance">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.core.flightplan
+
+      <ul>
+        <li><a href="api_reference/traffic.core.flightplan.html#module-traffic.core.flightplan">module</a>
 </li>
       </ul></li>
       <li>
@@ -790,12 +1448,76 @@
         <li><a href="api_reference/traffic.core.time.html#module-traffic.core.time">module</a>
 </li>
       </ul></li>
+      <li>
+    traffic.data.adsb.decode
+
+      <ul>
+        <li><a href="data_sources/decode.html#module-traffic.data.adsb.decode">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.data.eurocontrol.ddr.so6
+
+      <ul>
+        <li><a href="data_sources/flightplans.html#module-traffic.data.eurocontrol.ddr.so6">module</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.core.traffic.html#traffic.core.lazy.Traffic.LazyTraffic">Traffic.LazyTraffic (class in traffic.core.lazy)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.type">type (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.type">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.unwrap">unwrap() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.unwrap">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vatmos">vatmos() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vcas2mach">vcas2mach() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vcas2tas">vcas2tas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vdensity">vdensity() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.veas2tas">veas2tas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vmach2cas">vmach2cas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vmach2tas">vmach2tas() (in module traffic.core.aero)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vpressure">vpressure() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vsound">vsound() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vtas2cas">vtas2cas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vtas2eas">vtas2eas() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vtas2mach">vtas2mach() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vtemp">vtemp() (in module traffic.core.aero)</a>
+</li>
+      <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.vvsound">vvsound() (in module traffic.core.aero)</a>
+</li>
   </ul></td>
 </tr></table>
 

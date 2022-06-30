@@ -18,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -102,7 +103,7 @@
            <div itemprop="articleBody">
              
   <section id="impact-of-covid-19-on-worldwide-aviation">
-<h1>Impact of COVID-19 on worldwide aviation<a class="headerlink" href="#impact-of-covid-19-on-worldwide-aviation" title="Permalink to this headline"></a></h1>
+<h1>Impact of COVID-19 on worldwide aviation<a class="headerlink" href="#impact-of-covid-19-on-worldwide-aviation" title="Permalink to this heading"></a></h1>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.6411336"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.6411336.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6411336.svg" /></a>
 <div class="admonition-information admonition">
 <p class="admonition-title">Information</p>
@@ -133,7 +134,7 @@ The underlying data is currently updated daily.</p>
 </ul>
 <p>This list may not be exhaustive. You may <a class="reference external" href="https://github.com/xoolive/traffic/issues/new">open an issue</a> on the github of the library in order to reference more websites.</p>
 <section id="flight-evolution-per-airport">
-<h2>Flight evolution per airport<a class="headerlink" href="#flight-evolution-per-airport" title="Permalink to this headline"></a></h2>
+<h2>Flight evolution per airport<a class="headerlink" href="#flight-evolution-per-airport" title="Permalink to this heading"></a></h2>
 <p>The following plot displays the current trend in number of departing aircraft from airports in various areas around the world (covered by The OpenSky Network).</p>
 <div id="covid19_airports"></div>
 
@@ -152,7 +153,7 @@ The underlying data is currently updated daily.</p>
 <p>In the past few days, some airports and airlines seem to have experienced a slight increase of activity.</p>
 </section>
 <section id="flight-evolution-per-airline">
-<h2>Flight evolution per airline<a class="headerlink" href="#flight-evolution-per-airline" title="Permalink to this headline"></a></h2>
+<h2>Flight evolution per airline<a class="headerlink" href="#flight-evolution-per-airline" title="Permalink to this heading"></a></h2>
 <div id="covid19_airlines"></div>
 
 <script type="text/javascript">
@@ -168,7 +169,7 @@ The underlying data is currently updated daily.</p>
 </ul>
 </section>
 <section id="data-collection-and-preparation">
-<h2>Data collection and preparation<a class="headerlink" href="#data-collection-and-preparation" title="Permalink to this headline"></a></h2>
+<h2>Data collection and preparation<a class="headerlink" href="#data-collection-and-preparation" title="Permalink to this heading"></a></h2>
 <p>On the <a class="reference external" href="../opensky_impala.html">Impala shell</a>, a particular table contains flight lists with associated origin and destination airport. The data has been downloaded using the <a class="reference external" href="https://traffic-viz.github.io/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.flightlist">opensky.flightlist</a> method, curated, then aggregated with aircraft and flight number information before being published <a class="reference external" href="https://opensky-network.org/datasets/covid-19/">here</a>. Download the data and run the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>

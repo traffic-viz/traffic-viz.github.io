@@ -18,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -95,7 +96,7 @@
            <div itemprop="articleBody">
              
   <section id="detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection">
-<h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Permalink to this headline"></a></h1>
+<h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Permalink to this heading"></a></h1>
 <p>Xavier Olive, Jeremy Grignard, Thomas Dubot and Julie Saint-Lot</p>
 <div class="line-block">
 <div class="line"><em>This notebook comes with the paper published at Sesar Innovation Days
@@ -104,7 +105,7 @@
 reproducibility concerns.</div>
 </div>
 <section id="the-dataset">
-<h2>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline"></a></h2>
+<h2>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this heading"></a></h2>
 <p>The basic dataset consists of one year of trajectories between Paris
 Orly and Toulouse Blagnac airports. A learning box is arbitrarily
 defined so as to include about 20 minutes of flight before entering the
@@ -142,7 +143,7 @@ callsigns selected for this route.</p>
 </div>
 </section>
 <section id="data-preparation">
-<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline"></a></h2>
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading"></a></h2>
 <p>The following plot explains how each trajectory is prepared. The basic
 idea is to clip the trajectory to the learning box, then to resample
 each trajectory to a fixed number of samples (15 on the figure, 150 for
@@ -320,7 +321,7 @@ dataset.</p>
     </tr></tbody>
 </table></section>
 <section id="machine-learning">
-<h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline"></a></h2>
+<h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading"></a></h2>
 <p>The anomaly detection method is based on a shallow autoencoder
 (<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation). For the sake of
 this example, we focus on the track angle signal. At the end of the
