@@ -29,7 +29,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How to run traffic in a Docker container?" href="docker.html" />
+    <link rel="next" title="How to use traffic in a Docker container?" href="docker.html" />
     <link rel="prev" title="How to use traffic command line interface tools?" href="cli_tui.html" /> 
 </head>
 
@@ -63,7 +63,7 @@
 <li class="toctree-l3"><a class="reference internal" href="plugins.html">How to use and write plugins for the traffic library?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli_tui.html">How to use traffic command line interface tools?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How to use the traffic graphical user interface?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docker.html">How to run traffic in a Docker container?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">How to use traffic in a Docker container?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#troubleshooting">Troubleshooting</a></li>
@@ -106,7 +106,7 @@ to decode and explore historical and live data.</p>
 <p>The GUI can be installed as a plugin package and is accessible through
 the following command (clickable application icons are doable and will probably
 be automatically generated in future versions)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">traffic_qtgui</span>  <span class="c1"># first install the plugin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">traffic_qtgui</span>  <span class="c1"># first install the plugin</span>
 <span class="n">traffic</span> <span class="n">gui</span>
 </pre></div>
 </div>
@@ -127,14 +127,22 @@ the configuration file, in the <code class="docutils literal notranslate"><span 
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Available projections are default cartopy projections, completed by additional common European projections in the cartes <a class="reference external" href="https://github.com/xoolive/cartes/tree/master/cartes/crs">dependency module</a> (here <a class="reference external" href="https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert#Lambert_93">Lambert 93</a> is the official projection in France, <a class="reference external" href="https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten">Amersfoort</a> in the Netherlands and <a class="reference external" href="https://de.wikipedia.org/wiki/Gau%C3%9F-Kr%C3%BCger-Koordinatensystem">Gauss-Krüger</a> in Germany)</p>
+<p>Available projections are default cartopy projections, completed by
+additional common European projections in the cartes <a class="reference external" href="https://github.com/xoolive/cartes/tree/master/cartes/crs">dependency module</a> (here <a class="reference external" href="https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert#Lambert_93">Lambert
+93</a>
+is the official projection in France, <a class="reference external" href="https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten">Amersfoort</a> in the
+Netherlands and <a class="reference external" href="https://de.wikipedia.org/wiki/Gau%C3%9F-Kr%C3%BCger-Koordinatensystem">Gauss-Krüger</a> in
+Germany)</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can implement more projections as <a class="reference external" href="plugins.html">plugins</a>.</p>
 </div>
-<p>You can either pan and zoom the map. Zoom is operated by the mouse or trackpad scroll. Note that on MacOS, the trackpad scroll requires clicking.</p>
-<p>In order to explore data, click on <em>Open file</em> and select a .pkl file (like <code class="docutils literal notranslate"><span class="pre">sample_opensky.pkl</span></code> in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory) By default, a scatter of all last recorded points is displayed.</p>
+<p>You can either pan and zoom the map. Zoom is operated by the mouse or trackpad
+scroll. Note that on MacOS, the trackpad scroll requires clicking.</p>
+<p>In order to explore data, click on <em>Open file</em> and select a .pkl file (like
+<code class="docutils literal notranslate"><span class="pre">sample_opensky.pkl</span></code> in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory) By default, a scatter of all
+last recorded points is displayed.</p>
 <a class="reference internal image-reference" href="../_images/gui_map.png"><img alt="Scatter plot" class="align-center" src="../_images/gui_map.png" style="width: 516.0px; height: 427.0px;" /></a>
 <ul class="simple">
 <li><p>You may select callsigns in order to plot trajectories.</p></li>
@@ -216,7 +224,7 @@ of the data:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cli_tui.html" class="btn btn-neutral float-left" title="How to use traffic command line interface tools?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="docker.html" class="btn btn-neutral float-right" title="How to run traffic in a Docker container?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="docker.html" class="btn btn-neutral float-right" title="How to use traffic in a Docker container?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

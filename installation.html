@@ -96,11 +96,10 @@
 for calls to REST APIs. <a class="reference external" href="http://www.paramiko.org/">paramiko</a> implements the
 SSH protocol in Pure Python, giving access to SSH connection independently of
 the operating system.</p>
-<p>Static visualisation tools are accessible with Matplotlib through the
-<a class="reference external" href="https://github.com/xoolive/cartes">cartes</a> library, which leverages
-access to more projections and to data from OpenStreetMap. More dynamic
-visualisations in Jupyter Lab are accessible thanks to the <a class="reference external" href="https://altair-viz.github.io/">altair</a> and <a class="reference external" href="http://ipyleaflet.readthedocs.io/">ipyleaflet</a> libraries; other exports to various formats
-(including CesiumJS or Google Earth) are also available.</p>
+<p>Static visualisation tools are accessible with Matplotlib through the <a class="reference external" href="https://github.com/xoolive/cartes">cartes</a> library, which leverages access to more
+projections and to data from OpenStreetMap. More dynamic visualisations in
+Jupyter Lab are accessible thanks to the <a class="reference external" href="https://altair-viz.github.io/">altair</a> and <a class="reference external" href="http://ipyleaflet.readthedocs.io/">ipyleaflet</a> libraries; other exports to various
+formats (including CesiumJS or Google Earth) are also available.</p>
 <section id="latest-release">
 <h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this heading"></a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
@@ -109,7 +108,8 @@ conda create -n traffic -c conda-forge <span class="nv">python</span><span class
 conda activate traffic
 </pre></div>
 </div>
-<p>Adjust the Python version you need (&gt;=3.7) and append packages you need for working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
+<p>Adjust the Python version you need (&gt;=3.7) and append packages you need for
+working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 <p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate traffic
 </pre></div>
@@ -176,6 +176,23 @@ integration (GitHub Actions) fails.</p>
 </div>
 </li>
 </ul>
+<p>If you work with Visual Studio Code, you can use the Development container that
+already contains all the dependencies. Just pull/clone the latest version and
+open the directory or the <code class="docutils literal notranslate"><span class="pre">traffic.code-workspace</span></code> file with VS Code. You
+will get a little pop-up message informing you that a Dev Container exists.</p>
+<img alt="_images/start_in_container.png" src="_images/start_in_container.png" />
+<p>Just click <em>Reopen in Container</em> and VS Code will create and configure the
+container for you. You can now work in the container with a pre-defined
+development environment that contains all the dependencies you need.</p>
+<p>The provided image runs with <a class="reference external" href="https://python-poetry.org/">poetry</a> which will
+set a proper environment with frozen version of dependencies, a desirable
+behavior when you run tests in continuous integration.</p>
+<p>If your sit behind a proxy, the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> command which will run
+automatically when you first open the Docker container may fail: you may have
+to manually set your proxy environment variables in the container shell before
+running <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> again in order to get the container ready.</p>
+<p>Read more about <a href="#id1"><span class="problematic" id="id2">:ref:`Docker containers &lt;How to use traffic in a Docker
+container?&gt;`_</span></a> for traffic.</p>
 </section>
 </section>
 
