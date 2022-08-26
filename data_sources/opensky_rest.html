@@ -336,28 +336,8 @@ bounds:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_routes</span><span class="p">(</span><span class="s2">&quot;AFR292&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/traffic/data/adsb/opensky.py:322,</span> in <span class="ni">OpenSky.api_routes</span><span class="nt">(self, callsign)</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">airports</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/routes?callsign=</span><span class="si">{</span><span class="n">callsign</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">322</span> <span class="n">c</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="n">json</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Airport</span><span class="p">,</span> <span class="n">airports</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">json</span><span class="p">[</span><span class="s2">&quot;route&quot;</span><span class="p">])</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.9/site-packages/requests/models.py:1021,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1016</span>     <span class="n">http_error_msg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> Server Error: </span><span class="si">{</span><span class="n">reason</span><span class="si">}</span><span class="s2"> for url: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="n">http_error_msg</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1021</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">http_error_msg</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="ne">HTTPError</span>: 404 Client Error:  for url: https://opensky-network.org/api/routes?callsign=AFR292
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(Airport(icao=&#39;LFPG&#39;, iata=&#39;CDG&#39;, name=&#39;Charles de Gaulle International Airport&#39;, country=&#39;France&#39;, latitude=49.012798, longitude=2.55, altitude=392.0),
+ Airport(icao=&#39;RJBB&#39;, iata=&#39;KIX&#39;, name=&#39;Kansai International Airport&#39;, country=&#39;Japan&#39;, latitude=34.427299, longitude=135.244003, altitude=26.0))
 </pre></div>
 </div>
 </div>
