@@ -1834,10 +1834,10 @@ altair equivalent.</p>
 <p>Example usage:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
 <span class="c1"># most simple version</span>
-<span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s1">&#39;altitude&#39;</span><span class="p">)</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">plot_time</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s1">&#39;altitude&#39;</span><span class="p">)</span>
 <span class="c1"># or with several comparable features and twin axes</span>
-<span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;groundspeed, &#39;</span><span class="n">IAS</span><span class="s1">&#39;, &#39;</span><span class="n">TAS</span><span class="s1">&#39;],</span>
+<span class="n">flight</span><span class="o">.</span><span class="n">plot_time</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;groundspeed&#39;</span><span class="p">,</span> <span class="s1">&#39;IAS&#39;</span><span class="p">,</span> <span class="s1">&#39;TAS&#39;</span><span class="p">],</span>
     <span class="n">secondary_y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
