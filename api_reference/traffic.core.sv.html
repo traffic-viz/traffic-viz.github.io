@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -68,7 +69,37 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.sv</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.sv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.sv.StateVectors"><code class="docutils literal notranslate"><span class="pre">StateVectors</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.agg_xy"><code class="docutils literal notranslate"><span class="pre">StateVectors.agg_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.assign"><code class="docutils literal notranslate"><span class="pre">StateVectors.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.compute_latlon_from_xy"><code class="docutils literal notranslate"><span class="pre">StateVectors.compute_latlon_from_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.compute_xy"><code class="docutils literal notranslate"><span class="pre">StateVectors.compute_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.drop"><code class="docutils literal notranslate"><span class="pre">StateVectors.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">StateVectors.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.fillna"><code class="docutils literal notranslate"><span class="pre">StateVectors.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.from_file"><code class="docutils literal notranslate"><span class="pre">StateVectors.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.geoencode"><code class="docutils literal notranslate"><span class="pre">StateVectors.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.groupby"><code class="docutils literal notranslate"><span class="pre">StateVectors.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.leaflet"><code class="docutils literal notranslate"><span class="pre">StateVectors.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.merge"><code class="docutils literal notranslate"><span class="pre">StateVectors.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.plot"><code class="docutils literal notranslate"><span class="pre">StateVectors.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.query"><code class="docutils literal notranslate"><span class="pre">StateVectors.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.rename"><code class="docutils literal notranslate"><span class="pre">StateVectors.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.replace"><code class="docutils literal notranslate"><span class="pre">StateVectors.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.reset_index"><code class="docutils literal notranslate"><span class="pre">StateVectors.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.sort_values"><code class="docutils literal notranslate"><span class="pre">StateVectors.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_csv"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_excel"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_feather"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_hdf"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_json"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_parquet"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.sv.StateVectors.to_pickle"><code class="docutils literal notranslate"><span class="pre">StateVectors.to_pickle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
 </ul>

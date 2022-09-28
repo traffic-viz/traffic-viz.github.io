@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -58,7 +59,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.aero</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.aero</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.atmos"><code class="docutils literal notranslate"><span class="pre">atmos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.cas2mach"><code class="docutils literal notranslate"><span class="pre">cas2mach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.cas2tas"><code class="docutils literal notranslate"><span class="pre">cas2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.density"><code class="docutils literal notranslate"><span class="pre">density()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.eas2tas"><code class="docutils literal notranslate"><span class="pre">eas2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.mach2cas"><code class="docutils literal notranslate"><span class="pre">mach2cas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.mach2tas"><code class="docutils literal notranslate"><span class="pre">mach2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.metres_to_feet_rounded"><code class="docutils literal notranslate"><span class="pre">metres_to_feet_rounded()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.metric_spd_to_knots_rounded"><code class="docutils literal notranslate"><span class="pre">metric_spd_to_knots_rounded()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.pressure"><code class="docutils literal notranslate"><span class="pre">pressure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.tas2cas"><code class="docutils literal notranslate"><span class="pre">tas2cas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.tas2eas"><code class="docutils literal notranslate"><span class="pre">tas2eas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.tas2mach"><code class="docutils literal notranslate"><span class="pre">tas2mach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.temp"><code class="docutils literal notranslate"><span class="pre">temp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vatmos"><code class="docutils literal notranslate"><span class="pre">vatmos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vcas2mach"><code class="docutils literal notranslate"><span class="pre">vcas2mach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vcas2tas"><code class="docutils literal notranslate"><span class="pre">vcas2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vdensity"><code class="docutils literal notranslate"><span class="pre">vdensity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.veas2tas"><code class="docutils literal notranslate"><span class="pre">veas2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vmach2cas"><code class="docutils literal notranslate"><span class="pre">vmach2cas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vmach2tas"><code class="docutils literal notranslate"><span class="pre">vmach2tas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vpressure"><code class="docutils literal notranslate"><span class="pre">vpressure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vsound"><code class="docutils literal notranslate"><span class="pre">vsound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vtas2cas"><code class="docutils literal notranslate"><span class="pre">vtas2cas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vtas2eas"><code class="docutils literal notranslate"><span class="pre">vtas2eas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vtas2mach"><code class="docutils literal notranslate"><span class="pre">vtas2mach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vtemp"><code class="docutils literal notranslate"><span class="pre">vtemp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.aero.vvsound"><code class="docutils literal notranslate"><span class="pre">vvsound()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>

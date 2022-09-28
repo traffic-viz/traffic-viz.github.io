@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -58,7 +59,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.aero.html">traffic.core.aero</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.airspace</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.airspace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.Airspace"><code class="docutils literal notranslate"><span class="pre">Airspace</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.area"><code class="docutils literal notranslate"><span class="pre">Airspace.area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.bounds"><code class="docutils literal notranslate"><span class="pre">Airspace.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.centroid"><code class="docutils literal notranslate"><span class="pre">Airspace.centroid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.extent"><code class="docutils literal notranslate"><span class="pre">Airspace.extent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.flatten"><code class="docutils literal notranslate"><span class="pre">Airspace.flatten()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.geoencode"><code class="docutils literal notranslate"><span class="pre">Airspace.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.geojson"><code class="docutils literal notranslate"><span class="pre">Airspace.geojson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.leaflet"><code class="docutils literal notranslate"><span class="pre">Airspace.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Airspace.project_shape"><code class="docutils literal notranslate"><span class="pre">Airspace.project_shape()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>

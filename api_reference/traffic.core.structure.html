@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -67,7 +68,82 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Airport"><code class="docutils literal notranslate"><span class="pre">Airport</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.altitude"><code class="docutils literal notranslate"><span class="pre">Airport.altitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.area"><code class="docutils literal notranslate"><span class="pre">Airport.area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.bounds"><code class="docutils literal notranslate"><span class="pre">Airport.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.centroid"><code class="docutils literal notranslate"><span class="pre">Airport.centroid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.count"><code class="docutils literal notranslate"><span class="pre">Airport.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.country"><code class="docutils literal notranslate"><span class="pre">Airport.country</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.extent"><code class="docutils literal notranslate"><span class="pre">Airport.extent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.geoencode"><code class="docutils literal notranslate"><span class="pre">Airport.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.geojson"><code class="docutils literal notranslate"><span class="pre">Airport.geojson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.iata"><code class="docutils literal notranslate"><span class="pre">Airport.iata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.icao"><code class="docutils literal notranslate"><span class="pre">Airport.icao</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.index"><code class="docutils literal notranslate"><span class="pre">Airport.index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latitude"><code class="docutils literal notranslate"><span class="pre">Airport.latitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latlon"><code class="docutils literal notranslate"><span class="pre">Airport.latlon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.leaflet"><code class="docutils literal notranslate"><span class="pre">Airport.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.longitude"><code class="docutils literal notranslate"><span class="pre">Airport.longitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.name"><code class="docutils literal notranslate"><span class="pre">Airport.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.project_shape"><code class="docutils literal notranslate"><span class="pre">Airport.project_shape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.runways"><code class="docutils literal notranslate"><span class="pre">Airport.runways</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.altitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.altitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.count"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.country"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.country</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.iata"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.iata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.icao"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.icao</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.index"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.latitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.latitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.longitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.longitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.name"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Navaid"><code class="docutils literal notranslate"><span class="pre">Navaid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.altitude"><code class="docutils literal notranslate"><span class="pre">Navaid.altitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.count"><code class="docutils literal notranslate"><span class="pre">Navaid.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.description"><code class="docutils literal notranslate"><span class="pre">Navaid.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.frequency"><code class="docutils literal notranslate"><span class="pre">Navaid.frequency</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.index"><code class="docutils literal notranslate"><span class="pre">Navaid.index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latitude"><code class="docutils literal notranslate"><span class="pre">Navaid.latitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latlon"><code class="docutils literal notranslate"><span class="pre">Navaid.latlon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.leaflet"><code class="docutils literal notranslate"><span class="pre">Navaid.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.longitude"><code class="docutils literal notranslate"><span class="pre">Navaid.longitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.magnetic_variation"><code class="docutils literal notranslate"><span class="pre">Navaid.magnetic_variation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.name"><code class="docutils literal notranslate"><span class="pre">Navaid.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.type"><code class="docutils literal notranslate"><span class="pre">Navaid.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.NavaidTuple"><code class="docutils literal notranslate"><span class="pre">NavaidTuple</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.altitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.altitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.count"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.description"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.frequency"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.frequency</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.index"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.latitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.latitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.longitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.longitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.magnetic_variation"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.magnetic_variation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.name"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.type"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.area"><code class="docutils literal notranslate"><span class="pre">Route.area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.bounds"><code class="docutils literal notranslate"><span class="pre">Route.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.centroid"><code class="docutils literal notranslate"><span class="pre">Route.centroid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.extent"><code class="docutils literal notranslate"><span class="pre">Route.extent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.geoencode"><code class="docutils literal notranslate"><span class="pre">Route.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.geojson"><code class="docutils literal notranslate"><span class="pre">Route.geojson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.leaflet"><code class="docutils literal notranslate"><span class="pre">Route.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Route.project_shape"><code class="docutils literal notranslate"><span class="pre">Route.project_shape()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>

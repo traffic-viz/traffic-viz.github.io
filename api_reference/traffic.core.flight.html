@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -62,7 +63,131 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.flight</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.flight</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.Flight"><code class="docutils literal notranslate"><span class="pre">Flight</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.abs"><code class="docutils literal notranslate"><span class="pre">Flight.abs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.after"><code class="docutils literal notranslate"><span class="pre">Flight.after()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.agg_time"><code class="docutils literal notranslate"><span class="pre">Flight.agg_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.agg_xy"><code class="docutils literal notranslate"><span class="pre">Flight.agg_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.airborne"><code class="docutils literal notranslate"><span class="pre">Flight.airborne()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.aligned_on_ils"><code class="docutils literal notranslate"><span class="pre">Flight.aligned_on_ils()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.aligned_on_navpoint"><code class="docutils literal notranslate"><span class="pre">Flight.aligned_on_navpoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.aligned_on_runway"><code class="docutils literal notranslate"><span class="pre">Flight.aligned_on_runway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.all"><code class="docutils literal notranslate"><span class="pre">Flight.all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.apply_time"><code class="docutils literal notranslate"><span class="pre">Flight.apply_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.area"><code class="docutils literal notranslate"><span class="pre">Flight.area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.assign"><code class="docutils literal notranslate"><span class="pre">Flight.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.assign_id"><code class="docutils literal notranslate"><span class="pre">Flight.assign_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.at"><code class="docutils literal notranslate"><span class="pre">Flight.at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.at_ratio"><code class="docutils literal notranslate"><span class="pre">Flight.at_ratio()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.before"><code class="docutils literal notranslate"><span class="pre">Flight.before()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.between"><code class="docutils literal notranslate"><span class="pre">Flight.between()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.bounds"><code class="docutils literal notranslate"><span class="pre">Flight.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.callsign"><code class="docutils literal notranslate"><span class="pre">Flight.callsign</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.centroid"><code class="docutils literal notranslate"><span class="pre">Flight.centroid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.chart"><code class="docutils literal notranslate"><span class="pre">Flight.chart()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.clip"><code class="docutils literal notranslate"><span class="pre">Flight.clip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.closest_point"><code class="docutils literal notranslate"><span class="pre">Flight.closest_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.comet"><code class="docutils literal notranslate"><span class="pre">Flight.comet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_DME_NSE"><code class="docutils literal notranslate"><span class="pre">Flight.compute_DME_NSE()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_TAS"><code class="docutils literal notranslate"><span class="pre">Flight.compute_TAS()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_latlon_from_xy"><code class="docutils literal notranslate"><span class="pre">Flight.compute_latlon_from_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_navpoints"><code class="docutils literal notranslate"><span class="pre">Flight.compute_navpoints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_wind"><code class="docutils literal notranslate"><span class="pre">Flight.compute_wind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.compute_xy"><code class="docutils literal notranslate"><span class="pre">Flight.compute_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.cumulative_distance"><code class="docutils literal notranslate"><span class="pre">Flight.cumulative_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.destination"><code class="docutils literal notranslate"><span class="pre">Flight.destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.diff"><code class="docutils literal notranslate"><span class="pre">Flight.diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.distance"><code class="docutils literal notranslate"><span class="pre">Flight.distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.diversion"><code class="docutils literal notranslate"><span class="pre">Flight.diversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.diverted"><code class="docutils literal notranslate"><span class="pre">Flight.diverted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.drop"><code class="docutils literal notranslate"><span class="pre">Flight.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">Flight.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.duration"><code class="docutils literal notranslate"><span class="pre">Flight.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.emergency"><code class="docutils literal notranslate"><span class="pre">Flight.emergency()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.encode"><code class="docutils literal notranslate"><span class="pre">Flight.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.extent"><code class="docutils literal notranslate"><span class="pre">Flight.extent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.feature_gt"><code class="docutils literal notranslate"><span class="pre">Flight.feature_gt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.feature_lt"><code class="docutils literal notranslate"><span class="pre">Flight.feature_lt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.fillna"><code class="docutils literal notranslate"><span class="pre">Flight.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.filter"><code class="docutils literal notranslate"><span class="pre">Flight.filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.final"><code class="docutils literal notranslate"><span class="pre">Flight.final()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.first"><code class="docutils literal notranslate"><span class="pre">Flight.first()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.flight_id"><code class="docutils literal notranslate"><span class="pre">Flight.flight_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.from_file"><code class="docutils literal notranslate"><span class="pre">Flight.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.fuelflow"><code class="docutils literal notranslate"><span class="pre">Flight.fuelflow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.geoencode"><code class="docutils literal notranslate"><span class="pre">Flight.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.geojson"><code class="docutils literal notranslate"><span class="pre">Flight.geojson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.go_around"><code class="docutils literal notranslate"><span class="pre">Flight.go_around()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.ground_trajectory"><code class="docutils literal notranslate"><span class="pre">Flight.ground_trajectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.groupby"><code class="docutils literal notranslate"><span class="pre">Flight.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.has"><code class="docutils literal notranslate"><span class="pre">Flight.has()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.holding_pattern"><code class="docutils literal notranslate"><span class="pre">Flight.holding_pattern()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.holes"><code class="docutils literal notranslate"><span class="pre">Flight.holes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.icao24"><code class="docutils literal notranslate"><span class="pre">Flight.icao24</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.inside_bbox"><code class="docutils literal notranslate"><span class="pre">Flight.inside_bbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.intersects"><code class="docutils literal notranslate"><span class="pre">Flight.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.is_from_inertial"><code class="docutils literal notranslate"><span class="pre">Flight.is_from_inertial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.landing_airport"><code class="docutils literal notranslate"><span class="pre">Flight.landing_airport()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.landing_at"><code class="docutils literal notranslate"><span class="pre">Flight.landing_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.landing_attempts"><code class="docutils literal notranslate"><span class="pre">Flight.landing_attempts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.last"><code class="docutils literal notranslate"><span class="pre">Flight.last()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.leaflet"><code class="docutils literal notranslate"><span class="pre">Flight.leaflet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.longer_than"><code class="docutils literal notranslate"><span class="pre">Flight.longer_than()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.max"><code class="docutils literal notranslate"><span class="pre">Flight.max()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.max_split"><code class="docutils literal notranslate"><span class="pre">Flight.max_split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.mean"><code class="docutils literal notranslate"><span class="pre">Flight.mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.merge"><code class="docutils literal notranslate"><span class="pre">Flight.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.min"><code class="docutils literal notranslate"><span class="pre">Flight.min()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.moving"><code class="docutils literal notranslate"><span class="pre">Flight.moving()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.next"><code class="docutils literal notranslate"><span class="pre">Flight.next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.number"><code class="docutils literal notranslate"><span class="pre">Flight.number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.on_parking_position"><code class="docutils literal notranslate"><span class="pre">Flight.on_parking_position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.on_runway"><code class="docutils literal notranslate"><span class="pre">Flight.on_runway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.on_taxiway"><code class="docutils literal notranslate"><span class="pre">Flight.on_taxiway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.origin"><code class="docutils literal notranslate"><span class="pre">Flight.origin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.phases"><code class="docutils literal notranslate"><span class="pre">Flight.phases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.pipe"><code class="docutils literal notranslate"><span class="pre">Flight.pipe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.plot"><code class="docutils literal notranslate"><span class="pre">Flight.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.plot_time"><code class="docutils literal notranslate"><span class="pre">Flight.plot_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.plot_wind"><code class="docutils literal notranslate"><span class="pre">Flight.plot_wind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.point_merge"><code class="docutils literal notranslate"><span class="pre">Flight.point_merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.project_shape"><code class="docutils literal notranslate"><span class="pre">Flight.project_shape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.pushback"><code class="docutils literal notranslate"><span class="pre">Flight.pushback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.query"><code class="docutils literal notranslate"><span class="pre">Flight.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.query_ehs"><code class="docutils literal notranslate"><span class="pre">Flight.query_ehs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.query_opensky"><code class="docutils literal notranslate"><span class="pre">Flight.query_opensky()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.rename"><code class="docutils literal notranslate"><span class="pre">Flight.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.replace"><code class="docutils literal notranslate"><span class="pre">Flight.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.resample"><code class="docutils literal notranslate"><span class="pre">Flight.resample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.reset_index"><code class="docutils literal notranslate"><span class="pre">Flight.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.runway_change"><code class="docutils literal notranslate"><span class="pre">Flight.runway_change()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.shorten"><code class="docutils literal notranslate"><span class="pre">Flight.shorten()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.shorter_than"><code class="docutils literal notranslate"><span class="pre">Flight.shorter_than()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.simplify"><code class="docutils literal notranslate"><span class="pre">Flight.simplify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.skip"><code class="docutils literal notranslate"><span class="pre">Flight.skip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.slow_taxi"><code class="docutils literal notranslate"><span class="pre">Flight.slow_taxi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.sort_values"><code class="docutils literal notranslate"><span class="pre">Flight.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.split"><code class="docutils literal notranslate"><span class="pre">Flight.split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.squawk"><code class="docutils literal notranslate"><span class="pre">Flight.squawk</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.start"><code class="docutils literal notranslate"><span class="pre">Flight.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.stop"><code class="docutils literal notranslate"><span class="pre">Flight.stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.sum"><code class="docutils literal notranslate"><span class="pre">Flight.sum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_airport"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_airport()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_from"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_from_runway"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_from_runway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_csv"><code class="docutils literal notranslate"><span class="pre">Flight.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_excel"><code class="docutils literal notranslate"><span class="pre">Flight.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_feather"><code class="docutils literal notranslate"><span class="pre">Flight.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_hdf"><code class="docutils literal notranslate"><span class="pre">Flight.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_json"><code class="docutils literal notranslate"><span class="pre">Flight.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_parquet"><code class="docutils literal notranslate"><span class="pre">Flight.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_pickle"><code class="docutils literal notranslate"><span class="pre">Flight.to_pickle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.unwrap"><code class="docutils literal notranslate"><span class="pre">Flight.unwrap()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>

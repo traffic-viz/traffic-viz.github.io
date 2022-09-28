@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -70,7 +71,87 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.traffic</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.traffic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.Traffic"><code class="docutils literal notranslate"><span class="pre">Traffic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_latlon"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_latlon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_time"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_xy"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.airborne"><code class="docutils literal notranslate"><span class="pre">Traffic.airborne()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.aircraft"><code class="docutils literal notranslate"><span class="pre">Traffic.aircraft</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.aircraft_data"><code class="docutils literal notranslate"><span class="pre">Traffic.aircraft_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.all"><code class="docutils literal notranslate"><span class="pre">Traffic.all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.apply_time"><code class="docutils literal notranslate"><span class="pre">Traffic.apply_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.assign"><code class="docutils literal notranslate"><span class="pre">Traffic.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.assign_id"><code class="docutils literal notranslate"><span class="pre">Traffic.assign_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.callsigns"><code class="docutils literal notranslate"><span class="pre">Traffic.callsigns</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.centroid"><code class="docutils literal notranslate"><span class="pre">Traffic.centroid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.clean_invalid"><code class="docutils literal notranslate"><span class="pre">Traffic.clean_invalid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.clip"><code class="docutils literal notranslate"><span class="pre">Traffic.clip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.closest_point_of_approach"><code class="docutils literal notranslate"><span class="pre">Traffic.closest_point_of_approach()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.clustering"><code class="docutils literal notranslate"><span class="pre">Traffic.clustering()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.compute_latlon_from_xy"><code class="docutils literal notranslate"><span class="pre">Traffic.compute_latlon_from_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.compute_wind"><code class="docutils literal notranslate"><span class="pre">Traffic.compute_wind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.compute_xy"><code class="docutils literal notranslate"><span class="pre">Traffic.compute_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.cumulative_distance"><code class="docutils literal notranslate"><span class="pre">Traffic.cumulative_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.diff"><code class="docutils literal notranslate"><span class="pre">Traffic.diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.distance"><code class="docutils literal notranslate"><span class="pre">Traffic.distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.drop"><code class="docutils literal notranslate"><span class="pre">Traffic.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">Traffic.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.end_time"><code class="docutils literal notranslate"><span class="pre">Traffic.end_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.feature_gt"><code class="docutils literal notranslate"><span class="pre">Traffic.feature_gt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.feature_lt"><code class="docutils literal notranslate"><span class="pre">Traffic.feature_lt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.fillna"><code class="docutils literal notranslate"><span class="pre">Traffic.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.filter"><code class="docutils literal notranslate"><span class="pre">Traffic.filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.final"><code class="docutils literal notranslate"><span class="pre">Traffic.final()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.first"><code class="docutils literal notranslate"><span class="pre">Traffic.first()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.flight_ids"><code class="docutils literal notranslate"><span class="pre">Traffic.flight_ids</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.from_file"><code class="docutils literal notranslate"><span class="pre">Traffic.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.from_flights"><code class="docutils literal notranslate"><span class="pre">Traffic.from_flights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.generation"><code class="docutils literal notranslate"><span class="pre">Traffic.generation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.geoencode"><code class="docutils literal notranslate"><span class="pre">Traffic.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.groupby"><code class="docutils literal notranslate"><span class="pre">Traffic.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.has"><code class="docutils literal notranslate"><span class="pre">Traffic.has()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.icao24"><code class="docutils literal notranslate"><span class="pre">Traffic.icao24</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.inside_bbox"><code class="docutils literal notranslate"><span class="pre">Traffic.inside_bbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.iterate"><code class="docutils literal notranslate"><span class="pre">Traffic.iterate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.iterate_lazy"><code class="docutils literal notranslate"><span class="pre">Traffic.iterate_lazy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.landing_at"><code class="docutils literal notranslate"><span class="pre">Traffic.landing_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.last"><code class="docutils literal notranslate"><span class="pre">Traffic.last()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.longer_than"><code class="docutils literal notranslate"><span class="pre">Traffic.longer_than()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.max_split"><code class="docutils literal notranslate"><span class="pre">Traffic.max_split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.merge"><code class="docutils literal notranslate"><span class="pre">Traffic.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.next"><code class="docutils literal notranslate"><span class="pre">Traffic.next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.phases"><code class="docutils literal notranslate"><span class="pre">Traffic.phases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.pipe"><code class="docutils literal notranslate"><span class="pre">Traffic.pipe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.plot"><code class="docutils literal notranslate"><span class="pre">Traffic.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.plot_wind"><code class="docutils literal notranslate"><span class="pre">Traffic.plot_wind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query"><code class="docutils literal notranslate"><span class="pre">Traffic.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query_ehs"><code class="docutils literal notranslate"><span class="pre">Traffic.query_ehs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query_opensky"><code class="docutils literal notranslate"><span class="pre">Traffic.query_opensky()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.rename"><code class="docutils literal notranslate"><span class="pre">Traffic.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.replace"><code class="docutils literal notranslate"><span class="pre">Traffic.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.resample"><code class="docutils literal notranslate"><span class="pre">Traffic.resample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.reset_index"><code class="docutils literal notranslate"><span class="pre">Traffic.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.shorter_than"><code class="docutils literal notranslate"><span class="pre">Traffic.shorter_than()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.simplify"><code class="docutils literal notranslate"><span class="pre">Traffic.simplify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.sort_values"><code class="docutils literal notranslate"><span class="pre">Traffic.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.start_time"><code class="docutils literal notranslate"><span class="pre">Traffic.start_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.summary"><code class="docutils literal notranslate"><span class="pre">Traffic.summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.takeoff_from"><code class="docutils literal notranslate"><span class="pre">Traffic.takeoff_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_csv"><code class="docutils literal notranslate"><span class="pre">Traffic.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_excel"><code class="docutils literal notranslate"><span class="pre">Traffic.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_feather"><code class="docutils literal notranslate"><span class="pre">Traffic.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_hdf"><code class="docutils literal notranslate"><span class="pre">Traffic.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_json"><code class="docutils literal notranslate"><span class="pre">Traffic.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_parquet"><code class="docutils literal notranslate"><span class="pre">Traffic.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_pickle"><code class="docutils literal notranslate"><span class="pre">Traffic.to_pickle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.unwrap"><code class="docutils literal notranslate"><span class="pre">Traffic.unwrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.lazy.Traffic.LazyTraffic"><code class="docutils literal notranslate"><span class="pre">Traffic.LazyTraffic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.lazy.Traffic.LazyTraffic.LazyTraffic.eval"><code class="docutils literal notranslate"><span class="pre">Traffic.LazyTraffic.LazyTraffic.eval()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>

@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -66,7 +67,92 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.mixins</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.mixins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.assign"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.drop"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.fillna"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.from_file"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.groupby"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.merge"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.query"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.rename"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.replace"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.reset_index"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.sort_values"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_csv"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_excel"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_feather"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_hdf"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_json"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_parquet"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.DataFrameMixin.to_pickle"><code class="docutils literal notranslate"><span class="pre">DataFrameMixin.to_pickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.assign"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.drop"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.extent"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.extent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.fillna"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.from_file"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.geoencode"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.groupby"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.merge"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.query"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.rename"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.replace"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.reset_index"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.sort_values"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_csv"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_excel"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_feather"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_hdf"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_json"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_parquet"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeoDBMixin.to_pickle"><code class="docutils literal notranslate"><span class="pre">GeoDBMixin.to_pickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin"><code class="docutils literal notranslate"><span class="pre">GeographyMixin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.agg_xy"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.agg_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.assign"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.assign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.compute_latlon_from_xy"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.compute_latlon_from_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.compute_xy"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.compute_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.drop"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.fillna"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.fillna()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.from_file"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.geoencode"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.groupby"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.groupby()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.merge"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.query"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.rename"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.rename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.replace"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.reset_index"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.reset_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.sort_values"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.sort_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_csv"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_excel"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_excel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_feather"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_feather()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_hdf"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_hdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_json"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_parquet"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_parquet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.GeographyMixin.to_pickle"><code class="docutils literal notranslate"><span class="pre">GeographyMixin.to_pickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.mixins.HBoxMixin"><code class="docutils literal notranslate"><span class="pre">HBoxMixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.area"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.bounds"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.centroid"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.centroid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.extent"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.extent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.geoencode"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.geojson"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.geojson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.mixins.ShapelyMixin.project_shape"><code class="docutils literal notranslate"><span class="pre">ShapelyMixin.project_shape()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
