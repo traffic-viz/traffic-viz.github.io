@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; traffic 2.8.0 documentation</title>
+  <title>Installation &mdash; traffic 2.8.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.0
+                2.8.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -134,7 +134,7 @@ conda update -n traffic -c conda-forge traffic
 </div>
 </li>
 <li><p>For the most recent development version, clone the Github repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/xoolive/traffic
 <span class="nb">cd</span> traffic/
 pip install .
 </pre></div>
@@ -157,7 +157,7 @@ reviewing process:</p>
 <ul>
 <li><p>install <a class="reference external" href="https://python-poetry.org/">poetry</a> on your workstation</p></li>
 <li><p>install traffic with poetry:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/xoolive/traffic
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/xoolive/traffic
 <span class="nb">cd</span> traffic/
 poetry install -E all
 </pre></div>
