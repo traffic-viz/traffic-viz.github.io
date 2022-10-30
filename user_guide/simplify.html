@@ -199,13 +199,13 @@ respect to the 2D ground track.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f1ec0651d7dd45b8bd02f9389cfbb5f0"></div>
+<div id="altair-viz-b7c2c85d58be4ce3812bcf0982072a28"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f1ec0651d7dd45b8bd02f9389cfbb5f0") {
-      outputDiv = document.getElementById("altair-viz-f1ec0651d7dd45b8bd02f9389cfbb5f0");
+    if (outputDiv.id !== "altair-viz-b7c2c85d58be4ce3812bcf0982072a28") {
+      outputDiv = document.getElementById("altair-viz-b7c2c85d58be4ce3812bcf0982072a28");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -324,16 +324,16 @@ of samples.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <ul>
+<li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+426.gd032652814)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+496.g7b393290f8)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
 given number of evenly distributed points per trajectory.</p></li>
 </ul>
 </p></li>
-<li><p><strong>how</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>]</em><em>]</em>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">&quot;interpolate&quot;</span></code>)</p>
+<li><p><strong>how</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em><em>]</em>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">&quot;interpolate&quot;</span></code>)</p>
 <ul>
 <li><p>When the parameter is a string, the method applies to all columns</p></li>
 <li><p>When the parameter is a dictionary with keys as methods (e.g.
@@ -341,7 +341,7 @@ given number of evenly distributed points per trajectory.</p></li>
 Columns not included in any value are left as is.</p></li>
 </ul>
 </p></li>
-<li><p><strong>projection</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> | </em><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj" title="(in pyproj v3.4.0)"><em>pyproj.Proj</em></a><em> | </em><em>'crs.Projection</em>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<li><p><strong>projection</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj" title="(in pyproj v3.4.0)"><em>pyproj.Proj</em></a><em> | </em><em>'crs.Projection</em>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
 <ul>
 <li><p>By default, lat/lon are resampled with a linear interpolation;</p></li>
 <li><p>If a projection is passed, the linear interpolation is applied on
@@ -392,13 +392,13 @@ preserved.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1dbb0953a66d42c0b6793dacb2ed9f1e"></div>
+<div id="altair-viz-7b087b66392c40eabe11966cf37f61ea"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1dbb0953a66d42c0b6793dacb2ed9f1e") {
-      outputDiv = document.getElementById("altair-viz-1dbb0953a66d42c0b6793dacb2ed9f1e");
+    if (outputDiv.id !== "altair-viz-7b087b66392c40eabe11966cf37f61ea") {
+      outputDiv = document.getElementById("altair-viz-7b087b66392c40eabe11966cf37f61ea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -510,13 +510,13 @@ time axis.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c8dd926b52864b4f9a40c2863add5852"></div>
+<div id="altair-viz-5ee7bf2f59f1490f8bb09f0659b011ea"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c8dd926b52864b4f9a40c2863add5852") {
-      outputDiv = document.getElementById("altair-viz-c8dd926b52864b4f9a40c2863add5852");
+    if (outputDiv.id !== "altair-viz-5ee7bf2f59f1490f8bb09f0659b011ea") {
+      outputDiv = document.getElementById("altair-viz-5ee7bf2f59f1490f8bb09f0659b011ea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
