@@ -26,11 +26,11 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Kepler.gl" href="kepler.html" />
+    <link rel="next" title="CesiumJS" href="cesium.html" />
     <link rel="prev" title="How to implement closest point of approach?" href="../tutorial/cpa.html" /> 
 </head>
 
@@ -112,7 +112,7 @@ basic functionalities of the traffic library. Plugins can be
 implemented through a <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">registration</a>
 mechanism and selectively activated in the configuration file.</p>
 <p>Some plugins are provided by the traffic library with visualisation
-facilities for Kepler.gl and CesiumJS.</p>
+facilities for BlueSky or CesiumJS.</p>
 <section id="plugin-activation">
 <h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Permalink to this heading"></a></h2>
 <p>You may activate plugins in the configuration file:</p>
@@ -124,7 +124,9 @@ facilities for Kepler.gl and CesiumJS.</p>
 <p>Then edit the following line according to the plugins you want to
 activate:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">plugins</span><span class="p">]</span>
-<span class="n">enabled_plugins</span> <span class="o">=</span> <span class="n">Kepler</span><span class="p">,</span> <span class="n">CesiumJS</span>
+<span class="n">enabled_plugins</span> <span class="o">=</span>
+    <span class="o">-</span> <span class="n">BlueSky</span>
+    <span class="o">-</span> <span class="n">CesiumJS</span>
 </pre></div>
 </div>
 </section>
@@ -132,7 +134,6 @@ activate:</p>
 <h2>Available plugins<a class="headerlink" href="#available-plugins" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler.gl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cesium.html">CesiumJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bluesky.html">BlueSky</a></li>
 </ul>
@@ -199,7 +200,7 @@ plugin is enabled.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../tutorial/cpa.html" class="btn btn-neutral float-left" title="How to implement closest point of approach?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kepler.html" class="btn btn-neutral float-right" title="Kepler.gl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cesium.html" class="btn btn-neutral float-right" title="CesiumJS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
