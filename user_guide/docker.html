@@ -110,14 +110,14 @@
 <h1>How to use traffic in a Docker container?<a class="headerlink" href="#how-to-use-traffic-in-a-docker-container" title="Permalink to this heading"></a></h1>
 <p>If you don’t want to be bothered with Python’s dependencies and just want to
 work, using a Docker container might be an easy solution. It is quite simple to
-run the traffic library with everything it needs in a Docker container and you
-have a few options. We provide a self contained container image on GitHub that
+run the traffic library with everything it needs in a Docker container, and you
+have a few options. We provide a self-contained container image on GitHub that
 you can use. It has everything in it that you need. Or, alternatively, you can
 build your own image. We describe both below.</p>
 <section id="use-the-github-container-image">
 <h2>Use the GitHub container image<a class="headerlink" href="#use-the-github-container-image" title="Permalink to this heading"></a></h2>
 <p>Using the container image from GitHub is simple. Just make sure you have Docker
-installed and running, then pull the image with</p>
+installed and running, then pull the image with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull ghcr.io/xoolive/traffic/jupyter:latest
 </pre></div>
 </div>
@@ -125,9 +125,9 @@ installed and running, then pull the image with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">8888</span>:8888 ghcr.io/xoolive/traffic/jupyter
 </pre></div>
 </div>
-<p>This will start the container and you can connect to it with the browser and
+<p>This will start the container, and you can connect to it with the browser and
 work in a Jupyter notebook. Just copy-paste the URL that starts with
-<em>http://127.0.0.1:8888…</em> into your favorite browser and have fun.</p>
+<em>http://127.0.0.1:8888…</em> into your favourite browser and have fun.</p>
 </section>
 <section id="use-the-github-container-image-with-visual-studio-code">
 <h2>Use the GitHub container image with Visual Studio Code<a class="headerlink" href="#use-the-github-container-image-with-visual-studio-code" title="Permalink to this heading"></a></h2>
@@ -143,8 +143,8 @@ you now do if you followed the instructions) you can change VS Code to be
 running as if it was <em>in</em> the container. For that, you can right-click on the
 container and select <em>Attach Visual Studio Code</em>.</p>
 <img alt="../_images/vscode_attach_to_container.png" src="../_images/vscode_attach_to_container.png" />
-<p>A new instance will be started and you can use all the features of VS Code
-(including jupyter notebooks) the same way you used to.</p>
+<p>A new instance will be started, and you can use all the features of VS Code
+(including Jupyter notebooks) the same way you used to.</p>
 </section>
 <section id="create-your-own-dockerfile">
 <h2>Create your own Dockerfile<a class="headerlink" href="#create-your-own-dockerfile" title="Permalink to this heading"></a></h2>
@@ -167,7 +167,7 @@ like the following:</p>
 <span class="k">ENV</span><span class="w"> </span><span class="nv">PROJ_LIB</span><span class="o">=</span>/opt/conda/share/proj
 </pre></div>
 </div>
-<p>Note the last line, which sets a environment variable for PROJ. This is needed
+<p>Note the last line, which sets an environment variable for PROJ. This is needed
 because the conda base environment never gets properly activated and this fixes
 the issue described <a class="reference external" href="https://gis.stackexchange.com/questions/364421/how-to-make-proj-work-via-anaconda-in-google-colab">here</a>.
 To run this Docker, you first have to generate an image with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code>:</p>

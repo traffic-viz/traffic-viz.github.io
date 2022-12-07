@@ -106,7 +106,7 @@
   <section id="how-to-implement-trajectory-generation">
 <h1>How to implement trajectory generation?<a class="headerlink" href="#how-to-implement-trajectory-generation" title="Permalink to this heading"></a></h1>
 <p>(contribution by Adrien Lafage <a class="reference external" href="https://github.com/alafage/">&#64;alafage</a>)</p>
-<p>This library provide a <code class="docutils literal notranslate"><span class="pre">Generation</span></code> class for creating synthetic traffic data.
+<p>This library provides a <code class="docutils literal notranslate"><span class="pre">Generation</span></code> class for creating synthetic traffic data.
 It implements <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> methods that call the corresponding
 methods in the generative model passed as argument.</p>
 <p>You can import this class with the following code:</p>
@@ -131,7 +131,7 @@ methods in the generative model passed as argument.</p>
 </div>
 <p>In the case the generative model within your <code class="docutils literal notranslate"><span class="pre">Generation</span></code> object is not fitted
 to any <code class="docutils literal notranslate"><span class="pre">Traffic</span></code> object, you can use the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method.  Depending on the
-generative model used, its <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method can be rather time consuming, esp.
+generative model used, its <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method can be rather time-consuming, esp.
 with neural network-based generative models.</p>
 <p>We load here traffic data of landing trajectories at Zurich airport coming
 from the north.</p>
@@ -163,7 +163,7 @@ from the north.</p>
 <img alt="../_images/generation_2_1.png" src="../_images/generation_2_1.png" />
 </div>
 </div>
-<p>Before any fitting we enrich the Traffic DataFrame with the features we might
+<p>Before any fitting, we enrich the Traffic DataFrame with the features we might
 want to use to generate trajectories. For example, instead of working with
 <code class="docutils literal notranslate"><span class="pre">longitude</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude</span></code> values, we can compute their projection (<code class="docutils literal notranslate"><span class="pre">x</span></code>
 and <code class="docutils literal notranslate"><span class="pre">y</span></code> respectively).</p>
@@ -230,7 +230,7 @@ Mixture with two components.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure the generative model you want to use implements thb <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> methods.</p>
+<p>Make sure the generative model you want to use implements the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> methods.</p>
 </div>
 <p>Then we can sample the fitted model to produce new Traffic data.</p>
 <div class="jupyter_cell jupyter_container docutils container">
