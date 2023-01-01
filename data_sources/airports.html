@@ -189,7 +189,7 @@ interest.</p></li>
 <a class="reference internal" href="#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a> or
 <a class="reference internal" href="navigation.html#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><code class="xref py py-class docutils literal notranslate"><span class="pre">Navaids</span></code></a>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">])</span>  
 <span class="go">  route    id   navaid   latitude    longitude</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  A25      6    GODAN    47.64       -1.96</span>
@@ -206,7 +206,7 @@ interest.</p></li>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Bornholm&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Bornholm&quot;</span><span class="p">)</span>  
 <span class="go"> name                 country   icao      iata   latitude   longitude</span>
 <span class="go">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go"> Bodilsker Airstrip   Denmark   DK-0027   nan    55.06      15.05</span>
@@ -216,25 +216,9 @@ interest.</p></li>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">navaids</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;ZUE&#39;</span><span class="p">]</span>
-<span class="go">Navaid(</span>
-<span class="go">    &#39;ZUE&#39;,</span>
-<span class="go">    type=&#39;NDB&#39;,</span>
-<span class="go">    latitude=30.9,</span>
-<span class="go">    longitude=20.06833333,</span>
-<span class="go">    altitude=0.0,</span>
-<span class="go">    description=&#39;ZUEITINA NDB&#39;,</span>
-<span class="go">    frequency=&#39; 369.0kHz&#39;</span>
-<span class="go">)</span>
+<span class="go">Navaid(&#39;ZUE&#39;, type=&#39;NDB&#39;, latitude=30.9, longitude=20.06833333, altitude=0.0, description=&#39;ZUEITINA NDB&#39;, frequency=&#39;369.0kHz&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">navaids</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s1">&#39;Switzerland&#39;</span><span class="p">)[</span><span class="s1">&#39;ZUE&#39;</span><span class="p">]</span>
-<span class="go">Navaid(</span>
-<span class="go">    &#39;ZUE&#39;,</span>
-<span class="go">    type=&#39;VOR&#39;,</span>
-<span class="go">    latitude=47.59216667,</span>
-<span class="go">    longitude=8.81766667,</span>
-<span class="go">    altitude=1730.0,</span>
-<span class="go">    description=&#39;ZURICH EAST VOR-DME&#39;,</span>
-<span class="go">    frequency=&#39;110.05MHz&#39;</span>
-<span class="go">)</span>
+<span class="go">Navaid(&#39;ZUE&#39;, type=&#39;VOR&#39;, latitude=47.59216667, longitude=8.81766667, altitude=1730.0, description=&#39;ZURICH EAST VOR-DME&#39;, frequency=&#39;110.05MHz&#39;)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -557,13 +541,13 @@ be overridden if a dictionary is passed in place of the boolean;</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c08c8840cf2d41d9ba7830020d1040ef"></div>
+<div id="altair-viz-26c01f4ce35c4f99b6d776f80ed7c909"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c08c8840cf2d41d9ba7830020d1040ef") {
-      outputDiv = document.getElementById("altair-viz-c08c8840cf2d41d9ba7830020d1040ef");
+    if (outputDiv.id !== "altair-viz-26c01f4ce35c4f99b6d776f80ed7c909") {
+      outputDiv = document.getElementById("altair-viz-26c01f4ce35c4f99b6d776f80ed7c909");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
