@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.flight &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>traffic.core.flight &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -43,7 +43,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -328,7 +328,8 @@ for testing purposes in module <code class="docutils literal notranslate"><span 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.abs">
 <span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.abs" title="Permalink to this definition"></a></dt>
-<dd><p>Assign absolute versions of features to new columns.</p>
+<dd><p>Assign absolute versions of features to new columns.
+:rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -337,33 +338,25 @@ for testing purposes in module <code class="docutils literal notranslate"><span 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="s2">&quot;track_abs&quot;</span><span class="p">,</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;heading_abs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.after">
 <span class="sig-name descname"><span class="pre">after</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.after" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the part of the trajectory flown after a given timestamp.</p>
+<dd><p>Returns the part of the trajectory flown after a given timestamp.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
 a Pandas timestamp.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.agg_time">
 <span class="sig-name descname"><span class="pre">agg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1T'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.agg_time" title="Permalink to this definition"></a></dt>
 <dd><p>Aggregate features on time windows.</p>
-<p>The following is performed:</p>
+<p>The following is performed:
+:rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <ul class="simple">
 <li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
 <li><p>the groupby/agg is operated with parameters passed in kwargs;</p></li>
@@ -376,11 +369,6 @@ otherwise a pd.DataFrame is returned.</p></li>
 </div>
 <p>returns a Flight with a new column groundspeed_mean with groundspeed
 averaged per intervals of 3 minutes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -393,7 +381,8 @@ By default, the grid is made by rounding x and y to the lower ten
 kilometer values. <code class="docutils literal notranslate"><span class="pre">dict(x=5000,</span> <span class="pre">y=3000)</span></code> will take 1 value per 5000
 meters for x (10000, 15000, 20000, …) and 1 value per 3000 meters for
 y (9000, 12000, 15000, 18000, 20000, …).</p>
-<p>The kwargs specifies how to aggregate values:</p>
+<p>The kwargs specifies how to aggregate values:
+:rtype: pd.DataFrame</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">altitude=&quot;mean&quot;</span></code> would average all values in the given cell;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">timestamp=&quot;count&quot;</span></code> would return the number of samples per cell;</p></li>
@@ -411,11 +400,6 @@ plot density heatmaps.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -485,15 +469,15 @@ navigational beacons passed in parameter.</p>
 <dd><p>Iterates on all segments of trajectory matching a runway of the
 given airport.</p>
 <p>Example usage:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
-<span class="go">2</span>
-</pre></div>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">aligned_on_runway</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
+<span class="go">2</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -503,22 +487,21 @@ given airport.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s1">&#39;aligned_on_ils(&quot;LFBO&quot;)&#39;</span><span class="p">)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s1">&#39;aligned_on_ils(&quot;LFBO&quot;)&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.apply_time">
 <span class="sig-name descname"><span class="pre">apply_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1T'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.apply_time" title="Permalink to this definition"></a></dt>
 <dd><p>Apply features on time windows.</p>
-<p>The following is performed:</p>
+<p>The following is performed:
+:rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <ul class="simple">
 <li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
 <li><p>the groupby/apply is operated with parameters passed in apply;</p></li>
@@ -531,11 +514,6 @@ otherwise a pd.DataFrame is returned.</p></li>
 </div>
 <p>returns a Flight with a new column straight with the great circle
 distance between points sampled every 10 minutes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -544,17 +522,12 @@ distance between points sampled every 10 minutes.</p>
 <dd><p>Returns the area of the shape, in square meters.
 The shape is projected to an equivalent local projection before
 computing a value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.assign">
 <span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.assign" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -580,7 +553,8 @@ LazyTraffic methods but works fine on Flight as well.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.at">
 <span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.at" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the position in the trajectory at a given timestamp.</p>
+<dd><p>Returns the position in the trajectory at a given timestamp.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
 a Pandas timestamp.</p></li>
@@ -588,11 +562,6 @@ a Pandas timestamp.</p></li>
 <li><p>If no position is available at the given timestamp, None is returned.
 If you expect a position at any price, consider <a class="reference external" href="#traffic.core.Flight.resample">Flight.resample</a></p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -600,48 +569,36 @@ If you expect a position at any price, consider <a class="reference external" hr
 <span class="sig-name descname"><span class="pre">at_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.at_ratio" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a position on the trajectory.</p>
 <p>This method is convenient to place a marker on the trajectory in
-visualisation output.</p>
+visualisation output.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Flight.at_ratio(0)</span></code> is the first point in the trajectory.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Flight.at_ratio(1)</span></code> is the last point of the trajectory
 (equivalent to <code class="docutils literal notranslate"><span class="pre">Flight.at()</span></code>)</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.before">
 <span class="sig-name descname"><span class="pre">before</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.before" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the part of the trajectory flown before a given timestamp.</p>
+<dd><p>Returns the part of the trajectory flown before a given timestamp.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> can be passed as a string, an epoch, a Python datetime, or
 a Pandas timestamp.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.between">
 <span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.between" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the part of the trajectory flown between start and stop.</p>
+<dd><p>Returns the part of the trajectory flown between start and stop.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> can be passed as a string, an epoch, a Python
 datetime, or a Pandas timestamp.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code> can also be passed as a timedelta.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -650,11 +607,6 @@ datetime, or a Pandas timestamp.</p></li>
 <dd><p>Returns the bounds of the (bounding box of the) shape.
 Bounds are given in the following order in the origin crs:
 (west, south, east, north)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -664,22 +616,12 @@ Bounds are given in the following order in the origin crs:
 <p>A callsign is an identifier sent by an aircraft during its flight. It
 may be associated with the registration of an aircraft, its mission or
 with a route for a commercial aircraft.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.centroid">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.Flight.centroid" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -732,14 +674,12 @@ snippet may be of use.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See also <a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a> for the
-Matplotlib equivalent.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+<dd class="field-odd"><p><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></p>
+<p>See also <a class="reference external" href="#traffic.core.Flight.plot_time">plot_time()</a> for the
+Matplotlib equivalent.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -755,13 +695,11 @@ between the two timestamps.</p>
 airspace, but computation errors may sometimes give this impression.
 As a consequence, the clipped trajectory may have points outside the
 shape.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Altitudes are not taken into account.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<p>Altitudes are not taken into account.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -790,7 +728,7 @@ point to the trajectory)</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -865,14 +803,12 @@ GRIB file using the <code class="xref py py-meth docutils literal notranslate"><
 <span class="sig-name descname"><span class="pre">compute_latlon_from_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.compute_latlon_from_xy" title="Permalink to this definition"></a></dt>
 <dd><p>Enrich a DataFrame with new longitude and latitude columns computed
 from x and y columns.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure to use as source projection the one used to compute
-<code class="docutils literal notranslate"><span class="pre">'x'</span></code> and <code class="docutils literal notranslate"><span class="pre">'y'</span></code> columns in the first place.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)</p>
+<p>Make sure to use as source projection the one used to compute
+<code class="docutils literal notranslate"><span class="pre">'x'</span></code> and <code class="docutils literal notranslate"><span class="pre">'y'</span></code> columns in the first place.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -909,7 +845,7 @@ display the trajectory as a succession of segments:</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -922,15 +858,13 @@ display the trajectory as a succession of segments:</p>
 (<code class="docutils literal notranslate"><span class="pre">TAS</span></code>), and <code class="docutils literal notranslate"><span class="pre">heading</span></code> features. The groundspeed and the track angle
 are usually available in ADS-B messages; the heading and the true
 airspeed may be decoded in EHS messages.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <p>Check the <a class="reference external" href="#traffic.core.Flight.query_ehs">query_ehs()</a> method to
 find a way to enrich your flight with such features. Note that this
 data is not necessarily available depending on the location.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -943,22 +877,18 @@ projection of the latitude and longitude columns.</p>
 <p>The source projection is WGS84 (EPSG 4326).
 The default destination projection is a Lambert Conformal Conical
 projection centred on the data inside the dataframe.</p>
-<p>Other valid projections are available:</p>
+<p>Other valid projections are available:
+:rtype: T</p>
 <ul class="simple">
 <li><p>as <code class="docutils literal notranslate"><span class="pre">pyproj.Proj</span></code> objects;</p></li>
 <li><p>as <code class="docutils literal notranslate"><span class="pre">cartopy.crs.Projection</span></code> objects.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>T</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.convert_dtypes">
 <span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.convert_dtypes" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -999,17 +929,13 @@ None if not available in the DataFrame.</p>
 Amsterdam Schiphol International Airport) and the IATA code is
 represented by 3 letters and more familiar to the public (e.g. AMS for
 Amsterdam)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.diff">
 <span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.diff" title="Permalink to this definition"></a></dt>
-<dd><p>Assign differential versions of features to new columns.</p>
+<dd><p>Assign differential versions of features to new columns.
+:rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1018,23 +944,15 @@ Amsterdam)</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">track</span><span class="o">=</span><span class="s2">&quot;track_diff&quot;</span><span class="p">,</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;heading_diff&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.distance">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#traffic.core.Flight.distance" title="Permalink to this definition"></a></dt>
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.airspace.Airspace"><span class="pre">Airspace</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Polygon.html#shapely.Polygon" title="(in Shapely)"><span class="pre">Polygon</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">PointMixin</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">Flight</span></a></span></span></dt>
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><span class="pre">Flight</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">DataFrame</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'distance'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.distance" title="Permalink to this definition"></a></dt>
 <dd><p>Computes the distance from a Flight to another entity.</p>
 <p>The behaviour is different according to the type of the second
-element:</p>
+element:
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
 <ul class="simple">
 <li><p>if the other element is None (i.e. flight.distance()), the method
 returns a distance in nautical miles between the first and last
@@ -1057,11 +975,6 @@ Consider a strict resampling (e.g. one point per minute, “1T”)
 before calling the method.</p></li>
 </ul>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1088,17 +1001,12 @@ None if not available in the DataFrame.</p>
 Amsterdam Schiphol International Airport) and the IATA code is
 represented by 3 letters and more familiar to the public (e.g. AMS for
 Amsterdam)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.drop">
 <span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.drop" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1111,7 +1019,7 @@ structure.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.drop_duplicates">
 <span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.drop_duplicates" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1123,13 +1031,8 @@ structure.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.duration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">Timedelta</span></a></em><a class="headerlink" href="#traffic.core.Flight.duration" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span class="pre">Timedelta</span></a></em><a class="headerlink" href="#traffic.core.Flight.duration" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the duration of the flight.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1168,11 +1071,8 @@ convenient in the following use case:</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Extent is given in the following order in the origin crs:
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Extent is given in the following order in the origin crs:
 (west, east, south, north)</p>
 </dd>
 </dl>
@@ -1183,6 +1083,11 @@ convenient in the following use case:</p>
 <span class="sig-name descname"><span class="pre">feature_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.feature_gt" title="Permalink to this definition"></a></dt>
 <dd><p>Returns True if feature(flight) is greater than value.</p>
 <p>This is fully equivalent to <cite>f.longer_than(“1 minute”)</cite>:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_gt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
@@ -1194,11 +1099,6 @@ convenient in the following use case:</p>
 </div>
 <p>The second one can be useful for stacking operations during
 lazy evaluation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1206,6 +1106,11 @@ lazy evaluation.</p>
 <span class="sig-name descname"><span class="pre">feature_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.feature_lt" title="Permalink to this definition"></a></dt>
 <dd><p>Returns True if feature(flight) is less than value.</p>
 <p>This is fully equivalent to <cite>f.shorter_than(“1 minute”)</cite>:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">feature_lt</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;1 minute&#39;</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
@@ -1217,17 +1122,12 @@ lazy evaluation.</p>
 </div>
 <p>The second one can be useful for stacking operations during
 lazy evaluation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.fillna">
 <span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.fillna" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1251,8 +1151,9 @@ unacceptable values with NaNs.</p>
 <p>Then, a strategy may be applied to fill the NaN values, by default a
 forward/backward fill. Other strategies may be passed, for instance <em>do
 nothing</em>: <code class="docutils literal notranslate"><span class="pre">None</span></code>; or <em>interpolate</em>: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x.interpolate()</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <p>This method if often more efficient when applied several times with
 different kernel values.Kernel values may be passed as integers, or
 list/tuples of integers for cascade of filters:</p>
@@ -1263,10 +1164,7 @@ list/tuples of integers for cascade of filters:</p>
 <span class="n">flight</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">altitude</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">53</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1277,15 +1175,13 @@ list/tuples of integers for cascade of filters:</p>
 <dd><p>Returns the final (last) segment of trajectory yielded by
 flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1296,15 +1192,13 @@ flight.method()</p>
 constructor.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:class:`~traffic.core.flight.Flight`</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1319,11 +1213,6 @@ by yourself (see <code class="docutils literal notranslate"><span class="pre">Fl
 <p>The <code class="docutils literal notranslate"><span class="pre">Traffic.assign_id()</span></code> method uses a heuristic based on the
 timestamps associated to callsign/icao24 pairs to automatically assign a
 <code class="docutils literal notranslate"><span class="pre">flight_id</span></code> and separate flights.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1332,7 +1221,8 @@ timestamps associated to callsign/icao24 pairs to automatically assign a
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
-filename.</p>
+filename.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Flight)]</p>
 <ul class="simple">
 <li><p>.pkl and .pkl.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_pickle</span></code>;</p></li>
 <li><p>.parquet and .parquet.gz dispatch to <code class="docutils literal notranslate"><span class="pre">pandas.read_parquet</span></code>;</p></li>
@@ -1348,11 +1238,6 @@ method with the kwargs argument.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Flight</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;example_flight.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Flight)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1437,13 +1322,11 @@ based on the <code class="docutils literal notranslate"><span class="pre">datase
 is None</p></li>
 </ul>
 </dd>
-</dl>
-<p><strong>See also:</strong> <a class="reference internal" href="../tutorial/go_around.html#how-to-select-go-arounds-from-a-set-of-trajectories"><span class="std std-ref">How to select go-arounds from a set of trajectories?</span></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
 </dd>
 </dl>
+<p><strong>See also:</strong> <a class="reference internal" href="../tutorial/go_around.html#how-to-select-go-arounds-from-a-set-of-trajectories"><span class="std std-ref">How to select go-arounds from a set of trajectories?</span></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1463,7 +1346,7 @@ option to return a FlightIterator.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.groupby">
 <span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.groupby" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
 underlying pandas DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -1478,15 +1361,13 @@ underlying pandas DataFrame.</p>
 <dd><p>Returns True if flight.method() returns a non-empty iterator.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:class:`bool`</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1500,30 +1381,23 @@ the proposed model.</p>
 <p>The model has been trained on manually labelled holding patterns for
 trajectories landing at different European airports including London
 Heathrow.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">onnxruntime</span></code> package is an optional dependency required for
 this function to properly work. At the time being, it is not
 available for pip with Python 3.10 but still available on
 conda-forge servers.</p>
-</div>
-<p>(new in version 2.8)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+</p>
 </dd>
 </dl>
+<p>(new in version 2.8)</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.holes">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">holes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></em><a class="headerlink" href="#traffic.core.Flight.holes" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the number of ‘holes’ in a trajectory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1533,18 +1407,14 @@ conda-forge servers.</p>
 <p>icao24 (ICAO 24-bit address) is a unique identifier associated to a
 transponder. These identifiers correlate to the aircraft registration.</p>
 <p>For example icao24 code ‘ac82ec’ is associated to ‘N905NA’.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.inside_bbox">
 <span class="sig-name descname"><span class="pre">inside_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.inside_bbox" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the part of the DataFrame with coordinates located within the
-bounding box of the shape passed in parameter.</p>
+bounding box of the shape passed in parameter.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= GeographyMixin)]</p>
 <blockquote>
 <div><p>The bounds parameter can be:</p>
 <ul class="simple">
@@ -1558,43 +1428,32 @@ bounding box of the shape passed in parameter.</p>
 when stacked for lazy evaluation.</p>
 </div>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= GeographyMixin)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.intersects">
 <span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.intersects" title="Permalink to this definition"></a></dt>
-<dd><p>Returns True if the trajectory is inside the given shape.</p>
+<dd><p>Returns True if the trajectory is inside the given shape.
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 <ul class="simple">
 <li><p>If an Airspace is passed, the 3D trajectory is compared to each layers
 constituting the airspace, with corresponding altitude limits.</p></li>
 <li><p>If a shapely Geometry is passed, the 2D trajectory alone is
 considered.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.is_from_inertial">
 <span class="sig-name descname"><span class="pre">is_from_inertial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.is_from_inertial" title="Permalink to this definition"></a></dt>
 <dd><p>Returns True if ground trajectory data looks noisy.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 <p>This method is still experimental and tries to catch trajectories
 based on the inertial system rather than the GPS. It catches zig-zag
 patterns but fails to get trajectories driving between taxiways.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1604,7 +1463,8 @@ patterns but fails to get trajectories driving between taxiways.</p>
 <span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.label" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the same flight with extra information from iterators.</p>
 <p>Every keyword argument will be used to create a new column in the Flight
-dataframe, filled by default with None values:</p>
+dataframe, filled by default with None values:
+:rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <ul class="simple">
 <li><p>if the passed value is True, the default one is False</p></li>
 <li><dl class="simple">
@@ -1627,7 +1487,7 @@ arguments;</p></li>
 has three arguments;</p></li>
 </ul>
 <p>Before returning, the dataframe applies
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> and so <cite>None</cite> values maybe
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> and so <cite>None</cite> values maybe
 replaced by <cite>NaT</cite> or <cite>NaN</cite> values.</p>
 <p>Example usage:</p>
 <ul>
@@ -1661,11 +1521,6 @@ holding pattern</p>
 </div></blockquote>
 </li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1716,14 +1571,12 @@ full airport database is considered but it is possible to restrict
 it and pass a smaller database with the dataset parameter.</p>
 <p>If no runway information is available for the given airport, no
 trajectory segment will be provided.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This API is not stable yet. The interface may change in a near
-future.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+<dd class="field-odd"><p><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+<p>This API is not stable yet. The interface may change in a near
+future.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1736,15 +1589,13 @@ future.</p>
 constructor.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:class:`~traffic.core.flight.Flight`</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1758,15 +1609,13 @@ constructor.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Center the map near the landing airport</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">flight</span><span class="o">.</span><span class="n">at</span><span class="p">()</span><span class="o">.</span><span class="n">latlon</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>  <span class="c1"># this works as well with default options</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">leaflet</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~ipyleaflet.leaflet.Polyline`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">leaflet</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/layers/polyline.html#ipyleaflet.leaflet.Polyline" title="(in ipyleaflet)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1784,15 +1633,15 @@ constructor.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.max">
 <span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.max" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the maximum value of given feature.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
-<span class="go">35000</span>
-</pre></div>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">35000</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1804,38 +1653,34 @@ constructor.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elal747</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;altitude &lt; 15000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max_split</span><span class="p">()</span>
 <span class="go">Flight ELY1747</span>
 <span class="go">aircraft: 738043 · 🇮🇱 4X-ELC (B744)</span>
-<span class="go">origin: LIRF (2019-11-03 12:14:40+00:00)</span>
-<span class="go">destination: LLBG (2019-11-03 14:13:00+00:00)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
 </pre></div>
 </div>
+<p>origin: LIRF (2019-11-03 12:14:40+00:00)
+destination: LLBG (2019-11-03 14:13:00+00:00)</p>
 <p>In this example, the fancy part of the trajectory occurs below
 15,000 ft. The command extracts the plane pattern.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.mean">
 <span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.mean" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the average value of given feature.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;vertical_rate&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
-<span class="go">-1000</span>
-</pre></div>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;vertical_rate&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">-1000</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.merge">
 <span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.merge" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1849,30 +1694,28 @@ structure.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.min">
 <span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.min" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the minimum value of given feature.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
-<span class="go">24000</span>
-</pre></div>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">)</span>  <span class="c1"># dummy example</span>
+<span class="go">24000</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.moving">
 <span class="sig-name descname"><span class="pre">moving</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">3}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'5s'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.moving" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the part of the trajectory after the aircraft starts moving.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 <p>This method has been extensively tested on aircraft taxiing before
 take-off. It should be adapted/taken with extra care for
 trajectories after landing.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1882,15 +1725,13 @@ trajectories after landing.</p>
 <span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.next" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the first segment of trajectory yielded by flight.method()</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1903,11 +1744,6 @@ For instance, AFR292 is the callsign and AF292 is the flight number.</p>
 <p>Callsigns are often more complicated as they are designed to limit
 confusion on the radio: hence DLH02X can be the callsign associated
 to flight number LH1100.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1915,6 +1751,11 @@ to flight number LH1100.</p>
 <span class="sig-name descname"><span class="pre">on_parking_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parking_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.on_parking_position" title="Permalink to this definition"></a></dt>
 <dd><p>Generates possible parking positions at a given airport.</p>
 <p>Example usage:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parking</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">on_parking_position</span><span class="p">(</span><span class="s1">&#39;LSZH&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="go"># returns the most probable parking position in terms of duration</span>
 </pre></div>
@@ -1924,11 +1765,6 @@ to flight number LH1100.</p>
 <p>This method has been well tested for aircraft taking off, but should
 be double checked for landing trajectories.</p>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1973,11 +1809,6 @@ None if not available in the DataFrame.</p>
 Amsterdam Schiphol International Airport) and the IATA code is
 represented by 3 letters and more familiar to the public (e.g. AMS for
 Amsterdam)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1996,14 +1827,12 @@ using OpenAP phase detection fuzzy logic method.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.pipe">
 <span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.pipe" title="Permalink to this definition"></a></dt>
 <dd><p>Applies <cite>func</cite> to the object.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The logic is similar to that of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.pipe.html#pandas.DataFrame.pipe" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pipe()</span></code></a>
-method, but the function applies on T, not on the DataFrame.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None | ‘Flight’ | <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+<dd class="field-odd"><p><p>None | ‘Flight’ | bool</p>
+<p>The logic is similar to that of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.pipe.html#pandas.DataFrame.pipe" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pipe()</span></code></a>
+method, but the function applies on T, not on the DataFrame.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2021,14 +1850,12 @@ is applied.</p>
 <span class="n">flight</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See also <a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a> for the
-altair equivalent.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
+<p>See also <a class="reference external" href="#traffic.core.Flight.geoencode">geoencode()</a> for the
+altair equivalent.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2037,7 +1864,8 @@ altair equivalent.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.plot_time">
 <span class="sig-name descname"><span class="pre">plot_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.plot_time" title="Permalink to this definition"></a></dt>
 <dd><p>Plots the given features according to time.</p>
-<p>The method ensures:</p>
+<p>The method ensures:
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 <ul class="simple">
 <li><p>only non-NaN data are displayed (no gap in the plot);</p></li>
 <li><p>the timestamp is naively converted to UTC if not localized.</p></li>
@@ -2058,11 +1886,6 @@ altair equivalent.</p>
 <p>See also <a class="reference external" href="#traffic.core.Flight.chart">chart()</a> for the altair
 equivalent.</p>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2072,7 +1895,8 @@ equivalent.</p>
 <p>The Flight supports Cartopy axis as well with automatic projection. If
 no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>
 is applied.</p>
-<p>The <cite>resolution</cite> argument may be:</p>
+<p>The <cite>resolution</cite> argument may be:
+:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>None for a raw plot;</p></li>
@@ -2095,11 +1919,6 @@ longitude degree.</p></li>
 <span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2133,13 +1952,11 @@ runway. The algorithm will ensure all trajectories are aligned with
 the runway’s ILS. (ignored if <code class="docutils literal notranslate"><span class="pre">airport</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 </dd>
-</dl>
-<p>(new in version 2.8)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
 </dd>
 </dl>
+<p>(new in version 2.8)</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2165,15 +1982,13 @@ convenient for the area attribute.</p>
 <p>The method identifies the start of the movement, the parking_position
 and the moment the aircraft suddenly changes direction the computed
 track angle.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p>Optional[‘Flight’]</p>
 <p>The method has poor performance when trajectory point on ground are
 lacking. This is often the case for data recorded from locations far
 from the airport.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[‘Flight’]</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2181,7 +1996,7 @@ from the airport.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.query">
 <span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.query" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -2197,24 +2012,22 @@ structure.</p>
 <dd><p>Extends data with extra columns from EHS messages.</p>
 <p>By default, raw messages are requested from the OpenSky Network
 database.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <p>Making a lot of small requests can be very inefficient and may look
 like a denial of service. If you get the raw messages using a
 different channel, you can provide the resulting dataframe as a
 parameter. See the page about <a class="reference external" href="opensky_impala.html">OpenSky Impala access</a></p>
-</div>
+</p>
+</dd>
+</dl>
 <p>The data parameter expect three columns: <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">rawmsg</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mintime</span></code>, in conformance with the OpenSky API.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2228,13 +2041,11 @@ database.</p>
 <p>The kwargs argument helps overriding arguments from the query, namely
 start, stop, callsign and icao24.</p>
 <p>Returns None if no data is found.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2242,7 +2053,7 @@ start, stop, callsign and icao24.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.rename">
 <span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.rename" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -2255,7 +2066,7 @@ structure.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.replace">
 <span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.replace" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -2275,7 +2086,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -2311,7 +2122,7 @@ approach is helpful to fill gaps along a great circle.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.reset_index">
 <span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.reset_index" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -2344,15 +2155,13 @@ name of the runway targetted by the aircraft at each instant.</p>
 constructor.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2375,7 +2184,8 @@ conformal projection and applies the algorithm. If x and y features are
 already present in the DataFrame (after a call to
 <span class="xref std std-ref">~traffic.core.flight.Flight.compute_xy()</span> for instance) then this
 projection is taken into account.</p>
-<p>The tolerance parameter must be defined in meters.</p>
+<p>The tolerance parameter must be defined in meters.
+:rtype: npt.NDArray[np.float64] | ‘Flight</p>
 <ul class="simple">
 <li><p>By default, a 2D version of the algorithm is called, unless you pass a
 column name for <code class="docutils literal notranslate"><span class="pre">altitude</span></code>.</p></li>
@@ -2385,11 +2195,6 @@ default value works well in most situations.</p></li>
 <p>The method returns a <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> or a 1D mask if you
 specify <code class="docutils literal notranslate"><span class="pre">return_mask=True</span></code>.</p>
 <p><strong>See also</strong>: <a class="reference internal" href="../user_guide/simplify.html#how-to-simplify-or-resample-a-trajectory"><span class="std std-ref">How to simplify or resample a trajectory?</span></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>npt.NDArray[np.float64] | ‘Flight</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2400,15 +2205,13 @@ specify <code class="docutils literal notranslate"><span class="pre">return_mask
 constructor.</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~traffic.core.flight.Flight`]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;1H&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># seconds by default</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2426,7 +2229,7 @@ than min_duration (in s) within a circle of diameter max_diameter (in m)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.sort_values">
 <span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.sort_values" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -2438,23 +2241,17 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">FlightIterator</span></a></span></span><a class="headerlink" href="#traffic.core.Flight.split" title="Permalink to this definition"></a></dt>
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><span class="pre">FlightIterator</span></a></span></span></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.split" title="Permalink to this definition"></a></dt>
 <dd><p>Iterates on legs of a Flight based on the distribution of timestamps.</p>
 <p>By default, the method stops a flight and yields a new one after a gap
 of 10 minutes without data.</p>
-<p>The length of the gap (here 10 minutes) can be expressed:</p>
+<p>The length of the gap (here 10 minutes) can be expressed:
+:rtype: <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
 <ul class="simple">
 <li><p>in the NumPy style: <code class="docutils literal notranslate"><span class="pre">Flight.split(10,</span> <span class="pre">'m')</span></code> (see
 <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code>);</p></li>
 <li><p>in the pandas style: <code class="docutils literal notranslate"><span class="pre">Flight.split('10T')</span></code> (see <code class="docutils literal notranslate"><span class="pre">pd.Timedelta</span></code>)</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -2465,33 +2262,18 @@ of 10 minutes without data.</p>
 transponder. Some squawk codes are reserved for specific situations and
 emergencies, e.g. 7700 for general emergency, 7600 for radio failure or
 7500 for hijacking.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.start" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.start" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.stop" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.core.Flight.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2500,15 +2282,13 @@ emergencies, e.g. 7700 for general emergency, 7600 for radio failure or
 <dd><p>Returns the number of segments returned by flight.method().</p>
 <p>Example usage:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;go_around&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
+<span class="go">:rtype: :py:class:`int`</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;runway_change&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2567,7 +2347,7 @@ of the  given airport. The takeoff runway number is appended as a new
 <dt class="sig sig-object py" id="traffic.core.Flight.to_csv">
 <span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_csv" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2581,7 +2361,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_excel">
 <span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_excel" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to Excel format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2595,7 +2375,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_feather">
 <span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_feather" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to feather format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2609,7 +2389,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_hdf">
 <span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_hdf" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2623,7 +2403,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_json" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2637,7 +2417,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_parquet">
 <span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_parquet" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -2651,7 +2431,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Flight.to_pickle">
 <span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.to_pickle" title="Permalink to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">

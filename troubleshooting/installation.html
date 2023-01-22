@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to troubleshoot installation issues? &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>How to troubleshoot installation issues? &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -105,13 +105,13 @@
 <ul>
 <li><p>the <strong>Anaconda way (recommended)</strong>, the most simple way, with only one command
 to execute;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n traffic -c conda-forge <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 traffic
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>traffic<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>traffic
 </pre></div>
 </div>
 </li>
 <li><p>the pip way, but you are responsible for non Python dependency management.
 With Linux, you may check how the environment is created for GitHub Actions;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install traffic
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>traffic
 </pre></div>
 </div>
 </li>
@@ -119,7 +119,7 @@ With Linux, you may check how the environment is created for GitHub Actions;</p>
 of all dependencies are installed in a virtual environment on any computer
 running the library: this step is crucial for consistency in continuous
 integration.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
 </pre></div>
 </div>
 </li>
@@ -133,7 +133,7 @@ integration.</p>
 reuse a potentially corrupted environment (when conda loses track of
 dependency versions);</p></li>
 <li><p>to disable the <code class="docutils literal notranslate"><span class="pre">channel_priority</span></code> option with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --set channel_priority disabled
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>disabled
 </pre></div>
 </div>
 </li>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access airport information? &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>How to access airport information? &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -147,17 +147,15 @@ first time you call it) and put in cache.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the IATA or ICAO code of the airport</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>]</p>
+</dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span>
 <span class="go">Airport(icao=&#39;EHAM&#39;, iata=&#39;AMS&#39;, name=&#39;Amsterdam Airport Schiphol&#39;, country=&#39;Netherlands&#39;, latitude=52.308, longitude=4.763, altitude=-11.0)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../api_reference/traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -182,6 +180,9 @@ elements we may expect when we look into an area, the buffer
 parameter (by default, 0.5 degree) helps enlarging the area of
 interest.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">G</span></code>, bound= GeoDBMixin)]</p>
 </dd>
 </dl>
 <p>This works with databases like
@@ -221,11 +222,6 @@ interest.</p></li>
 <span class="go">Navaid(&#39;ZUE&#39;, type=&#39;VOR&#39;, latitude=47.59216667, longitude=8.81766667, altitude=1730.0, description=&#39;ZURICH EAST VOR-DME&#39;, frequency=&#39;110.05MHz&#39;)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">G</span></code>, bound= GeoDBMixin)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -240,16 +236,12 @@ name, city name of full name of the airport.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;large_airport&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Tokyo&#39;</span><span class="p">)</span>  
 <span class="go">  name                                 country   icao   iata   latitude   longitude</span>
+<span class="go">:rtype: :py:class:`~traffic.data.basic.airports.Airports`</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  Narita International Airport           Japan   RJAA   NRT    35.76      140.4</span>
 <span class="go">  Tokyo Haneda International Airport     Japan   RJTT   HND    35.55      139.8</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -541,13 +533,13 @@ be overridden if a dictionary is passed in place of the boolean;</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-bf01115282e4459a8cfa5ce297b43d5f"></div>
+<div id="altair-viz-69c48c4323fb4f0d85f8b67fb8fde70f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-bf01115282e4459a8cfa5ce297b43d5f") {
-      outputDiv = document.getElementById("altair-viz-bf01115282e4459a8cfa5ce297b43d5f");
+    if (outputDiv.id !== "altair-viz-69c48c4323fb4f0d85f8b67fb8fde70f") {
+      outputDiv = document.getElementById("altair-viz-69c48c4323fb4f0d85f8b67fb8fde70f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

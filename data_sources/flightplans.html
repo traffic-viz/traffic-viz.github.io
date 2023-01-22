@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access flight plan information? &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>How to access flight plan information? &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -196,14 +196,12 @@ in the segment interval.</p>
 <dd><p>In addition to <a class="reference external" href="export.html#traffic.core.mixins.DataFrameMixin">usual formats</a>, you can parse so6
 files as text files (.so6 extension) or as 7-zipped text files (.so6.7z
 extension).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You will need the <a class="reference external" href="https://github.com/dsoprea/PyEasyArchive">libarchive</a> library to be able
-to parse .so6.7z files on the fly.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= SO6)]</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= SO6)]</p>
+<p>You will need the <a class="reference external" href="https://github.com/dsoprea/PyEasyArchive">libarchive</a> library to be able
+to parse .so6.7z files on the fly.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -229,12 +227,15 @@ to parse .so6.7z files on the fly.</p>
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.intersects">
 <span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.intersects" title="Permalink to this definition"></a></dt>
 <dd><p>Selects all Flights intersecting the given airspace.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
 <p>See the impact of calling <a class="reference external" href="#traffic.data.SO6.inside_bbox">.inside_bbox(sector)</a> to the bounding box
 before intersecting the airspace. Note that this
 chaining may not be safe for smaller airspaces.</p>
-</div>
+</p>
+</dd>
+</dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">noon</span> <span class="o">=</span> <span class="n">so6</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="s2">&quot;2018/01/01 12:00&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -256,11 +257,6 @@ chaining may not be safe for smaller airspaces.</p>
 <span class="n">Wall</span> <span class="n">time</span><span class="p">:</span> <span class="mf">1.43</span> <span class="n">s</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -372,13 +368,11 @@ functions are provided:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.between">
 <span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.between" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>strict: bool = True is not taken into account yet.</p>
-</div>
-<dl class="field-list simple">
+<dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
+<dd class="field-odd"><p><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
+<p>strict: bool = True is not taken into account yet.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -394,13 +388,11 @@ between the two timestamps.</p>
 airspace, but computation errors may sometimes give this impression.
 As a consequence, the clipped trajectory may have points outside the
 shape.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Altitudes are not taken into account.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
+<p>Altitudes are not taken into account.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -430,24 +422,14 @@ shape.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -528,13 +510,11 @@ if you wish to have access to more services provided by B2B.</p>
 <li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – where to download the data.</p></li>
 </ul>
 </dd>
-</dl>
-<p><strong>See also</strong>: <a class="reference internal" href="eurocontrol.html#how-to-configure-eurocontrol-data-files"><span class="std std-ref">How to configure EUROCONTROL data files?</span></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
+<p><strong>See also</strong>: <a class="reference internal" href="eurocontrol.html#how-to-configure-eurocontrol-data-files"><span class="std std-ref">How to configure EUROCONTROL data files?</span></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -544,9 +524,12 @@ if you wish to have access to more services provided by B2B.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
-<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightList" title="traffic.data.eurocontrol.b2b.flight.FlightList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code></a>]</p>
 </dd>
 </dl>
 <p>Exactly one of the following parameters must be passed:</p>
@@ -579,10 +562,10 @@ if you wish to have access to more services provided by B2B.</p>
 
  <span style="font-weight: bold"> flightId </span> <span style="font-weight: bold"> callsign </span> <span style="font-weight: bold"> icao24 </span> <span style="font-weight: bold"> typecode </span> <span style="font-weight: bold"> origin </span> <span style="font-weight: bold"> destination </span> <span style="font-weight: bold"> EOBT   </span> 
  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  AFR98CB    39e689   BCS3       LFPG     EFHK          xxxxxx  
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  SXS25X     nan      B738       LFPG     LTBJ          xxxxxx  
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  AFR24BD    39856a   E190       LFPG     EDDL          xxxxxx  
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  AFR718     3965aa   B77W       LFPG     GOBD          xxxxxx  
 
-<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span> more entries<span style="font-weight: bold">)</span>
+<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span> more entries<span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -596,11 +579,6 @@ indexing a
 with the <code class="docutils literal notranslate"><span class="pre">flightId</span></code> field.</p></li>
 </ul>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightList" title="traffic.data.eurocontrol.b2b.flight.FlightList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightList</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -610,9 +588,12 @@ with the <code class="docutils literal notranslate"><span class="pre">flightId</
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
-<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightPlanList" title="traffic.data.eurocontrol.b2b.flight.FlightPlanList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlanList</span></code></a></p>
 </dd>
 </dl>
 <p>The method must take at least one of:</p>
@@ -640,10 +621,10 @@ with the <code class="docutils literal notranslate"><span class="pre">flightId</
 
  <span style="font-weight: bold"> flightId </span> <span style="font-weight: bold"> callsign </span> <span style="font-weight: bold"> origin </span> <span style="font-weight: bold"> destination </span> <span style="font-weight: bold"> EOBT   </span> <span style="font-weight: bold"> status </span> 
  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  KLM22C     EPWR     EHAM          xxxxxx   xxxxxx  
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  KLM78T     LIPE     EHAM          xxxxxx   xxxxxx  
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  KLM26V     LPPT     EHAM          xxxxxx   xxxxxx  
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx   </span>  KLM60V     EDDB     EHAM          xxxxxx   xxxxxx  
 
-<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span> more entries<span style="font-weight: bold">)</span>
+<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span> more entries<span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -654,11 +635,6 @@ with the <code class="docutils literal notranslate"><span class="pre">flightId</
 returns more comprehensive information about flights.</p></li>
 </ul>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightPlanList" title="traffic.data.eurocontrol.b2b.flight.FlightPlanList"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlanList</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -669,20 +645,18 @@ returns more comprehensive information about flights.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>EOBT</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>]) – Estimated off-block time</p></li>
+<li><p><strong>EOBT</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>]) – Estimated off-block time</p></li>
 <li><p><strong>callsign</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <strong>NO</strong> wildcard accepted</p></li>
 <li><p><strong>origin</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flying from a given airport (ICAO 4 letter code).</p></li>
 <li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flying to a given airport (ICAO 4 letter code).</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo" title="traffic.data.eurocontrol.b2b.flight.FlightInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightInfo</span></code></a></p>
+</dd>
 </dl>
 <p>This method is called when indexing the return value of a
 <a class="reference internal" href="#traffic.data.eurocontrol.b2b.NMB2B.flight_search" title="traffic.data.eurocontrol.b2b.NMB2B.flight_search"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flight_search()</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo" title="traffic.data.eurocontrol.b2b.flight.FlightInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightInfo</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -692,13 +666,16 @@ returns more comprehensive information about flights.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
-<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default current time</p></li>
+<li><p><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timestamp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]) – (UTC), by default one hour later</p></li>
 <li><p><strong>traffic_volumes</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – impacted by a given regulation</p></li>
 <li><p><strong>regulations</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – identifier(s) related to a regulation</p></li>
 <li><p><strong>fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]) – additional fields to request. By default, a set of
 (arguably) relevant fields are requested.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.b2b.flow.RegulationList" title="traffic.data.eurocontrol.b2b.flow.RegulationList"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code></a>]</p>
 </dd>
 </dl>
 <p><strong>Example usage:</strong></p>
@@ -713,23 +690,18 @@ returns more comprehensive information about flights.</p></li>
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 
- <span style="font-weight: bold"> regulationId </span> <span style="font-weight: bold"> state     </span> <span style="font-weight: bold"> type         </span> <span style="font-weight: bold"> reason             </span> <span style="font-weight: bold"> ... </span> 
- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   ATC_CAPACITY              
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  CANCELLED   GROUND_DELAY   WEATHER                   
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  CANCELLED   GROUND_DELAY   ATC_STAFFING              
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  CANCELLED   GROUND_DELAY   WEATHER                   
- <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   AERODROME_CAPACITY        
+ <span style="font-weight: bold"> regulationId </span> <span style="font-weight: bold"> state     </span> <span style="font-weight: bold"> type         </span> <span style="font-weight: bold"> reason       </span> <span style="font-weight: bold"> ... </span> 
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   ATC_CAPACITY        
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   ATC_CAPACITY        
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   WEATHER             
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  CANCELLED   GROUND_DELAY   ATC_CAPACITY        
+ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold"> xxxxxx       </span>  APPLIED     GROUND_DELAY   WEATHER             
 
-<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">19</span> more entries<span style="font-weight: bold">)</span>
+<span style="color: #808000; text-decoration-color: #808000">...</span> <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">27</span> more entries<span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#traffic.data.eurocontrol.b2b.flow.RegulationList" title="traffic.data.eurocontrol.b2b.flow.RegulationList"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegulationList</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py class">
@@ -739,11 +711,6 @@ returns more comprehensive information about flights.</p></li>
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.b2b.flight.FlightInfo.flight_plan">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flight_plan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><span class="pre">FlightPlan</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.b2b.flight.FlightInfo.flight_plan" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the flight plan in ICAO format.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -755,7 +722,7 @@ returns more comprehensive information about flights.</p></li>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – one of ftfmPointProfile, rtfmPointProfile, ctfmPointProfile</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>

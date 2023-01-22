@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geomagnetic declination &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>Geomagnetic declination &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -228,14 +228,14 @@ not resample the trajectories prior to treatments. Let’s observe the granular 
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
         <span class="n">ils</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
         <span class="p">(</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ils</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
         <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span>
     <span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
         <span class="n">rwy</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
         <span class="p">(</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;heading&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;  δ = </span><span class="si">{</span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rwy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">,</span>
         <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">center_15</span>
     <span class="p">)</span>
 

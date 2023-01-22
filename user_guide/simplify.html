@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to simplify or resample a trajectory? &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>How to simplify or resample a trajectory? &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -144,7 +144,8 @@ conformal projection and applies the algorithm. If x and y features are
 already present in the DataFrame (after a call to
 <span class="xref std std-ref">~traffic.core.flight.Flight.compute_xy()</span> for instance) then this
 projection is taken into account.</p>
-<p>The tolerance parameter must be defined in meters.</p>
+<p>The tolerance parameter must be defined in meters.
+:rtype: npt.NDArray[np.float64] | ‘Flight</p>
 <ul class="simple">
 <li><p>By default, a 2D version of the algorithm is called, unless you pass a
 column name for <code class="docutils literal notranslate"><span class="pre">altitude</span></code>.</p></li>
@@ -154,11 +155,6 @@ default value works well in most situations.</p></li>
 <p>The method returns a <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> or a 1D mask if you
 specify <code class="docutils literal notranslate"><span class="pre">return_mask=True</span></code>.</p>
 <p><strong>See also</strong>: <a class="reference internal" href="#how-to-simplify-or-resample-a-trajectory"><span class="std std-ref">How to simplify or resample a trajectory?</span></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>npt.NDArray[np.float64] | ‘Flight</p>
-</dd>
-</dl>
 </dd></dl>
 
 <div class="jupyter_cell jupyter_container docutils container">
@@ -199,13 +195,13 @@ respect to the 2D ground track.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-5e6afcd4568544e1923dea70643f3647"></div>
+<div id="altair-viz-52debdd6542c462f98017d3ca3068dd2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5e6afcd4568544e1923dea70643f3647") {
-      outputDiv = document.getElementById("altair-viz-5e6afcd4568544e1923dea70643f3647");
+    if (outputDiv.id !== "altair-viz-52debdd6542c462f98017d3ca3068dd2") {
+      outputDiv = document.getElementById("altair-viz-52debdd6542c462f98017d3ca3068dd2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -326,7 +322,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1283.g77afbccc0f)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -392,13 +388,13 @@ preserved.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-6cc6ec18d0354366bf6d82f8ad5d03f5"></div>
+<div id="altair-viz-68fd7bcdb9104bc894fa3628e0d8258d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6cc6ec18d0354366bf6d82f8ad5d03f5") {
-      outputDiv = document.getElementById("altair-viz-6cc6ec18d0354366bf6d82f8ad5d03f5");
+    if (outputDiv.id !== "altair-viz-68fd7bcdb9104bc894fa3628e0d8258d") {
+      outputDiv = document.getElementById("altair-viz-68fd7bcdb9104bc894fa3628e0d8258d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -510,13 +506,13 @@ time axis.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-7d15dc82e7774e59b89a30321da87790"></div>
+<div id="altair-viz-99c5cacbb917438d87349ea797aa0e9d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7d15dc82e7774e59b89a30321da87790") {
-      outputDiv = document.getElementById("altair-viz-7d15dc82e7774e59b89a30321da87790");
+    if (outputDiv.id !== "altair-viz-99c5cacbb917438d87349ea797aa0e9d") {
+      outputDiv = document.getElementById("altair-viz-99c5cacbb917438d87349ea797aa0e9d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

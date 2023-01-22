@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>Installation &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -105,14 +105,14 @@ formats (including CesiumJS or Google Earth) are also available.</p>
 <h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this heading"></a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation</span>
-conda create -n traffic -c conda-forge <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 traffic
-conda activate traffic
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>traffic<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>traffic
+conda<span class="w"> </span>activate<span class="w"> </span>traffic
 </pre></div>
 </div>
 <p>Adjust the Python version you need (&gt;=3.8) and append packages you need for
 working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 <p>Then activate the environment each time you need to use the <code class="docutils literal notranslate"><span class="pre">traffic</span></code> library:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate traffic
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>traffic
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -129,14 +129,14 @@ working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 <ul>
 <li><p>To update traffic in your conda environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># -n option is followed by the name of the environment</span>
-conda update -n traffic -c conda-forge traffic
+conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>traffic<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>traffic
 </pre></div>
 </div>
 </li>
 <li><p>For the most recent development version, clone the Github repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/xoolive/traffic
-<span class="nb">cd</span> traffic/
-pip install .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/xoolive/traffic
+<span class="nb">cd</span><span class="w"> </span>traffic/
+pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>
 <div class="admonition note">
@@ -157,9 +157,9 @@ reviewing process:</p>
 <ul>
 <li><p>install <a class="reference external" href="https://python-poetry.org/">poetry</a> on your workstation</p></li>
 <li><p>install traffic with poetry:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/xoolive/traffic
-<span class="nb">cd</span> traffic/
-poetry install -E all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/xoolive/traffic
+<span class="nb">cd</span><span class="w"> </span>traffic/
+poetry<span class="w"> </span>install<span class="w"> </span>-E<span class="w"> </span>all
 </pre></div>
 </div>
 <p>Then, you may:</p>
@@ -172,7 +172,7 @@ poetry install -E all
 <li><p>install the <a class="reference external" href="https://pre-commit.com/">pre-commit</a> hooks so a minimum set of
 sanity checks can be performed and so you can fix issues before continuous
 integration (GitHub Actions) fails.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run pre-commit install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
 </li>

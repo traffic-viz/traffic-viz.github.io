@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access aircraft information? &mdash; traffic 2.8.2.dev1 documentation</title>
+  <title>How to access aircraft information? &mdash; traffic 2.8.2.dev4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev1
+                2.8.2.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -197,17 +197,15 @@ information are based on the registration information.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the icao24 identifier or the tail number of the aircraft</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code>]</p>
+</dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;F-GFKY&quot;</span><span class="p">)</span>
 <span class="go">Tail(icao24=&#39;391558&#39;, registration=&#39;F-GFKY&#39;, typecode=&#39;A320&#39;, flag=&#39;🇫🇷&#39;)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -230,16 +228,12 @@ information are based on the registration information.</p>
 <span class="go">  3801fa   F-WWID         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380d5a   F-WWBB         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380d7a   F-WWBC         A20N       Airbus A320   Airbus     Airbus</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
 <span class="go">  380d9a   F-WWBD         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380dba   F-WWBF         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  ... (7021 more entries)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Aircraft)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -255,16 +249,12 @@ information are based on the registration information.</p>
 <span class="go">  icao24   registration   typecode   model   operator</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  4241f4   VP-FBB         DHC6               British Antarctic Survey</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
 <span class="go">  4241f5   VP-FBL         DHC6               British Antarctic Survey</span>
 <span class="go">  4241f6   VP-FAZ         DHC6               British Antarctic Survey</span>
 <span class="go">  43be5b   VP-FBQ         DHC7               British Antarctic Survey</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Aircraft)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -292,16 +282,12 @@ other methods which are chained if query_str is non empty</p></li>
 <span class="go">  3b7b52   F-ZBQG         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8b   F-ZBQF         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8c   F-ZBQF         EC45       Airbus Helicopters H145   French Securite Civile</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
 <span class="go">  3b7b8d   F-ZBQD         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8e   F-ZBQC         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  ... (19 more entries)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Aircraft)]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -333,16 +319,12 @@ other methods which are chained if query_str is non empty</p></li>
 <span class="go">A318              Airbus A318-111      16</span>
 <span class="go">A319              Airbus A319-113      37</span>
 <span class="go">A320              Airbus A320-214      48</span>
+<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~pandas.core.frame.DataFrame`]</span>
 <span class="go">A321              Airbus A321-212      20</span>
 <span class="go">A332              Airbus A330-203      15</span>
 <span class="gp">...</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.0.dev0+1189.g575dc38fd8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
