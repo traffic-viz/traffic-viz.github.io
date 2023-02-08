@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to simplify or resample a trajectory? &mdash; traffic 2.8.2.dev9 documentation</title>
+  <title>How to simplify or resample a trajectory? &mdash; traffic 2.8.2.dev10 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -42,7 +42,7 @@
             <a href="../index.html" class="icon icon-home"> traffic
           </a>
               <div class="version">
-                2.8.2.dev9
+                2.8.2.dev10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -137,7 +137,7 @@ here with the following <a class="reference internal" href="../data_sources/samp
 trajectories. The two most famous methods are the <a class="reference external" href="https://bost.ocks.org/mike/simplify/">Ramer-Douglas-Peucker</a> algorithm and the <a class="reference external" href="https://www.jasondavies.com/simplify/">Visvalingam-Whyatt</a> algorithm.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.flight.Flight.simplify">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.048</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.simplify" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.048</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.simplify" title="Permalink to this definition"></a></dt>
 <dd><p>Simplifies a trajectory with Douglas-Peucker algorithm.</p>
 <p>The method uses latitude and longitude, projects the trajectory to a
 conformal projection and applies the algorithm. If x and y features are
@@ -145,7 +145,7 @@ already present in the DataFrame (after a call to
 <span class="xref std std-ref">~traffic.core.flight.Flight.compute_xy()</span> for instance) then this
 projection is taken into account.</p>
 <p>The tolerance parameter must be defined in meters.
-:rtype: npt.NDArray[np.float64] | ‘Flight</p>
+:rtype: <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <ul class="simple">
 <li><p>By default, a 2D version of the algorithm is called, unless you pass a
 column name for <code class="docutils literal notranslate"><span class="pre">altitude</span></code>.</p></li>
@@ -195,13 +195,13 @@ respect to the 2D ground track.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-7b37e72e6bca44d8b90648ae2c9e5b79"></div>
+<div id="altair-viz-200a09e329624352bafd023b0fa8d38c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7b37e72e6bca44d8b90648ae2c9e5b79") {
-      outputDiv = document.getElementById("altair-viz-7b37e72e6bca44d8b90648ae2c9e5b79");
+    if (outputDiv.id !== "altair-viz-200a09e329624352bafd023b0fa8d38c") {
+      outputDiv = document.getElementById("altair-viz-200a09e329624352bafd023b0fa8d38c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -322,7 +322,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1447.g6a83d3c943)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v2.0.0.dev0+1451.g7e88122a2a)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -388,13 +388,13 @@ preserved.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-bfe70c58e32642f1aa15f74f68d5db08"></div>
+<div id="altair-viz-7e99502a96004d798f0c5957a923d519"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-bfe70c58e32642f1aa15f74f68d5db08") {
-      outputDiv = document.getElementById("altair-viz-bfe70c58e32642f1aa15f74f68d5db08");
+    if (outputDiv.id !== "altair-viz-7e99502a96004d798f0c5957a923d519") {
+      outputDiv = document.getElementById("altair-viz-7e99502a96004d798f0c5957a923d519");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -506,13 +506,13 @@ time axis.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-7bd4202b29a048b1b32d2eaaa2eb8e93"></div>
+<div id="altair-viz-ea0b32f93d9f423b968fc2146e3c520b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7bd4202b29a048b1b32d2eaaa2eb8e93") {
-      outputDiv = document.getElementById("altair-viz-7bd4202b29a048b1b32d2eaaa2eb8e93");
+    if (outputDiv.id !== "altair-viz-ea0b32f93d9f423b968fc2146e3c520b") {
+      outputDiv = document.getElementById("altair-viz-ea0b32f93d9f423b968fc2146e3c520b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
