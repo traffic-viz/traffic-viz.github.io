@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Mode S based wind field &mdash; traffic 2.8.2.dev11 documentation</title>
+  <title>A Mode S based wind field &mdash; traffic 2.8.2.dev12 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -15,10 +15,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -39,14 +37,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> traffic
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            traffic
           </a>
               <div class="version">
-                2.8.2.dev11
+                2.8.2.dev12
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -86,7 +88,7 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../gallery.html">Example gallery</a></li>
       <li class="breadcrumb-item active">A Mode S based wind field</li>
       <li class="wy-breadcrumbs-aside">
@@ -4765,7 +4767,7 @@ heading angle in specific BDS5,0 and BDS6,0 messages (see <a class="reference ex
 <p>Groundspeeds and true track angles are derived from the GNSS positions whereas
 true airspeed is computed with traditional onboard instruments like <a class="reference external" href="https://en.wikipedia.org/wiki/Pitot_tube">Pitot tubes</a>.</p>
 <p>Here, aircraft behave as a distributed network of moving sensors and researchers
-<a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a> have been recommending methods to derive wind fields from Mode S data.
+<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> have been recommending methods to derive wind fields from Mode S data.
 The following method is a very basic approach to compute wind.</p>
 <p>Please note I am not a meteorology specialist, so feel free to improve this page
 where it should.</p>
@@ -4877,21 +4879,23 @@ coordinates to the closest integer and average wind in each resulting cell.</p>
 <span class="n">map_</span>
 </pre></div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><div class="line-block">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<div class="line-block">
 <div class="line">Hurter, C., R. Alligier, D. Gianazza, S. Puechmorel, G. Andrienko, and N. Andrienko.</div>
 <div class="line">« Wind Parameters Extraction from Aircraft Trajectories ». Computers, Environment and Urban Systems 47 (2014): 28‑43.</div>
 <div class="line"><a class="reference external" href="https://doi.org/10.1016/j.compenvurbsys.2014.01.005">https://doi.org/10.1016/j.compenvurbsys.2014.01.005</a>.</div>
 </div>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><div class="line-block">
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<div class="line-block">
 <div class="line">Sun, Junzi, Huy Vu, Joost Ellerbroek, and Jacco Hoekstra.</div>
 <div class="line">« Ground-Based Wind Field Construction from Mode-S and ADS-B Data with a Novel Gas Particle Model », 2017, 9.</div>
 </div>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 
 
