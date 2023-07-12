@@ -68,6 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">traffic.core.flight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flightplan.html">traffic.core.flightplan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html">traffic.core.geodesy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.intervals.html">traffic.core.intervals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">traffic.core.lazy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.mixins.html">traffic.core.mixins</a></li>
@@ -113,7 +114,7 @@
 <li><p>airspaces and sectors are represented with <a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Airspace</span></code></a>.</p></li>
 </ul>
 <p><a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> and <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> are wrappers
-around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0.dev0+1045.g54bf475fd4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
+around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0.dev0+1185.gea56ebbd13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
 for trajectory analysis. Airspaces take advantage of <a class="reference external" href="https://shapely.readthedocs.io">shapely Geometries</a> for geometrical analysis.</p>
 <p><a class="reference internal" href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a> have been introduced in order to
 deal with iteration over pieces of trajectories. This structure allows for more
@@ -318,6 +319,20 @@ and stack them before triggering only one iteration.</p>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.distance"><code class="docutils literal notranslate"><span class="pre">distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.greatcircle"><code class="docutils literal notranslate"><span class="pre">greatcircle()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html#traffic.core.geodesy.mrr_diagonal"><code class="docutils literal notranslate"><span class="pre">mrr_diagonal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.intervals.html">traffic.core.intervals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.Interval"><code class="docutils literal notranslate"><span class="pre">Interval</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.Interval.overlap"><code class="docutils literal notranslate"><span class="pre">Interval.overlap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection"><code class="docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.consolidate"><code class="docutils literal notranslate"><span class="pre">IntervalCollection.consolidate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.intersection"><code class="docutils literal notranslate"><span class="pre">IntervalCollection.intersection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.total_duration"><code class="docutils literal notranslate"><span class="pre">IntervalCollection.total_duration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.union"><code class="docutils literal notranslate"><span class="pre">IntervalCollection.union()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a><ul>
