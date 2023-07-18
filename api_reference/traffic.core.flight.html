@@ -182,6 +182,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_airport"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_airport()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_from"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_from()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.takeoff_from_runway"><code class="docutils literal notranslate"><span class="pre">Flight.takeoff_from_runway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.thermals"><code class="docutils literal notranslate"><span class="pre">Flight.thermals()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_csv"><code class="docutils literal notranslate"><span class="pre">Flight.to_csv()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_excel"><code class="docutils literal notranslate"><span class="pre">Flight.to_excel()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Flight.to_feather"><code class="docutils literal notranslate"><span class="pre">Flight.to_feather()</span></code></a></li>
@@ -332,7 +333,7 @@ for testing purposes in the module <code class="docutils literal notranslate"><s
 </div></blockquote>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.abs">
-<span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.abs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.abs" title="Permalink to this definition"></a></dt>
 <dd><p>Assign absolute versions of features to new columns.
 :rtype: <a class="reference internal" href="#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="s2">&quot;track&quot;</span><span class="p">)</span>
@@ -2358,6 +2359,17 @@ to specify a subset of airports as a keyword parameter.</p>
 <p>Iterates on all segments of trajectory matching a zone around a runway
 of the  given airport. The takeoff runway number is appended as a new
 <code class="docutils literal notranslate"><span class="pre">runway</span></code> column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Flight.thermals">
+<span class="sig-name descname"><span class="pre">thermals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.thermals" title="Permalink to this definition"></a></dt>
+<dd><p>Detects thermals for gliders.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.iterator.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a></p>
