@@ -322,6 +322,8 @@
 </li>
       <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.cas2tas">cas2tas() (in module traffic.core.aero)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterAboveSigmaMedian.cascaded_filters">cascaded_filters() (traffic.algorithms.filters.FilterAboveSigmaMedian method)</a>
+</li>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.centroid">centroid (traffic.core.Airspace property)</a>
 
       <ul>
@@ -355,6 +357,8 @@
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.closest_point_of_approach">closest_point_of_approach() (traffic.core.Traffic method)</a>
 </li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.clustering">clustering() (traffic.core.Traffic method)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.ClusteringParams">ClusteringParams (class in traffic.algorithms.filters)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_DME_NSE">compute_DME_NSE() (traffic.core.Flight method)</a>
 </li>
@@ -438,6 +442,8 @@
 </li>
       <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.density">density() (in module traffic.core.aero)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.DerivativeParams">DerivativeParams (class in traffic.algorithms.filters)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.description">description (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
@@ -466,10 +472,10 @@
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diverted">diverted (traffic.core.Flight property)</a>
 </li>
-      <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids.download_data">download_data() (traffic.data.basic.navaid.Navaids method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids.download_data">download_data() (traffic.data.basic.navaid.Navaids method)</a>
+</li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.download_opensky">download_opensky() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.drop">drop() (traffic.core.Flight method)</a>
@@ -576,12 +582,26 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.fillna">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.Filter">Filter (class in traffic.algorithms.filters)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.filter">filter() (traffic.core.Flight method)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.filter">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterAboveSigmaMedian">FilterAboveSigmaMedian (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterBase">FilterBase (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterClustering">FilterClustering (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterDerivative">FilterDerivative (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterMean">FilterMean (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterMedian">FilterMedian (class in traffic.algorithms.filters)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.final">final() (traffic.core.Flight method)</a>
 
       <ul>
@@ -596,14 +616,14 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.first">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.flatten">flatten() (traffic.core.Airspace method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight">Flight (class in traffic.core)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.flight_id">flight_id (traffic.core.Flight property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.flight_ids">flight_ids (traffic.core.Traffic attribute)</a>
 </li>
       <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator">FlightIterator (class in traffic.core)</a>
@@ -938,14 +958,14 @@
 </li>
       <li><a href="api_reference/traffic.core.aero.html#traffic.core.aero.metric_spd_to_knots_rounded">metric_spd_to_knots_rounded() (in module traffic.core.aero)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.min">min() (traffic.core.Flight method)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.min">(traffic.core.FlightIterator method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.model">model() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
       <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder">ModeS_Decoder (class in traffic.data.adsb.decode)</a>
@@ -954,6 +974,8 @@
     module
 
       <ul>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters">traffic.algorithms.filters</a>
+</li>
         <li><a href="api_reference/traffic.core.aero.html#module-traffic.core.aero">traffic.core.aero</a>
 </li>
         <li><a href="api_reference/traffic.core.distance.html#module-traffic.core.distance">traffic.core.distance</a>
@@ -1395,8 +1417,6 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_json">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_parquet">to_parquet() (traffic.core.Flight method)</a>
 
       <ul>
@@ -1411,6 +1431,8 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_parquet">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_pickle">to_pickle() (traffic.core.Flight method)</a>
 
       <ul>
@@ -1431,6 +1453,13 @@
 </li>
       <li><a href="data_sources/decode.html#traffic.data.adsb.decode.ModeS_Decoder.traffic">traffic (traffic.data.adsb.decode.ModeS_Decoder property)</a>
 </li>
+      <li>
+    traffic.algorithms.filters
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters">module</a>
+</li>
+      </ul></li>
       <li>
     traffic.core.aero
 
