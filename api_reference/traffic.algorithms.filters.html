@@ -87,6 +87,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.FilterDerivative"><code class="docutils literal notranslate"><span class="pre">FilterDerivative</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.FilterMean"><code class="docutils literal notranslate"><span class="pre">FilterMean</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.FilterMedian"><code class="docutils literal notranslate"><span class="pre">FilterMedian</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.KalmanFilter6D"><code class="docutils literal notranslate"><span class="pre">KalmanFilter6D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.KalmanSmoother6D"><code class="docutils literal notranslate"><span class="pre">KalmanSmoother6D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.ProcessXYZFilterBase"><code class="docutils literal notranslate"><span class="pre">ProcessXYZFilterBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.TrackVariable"><code class="docutils literal notranslate"><span class="pre">TrackVariable</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -139,23 +143,23 @@ glitches)</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-853ba3123dd04980a3ce14177993879b.vega-embed {
+  #altair-viz-ff193d2696a348d9a5407352c6033872.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-853ba3123dd04980a3ce14177993879b.vega-embed details,
-  #altair-viz-853ba3123dd04980a3ce14177993879b.vega-embed details summary {
+  #altair-viz-ff193d2696a348d9a5407352c6033872.vega-embed details,
+  #altair-viz-ff193d2696a348d9a5407352c6033872.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-853ba3123dd04980a3ce14177993879b"></div>
+<div id="altair-viz-ff193d2696a348d9a5407352c6033872"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-853ba3123dd04980a3ce14177993879b") {
-      outputDiv = document.getElementById("altair-viz-853ba3123dd04980a3ce14177993879b");
+    if (outputDiv.id !== "altair-viz-ff193d2696a348d9a5407352c6033872") {
+      outputDiv = document.getElementById("altair-viz-ff193d2696a348d9a5407352c6033872");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -212,23 +216,23 @@ smoother trajectories.</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-4a4e14a6b5824581b27ad03aba9296da.vega-embed {
+  #altair-viz-c1dcb21a8e2a43f386939538184298ef.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4a4e14a6b5824581b27ad03aba9296da.vega-embed details,
-  #altair-viz-4a4e14a6b5824581b27ad03aba9296da.vega-embed details summary {
+  #altair-viz-c1dcb21a8e2a43f386939538184298ef.vega-embed details,
+  #altair-viz-c1dcb21a8e2a43f386939538184298ef.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4a4e14a6b5824581b27ad03aba9296da"></div>
+<div id="altair-viz-c1dcb21a8e2a43f386939538184298ef"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4a4e14a6b5824581b27ad03aba9296da") {
-      outputDiv = document.getElementById("altair-viz-4a4e14a6b5824581b27ad03aba9296da");
+    if (outputDiv.id !== "altair-viz-c1dcb21a8e2a43f386939538184298ef") {
+      outputDiv = document.getElementById("altair-viz-c1dcb21a8e2a43f386939538184298ef");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -336,7 +340,7 @@ used as a threshold for filtering.</p>
 <p>Errors may raised if the kernel_size is too large</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0.dev0+1321.gaefede93b1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0.dev0+1412.g22a038e8c3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -381,6 +385,30 @@ threshold values, the datapoint is removed</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">FilterMedian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.filters.FilterMedian" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#traffic.algorithms.filters.FilterBase" title="traffic.algorithms.filters.FilterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilterBase</span></code></a></p>
 <p>Rolling median filter</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.filters.KalmanFilter6D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">KalmanFilter6D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reject_sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.filters.KalmanFilter6D" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#traffic.algorithms.filters.ProcessXYZFilterBase" title="traffic.algorithms.filters.ProcessXYZFilterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessXYZFilterBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.filters.KalmanSmoother6D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">KalmanSmoother6D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reject_sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.filters.KalmanSmoother6D" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#traffic.algorithms.filters.ProcessXYZFilterBase" title="traffic.algorithms.filters.ProcessXYZFilterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessXYZFilterBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.filters.ProcessXYZFilterBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">ProcessXYZFilterBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reject_sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.filters.ProcessXYZFilterBase" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#traffic.algorithms.filters.FilterBase" title="traffic.algorithms.filters.FilterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilterBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.filters.TrackVariable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">TrackVariable</span></span><a class="headerlink" href="#traffic.algorithms.filters.TrackVariable" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]</p>
 </dd></dl>
 
 </section>
