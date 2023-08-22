@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to decode ADS-B and Mode S data? &mdash; traffic 2.8.2.dev41 documentation</title>
+  <title>How to decode ADS-B and Mode S data? &mdash; traffic 2.8.2.dev77 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -15,11 +15,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f17de32c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How to configure EUROCONTROL data files?" href="eurocontrol.html" />
-    <link rel="prev" title="How to access ADS-B data from OpenSky history database?" href="opensky_impala.html" /> 
+    <link rel="prev" title="How to access ADS-B data from OpenSky history database?" href="opensky_db.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,7 +45,7 @@
             traffic
           </a>
               <div class="version">
-                2.8.2.dev41
+                2.8.2.dev77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -67,7 +67,7 @@
 <li class="toctree-l3"><a class="reference internal" href="airspaces.html">How to access airspace information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flightplans.html">How to access flight plan information?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opensky_rest.html">How to access ADS-B data from OpenSky live API?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opensky_impala.html">How to access ADS-B data from OpenSky history database?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensky_db.html">How to access ADS-B data from OpenSky history database?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How to decode ADS-B and Mode S data?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.data.adsb.decode.ModeS_Decoder"><code class="docutils literal notranslate"><span class="pre">ModeS_Decoder</span></code></a></li>
 </ul>
@@ -179,7 +179,7 @@ for all decoded messages</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">Decoder</span></code>, bound= ModeS_Decoder)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">D</span></code>, bound= ModeS_Decoder)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -205,7 +205,7 @@ messages</p>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">Decoder</span></code>, bound= ModeS_Decoder)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">D</span></code>, bound= ModeS_Decoder)</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -246,7 +246,7 @@ receivers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">Decoder</span></code>, bound= ModeS_Decoder)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">D</span></code>, bound= ModeS_Decoder)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,7 +272,7 @@ messages</p>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">Decoder</span></code>, bound= ModeS_Decoder)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">D</span></code>, bound= ModeS_Decoder)</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -300,7 +300,7 @@ messages</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="opensky_impala.html" class="btn btn-neutral float-left" title="How to access ADS-B data from OpenSky history database?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="opensky_db.html" class="btn btn-neutral float-left" title="How to access ADS-B data from OpenSky history database?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="eurocontrol.html" class="btn btn-neutral float-right" title="How to configure EUROCONTROL data files?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

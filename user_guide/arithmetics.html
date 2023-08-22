@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to use arithmetic operators on trajectories? &mdash; traffic 2.8.2.dev41 documentation</title>
+  <title>How to use arithmetic operators on trajectories? &mdash; traffic 2.8.2.dev77 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -15,11 +15,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f17de32c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -45,7 +45,7 @@
             traffic
           </a>
               <div class="version">
-                2.8.2.dev41
+                2.8.2.dev77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -171,10 +171,10 @@ Traffic object.</p>
 <dd><p>Concatenation operator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> (<em>Literal</em><em>[</em><em>0</em><em>] </em><em>| </em><em>Flight</em><em> | </em><em>'Traffic</em>) – is the other Flight or Traffic.</p>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code></a>[<code class="docutils literal notranslate"><span class="pre">0</span></code>], <a class="reference internal" href="../api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]) – is the other Flight or Traffic.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic">Traffic</a></p>
+<dd class="field-even"><p><a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The sum of two Flights returns a Traffic collection.
@@ -214,21 +214,21 @@ reasons with the sum() builtin.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><h4><b>Traffic</b></h4> with 2 identifiers<style type="text/css">
-#T_c67c2_row0_col0 {
+#T_30f58_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_c67c2_row1_col0 {
+#T_30f58_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 11.4%, transparent 11.4%);
 }
 </style>
-<table id="T_c67c2">
+<table id="T_30f58">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_c67c2_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_30f58_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -238,14 +238,14 @@ reasons with the sum() builtin.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_c67c2_level0_row0" class="row_heading level0 row0" >484506</th>
-      <th id="T_c67c2_level1_row0" class="row_heading level1 row0" >TRA051</th>
-      <td id="T_c67c2_row0_col0" class="data row0 col0" >16005</td>
+      <th id="T_30f58_level0_row0" class="row_heading level0 row0" >484506</th>
+      <th id="T_30f58_level1_row0" class="row_heading level1 row0" >TRA051</th>
+      <td id="T_30f58_row0_col0" class="data row0 col0" >16005</td>
     </tr>
     <tr>
-      <th id="T_c67c2_level0_row1" class="row_heading level0 row1" >39b861</th>
-      <th id="T_c67c2_level1_row1" class="row_heading level1 row1" >PXR31F</th>
-      <td id="T_c67c2_row1_col0" class="data row1 col0" >1819</td>
+      <th id="T_30f58_level0_row1" class="row_heading level0 row1" >39b861</th>
+      <th id="T_30f58_level1_row1" class="row_heading level1 row1" >PXR31F</th>
+      <td id="T_30f58_row1_col0" class="data row1 col0" >1819</td>
     </tr>
   </tbody>
 </table>
@@ -377,41 +377,41 @@ trajectories not going through ODINA.</p>
         display: inline-block;
         vertical-align: top;'>
         <h4><b>Traffic</b></h4> with 113 identifiers<style type="text/css">
-#T_13139_row0_col0 {
+#T_e9be2_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_13139_row1_col0 {
+#T_e9be2_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 91.7%, transparent 91.7%);
 }
-#T_13139_row2_col0 {
+#T_e9be2_row2_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 87.0%, transparent 87.0%);
 }
-#T_13139_row3_col0, #T_13139_row4_col0 {
+#T_e9be2_row3_col0, #T_e9be2_row4_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 85.8%, transparent 85.8%);
 }
-#T_13139_row5_col0 {
+#T_e9be2_row5_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 84.6%, transparent 84.6%);
 }
-#T_13139_row6_col0, #T_13139_row7_col0 {
+#T_e9be2_row6_col0, #T_e9be2_row7_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 84.0%, transparent 84.0%);
 }
-#T_13139_row8_col0, #T_13139_row9_col0 {
+#T_e9be2_row8_col0, #T_e9be2_row9_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 83.4%, transparent 83.4%);
 }
 </style>
-<table id="T_13139">
+<table id="T_e9be2">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_13139_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_e9be2_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -421,54 +421,54 @@ trajectories not going through ODINA.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_13139_level0_row0" class="row_heading level0 row0" >440005</th>
-      <th id="T_13139_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
-      <td id="T_13139_row0_col0" class="data row0 col0" >169</td>
+      <th id="T_e9be2_level0_row0" class="row_heading level0 row0" >440005</th>
+      <th id="T_e9be2_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
+      <td id="T_e9be2_row0_col0" class="data row0 col0" >169</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row1" class="row_heading level0 row1" >39e46f</th>
-      <th id="T_13139_level1_row1" class="row_heading level1 row1" >CCM531D</th>
-      <td id="T_13139_row1_col0" class="data row1 col0" >155</td>
+      <th id="T_e9be2_level0_row1" class="row_heading level0 row1" >39e46f</th>
+      <th id="T_e9be2_level1_row1" class="row_heading level1 row1" >CCM531D</th>
+      <td id="T_e9be2_row1_col0" class="data row1 col0" >155</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row2" class="row_heading level0 row2" >40123f</th>
-      <th id="T_13139_level1_row2" class="row_heading level1 row2" >BAW544K</th>
-      <td id="T_13139_row2_col0" class="data row2 col0" >147</td>
+      <th id="T_e9be2_level0_row2" class="row_heading level0 row2" >40123f</th>
+      <th id="T_e9be2_level1_row2" class="row_heading level1 row2" >BAW544K</th>
+      <td id="T_e9be2_row2_col0" class="data row2 col0" >147</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row3" class="row_heading level0 row3" >400e4a</th>
-      <th id="T_13139_level1_row3" class="row_heading level1 row3" >EXS88C</th>
-      <td id="T_13139_row3_col0" class="data row3 col0" >145</td>
+      <th id="T_e9be2_level0_row3" class="row_heading level0 row3" >400e4a</th>
+      <th id="T_e9be2_level1_row3" class="row_heading level1 row3" >EXS88C</th>
+      <td id="T_e9be2_row3_col0" class="data row3 col0" >145</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row4" class="row_heading level0 row4" >3946e2</th>
-      <th id="T_13139_level1_row4" class="row_heading level1 row4" >AFR85EZ</th>
-      <td id="T_13139_row4_col0" class="data row4 col0" >145</td>
+      <th id="T_e9be2_level0_row4" class="row_heading level0 row4" >3946e2</th>
+      <th id="T_e9be2_level1_row4" class="row_heading level1 row4" >AFR85EZ</th>
+      <td id="T_e9be2_row4_col0" class="data row4 col0" >145</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row5" class="row_heading level0 row5" >3950c0</th>
-      <th id="T_13139_level1_row5" class="row_heading level1 row5" >AFR36RB</th>
-      <td id="T_13139_row5_col0" class="data row5 col0" >143</td>
+      <th id="T_e9be2_level0_row5" class="row_heading level0 row5" >3950c0</th>
+      <th id="T_e9be2_level1_row5" class="row_heading level1 row5" >AFR36RB</th>
+      <td id="T_e9be2_row5_col0" class="data row5 col0" >143</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row6" class="row_heading level0 row6" >44c24d</th>
-      <th id="T_13139_level1_row6" class="row_heading level1 row6" >OOPRM</th>
-      <td id="T_13139_row6_col0" class="data row6 col0" >142</td>
+      <th id="T_e9be2_level0_row6" class="row_heading level0 row6" >44c24d</th>
+      <th id="T_e9be2_level1_row6" class="row_heading level1 row6" >OOPRM</th>
+      <td id="T_e9be2_row6_col0" class="data row6 col0" >142</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row7" class="row_heading level0 row7" >4bb852</th>
-      <th id="T_13139_level1_row7" class="row_heading level1 row7" >PGT89P</th>
-      <td id="T_13139_row7_col0" class="data row7 col0" >142</td>
+      <th id="T_e9be2_level0_row7" class="row_heading level0 row7" >4bb852</th>
+      <th id="T_e9be2_level1_row7" class="row_heading level1 row7" >PGT89P</th>
+      <td id="T_e9be2_row7_col0" class="data row7 col0" >142</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row8" class="row_heading level0 row8" >396672</th>
-      <th id="T_13139_level1_row8" class="row_heading level1 row8" >FPO09P</th>
-      <td id="T_13139_row8_col0" class="data row8 col0" >141</td>
+      <th id="T_e9be2_level0_row8" class="row_heading level0 row8" >396672</th>
+      <th id="T_e9be2_level1_row8" class="row_heading level1 row8" >FPO09P</th>
+      <td id="T_e9be2_row8_col0" class="data row8 col0" >141</td>
     </tr>
     <tr>
-      <th id="T_13139_level0_row9" class="row_heading level0 row9" >4ca2c0</th>
-      <th id="T_13139_level1_row9" class="row_heading level1 row9" >RYR248Z</th>
-      <td id="T_13139_row9_col0" class="data row9 col0" >141</td>
+      <th id="T_e9be2_level0_row9" class="row_heading level0 row9" >4ca2c0</th>
+      <th id="T_e9be2_level1_row9" class="row_heading level1 row9" >RYR248Z</th>
+      <td id="T_e9be2_row9_col0" class="data row9 col0" >141</td>
     </tr>
   </tbody>
 </table>
@@ -482,49 +482,49 @@ trajectories not going through ODINA.</p>
         display: inline-block;
         vertical-align: top;'>
         <h4><b>Traffic</b></h4> with 1130 identifiers<style type="text/css">
-#T_af7c7_row0_col0 {
+#T_cf65d_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_af7c7_row1_col0 {
+#T_cf65d_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 66.0%, transparent 66.0%);
 }
-#T_af7c7_row2_col0 {
+#T_cf65d_row2_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 65.6%, transparent 65.6%);
 }
-#T_af7c7_row3_col0 {
+#T_cf65d_row3_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 65.2%, transparent 65.2%);
 }
-#T_af7c7_row4_col0 {
+#T_cf65d_row4_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 63.8%, transparent 63.8%);
 }
-#T_af7c7_row5_col0 {
+#T_cf65d_row5_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 63.1%, transparent 63.1%);
 }
-#T_af7c7_row6_col0 {
+#T_cf65d_row6_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 62.4%, transparent 62.4%);
 }
-#T_af7c7_row7_col0 {
+#T_cf65d_row7_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 62.1%, transparent 62.1%);
 }
-#T_af7c7_row8_col0, #T_af7c7_row9_col0 {
+#T_cf65d_row8_col0, #T_cf65d_row9_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 61.7%, transparent 61.7%);
 }
 </style>
-<table id="T_af7c7">
+<table id="T_cf65d">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_af7c7_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_cf65d_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -534,54 +534,54 @@ trajectories not going through ODINA.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_af7c7_level0_row0" class="row_heading level0 row0" >500142</th>
-      <th id="T_af7c7_level1_row0" class="row_heading level1 row0" >T7STK</th>
-      <td id="T_af7c7_row0_col0" class="data row0 col0" >282</td>
+      <th id="T_cf65d_level0_row0" class="row_heading level0 row0" >500142</th>
+      <th id="T_cf65d_level1_row0" class="row_heading level1 row0" >T7STK</th>
+      <td id="T_cf65d_row0_col0" class="data row0 col0" >282</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row1" class="row_heading level0 row1" >4baa61</th>
-      <th id="T_af7c7_level1_row1" class="row_heading level1 row1" >THY7WR</th>
-      <td id="T_af7c7_row1_col0" class="data row1 col0" >186</td>
+      <th id="T_cf65d_level0_row1" class="row_heading level0 row1" >4baa61</th>
+      <th id="T_cf65d_level1_row1" class="row_heading level1 row1" >THY7WR</th>
+      <td id="T_cf65d_row1_col0" class="data row1 col0" >186</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row2" class="row_heading level0 row2" >344417</th>
-      <th id="T_af7c7_level1_row2" class="row_heading level1 row2" >IBE3279</th>
-      <td id="T_af7c7_row2_col0" class="data row2 col0" >185</td>
+      <th id="T_cf65d_level0_row2" class="row_heading level0 row2" >344417</th>
+      <th id="T_cf65d_level1_row2" class="row_heading level1 row2" >IBE3279</th>
+      <td id="T_cf65d_row2_col0" class="data row2 col0" >185</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row3" class="row_heading level0 row3" >40755f</th>
-      <th id="T_af7c7_level1_row3" class="row_heading level1 row3" >EZY24DP</th>
-      <td id="T_af7c7_row3_col0" class="data row3 col0" >184</td>
+      <th id="T_cf65d_level0_row3" class="row_heading level0 row3" >40755f</th>
+      <th id="T_cf65d_level1_row3" class="row_heading level1 row3" >EZY24DP</th>
+      <td id="T_cf65d_row3_col0" class="data row3 col0" >184</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row4" class="row_heading level0 row4" >4068cb</th>
-      <th id="T_af7c7_level1_row4" class="row_heading level1 row4" >EXS33W</th>
-      <td id="T_af7c7_row4_col0" class="data row4 col0" >180</td>
+      <th id="T_cf65d_level0_row4" class="row_heading level0 row4" >4068cb</th>
+      <th id="T_cf65d_level1_row4" class="row_heading level1 row4" >EXS33W</th>
+      <td id="T_cf65d_row4_col0" class="data row4 col0" >180</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row5" class="row_heading level0 row5" >3c5ee9</th>
-      <th id="T_af7c7_level1_row5" class="row_heading level1 row5" >EWG5938</th>
-      <td id="T_af7c7_row5_col0" class="data row5 col0" >178</td>
+      <th id="T_cf65d_level0_row5" class="row_heading level0 row5" >3c5ee9</th>
+      <th id="T_cf65d_level1_row5" class="row_heading level1 row5" >EWG5938</th>
+      <td id="T_cf65d_row5_col0" class="data row5 col0" >178</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row6" class="row_heading level0 row6" >3420ca</th>
-      <th id="T_af7c7_level1_row6" class="row_heading level1 row6" >IBE31CW</th>
-      <td id="T_af7c7_row6_col0" class="data row6 col0" >176</td>
+      <th id="T_cf65d_level0_row6" class="row_heading level0 row6" >3420ca</th>
+      <th id="T_cf65d_level1_row6" class="row_heading level1 row6" >IBE31CW</th>
+      <td id="T_cf65d_row6_col0" class="data row6 col0" >176</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row7" class="row_heading level0 row7" >4009f9</th>
-      <th id="T_af7c7_level1_row7" class="row_heading level1 row7" >BAW585E</th>
-      <td id="T_af7c7_row7_col0" class="data row7 col0" >175</td>
+      <th id="T_cf65d_level0_row7" class="row_heading level0 row7" >4009f9</th>
+      <th id="T_cf65d_level1_row7" class="row_heading level1 row7" >BAW585E</th>
+      <td id="T_cf65d_row7_col0" class="data row7 col0" >175</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row8" class="row_heading level0 row8" >42428d</th>
-      <th id="T_af7c7_level1_row8" class="row_heading level1 row8" >AFL2603</th>
-      <td id="T_af7c7_row8_col0" class="data row8 col0" >174</td>
+      <th id="T_cf65d_level0_row8" class="row_heading level0 row8" >42428d</th>
+      <th id="T_cf65d_level1_row8" class="row_heading level1 row8" >AFL2603</th>
+      <td id="T_cf65d_row8_col0" class="data row8 col0" >174</td>
     </tr>
     <tr>
-      <th id="T_af7c7_level0_row9" class="row_heading level0 row9" >4006d6</th>
-      <th id="T_af7c7_level1_row9" class="row_heading level1 row9" >CLJ6325</th>
-      <td id="T_af7c7_row9_col0" class="data row9 col0" >174</td>
+      <th id="T_cf65d_level0_row9" class="row_heading level0 row9" >4006d6</th>
+      <th id="T_cf65d_level1_row9" class="row_heading level1 row9" >CLJ6325</th>
+      <td id="T_cf65d_row9_col0" class="data row9 col0" >174</td>
     </tr>
   </tbody>
 </table>
@@ -626,7 +626,7 @@ used as a key.</p>
 <dd><p>Indexation of collections.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.1.0rc0+43.g9d70a4956e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0rc0+43.g9d70a4956e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]) – <ul class="simple">
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>], <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.1.0rc0+61.gcc76b5207c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0rc0+61.gcc76b5207c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>, <a class="reference internal" href="../api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.traffic.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>]) – <ul class="simple">
 <li><p>if the key is an integer, will return a Flight object
 (in order of iteration);</p></li>
 <li><p>if the key is a slice, will return a Traffic object
@@ -723,38 +723,38 @@ build a trajectory subcollection.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>02a18b</td>
-      <td>TAR6647</td>
-      <td>2018-08-01 07:32:00+00:00</td>
-      <td>2018-08-01 07:47:30+00:00</td>
+      <td>02a1a2</td>
+      <td>RAM688</td>
+      <td>2018-08-01 08:54:00+00:00</td>
+      <td>2018-08-01 08:55:30+00:00</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>34440b</td>
+      <td>VLG6292</td>
+      <td>2018-08-01 09:24:50+00:00</td>
+      <td>2018-08-01 09:34:40+00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>345101</td>
+      <td>VLG6206</td>
+      <td>2018-08-01 14:35:30+00:00</td>
+      <td>2018-08-01 14:51:00+00:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3003ae</td>
+      <td>DLH8JW</td>
+      <td>2018-08-01 05:30:10+00:00</td>
+      <td>2018-08-01 05:43:00+00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>342398</td>
       <td>VLG62VE</td>
       <td>2018-08-01 11:34:10+00:00</td>
       <td>2018-08-01 11:49:40+00:00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>344417</td>
-      <td>IBE3279</td>
-      <td>2018-08-01 14:55:30+00:00</td>
-      <td>2018-08-01 15:19:10+00:00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>345116</td>
-      <td>VLG18HA</td>
-      <td>2018-08-01 12:38:40+00:00</td>
-      <td>2018-08-01 12:55:20+00:00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0a0075</td>
-      <td>DAH2062</td>
-      <td>2018-08-01 11:55:00+00:00</td>
-      <td>2018-08-01 11:56:30+00:00</td>
     </tr>
     <tr>
       <th>...</th>
@@ -814,49 +814,49 @@ build a trajectory subcollection.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><h4><b>Traffic</b></h4> with 13 identifiers<style type="text/css">
-#T_4585e_row0_col0 {
+#T_93bae_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_4585e_row1_col0 {
+#T_93bae_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 98.9%, transparent 98.9%);
 }
-#T_4585e_row2_col0, #T_4585e_row3_col0 {
+#T_93bae_row2_col0, #T_93bae_row3_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 92.6%, transparent 92.6%);
 }
-#T_4585e_row4_col0 {
+#T_93bae_row4_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 86.3%, transparent 86.3%);
 }
-#T_4585e_row5_col0 {
+#T_93bae_row5_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 85.3%, transparent 85.3%);
 }
-#T_4585e_row6_col0 {
+#T_93bae_row6_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 78.9%, transparent 78.9%);
 }
-#T_4585e_row7_col0 {
+#T_93bae_row7_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 69.5%, transparent 69.5%);
 }
-#T_4585e_row8_col0 {
+#T_93bae_row8_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 61.1%, transparent 61.1%);
 }
-#T_4585e_row9_col0 {
+#T_93bae_row9_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 60.0%, transparent 60.0%);
 }
 </style>
-<table id="T_4585e">
+<table id="T_93bae">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_4585e_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_93bae_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -866,54 +866,54 @@ build a trajectory subcollection.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_4585e_level0_row0" class="row_heading level0 row0" >4006c8</th>
-      <th id="T_4585e_level1_row0" class="row_heading level1 row0" >BAW66GA</th>
-      <td id="T_4585e_row0_col0" class="data row0 col0" >95</td>
+      <th id="T_93bae_level0_row0" class="row_heading level0 row0" >4006c8</th>
+      <th id="T_93bae_level1_row0" class="row_heading level1 row0" >BAW66GA</th>
+      <td id="T_93bae_row0_col0" class="data row0 col0" >95</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row1" class="row_heading level0 row1" >478771</th>
-      <th id="T_4585e_level1_row1" class="row_heading level1 row1" >NAX3YO</th>
-      <td id="T_4585e_row1_col0" class="data row1 col0" >94</td>
+      <th id="T_93bae_level0_row1" class="row_heading level0 row1" >478771</th>
+      <th id="T_93bae_level1_row1" class="row_heading level1 row1" >NAX3YO</th>
+      <td id="T_93bae_row1_col0" class="data row1 col0" >94</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row2" class="row_heading level0 row2" >406ae0</th>
-      <th id="T_4585e_level1_row2" class="row_heading level1 row2" >TCX702</th>
-      <td id="T_4585e_row2_col0" class="data row2 col0" >88</td>
+      <th id="T_93bae_level0_row2" class="row_heading level0 row2" >406ae0</th>
+      <th id="T_93bae_level1_row2" class="row_heading level1 row2" >TCX702</th>
+      <td id="T_93bae_row2_col0" class="data row2 col0" >88</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row3" class="row_heading level0 row3" >440005</th>
-      <th id="T_4585e_level1_row3" class="row_heading level1 row3" >EZY12VJ</th>
-      <td id="T_4585e_row3_col0" class="data row3 col0" >88</td>
+      <th id="T_93bae_level0_row3" class="row_heading level0 row3" >440005</th>
+      <th id="T_93bae_level1_row3" class="row_heading level1 row3" >EZY12VJ</th>
+      <td id="T_93bae_row3_col0" class="data row3 col0" >88</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row4" class="row_heading level0 row4" >3c6628</th>
-      <th id="T_4585e_level1_row4" class="row_heading level1 row4" >DLH52X</th>
-      <td id="T_4585e_row4_col0" class="data row4 col0" >82</td>
+      <th id="T_93bae_level0_row4" class="row_heading level0 row4" >3c6628</th>
+      <th id="T_93bae_level1_row4" class="row_heading level1 row4" >DLH52X</th>
+      <td id="T_93bae_row4_col0" class="data row4 col0" >82</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row5" class="row_heading level0 row5" >8005ec</th>
-      <th id="T_4585e_level1_row5" class="row_heading level1 row5" >AIC143</th>
-      <td id="T_4585e_row5_col0" class="data row5 col0" >81</td>
+      <th id="T_93bae_level0_row5" class="row_heading level0 row5" >8005ec</th>
+      <th id="T_93bae_level1_row5" class="row_heading level1 row5" >AIC143</th>
+      <td id="T_93bae_row5_col0" class="data row5 col0" >81</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row6" class="row_heading level0 row6" >4ca4ed</th>
-      <th id="T_4585e_level1_row6" class="row_heading level1 row6" >RYR87WH</th>
-      <td id="T_4585e_row6_col0" class="data row6 col0" >75</td>
+      <th id="T_93bae_level0_row6" class="row_heading level0 row6" >4ca4ed</th>
+      <th id="T_93bae_level1_row6" class="row_heading level1 row6" >RYR87WH</th>
+      <td id="T_93bae_row6_col0" class="data row6 col0" >75</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row7" class="row_heading level0 row7" >501d1d</th>
-      <th id="T_4585e_level1_row7" class="row_heading level1 row7" >CTN476</th>
-      <td id="T_4585e_row7_col0" class="data row7 col0" >66</td>
+      <th id="T_93bae_level0_row7" class="row_heading level0 row7" >501d1d</th>
+      <th id="T_93bae_level1_row7" class="row_heading level1 row7" >CTN476</th>
+      <td id="T_93bae_row7_col0" class="data row7 col0" >66</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row8" class="row_heading level0 row8" >484aa1</th>
-      <th id="T_4585e_level1_row8" class="row_heading level1 row8" >TRA93U</th>
-      <td id="T_4585e_row8_col0" class="data row8 col0" >58</td>
+      <th id="T_93bae_level0_row8" class="row_heading level0 row8" >484aa1</th>
+      <th id="T_93bae_level1_row8" class="row_heading level1 row8" >TRA93U</th>
+      <td id="T_93bae_row8_col0" class="data row8 col0" >58</td>
     </tr>
     <tr>
-      <th id="T_4585e_level0_row9" class="row_heading level0 row9" >44064a</th>
-      <th id="T_4585e_level1_row9" class="row_heading level1 row9" >EZY97QR</th>
-      <td id="T_4585e_row9_col0" class="data row9 col0" >57</td>
+      <th id="T_93bae_level0_row9" class="row_heading level0 row9" >44064a</th>
+      <th id="T_93bae_level1_row9" class="row_heading level1 row9" >EZY97QR</th>
+      <td id="T_93bae_row9_col0" class="data row9 col0" >57</td>
     </tr>
   </tbody>
 </table>
@@ -932,45 +932,45 @@ we can use the bracket operator again:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><h4><b>Traffic</b></h4> with 13 identifiers<style type="text/css">
-#T_ca81a_row0_col0 {
+#T_2036d_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_ca81a_row1_col0 {
+#T_2036d_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 94.1%, transparent 94.1%);
 }
-#T_ca81a_row2_col0 {
+#T_2036d_row2_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 85.2%, transparent 85.2%);
 }
-#T_ca81a_row3_col0 {
+#T_2036d_row3_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 73.4%, transparent 73.4%);
 }
-#T_ca81a_row4_col0 {
+#T_2036d_row4_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 67.5%, transparent 67.5%);
 }
-#T_ca81a_row5_col0 {
+#T_2036d_row5_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 63.9%, transparent 63.9%);
 }
-#T_ca81a_row6_col0, #T_ca81a_row7_col0 {
+#T_2036d_row6_col0, #T_2036d_row7_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 63.3%, transparent 63.3%);
 }
-#T_ca81a_row8_col0, #T_ca81a_row9_col0 {
+#T_2036d_row8_col0, #T_2036d_row9_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 58.0%, transparent 58.0%);
 }
 </style>
-<table id="T_ca81a">
+<table id="T_2036d">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ca81a_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_2036d_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -980,54 +980,54 @@ we can use the bracket operator again:</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ca81a_level0_row0" class="row_heading level0 row0" >440005</th>
-      <th id="T_ca81a_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
-      <td id="T_ca81a_row0_col0" class="data row0 col0" >169</td>
+      <th id="T_2036d_level0_row0" class="row_heading level0 row0" >440005</th>
+      <th id="T_2036d_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
+      <td id="T_2036d_row0_col0" class="data row0 col0" >169</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row1" class="row_heading level0 row1" >501d1d</th>
-      <th id="T_ca81a_level1_row1" class="row_heading level1 row1" >CTN476</th>
-      <td id="T_ca81a_row1_col0" class="data row1 col0" >159</td>
+      <th id="T_2036d_level0_row1" class="row_heading level0 row1" >501d1d</th>
+      <th id="T_2036d_level1_row1" class="row_heading level1 row1" >CTN476</th>
+      <td id="T_2036d_row1_col0" class="data row1 col0" >159</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row2" class="row_heading level0 row2" >8005ec</th>
-      <th id="T_ca81a_level1_row2" class="row_heading level1 row2" >AIC143</th>
-      <td id="T_ca81a_row2_col0" class="data row2 col0" >144</td>
+      <th id="T_2036d_level0_row2" class="row_heading level0 row2" >8005ec</th>
+      <th id="T_2036d_level1_row2" class="row_heading level1 row2" >AIC143</th>
+      <td id="T_2036d_row2_col0" class="data row2 col0" >144</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row3" class="row_heading level0 row3" >4006c8</th>
-      <th id="T_ca81a_level1_row3" class="row_heading level1 row3" >BAW66GA</th>
-      <td id="T_ca81a_row3_col0" class="data row3 col0" >124</td>
+      <th id="T_2036d_level0_row3" class="row_heading level0 row3" >4006c8</th>
+      <th id="T_2036d_level1_row3" class="row_heading level1 row3" >BAW66GA</th>
+      <td id="T_2036d_row3_col0" class="data row3 col0" >124</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row4" class="row_heading level0 row4" >3c6628</th>
-      <th id="T_ca81a_level1_row4" class="row_heading level1 row4" >DLH52X</th>
-      <td id="T_ca81a_row4_col0" class="data row4 col0" >114</td>
+      <th id="T_2036d_level0_row4" class="row_heading level0 row4" >3c6628</th>
+      <th id="T_2036d_level1_row4" class="row_heading level1 row4" >DLH52X</th>
+      <td id="T_2036d_row4_col0" class="data row4 col0" >114</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row5" class="row_heading level0 row5" >4ca4ed</th>
-      <th id="T_ca81a_level1_row5" class="row_heading level1 row5" >RYR87WH</th>
-      <td id="T_ca81a_row5_col0" class="data row5 col0" >108</td>
+      <th id="T_2036d_level0_row5" class="row_heading level0 row5" >4ca4ed</th>
+      <th id="T_2036d_level1_row5" class="row_heading level1 row5" >RYR87WH</th>
+      <td id="T_2036d_row5_col0" class="data row5 col0" >108</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row6" class="row_heading level0 row6" >406ae0</th>
-      <th id="T_ca81a_level1_row6" class="row_heading level1 row6" >TCX702</th>
-      <td id="T_ca81a_row6_col0" class="data row6 col0" >107</td>
+      <th id="T_2036d_level0_row6" class="row_heading level0 row6" >406ae0</th>
+      <th id="T_2036d_level1_row6" class="row_heading level1 row6" >TCX702</th>
+      <td id="T_2036d_row6_col0" class="data row6 col0" >107</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row7" class="row_heading level0 row7" >478771</th>
-      <th id="T_ca81a_level1_row7" class="row_heading level1 row7" >NAX3YO</th>
-      <td id="T_ca81a_row7_col0" class="data row7 col0" >107</td>
+      <th id="T_2036d_level0_row7" class="row_heading level0 row7" >478771</th>
+      <th id="T_2036d_level1_row7" class="row_heading level1 row7" >NAX3YO</th>
+      <td id="T_2036d_row7_col0" class="data row7 col0" >107</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row8" class="row_heading level0 row8" >484aa1</th>
-      <th id="T_ca81a_level1_row8" class="row_heading level1 row8" >TRA93U</th>
-      <td id="T_ca81a_row8_col0" class="data row8 col0" >98</td>
+      <th id="T_2036d_level0_row8" class="row_heading level0 row8" >484aa1</th>
+      <th id="T_2036d_level1_row8" class="row_heading level1 row8" >TRA93U</th>
+      <td id="T_2036d_row8_col0" class="data row8 col0" >98</td>
     </tr>
     <tr>
-      <th id="T_ca81a_level0_row9" class="row_heading level0 row9" >4ca175</th>
-      <th id="T_ca81a_level1_row9" class="row_heading level1 row9" >RYR31CR</th>
-      <td id="T_ca81a_row9_col0" class="data row9 col0" >98</td>
+      <th id="T_2036d_level0_row9" class="row_heading level0 row9" >4ca175</th>
+      <th id="T_2036d_level1_row9" class="row_heading level1 row9" >RYR31CR</th>
+      <td id="T_2036d_row9_col0" class="data row9 col0" >98</td>
     </tr>
   </tbody>
 </table>
@@ -1075,7 +1075,7 @@ aircraft is flying.</p>
     max-width: 300px;
     display: inline-block;
     vertical-align: top;'>
-    <h4><b>Flight</b></h4><ul><li><b>callsign:</b> FWKDL   </li><li><b>aircraft:</b> <code>3900fb</code> · 🇫🇷 F-WKDL (TBM9)</li><li><b>start:</b> 2017-12-01 14:40:34+00:00</li><li><b>stop:</b> 2017-12-01 15:59:58+00:00</li><li><b>duration:</b> 0 days 01:19:24</li><li><b>sampling rate:</b> 1 second(s)</li></ul><div style="white-space: nowrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-127799.30079857074 -39868.03806013393 255128.7405667313 80517.86399235806" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,781.7878720902081)"><polyline fill="none" stroke="#66cc99" stroke-width="1700.8582704448754" points="117880.22715457794,4875.913447177942 111433.10615621625,346.41275544219326 105712.9105395028,-3449.620818146841 101990.66464795818,-5973.313476971231 94421.40474286047,-11444.750932529741 92027.63697925635,-13281.95647318212 90146.26053948367,-14804.297512106372 88656.68223692953,-16075.266853137244 84770.59420404739,-19115.91797310577 76349.70363648693,-25599.482251082933 70608.90811511554,-29888.37795727263 70336.74205872421,-30047.75965272587 69850.25661939151,-30254.518981016452 69358.57834620027,-30379.404442656152 68985.45609330325,-30418.825446551287 68523.52570600303,-30398.096148479864 68170.06998303345,-30330.468709272893 67790.12422226588,-30207.14376700378 67503.35658549826,-30062.523722203536 66986.98748414416,-29668.031949794524 66723.4533522165,-29358.244767552562 66567.13172271232,-29098.07837296432 66367.7628230486,-28527.660056138484 66317.04578217879,-28116.199398393765 66323.92142426869,-27760.11783861816 66553.81564471076,-25053.60487383404 67838.5813932873,-13496.411028593368 68299.94241228346,-8314.264403107138 69181.14900990034,-12.30076767448709 70153.69857942204,9722.69784732659 71697.53207292435,20160.911295791528 72678.98600134296,29362.608491469553 72907.20050148138,29969.33962408079 73026.17124790636,30162.02373448711 73343.60222156043,30496.54231760873 73779.097990797,30788.667343723147 74248.64516946554,30997.91890122265 74998.39639754445,31168.43795695553 75720.05626709101,31200.61331864149 76452.59340293237,31115.82958238028 76970.75323115152,30909.686244467663 77380.02988150534,30595.33517077964 77745.6504778718,30101.095800055482 77993.90487365982,29534.29748647375 78250.38860943518,28601.98182399934 78421.56057501087,27703.075017934654 78673.4547096794,25523.9350197257 78922.42433229768,20711.201941160205 79115.0069553555,15106.337787333086 79300.36057647812,11213.037334212602 79410.21105301086,5302.604640297088 79510.20966058705,4369.280209340898 79872.01445253468,2588.2676719885076 79928.11832200876,1342.7864038639618 79866.73782934871,-4674.9348084821795 79757.08453037405,-5245.2062235915655 79427.12087709052,-5983.596344705014 78957.54488243682,-6558.088885429423 78552.31238239777,-6872.485380279762 77878.60986405234,-7180.398160574838 77290.57184085464,-7299.070042575262 76954.43272676927,-7292.747341420962 76583.2778628279,-7216.547513157379 76066.7577621254,-6977.315767004017 75655.3912506549,-6606.346785276241 75369.55782293846,-6120.500512049772 75276.85690807302,-5689.209631014771 75338.48399636267,-4773.690685404877 75308.18921223149,-2484.5357442075747 75416.57056700966,1672.1523016512942 75272.8555475823,2979.095638009419 75233.7625132577,3704.618004403292 75126.71484704007,10966.681970695896 75217.21587337018,14853.671602472896 75193.80383694323,16023.275038101918 75344.2852860984,18222.281025497356 75326.96969005327,19305.488528154874 75368.92667962896,19827.186454008148 75481.09595885055,20253.291864184215 75676.86124975514,20570.33801580442 75948.35771602503,20823.158668246306 76282.97409611527,21042.741462161157 76791.89179852651,21250.282813814705 77358.18650528268,21347.916682383602 78002.22642606881,21304.513482968265 78130.64861577346,21255.40292613405 78540.27197336184,20934.31162422561 79873.83956606885,19342.83417286812 80236.8550350188,18701.189250508785 80326.00829915928,18137.661877710936 80231.43622344181,16569.91016910456 80250.55714111899,15832.607680232923 80330.10895481521,15213.016441330788 80566.42920194249,13984.93683820537 80629.38319434696,13034.53441354957 80845.02565072001,3245.860402340972 81047.15423420876,-3393.5666401609783 81213.64524193897,-12349.298673693105 81174.83845125865,-12676.576176884382 81017.16219019308,-13221.575718506198 80779.6440886643,-13697.269693077676 80456.10033505336,-14154.154311228298 80131.61674558476,-14494.2241104585 79731.80341878791,-14803.27274219095 79311.10121041178,-15015.99201945426 78979.9562588586,-15132.55085406973 78515.15934507542,-15224.444470867682 78094.72794734761,-15231.913823214243 77509.8515724868,-15129.268208160036 77153.80313126103,-14978.9577329367 76795.96206875915,-14734.7709364131 76481.54656858859,-14373.005332890387 76285.40923718813,-13963.250288428111 76218.0222238654,-13496.087183176756 76243.31963668262,-13194.511362358458 76314.55380328924,-12935.087210320069 76505.96686430628,-12529.472664746056 77047.31089029217,-11690.553026861797 77628.4898464685,-10183.889165733246 77908.89981191889,-9799.446076189324 78496.74743614052,-9202.621920928927 78802.60392958779,-8696.118939359261 78934.60469890364,-8213.537580543993 78956.70595124453,-7840.863491283994 78921.43202474428,-7541.275802415217 78819.45630240081,-7169.451298897178 78469.85428623256,-6451.289567750909 76729.17578529751,-3299.3520902383843 76297.69813785894,-2104.2478841944826 75562.18304102823,-258.99583591842685 74421.09532552477,2510.469746658353 72904.13050036141,5989.24385573203 72437.71977570634,6620.417563945059 72128.3263099807,6901.57696177431 71717.7494116033,7170.635072072057 71225.32227951376,7389.19395530728 70923.20007151591,7478.413399701351 70536.92303865362,7546.762076149326 70026.63320733556,7564.786862559207 68604.97253093161,7438.82628782896 66141.11566139349,7143.946960039262 59024.95224194308,6153.017645998643 53664.80290336034,5466.18859267167 53009.29803955661,5347.712251236554 52124.005433660546,5056.309543771575 50485.97664108857,4381.748364058759 44132.365115318484,1549.1732521816728 22341.753856276806,-7893.733861531909 -10692.231589112218,-22151.04234791057 -15001.03548203857,-23954.74327844034 -21289.093730130586,-26796.192879352442 -24814.006942887678,-28340.906287455913 -25310.30749119636,-28490.946449422972 -26375.760561451112,-28552.20874676986 -27654.330936449376,-28486.842840972073 -32175.911354059026,-27901.268887174516 -34505.86445092019,-27765.64156669596 -37196.43086263801,-27530.690610790396 -43042.277692301635,-26878.77662892033 -45818.10630283178,-26819.138978804443 -52459.92217902761,-26585.13607140093 -54631.73834142201,-26391.54884988173 -56080.13039740947,-26307.267210558555 -58020.93450999526,-26083.987675293105 -62566.322342788175,-25712.387608770307 -72851.43080138443,-25112.72279751459 -76759.84518794602,-24841.84142336841 -85099.79675629338,-24183.260127335772 -86843.18517894103,-23985.198707500236 -88963.44872592489,-23802.418912252124 -91848.37041062622,-23665.506930364718 -95529.66249956783,-23562.68911914776 -101933.13434485711,-23106.95344308877 -105406.42809746863,-23011.10578460128 -112175.25776273111,-22378.103552111552 -118350.0881849881,-21916.59100082644" opacity="0.8" /></g></svg></div>
+    <h4><b>Flight</b></h4><ul><li><b>callsign:</b> FWKDL   </li><li><b>aircraft:</b> <code>3900fb</code> · 🇫🇷 F-WKDL (TBM7)</li><li><b>start:</b> 2017-12-01 14:40:34+00:00</li><li><b>stop:</b> 2017-12-01 15:59:58+00:00</li><li><b>duration:</b> 0 days 01:19:24</li><li><b>sampling rate:</b> 1 second(s)</li></ul><div style="white-space: nowrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="-127799.30079857074 -39868.03806013393 255128.7405667313 80517.86399235806" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,781.7878720902081)"><polyline fill="none" stroke="#66cc99" stroke-width="1700.8582704448754" points="117880.22715457794,4875.913447177942 111433.10615621625,346.41275544219326 105712.9105395028,-3449.620818146841 101990.66464795818,-5973.313476971231 94421.40474286047,-11444.750932529741 92027.63697925635,-13281.95647318212 90146.26053948367,-14804.297512106372 88656.68223692953,-16075.266853137244 84770.59420404739,-19115.91797310577 76349.70363648693,-25599.482251082933 70608.90811511554,-29888.37795727263 70336.74205872421,-30047.75965272587 69850.25661939151,-30254.518981016452 69358.57834620027,-30379.404442656152 68985.45609330325,-30418.825446551287 68523.52570600303,-30398.096148479864 68170.06998303345,-30330.468709272893 67790.12422226588,-30207.14376700378 67503.35658549826,-30062.523722203536 66986.98748414416,-29668.031949794524 66723.4533522165,-29358.244767552562 66567.13172271232,-29098.07837296432 66367.7628230486,-28527.660056138484 66317.04578217879,-28116.199398393765 66323.92142426869,-27760.11783861816 66553.81564471076,-25053.60487383404 67838.5813932873,-13496.411028593368 68299.94241228346,-8314.264403107138 69181.14900990034,-12.30076767448709 70153.69857942204,9722.69784732659 71697.53207292435,20160.911295791528 72678.98600134296,29362.608491469553 72907.20050148138,29969.33962408079 73026.17124790636,30162.02373448711 73343.60222156043,30496.54231760873 73779.097990797,30788.667343723147 74248.64516946554,30997.91890122265 74998.39639754445,31168.43795695553 75720.05626709101,31200.61331864149 76452.59340293237,31115.82958238028 76970.75323115152,30909.686244467663 77380.02988150534,30595.33517077964 77745.6504778718,30101.095800055482 77993.90487365982,29534.29748647375 78250.38860943518,28601.98182399934 78421.56057501087,27703.075017934654 78673.4547096794,25523.9350197257 78922.42433229768,20711.201941160205 79115.0069553555,15106.337787333086 79300.36057647812,11213.037334212602 79410.21105301086,5302.604640297088 79510.20966058705,4369.280209340898 79872.01445253468,2588.2676719885076 79928.11832200876,1342.7864038639618 79866.73782934871,-4674.9348084821795 79757.08453037405,-5245.2062235915655 79427.12087709052,-5983.596344705014 78957.54488243682,-6558.088885429423 78552.31238239777,-6872.485380279762 77878.60986405234,-7180.398160574838 77290.57184085464,-7299.070042575262 76954.43272676927,-7292.747341420962 76583.2778628279,-7216.547513157379 76066.7577621254,-6977.315767004017 75655.3912506549,-6606.346785276241 75369.55782293846,-6120.500512049772 75276.85690807302,-5689.209631014771 75338.48399636267,-4773.690685404877 75308.18921223149,-2484.5357442075747 75416.57056700966,1672.1523016512942 75272.8555475823,2979.095638009419 75233.7625132577,3704.618004403292 75126.71484704007,10966.681970695896 75217.21587337018,14853.671602472896 75193.80383694323,16023.275038101918 75344.2852860984,18222.281025497356 75326.96969005327,19305.488528154874 75368.92667962896,19827.186454008148 75481.09595885055,20253.291864184215 75676.86124975514,20570.33801580442 75948.35771602503,20823.158668246306 76282.97409611527,21042.741462161157 76791.89179852651,21250.282813814705 77358.18650528268,21347.916682383602 78002.22642606881,21304.513482968265 78130.64861577346,21255.40292613405 78540.27197336184,20934.31162422561 79873.83956606885,19342.83417286812 80236.8550350188,18701.189250508785 80326.00829915928,18137.661877710936 80231.43622344181,16569.91016910456 80250.55714111899,15832.607680232923 80330.10895481521,15213.016441330788 80566.42920194249,13984.93683820537 80629.38319434696,13034.53441354957 80845.02565072001,3245.860402340972 81047.15423420876,-3393.5666401609783 81213.64524193897,-12349.298673693105 81174.83845125865,-12676.576176884382 81017.16219019308,-13221.575718506198 80779.6440886643,-13697.269693077676 80456.10033505336,-14154.154311228298 80131.61674558476,-14494.2241104585 79731.80341878791,-14803.27274219095 79311.10121041178,-15015.99201945426 78979.9562588586,-15132.55085406973 78515.15934507542,-15224.444470867682 78094.72794734761,-15231.913823214243 77509.8515724868,-15129.268208160036 77153.80313126103,-14978.9577329367 76795.96206875915,-14734.7709364131 76481.54656858859,-14373.005332890387 76285.40923718813,-13963.250288428111 76218.0222238654,-13496.087183176756 76243.31963668262,-13194.511362358458 76314.55380328924,-12935.087210320069 76505.96686430628,-12529.472664746056 77047.31089029217,-11690.553026861797 77628.4898464685,-10183.889165733246 77908.89981191889,-9799.446076189324 78496.74743614052,-9202.621920928927 78802.60392958779,-8696.118939359261 78934.60469890364,-8213.537580543993 78956.70595124453,-7840.863491283994 78921.43202474428,-7541.275802415217 78819.45630240081,-7169.451298897178 78469.85428623256,-6451.289567750909 76729.17578529751,-3299.3520902383843 76297.69813785894,-2104.2478841944826 75562.18304102823,-258.99583591842685 74421.09532552477,2510.469746658353 72904.13050036141,5989.24385573203 72437.71977570634,6620.417563945059 72128.3263099807,6901.57696177431 71717.7494116033,7170.635072072057 71225.32227951376,7389.19395530728 70923.20007151591,7478.413399701351 70536.92303865362,7546.762076149326 70026.63320733556,7564.786862559207 68604.97253093161,7438.82628782896 66141.11566139349,7143.946960039262 59024.95224194308,6153.017645998643 53664.80290336034,5466.18859267167 53009.29803955661,5347.712251236554 52124.005433660546,5056.309543771575 50485.97664108857,4381.748364058759 44132.365115318484,1549.1732521816728 22341.753856276806,-7893.733861531909 -10692.231589112218,-22151.04234791057 -15001.03548203857,-23954.74327844034 -21289.093730130586,-26796.192879352442 -24814.006942887678,-28340.906287455913 -25310.30749119636,-28490.946449422972 -26375.760561451112,-28552.20874676986 -27654.330936449376,-28486.842840972073 -32175.911354059026,-27901.268887174516 -34505.86445092019,-27765.64156669596 -37196.43086263801,-27530.690610790396 -43042.277692301635,-26878.77662892033 -45818.10630283178,-26819.138978804443 -52459.92217902761,-26585.13607140093 -54631.73834142201,-26391.54884988173 -56080.13039740947,-26307.267210558555 -58020.93450999526,-26083.987675293105 -62566.322342788175,-25712.387608770307 -72851.43080138443,-25112.72279751459 -76759.84518794602,-24841.84142336841 -85099.79675629338,-24183.260127335772 -86843.18517894103,-23985.198707500236 -88963.44872592489,-23802.418912252124 -91848.37041062622,-23665.506930364718 -95529.66249956783,-23562.68911914776 -101933.13434485711,-23106.95344308877 -105406.42809746863,-23011.10578460128 -112175.25776273111,-22378.103552111552 -118350.0881849881,-21916.59100082644" opacity="0.8" /></g></svg></div>
 </div>
 
 <div style='
@@ -1122,21 +1122,21 @@ intervals otherwise.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><h4><b>Traffic</b></h4> with 2 identifiers<style type="text/css">
-#T_3d6ed_row0_col0 {
+#T_d26a2_row0_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 100.0%, transparent 100.0%);
 }
-#T_3d6ed_row1_col0 {
+#T_d26a2_row1_col0 {
   width: 10em;
   background: linear-gradient(90deg, #5fba7d 63.9%, transparent 63.9%);
 }
 </style>
-<table id="T_3d6ed">
+<table id="T_d26a2">
   <thead>
     <tr>
       <th class="blank" >&nbsp;</th>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3d6ed_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_d26a2_level0_col0" class="col_heading level0 col0" >count</th>
     </tr>
     <tr>
       <th class="index_name level0" >icao24</th>
@@ -1146,14 +1146,14 @@ intervals otherwise.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3d6ed_level0_row0" class="row_heading level0 row0" >440005</th>
-      <th id="T_3d6ed_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
-      <td id="T_3d6ed_row0_col0" class="data row0 col0" >169</td>
+      <th id="T_d26a2_level0_row0" class="row_heading level0 row0" >440005</th>
+      <th id="T_d26a2_level1_row0" class="row_heading level1 row0" >EZY12VJ</th>
+      <td id="T_d26a2_row0_col0" class="data row0 col0" >169</td>
     </tr>
     <tr>
-      <th id="T_3d6ed_level0_row1" class="row_heading level0 row1" >4ca4ed</th>
-      <th id="T_3d6ed_level1_row1" class="row_heading level1 row1" >RYR87WH</th>
-      <td id="T_3d6ed_row1_col0" class="data row1 col0" >108</td>
+      <th id="T_d26a2_level0_row1" class="row_heading level0 row1" >4ca4ed</th>
+      <th id="T_d26a2_level1_row1" class="row_heading level1 row1" >RYR87WH</th>
+      <td id="T_d26a2_row1_col0" class="data row1 col0" >108</td>
     </tr>
   </tbody>
 </table>
@@ -1175,7 +1175,7 @@ intervals otherwise.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9a3e9a949823403b92a06e97c4efbd7f"}
+{"version_major": 2, "version_minor": 0, "model_id": "5dd4efd1cfa8415db8a02acf4c9e010d"}
 </script></div>
 </div>
 </section>
@@ -1183,7 +1183,7 @@ intervals otherwise.</p>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"9bfc897ccc85487583a8ba4ae7996b07": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "grab"}}, "9b964c770a014dde9f849c45f6279e0e": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "move"}}, "80c9cb66826641fc96157434d47f2630": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "bounds": null, "detect_retina": false, "loading": false, "max_native_zoom": null, "max_zoom": 19, "min_native_zoom": null, "min_zoom": 1, "name": "OpenStreetMap.Mapnik", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "bounds", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms", "zoom_offset"], "pane": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "subitems": [], "tile_size": 256, "tms": false, "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true, "zoom_offset": 0}}, "47244294ca3f448eb818b2f442ef25b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f7d724ad59c443f8a465177d369fe77c": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "grab"}}, "9a3e9a949823403b92a06e97c4efbd7f": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [46.10440278, 8.664925], "close_popup_on_click": true, "controls": ["IPY_MODEL_a829e7bdd62542f6b5e0d86d7b5d007b", "IPY_MODEL_35fd7d679971401f880e03eb27fcdba5"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_9bfc897ccc85487583a8ba4ae7996b07", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_9b964c770a014dde9f849c45f6279e0e", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_80c9cb66826641fc96157434d47f2630", "IPY_MODEL_9074321628954713af01e08f825b554f", "IPY_MODEL_9115641e7d3b4d67a27f03e4809ee0b6", "IPY_MODEL_4f217cf8ce14448989f9f7e54b7beece", "IPY_MODEL_fa13fb658a484ea89fff7aff49f08d92", "IPY_MODEL_257cc4cc4c614356a17233802a0ae97f"], "layout": "IPY_MODEL_47244294ca3f448eb818b2f442ef25b6", "left": 9007199254740991.0, "max_zoom": null, "min_zoom": null, "modisdate": "2023-08-19", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "prefer_canvas", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap"], "panes": {}, "prefer_canvas": false, "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_f7d724ad59c443f8a465177d369fe77c", "tabbable": null, "tap": true, "tap_tolerance": 15, "tooltip": null, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 7.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0}}, "a829e7bdd62542f6b5e0d86d7b5d007b": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "35fd7d679971401f880e03eb27fcdba5": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "9074321628954713af01e08f825b554f": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[45.8182021319, 9.5986175537], [45.8251647949, 9.5934760861], [45.8326721191, 9.5690248071], [45.8403144448, 9.5440979004], [45.8480072021, 9.5188494426], [45.8556976318, 9.4936612757], [45.8632965088, 9.4686070884], [45.8713182352, 9.442199707], [45.8790459067, 9.416519165], [45.8868666827, 9.3909759521], [45.894744873, 9.3653757979], [45.9029846191, 9.3387138553], [45.9111203986, 9.3125610352], [45.9193135924, 9.2863311768], [45.9278411865, 9.2590629764], [45.9367675781, 9.2307262886], [45.9446411133, 9.2058730707], [45.9532470703, 9.1789431688], [45.9613968154, 9.1532592773], [45.9701385498, 9.1260212224], [45.9785280389, 9.0999069214], [45.9869842529, 9.0735682046], [45.9957989192, 9.0462112427], [46.0038990085, 9.0211486816], [46.012604277, 8.9941635132], [46.0214080811, 8.9669874238], [46.0301079184, 8.9401245117], [46.0383911133, 8.914534406], [46.0470994852, 8.8879394531], [46.0557582015, 8.8616409302], [46.0644378662, 8.8352184761], [46.0750308279, 8.8029327393], [46.0817871094, 8.7822965296], [46.0908585888, 8.7543869019], [46.1003265381, 8.7283697361], [46.1158105883, 8.6973266602], [46.1259124239, 8.6816711426], [46.1413879395, 8.6623847775], [46.1595153809, 8.6449674281], [46.1784667969, 8.6310335485], [46.1968114821, 8.6184310913], [46.2161865234, 8.6047065549], [46.2350308693, 8.5910339355], [46.254776001, 8.5765708365], [46.272857666, 8.5631728754], [46.2920837402, 8.548837057], [46.3109436035, 8.5348361876], [46.3295319121, 8.5210647583], [46.3501080012, 8.5058898926], [46.367980957, 8.4927665897], [46.3864187467, 8.4792480469], [46.4053189552, 8.4653091431], [46.4239654541, 8.4515008694], [46.4432373047, 8.4372320408], [46.4624851033, 8.4229431152], [46.4803146104, 8.4097595215], [46.5095214844, 8.388262492900001], [46.519821167, 8.380625655], [46.5381324897, 8.3670501709], [46.5576324463, 8.3525569264], [46.5766296387, 8.3384220775], [46.5964050293, 8.3236843202], [46.615814209, 8.3093485018], [46.6350402832, 8.2950796732], [46.6533958306, 8.2813568115], [46.6727600098, 8.2669439548], [46.6923135014, 8.2523117065], [46.7115395756, 8.2379608154], [46.7306259931, 8.2236785889], [46.7502710375, 8.2089157104], [46.7691246938, 8.1946334839], [46.7889093949, 8.1796646118], [46.807344081, 8.165725708], [46.8271287821, 8.1506881714], [46.8460755429, 8.1362686157], [46.8647460938, 8.1221789849], [46.8844299316, 8.1071548462], [46.9035186768, 8.092666626], [46.9220581055, 8.0785903931], [46.941414526, 8.0638944186], [46.9602813721, 8.0495452881], [46.9794942565, 8.0348088191], [46.9990461964, 8.0199491061], [47.0184119273, 8.0051598182], [47.0373586881, 7.9906522311], [47.0554046631, 7.9768295288], [47.0759970455, 7.9610736553], [47.0945713884, 7.9468477689], [47.1139371193, 7.9320584811], [47.1328125, 7.9175033569], [47.1519927979, 7.9028091431], [47.1717084464, 7.8877610427], [47.1910741774, 7.8729013296], [47.2089036845, 7.8591684195], [47.2292175293, 7.8435516357], [47.2477282508, 7.829308143], [47.2673732952, 7.8141667293], [47.2872511007, 7.7988844651], [47.3066168316, 7.7839543269], [47.3258894581, 7.7692354642], [47.3457641602, 7.7542877197], [47.3646674722, 7.7400090144], [47.384765625, 7.7248306274], [47.4040041131, 7.7102191632], [47.422764665, 7.6959228516], [47.4423166049, 7.6810631385], [47.4615426791, 7.666414701], [47.4796980518, 7.6512028621], [47.5003672454, 7.6373291016], [47.5200122898, 7.6226102389], [47.5385742188, 7.6057662964], [47.5549621582, 7.5861282349], [47.5696105957, 7.5636749268], [47.5822906494, 7.5389556885], [47.592866542, 7.5123244066], [47.6013793945, 7.4838180542], [47.6088409424, 7.4463272095], [47.6111615714, 7.4271099384], [47.6127908998, 7.397672213], [47.6123719296, 7.367952787], [47.6097650043, 7.3392193134], [47.6054534912, 7.3094100952], [47.6013336182, 7.2813949585], [47.5972595215, 7.2527618408], [47.5932769775, 7.2239913940000005], [47.5894317627, 7.1961135864], [47.5855112884, 7.1675227239], [47.5816497803, 7.1396026611], [47.5777370647, 7.1118868314], [47.57368702, 7.0835054838], [47.5692645574, 7.0526592548], [47.5657265873, 7.0282217172], [47.5616299904, 6.9999812200000004], [47.5576730502, 6.9727971004], [47.5535888672, 6.9443206787000005], [47.5495147705, 6.9160995483], [47.5454298116, 6.8879347581], [47.5411834717, 6.858833313], [47.537109375, 6.8305435181], [47.5331726074, 6.8031463623], [47.5290434239, 6.7747614934], [47.5250701904, 6.7471160889], [47.5211760957, 6.720322829], [47.5171508789, 6.6926651001], [47.5131225586, 6.6656112671], [47.509185791, 6.6389007568], [47.504789708, 6.6090510442], [47.5006931111, 6.581655649], [47.4963684082, 6.5521774292], [47.4921274993, 6.5236253005], [47.4878997803, 6.4951858521], [47.4835968018, 6.4658660889], [47.4794652907, 6.4378474309], [47.4737393654, 6.3988318809999996], [47.4710393356, 6.3806621845], [47.4664772163, 6.3500272311], [47.4618685448, 6.3192514273], [47.458004709, 6.2938279372], [47.453338623, 6.2633056641], [47.4491271973, 6.235496521], [47.4446411133, 6.2059020996], [47.4405212402, 6.1789855957], [47.4358978271, 6.1483612061], [47.4313659668, 6.1186294556], [47.4269714355, 6.0898590088], [47.4227142334, 6.0619125366], [47.4183197021, 6.0331420898], [47.4139197398, 6.0043804462], [47.4093933105, 5.9751205444]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "650af14aeb7146ae9fbc825b3ce44799": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "423186333da540978bfba0c1d2e171dd": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "b646649713884e438b0e1b82e8e97f84": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_650af14aeb7146ae9fbc825b3ce44799", "placeholder": "\u200b", "style": "IPY_MODEL_423186333da540978bfba0c1d2e171dd", "tabbable": null, "tooltip": null, "value": "<h4><b>Flight</b></h4><ul><li><b>callsign:</b> EZY12VJ   </li><li><b>aircraft:</b> <code>440005</code></li><li><b>start:</b> 2018-08-01 15:17:30+00:00</li><li><b>stop:</b> 2018-08-01 15:45:30+00:00</li><li><b>duration:</b> 0 days 00:28:00</li><li><b>sampling rate:</b> 10 second(s)</li></ul>"}}, "9115641e7d3b4d67a27f03e4809ee0b6": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "red", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[45.8182021319, 9.5986175537], [45.8251647949, 9.5934760861], [45.8326721191, 9.5690248071], [45.8403144448, 9.5440979004], [45.8480072021, 9.5188494426], [45.8556976318, 9.4936612757], [45.8632965088, 9.4686070884], [45.8713182352, 9.442199707], [45.8790459067, 9.416519165], [45.8868666827, 9.3909759521], [45.894744873, 9.3653757979], [45.9029846191, 9.3387138553], [45.9111203986, 9.3125610352], [45.9193135924, 9.2863311768], [45.9278411865, 9.2590629764]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "4f217cf8ce14448989f9f7e54b7beece": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[47.7943911795, 7.6459350586], [47.7943911795, 7.6527328491], [47.7789916992, 7.6635818481], [47.7606873593, 7.675006573], [47.7431030273, 7.6858291626], [47.724795584, 7.6971200796], [47.7072143555, 7.7079391479], [47.6888572564, 7.7191631611], [47.6716329284, 7.7298677885], [47.6533355713, 7.7412414551], [47.6349963172, 7.7525446965], [47.6173095703, 7.763420105], [47.5989183329, 7.7747286283], [47.5808095124, 7.7858558068], [47.5622406006, 7.7972717285], [47.5450573937, 7.807828463], [47.5266692598, 7.8190964919], [47.5078125, 7.8307800293], [47.4892272949, 7.8421783447], [47.4702013953, 7.8538161058], [47.4511871338, 7.8653182983], [47.4325561523, 7.8765792847], [47.4142921577, 7.8876201923], [47.3957643671, 7.8987473708], [47.3769378662, 7.9100875854], [47.3592681885, 7.9206619263], [47.3409576416, 7.9317855835], [47.3226470947, 7.9429779053], [47.3018219511, 7.9557917668], [47.2860717773, 7.9653625488], [47.2677612305, 7.9765548706], [47.2490317135, 7.9879760742], [47.231048584, 7.9988708496], [47.2118682861, 8.0104751587], [47.1934661865, 8.0215301514], [47.1757507324, 8.03318904], [47.1574401855, 8.0430908203], [47.1392211914, 8.0540084839], [47.1203155518, 8.0654754639], [47.102142334, 8.076461792], [47.0846557617, 8.0871047974], [47.0657501221, 8.0985717773], [47.0486243296, 8.1088256836], [47.0299987793, 8.1199951172], [47.0117340088, 8.1309127808], [46.9934234619, 8.1418304443], [46.975112915, 8.1526794434], [46.9564508988, 8.1638277494], [46.937713623, 8.1749954224], [46.9197211831, 8.1857299805], [46.9016876221, 8.1965560913], [46.882898363, 8.2083364633], [46.8644636768, 8.2188034058], [46.8460755429, 8.2297897339], [46.8279876709, 8.2405499714], [46.8095855713, 8.2515362995], [46.7874298096, 8.2648002811], [46.772644043, 8.2736429354], [46.7538090075, 8.2848587036], [46.7349700928, 8.2959505407], [46.7168465307, 8.3066253662], [46.6987609863, 8.3172532989], [46.6784874868, 8.3290786743], [46.6619567871, 8.3387570265], [46.6433405472, 8.3497467041], [46.6254272461, 8.3603277439], [46.607208252, 8.3711800924], [46.5893865036, 8.3817443848], [46.5682517876, 8.3943099976], [46.5521912656, 8.4037857056], [46.5338962361, 8.4146347046], [46.5160217285, 8.425106886], [46.4973527294, 8.4360580444], [46.4801330566, 8.447593689], [46.4607626705, 8.4575500488], [46.442467641, 8.4683303833], [46.4245147705, 8.4787657203], [46.40625, 8.489551079], [46.3872070312, 8.5006713867], [46.3692875232, 8.511177063], [46.3506317139, 8.5220411347], [46.3329162598, 8.5314197075], [46.3117675781, 8.5401283822], [46.2949676514, 8.5456215463], [46.2750549316, 8.5515166492], [46.2562586898, 8.5565643311], [46.2374725342, 8.5630388958], [46.2182006836, 8.5681971108], [46.1983942581, 8.5736618042], [46.1788888705, 8.5778503418], [46.1593834829, 8.5819702148], [46.1402435303, 8.5860833889], [46.1203261553, 8.59034729], [46.1007742154, 8.5943984985], [46.0808258057, 8.598476503], [46.0620574951, 8.6023619117], [46.0425109863, 8.6063813], [46.0229644775, 8.6104676782], [46.003014516, 8.6145858765], [45.9834625761, 8.618637085], [45.9647020243, 8.6225509644], [45.9444052486, 8.626739502], [45.9248533087, 8.6307907104], [45.9049072266, 8.6348519674], [45.886138916, 8.6386703863], [45.8657684326, 8.6428237543], [45.846598997, 8.6467208862], [45.8273620605, 8.6495897247]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "1f232a317e184dfdafc9d4ca51ad5e31": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6ca900c105bc4e9c91835dab56bd5120": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "9478e79cdc644a8abce62060ca6ae579": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_1f232a317e184dfdafc9d4ca51ad5e31", "placeholder": "\u200b", "style": "IPY_MODEL_6ca900c105bc4e9c91835dab56bd5120", "tabbable": null, "tooltip": null, "value": "<h4><b>Flight</b></h4><ul><li><b>callsign:</b> RYR87WH   </li><li><b>aircraft:</b> <code>4ca4ed</code> \u00b7 \ud83c\uddee\ud83c\uddea EI-DPI (B738)</li><li><b>start:</b> 2018-08-01 15:25:00+00:00</li><li><b>stop:</b> 2018-08-01 15:42:50+00:00</li><li><b>duration:</b> 0 days 00:17:50</li><li><b>sampling rate:</b> 10 second(s)</li></ul>"}}, "fa13fb658a484ea89fff7aff49f08d92": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "red", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[47.7943911795, 7.6459350586], [47.7943911795, 7.6527328491], [47.7789916992, 7.6635818481], [47.7606873593, 7.675006573], [47.7431030273, 7.6858291626], [47.724795584, 7.6971200796], [47.7072143555, 7.7079391479], [47.6888572564, 7.7191631611], [47.6716329284, 7.7298677885], [47.6533355713, 7.7412414551], [47.6349963172, 7.7525446965], [47.6173095703, 7.763420105], [47.5989183329, 7.7747286283], [47.5808095124, 7.7858558068], [47.5622406006, 7.7972717285], [47.5450573937, 7.807828463], [47.5266692598, 7.8190964919], [47.5078125, 7.8307800293], [47.4892272949, 7.8421783447], [47.4702013953, 7.8538161058], [47.4511871338, 7.8653182983], [47.4325561523, 7.8765792847], [47.4142921577, 7.8876201923], [47.3957643671, 7.8987473708], [47.3769378662, 7.9100875854], [47.3592681885, 7.9206619263], [47.3409576416, 7.9317855835], [47.3226470947, 7.9429779053], [47.3018219511, 7.9557917668], [47.2860717773, 7.9653625488], [47.2677612305, 7.9765548706], [47.2490317135, 7.9879760742], [47.231048584, 7.9988708496], [47.2118682861, 8.0104751587], [47.1934661865, 8.0215301514], [47.1757507324, 8.03318904], [47.1574401855, 8.0430908203], [47.1392211914, 8.0540084839], [47.1203155518, 8.0654754639], [47.102142334, 8.076461792], [47.0846557617, 8.0871047974], [47.0657501221, 8.0985717773], [47.0486243296, 8.1088256836], [47.0299987793, 8.1199951172], [47.0117340088, 8.1309127808], [46.9934234619, 8.1418304443], [46.975112915, 8.1526794434], [46.9564508988, 8.1638277494], [46.937713623, 8.1749954224], [46.9197211831, 8.1857299805], [46.9016876221, 8.1965560913], [46.882898363, 8.2083364633], [46.8644636768, 8.2188034058], [46.8460755429, 8.2297897339], [46.8279876709, 8.2405499714], [46.8095855713, 8.2515362995], [46.7874298096, 8.2648002811], [46.772644043, 8.2736429354], [46.7538090075, 8.2848587036], [46.7349700928, 8.2959505407], [46.7168465307, 8.3066253662], [46.6987609863, 8.3172532989], [46.6784874868, 8.3290786743], [46.6619567871, 8.3387570265], [46.6433405472, 8.3497467041], [46.6254272461, 8.3603277439], [46.607208252, 8.3711800924], [46.5893865036, 8.3817443848], [46.5682517876, 8.3943099976], [46.5521912656, 8.4037857056], [46.5338962361, 8.4146347046], [46.5160217285, 8.425106886], [46.4973527294, 8.4360580444], [46.4801330566, 8.447593689], [46.4607626705, 8.4575500488], [46.442467641, 8.4683303833], [46.4245147705, 8.4787657203], [46.40625, 8.489551079], [46.3872070312, 8.5006713867], [46.3692875232, 8.511177063], [46.3506317139, 8.5220411347]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "257cc4cc4c614356a17233802a0ae97f": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [46.10440278, 8.664925], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "pane": "", "popup": "IPY_MODEL_d05bf1fc874d44ccb43737d0222a492b", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "subitems": [], "title": "ODINA", "visible": true, "z_index_offset": 0}}, "44eb704e944142eebfb0638546996a98": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "db4939a78d094d7bb0658eedbf2c68f1": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "d05bf1fc874d44ccb43737d0222a492b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_44eb704e944142eebfb0638546996a98", "placeholder": "\u200b", "style": "IPY_MODEL_db4939a78d094d7bb0658eedbf2c68f1", "tabbable": null, "tooltip": null, "value": "Navaid('ODINA', type='FIX', latitude=46.10440278, longitude=8.664925)"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"ee281d5d19a3488eb1bbdaa49cadca0e": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "grab"}}, "11c1f04075834829b322937f1a4403e1": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "move"}}, "8429ad66353546559887b5ac12e8875b": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "bounds": null, "detect_retina": false, "loading": false, "max_native_zoom": null, "max_zoom": 19, "min_native_zoom": null, "min_zoom": 1, "name": "OpenStreetMap.Mapnik", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "bounds", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms", "zoom_offset"], "pane": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "subitems": [], "tile_size": 256, "tms": false, "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true, "zoom_offset": 0}}, "66fd4aee25284325ae7949368f0a056b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f0e116bb7f65485abe287a432578cf41": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "cursor": "grab"}}, "5dd4efd1cfa8415db8a02acf4c9e010d": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [46.10440278, 8.664925], "close_popup_on_click": true, "controls": ["IPY_MODEL_eaf38d60b0ae46e993af54afd8f0a4cb", "IPY_MODEL_855a93df73f84d30a4b826ff2101bc62"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_ee281d5d19a3488eb1bbdaa49cadca0e", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_11c1f04075834829b322937f1a4403e1", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_8429ad66353546559887b5ac12e8875b", "IPY_MODEL_5b58eee9295b40bdbfd294e1f7799ff9", "IPY_MODEL_e93b560d1e5f4675b31a7f391599eb55", "IPY_MODEL_0ecabf32543c44b6a5e6e3a41fd848fd", "IPY_MODEL_06364d5b77de4e9da725b8dc0fa40f9c", "IPY_MODEL_a6c273f1768c4f4abdda99b2bf64d6b5"], "layout": "IPY_MODEL_66fd4aee25284325ae7949368f0a056b", "left": 9007199254740991.0, "max_zoom": null, "min_zoom": null, "modisdate": "2023-08-21", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "prefer_canvas", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap"], "panes": {}, "prefer_canvas": false, "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_f0e116bb7f65485abe287a432578cf41", "tabbable": null, "tap": true, "tap_tolerance": 15, "tooltip": null, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 7.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0}}, "eaf38d60b0ae46e993af54afd8f0a4cb": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "855a93df73f84d30a4b826ff2101bc62": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "5b58eee9295b40bdbfd294e1f7799ff9": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[45.8182021319, 9.5986175537], [45.8251647949, 9.5934760861], [45.8326721191, 9.5690248071], [45.8403144448, 9.5440979004], [45.8480072021, 9.5188494426], [45.8556976318, 9.4936612757], [45.8632965088, 9.4686070884], [45.8713182352, 9.442199707], [45.8790459067, 9.416519165], [45.8868666827, 9.3909759521], [45.894744873, 9.3653757979], [45.9029846191, 9.3387138553], [45.9111203986, 9.3125610352], [45.9193135924, 9.2863311768], [45.9278411865, 9.2590629764], [45.9367675781, 9.2307262886], [45.9446411133, 9.2058730707], [45.9532470703, 9.1789431688], [45.9613968154, 9.1532592773], [45.9701385498, 9.1260212224], [45.9785280389, 9.0999069214], [45.9869842529, 9.0735682046], [45.9957989192, 9.0462112427], [46.0038990085, 9.0211486816], [46.012604277, 8.9941635132], [46.0214080811, 8.9669874238], [46.0301079184, 8.9401245117], [46.0383911133, 8.914534406], [46.0470994852, 8.8879394531], [46.0557582015, 8.8616409302], [46.0644378662, 8.8352184761], [46.0750308279, 8.8029327393], [46.0817871094, 8.7822965296], [46.0908585888, 8.7543869019], [46.1003265381, 8.7283697361], [46.1158105883, 8.6973266602], [46.1259124239, 8.6816711426], [46.1413879395, 8.6623847775], [46.1595153809, 8.6449674281], [46.1784667969, 8.6310335485], [46.1968114821, 8.6184310913], [46.2161865234, 8.6047065549], [46.2350308693, 8.5910339355], [46.254776001, 8.5765708365], [46.272857666, 8.5631728754], [46.2920837402, 8.548837057], [46.3109436035, 8.5348361876], [46.3295319121, 8.5210647583], [46.3501080012, 8.5058898926], [46.367980957, 8.4927665897], [46.3864187467, 8.4792480469], [46.4053189552, 8.4653091431], [46.4239654541, 8.4515008694], [46.4432373047, 8.4372320408], [46.4624851033, 8.4229431152], [46.4803146104, 8.4097595215], [46.5095214844, 8.388262492900001], [46.519821167, 8.380625655], [46.5381324897, 8.3670501709], [46.5576324463, 8.3525569264], [46.5766296387, 8.3384220775], [46.5964050293, 8.3236843202], [46.615814209, 8.3093485018], [46.6350402832, 8.2950796732], [46.6533958306, 8.2813568115], [46.6727600098, 8.2669439548], [46.6923135014, 8.2523117065], [46.7115395756, 8.2379608154], [46.7306259931, 8.2236785889], [46.7502710375, 8.2089157104], [46.7691246938, 8.1946334839], [46.7889093949, 8.1796646118], [46.807344081, 8.165725708], [46.8271287821, 8.1506881714], [46.8460755429, 8.1362686157], [46.8647460938, 8.1221789849], [46.8844299316, 8.1071548462], [46.9035186768, 8.092666626], [46.9220581055, 8.0785903931], [46.941414526, 8.0638944186], [46.9602813721, 8.0495452881], [46.9794942565, 8.0348088191], [46.9990461964, 8.0199491061], [47.0184119273, 8.0051598182], [47.0373586881, 7.9906522311], [47.0554046631, 7.9768295288], [47.0759970455, 7.9610736553], [47.0945713884, 7.9468477689], [47.1139371193, 7.9320584811], [47.1328125, 7.9175033569], [47.1519927979, 7.9028091431], [47.1717084464, 7.8877610427], [47.1910741774, 7.8729013296], [47.2089036845, 7.8591684195], [47.2292175293, 7.8435516357], [47.2477282508, 7.829308143], [47.2673732952, 7.8141667293], [47.2872511007, 7.7988844651], [47.3066168316, 7.7839543269], [47.3258894581, 7.7692354642], [47.3457641602, 7.7542877197], [47.3646674722, 7.7400090144], [47.384765625, 7.7248306274], [47.4040041131, 7.7102191632], [47.422764665, 7.6959228516], [47.4423166049, 7.6810631385], [47.4615426791, 7.666414701], [47.4796980518, 7.6512028621], [47.5003672454, 7.6373291016], [47.5200122898, 7.6226102389], [47.5385742188, 7.6057662964], [47.5549621582, 7.5861282349], [47.5696105957, 7.5636749268], [47.5822906494, 7.5389556885], [47.592866542, 7.5123244066], [47.6013793945, 7.4838180542], [47.6088409424, 7.4463272095], [47.6111615714, 7.4271099384], [47.6127908998, 7.397672213], [47.6123719296, 7.367952787], [47.6097650043, 7.3392193134], [47.6054534912, 7.3094100952], [47.6013336182, 7.2813949585], [47.5972595215, 7.2527618408], [47.5932769775, 7.2239913940000005], [47.5894317627, 7.1961135864], [47.5855112884, 7.1675227239], [47.5816497803, 7.1396026611], [47.5777370647, 7.1118868314], [47.57368702, 7.0835054838], [47.5692645574, 7.0526592548], [47.5657265873, 7.0282217172], [47.5616299904, 6.9999812200000004], [47.5576730502, 6.9727971004], [47.5535888672, 6.9443206787000005], [47.5495147705, 6.9160995483], [47.5454298116, 6.8879347581], [47.5411834717, 6.858833313], [47.537109375, 6.8305435181], [47.5331726074, 6.8031463623], [47.5290434239, 6.7747614934], [47.5250701904, 6.7471160889], [47.5211760957, 6.720322829], [47.5171508789, 6.6926651001], [47.5131225586, 6.6656112671], [47.509185791, 6.6389007568], [47.504789708, 6.6090510442], [47.5006931111, 6.581655649], [47.4963684082, 6.5521774292], [47.4921274993, 6.5236253005], [47.4878997803, 6.4951858521], [47.4835968018, 6.4658660889], [47.4794652907, 6.4378474309], [47.4737393654, 6.3988318809999996], [47.4710393356, 6.3806621845], [47.4664772163, 6.3500272311], [47.4618685448, 6.3192514273], [47.458004709, 6.2938279372], [47.453338623, 6.2633056641], [47.4491271973, 6.235496521], [47.4446411133, 6.2059020996], [47.4405212402, 6.1789855957], [47.4358978271, 6.1483612061], [47.4313659668, 6.1186294556], [47.4269714355, 6.0898590088], [47.4227142334, 6.0619125366], [47.4183197021, 6.0331420898], [47.4139197398, 6.0043804462], [47.4093933105, 5.9751205444]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "5f6f2d9c17d84b289f7301ca564bb5d5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bb699d58b13e4c649c383b051621363d": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "50f20355d6e14fbe87a8502d5867ee59": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_5f6f2d9c17d84b289f7301ca564bb5d5", "placeholder": "\u200b", "style": "IPY_MODEL_bb699d58b13e4c649c383b051621363d", "tabbable": null, "tooltip": null, "value": "<h4><b>Flight</b></h4><ul><li><b>callsign:</b> EZY12VJ   </li><li><b>aircraft:</b> <code>440005</code> \u00b7 \ud83c\udde6\ud83c\uddf9 OE-ING (A320)</li><li><b>start:</b> 2018-08-01 15:17:30+00:00</li><li><b>stop:</b> 2018-08-01 15:45:30+00:00</li><li><b>duration:</b> 0 days 00:28:00</li><li><b>sampling rate:</b> 10 second(s)</li></ul>"}}, "e93b560d1e5f4675b31a7f391599eb55": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "red", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[45.8182021319, 9.5986175537], [45.8251647949, 9.5934760861], [45.8326721191, 9.5690248071], [45.8403144448, 9.5440979004], [45.8480072021, 9.5188494426], [45.8556976318, 9.4936612757], [45.8632965088, 9.4686070884], [45.8713182352, 9.442199707], [45.8790459067, 9.416519165], [45.8868666827, 9.3909759521], [45.894744873, 9.3653757979], [45.9029846191, 9.3387138553], [45.9111203986, 9.3125610352], [45.9193135924, 9.2863311768], [45.9278411865, 9.2590629764]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "0ecabf32543c44b6a5e6e3a41fd848fd": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[47.7943911795, 7.6459350586], [47.7943911795, 7.6527328491], [47.7789916992, 7.6635818481], [47.7606873593, 7.675006573], [47.7431030273, 7.6858291626], [47.724795584, 7.6971200796], [47.7072143555, 7.7079391479], [47.6888572564, 7.7191631611], [47.6716329284, 7.7298677885], [47.6533355713, 7.7412414551], [47.6349963172, 7.7525446965], [47.6173095703, 7.763420105], [47.5989183329, 7.7747286283], [47.5808095124, 7.7858558068], [47.5622406006, 7.7972717285], [47.5450573937, 7.807828463], [47.5266692598, 7.8190964919], [47.5078125, 7.8307800293], [47.4892272949, 7.8421783447], [47.4702013953, 7.8538161058], [47.4511871338, 7.8653182983], [47.4325561523, 7.8765792847], [47.4142921577, 7.8876201923], [47.3957643671, 7.8987473708], [47.3769378662, 7.9100875854], [47.3592681885, 7.9206619263], [47.3409576416, 7.9317855835], [47.3226470947, 7.9429779053], [47.3018219511, 7.9557917668], [47.2860717773, 7.9653625488], [47.2677612305, 7.9765548706], [47.2490317135, 7.9879760742], [47.231048584, 7.9988708496], [47.2118682861, 8.0104751587], [47.1934661865, 8.0215301514], [47.1757507324, 8.03318904], [47.1574401855, 8.0430908203], [47.1392211914, 8.0540084839], [47.1203155518, 8.0654754639], [47.102142334, 8.076461792], [47.0846557617, 8.0871047974], [47.0657501221, 8.0985717773], [47.0486243296, 8.1088256836], [47.0299987793, 8.1199951172], [47.0117340088, 8.1309127808], [46.9934234619, 8.1418304443], [46.975112915, 8.1526794434], [46.9564508988, 8.1638277494], [46.937713623, 8.1749954224], [46.9197211831, 8.1857299805], [46.9016876221, 8.1965560913], [46.882898363, 8.2083364633], [46.8644636768, 8.2188034058], [46.8460755429, 8.2297897339], [46.8279876709, 8.2405499714], [46.8095855713, 8.2515362995], [46.7874298096, 8.2648002811], [46.772644043, 8.2736429354], [46.7538090075, 8.2848587036], [46.7349700928, 8.2959505407], [46.7168465307, 8.3066253662], [46.6987609863, 8.3172532989], [46.6784874868, 8.3290786743], [46.6619567871, 8.3387570265], [46.6433405472, 8.3497467041], [46.6254272461, 8.3603277439], [46.607208252, 8.3711800924], [46.5893865036, 8.3817443848], [46.5682517876, 8.3943099976], [46.5521912656, 8.4037857056], [46.5338962361, 8.4146347046], [46.5160217285, 8.425106886], [46.4973527294, 8.4360580444], [46.4801330566, 8.447593689], [46.4607626705, 8.4575500488], [46.442467641, 8.4683303833], [46.4245147705, 8.4787657203], [46.40625, 8.489551079], [46.3872070312, 8.5006713867], [46.3692875232, 8.511177063], [46.3506317139, 8.5220411347], [46.3329162598, 8.5314197075], [46.3117675781, 8.5401283822], [46.2949676514, 8.5456215463], [46.2750549316, 8.5515166492], [46.2562586898, 8.5565643311], [46.2374725342, 8.5630388958], [46.2182006836, 8.5681971108], [46.1983942581, 8.5736618042], [46.1788888705, 8.5778503418], [46.1593834829, 8.5819702148], [46.1402435303, 8.5860833889], [46.1203261553, 8.59034729], [46.1007742154, 8.5943984985], [46.0808258057, 8.598476503], [46.0620574951, 8.6023619117], [46.0425109863, 8.6063813], [46.0229644775, 8.6104676782], [46.003014516, 8.6145858765], [45.9834625761, 8.618637085], [45.9647020243, 8.6225509644], [45.9444052486, 8.626739502], [45.9248533087, 8.6307907104], [45.9049072266, 8.6348519674], [45.886138916, 8.6386703863], [45.8657684326, 8.6428237543], [45.846598997, 8.6467208862], [45.8273620605, 8.6495897247]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "7dcac9574e2144238988fb5a0f21f8ca": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5cb5bff340e549f3a3b60d1b05a1163f": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "5c08d3e5eb58401781e802ec3f621ce3": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_7dcac9574e2144238988fb5a0f21f8ca", "placeholder": "\u200b", "style": "IPY_MODEL_5cb5bff340e549f3a3b60d1b05a1163f", "tabbable": null, "tooltip": null, "value": "<h4><b>Flight</b></h4><ul><li><b>callsign:</b> RYR87WH   </li><li><b>aircraft:</b> <code>4ca4ed</code> \u00b7 \ud83c\uddee\ud83c\uddea EI-DPI (B738)</li><li><b>start:</b> 2018-08-01 15:25:00+00:00</li><li><b>stop:</b> 2018-08-01 15:42:50+00:00</li><li><b>duration:</b> 0 days 00:17:50</li><li><b>sampling rate:</b> 10 second(s)</li></ul>"}}, "06364d5b77de4e9da725b8dc0fa40f9c": {"model_name": "LeafletPolylineModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletPolylineModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletPolylineView", "base": false, "bottom": false, "color": "red", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.0, "line_cap": "round", "line_join": "round", "locations": [[47.7943911795, 7.6459350586], [47.7943911795, 7.6527328491], [47.7789916992, 7.6635818481], [47.7606873593, 7.675006573], [47.7431030273, 7.6858291626], [47.724795584, 7.6971200796], [47.7072143555, 7.7079391479], [47.6888572564, 7.7191631611], [47.6716329284, 7.7298677885], [47.6533355713, 7.7412414551], [47.6349963172, 7.7525446965], [47.6173095703, 7.763420105], [47.5989183329, 7.7747286283], [47.5808095124, 7.7858558068], [47.5622406006, 7.7972717285], [47.5450573937, 7.807828463], [47.5266692598, 7.8190964919], [47.5078125, 7.8307800293], [47.4892272949, 7.8421783447], [47.4702013953, 7.8538161058], [47.4511871338, 7.8653182983], [47.4325561523, 7.8765792847], [47.4142921577, 7.8876201923], [47.3957643671, 7.8987473708], [47.3769378662, 7.9100875854], [47.3592681885, 7.9206619263], [47.3409576416, 7.9317855835], [47.3226470947, 7.9429779053], [47.3018219511, 7.9557917668], [47.2860717773, 7.9653625488], [47.2677612305, 7.9765548706], [47.2490317135, 7.9879760742], [47.231048584, 7.9988708496], [47.2118682861, 8.0104751587], [47.1934661865, 8.0215301514], [47.1757507324, 8.03318904], [47.1574401855, 8.0430908203], [47.1392211914, 8.0540084839], [47.1203155518, 8.0654754639], [47.102142334, 8.076461792], [47.0846557617, 8.0871047974], [47.0657501221, 8.0985717773], [47.0486243296, 8.1088256836], [47.0299987793, 8.1199951172], [47.0117340088, 8.1309127808], [46.9934234619, 8.1418304443], [46.975112915, 8.1526794434], [46.9564508988, 8.1638277494], [46.937713623, 8.1749954224], [46.9197211831, 8.1857299805], [46.9016876221, 8.1965560913], [46.882898363, 8.2083364633], [46.8644636768, 8.2188034058], [46.8460755429, 8.2297897339], [46.8279876709, 8.2405499714], [46.8095855713, 8.2515362995], [46.7874298096, 8.2648002811], [46.772644043, 8.2736429354], [46.7538090075, 8.2848587036], [46.7349700928, 8.2959505407], [46.7168465307, 8.3066253662], [46.6987609863, 8.3172532989], [46.6784874868, 8.3290786743], [46.6619567871, 8.3387570265], [46.6433405472, 8.3497467041], [46.6254272461, 8.3603277439], [46.607208252, 8.3711800924], [46.5893865036, 8.3817443848], [46.5682517876, 8.3943099976], [46.5521912656, 8.4037857056], [46.5338962361, 8.4146347046], [46.5160217285, 8.425106886], [46.4973527294, 8.4360580444], [46.4801330566, 8.447593689], [46.4607626705, 8.4575500488], [46.442467641, 8.4683303833], [46.4245147705, 8.4787657203], [46.40625, 8.489551079], [46.3872070312, 8.5006713867], [46.3692875232, 8.511177063], [46.3506317139, 8.5220411347]], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pane": "", "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "subitems": [], "transform": false, "uniform_scaling": false, "weight": 3}}, "a6c273f1768c4f4abdda99b2bf64d6b5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.17", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.17", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.17", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": true, "icon": null, "keyboard": true, "location": [46.10440278, 8.664925], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "pane": "", "popup": "IPY_MODEL_5b355b430900444a8ca6dbd8751844cb", "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "subitems": [], "title": "ODINA", "visible": true, "z_index_offset": 0}}, "5bdc4ec1173a431abe9b21efcbc01bbc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d93bdfabd2a54f58837ff4ffd867a2d8": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "5b355b430900444a8ca6dbd8751844cb": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_5bdc4ec1173a431abe9b21efcbc01bbc", "placeholder": "\u200b", "style": "IPY_MODEL_d93bdfabd2a54f58837ff4ffd867a2d8", "tabbable": null, "tooltip": null, "value": "Navaid('ODINA', type='FIX', latitude=46.10440278, longitude=8.664925)"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

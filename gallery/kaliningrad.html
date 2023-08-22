@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flying to Kaliningrad during the Russian flight ban &mdash; traffic 2.8.2.dev41 documentation</title>
+  <title>Flying to Kaliningrad during the Russian flight ban &mdash; traffic 2.8.2.dev77 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -15,11 +15,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f17de32c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -45,7 +45,7 @@
             traffic
           </a>
               <div class="version">
-                2.8.2.dev41
+                2.8.2.dev77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -120,16 +120,14 @@ all aircraft.</p></li>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">opensky</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
     <span class="s2">&quot;2022-02-22&quot;</span><span class="p">,</span>
     <span class="s2">&quot;2022-03-06&quot;</span><span class="p">,</span>
-    <span class="n">date_delta</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;1day&quot;</span><span class="p">),</span>
     <span class="n">callsign</span><span class="o">=</span><span class="p">[</span>
         <span class="c1"># Some callsigns between Moscow, Saint Petersburg and Kaliningrad</span>
-        <span class="s2">&quot;AFL1000&quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1002&quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1004&quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1006&quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1008&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;SDM6323&quot;</span><span class="p">,</span> <span class="s2">&quot;SDM6325&quot;</span><span class="p">,</span> <span class="s2">&quot;SDM6329&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AFL1000 &quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1002 &quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1004 &quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1006 &quot;</span><span class="p">,</span> <span class="s2">&quot;AFL1008 &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SDM6323 &quot;</span><span class="p">,</span> <span class="s2">&quot;SDM6325 &quot;</span><span class="p">,</span> <span class="s2">&quot;SDM6329 &quot;</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
@@ -190,12 +188,6 @@ all aircraft.</p></li>
 </div>
 </div>
 </section>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"c1964bb1916c469797941349a5011bbd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6fc22a14c8e94bfdb21c599fc075cfd7": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_c1964bb1916c469797941349a5011bbd", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "\u001b[35m  92%\u001b[0m \u001b[38;2;249;38;114m\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u001b[0m\u001b[38;5;237m\u257a\u001b[0m\u001b[38;5;237m\u2501\u2501\u2501\u2501\u2501\u001b[0m \u001b[32m11/12 \u001b[0m [ \u001b[33m0:00:09\u001b[0m < \u001b[36m0:00:01\u001b[0m , \u001b[31m1 it/s\u001b[0m ]\n", "text/html": "<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\"><span style=\"color: #800080; text-decoration-color: #800080\">  92%</span> <span style=\"color: #f92672; text-decoration-color: #f92672\">\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501</span><span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">\u257a\u2501\u2501\u2501\u2501\u2501</span> <span style=\"color: #008000; text-decoration-color: #008000\">11/12 </span> [ <span style=\"color: #808000; text-decoration-color: #808000\">0:00:09</span> &lt; <span style=\"color: #008080; text-decoration-color: #008080\">0:00:01</span> , <span style=\"color: #800000; text-decoration-color: #800000\">1 it/s</span> ]\n</pre>\n"}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
-</script>
-
 
 
            </div>

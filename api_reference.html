@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API reference &mdash; traffic 2.8.2.dev41 documentation</title>
+  <title>API reference &mdash; traffic 2.8.2.dev77 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
@@ -15,11 +15,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=f17de32c"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -29,7 +29,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="traffic.core.aero" href="api_reference/traffic.core.aero.html" />
+    <link rel="next" title="traffic.core.airspace" href="api_reference/traffic.core.airspace.html" />
     <link rel="prev" title="Sun elevation along a flight" href="gallery/sun_elevation.html" /> 
 </head>
 
@@ -45,7 +45,7 @@
             traffic
           </a>
               <div class="version">
-                2.8.2.dev41
+                2.8.2.dev77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -61,13 +61,11 @@
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.aero.html">traffic.core.aero</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.airspace.html">traffic.core.airspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.distance.html">traffic.core.distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flight.html">traffic.core.flight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.flightplan.html">traffic.core.flightplan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.geodesy.html">traffic.core.geodesy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.intervals.html">traffic.core.intervals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/traffic.core.lazy.html">traffic.core.lazy</a></li>
@@ -115,7 +113,7 @@
 <li><p>airspaces and sectors are represented with <a class="reference internal" href="api_reference/traffic.core.airspace.html#traffic.core.Airspace" title="traffic.core.Airspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">traffic.core.Airspace</span></code></a>.</p></li>
 </ul>
 <p><a class="reference internal" href="api_reference/traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> and <a class="reference internal" href="api_reference/traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> are wrappers
-around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0rc0+43.g9d70a4956e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
+around <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0rc0+61.gcc76b5207c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with relevant efficiently implemented methods
 for trajectory analysis. Airspaces take advantage of <a class="reference external" href="https://shapely.readthedocs.io">shapely Geometries</a> for geometrical analysis.</p>
 <p><a class="reference internal" href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a> have been introduced in order to
 deal with iteration over pieces of trajectories. This structure allows for more
@@ -127,13 +125,11 @@ to be applied on every <a class="reference internal" href="api_reference/traffic
 and stack them before triggering only one iteration.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.aero.html">traffic.core.aero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.airspace.html">traffic.core.airspace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.distance.html">traffic.core.distance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.flight.html">traffic.core.flight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.flightplan.html">traffic.core.flightplan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.geodesy.html">traffic.core.geodesy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.intervals.html">traffic.core.intervals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/traffic.core.lazy.html">traffic.core.lazy</a></li>
@@ -152,7 +148,7 @@ and stack them before triggering only one iteration.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="gallery/sun_elevation.html" class="btn btn-neutral float-left" title="Sun elevation along a flight" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="api_reference/traffic.core.aero.html" class="btn btn-neutral float-right" title="traffic.core.aero" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api_reference/traffic.core.airspace.html" class="btn btn-neutral float-right" title="traffic.core.airspace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

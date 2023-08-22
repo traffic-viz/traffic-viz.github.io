@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.time &mdash; traffic 2.8.2.dev41 documentation</title>
+  <title>traffic.core.time &mdash; traffic 2.8.2.dev77 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -15,11 +15,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f17de32c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -45,7 +45,7 @@
             traffic
           </a>
               <div class="version">
-                2.8.2.dev41
+                2.8.2.dev77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -61,20 +61,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.aero.html">traffic.core.aero</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="traffic.core.geodesy.html">traffic.core.geodesy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.intervals.html">traffic.core.intervals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traffic.core.time.to_datetime"><code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.filters.html">traffic.algorithms.filters</a></li>
 </ul>
@@ -109,6 +110,26 @@
              
   <section id="module-traffic.core.time">
 <span id="traffic-core-time"></span><h1>traffic.core.time<a class="headerlink" href="#module-traffic.core.time" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="traffic.core.time.to_datetime">
+<span class="sig-prename descclassname"><span class="pre">traffic.core.time.</span></span><span class="sig-name descname"><span class="pre">to_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.time.to_datetime" title="Permalink to this definition"></a></dt>
+<dd><p>Facility to convert anything to a datetime.</p>
+<p>This function will soon be replaced by pd.to_datetime.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2017-01-14&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;2017-01-14 00:00:00+00:00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2017-01-14 12:00Z&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;2017-01-14 12:00:00+00:00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_datetime</span><span class="p">(</span><span class="mi">1484395200</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;2017-01-14 12:00:00+00:00&#39;</span>
+<span class="go">:rtype: :py:class:`~datetime.datetime`</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;2017-01-14 12:00:00+00:00&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
