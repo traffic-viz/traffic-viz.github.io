@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.intervals &mdash; traffic 2.9.1.dev22 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+  <title>traffic.core.intervals &mdash; traffic 2.9.1.dev29 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c841f1ce"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=dc2a48ab"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -45,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev22
+                2.9.1.dev29
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -130,7 +132,7 @@
 <dd><p>Returns True if two intervals overlap.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -143,7 +145,7 @@
 <dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a></p>
 <p>A class to represent collections of Intervals.</p>
 <p>An <a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> consists of a start and stop attributes.
-Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+751.ge8f05983b5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
+Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+925.gac170fdc35)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
 <p>Intervals can be created using one of the following syntaxes:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-02-01&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;1D&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">sample_dates</span>
@@ -168,7 +170,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 </pre></div>
 </div>
 </li>
-<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+751.ge8f05983b5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
+<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+925.gac170fdc35)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">IntervalCollection</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="go">[[2023-01-01 00:00:00, 2023-01-02 00:00:00], ...]</span>
@@ -185,7 +187,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 <span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">IntervalCollection</span><span class="p">([</span><span class="n">Interval</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">t2</span><span class="p">),</span> <span class="n">Interval</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span>
 <span class="go">[[2023-01-01 ..., 2023-01-03 ...], [2023-01-02 ..., 2023-01-04 ...]]</span>
-<span class="go">:rtype: :py:class:`~traffic.core.intervals.IntervalCollection`</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:class\:\`\~traffic.core.intervals.IntervalCollection\``</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">consolidate</span><span class="p">()</span>
@@ -200,10 +202,10 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 <dd><p>Returns the result of an intersection of intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> | <a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a>) – the second interval or collection of intervals</p>
+<dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> | <a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></span>) – the second interval or collection of intervals</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a>]</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a>]</span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>may be <cite>None</cite> if the intersection is empty</p>
@@ -221,7 +223,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 <dd><p>Returns the sum of durations of all intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.2.0.dev0+751.ge8f05983b5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.2.0.dev0+925.gac170fdc35)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -232,10 +234,10 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 <dd><p>Returns the result of an union of intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a>) – the second interval or collection of intervals</p>
+<dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></span>) – the second interval or collection of intervals</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></span></p>
 </dd>
 </dl>
 <div class="admonition note">

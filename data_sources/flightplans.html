@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access flight plan information? &mdash; traffic 2.9.1.dev22 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+  <title>How to access flight plan information? &mdash; traffic 2.9.1.dev29 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c841f1ce"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=dc2a48ab"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -45,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev22
+                2.9.1.dev29
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -174,7 +176,7 @@ Flight from its unique ID or from its callsign</p>
 in the segment interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -188,7 +190,7 @@ in the segment interval.</p>
 <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -199,7 +201,7 @@ in the segment interval.</p>
 <dd><p>In addition to <a class="reference external" href="export.html#traffic.core.mixins.DataFrameMixin">usual formats</a>, you can parse so6
 files as text files (.so6 extension) or as 7-zipped text files (.so6.7z
 extension).
-:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= SO6)]</p>
+:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">SO6TypeVar</span></code>, bound= SO6)]</span></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You will need the <a class="reference external" href="https://github.com/dsoprea/PyEasyArchive">libarchive</a> library to be able
@@ -219,7 +221,7 @@ to parse .so6.7z files on the fly.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -228,7 +230,7 @@ to parse .so6.7z files on the fly.</p>
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6.intersects">
 <span class="sig-name descname"><span class="pre">intersects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6.intersects" title="Permalink to this definition"></a></dt>
 <dd><p>Selects all Flights intersecting the given airspace.
-:rtype: <a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></p>
+:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6" title="traffic.data.eurocontrol.ddr.so6.SO6"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6</span></code></a></span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>See the impact of calling <a class="reference external" href="#traffic.data.SO6.inside_bbox">.inside_bbox(sector)</a> to the bounding box
@@ -339,7 +341,7 @@ and implement specificities of the SO6 format.</p>
 <dd><p>Identity method, available for consistency</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -359,7 +361,7 @@ functions are provided:</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -373,7 +375,7 @@ functions are provided:</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -389,7 +391,7 @@ between the two timestamps.</p>
 airspace, but computation errors may sometimes give this impression.
 As a consequence, the clipped trajectory may have points outside the
 shape.
-:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
+:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</span></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Altitudes are not taken into account.</p>
@@ -403,7 +405,7 @@ shape.
 <cite>min_</cite> and <cite>max_</cite>, with proper interpolations where needed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>[<a class="reference internal" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight" title="traffic.data.eurocontrol.ddr.so6.SO6Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SO6Flight</span></code></a>]</span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -414,20 +416,20 @@ shape.
 <dd><p>The resampling method is not available.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NoReturn" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NoReturn" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">NoReturn</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.start">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.2.0.dev0+751.ge8f05983b5)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.2.0.dev0+925.gac170fdc35)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.start" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the minimum value of timestamp.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.data.eurocontrol.ddr.so6.SO6Flight.stop">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.2.0.dev0+751.ge8f05983b5)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.2.0.dev0+925.gac170fdc35)"><span class="pre">Timestamp</span></a></em><a class="headerlink" href="#traffic.data.eurocontrol.ddr.so6.SO6Flight.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the maximum value of timestamp.</p>
 </dd></dl>
 

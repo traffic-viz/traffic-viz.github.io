@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.lazy &mdash; traffic 2.9.1.dev22 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+  <title>traffic.core.lazy &mdash; traffic 2.9.1.dev29 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c841f1ce"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=dc2a48ab"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -45,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev22
+                2.9.1.dev29
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -133,20 +135,20 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>max_workers</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – (default: 1)
+<li><p><strong>max_workers</strong> (<span class="sphinx_autodoc_typehints-type">int</span>) – (default: 1)
 Multiprocessing is usually worth it. However, a sequential
 processing is triggered by default. Keep the value close to the
 number of cores of your processor. If memory becomes a problem,
 stick to the default.</p></li>
-<li><p><strong>desc</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – (default: None)
+<li><p><strong>desc</strong> (<span class="sphinx_autodoc_typehints-type">None | str</span>) – (default: None)
 If not None, a tqdm progressbar is displayed with this parameter.</p></li>
-<li><p><strong>cache_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>Path</em><em> | </em><em>None</em>) – (default: None)
+<li><p><strong>cache_file</strong> (<span class="sphinx_autodoc_typehints-type">str | Path | None</span>) – (default: None)
 If not None, store the results in cache_file and load the results
 from the file if it exists.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None | ‘Traffic</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type">None | ‘Traffic</span></p>
 </dd>
 </dl>
 <p><strong>Example usage:</strong></p>
@@ -178,7 +180,7 @@ default options.</p>
 <dt class="sig sig-object py" id="traffic.core.lazy.apply">
 <span class="sig-prename descclassname"><span class="pre">traffic.core.lazy.</span></span><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stacked_ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.lazy.apply" title="Permalink to this definition"></a></dt>
 <dd><p>Recursively applies all operations on each Flight.
-:rtype: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</p>
+:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</span></p>
 <ul class="simple">
 <li><p><em>map</em> operations return Flight</p></li>
 <li><p><em>filter</em> operations return a Flight if True, otherwise None</p></li>
@@ -201,12 +203,12 @@ if called on a <code class="xref py py-class docutils literal notranslate"><span
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>default</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – (default: False)
+<li><p><strong>default</strong> (<span class="sphinx_autodoc_typehints-type">None | bool</span>) – (default: False)
 If set to True, the <a class="reference internal" href="traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> implementation is
 used when called on a <a class="reference internal" href="traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> structure; and the
 <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> implementation is stacked when called on a
 <code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code> structure.</p></li>
-<li><p><strong>idx_name</strong> (<em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – (default: None)
+<li><p><strong>idx_name</strong> (<span class="sphinx_autodoc_typehints-type">None | str</span>) – (default: None)
 If the method needs the index (from <cite>enumerate</cite>) produced during the
 iteration, specify the name of the corresponding argument.  (see
 {<a class="reference internal" href="traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a>,
@@ -214,7 +216,7 @@ iteration, specify the name of the corresponding argument.  (see
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Callable[…, Callable[…, ‘Traffic’ | <a class="reference internal" href="#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic">LazyTraffic</a>]]</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type">Callable[…, Callable[…, ‘Traffic’ | LazyTraffic]]</span></p>
 </dd>
 </dl>
 </dd></dl>

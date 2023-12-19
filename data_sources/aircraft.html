@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access aircraft information? &mdash; traffic 2.9.1.dev22 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/main_stylesheet.css" type="text/css" />
+  <title>How to access aircraft information? &mdash; traffic 2.9.1.dev29 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c841f1ce"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=dc2a48ab"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -45,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev22
+                2.9.1.dev29
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -183,7 +185,7 @@ from <a class="reference external" href="https://junzis.com/adb/">https://junzis
 <p>Reference: <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -198,10 +200,10 @@ matching the pattern passed in parameter is returned.</p>
 information are based on the registration information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the icao24 identifier or the tail number of the aircraft</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the icao24 identifier or the tail number of the aircraft</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code>]</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code>]</span></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
@@ -217,7 +219,7 @@ information are based on the registration information.</p>
 <dd><p>Requests an aircraft by model or typecode (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the model or the typecode of the aircraft</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the model or the typecode of the aircraft</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;A320&quot;</span><span class="p">)</span>  
@@ -231,7 +233,7 @@ information are based on the registration information.</p>
 <span class="go">  3801fa   F-WWID         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380d5a   F-WWBB         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380d7a   F-WWBC         A20N       Airbus A320   Airbus     Airbus</span>
-<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:data\:\`\~typing.Optional\`\\ \\\[\:py\:class\:\`\~typing.TypeVar\`\\ \\\(\`\`T\`\`\, bound\= Aircraft\)\]`</span>
 <span class="go">  380d9a   F-WWBD         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  380dba   F-WWBF         A20N       Airbus A320   Airbus     Airbus</span>
 <span class="go">  ... (7021 more entries)</span>
@@ -245,14 +247,14 @@ information are based on the registration information.</p>
 <dd><p>Requests an aircraft by owner or operator (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the owner or operator of the aircraft</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the owner or operator of the aircraft</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">&quot;British Antarctic&quot;</span><span class="p">)</span>  
 <span class="go">  icao24   registration   typecode   model   operator</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  4241f4   VP-FBB         DHC6               British Antarctic Survey</span>
-<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:data\:\`\~typing.Optional\`\\ \\\[\:py\:class\:\`\~typing.TypeVar\`\\ \\\(\`\`T\`\`\, bound\= Aircraft\)\]`</span>
 <span class="go">  4241f5   VP-FBL         DHC6               British Antarctic Survey</span>
 <span class="go">  4241f6   VP-FAZ         DHC6               British Antarctic Survey</span>
 <span class="go">  43be5b   VP-FBQ         DHC7               British Antarctic Survey</span>
@@ -267,9 +269,9 @@ information are based on the registration information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query_str</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – (default: empty)
+<li><p><strong>query_str</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – (default: empty)
 if non empty, is passed to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code> method</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>) – all keyword arguments correspond to the name of
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></span>) – all keyword arguments correspond to the name of
 other methods which are chained if query_str is non empty</p></li>
 </ul>
 </dd>
@@ -285,7 +287,7 @@ other methods which are chained if query_str is non empty</p></li>
 <span class="go">  3b7b52   F-ZBQG         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8b   F-ZBQF         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8c   F-ZBQF         EC45       Airbus Helicopters H145   French Securite Civile</span>
-<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~typing.TypeVar`\(``T``, bound= Aircraft)]</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:data\:\`\~typing.Optional\`\\ \\\[\:py\:class\:\`\~typing.TypeVar\`\\ \\\(\`\`T\`\`\, bound\= Aircraft\)\]`</span>
 <span class="go">  3b7b8d   F-ZBQD         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  3b7b8e   F-ZBQC         EC45       Airbus Helicopters H145   French Securite Civile</span>
 <span class="go">  ... (19 more entries)</span>
@@ -299,10 +301,10 @@ other methods which are chained if query_str is non empty</p></li>
 <dd><p>Requests an aircraft by registration (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the tail number of the aircraft</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the tail number of the aircraft</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Aircraft)]</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= Aircraft)]</span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -313,7 +315,7 @@ other methods which are chained if query_str is non empty</p></li>
 <dd><p>Computes stats of owned or operated aircraft (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the owner or operator of the aircraft</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the owner or operator of the aircraft</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="s2">&quot;Air France&quot;</span><span class="p">)</span>  
@@ -322,7 +324,7 @@ other methods which are chained if query_str is non empty</p></li>
 <span class="go">A318              Airbus A318-111      16</span>
 <span class="go">A319              Airbus A319-113      37</span>
 <span class="go">A320              Airbus A320-214      48</span>
-<span class="go">:rtype: :py:data:`~typing.Optional`\[:py:class:`~pandas.core.frame.DataFrame`]</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:data\:\`\~typing.Optional\`\\ \\\[\:py\:class\:\`\~pandas.core.frame.DataFrame\`\]`</span>
 <span class="go">A321              Airbus A321-212      20</span>
 <span class="go">A332              Airbus A330-203      15</span>
 <span class="go">...</span>
