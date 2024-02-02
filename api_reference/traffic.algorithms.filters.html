@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.algorithms.filters &mdash; traffic 2.9.1.dev47 documentation</title>
+  <title>traffic.algorithms.filters &mdash; traffic 2.9.1.dev50 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=119988a9"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=bedfc820"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev47
+                2.9.1.dev50
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -80,6 +80,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.filters">API reference</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.ClusteringParams"><code class="docutils literal notranslate"><span class="pre">ClusteringParams</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.DerivativeParams"><code class="docutils literal notranslate"><span class="pre">DerivativeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.EKFTaxiway"><code class="docutils literal notranslate"><span class="pre">EKFTaxiway</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.FilterAboveSigmaMedian"><code class="docutils literal notranslate"><span class="pre">FilterAboveSigmaMedian</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.filters.FilterBase"><code class="docutils literal notranslate"><span class="pre">FilterBase</span></code></a></li>
@@ -145,23 +146,23 @@ glitches)</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-d3e2ee3546f24665b0e3d2720aad652b.vega-embed {
+  #altair-viz-bc7aa4dba94a48c7a9731664d7921f50.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d3e2ee3546f24665b0e3d2720aad652b.vega-embed details,
-  #altair-viz-d3e2ee3546f24665b0e3d2720aad652b.vega-embed details summary {
+  #altair-viz-bc7aa4dba94a48c7a9731664d7921f50.vega-embed details,
+  #altair-viz-bc7aa4dba94a48c7a9731664d7921f50.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d3e2ee3546f24665b0e3d2720aad652b"></div>
+<div id="altair-viz-bc7aa4dba94a48c7a9731664d7921f50"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d3e2ee3546f24665b0e3d2720aad652b") {
-      outputDiv = document.getElementById("altair-viz-d3e2ee3546f24665b0e3d2720aad652b");
+    if (outputDiv.id !== "altair-viz-bc7aa4dba94a48c7a9731664d7921f50") {
+      outputDiv = document.getElementById("altair-viz-bc7aa4dba94a48c7a9731664d7921f50");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -218,23 +219,23 @@ smoother trajectories.</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e.vega-embed {
+  #altair-viz-72aa49532a1f4aea8c762a086b7a9032.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e.vega-embed details,
-  #altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e.vega-embed details summary {
+  #altair-viz-72aa49532a1f4aea8c762a086b7a9032.vega-embed details,
+  #altair-viz-72aa49532a1f4aea8c762a086b7a9032.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e"></div>
+<div id="altair-viz-72aa49532a1f4aea8c762a086b7a9032"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e") {
-      outputDiv = document.getElementById("altair-viz-b7f1ba1cea0a48cf9423c122dc4b764e");
+    if (outputDiv.id !== "altair-viz-72aa49532a1f4aea8c762a086b7a9032") {
+      outputDiv = document.getElementById("altair-viz-72aa49532a1f4aea8c762a086b7a9032");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -298,6 +299,12 @@ smoother trajectories.</p></li>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.filters.EKFTaxiway">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">EKFTaxiway</span></span><a class="headerlink" href="#traffic.algorithms.filters.EKFTaxiway" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#traffic.algorithms.filters.ProcessXYFilterBase" title="traffic.algorithms.filters.ProcessXYFilterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessXYFilterBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.filters.Filter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.filters.</span></span><span class="sig-name descname"><span class="pre">Filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.filters.Filter" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
@@ -340,11 +347,6 @@ and measures the difference between the raw and the filtered signal.</p>
 <p>The average of the squared differences is then produced (sq_eps) and
 used as a threshold for filtering.</p>
 <p>Errors may raised if the kernel_size is too large</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+217.gbb42fc0c70)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a></span></p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
