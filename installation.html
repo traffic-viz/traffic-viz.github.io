@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>Installation &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="_static/documentation_options.js?v=c97a6862"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -96,7 +96,7 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <p>The traffic library makes an intensive use of <a class="reference external" href="https://pandas.pydata.org/">pandas</a> DataFrames and of the <a class="reference external" href="https://shapely.readthedocs.io/en/latest/">shapely</a> GIS library.</p>
 <p>The library relies on <a class="reference external" href="http://docs.python-requests.org/en/master/">requests</a>
 for calls to REST APIs. <a class="reference external" href="http://www.paramiko.org/">paramiko</a> implements the
@@ -107,7 +107,7 @@ projections and to data from OpenStreetMap. More dynamic visualizations in
 Jupyter Lab are accessible thanks to the <a class="reference external" href="https://altair-viz.github.io/">altair</a> and <a class="reference external" href="http://ipyleaflet.readthedocs.io/">ipyleaflet</a> libraries; other exports to various
 formats (including CesiumJS or Google Earth) are also available.</p>
 <section id="latest-release">
-<h2>Latest release<a class="headerlink" href="#latest-release" title="Permalink to this heading"></a></h2>
+<h2>Latest release<a class="headerlink" href="#latest-release" title="Link to this heading"></a></h2>
 <p>We recommend creating a fresh conda environment for a first installation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation</span>
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>traffic<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>traffic
@@ -130,7 +130,7 @@ working efficiently, such as Jupyter Lab, xarray, PyTorch or more.</p>
 </div>
 </section>
 <section id="updating-traffic">
-<h2>Updating traffic<a class="headerlink" href="#updating-traffic" title="Permalink to this heading"></a></h2>
+<h2>Updating traffic<a class="headerlink" href="#updating-traffic" title="Link to this heading"></a></h2>
 <ul>
 <li><p>To update traffic in your conda environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># -n option is followed by the name of the environment</span>
@@ -153,7 +153,7 @@ environment where you installed the latest release.</p>
 </ul>
 </section>
 <section id="contribute-to-traffic">
-<h2>Contribute to traffic<a class="headerlink" href="#contribute-to-traffic" title="Permalink to this heading"></a></h2>
+<h2>Contribute to traffic<a class="headerlink" href="#contribute-to-traffic" title="Link to this heading"></a></h2>
 <p>If you intend to contribute to traffic or file a pull request, the best way to
 ensure continuous integration does not break is to reproduce an environment with
 the same exact versions of all dependency libraries.</p>

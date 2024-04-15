@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to troubleshoot network issues? &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>How to troubleshoot network issues? &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -105,23 +105,16 @@
            <div itemprop="articleBody">
              
   <section id="how-to-troubleshoot-network-issues">
-<h1>How to troubleshoot network issues?<a class="headerlink" href="#how-to-troubleshoot-network-issues" title="Permalink to this heading"></a></h1>
+<h1>How to troubleshoot network issues?<a class="headerlink" href="#how-to-troubleshoot-network-issues" title="Link to this heading"></a></h1>
 <ul>
 <li><p><strong>I can’t access resources from the Internet as I am behind a proxy</strong></p>
-<p>All network accesses are made with the <a class="reference external" href="https://requests.readthedocs.io/">requests</a> library (or the <a class="reference external" href="http://www.paramiko.org/">paramiko</a> library for the Impala shell). Usually, if your
+<p>All network accesses are made with the <a class="reference external" href="https://requests.readthedocs.io/">requests</a> library. Usually, if your
 environment variables are properly set, you should not encounter any particular
 proxy issue. However, there are always situations where it may help to manually
 force the proxy settings in the configuration file.</p>
 <p>Edit your configuration file and add the following section. You may find where
 it is located with the <code class="docutils literal notranslate"><span class="pre">traffic</span> <span class="pre">config</span> <span class="pre">-l</span></code> command (in the shell) or in the
 <code class="docutils literal notranslate"><span class="pre">traffic.config_file</span></code> variable.</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">http.proxy</span></code> options refers to usually HTTP and REST API calls;</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ssh.proxycommand</span></code> option is used to proxy the SSH connection through
-a specific ssh tunnel or through a http proxy (with <code class="docutils literal notranslate"><span class="pre">connect.exe</span></code> or
-<code class="docutils literal notranslate"><span class="pre">nc</span> <span class="pre">-X</span> <span class="pre">connect</span></code>). According to your configuration, you may prefer to do
-the settings in your <code class="docutils literal notranslate"><span class="pre">.ssh/config</span></code> file.</p></li>
-</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## This sections contains all the specific options necessary to fit your</span>
 <span class="c1">## network configuration (including proxy and ProxyCommand settings)</span>
 <span class="p">[</span><span class="n">network</span><span class="p">]</span>
@@ -131,13 +124,6 @@ the settings in your <code class="docutils literal notranslate"><span class="pre
 <span class="c1"># https.proxy = http://proxy.company:8080</span>
 <span class="c1"># http.proxy = socks5h://localhost:1234</span>
 <span class="c1"># https.proxy = socks5h://localhost:1234</span>
-
-<span class="c1">## input here the ProxyCommand you need to login to the Impala Shell</span>
-<span class="c1">## WARNING:</span>
-<span class="c1">##    Do not use %h and %p wildcards.</span>
-<span class="c1">##    Write data.opensky-network.org and 2230 explicitly instead</span>
-<span class="c1"># ssh.proxycommand = ssh -W data.opensky-network.org:2230 proxy_ip:proxy_port</span>
-<span class="c1"># ssh.proxycommand = connect.exe -H proxy_ip:proxy_port data.opensky-network.org 2230</span>
 </pre></div>
 </div>
 </li>

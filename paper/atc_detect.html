@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -102,7 +102,7 @@
            <div itemprop="articleBody">
              
   <section id="detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection">
-<h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Permalink to this heading"></a></h1>
+<h1>Detecting Controllers’ Actions in Past Mode S Data by Autoencoder-Based Anomaly Detection<a class="headerlink" href="#detecting-controllers-actions-in-past-mode-s-data-by-autoencoder-based-anomaly-detection" title="Link to this heading"></a></h1>
 <p>Xavier Olive, Jeremy Grignard, Thomas Dubot and Julie Saint-Lot</p>
 <div class="line-block">
 <div class="line"><em>This notebook comes with the paper published at Sesar Innovation Days
@@ -111,7 +111,7 @@
 reproducibility concerns.</div>
 </div>
 <section id="the-dataset">
-<h2>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this heading"></a></h2>
+<h2>The dataset<a class="headerlink" href="#the-dataset" title="Link to this heading"></a></h2>
 <p>The basic dataset consists of one year of trajectories between Paris
 Orly and Toulouse Blagnac airports. A learning box is arbitrarily
 defined so as to include about 20 minutes of flight before entering the
@@ -149,7 +149,7 @@ callsigns selected for this route.</p>
 </div>
 </section>
 <section id="data-preparation">
-<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading"></a></h2>
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading"></a></h2>
 <p>The following plot explains how each trajectory is prepared. The basic
 idea is to clip the trajectory to the learning box, then to resample
 each trajectory to a fixed number of samples (15 on the figure, 150 for
@@ -327,7 +327,7 @@ dataset.</p>
     </tr></tbody>
 </table></section>
 <section id="machine-learning">
-<h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading"></a></h2>
+<h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Link to this heading"></a></h2>
 <p>The anomaly detection method is based on a shallow autoencoder
 (<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation). For the sake of
 this example, we focus on the track angle signal. At the end of the

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access aircraft information? &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>How to access aircraft information? &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -116,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="how-to-access-aircraft-information">
-<h1>How to access aircraft information?<a class="headerlink" href="#how-to-access-aircraft-information" title="Permalink to this heading"></a></h1>
+<h1>How to access aircraft information?<a class="headerlink" href="#how-to-access-aircraft-information" title="Link to this heading"></a></h1>
 <p>The traffic library provides access to the OpenSky aircraft database by default.</p>
 <p>Keeping a legal up to date version of such a database being an arduous task,
 traffic lets you easily switch database to a file you would be able to provide.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.aircraft.</span></span><span class="sig-name descname"><span class="pre">Aircraft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.aircraft.</span></span><span class="sig-name descname"><span class="pre">Aircraft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Link to this definition"></a></dt>
 <dd><p>By default, the OpenSky aircraft database is downloaded from
 <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
@@ -180,7 +180,7 @@ from <a class="reference external" href="https://junzis.com/adb/">https://junzis
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.download_opensky">
-<span class="sig-name descname"><span class="pre">download_opensky</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">download_opensky</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.download_opensky" title="Link to this definition"></a></dt>
 <dd><p>Downloads the latest version of the OpenSky aircraft database.</p>
 <p>Reference: <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
 <dl class="field-list simple">
@@ -192,7 +192,7 @@ from <a class="reference external" href="https://junzis.com/adb/">https://junzis
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.get" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.get" title="Link to this definition"></a></dt>
 <dd><p>Returns information about an aircraft based on its icao24 or
 registration information as a dictionary. Only the first aircraft
 matching the pattern passed in parameter is returned.</p>
@@ -203,7 +203,7 @@ information are based on the registration information.</p>
 <dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the icao24 identifier or the tail number of the aircraft</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code>]</span></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code></span></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
@@ -215,7 +215,7 @@ information are based on the registration information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.model">
-<span class="sig-name descname"><span class="pre">model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.model" title="Link to this definition"></a></dt>
 <dd><p>Requests an aircraft by model or typecode (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -243,7 +243,7 @@ information are based on the registration information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.operator">
-<span class="sig-name descname"><span class="pre">operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.operator" title="Link to this definition"></a></dt>
 <dd><p>Requests an aircraft by owner or operator (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -264,7 +264,7 @@ information are based on the registration information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.query" title="Link to this definition"></a></dt>
 <dd><p>Combines several requests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -297,7 +297,7 @@ other methods which are chained if query_str is non empty</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.registration">
-<span class="sig-name descname"><span class="pre">registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.registration" title="Link to this definition"></a></dt>
 <dd><p>Requests an aircraft by registration (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -311,7 +311,7 @@ other methods which are chained if query_str is non empty</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.data.basic.aircraft.Aircraft.stats">
-<span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft.stats" title="Link to this definition"></a></dt>
 <dd><p>Computes stats of owned or operated aircraft (fuzzy match).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -324,7 +324,7 @@ other methods which are chained if query_str is non empty</p></li>
 <span class="go">A318              Airbus A318-111      16</span>
 <span class="go">A319              Airbus A319-113      37</span>
 <span class="go">A320              Airbus A320-214      48</span>
-<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:data\:\`\~typing.Optional\`\\ \\\[\:py\:class\:\`\~pandas.core.frame.DataFrame\`\]`</span>
+<span class="go">:rtype: :sphinx_autodoc_typehints_type:`\:py\:obj\:\`None\` \| \:py\:class\:\`\~pandas.core.frame.DataFrame\``</span>
 <span class="go">A321              Airbus A321-212      20</span>
 <span class="go">A332              Airbus A330-203      15</span>
 <span class="go">...</span>

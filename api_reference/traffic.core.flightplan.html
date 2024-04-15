@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.flightplan &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>traffic.core.flightplan &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -115,14 +115,14 @@
            <div itemprop="articleBody">
              
   <section id="module-traffic.core.flightplan">
-<span id="traffic-core-flightplan"></span><h1>traffic.core.flightplan<a class="headerlink" href="#module-traffic.core.flightplan" title="Permalink to this heading"></a></h1>
+<span id="traffic-core-flightplan"></span><h1>traffic.core.flightplan<a class="headerlink" href="#module-traffic.core.flightplan" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.flightplan.FlightPlan">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.flightplan.</span></span><span class="sig-name descname"><span class="pre">FlightPlan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.flightplan.</span></span><span class="sig-name descname"><span class="pre">FlightPlan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.flightplan.FlightPlan.leaflet">
-<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan.leaflet" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan.leaflet" title="Link to this definition"></a></dt>
 <dd><p>Returns a Leaflet layer to be directly added to a Map.</p>
 <p>The elements passed as kwargs as passed as is to the PolyLine
 constructor.</p>
@@ -135,7 +135,7 @@ constructor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.flightplan.FlightPlan.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan.plot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flightplan.FlightPlan.plot" title="Link to this definition"></a></dt>
 <dd><p>Plots the trajectory on a Matplotlib axis.</p>
 <p>FlightPlans support Cartopy axis as well with automatic projection. If
 no projection is provided, a default <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html#platecarree">PlateCarree</a>

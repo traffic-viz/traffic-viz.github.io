@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Mode S based wind field &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>A Mode S based wind field &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -4762,7 +4762,7 @@
 }
 </script>
 <section id="a-mode-s-based-wind-field">
-<h1>A Mode S based wind field<a class="headerlink" href="#a-mode-s-based-wind-field" title="Permalink to this heading"></a></h1>
+<h1>A Mode S based wind field<a class="headerlink" href="#a-mode-s-based-wind-field" title="Link to this heading"></a></h1>
 <p>ADS-B data broadcasted by aircraft contains information about groundspeed and
 true track angle of its trajectory. When proper requests are sent by a Secondary
 surveillance radar, aircraft also send more information with true airspeed and
@@ -4801,7 +4801,7 @@ where it should.</p>
     <span class="c1"># median filter</span>
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">wind_u</span><span class="o">=</span><span class="mi">53</span><span class="p">,</span> <span class="n">wind_v</span><span class="o">=</span><span class="mi">53</span><span class="p">)</span>
     <span class="c1"># resample one sample per minute</span>
-    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;1T&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;1 min&quot;</span><span class="p">)</span>
     <span class="c1"># do not use multiprocessing to avoid denial of service</span>
     <span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;preprocessing&quot;</span><span class="p">)</span>
 <span class="p">)</span>

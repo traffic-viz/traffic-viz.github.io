@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.mixins &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>traffic.core.mixins &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -196,17 +196,17 @@
            <div itemprop="articleBody">
              
   <section id="module-traffic.core.mixins">
-<span id="traffic-core-mixins"></span><h1>traffic.core.mixins<a class="headerlink" href="#module-traffic.core.mixins" title="Permalink to this heading"></a></h1>
+<span id="traffic-core-mixins"></span><h1>traffic.core.mixins<a class="headerlink" href="#module-traffic.core.mixins" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">DataFrameMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>DataFrameMixin aggregates a pandas DataFrame and provides the same
 representation methods.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.assign" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.assign" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -218,8 +218,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.convert_dtypes">
-<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.convert_dtypes" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.convert_dtypes" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -231,8 +231,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.drop">
-<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -244,8 +244,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.drop_duplicates">
-<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop_duplicates" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.drop_duplicates" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -257,8 +257,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.fillna">
-<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.fillna" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.fillna" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -270,7 +270,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.from_file" title="Link to this definition"></a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -278,12 +278,12 @@ filename. Potential compression of the file is inferred by pandas itself
 based on the extension.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)]</span></p>
 <ul class="simple">
-<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
-<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
-<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
-<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
-<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
-<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
+<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
+<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
+<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
+<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
+<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
+<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
 </ul>
 <p>Other extensions return None.  Specific arguments may be passed to the
 underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method with the kwargs argument.</p>
@@ -296,8 +296,8 @@ underlying <code class="docutils literal notranslate"><span class="pre">pandas.r
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.groupby" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.groupby" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
 underlying pandas DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -308,8 +308,8 @@ underlying pandas DataFrame.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.merge">
-<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.merge" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.merge" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -321,8 +321,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.query" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.query" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -334,8 +334,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.rename">
-<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.rename" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.rename" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -347,8 +347,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.replace" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.replace" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -360,8 +360,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.reset_index">
-<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.reset_index" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.reset_index" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -373,8 +373,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.sort_values">
-<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.sort_values" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.sort_values" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -386,9 +386,9 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
-<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Link to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -400,9 +400,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_excel">
-<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_excel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_excel" title="Link to this definition"></a></dt>
 <dd><p>Exports to Excel format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -414,9 +414,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_feather">
-<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_feather" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_feather" title="Link to this definition"></a></dt>
 <dd><p>Exports to feather format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -428,9 +428,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
-<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Link to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -442,9 +442,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Link to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -456,9 +456,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
-<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Link to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -470,9 +470,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
-<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Link to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -486,12 +486,12 @@ as args and kwargs arguments.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeoDBMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeoDBMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.assign" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.assign" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -503,8 +503,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.convert_dtypes">
-<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.convert_dtypes" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.convert_dtypes" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -516,8 +516,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.drop">
-<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -529,8 +529,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.drop_duplicates">
-<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop_duplicates" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.drop_duplicates" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -542,7 +542,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.extent">
-<span class="sig-name descname"><span class="pre">extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.extent" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.extent" title="Link to this definition"></a></dt>
 <dd><p>Selects the subset of data inside the given extent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -608,8 +608,8 @@ interest.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.fillna">
-<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.fillna" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.fillna" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -621,7 +621,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.from_file" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.from_file" title="Link to this definition"></a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -629,12 +629,12 @@ filename. Potential compression of the file is inferred by pandas itself
 based on the extension.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)]</span></p>
 <ul class="simple">
-<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
-<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
-<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
-<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
-<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
-<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
+<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
+<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
+<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
+<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
+<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
+<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
 </ul>
 <p>Other extensions return None.  Specific arguments may be passed to the
 underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method with the kwargs argument.</p>
@@ -647,20 +647,20 @@ underlying <code class="docutils literal notranslate"><span class="pre">pandas.r
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.geoencode">
-<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.geoencode" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.geoencode" title="Link to this definition"></a></dt>
 <dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
 shape to be composed in an interactive visualization.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.groupby" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.groupby" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
 underlying pandas DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -671,8 +671,8 @@ underlying pandas DataFrame.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.merge">
-<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.merge" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.merge" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -684,8 +684,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.query" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.query" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -697,8 +697,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.rename">
-<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.rename" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.rename" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -710,8 +710,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.replace" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.replace" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -723,8 +723,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.reset_index">
-<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.reset_index" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.reset_index" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -736,8 +736,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.sort_values">
-<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.sort_values" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.sort_values" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -749,9 +749,9 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_csv">
-<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_csv" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_csv" title="Link to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -763,9 +763,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_excel">
-<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_excel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_excel" title="Link to this definition"></a></dt>
 <dd><p>Exports to Excel format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -777,9 +777,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_feather">
-<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_feather" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_feather" title="Link to this definition"></a></dt>
 <dd><p>Exports to feather format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -791,9 +791,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_hdf">
-<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_hdf" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_hdf" title="Link to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -805,9 +805,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_json" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_json" title="Link to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -819,9 +819,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_parquet">
-<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_parquet" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_parquet" title="Link to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -833,9 +833,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeoDBMixin.to_pickle">
-<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_pickle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeoDBMixin.to_pickle" title="Link to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -849,12 +849,12 @@ as args and kwargs arguments.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeographyMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">GeographyMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a></p>
 <p>Adds Euclidean coordinates to a latitude/longitude DataFrame.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.agg_xy">
-<span class="sig-name descname"><span class="pre">agg_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.agg_xy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">agg_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.agg_xy" title="Link to this definition"></a></dt>
 <dd><p>Aggregates values of a traffic over a grid of x/y, with x and y
 computed by <code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_xy()</span></code>.</p>
 <dl class="field-list simple">
@@ -882,7 +882,7 @@ int the given cell.</p></li>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type">pd.DataFrame</span></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> indexed over x and y values. It is
+<dd class="field-even"><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> indexed over x and y values. It is
 conveniently chainable with the <code class="docutils literal notranslate"><span class="pre">.to_xarray()</span></code> method in order to
 plot density heatmaps.</p>
 </dd>
@@ -899,8 +899,8 @@ plot density heatmaps.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.assign" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.assign" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -912,7 +912,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.compute_latlon_from_xy">
-<span class="sig-name descname"><span class="pre">compute_latlon_from_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.compute_latlon_from_xy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compute_latlon_from_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.compute_latlon_from_xy" title="Link to this definition"></a></dt>
 <dd><p>Enrich a DataFrame with new longitude and latitude columns computed
 from x and y columns.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)</span></p>
@@ -925,7 +925,7 @@ from x and y columns.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.compute_xy">
-<span class="sig-name descname"><span class="pre">compute_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.compute_xy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compute_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.compute_xy" title="Link to this definition"></a></dt>
 <dd><p>Enrich the structure with new x and y columns computed through a
 projection of the latitude and longitude columns.</p>
 <p>The source projection is WGS84 (EPSG 4326).
@@ -941,8 +941,8 @@ projection centred on the data inside the dataframe.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.convert_dtypes">
-<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.convert_dtypes" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.convert_dtypes" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -954,8 +954,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.drop">
-<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -967,8 +967,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.drop_duplicates">
-<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop_duplicates" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
+<span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.drop_duplicates" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -980,8 +980,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.fillna">
-<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.fillna" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.fillna" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -993,7 +993,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.from_file" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.from_file" title="Link to this definition"></a></dt>
 <dd><p>Read data from various formats.</p>
 <p>This class method dispatches the loading of data in various format to
 the proper <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method based on the extension of the
@@ -1001,12 +1001,12 @@ filename. Potential compression of the file is inferred by pandas itself
 based on the extension.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, bound= DataFrameMixin)]</span></p>
 <ul class="simple">
-<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
-<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
-<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
-<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
-<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
-<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
+<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
+<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
+<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
+<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
+<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
+<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
 </ul>
 <p>Other extensions return None.  Specific arguments may be passed to the
 underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method with the kwargs argument.</p>
@@ -1019,22 +1019,22 @@ underlying <code class="docutils literal notranslate"><span class="pre">pandas.r
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.geoencode">
-<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.geoencode" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.geoencode" title="Link to this definition"></a></dt>
 <dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
 shape to be composed in an interactive visualization. Specific plot
 features, such as line widths, can be passed with the kwargs argument.
 See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.groupby" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.groupby" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
 underlying pandas DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1045,8 +1045,8 @@ underlying pandas DataFrame.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.merge">
-<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.merge" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.merge" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1058,8 +1058,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.query" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.query" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1071,8 +1071,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.rename">
-<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.rename" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.rename" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1084,8 +1084,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.replace" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.replace" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1097,8 +1097,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.reset_index">
-<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.reset_index" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.reset_index" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1110,8 +1110,8 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.sort_values">
-<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.sort_values" title="Permalink to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.sort_values" title="Link to this definition"></a></dt>
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1123,9 +1123,9 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_csv">
-<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_csv" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_csv" title="Link to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1137,9 +1137,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_excel">
-<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_excel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_excel" title="Link to this definition"></a></dt>
 <dd><p>Exports to Excel format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1151,9 +1151,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_feather">
-<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_feather" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_feather" title="Link to this definition"></a></dt>
 <dd><p>Exports to feather format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1165,9 +1165,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_hdf">
-<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_hdf" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_hdf" title="Link to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1179,9 +1179,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_json" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_json" title="Link to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1193,9 +1193,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_parquet">
-<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_parquet" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_parquet" title="Link to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1207,9 +1207,9 @@ as args and kwargs arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.GeographyMixin.to_pickle">
-<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_pickle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.GeographyMixin.to_pickle" title="Link to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1223,14 +1223,14 @@ as args and kwargs arguments.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.HBoxMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">HBoxMixin</span></span><a class="headerlink" href="#traffic.core.mixins.HBoxMixin" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">HBoxMixin</span></span><a class="headerlink" href="#traffic.core.mixins.HBoxMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Enables a | operator for placing representations next to each other.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">ShapelyMixin</span></span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.mixins.</span></span><span class="sig-name descname"><span class="pre">ShapelyMixin</span></span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>ShapelyMixin expects a shape attribute as a Geometry and provides methods
 consistent with GIS geometries.</p>
@@ -1238,7 +1238,7 @@ consistent with GIS geometries.</p>
 nature of the shape.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.area">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.area" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.area" title="Link to this definition"></a></dt>
 <dd><p>Returns the area of the shape, in square meters.
 The shape is projected to an equivalent local projection before
 computing a value.</p>
@@ -1246,7 +1246,7 @@ computing a value.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.bounds">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.bounds" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.bounds" title="Link to this definition"></a></dt>
 <dd><p>Returns the bounds of the (bounding box of the) shape.
 Bounds are given in the following order in the origin crs:
 (west, south, east, north)</p>
@@ -1254,13 +1254,13 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.centroid" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.centroid" title="Link to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.extent">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.extent" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.extent" title="Link to this definition"></a></dt>
 <dd><p>Returns the extent of the (bounding box of the) shape.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1280,21 +1280,21 @@ convenient in the following use case:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.geoencode">
-<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geoencode" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geoencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geoencode" title="Link to this definition"></a></dt>
 <dd><p>Returns an <a class="reference external" href="http://altair-viz.github.io/">altair</a> encoding of the
 shape to be composed in an interactive visualization. Specific plot
 features, such as line widths, can be passed with the kwargs argument.
 See <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">documentation</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.LayerChart.html#altair.LayerChart" title="(in Vega-Altair v5.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LayerChart</span></code></a> | <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.LayerChart.html#altair.LayerChart" title="(in Vega-Altair v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LayerChart</span></code></a> | <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.Chart.html#altair.Chart" title="(in Vega-Altair v5.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.geojson">
-<span class="sig-name descname"><span class="pre">geojson</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geojson" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geojson</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.geojson" title="Link to this definition"></a></dt>
 <dd><p>Returns the GeoJSON representation of the shape as a Dict.
 The transformation is delegated to shapely <code class="docutils literal notranslate"><span class="pre">mapping</span></code> method.</p>
 <dl class="field-list simple">
@@ -1306,7 +1306,7 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.mixins.ShapelyMixin.project_shape">
-<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.project_shape" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">project_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.ShapelyMixin.project_shape" title="Link to this definition"></a></dt>
 <dd><p>Returns a projected representation of the shape.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

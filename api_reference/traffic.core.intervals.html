@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.intervals &mdash; traffic 2.9.1.dev51 documentation</title>
+  <title>traffic.core.intervals &mdash; traffic 2.9.1.dev60 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1aa74c39"></script>
+        <script src="../_static/documentation_options.js?v=c97a6862"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.9.1.dev51
+                2.9.1.dev60
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -121,14 +121,14 @@
            <div itemprop="articleBody">
              
   <section id="traffic-core-intervals">
-<h1>traffic.core.intervals<a class="headerlink" href="#traffic-core-intervals" title="Permalink to this heading"></a></h1>
+<h1>traffic.core.intervals<a class="headerlink" href="#traffic-core-intervals" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.intervals.Interval">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.intervals.</span></span><span class="sig-name descname"><span class="pre">Interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.Interval" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.intervals.</span></span><span class="sig-name descname"><span class="pre">Interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.Interval" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.intervals.Interval.overlap">
-<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.Interval.overlap" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.Interval.overlap" title="Link to this definition"></a></dt>
 <dd><p>Returns True if two intervals overlap.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -141,11 +141,11 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.intervals.IntervalCollection">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.intervals.</span></span><span class="sig-name descname"><span class="pre">IntervalCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.intervals.</span></span><span class="sig-name descname"><span class="pre">IntervalCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a></p>
 <p>A class to represent collections of Intervals.</p>
 <p>An <a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> consists of a start and stop attributes.
-Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
+Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
 <p>Intervals can be created using one of the following syntaxes:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-02-01&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;1D&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">sample_dates</span>
@@ -170,7 +170,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 </pre></div>
 </div>
 </li>
-<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
+<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">IntervalCollection</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="go">[[2023-01-01 00:00:00, 2023-01-02 00:00:00], ...]</span>
@@ -180,7 +180,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.intervals.IntervalCollection.consolidate">
-<span class="sig-name descname"><span class="pre">consolidate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.consolidate" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">consolidate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.consolidate" title="Link to this definition"></a></dt>
 <dd><p>Consolidate the IntervalCollection.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-02-01&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;1D&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">sample_dates</span>
@@ -198,14 +198,14 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.intervals.IntervalCollection.intersection">
-<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.intersection" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.intersection" title="Link to this definition"></a></dt>
 <dd><p>Returns the result of an intersection of intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> | <a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></span>) – the second interval or collection of intervals</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a>]</span></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference internal" href="#traffic.core.intervals.IntervalCollection" title="traffic.core.intervals.IntervalCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalCollection</span></code></a></span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>may be <cite>None</cite> if the intersection is empty</p>
@@ -219,18 +219,18 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.intervals.IntervalCollection.total_duration">
-<span class="sig-name descname"><span class="pre">total_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.total_duration" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">total_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.total_duration" title="Link to this definition"></a></dt>
 <dd><p>Returns the sum of durations of all intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v3.0.0.dev0+547.g89898a689c)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v3.0.0.dev0+710.gd8c7e85a1b)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.intervals.IntervalCollection.union">
-<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.union" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.intervals.IntervalCollection.union" title="Link to this definition"></a></dt>
 <dd><p>Returns the result of an union of intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
