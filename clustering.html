@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to implement trajectory clustering? &mdash; traffic 2.10.1.dev2 documentation</title>
+  <title>How to implement trajectory clustering? &mdash; traffic 2.10.1.dev4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,8 +19,8 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=e30f950f"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/documentation_options.js?v=8cfe81db"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.1.dev2
+                2.10.1.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -62,6 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">User guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="user_guide.html#sources-of-data">Sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#data-visualisation">Data visualisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide.html#good-practices">Good practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide.html#navigation-events">Navigation events</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="user_guide.html#statistical-analysis">Statistical analysis</a><ul class="current">
@@ -255,7 +256,7 @@ with the same parameters as the clustering.</p>
 <span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
 <span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
 <span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
-<span class="kn">from</span> <span class="nn">traffic.drawing.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
+<span class="kn">from</span> <span class="nn">traffic.visualize.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">()))</span>

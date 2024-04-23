@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.structure &mdash; traffic 2.10.1.dev2 documentation</title>
+  <title>traffic.core.structure &mdash; traffic 2.10.1.dev4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,8 +19,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=e30f950f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=8cfe81db"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.1.dev2
+                2.10.1.dev4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -88,6 +88,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.index"><code class="docutils literal notranslate"><span class="pre">Airport.index()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latitude"><code class="docutils literal notranslate"><span class="pre">Airport.latitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latlon"><code class="docutils literal notranslate"><span class="pre">Airport.latlon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latlon_dict"><code class="docutils literal notranslate"><span class="pre">Airport.latlon_dict</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.leaflet"><code class="docutils literal notranslate"><span class="pre">Airport.leaflet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.longitude"><code class="docutils literal notranslate"><span class="pre">Airport.longitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.name"><code class="docutils literal notranslate"><span class="pre">Airport.name</span></code></a></li>
@@ -115,6 +116,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.index"><code class="docutils literal notranslate"><span class="pre">Navaid.index()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latitude"><code class="docutils literal notranslate"><span class="pre">Navaid.latitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latlon"><code class="docutils literal notranslate"><span class="pre">Navaid.latlon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latlon_dict"><code class="docutils literal notranslate"><span class="pre">Navaid.latlon_dict</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.leaflet"><code class="docutils literal notranslate"><span class="pre">Navaid.leaflet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.longitude"><code class="docutils literal notranslate"><span class="pre">Navaid.longitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.magnetic_variation"><code class="docutils literal notranslate"><span class="pre">Navaid.magnetic_variation</span></code></a></li>
@@ -305,6 +307,12 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.structure.Airport.latlon_dict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.latlon_dict" title="Link to this definition"></a></dt>
+<dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.leaflet">
 <span class="sig-name descname"><span class="pre">leaflet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport.leaflet" title="Link to this definition"></a></dt>
@@ -474,6 +482,12 @@ convenient for the area attribute.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Navaid.latlon">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon" title="Link to this definition"></a></dt>
+<dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="traffic.core.structure.Navaid.latlon_dict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon_dict" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
