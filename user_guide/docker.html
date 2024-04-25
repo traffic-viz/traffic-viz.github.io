@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to use traffic in a Docker container? &mdash; traffic 2.10.1.dev7 documentation</title>
+  <title>How to use traffic in a Docker container? &mdash; traffic 2.9.1.dev50 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -19,9 +19,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=bb060bb1"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=bedfc820"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.1.dev7
+                2.9.1.dev50
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#sources-of-data">Sources of data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide.html#data-visualisation">Data visualisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#good-practices">Good practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#navigation-events">Navigation events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide.html#statistical-analysis">Statistical analysis</a></li>
@@ -112,7 +111,7 @@
            <div itemprop="articleBody">
              
   <section id="how-to-use-traffic-in-a-docker-container">
-<h1>How to use traffic in a Docker container?<a class="headerlink" href="#how-to-use-traffic-in-a-docker-container" title="Link to this heading"></a></h1>
+<h1>How to use traffic in a Docker container?<a class="headerlink" href="#how-to-use-traffic-in-a-docker-container" title="Permalink to this heading"></a></h1>
 <p>If you don’t want to be bothered with Python’s dependencies and just want to
 work, using a Docker container might be an easy solution. It is quite simple to
 run the traffic library with everything it needs in a Docker container, and you
@@ -120,7 +119,7 @@ have a few options. We provide a self-contained container image on GitHub that
 you can use. It has everything in it that you need. Or, alternatively, you can
 build your own image. We describe both below.</p>
 <section id="use-the-github-container-image">
-<h2>Use the GitHub container image<a class="headerlink" href="#use-the-github-container-image" title="Link to this heading"></a></h2>
+<h2>Use the GitHub container image<a class="headerlink" href="#use-the-github-container-image" title="Permalink to this heading"></a></h2>
 <p>Using the container image from GitHub is simple. Just make sure you have Docker
 installed and running, then pull the image with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/xoolive/traffic/jupyter:latest
@@ -135,7 +134,7 @@ work in a Jupyter notebook. Just copy-paste the URL that starts with
 <em>http://127.0.0.1:8888…</em> into your favourite browser and have fun.</p>
 </section>
 <section id="use-the-github-container-image-with-visual-studio-code">
-<h2>Use the GitHub container image with Visual Studio Code<a class="headerlink" href="#use-the-github-container-image-with-visual-studio-code" title="Link to this heading"></a></h2>
+<h2>Use the GitHub container image with Visual Studio Code<a class="headerlink" href="#use-the-github-container-image-with-visual-studio-code" title="Permalink to this heading"></a></h2>
 <p>If you use VS Code, life is even more convenient. You just need to make sure
 that you have the <em>Docker</em> and <em>Remote - Containers</em> extensions installed.</p>
 <p>For example, you have some code that you’d like to run in the container. You
@@ -152,7 +151,7 @@ container and select <em>Attach Visual Studio Code</em>.</p>
 (including Jupyter notebooks) the same way you used to.</p>
 </section>
 <section id="create-your-own-dockerfile">
-<h2>Create your own Dockerfile<a class="headerlink" href="#create-your-own-dockerfile" title="Link to this heading"></a></h2>
+<h2>Create your own Dockerfile<a class="headerlink" href="#create-your-own-dockerfile" title="Permalink to this heading"></a></h2>
 <p>In case you feel a bit more adventurous, you can also create your own
 Dockerfile and use it for your container. The following two examples show how
 you can use the traffic library in a Docker with <a class="reference external" href="https://jupyter-docker-stacks.readthedocs.io/en/latest/">Jupyter notebook</a>.  If you are
@@ -185,7 +184,7 @@ To run this Docker, you first have to generate an image with <code class="docuti
 </div>
 </section>
 <section id="run-jupyter-in-a-custom-environment">
-<h2>Run Jupyter in a custom environment<a class="headerlink" href="#run-jupyter-in-a-custom-environment" title="Link to this heading"></a></h2>
+<h2>Run Jupyter in a custom environment<a class="headerlink" href="#run-jupyter-in-a-custom-environment" title="Permalink to this heading"></a></h2>
 <p>If you have already a working conda environment that you would like to use, you
 can install your existing environment into the Docker container.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> could look like the following:</p>
