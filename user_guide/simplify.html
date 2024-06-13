@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to simplify or resample a trajectory? &mdash; traffic 2.10.1.dev19 documentation</title>
+  <title>How to simplify or resample a trajectory? &mdash; traffic 2.10.1.dev36 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c1d99d83"></script>
+        <script src="../_static/documentation_options.js?v=e05c9ec9"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.1.dev19
+                2.10.1.dev36
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -132,12 +132,12 @@ here with the following <a class="reference internal" href="../data_sources/samp
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#trajectory-simplification-with-douglas-peucker-algorithm" id="id1">Trajectory simplification with Douglas-Peucker algorithm</a></p></li>
-<li><p><a class="reference internal" href="#trajectory-resampling-with-interpolation" id="id2">Trajectory resampling with interpolation</a></p></li>
+<li><p><a class="reference internal" href="#trajectory-simplification-with-douglas-peucker-algorithm" id="id3">Trajectory simplification with Douglas-Peucker algorithm</a></p></li>
+<li><p><a class="reference internal" href="#trajectory-resampling-with-interpolation" id="id4">Trajectory resampling with interpolation</a></p></li>
 </ul>
 </nav>
 <section id="trajectory-simplification-with-douglas-peucker-algorithm">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Trajectory simplification with Douglas-Peucker algorithm</a><a class="headerlink" href="#trajectory-simplification-with-douglas-peucker-algorithm" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Trajectory simplification with Douglas-Peucker algorithm</a><a class="headerlink" href="#trajectory-simplification-with-douglas-peucker-algorithm" title="Link to this heading"></a></h2>
 <p>Trajectory simplification is particularly relevant for the ground track of
 trajectories. The two most famous methods are the <a class="reference external" href="https://bost.ocks.org/mike/simplify/">Ramer-Douglas-Peucker</a> algorithm and the <a class="reference external" href="https://www.jasondavies.com/simplify/">Visvalingam-Whyatt</a> algorithm.</p>
 <dl class="py method">
@@ -201,23 +201,23 @@ respect to the 2D ground track.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-48e72a1081994217877b6bcdbc628507.vega-embed {
+  #altair-viz-0242dbe09f5c459e9e316142ff1ed299.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-48e72a1081994217877b6bcdbc628507.vega-embed details,
-  #altair-viz-48e72a1081994217877b6bcdbc628507.vega-embed details summary {
+  #altair-viz-0242dbe09f5c459e9e316142ff1ed299.vega-embed details,
+  #altair-viz-0242dbe09f5c459e9e316142ff1ed299.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-48e72a1081994217877b6bcdbc628507"></div>
+<div id="altair-viz-0242dbe09f5c459e9e316142ff1ed299"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-48e72a1081994217877b6bcdbc628507") {
-      outputDiv = document.getElementById("altair-viz-48e72a1081994217877b6bcdbc628507");
+    if (outputDiv.id !== "altair-viz-0242dbe09f5c459e9e316142ff1ed299") {
+      outputDiv = document.getElementById("altair-viz-0242dbe09f5c459e9e316142ff1ed299");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -321,7 +321,7 @@ respect to the 2D ground track.</p>
 </div>
 </section>
 <section id="trajectory-resampling-with-interpolation">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Trajectory resampling with interpolation</a><a class="headerlink" href="#trajectory-resampling-with-interpolation" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Trajectory resampling with interpolation</a><a class="headerlink" href="#trajectory-resampling-with-interpolation" title="Link to this heading"></a></h2>
 <p>Trajectory resampling is a useful tool in the following situations:</p>
 <ul class="simple">
 <li><p>reducing the number of samples and size of the resulting object;</p></li>
@@ -330,7 +330,7 @@ respect to the 2D ground track.</p>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.flight.Flight.resample">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'interpolate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.resample" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'interpolate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.flight.Flight.resample" title="Link to this definition"></a></dt>
 <dd><p>Resample the trajectory at a given frequency or for a target number
 of samples.</p>
 <dl class="field-list simple">
@@ -338,7 +338,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<span class="sphinx_autodoc_typehints-type">str | int</span>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+870.g006ed9822e)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+1103.gde5d7323cf)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -351,6 +351,20 @@ given number of evenly distributed points per trajectory.</p></li>
 <li><p>When the parameter is a dictionary with keys as methods (e.g.
 <code class="docutils literal notranslate"><span class="pre">&quot;interpolate&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ffill&quot;</span></code>) and names of columns as values.
 Columns not included in any value are left as is.</p></li>
+</ul>
+</p></li>
+<li><p><strong>interpolate_kw</strong> (<span class="sphinx_autodoc_typehints-type">dict[str, Any]</span>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
+<ul>
+<li><p>A dictionary with keyword arguments that will be passed to the
+pandas <a href="#id1"><span class="problematic" id="id2">:py:method:`pandas.Series.interpolate`</span></a> method.</p>
+<p>Example usage:
+To specify a fifth-degree polynomial interpolation, you can
+pass the following dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>interpolate_kw = {“method”: “polynomial”, “order”: 5}</p>
+</li>
 </ul>
 </p></li>
 <li><p><strong>projection</strong> (<span class="sphinx_autodoc_typehints-type">None | str | pyproj.Proj | ‘crs.Projection</span>) – <p>(default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
@@ -405,23 +419,23 @@ preserved.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8554adc2e5fd402dbd02d2c22575125a.vega-embed {
+  #altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8554adc2e5fd402dbd02d2c22575125a.vega-embed details,
-  #altair-viz-8554adc2e5fd402dbd02d2c22575125a.vega-embed details summary {
+  #altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5.vega-embed details,
+  #altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8554adc2e5fd402dbd02d2c22575125a"></div>
+<div id="altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8554adc2e5fd402dbd02d2c22575125a") {
-      outputDiv = document.getElementById("altair-viz-8554adc2e5fd402dbd02d2c22575125a");
+    if (outputDiv.id !== "altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5") {
+      outputDiv = document.getElementById("altair-viz-a8b71394e3e44f03aa7b3d9625a78fb5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -534,23 +548,23 @@ time axis.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8b5d91f25d334ec7af531428abdf0324.vega-embed {
+  #altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8b5d91f25d334ec7af531428abdf0324.vega-embed details,
-  #altair-viz-8b5d91f25d334ec7af531428abdf0324.vega-embed details summary {
+  #altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11.vega-embed details,
+  #altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8b5d91f25d334ec7af531428abdf0324"></div>
+<div id="altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8b5d91f25d334ec7af531428abdf0324") {
-      outputDiv = document.getElementById("altair-viz-8b5d91f25d334ec7af531428abdf0324");
+    if (outputDiv.id !== "altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11") {
+      outputDiv = document.getElementById("altair-viz-0ea306d3ed4e4121b7ceb4b402bd4b11");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky history database? &mdash; traffic 2.10.1.dev19 documentation</title>
+  <title>How to access ADS-B data from OpenSky history database? &mdash; traffic 2.10.1.dev36 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c1d99d83"></script>
+        <script src="../_static/documentation_options.js?v=e05c9ec9"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.1.dev19
+                2.10.1.dev36
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -301,6 +301,27 @@ to load.</p></li>
     <span class="n">departure_airport</span><span class="o">=</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span>
     <span class="n">arrival_airport</span><span class="o">=</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span>
     <span class="n">callsign</span><span class="o">=</span><span class="s2">&quot;AIB%&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>based on airport (with origin/destination ICAO id):</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># flights from and to Zurich airport</span>
+<span class="n">t_lszh</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-15 09:00&quot;</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;2024-03-15 11:00&quot;</span><span class="p">,</span>
+    <span class="n">airport</span><span class="o">=</span><span class="s2">&quot;LSZH&quot;</span><span class="p">,</span>
+    <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span>
+        <span class="c1"># colums from StateVector4 (quoted or not)</span>
+        <span class="n">StateVectorsData4</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+        <span class="s1">&#39;icao24&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="s1">&#39;vertrate&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;callsign&#39;</span><span class="p">,</span> <span class="s1">&#39;onground&#39;</span><span class="p">,</span> <span class="s1">&#39;alert&#39;</span><span class="p">,</span> <span class="s1">&#39;spi&#39;</span><span class="p">,</span> <span class="s1">&#39;squawk&#39;</span><span class="p">,</span> <span class="s1">&#39;baroaltitude&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;geoaltitude&#39;</span><span class="p">,</span> <span class="s1">&#39;lastposupdate&#39;</span><span class="p">,</span> <span class="s1">&#39;lastcontact&#39;</span><span class="p">,</span> <span class="s1">&#39;serials&#39;</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span>
+        <span class="c1"># (some) columns from FlightsData4: always quoted!</span>
+        <span class="c1"># returned as columns &#39;estdepartureairport&#39; and &#39;estarrivalairport&#39;</span>
+        <span class="s1">&#39;FlightsData4.estdepartureairport&#39;</span><span class="p">,</span> <span class="s1">&#39;FlightsData4.estarrivalairport&#39;</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
