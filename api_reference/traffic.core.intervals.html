@@ -145,7 +145,7 @@
 <dd><p>Bases: <a class="reference internal" href="../data_sources/export.html#traffic.core.mixins.DataFrameMixin" title="traffic.core.mixins.DataFrameMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameMixin</span></code></a></p>
 <p>A class to represent collections of Intervals.</p>
 <p>An <a class="reference internal" href="#traffic.core.intervals.Interval" title="traffic.core.intervals.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> consists of a start and stop attributes.
-Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1176.gf3ad4d50ae)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
+Collections of intervals are stored as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1178.g236d89b856)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>.</p>
 <p>Intervals can be created using one of the following syntaxes:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-02-01&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;1D&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">sample_dates</span>
@@ -170,7 +170,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 </pre></div>
 </div>
 </li>
-<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1176.gf3ad4d50ae)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
+<li><p>as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1178.g236d89b856)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">IntervalCollection</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="go">[[2023-01-01 00:00:00, 2023-01-02 00:00:00], ...]</span>
@@ -223,7 +223,7 @@ Collections of intervals are stored as a <a class="reference external" href="htt
 <dd><p>Returns the sum of durations of all intervals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v3.0.0.dev0+1176.gf3ad4d50ae)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v3.0.0.dev0+1178.g236d89b856)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
