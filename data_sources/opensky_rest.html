@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.10.2.dev7 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.10.2.dev8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c1b0b05e"></script>
+        <script src="../_static/documentation_options.js?v=29aa139c"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.2.dev7
+                2.10.2.dev8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -176,7 +176,7 @@ authentication.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/opensky_rest_0_0.png" src="../_images/opensky_rest_0_0.png" />
+<img alt="../_images/opensky_rest_0_1.png" src="../_images/opensky_rest_0_1.png" />
 </div>
 </div>
 </section>
@@ -343,7 +343,7 @@ bounds:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">HTTPStatusError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_routes</span><span class="p">(</span><span class="s2">&quot;AFR292&quot;</span><span class="p">)</span>
 
@@ -354,21 +354,20 @@ bounds:</p>
 
 <span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:214,</span> in <span class="ni">REST.routes</span><span class="nt">(self, callsign)</span>
 <span class="g g-Whitespace">    </span><span class="mi">210</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Returns the route associated to a callsign.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/routes?callsign=</span><span class="si">{</span><span class="n">callsign</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">214</span> <span class="n">c</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="n">json</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s2">&quot;route&quot;</span><span class="p">])</span>
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/requests/models.py:1024,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1019</span>     <span class="n">http_error_msg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> Server Error: </span><span class="si">{</span><span class="n">reason</span><span class="si">}</span><span class="s2"> for url: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="k">if</span> <span class="n">http_error_msg</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1024</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">http_error_msg</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_models.py:761,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">759</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">error_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_class</span><span class="p">,</span> <span class="s2">&quot;Invalid status code&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span> <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="n">error_type</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">761</span> <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
 
-<span class="ne">HTTPError</span>: 404 Client Error:  for url: https://opensky-network.org/api/routes?callsign=AFR292
+<span class="ne">HTTPStatusError</span>: Client error &#39;404 &#39; for url &#39;https://opensky-network.org/api/routes?callsign=AFR292&#39;
+<span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">check</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">mozilla</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">Web</span><span class="o">/</span><span class="n">HTTP</span><span class="o">/</span><span class="n">Status</span><span class="o">/</span><span class="mi">404</span>
 </pre></div>
 </div>
 </div>
