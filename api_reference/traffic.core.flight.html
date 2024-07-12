@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.flight &mdash; traffic 2.10.2.dev8 documentation</title>
+  <title>traffic.core.flight &mdash; traffic 2.10.2.dev9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=29aa139c"></script>
+        <script src="../_static/documentation_options.js?v=8dd29785"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -48,7 +48,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.2.dev8
+                2.10.2.dev9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -2329,7 +2329,7 @@ structure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Flight.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.split" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Flight.split" title="Link to this definition"></a></dt>
 <dd><p>Iterates on legs of a Flight based on the distribution of timestamps.</p>
 <p>By default, the method stops a flight and yields a new one after a gap
 of 10 minutes without data.</p>
@@ -2340,6 +2340,23 @@ of 10 minutes without data.</p>
 <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code>);</p></li>
 <li><p>in the pandas style: <code class="docutils literal notranslate"><span class="pre">Flight.split('10T')</span></code> (see <code class="docutils literal notranslate"><span class="pre">pd.Timedelta</span></code>)</p></li>
 </ul>
+<p>If the <cite>condition</cite> parameter is set, the flight is split between two
+segments only if <cite>condition(f1, f2)</cite> is verified.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">no_split_below_5000ft</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">altitude</span> <span class="o">&gt;=</span> <span class="mi">5000</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="n">f2</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">altitude</span> <span class="o">&gt;=</span> <span class="mi">5000</span>
+    <span class="k">return</span> <span class="n">first</span> <span class="ow">or</span> <span class="n">second</span>
+
+<span class="c1"># would yield many segments</span>
+<span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;altitude &gt; 2000&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;1 min&#39;</span><span class="p">)</span>
+
+<span class="c1"># yields only one segment</span>
+<span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;altitude &gt; 2000&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span>
+    <span class="s1">&#39;1 min&#39;</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">no_split_below_5000ft</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py property">
