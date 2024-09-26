@@ -4,10 +4,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.10.3.dev5 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.10.3.dev6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=cd722ab7"></script>
+        <script src="../_static/documentation_options.js?v=fa8aa0dd"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
@@ -47,7 +47,7 @@
             traffic
           </a>
               <div class="version">
-                2.10.3.dev5
+                2.10.3.dev6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -177,7 +177,60 @@ authentication.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/opensky_rest_0_0.png" src="../_images/opensky_rest_0_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_6006/882081084.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">opensky</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_states</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">EuroPP</span><span class="p">()))</span>
+
+<span class="nn">~/work/traffic/traffic/src/traffic/data/adsb/opensky.py</span> in <span class="ni">?</span><span class="nt">(self, own, bounds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="o">|</span> <span class="nb">str</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="o">|</span> <span class="n">HasBounds</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StateVectors</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">216</span>         <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest_client</span><span class="o">.</span><span class="n">states</span><span class="p">(</span><span class="n">own</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">format_history</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>         <span class="k">return</span> <span class="n">StateVectors</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="nn">~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6227</span>         <span class="mi">2</span>  <span class="mf">3682.80</span>  <span class="mf">1473.12</span>
+<span class="g g-Whitespace">   </span><span class="mi">6228</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">6229</span><span class="s2">         if using_copy_on_write():</span>
+<span class="g g-Whitespace">   </span><span class="mi">6230</span><span class="s2">             return common.pipe(self.copy(deep=None), func, *args, **kwargs)</span>
+<span class="ne">-&gt; </span><span class="mi">6231</span><span class="s2">         return common.pipe(self, func, *args, **kwargs)</span>
+
+<span class="nn">~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pandas/core/common.py</span> in <span class="ni">?</span><span class="nt">(obj, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="s2">             raise ValueError(msg)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2">         kwargs[target] = obj</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">         return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span><span class="s2">     else:</span>
+<span class="ne">--&gt; </span><span class="mi">502</span><span class="s2">         return func(obj, *args, **kwargs)</span>
+
+<span class="nn">~/work/traffic/traffic/src/traffic/data/adsb/opensky.py</span> in <span class="ni">?</span><span class="nt">(df, nautical_units)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="s2">             df[column_name] = df[column_name].astype(float)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="s2">     if &quot;onground&quot; in df.columns and df.onground.dtype != bool:</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="s2">         df.onground = df.onground == &quot;true&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">155</span><span class="s2">         df.alert = df.alert == &quot;true&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="s2">         df.spi = df.spi == &quot;true&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="s2">     # better (to me) formalism about columns</span>
+
+<span class="nn">~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6295</span><span class="s2">             and name not in self._accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">6296</span><span class="s2">             and self._info_axis._can_hold_identifiers_and_holds_name(name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6297</span><span class="s2">         ):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6298</span><span class="s2">             return self[name]</span>
+<span class="ne">-&gt; </span><span class="mi">6299</span><span class="s2">         return object.__getattribute__(self, name)</span>
+
+<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;alert&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -353,19 +406,25 @@ bounds:</p>
 <span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">def</span> <span class="nf">api_routes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callsign</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
 <span class="ne">--&gt; </span><span class="mi">226</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest_client</span><span class="o">.</span><span class="n">routes</span><span class="p">(</span><span class="n">callsign</span><span class="p">)</span>
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:214,</span> in <span class="ni">REST.routes</span><span class="nt">(self, callsign)</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Returns the route associated to a callsign.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/routes?callsign=</span><span class="si">{</span><span class="n">callsign</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">214</span> <span class="n">c</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="n">json</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s2">&quot;route&quot;</span><span class="p">])</span>
+<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:280,</span> in <span class="ni">REST.routes</span><span class="nt">(self, callsign)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span> <span class="nf">routes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callsign</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Returns the route associated to a callsign.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">280</span>     <span class="n">json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/routes?callsign=</span><span class="si">{</span><span class="n">callsign</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s2">&quot;route&quot;</span><span class="p">])</span>
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_models.py:761,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">759</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">error_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_class</span><span class="p">,</span> <span class="s2">&quot;Invalid status code&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">760</span> <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="n">error_type</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">761</span> <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:67,</span> in <span class="ni">REST.get</span><span class="nt">(self, query, retry)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>         <span class="k">if</span> <span class="n">limit</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>             <span class="n">_log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate limiting: Only </span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2"> calls remaining&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">67</span>     <span class="n">c</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPStatusError</span><span class="p">:</span>
+
+<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_models.py:763,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">error_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_class</span><span class="p">,</span> <span class="s2">&quot;Invalid status code&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">762</span> <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="n">error_type</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">763</span> <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
 
 <span class="ne">HTTPStatusError</span>: Client error &#39;404 &#39; for url &#39;https://opensky-network.org/api/routes?callsign=AFR292&#39;
 <span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">check</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">mozilla</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">Web</span><span class="o">/</span><span class="n">HTTP</span><span class="o">/</span><span class="n">Status</span><span class="o">/</span><span class="mi">404</span>
