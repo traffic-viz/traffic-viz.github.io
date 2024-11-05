@@ -1,33 +1,31 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantitative Assessments of Runway Excursion Precursors using Mode S data &mdash; traffic 2.10.3.dev20 documentation</title>
+  <title>Quantitative Assessments of Runway Excursion Precursors using Mode S data &mdash; traffic 2.10.3.dev21+gb099a83 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=cbe82bc5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c4c86543"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,9 +43,6 @@
           <a href="../index.html" class="icon icon-home">
             traffic
           </a>
-              <div class="version">
-                2.10.3.dev20
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -346,7 +341,8 @@ respect to the above mentioned navigational beacons.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/runway_32.png"><img alt="../_images/runway_32.png" class="align-center" src="../_images/runway_32.png" style="width: 440.8px; height: 446.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../_images/runway_32.png"><img alt="../_images/runway_32.png" class="align-center" src="../_images/runway_32.png" style="width: 440.8px; height: 446.40000000000003px;" />
+</a>
 <p>First visual check: so far so good! Some trajectories seem to have their
 positions quite drifted.</p>
 <p>In order to select the final approach, we trim the trajectories between
@@ -512,7 +508,8 @@ still acceptable for a statistical analysis.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/runway_final.png"><img alt="../_images/runway_final.png" class="align-center" src="../_images/runway_final.png" style="width: 318.40000000000003px; height: 446.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../_images/runway_final.png"><img alt="../_images/runway_final.png" class="align-center" src="../_images/runway_final.png" style="width: 318.40000000000003px; height: 446.40000000000003px;" />
+</a>
 <p>Visual check: in the paper we consider the final 8 nautical miles (in
 red).</p>
 <p>For the following, the idea is to consider all track angle signals and
@@ -534,7 +531,8 @@ to analyse their modes of variation. Here is the full dataset plotted.</p>
         <span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/runway_track.png"><img alt="../_images/runway_track.png" class="align-center" src="../_images/runway_track.png" style="width: 501.6px; height: 349.6px;" /></a>
+<a class="reference internal image-reference" href="../_images/runway_track.png"><img alt="../_images/runway_track.png" class="align-center" src="../_images/runway_track.png" style="width: 501.6px; height: 349.6px;" />
+</a>
 </section>
 <section id="functional-principal-component-analysis">
 <h2>Functional Principal Component Analysis<a class="headerlink" href="#functional-principal-component-analysis" title="Link to this heading"></a></h2>
@@ -585,7 +583,8 @@ the average signal.</p>
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/runway_modes.png"><img alt="../_images/runway_modes.png" class="align-center" src="../_images/runway_modes.png" style="width: 494.2px; height: 494.2px;" /></a>
+<a class="reference internal image-reference" href="../_images/runway_modes.png"><img alt="../_images/runway_modes.png" class="align-center" src="../_images/runway_modes.png" style="width: 494.2px; height: 494.2px;" />
+</a>
 <p>One of the main ideas of the paper was to specifically select
 trajectories with strong components along these modes of variation. It
 appears they follow a specific pattern of late runway changes.</p>
@@ -618,7 +617,8 @@ appears they follow a specific pattern of late runway changes.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/runway_change.png"><img alt="../_images/runway_change.png" class="align-center" src="../_images/runway_change.png" style="width: 342.40000000000003px; height: 446.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../_images/runway_change.png"><img alt="../_images/runway_change.png" class="align-center" src="../_images/runway_change.png" style="width: 342.40000000000003px; height: 446.40000000000003px;" />
+</a>
 </section>
 </section>
 

@@ -1,33 +1,31 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to simplify or resample a trajectory? &mdash; traffic 2.10.3.dev20 documentation</title>
+  <title>How to simplify or resample a trajectory? &mdash; traffic 2.10.3.dev21+gb099a83 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=cbe82bc5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c4c86543"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -46,9 +44,6 @@
           <a href="../index.html" class="icon icon-home">
             traffic
           </a>
-              <div class="version">
-                2.10.3.dev20
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -201,23 +196,23 @@ respect to the 2D ground track.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a.vega-embed {
+  #altair-viz-b05fe29801f04c4ba73f476c05027f7e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a.vega-embed details,
-  #altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a.vega-embed details summary {
+  #altair-viz-b05fe29801f04c4ba73f476c05027f7e.vega-embed details,
+  #altair-viz-b05fe29801f04c4ba73f476c05027f7e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a"></div>
+<div id="altair-viz-b05fe29801f04c4ba73f476c05027f7e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a") {
-      outputDiv = document.getElementById("altair-viz-cf86ed2c2d8b47dcbe26ae33e6b7655a");
+    if (outputDiv.id !== "altair-viz-b05fe29801f04c4ba73f476c05027f7e") {
+      outputDiv = document.getElementById("altair-viz-b05fe29801f04c4ba73f476c05027f7e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -338,7 +333,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> (<span class="sphinx_autodoc_typehints-type">str | int</span>) – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+1625.g9a015d1951)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+1632.geacf0326ef)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -419,23 +414,23 @@ preserved.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-5960fcb9886043ee863f7d0e88ed59f7.vega-embed {
+  #altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5960fcb9886043ee863f7d0e88ed59f7.vega-embed details,
-  #altair-viz-5960fcb9886043ee863f7d0e88ed59f7.vega-embed details summary {
+  #altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e.vega-embed details,
+  #altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5960fcb9886043ee863f7d0e88ed59f7"></div>
+<div id="altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5960fcb9886043ee863f7d0e88ed59f7") {
-      outputDiv = document.getElementById("altair-viz-5960fcb9886043ee863f7d0e88ed59f7");
+    if (outputDiv.id !== "altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e") {
+      outputDiv = document.getElementById("altair-viz-1f81fc9f4df54f3a8dce5f59771c2c8e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -548,23 +543,23 @@ time axis.</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-462010b3a6a34d01907c7595b6ad7e6e.vega-embed {
+  #altair-viz-91d40480be5447d9a51d90515d615105.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-462010b3a6a34d01907c7595b6ad7e6e.vega-embed details,
-  #altair-viz-462010b3a6a34d01907c7595b6ad7e6e.vega-embed details summary {
+  #altair-viz-91d40480be5447d9a51d90515d615105.vega-embed details,
+  #altair-viz-91d40480be5447d9a51d90515d615105.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-462010b3a6a34d01907c7595b6ad7e6e"></div>
+<div id="altair-viz-91d40480be5447d9a51d90515d615105"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-462010b3a6a34d01907c7595b6ad7e6e") {
-      outputDiv = document.getElementById("altair-viz-462010b3a6a34d01907c7595b6ad7e6e");
+    if (outputDiv.id !== "altair-viz-91d40480be5447d9a51d90515d615105") {
+      outputDiv = document.getElementById("altair-viz-91d40480be5447d9a51d90515d615105");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
