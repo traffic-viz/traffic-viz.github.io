@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access flight plan information? &mdash; traffic 2.10.3.dev21+gb099a83 documentation</title>
+  <title>How to access flight plan information? &mdash; traffic 2.10.3.dev22+gc530cb7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c4c86543"></script>
+      <script src="../_static/documentation_options.js?v=de7fdca0"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -113,19 +113,13 @@
              
   <section id="how-to-access-flight-plan-information">
 <h1>How to access flight plan information?<a class="headerlink" href="#how-to-access-flight-plan-information" title="Link to this heading"></a></h1>
-<p>A <a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code></a> is a structure designed to parse
-flight plans in the ICAO format. Access to such field may be complicated for non
-operational fellows, who may have access to different sources of data.</p>
+<p>A <a class="reference internal" href="../api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code></a> is a structure designed to parse flight plans in the ICAO format. Access to such field may be complicated for non-operational fellows, who may have access to different sources of data.</p>
 <section id="eurocontrol-b2b-web-services">
 <h2>EUROCONTROL B2B web services<a class="headerlink" href="#eurocontrol-b2b-web-services" title="Link to this heading"></a></h2>
-<p>The <a class="reference external" href="https://www.eurocontrol.int/service/network-manager-business-business-b2b-web-services">NM B2B web services</a>
-is an interface provided by the EUROCONTROL Network Manager (NM) for
-system-to-system access to its services and data, allowing users to
-retrieve and use the information in their own systems.</p>
+<p>The <a class="reference external" href="https://www.eurocontrol.int/service/network-manager-business-business-b2b-web-services">NM B2B web services</a> is an interface provided by the EUROCONTROL Network Manager (NM) for system-to-system access to its services and data, allowing users to retrieve and use the information in their own systems.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>This code has been moved out of the traffic library. You may install
-<cite>pyb2b &lt;https://github.com/xoolive/pyb2b&gt;</cite> for the same functionalities.</p>
+<p>This code has been moved out of the traffic library. You may install <cite>pyb2b &lt;https://github.com/xoolive/pyb2b&gt;</cite> for the same functionalities.</p>
 </div>
 </section>
 </section>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; traffic 2.10.3.dev21+gb099a83 documentation</title>
+  <title>Installation &mdash; traffic 2.10.3.dev22+gc530cb7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
       <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c4c86543"></script>
+      <script src="_static/documentation_options.js?v=de7fdca0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/thebelab-helper.js"></script>
@@ -152,24 +152,23 @@ the same exact versions of all dependency libraries.</p>
 <p>The following steps <strong>are not mandatory</strong>, but they will ensure a swift
 reviewing process:</p>
 <ul>
-<li><p>install <a class="reference external" href="https://python-poetry.org/">poetry</a> on your workstation</p></li>
-<li><p>install traffic with poetry:</p>
+<li><p>install <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> on your workstation</p></li>
+<li><p>install traffic with uv:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/xoolive/traffic
 <span class="nb">cd</span><span class="w"> </span>traffic/
-poetry<span class="w"> </span>install<span class="w"> </span>-E<span class="w"> </span>all
+uv<span class="w"> </span>sync<span class="w"> </span>--dev<span class="w"> </span>--all-extras<span class="w">  </span><span class="c1"># or just select the extra you need</span>
 </pre></div>
 </div>
 <p>Then, you may:</p>
 <ul class="simple">
-<li><p>prefix all your commands with <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code></p></li>
-<li><p>or run a shell with all environment variables properly set with <code class="docutils literal notranslate"><span class="pre">poetry</span>
-<span class="pre">shell</span></code></p></li>
+<li><p>prefix all your commands with <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span></code></p></li>
+<li><p>or activate the environment located in <code class="docutils literal notranslate"><span class="pre">.venv</span></code></p></li>
 </ul>
 </li>
 <li><p>install the <a class="reference external" href="https://pre-commit.com/">pre-commit</a> hooks so a minimum set of
 sanity checks can be performed and so you can fix issues before continuous
 integration (GitHub Actions) fails.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
 </li>
@@ -182,18 +181,13 @@ will get a little pop-up message informing you that a Dev Container exists.</p>
 <p>Just click <em>Reopen in Container</em> and VS Code will create and configure the
 container for you. You can now work in the container with a pre-defined
 development environment that contains all the dependencies you need.</p>
-<p>The provided image runs with <a class="reference external" href="https://python-poetry.org/">poetry</a> which will
+<p>The provided image runs with <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> which will
 set a proper environment with frozen version of dependencies, a desirable
 behaviour when you run tests in continuous integration.</p>
-<p>If your sit behind a proxy, the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> command which will run
-automatically when you first open the Docker container may fail: you may have
-to manually set your proxy environment variables in the container shell before
-running <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> again in order to get the container ready.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Read more about :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>Docker containers &lt;How to use traffic in a Docker</p>
+<p>Read more about <a class="reference internal" href="troubleshooting/docker.html#how-to-use-traffic-in-a-docker-container"><span class="std std-ref">Docker containers</span></a> for traffic.</p>
 </div>
-<p>container?&gt;` for traffic.</p>
 </section>
 </section>
 
