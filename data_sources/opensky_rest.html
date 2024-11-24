@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.10.3.dev31+g9449151.d20241120 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.12.dev0+g9449151.d20241124 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1146470c"></script>
+      <script src="../_static/documentation_options.js?v=4071bcf2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -188,242 +188,72 @@ bounds:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ReadTimeout</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:72,</span> in <span class="ni">map_httpcore_exceptions</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:236,</span> in <span class="ni">HTTPTransport.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">with</span> <span class="n">map_httpcore_exceptions</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">236</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pool</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:256,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_connections</span><span class="p">(</span><span class="n">closing</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">256</span>     <span class="k">raise</span> <span class="n">exc</span> <span class="kn">from</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="c1"># Return the response. Note that in this case we still have to manage</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="c1"># the point at which the response is closed.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:236,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="c1"># Send the request on the assigned connection.</span>
-<span class="ne">--&gt; </span><span class="mi">236</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="n">pool_request</span><span class="o">.</span><span class="n">request</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">except</span> <span class="n">ConnectionNotAvailable</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="c1"># In some cases a connection may initially be available to</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="c1"># handle a request, but then become unavailable.</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="c1"># In this case we clear the connection and try again.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py:103,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="k">raise</span> <span class="n">exc</span>
-<span class="ne">--&gt; </span><span class="mi">103</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:136,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_response_closed</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">136</span> <span class="k">raise</span> <span class="n">exc</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:106,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="s2">&quot;receive_response_headers&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">trailing_data</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">106</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_response_headers</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="n">trace</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:177,</span> in <span class="ni">HTTP11Connection._receive_response_headers</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_event</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">h11</span><span class="o">.</span><span class="n">Response</span><span class="p">):</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:217,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>         <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="c1"># If we feed this case through h11 we&#39;ll raise an exception like:</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="c1">#     httpcore.RemoteProtocolError: can&#39;t handle event type</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="c1"># perspective. Instead we handle this case distinctly and treat</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># it as a ConnectError.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_backends/sync.py:126,</span> in <span class="ni">SyncStream.read</span><span class="nt">(self, max_bytes, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="n">exc_map</span><span class="p">:</span> <span class="n">ExceptionMapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span> <span class="n">ReadTimeout</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">:</span> <span class="n">ReadError</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">(</span><span class="n">exc_map</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/contextlib.py:158,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="c1"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="c1"># was passed to throw().  This prevents a StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_exceptions.py:14,</span> in <span class="ni">map_exceptions</span><span class="nt">(map)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">from_exc</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="k">raise</span> <span class="n">to_exc</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">raise</span>
-
-<span class="ne">ReadTimeout</span>: The read operation timed out
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ReadTimeout</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Have you seen Santa Claus coming to Toulouse?</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_arrival</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-24 20:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-25 06:00&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/src/traffic/data/adsb/opensky.py:234,</span> in <span class="ni">OpenSky.api_arrival</span><span class="nt">(self, airport, begin, end)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="nd">@copy_documentation</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">REST</span><span class="o">.</span><span class="n">arrival</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="k">def</span> <span class="nf">api_arrival</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">end</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">timelike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">234</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest_client</span><span class="o">.</span><span class="n">arrival</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>         <span class="n">airport</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">airport</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">airport</span><span class="o">.</span><span class="n">icao</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:410,</span> in <span class="ni">REST.arrival</span><span class="nt">(self, airport, begin, end)</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">end_ts</span> <span class="o">=</span> <span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">410</span> <span class="n">json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span>     <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/flights/arrival&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="sa">f</span><span class="s2">&quot;?begin=</span><span class="si">{</span><span class="n">begin_ts</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&amp;airport=</span><span class="si">{</span><span class="n">airport</span><span class="si">}</span><span class="s2">&amp;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="sa">f</span><span class="s2">&quot;end=</span><span class="si">{</span><span class="n">end_ts</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">return</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>     <span class="o">.</span><span class="n">convert_dtypes</span><span class="p">(</span><span class="n">dtype_backend</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)[</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;lastSeen&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span> <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:61,</span> in <span class="ni">REST.get</span><span class="nt">(self, query, retry)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">retry</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="k">if</span> <span class="n">limit</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;X-Rate-Limit-Remaining&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:1066,</span> in <span class="ni">Client.get</span><span class="nt">(self, url, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1050</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span>     <span class="n">url</span><span class="p">:</span> <span class="n">URL</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>     <span class="n">extensions</span><span class="p">:</span> <span class="n">RequestExtensions</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     Send a `GET` request.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1063</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span><span class="sd">     **Parameters**: See `httpx.request`.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1065</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1066</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span>         <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span>         <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>         <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1071</span>         <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>         <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1074</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1075</span>         <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1076</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:837,</span> in <span class="ni">Client.request</span><span class="nt">(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">836</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">837</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:926,</span> in <span class="ni">Client.send</span><span class="nt">(self, request, stream, auth, follow_redirects)</span>
-<span class="g g-Whitespace">    </span><span class="mi">922</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_timeout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="n">auth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_request_auth</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">926</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_auth</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>     <span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>     <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="n">history</span><span class="o">=</span><span class="p">[],</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:954,</span> in <span class="ni">Client._send_handling_auth</span><span class="nt">(self, request, auth, follow_redirects, history)</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="n">request</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">auth_flow</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">953</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">954</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_redirects</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">955</span>         <span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">957</span>         <span class="n">history</span><span class="o">=</span><span class="n">history</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">960</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:991,</span> in <span class="ni">Client._send_handling_redirects</span><span class="nt">(self, request, follow_redirects, history)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span> <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;request&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>     <span class="n">hook</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">991</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_single_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span>     <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">]:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:1027,</span> in <span class="ni">Client._send_single_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>         <span class="s2">&quot;Attempted to send an async request with a sync Client instance.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1026</span> <span class="k">with</span> <span class="n">request_context</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1027</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1029</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">SyncByteStream</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="n">response</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:235,</span> in <span class="ni">HTTPTransport.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">SyncByteStream</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="n">req</span> <span class="o">=</span> <span class="n">httpcore</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">url</span><span class="o">=</span><span class="n">httpcore</span><span class="o">.</span><span class="n">URL</span><span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">235</span> <span class="k">with</span> <span class="n">map_httpcore_exceptions</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pool</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/contextlib.py:158,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">typ</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="c1"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="c1"># was passed to throw().  This prevents a StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">exc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">value</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:89,</span> in <span class="ni">map_httpcore_exceptions</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="k">raise</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="n">message</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">89</span> <span class="k">raise</span> <span class="n">mapped_exc</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-
-<span class="ne">ReadTimeout</span>: The read operation timed out
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>firstSeen</th>
+      <th>lastSeen</th>
+      <th>icao24</th>
+      <th>callsign</th>
+      <th>estDepartureAirport</th>
+      <th>estArrivalAirport</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>2021-12-24 19:09:00+00:00</td>
+      <td>2021-12-24 20:01:26+00:00</td>
+      <td>3944e8</td>
+      <td>AFR81YX</td>
+      <td>LFPO</td>
+      <td>LFBO</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-12-24 20:15:51+00:00</td>
+      <td>2021-12-24 21:35:14+00:00</td>
+      <td>44ce72</td>
+      <td>BEL9D</td>
+      <td>EBBR</td>
+      <td>LFBO</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-12-24 20:41:45+00:00</td>
+      <td>2021-12-24 21:40:43+00:00</td>
+      <td>394c17</td>
+      <td>AFR84KV</td>
+      <td>LFPG</td>
+      <td>LFBO</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>2021-12-24 21:06:03+00:00</td>
+      <td>2021-12-24 22:37:26+00:00</td>
+      <td>3c6597</td>
+      <td>DLH11C</td>
+      <td>EDDM</td>
+      <td>LFBO</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -433,242 +263,72 @@ bounds:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ReadTimeout</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:72,</span> in <span class="ni">map_httpcore_exceptions</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:236,</span> in <span class="ni">HTTPTransport.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">with</span> <span class="n">map_httpcore_exceptions</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">236</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pool</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:256,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_connections</span><span class="p">(</span><span class="n">closing</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">256</span>     <span class="k">raise</span> <span class="n">exc</span> <span class="kn">from</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="c1"># Return the response. Note that in this case we still have to manage</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="c1"># the point at which the response is closed.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:236,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="c1"># Send the request on the assigned connection.</span>
-<span class="ne">--&gt; </span><span class="mi">236</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="n">pool_request</span><span class="o">.</span><span class="n">request</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">except</span> <span class="n">ConnectionNotAvailable</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="c1"># In some cases a connection may initially be available to</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="c1"># handle a request, but then become unavailable.</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="c1"># In this case we clear the connection and try again.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py:103,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="k">raise</span> <span class="n">exc</span>
-<span class="ne">--&gt; </span><span class="mi">103</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:136,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_response_closed</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">136</span> <span class="k">raise</span> <span class="n">exc</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:106,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="s2">&quot;receive_response_headers&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">trailing_data</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">106</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_response_headers</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="n">trace</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:177,</span> in <span class="ni">HTTP11Connection._receive_response_headers</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_event</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">h11</span><span class="o">.</span><span class="n">Response</span><span class="p">):</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:217,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>         <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="c1"># If we feed this case through h11 we&#39;ll raise an exception like:</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="c1">#     httpcore.RemoteProtocolError: can&#39;t handle event type</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="c1"># perspective. Instead we handle this case distinctly and treat</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># it as a ConnectError.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_backends/sync.py:126,</span> in <span class="ni">SyncStream.read</span><span class="nt">(self, max_bytes, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="n">exc_map</span><span class="p">:</span> <span class="n">ExceptionMapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span> <span class="n">ReadTimeout</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">:</span> <span class="n">ReadError</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">(</span><span class="n">exc_map</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/contextlib.py:158,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="c1"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="c1"># was passed to throw().  This prevents a StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpcore/_exceptions.py:14,</span> in <span class="ni">map_exceptions</span><span class="nt">(map)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">from_exc</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="k">raise</span> <span class="n">to_exc</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">raise</span>
-
-<span class="ne">ReadTimeout</span>: The read operation timed out
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ReadTimeout</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Or maybe leaving?</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_departure</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-24 20:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-12-25 06:00&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/src/traffic/data/adsb/opensky.py:245,</span> in <span class="ni">OpenSky.api_departure</span><span class="nt">(self, airport, begin, end)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="nd">@copy_documentation</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">REST</span><span class="o">.</span><span class="n">departure</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">def</span> <span class="nf">api_departure</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">end</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">timelike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">245</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest_client</span><span class="o">.</span><span class="n">departure</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>         <span class="n">airport</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">airport</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">airport</span><span class="o">.</span><span class="n">icao</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:470,</span> in <span class="ni">REST.departure</span><span class="nt">(self, airport, begin, end)</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="n">end_ts</span> <span class="o">=</span> <span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">470</span> <span class="n">json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span>     <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/flights/departure&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="sa">f</span><span class="s2">&quot;?begin=</span><span class="si">{</span><span class="n">begin_ts</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&amp;airport=</span><span class="si">{</span><span class="n">airport</span><span class="si">}</span><span class="s2">&amp;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span>     <span class="sa">f</span><span class="s2">&quot;end=</span><span class="si">{</span><span class="n">end_ts</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="k">return</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span>     <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span>     <span class="o">.</span><span class="n">convert_dtypes</span><span class="p">(</span><span class="n">dtype_backend</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)[</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;firstSeen&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span> <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:61,</span> in <span class="ni">REST.get</span><span class="nt">(self, query, retry)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">retry</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="k">if</span> <span class="n">limit</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;X-Rate-Limit-Remaining&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:1066,</span> in <span class="ni">Client.get</span><span class="nt">(self, url, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1050</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span>     <span class="n">url</span><span class="p">:</span> <span class="n">URL</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>     <span class="n">extensions</span><span class="p">:</span> <span class="n">RequestExtensions</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     Send a `GET` request.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1063</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span><span class="sd">     **Parameters**: See `httpx.request`.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1065</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1066</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span>         <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span>         <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>         <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1071</span>         <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>         <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1074</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1075</span>         <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1076</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:837,</span> in <span class="ni">Client.request</span><span class="nt">(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">836</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">837</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:926,</span> in <span class="ni">Client.send</span><span class="nt">(self, request, stream, auth, follow_redirects)</span>
-<span class="g g-Whitespace">    </span><span class="mi">922</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_timeout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="n">auth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_request_auth</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">926</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_auth</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>     <span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>     <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="n">history</span><span class="o">=</span><span class="p">[],</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:954,</span> in <span class="ni">Client._send_handling_auth</span><span class="nt">(self, request, auth, follow_redirects, history)</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="n">request</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">auth_flow</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">953</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">954</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_redirects</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">955</span>         <span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">957</span>         <span class="n">history</span><span class="o">=</span><span class="n">history</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">960</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:991,</span> in <span class="ni">Client._send_handling_redirects</span><span class="nt">(self, request, follow_redirects, history)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span> <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;request&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>     <span class="n">hook</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">991</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_single_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span>     <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">]:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:1027,</span> in <span class="ni">Client._send_single_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>         <span class="s2">&quot;Attempted to send an async request with a sync Client instance.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1026</span> <span class="k">with</span> <span class="n">request_context</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1027</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1029</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">SyncByteStream</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="n">response</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:235,</span> in <span class="ni">HTTPTransport.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">SyncByteStream</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="n">req</span> <span class="o">=</span> <span class="n">httpcore</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">url</span><span class="o">=</span><span class="n">httpcore</span><span class="o">.</span><span class="n">URL</span><span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">235</span> <span class="k">with</span> <span class="n">map_httpcore_exceptions</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pool</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/contextlib.py:158,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">typ</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="c1"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="c1"># was passed to throw().  This prevents a StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">exc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">value</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_transports/default.py:89,</span> in <span class="ni">map_httpcore_exceptions</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="k">raise</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="n">message</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">89</span> <span class="k">raise</span> <span class="n">mapped_exc</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-
-<span class="ne">ReadTimeout</span>: The read operation timed out
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>firstSeen</th>
+      <th>lastSeen</th>
+      <th>icao24</th>
+      <th>callsign</th>
+      <th>estDepartureAirport</th>
+      <th>estArrivalAirport</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>2021-12-24 20:15:26+00:00</td>
+      <td>2021-12-24 21:03:57+00:00</td>
+      <td>4b1a1f</td>
+      <td>EZS32CR</td>
+      <td>LFBO</td>
+      <td>LSGG</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-12-24 20:35:00+00:00</td>
+      <td>2021-12-24 21:50:51+00:00</td>
+      <td>3922ed</td>
+      <td>TAY4947</td>
+      <td>LFBO</td>
+      <td>EBLG</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-12-24 20:41:23+00:00</td>
+      <td>2021-12-24 21:39:38+00:00</td>
+      <td>344498</td>
+      <td>IBS36NA</td>
+      <td>LFBO</td>
+      <td>LEMD</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>2021-12-25 05:01:41+00:00</td>
+      <td>2021-12-25 06:11:08+00:00</td>
+      <td>394c17</td>
+      <td>AFR81DB</td>
+      <td>LFBO</td>
+      <td>LFPG</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>A basic route database is also accessible through the REST API:</p>
 <div class="jupyter_cell jupyter_container docutils container">
