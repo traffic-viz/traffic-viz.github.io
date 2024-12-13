@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.12.dev4+gf487493.d20241213 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.12.dev5+gaeddc12.d20241213 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=88c2dfa1"></script>
+      <script src="../_static/documentation_options.js?v=bfaccf12"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -363,10 +363,10 @@ bounds:</p>
 <span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPStatusError</span><span class="p">:</span>
 
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_models.py:763,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">761</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">error_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_class</span><span class="p">,</span> <span class="s2">&quot;Invalid status code&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">762</span> <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="n">error_type</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">763</span> <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_models.py:829,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">error_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_class</span><span class="p">,</span> <span class="s2">&quot;Invalid status code&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">828</span> <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="n">error_type</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">829</span> <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
 
 <span class="ne">HTTPStatusError</span>: Client error &#39;404 &#39; for url &#39;https://opensky-network.org/api/routes?callsign=AFR292&#39;
 <span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">check</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">mozilla</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">Web</span><span class="o">/</span><span class="n">HTTP</span><span class="o">/</span><span class="n">Status</span><span class="o">/</span><span class="mi">404</span>
