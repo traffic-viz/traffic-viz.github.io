@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.algorithms.filters &mdash; traffic 2.12.dev2+g0dcee79.d20241208 documentation</title>
+  <title>traffic.algorithms.filters &mdash; traffic 2.12.dev4+gf487493.d20241213 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1d2c8860"></script>
+      <script src="../_static/documentation_options.js?v=88c2dfa1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -131,24 +131,25 @@ glitches)</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-2759ed0f5f3345709fdf1acba0bf438a.vega-embed {
+  #altair-viz-f8f591df18ea4ec98842b4921a8bb714.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2759ed0f5f3345709fdf1acba0bf438a.vega-embed details,
-  #altair-viz-2759ed0f5f3345709fdf1acba0bf438a.vega-embed details summary {
+  #altair-viz-f8f591df18ea4ec98842b4921a8bb714.vega-embed details,
+  #altair-viz-f8f591df18ea4ec98842b4921a8bb714.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2759ed0f5f3345709fdf1acba0bf438a"></div>
+<div id="altair-viz-f8f591df18ea4ec98842b4921a8bb714"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2759ed0f5f3345709fdf1acba0bf438a") {
-      outputDiv = document.getElementById("altair-viz-2759ed0f5f3345709fdf1acba0bf438a");
+    if (outputDiv.id !== "altair-viz-f8f591df18ea4ec98842b4921a8bb714") {
+      outputDiv = document.getElementById("altair-viz-f8f591df18ea4ec98842b4921a8bb714");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -185,7 +186,8 @@ glitches)</p></li>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
@@ -204,24 +206,25 @@ smoother trajectories.</p></li>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-67a4cdf9690f48a7afb47793d5376fe5.vega-embed {
+  #altair-viz-0fb4f37a3ff444989ee5512b810c71fa.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-67a4cdf9690f48a7afb47793d5376fe5.vega-embed details,
-  #altair-viz-67a4cdf9690f48a7afb47793d5376fe5.vega-embed details summary {
+  #altair-viz-0fb4f37a3ff444989ee5512b810c71fa.vega-embed details,
+  #altair-viz-0fb4f37a3ff444989ee5512b810c71fa.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-67a4cdf9690f48a7afb47793d5376fe5"></div>
+<div id="altair-viz-0fb4f37a3ff444989ee5512b810c71fa"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-67a4cdf9690f48a7afb47793d5376fe5") {
-      outputDiv = document.getElementById("altair-viz-67a4cdf9690f48a7afb47793d5376fe5");
+    if (outputDiv.id !== "altair-viz-0fb4f37a3ff444989ee5512b810c71fa") {
+      outputDiv = document.getElementById("altair-viz-0fb4f37a3ff444989ee5512b810c71fa");
     }
+
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
       "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
@@ -258,7 +261,8 @@ smoother trajectories.</p></li>
 
     if(typeof define === "function" && define.amd) {
       requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
     } else {
       maybeLoadScript("vega", "5")
         .then(() => maybeLoadScript("vega-lite", "5.20.1"))
