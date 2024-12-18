@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.traffic &mdash; traffic 2.11.2.dev0+g6cb5402.d20241215 documentation</title>
+  <title>traffic.core.traffic &mdash; traffic 2.11.2.dev4+g7917a36.d20241218 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=80391992"></script>
+      <script src="../_static/documentation_options.js?v=d1fae946"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -75,7 +75,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#traffic.core.Traffic"><code class="docutils literal notranslate"><span class="pre">Traffic</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.lazy.Traffic.LazyTraffic"><code class="docutils literal notranslate"><span class="pre">Traffic.LazyTraffic</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.Scattergeo"><code class="docutils literal notranslate"><span class="pre">Traffic.Scattergeo()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.Scattermapbox"><code class="docutils literal notranslate"><span class="pre">Traffic.Scattermapbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.Scattermap"><code class="docutils literal notranslate"><span class="pre">Traffic.Scattermap()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_latlon"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_latlon()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_time"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_time()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_xy"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_xy()</span></code></a></li>
@@ -122,7 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.landing_at"><code class="docutils literal notranslate"><span class="pre">Traffic.landing_at()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.last"><code class="docutils literal notranslate"><span class="pre">Traffic.last()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.line_geo"><code class="docutils literal notranslate"><span class="pre">Traffic.line_geo()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.line_mapbox"><code class="docutils literal notranslate"><span class="pre">Traffic.line_mapbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.line_map"><code class="docutils literal notranslate"><span class="pre">Traffic.line_map()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.longer_than"><code class="docutils literal notranslate"><span class="pre">Traffic.longer_than()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.max_split"><code class="docutils literal notranslate"><span class="pre">Traffic.max_split()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.merge"><code class="docutils literal notranslate"><span class="pre">Traffic.merge()</span></code></a></li>
@@ -140,7 +140,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.reset_index"><code class="docutils literal notranslate"><span class="pre">Traffic.reset_index()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.sample"><code class="docutils literal notranslate"><span class="pre">Traffic.sample()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.scatter_geo"><code class="docutils literal notranslate"><span class="pre">Traffic.scatter_geo()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.scatter_mapbox"><code class="docutils literal notranslate"><span class="pre">Traffic.scatter_mapbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.scatter_map"><code class="docutils literal notranslate"><span class="pre">Traffic.scatter_map()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.shorter_than"><code class="docutils literal notranslate"><span class="pre">Traffic.shorter_than()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.simplify"><code class="docutils literal notranslate"><span class="pre">Traffic.simplify()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.sort_values"><code class="docutils literal notranslate"><span class="pre">Traffic.sort_values()</span></code></a></li>
@@ -279,7 +279,7 @@ default options.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.Scattergeo">
 <span class="sig-name descname"><span class="pre">Scattergeo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.Scattergeo" title="Link to this definition"></a></dt>
-<dd><p>Create a Scattermapbox with Plotly.</p>
+<dd><p>Create a Scattergeo with Plotly.</p>
 <p>Requires the plotly package (optional dependency).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -289,13 +289,13 @@ default options.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.Traffic.Scattermapbox">
-<span class="sig-name descname"><span class="pre">Scattermapbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.Scattermapbox" title="Link to this definition"></a></dt>
-<dd><p>Create a Scattermapbox with Plotly.</p>
+<dt class="sig sig-object py" id="traffic.core.Traffic.Scattermap">
+<span class="sig-name descname"><span class="pre">Scattermap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.Scattermap" title="Link to this definition"></a></dt>
+<dd><p>Create a Scattermap with Plotly.</p>
 <p>Requires the plotly package (optional dependency).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scattermapbox</span></code></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scattermap</span></code></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1257,8 +1257,8 @@ constructor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.Traffic.line_mapbox">
-<span class="sig-name descname"><span class="pre">line_mapbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapbox_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'carto-positron'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.line_mapbox" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.line_map">
+<span class="sig-name descname"><span class="pre">line_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'carto-positron'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.line_map" title="Link to this definition"></a></dt>
 <dd><p>Create a line plot with Plotly.</p>
 <p>Requires the plotly package (optional dependency).</p>
 <dl class="field-list simple">
@@ -1617,8 +1617,8 @@ dataset. Default is None, in which case a single value is returned.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.Traffic.scatter_mapbox">
-<span class="sig-name descname"><span class="pre">scatter_mapbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapbox_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'carto-positron'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.scatter_mapbox" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="traffic.core.Traffic.scatter_map">
+<span class="sig-name descname"><span class="pre">scatter_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'carto-positron'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.scatter_map" title="Link to this definition"></a></dt>
 <dd><p>Create a scatter plot with Plotly.</p>
 <p>Requires the plotly package (optional dependency).</p>
 <dl class="field-list simple">
