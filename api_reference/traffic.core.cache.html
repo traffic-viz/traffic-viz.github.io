@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.cache &mdash; traffic 2.11.2.dev5+g3acbe72.d20250101 documentation</title>
+  <title>traffic.core.cache &mdash; traffic 2.11.2.dev9+gc52f15f.d20250102 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=165f9cec"></script>
+      <script src="../_static/documentation_options.js?v=bd7b6766"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -111,7 +111,7 @@
 <h1>traffic.core.cache<a class="headerlink" href="#traffic-core-cache" title="Link to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="traffic.core.cache.cache_results">
-<span class="sig-prename descclassname"><span class="pre">traffic.core.cache.</span></span><span class="sig-name descname"><span class="pre">cache_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_directory=PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader=&lt;function</span> <span class="pre">read_pickle&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pd_varnames=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.cache.cache_results" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">traffic.core.cache.</span></span><span class="sig-name descname"><span class="pre">cache_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_path=PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader=&lt;function</span> <span class="pre">read_pickle&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pd_varnames=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.cache.cache_results" title="Link to this definition"></a></dt>
 <dd><p>The point of this method is to be able to cache results of some costly
 functions on <code class="xref py py-class docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a> or
 <a class="reference internal" href="traffic.core.traffic.html#traffic.core.Traffic" title="traffic.core.Traffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traffic</span></code></a> structures.</p>
@@ -120,7 +120,7 @@ functions on <code class="xref py py-class docutils literal notranslate"><span c
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fun</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#Ellipsis" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>, Traffic, Flight)]]</span>) – the function to decorate</p></li>
-<li><p><strong>cache_directory</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></span>) – (default: current directory)
+<li><p><strong>cache_path</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></span>) – (default: current directory)
 where to store the results</p></li>
 <li><p><strong>loader</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>[[<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>, Traffic, Flight)]</span>) – (default: <code class="xref py py-meth docutils literal notranslate"><span class="pre">pd.read_pickle()</span></code>)
 the function used to load the data from a cache file</p></li>
