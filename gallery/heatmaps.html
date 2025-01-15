@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flight density heatmaps &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>Flight density heatmaps &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -109,7 +109,7 @@
 <a class="reference internal image-reference" href="../_images/covid19_heatmaps.png"><img alt="Flight density maps" class="align-center" src="../_images/covid19_heatmaps.png" style="width: 750.4px; height: 431.9px;" />
 </a>
 <p>First download the data from the <a class="reference external" href="/opensky_impala.html">Impala shell</a> over your area of interest (ground trajectories are kept out of the dataset).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">opensky</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">opensky</span>
 
 <span class="c1"># Setting up the start and end times for the retrieval</span>
 <span class="c1"># This one is the pre-crisis day</span>
@@ -170,13 +170,13 @@ timestamps.</p>
 </pre></div>
 </div>
 <p>The <a class="reference external" href="/traffic.core.traffic.html#traffic.core.Traffic.agg_latlon">.agg_latlon()</a> methods returns a pandas DataFrame indexed by rounded latitude and longitude values. <a class="reference external" href="https://xarray.pydata.org/">.to_xarray()</a> require the <a class="reference external" href="https://xarray.pydata.org/">xarray</a> library (to be installed separately) which provides proper <a class="reference external" href="https://xarray.pydata.org/en/stable/plotting.html">plot methods</a> to add the heatmap to the maps.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">matplotlib.offsetbox</span> <span class="kn">import</span> <span class="n">AnchoredText</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">inset_axes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.offsetbox</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnchoredText</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.axes_grid1.inset_locator</span><span class="w"> </span><span class="kn">import</span> <span class="n">inset_axes</span>
 
-<span class="kn">from</span> <span class="nn">cartopy.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">PlateCarree</span>
-<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">ocean</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EuroPP</span><span class="p">,</span> <span class="n">PlateCarree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.utils.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">ocean</span>
 
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>

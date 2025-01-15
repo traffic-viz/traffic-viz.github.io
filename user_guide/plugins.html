@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to use and write plugins for the traffic library? &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>How to use and write plugins for the traffic library? &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -95,7 +95,7 @@ facilities for BlueSky or CesiumJS.</p>
 <section id="plugin-activation">
 <h2>Plugin activation<a class="headerlink" href="#plugin-activation" title="Link to this heading"></a></h2>
 <p>You may activate plugins in the configuration file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">traffic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
 <span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
 </pre></div>
@@ -119,9 +119,9 @@ activate:</p>
 </div>
 <p>The examples are provided using the data produced in the
 <a class="reference external" href="/quickstart.html">Quickstart</a> page.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">quickstart</span><span class="p">,</span> <span class="n">lfbo_tma</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">quickstart</span><span class="p">,</span> <span class="n">lfbo_tma</span>
 
-<span class="k">def</span> <span class="nf">landing_trajectory</span><span class="p">(</span><span class="n">flight</span><span class="p">:</span> <span class="s2">&quot;Flight&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">landing_trajectory</span><span class="p">(</span><span class="n">flight</span><span class="p">:</span> <span class="s2">&quot;Flight&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">flight</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;altitude&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10_000</span> <span class="ow">and</span>
         <span class="n">flight</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical_rate&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">500</span>
@@ -152,7 +152,7 @@ sample setup.py to register your plugin. Then edit the configuration file and
 add <cite>MyPlugin</cite> to the list of enabled plugins.</p>
 <p>You may then <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code> your plugin. Put the monkey-patching in
 an <code class="docutils literal notranslate"><span class="pre">_onload()</span></code> function that will be called if the plugin is enabled.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_traffic_plugin&quot;</span><span class="p">,</span>

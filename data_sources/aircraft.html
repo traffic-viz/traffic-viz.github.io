@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access aircraft information? &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>How to access aircraft information? &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -121,7 +121,7 @@ traffic lets you easily switch database to a file you would be able to provide.<
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.aircraft.</span></span><span class="sig-name descname"><span class="pre">Aircraft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.aircraft.Aircraft" title="Link to this definition"></a></dt>
 <dd><p>By default, the OpenSky aircraft database is downloaded from
 <a class="reference external" href="https://opensky-network.org/aircraft-database">https://opensky-network.org/aircraft-database</a></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">aircraft</span>
 </pre></div>
 </div>
 <p>The database can be manually downloaded or upgraded (the operation can take
@@ -202,7 +202,7 @@ information are based on the registration information.</p>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Tail</span></code></span></p>
 </dd>
 </dl>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">aircraft</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">aircraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">aircraft</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;F-GFKY&quot;</span><span class="p">)</span>
 <span class="go">Tail(icao24=&#39;391558&#39;, registration=&#39;F-GFKY&#39;, typecode=&#39;A320&#39;, flag=&#39;🇫🇷&#39;)</span>
 </pre></div>

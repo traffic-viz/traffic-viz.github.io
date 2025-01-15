@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impact of COVID-19 on worldwide aviation &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>Impact of COVID-19 on worldwide aviation &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -174,8 +174,8 @@ The underlying data is currently updated daily.</p>
 <section id="data-collection-and-preparation">
 <h2>Data collection and preparation<a class="headerlink" href="#data-collection-and-preparation" title="Link to this heading"></a></h2>
 <p>On the <a class="reference external" href="../opensky_impala.html">Impala shell</a>, a particular table contains flight lists with associated origin and destination airport. The data has been downloaded using the <a class="reference external" href="https://traffic-viz.github.io/opensky_impala.html#traffic.data.adsb.opensky_impala.Impala.flightlist">opensky.flightlist</a> method, curated, then aggregated with aircraft and flight number information before being published <a class="reference external" href="https://opensky-network.org/datasets/covid-19/">here</a>. Download the data and run the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">flightlist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;firstseen&quot;</span><span class="p">,</span> <span class="s2">&quot;lastseen&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">])</span>
@@ -184,8 +184,8 @@ The underlying data is currently updated daily.</p>
 </pre></div>
 </div>
 <p>We will select a few subset of airports for visualisation and build a specific table limited to these airports: the idea is to plot the number of departing aircraft per day for each of the following airports. The plot for airlines goes along the same idea.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
-<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
 
 <span class="n">airports_subset</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># Europe</span>
@@ -228,7 +228,7 @@ The underlying data is currently updated daily.</p>
 <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">full_chart</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="n">subset_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">full_chart</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="n">subset_name</span><span class="p">):</span>
 
     <span class="c1"># We have many airports, only pick a subset</span>
     <span class="n">chart</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to implement trajectory clustering? &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+  <title>How to implement trajectory clustering? &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/thebelab-helper.js"></script>
@@ -112,14 +112,14 @@ over Switzerland. The dataset contains flight trajectories over Switzerland on
 August 1st 2018, cleaned and resampled to one point every five seconds. The data
 is available as a basic import:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># see https://traffic-viz.github.io/samples.html if any issue on import</span>
-<span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">switzerland</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">switzerland</span>
 </pre></div>
 </div>
 <p>The full dataset of trajectories can be displayed on a basic Switzerland map.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
-<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CH1903</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.utils.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">())</span>
@@ -143,9 +143,9 @@ calling a <a class="reference external" href="https://scikit-learn.org/stable/mo
 method.</p>
 <p>If a fitted DBSCAN instance is passed in parameter, the predict() method can be
 called on new data.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CH1903</span>
 
 <span class="n">t_dbscan</span> <span class="o">=</span> <span class="n">t_unwrapped</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span>
     <span class="n">nb_samples</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
@@ -166,7 +166,7 @@ called on new data.</p>
 results with a Gaussian Mixture model for example. This model must be
 initialized with a number of components. We chose here 19 components to compare
 them with the result of the DBSCAN algorithm.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.mixture</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianMixture</span>
 
 <span class="n">t_gmm</span> <span class="o">=</span> <span class="n">t_unwrapped</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span>
     <span class="n">nb_samples</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
@@ -185,9 +185,9 @@ them with the result of the DBSCAN algorithm.</p>
 </div>
 <p>The following snippets visualises each trajectory cluster with a given color.
 Many outliers appear in shaded grey in the first quartet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span><span class="p">,</span> <span class="n">cycle</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">islice</span><span class="p">,</span> <span class="n">cycle</span>
 
-<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.utils.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span>
 
 <span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">t_dbscan</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
@@ -243,12 +243,12 @@ differently.</p>
 <img alt="_images/clustering_gmm.png" class="align-center" src="_images/clustering_gmm.png" />
 <p>The following map demonstrates how to use the <a class="reference external" href="traffic.core.traffic.html#traffic.core.Traffic.centroid">Traffic.centroid()</a> method, computed
 with the same parameters as the clustering.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">sample</span>
 
-<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">CH1903</span>
-<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
-<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
-<span class="kn">from</span> <span class="nn">traffic.visualize.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CH1903</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.utils.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">lakes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">airways</span><span class="p">,</span> <span class="n">navaids</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize.markers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">CH1903</span><span class="p">()))</span>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky history database? &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>How to access ADS-B data from OpenSky history database? &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -142,7 +142,7 @@ file. Edit the following lines of your configuration file.</p>
 <p>You can check the path to your configuration file here. The path is
 different according to OS versions so do not assume anything and check
 the contents of the variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">traffic</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">traffic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">traffic</span><span class="o">.</span><span class="n">config_file</span>
 <span class="go">PosixPath(&#39;/home/xo/.config/traffic/traffic.conf&#39;)</span>
 </pre></div>
@@ -247,7 +247,7 @@ to load.</p></li>
 <p>First, the <cite>opensky</cite> instance parses your configuration file upon import:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">opensky</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">opensky</span>
 </pre></div>
 </div>
 </div>
@@ -445,7 +445,7 @@ to load.</p></li>
 <ul>
 <li><p>based on transponder identifier (icao24):</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span>
     <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
@@ -460,8 +460,8 @@ to load.</p></li>
 </li>
 <li><p>based on geographical bounds:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">eurofirs</span>
-<span class="kn">from</span> <span class="nn">traffic.data.samples</span> <span class="kn">import</span> <span class="n">switzerland</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">eurofirs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">switzerland</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">opensky</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span>
     <span class="n">switzerland</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>Identifying Anomalies in past en-route Trajectories with Clustering and Anomaly Detection Methods &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -106,8 +106,8 @@ reproducibility concerns.</div>
 </div>
 <section id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Traffic</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="p">(</span>
     <span class="c1"># trajectories during the opening hours of the sector</span>
@@ -131,10 +131,10 @@ database</a>.</p>
 <p>First a <a class="reference external" href="../clustering.html">clustering</a> is applied to the dataset. The
 implementation of the specific clustering described in the paper is available on
 the following <a class="reference external" href="https://github.com/lbasora/sectflow">github repository</a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">Lambert93</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cartes.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Lambert93</span>
 
 <span class="c1"># pip install git+https://github.com/lbasora/sectflow</span>
-<span class="kn">from</span> <span class="nn">sectflow.clustering</span> <span class="kn">import</span> <span class="n">TrajClust</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sectflow.clustering</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrajClust</span>
 
 <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;log_altitude&quot;</span><span class="p">]</span>
 <span class="n">clustering</span> <span class="o">=</span> <span class="n">TrajClust</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
@@ -146,7 +146,7 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Color distribution by cluster</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">islice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">islice</span>
 
 <span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">t_cluster</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">color_cycle</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span>
@@ -155,11 +155,11 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 <span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">color_cycle</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">))</span>
 <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;#aaaaaa&quot;</span><span class="p">)</span>  <span class="c1"># color for outliers, if any</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">sample</span>
 
-<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airways</span><span class="p">,</span> <span class="n">aixm_airspaces</span>
-<span class="kn">from</span> <span class="nn">traffic.visualize.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airways</span><span class="p">,</span> <span class="n">aixm_airspaces</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize.markers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">atc_tower</span><span class="p">,</span> <span class="n">aircraft</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">Lambert93</span><span class="p">()))</span>
@@ -213,18 +213,18 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 <h2>Machine-Learning<a class="headerlink" href="#machine-learning" title="Link to this heading"></a></h2>
 <p>The anomaly detection method is based on a stacked autoencoder
 (<a class="reference external" href="https://pytorch.org/">PyTorch</a> implementation).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">optim</span><span class="p">,</span> <span class="n">from_numpy</span><span class="p">,</span> <span class="n">rand</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span><span class="p">,</span> <span class="n">optim</span><span class="p">,</span> <span class="n">from_numpy</span><span class="p">,</span> <span class="n">rand</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.autograd</span><span class="w"> </span><span class="kn">import</span> <span class="n">Variable</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">minmax_scale</span>
-<span class="kn">from</span> <span class="nn">tqdm.autonotebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">minmax_scale</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.autonotebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 
 
 <span class="c1"># Stacked autoencoder</span>
 
-<span class="k">class</span> <span class="nc">Autoencoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Autoencoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
@@ -233,7 +233,7 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span>  <span class="c1"># add some noise</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -241,7 +241,7 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 
 <span class="c1"># Regularisation term introduced in IV.B.2</span>
 
-<span class="k">def</span> <span class="nf">regularisation_term</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">regularisation_term</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">samples</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span>
@@ -250,7 +250,7 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 
 <span class="c1"># ML part</span>
 
-<span class="k">def</span> <span class="nf">anomalies</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">Traffic</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lambda_r</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">nb_it</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">anomalies</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">Traffic</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lambda_r</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">nb_it</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
 
     <span class="n">t_id</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cluster==</span><span class="si">{</span><span class="n">cluster_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -293,7 +293,7 @@ the following <a class="reference external" href="https://github.com/lbasora/sec
 <p>The following code plots the distribution of reconstruction errors without
 regularisation, resulting in two modes in the distribution. The <code class="docutils literal notranslate"><span class="pre">lambda_r</span></code>
 parameter helps reducing this trend.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">expon</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">expon</span>
 
 <span class="c1"># Equivalent of Fig. 4</span>
 

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantitative Assessments of Runway Excursion Precursors using Mode S data &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>Quantitative Assessments of Runway Excursion Precursors using Mode S data &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -108,9 +108,9 @@ reproducibility concerns.</div>
 <p>The dataset consists of one month of trajectories around Toulouse
 airport. The first step is to isolate trajectories landing. The
 following code is a suggestion to select such trajectories.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.autonotebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="kn">from</span> <span class="nn">traffic.core</span> <span class="kn">import</span> <span class="n">Traffic</span><span class="p">,</span> <span class="n">Flight</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.autonotebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Traffic</span><span class="p">,</span> <span class="n">Flight</span>
 
 <span class="n">february</span> <span class="o">=</span> <span class="n">Traffic</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;data/lfbo_february.pkl.gz&quot;</span><span class="p">)</span>
 
@@ -279,13 +279,13 @@ work. We use here navigational beacons in the official procedures. Only
 main navaids are provided by the data source embedded in the library: we
 add the coordinates manually and automate some plotting for following
 figures.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.core.mixins</span> <span class="kn">import</span> <span class="n">PointMixin</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.core.mixins</span><span class="w"> </span><span class="kn">import</span> <span class="n">PointMixin</span>
 
 
-<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">PointMixin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">PointMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This mixin provides the interface to plot the elements on maps.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="n">lat</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="n">lon</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -304,7 +304,7 @@ figures.</p>
 <span class="p">}</span>
 
 
-<span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="n">point_id</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span><span class="n">point_id</span><span class="p">):</span>
     <span class="n">left_side</span> <span class="o">=</span> <span class="n">point_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;BO610&quot;</span><span class="p">,</span> <span class="s2">&quot;32L&quot;</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="n">shift</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;dots&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=-</span><span class="mi">15</span> <span class="k">if</span> <span class="n">left_side</span> <span class="k">else</span> <span class="mi">15</span><span class="p">),</span>
@@ -316,7 +316,7 @@ figures.</p>
     <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">point_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;BO610&quot;</span><span class="p">,</span> <span class="s2">&quot;BO410&quot;</span><span class="p">,</span> <span class="s2">&quot;32L&quot;</span><span class="p">,</span> <span class="s2">&quot;32R&quot;</span><span class="p">]:</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">procedure_points</span><span class="p">[</span><span class="n">point_id</span><span class="p">]</span>
         <span class="n">value</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="n">params</span><span class="p">(</span><span class="n">point_id</span><span class="p">)))</span>
@@ -324,8 +324,8 @@ figures.</p>
 </div>
 <p>With the following map, we can position trajectories landing on QFU32 with
 respect to the above mentioned navigational beacons.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span>
-<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EuroPP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
@@ -352,10 +352,10 @@ from this beacons in order to get rid of trajectories seeming to have a
 wrong estimation of their position (probable drifting of the inertial
 navigation system). We eliminate a few more trajectories but consider it
 still acceptable for a statistical analysis.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pitot</span> <span class="kn">import</span> <span class="n">geodesy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pitot</span><span class="w"> </span><span class="kn">import</span> <span class="n">geodesy</span>
 
 
 <span class="n">cumul</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -487,11 +487,11 @@ still acceptable for a statistical analysis.</p>
         <th id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8level0_row9" class="row_heading level0 row9" >BGA121D_3023</th>
         <td id="T_c2b25be8_f2ff_11e8_baca_5d6bbe481fe8row9_col0" class="data row9 col0" >336</td>
     </tr></tbody>
-</table><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</table><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">cartopy.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span>
-<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
-<span class="kn">from</span> <span class="nn">traffic.visualize</span> <span class="kn">import</span> <span class="n">rivers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EuroPP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize</span><span class="w"> </span><span class="kn">import</span> <span class="n">rivers</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
@@ -539,8 +539,8 @@ to analyse their modes of variation. Here is the full dataset plotted.</p>
 <p>We resample all trajectories to 50 points and fit a (functional) PCA on
 the dataset. The following plot displays some modes of variation around
 the average signal.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
 
 <span class="c1"># Prepare a dataset of track angles on final approach</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span>
@@ -596,9 +596,9 @@ appears they follow a specific pattern of late runway changes.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy.crs</span> <span class="kn">import</span> <span class="n">EuroPP</span>
-<span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span>
-<span class="kn">from</span> <span class="nn">traffic.visualize</span> <span class="kn">import</span> <span class="n">rivers</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EuroPP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize</span><span class="w"> </span><span class="kn">import</span> <span class="n">rivers</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;traffic&#39;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>

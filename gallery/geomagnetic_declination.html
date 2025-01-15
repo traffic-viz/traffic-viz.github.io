@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geomagnetic declination &mdash; traffic 2.11.2.dev11+g61d4663.d20250112 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  <title>Geomagnetic declination &mdash; traffic 2.11.2.dev14+g8d320d5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
 
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bc7e9dbd"></script>
+      <script src="../_static/documentation_options.js?v=17d9d1d1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -148,13 +148,13 @@ not resample the trajectories prior to treatments. Let’s observe the granular 
 <span class="n">rwy</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">on_runway</span><span class="p">(</span><span class="s2">&quot;RJBB&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traffic.data</span> <span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">navaids</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span><span class="p">,</span> <span class="n">navaids</span>
 
-<span class="kn">from</span> <span class="nn">cartes.crs</span> <span class="kn">import</span> <span class="n">Mercator</span>
-<span class="kn">from</span> <span class="nn">cartes.utils.features</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">rivers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.crs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mercator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartes.utils.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">rivers</span>
 
-<span class="kn">from</span> <span class="nn">traffic.visualize</span> <span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">location</span>
-<span class="kn">from</span> <span class="nn">traffic.visualize.markers</span> <span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">aircraft</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize</span><span class="w"> </span><span class="kn">import</span> <span class="n">countries</span><span class="p">,</span> <span class="n">location</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">traffic.visualize.markers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rotate_marker</span><span class="p">,</span> <span class="n">aircraft</span>
 
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;traffic&quot;</span><span class="p">):</span>
@@ -199,7 +199,7 @@ not resample the trajectories prior to treatments. Let’s observe the granular 
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="kn">import</span> <span class="n">DateFormatter</span>
 
 <span class="n">center_15</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
 <span class="n">marker_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0b1111&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
