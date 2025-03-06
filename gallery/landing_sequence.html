@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing sequence &mdash; traffic 2.11.2.dev24+gb69e5c6 documentation</title>
+  <title>Landing sequence &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=589ba22a"></script>
+      <script src="../_static/documentation_options.js?v=91653849"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -247,7 +247,7 @@
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">landing_zurich_2019</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="s2">&quot;2019-10-15 10:10&quot;</span><span class="p">,</span> <span class="s2">&quot;2019-10-15 10:50&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;aligned_on_LSZH&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="s2">&quot;landing(&#39;LSZH&#39;)&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">go</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">index_</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
     <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;flight_id&quot;</span><span class="p">])</span>
     <span class="o">.</span><span class="n">summary</span><span class="p">([</span><span class="s2">&quot;callsign&quot;</span><span class="p">,</span> <span class="s2">&quot;ILS_max&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;stop&quot;</span><span class="p">,</span> <span class="s1">&#39;go_max&#39;</span><span class="p">])</span>

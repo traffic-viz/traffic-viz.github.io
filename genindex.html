@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; traffic 2.11.2.dev24+gb69e5c6 documentation</title>
+  <title>Index &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=589ba22a"></script>
+      <script src="_static/documentation_options.js?v=91653849"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/thebelab-helper.js"></script>
@@ -181,7 +181,13 @@
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport">Airport (class in traffic.core.structure)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph">AirportGraph (class in traffic.algorithms.ground.graphs)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.metadata.html#traffic.algorithms.metadata.airports.AirportInferenceBase">AirportInferenceBase (class in traffic.algorithms.metadata.airports)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportNamedTuple">AirportNamedTuple (class in traffic.core.structure)</a>
+</li>
+      <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportPoint">AirportPoint (class in traffic.core.structure)</a>
 </li>
       <li><a href="data_sources/airports.html#traffic.data.basic.airports.Airports">Airports (class in traffic.data.basic.airports)</a>
 </li>
@@ -189,12 +195,12 @@
 </li>
       <li><a href="data_sources/navigation.html#traffic.data.basic.airways.Airways">Airways (class in traffic.data.basic.airways)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_ils">aligned_on_ils() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned">aligned() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.aligned">(traffic.core.Traffic method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_navpoint">aligned_on_navpoint() (traffic.core.Flight method)</a>
-</li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.aligned_on_runway">aligned_on_runway() (traffic.core.Flight method)</a>
-</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.all">all() (traffic.core.Flight method)</a>
 
       <ul>
@@ -223,6 +229,12 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.apply_time">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.ApplyBase">ApplyBase (class in traffic.algorithms.navigation)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.ApplyIteratorBase">ApplyIteratorBase (class in traffic.algorithms.navigation)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.ApplyOptionalBase">ApplyOptionalBase (class in traffic.algorithms.navigation)</a>
+</li>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.area">area (traffic.core.Airspace property)</a>
 
       <ul>
@@ -265,6 +277,8 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment">BeaconTrackBearingAlignment (class in traffic.algorithms.navigation.alignment)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.before">before() (traffic.core.Flight method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.between">between() (traffic.core.Flight method)</a>
@@ -283,7 +297,9 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="navigation/generation.html#traffic.algorithms.generation.Generation.build_traffic">build_traffic() (traffic.algorithms.generation.Generation method)</a>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.buffer_meter">buffer_meter() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
+      <li><a href="statistical/generation.html#traffic.algorithms.generation.Generation.build_traffic">build_traffic() (traffic.algorithms.generation.Generation method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -331,6 +347,10 @@
 </li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.clustering">clustering() (traffic.core.Traffic method)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.aggressive.ClusteringParams">ClusteringParams (class in traffic.algorithms.filters.aggressive)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.components">components (traffic.algorithms.ground.graphs.AirportGraph property)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_DME_NSE">compute_DME_NSE() (traffic.core.Flight method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_latlon_from_xy">compute_latlon_from_xy() (traffic.core.Flight method)</a>
@@ -345,8 +365,6 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_navpoints">compute_navpoints() (traffic.core.Flight method)</a>
-</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_TAS">compute_TAS() (traffic.core.Flight method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.compute_wind">compute_wind() (traffic.core.Flight method)</a>
@@ -413,6 +431,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.DataFrameMixin">DataFrameMixin (class in traffic.core.mixins)</a>, <a href="data_sources/export.html#traffic.core.mixins.DataFrameMixin">[1]</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.aggressive.DerivativeParams">DerivativeParams (class in traffic.algorithms.filters.aggressive)</a>
+</li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.description">description (traffic.core.structure.Navaid attribute)</a>
 
       <ul>
@@ -433,8 +453,6 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.distance">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diversion">diversion() (traffic.core.Flight method)</a>
-</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.diverted">diverted (traffic.core.Flight property)</a>
 </li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.download_opensky">download_opensky() (traffic.data.basic.aircraft.Aircraft method)</a>
@@ -479,6 +497,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.emergency">emergency() (traffic.core.Flight method)</a>
 </li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.emission">emission() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.emission">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.end_time">end_time (traffic.core.Traffic attribute)</a>
 </li>
       <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic.eval">eval() (traffic.core.lazy.LazyTraffic method)</a>
@@ -489,6 +513,8 @@
       </ul></li>
       <li><a href="data_sources/opensky_db.html#traffic.data.adsb.opensky.OpenSky.extended">extended() (traffic.data.adsb.opensky.OpenSky method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.extent">extent (traffic.core.Airspace property)</a>
 
       <ul>
@@ -501,8 +527,6 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route.extent">(traffic.core.structure.Route property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.GeoDBMixin.extent">extent() (traffic.core.mixins.GeoDBMixin method)</a>
 
       <ul>
@@ -553,9 +577,17 @@
 </li>
       <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterBase">FilterBase (class in traffic.algorithms.filters)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.aggressive.FilterClustering">FilterClustering (class in traffic.algorithms.filters.aggressive)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.consistency.FilterConsistency">FilterConsistency (class in traffic.algorithms.filters.consistency)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.aggressive.FilterDerivative">FilterDerivative (class in traffic.algorithms.filters.aggressive)</a>
+</li>
       <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterMean">FilterMean (class in traffic.algorithms.filters)</a>
 </li>
       <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterMedian">FilterMedian (class in traffic.algorithms.filters)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.FilterPosition">FilterPosition (class in traffic.algorithms.filters)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.final">final() (traffic.core.Flight method)</a>
 
@@ -573,6 +605,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.fix_airport_graph">fix_airport_graph() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.flatten">flatten() (traffic.core.Airspace method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight">Flight (class in traffic.core)</a>
@@ -585,9 +619,13 @@
 </li>
       <li><a href="data_sources/opensky_db.html#traffic.data.adsb.opensky.OpenSky.flightlist">flightlist() (traffic.data.adsb.opensky.OpenSky method)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.phases.FlightPhasesOpenAP">FlightPhasesOpenAP (class in traffic.algorithms.navigation.phases)</a>
+</li>
       <li><a href="api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan">FlightPlan (class in traffic.core.flightplan)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.forward">forward() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.metadata.html#traffic.algorithms.metadata.flightplan.FlightPlanBase">FlightPlanBase (class in traffic.algorithms.metadata.flightplan)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.metadata.html#traffic.algorithms.metadata.flightplan.FlightPlanInference">FlightPlanInference (class in traffic.algorithms.metadata.flightplan)</a>
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.frequency">frequency (traffic.core.structure.Navaid attribute)</a>
 
@@ -617,7 +655,13 @@
 </li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.LatLonDict.fromkeys">fromkeys() (traffic.core.mixins.LatLonDict method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.fuelflow">fuelflow() (traffic.core.Flight method)</a>, <a href="navigation/fuel_burn.html#traffic.core.Flight.fuelflow">[1]</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.fuelflow">fuelflow() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.fuelflow">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.algorithms.performance.html#traffic.algorithms.performance.openap.FuelflowEstimation">FuelflowEstimation (class in traffic.algorithms.performance.openap)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -625,7 +669,7 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="navigation/generation.html#traffic.algorithms.generation.Generation">Generation (class in traffic.algorithms.generation)</a>
+      <li><a href="statistical/generation.html#traffic.algorithms.generation.Generation">Generation (class in traffic.algorithms.generation)</a>
 </li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.generation">generation() (traffic.core.Traffic method)</a>
 </li>
@@ -677,9 +721,15 @@
         <li><a href="data_sources/navigation.html#traffic.data.basic.navaid.Navaids.get">(traffic.data.basic.navaid.Navaids method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.go_around">go_around() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.thermals.GliderThermal">GliderThermal (class in traffic.algorithms.navigation.thermals)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.ground_trajectory">ground_trajectory() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.go_around">go_around() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.go_around">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.go_around.GoAroundDetection">GoAroundDetection (class in traffic.algorithms.navigation.go_around)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.groupby">groupby() (traffic.core.Flight method)</a>
 
@@ -716,9 +766,11 @@
       <li><a href="data_sources/opensky_db.html#traffic.data.adsb.opensky.OpenSky.history">history() (traffic.data.adsb.opensky.OpenSky method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.holding_pattern">holding_pattern() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.holding_pattern">(traffic.core.Traffic method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.holes">holes (traffic.core.Flight property)</a>
-</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -753,8 +805,12 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.index">(traffic.core.structure.NavaidTuple method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.infer_airport">infer_airport() (traffic.core.Flight method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.infer_flightplan">infer_flightplan() (traffic.core.Flight method)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.inside_bbox">inside_bbox() (traffic.core.Flight method)</a>
 
       <ul>
@@ -762,6 +818,8 @@
 </li>
       </ul></li>
       <li><a href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.intersection">intersection() (traffic.core.intervals.IntervalCollection method)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.intersection_with_flight">intersection_with_flight() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.intersects">intersects() (traffic.core.Flight method)</a>
 </li>
@@ -781,6 +839,14 @@
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.kalman.KalmanFilter6D">KalmanFilter6D (class in traffic.algorithms.filters.kalman)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.kalman.KalmanSmoother6D">KalmanSmoother6D (class in traffic.algorithms.filters.kalman)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.kalman_taxiway.KalmanTaxiway">KalmanTaxiway (class in traffic.algorithms.ground.kalman_taxiway)</a>
+</li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.LatLonDict.keys">keys() (traffic.core.mixins.LatLonDict method)</a>
 </li>
   </ul></td>
@@ -791,15 +857,25 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.label">label() (traffic.core.Flight method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_airport">landing_airport() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing">landing() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.landing">(traffic.core.Traffic method)</a>
 </li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_at">landing_at() (traffic.core.Flight method)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.landing_at">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.landing_attempts">landing_attempts() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.metadata.html#traffic.algorithms.metadata.airports.LandingAirportInference">LandingAirportInference (class in traffic.algorithms.metadata.airports)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingAlignedOnILS">LandingAlignedOnILS (class in traffic.algorithms.navigation.landing)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingAnyAttempt">LandingAnyAttempt (class in traffic.algorithms.navigation.landing)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingWithRunwayChange">LandingWithRunwayChange (class in traffic.algorithms.navigation.landing)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.last">last() (traffic.core.Flight method)</a>
 
@@ -817,24 +893,32 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.latitude">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.latlon">latlon (traffic.core.structure.Airport property)</a>
+      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.PointMixin.latlon">latlon (traffic.core.mixins.PointMixin property)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.latlon">(traffic.core.structure.Airport property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportPoint.latlon">(traffic.core.structure.AirportPoint property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.latlon">(traffic.core.structure.Navaid property)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.latlon_dict">latlon_dict (traffic.core.structure.Airport property)</a>
+      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.PointMixin.latlon_dict">latlon_dict (traffic.core.mixins.PointMixin property)</a>
 
       <ul>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.latlon_dict">(traffic.core.structure.Airport property)</a>
+</li>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportPoint.latlon_dict">(traffic.core.structure.AirportPoint property)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.latlon_dict">(traffic.core.structure.Navaid property)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.LatLonDict">LatLonDict (class in traffic.core.mixins)</a>
 </li>
       <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.lazy_evaluation">lazy_evaluation() (in module traffic.core.lazy)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.lazy.html#traffic.core.lazy.LazyTraffic">LazyTraffic (class in traffic.core.lazy)</a>
 </li>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.leaflet">leaflet() (traffic.core.Airspace method)</a>
@@ -844,7 +928,11 @@
 </li>
         <li><a href="api_reference/traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan.leaflet">(traffic.core.flightplan.FlightPlan method)</a>
 </li>
+        <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.PointMixin.leaflet">(traffic.core.mixins.PointMixin method)</a>
+</li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.leaflet">(traffic.core.structure.Airport method)</a>
+</li>
+        <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.AirportPoint.leaflet">(traffic.core.structure.AirportPoint method)</a>
 </li>
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Navaid.leaflet">(traffic.core.structure.Navaid method)</a>
 </li>
@@ -893,7 +981,17 @@
         <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.NavaidTuple.magnetic_variation">(traffic.core.structure.NavaidTuple attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.make_parts">make_parts() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
       <li><a href="api_reference/traffic.core.iterator.html#traffic.core.FlightIterator.map">map() (traffic.core.FlightIterator method)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.map_flight">map_flight() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.map_leaflet">map_leaflet() (traffic.core.Flight method)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.marker_edge">marker_edge() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.marker_node">marker_node() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.max">max() (traffic.core.Flight method)</a>
 
@@ -923,8 +1021,8 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.merge">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.merge_duplicate_nodes">merge_duplicate_nodes() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.min">min() (traffic.core.Flight method)</a>
 
       <ul>
@@ -933,6 +1031,8 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.distance.html#traffic.core.distance.minimal_angular_difference">minimal_angular_difference() (in module traffic.core.distance)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.holding_pattern.MLHoldingDetection">MLHoldingDetection (class in traffic.algorithms.navigation.holding_pattern)</a>
+</li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.model">model() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
       <li>
@@ -940,6 +1040,50 @@
 
       <ul>
         <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters">traffic.algorithms.filters</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.aggressive">traffic.algorithms.filters.aggressive</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.consistency">traffic.algorithms.filters.consistency</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.kalman">traffic.algorithms.filters.kalman</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.graphs">traffic.algorithms.ground.graphs</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.kalman_taxiway">traffic.algorithms.ground.kalman_taxiway</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.movement">traffic.algorithms.ground.movement</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.parking_position">traffic.algorithms.ground.parking_position</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.pushback">traffic.algorithms.ground.pushback</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.runway">traffic.algorithms.ground.runway</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.metadata.html#module-traffic.algorithms.metadata.airports">traffic.algorithms.metadata.airports</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.metadata.html#module-traffic.algorithms.metadata.flightplan">traffic.algorithms.metadata.flightplan</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation">traffic.algorithms.navigation</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.alignment">traffic.algorithms.navigation.alignment</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.go_around">traffic.algorithms.navigation.go_around</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.holding_pattern">traffic.algorithms.navigation.holding_pattern</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.landing">traffic.algorithms.navigation.landing</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.phases">traffic.algorithms.navigation.phases</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.point_merge">traffic.algorithms.navigation.point_merge</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.takeoff">traffic.algorithms.navigation.takeoff</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.thermals">traffic.algorithms.navigation.thermals</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.performance.html#module-traffic.algorithms.performance.openap">traffic.algorithms.performance.openap</a>
+</li>
+        <li><a href="api_reference/traffic.algorithms.prediction.html#module-traffic.algorithms.prediction.straightline">traffic.algorithms.prediction.straightline</a>
 </li>
         <li><a href="api_reference/traffic.core.distance.html#module-traffic.core.distance">traffic.core.distance</a>
 </li>
@@ -958,7 +1102,15 @@
         <li><a href="data_sources/decode.html#module-traffic.data.adsb.decode">traffic.data.adsb.decode</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.moving">moving() (traffic.core.Flight method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.movement">movement() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.movement">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.movement.mrr_diagonal">mrr_diagonal() (in module traffic.algorithms.ground.movement)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1000,16 +1152,10 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_parking_position">on_parking_position() (traffic.core.Flight method)</a>
-</li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_runway">on_runway() (traffic.core.Flight method)</a>
-</li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.on_taxiway">on_taxiway() (traffic.core.Flight method)</a>
+      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.operator">operator() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.operator">operator() (traffic.data.basic.aircraft.Aircraft method)</a>
-</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.origin">origin (traffic.core.Flight property)</a>
 </li>
       <li><a href="api_reference/traffic.core.intervals.html#traffic.core.intervals.Interval.overlap">overlap() (traffic.core.intervals.Interval method)</a>
@@ -1020,6 +1166,18 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.parking_position">parking_position() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.parking_position">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.pushback.ParkingAreaBasedPushback">ParkingAreaBasedPushback (class in traffic.algorithms.ground.pushback)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.pushback.ParkingPositionBasedPushback">ParkingPositionBasedPushback (class in traffic.algorithms.ground.pushback)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection">ParkingPositionGeometricIntersection (class in traffic.algorithms.ground.parking_position)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.phases">phases() (traffic.core.Flight method)</a>
 
       <ul>
@@ -1052,13 +1210,37 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.plot_wind">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.point_merge">point_merge() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.point_merge">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.point_merge">point_merge() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.point_merge.PointMerge">PointMerge (class in traffic.algorithms.navigation.point_merge)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.point_merge.PointMergeParams">PointMergeParams (class in traffic.algorithms.navigation.point_merge)</a>
+</li>
+      <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.PointMixin">PointMixin (class in traffic.core.mixins)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.performance.html#traffic.algorithms.performance.openap.PollutantEstimation">PollutantEstimation (class in traffic.algorithms.performance.openap)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection">PolygonBasedRunwayDetection (class in traffic.algorithms.navigation.takeoff)</a>
 </li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.LatLonDict.pop">pop() (traffic.core.mixins.LatLonDict method)</a>
 </li>
       <li><a href="api_reference/traffic.core.mixins.html#traffic.core.mixins.LatLonDict.popitem">popitem() (traffic.core.mixins.LatLonDict method)</a>
+</li>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.predict">predict() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.predict">(traffic.core.Traffic method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.kalman.ProcessXYFilterBase">ProcessXYFilterBase (class in traffic.algorithms.filters.kalman)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.kalman.ProcessXYZFilterBase">ProcessXYZFilterBase (class in traffic.algorithms.filters.kalman)</a>
 </li>
       <li><a href="api_reference/traffic.core.airspace.html#traffic.core.Airspace.project_shape">project_shape() (traffic.core.Airspace method)</a>
 
@@ -1075,7 +1257,11 @@
       <li><a href="api_reference/traffic.core.cache.html#traffic.core.cache.property_cache">property_cache() (in module traffic.core.cache)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.pushback">pushback() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.pushback">(traffic.core.Traffic method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1176,7 +1362,7 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Route">Route (class in traffic.core.structure)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.runway_change">runway_change() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.runway.RunwayAlignment">RunwayAlignment (class in traffic.algorithms.ground.runway)</a>
 </li>
       <li><a href="api_reference/traffic.core.structure.html#traffic.core.structure.Airport.runways">runways (traffic.core.structure.Airport property)</a>
 </li>
@@ -1186,7 +1372,7 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="navigation/generation.html#traffic.algorithms.generation.Generation.sample">sample() (traffic.algorithms.generation.Generation method)</a>
+      <li><a href="statistical/generation.html#traffic.algorithms.generation.Generation.sample">sample() (traffic.algorithms.generation.Generation method)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.sample">(traffic.core.Traffic method)</a>
@@ -1248,7 +1434,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.skip">skip() (traffic.core.Flight method)</a>
 </li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.slow_taxi">slow_taxi() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.snap_and_split">snap_and_split() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.sort_values">sort_values() (traffic.core.Flight method)</a>
 
@@ -1266,17 +1452,23 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.split">split() (traffic.core.Flight method)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.graphs.AirportGraph.split_line_based_on_point">split_line_based_on_point() (traffic.algorithms.ground.graphs.AirportGraph method)</a>
+</li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.squawk">squawk (traffic.core.Flight property)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.start">start (traffic.core.Flight property)</a>
 </li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.start_time">start_time (traffic.core.Traffic attribute)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.ground.html#traffic.algorithms.ground.movement.StartMoving">StartMoving (class in traffic.algorithms.ground.movement)</a>
+</li>
       <li><a href="api_reference/traffic.core.sv.html#traffic.core.sv.StateVectors">StateVectors (class in traffic.core.sv)</a>
 </li>
       <li><a href="data_sources/aircraft.html#traffic.data.basic.aircraft.Aircraft.stats">stats() (traffic.data.basic.aircraft.Aircraft method)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.stop">stop (traffic.core.Flight property)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.prediction.html#traffic.algorithms.prediction.straightline.StraightLinePredict">StraightLinePredict (class in traffic.algorithms.prediction.straightline)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.sum">sum() (traffic.core.Flight method)</a>
 
@@ -1296,15 +1488,19 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_airport">takeoff_airport() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff">takeoff() (traffic.core.Flight method)</a>
+
+      <ul>
+        <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.takeoff">(traffic.core.Traffic method)</a>
 </li>
+      </ul></li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_from">takeoff_from() (traffic.core.Flight method)</a>
 
       <ul>
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.takeoff_from">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.takeoff_from_runway">takeoff_from_runway() (traffic.core.Flight method)</a>
+      <li><a href="api_reference/traffic.algorithms.metadata.html#traffic.algorithms.metadata.airports.TakeoffAirportInference">TakeoffAirportInference (class in traffic.algorithms.metadata.airports)</a>
 </li>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.thermals">thermals() (traffic.core.Flight method)</a>
 </li>
@@ -1380,8 +1576,6 @@
         <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic.to_json">(traffic.core.Traffic method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/traffic.core.flight.html#traffic.core.Flight.to_parquet">to_parquet() (traffic.core.Flight method)</a>
 
       <ul>
@@ -1412,6 +1606,10 @@
       </ul></li>
       <li><a href="api_reference/traffic.core.intervals.html#traffic.core.intervals.IntervalCollection.total_duration">total_duration() (traffic.core.intervals.IntervalCollection method)</a>
 </li>
+      <li><a href="api_reference/traffic.algorithms.navigation.html#traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection">TrackBasedRunwayDetection (class in traffic.algorithms.navigation.takeoff)</a>
+</li>
+      <li><a href="api_reference/traffic.algorithms.filters.html#traffic.algorithms.filters.kalman.TrackVariable">TrackVariable (class in traffic.algorithms.filters.kalman)</a>
+</li>
       <li><a href="api_reference/traffic.core.traffic.html#traffic.core.Traffic">Traffic (class in traffic.core)</a>
 </li>
       <li>
@@ -1419,6 +1617,162 @@
 
       <ul>
         <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.filters.aggressive
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.aggressive">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.filters.consistency
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.consistency">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    traffic.algorithms.filters.kalman
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.filters.html#module-traffic.algorithms.filters.kalman">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.graphs
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.graphs">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.kalman_taxiway
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.kalman_taxiway">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.movement
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.movement">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.parking_position
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.parking_position">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.pushback
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.pushback">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.ground.runway
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.ground.html#module-traffic.algorithms.ground.runway">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.metadata.airports
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.metadata.html#module-traffic.algorithms.metadata.airports">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.metadata.flightplan
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.metadata.html#module-traffic.algorithms.metadata.flightplan">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.alignment
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.alignment">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.go_around
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.go_around">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.holding_pattern
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.holding_pattern">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.landing
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.landing">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.phases
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.phases">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.point_merge
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.point_merge">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.takeoff
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.takeoff">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.navigation.thermals
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.navigation.html#module-traffic.algorithms.navigation.thermals">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.performance.openap
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.performance.html#module-traffic.algorithms.performance.openap">module</a>
+</li>
+      </ul></li>
+      <li>
+    traffic.algorithms.prediction.straightline
+
+      <ul>
+        <li><a href="api_reference/traffic.algorithms.prediction.html#module-traffic.algorithms.prediction.straightline">module</a>
 </li>
       </ul></li>
       <li>

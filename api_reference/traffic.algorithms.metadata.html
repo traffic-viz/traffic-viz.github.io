@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>traffic.algorithms.metadata &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=91653849"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="traffic.algorithms.navigation" href="traffic.algorithms.navigation.html" />
+    <link rel="prev" title="traffic.algorithms.ground" href="traffic.algorithms.ground.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            traffic
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.intervals.html">traffic.core.intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.filters.html">traffic.algorithms.filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.ground.html">traffic.algorithms.ground</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.algorithms.metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.metadata.airports">Airport detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.metadata.airports.AirportInferenceBase"><code class="docutils literal notranslate"><span class="pre">AirportInferenceBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.metadata.airports.LandingAirportInference"><code class="docutils literal notranslate"><span class="pre">LandingAirportInference</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.metadata.airports.TakeoffAirportInference"><code class="docutils literal notranslate"><span class="pre">TakeoffAirportInference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.metadata.flightplan">Flight plan inference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.metadata.flightplan.FlightPlanBase"><code class="docutils literal notranslate"><span class="pre">FlightPlanBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.metadata.flightplan.FlightPlanInference"><code class="docutils literal notranslate"><span class="pre">FlightPlanInference</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.navigation.html">traffic.algorithms.navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.performance.html">traffic.algorithms.performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.prediction.html">traffic.algorithms.prediction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api_reference.html">API reference</a></li>
+      <li class="breadcrumb-item active">traffic.algorithms.metadata</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_reference/traffic.algorithms.metadata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="traffic-algorithms-metadata">
+<h1>traffic.algorithms.metadata<a class="headerlink" href="#traffic-algorithms-metadata" title="Link to this heading"></a></h1>
+<p>This module is about the inference of common metadata that is usually
+accessible on closed sources of information, but lacking in ADS-B data.</p>
+<p>Classes here provide information about origin and destination airports, runways,
+possible diversions and emergency situations.</p>
+<section id="module-traffic.algorithms.metadata.airports">
+<span id="airport-detection"></span><h2>Airport detection<a class="headerlink" href="#module-traffic.algorithms.metadata.airports" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.metadata.airports.AirportInferenceBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.metadata.airports.</span></span><span class="sig-name descname"><span class="pre">AirportInferenceBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.metadata.airports.AirportInferenceBase" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.metadata.airports.LandingAirportInference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.metadata.airports.</span></span><span class="sig-name descname"><span class="pre">LandingAirportInference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.metadata.airports.LandingAirportInference" title="Link to this definition"></a></dt>
+<dd><p>Returns the most probable landing airport based on the last location
+in the trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;landing&quot;</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;EHAM&#39;, iata=&#39;AMS&#39;, name=&#39;Amsterdam Airport Schiphol&#39;, ...)</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2018-05-30 20:00&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;landing&quot;</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;NL-0092&#39;, name=&#39;De Kreupel Helipad&#39;, ...)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;landing&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;EHAM&#39;, iata=&#39;AMS&#39;, name=&#39;Amsterdam Airport Schiphol&#39;, ...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.metadata.airports.TakeoffAirportInference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.metadata.airports.</span></span><span class="sig-name descname"><span class="pre">TakeoffAirportInference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.metadata.airports.TakeoffAirportInference" title="Link to this definition"></a></dt>
+<dd><p>Returns the most probable takeoff airport based on the first location
+in the trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;takeoff&quot;</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;EHAM&#39;, iata=&#39;AMS&#39;, name=&#39;Amsterdam Airport Schiphol&#39;, ...)</span>
+</pre></div>
+</div>
+<p>When data is missing near the ground, it may be relevant
+to specify a subset of airports as a keyword parameter.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="s2">&quot;2018-05-30 15:30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;takeoff&quot;</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;NL-0114&#39;, name=&#39;Netherlands Traffic Center Heliport&#39;, ...)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">large_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;large_airport&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing_data</span><span class="o">.</span><span class="n">infer_airport</span><span class="p">(</span><span class="s2">&quot;takeoff&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">large_airports</span><span class="p">)</span>
+<span class="go">Airport(icao=&#39;EHAM&#39;, iata=&#39;AMS&#39;, name=&#39;Amsterdam Airport Schiphol&#39;, ...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.metadata.flightplan">
+<span id="flight-plan-inference"></span><h2>Flight plan inference<a class="headerlink" href="#module-traffic.algorithms.metadata.flightplan" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.metadata.flightplan.FlightPlanBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.metadata.flightplan.</span></span><span class="sig-name descname"><span class="pre">FlightPlanBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.metadata.flightplan.FlightPlanBase" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.metadata.flightplan.FlightPlanInference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.metadata.flightplan.</span></span><span class="sig-name descname"><span class="pre">FlightPlanInference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">navaids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.metadata.flightplan.FlightPlanInference" title="Link to this definition"></a></dt>
+<dd><p>This functions recomputes the most probable alignments on navigational
+points on the trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>navaid</strong> – <p>By default, all navaids of the default database are
+considered, but limited to a buffered bounding box around the trajectory.</p>
+<p>It should be good practice to limit the size of the navaid dataset: the
+smaller the data, the faster the computation will be.</p>
+</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">navaids</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">savan</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span> <span class="o">=</span> <span class="n">savan</span><span class="p">[</span><span class="s2">&quot;SAVAN01&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vor</span> <span class="o">=</span> <span class="n">navaids</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;VOR&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">infer_flightplan</span><span class="p">(</span><span class="n">vor</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;aligned on </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">navaid</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">) for </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">duration</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">aligned on CFA (VOR) for 0 days 00:21:19</span>
+<span class="go">aligned on POI (VOR) for 0 days 00:15:42</span>
+<span class="go">aligned on CAN (VOR) for 0 days 00:14:38</span>
+<span class="go">aligned on DPE (VOR) for 0 days 00:16:19</span>
+<span class="go">aligned on CHW (VOR) for 0 days 00:15:45</span>
+<span class="go">aligned on BRY (VOR) for 0 days 00:19:27</span>
+</pre></div>
+</div>
+<p>For more insights about this example:
+<a class="reference internal" href="../gallery/savan.html#calibration-flights-with-savan-trajectories"><span class="std std-ref">Calibration flights with SAVAN trajectories</span></a></p>
+<p>Once computed, the following Altair snippet may be useful to display the
+trajectory as a succession of segments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+
+<span class="n">segments</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X2</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;navaid&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Navigational point&quot;</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">([</span><span class="s2">&quot;navaid&quot;</span><span class="p">,</span> <span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;shift_mean&quot;</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
+        <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
+        <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="traffic.algorithms.ground.html" class="btn btn-neutral float-left" title="traffic.algorithms.ground" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="traffic.algorithms.navigation.html" class="btn btn-neutral float-right" title="traffic.algorithms.navigation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Xavier Olive.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-RMZC6Q4BEG"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-RMZC6Q4BEG");
+</script>
+
+
+
+</body>
+</html>

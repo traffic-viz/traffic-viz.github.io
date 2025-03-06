@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User guide &mdash; traffic 2.11.2.dev24+gb69e5c6 documentation</title>
+  <title>User guide &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=589ba22a"></script>
+      <script src="_static/documentation_options.js?v=91653849"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/thebelab-helper.js"></script>
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How to access sample trajectories?" href="data_sources/samples.html" />
-    <link rel="prev" title="How to select go-arounds from a set of trajectories?" href="navigation/go_around.html" /> 
+    <link rel="prev" title="Tutorial sessions" href="tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -88,13 +88,18 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation/flight_phases.html">How to find flight phases on a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation/go_around.html">How to select go-arounds from a set of trajectories?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation/runway_changes.html">How to select runway changes from a set of trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation/holding_pattern.html">How to detect holding patterns in aircraft trajectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation/point_merge.html">How to implement point-merge detection?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation/top_of_climb.html">How to compute the top of climb/top of descent of a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#statistical-analysis">Statistical analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="clustering.html">How to implement trajectory clustering?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistical/occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistical/clustering.html">How to implement trajectory clustering?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistical/generation.html">How to implement trajectory generation?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistical/cpa.html">How to implement closest point of approach?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
@@ -204,6 +209,8 @@ sharing your experience with the library where it is the less documented.</div>
 <li class="toctree-l1"><a class="reference internal" href="navigation/flight_phases.html">How to find flight phases on a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation/go_around.html">How to select go-arounds from a set of trajectories?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation/runway_changes.html">How to select runway changes from a set of trajectories?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation/holding_pattern.html">How to detect holding patterns in aircraft trajectories?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation/point_merge.html">How to implement point-merge detection?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation/top_of_climb.html">How to compute the top of climb/top of descent of a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation/flight_plan.html">How to infer a flight plan from a trajectory?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation/fuel_burn.html">How to estimate the fuel burnt by an aircraft?</a></li>
@@ -214,7 +221,10 @@ sharing your experience with the library where it is the less documented.</div>
 <h2>Statistical analysis<a class="headerlink" href="#statistical-analysis" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="clustering.html">How to implement trajectory clustering?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical/occupancy.html">How to compute an occupancy graph?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical/clustering.html">How to implement trajectory clustering?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical/generation.html">How to implement trajectory generation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical/cpa.html">How to implement closest point of approach?</a></li>
 </ul>
 </div>
 </section>
@@ -235,7 +245,7 @@ sharing your experience with the library where it is the less documented.</div>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="navigation/go_around.html" class="btn btn-neutral float-left" title="How to select go-arounds from a set of trajectories?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Tutorial sessions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="data_sources/samples.html" class="btn btn-neutral float-right" title="How to access sample trajectories?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

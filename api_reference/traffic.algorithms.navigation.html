@@ -1,0 +1,621 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>traffic.algorithms.navigation &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/main_stylesheet.css?v=c6a171fe" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=91653849"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="traffic.algorithms.performance" href="traffic.algorithms.performance.html" />
+    <link rel="prev" title="traffic.algorithms.metadata" href="traffic.algorithms.metadata.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            traffic
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.airspace.html">traffic.core.airspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.cache.html">traffic.core.cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.distance.html">traffic.core.distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flight.html">traffic.core.flight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.flightplan.html">traffic.core.flightplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.intervals.html">traffic.core.intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.iterator.html">traffic.core.iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.lazy.html">traffic.core.lazy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.structure.html">traffic.core.structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.sv.html">traffic.core.sv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.time.html">traffic.core.time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.core.traffic.html">traffic.core.traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.filters.html">traffic.algorithms.filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.ground.html">traffic.algorithms.ground</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.metadata.html">traffic.algorithms.metadata</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.algorithms.navigation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.alignment">Alignment detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment"><code class="docutils literal notranslate"><span class="pre">BeaconTrackBearingAlignment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.go_around">Go-around detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.go_around.GoAroundDetection"><code class="docutils literal notranslate"><span class="pre">GoAroundDetection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.landing">Landing detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.landing.LandingAlignedOnILS"><code class="docutils literal notranslate"><span class="pre">LandingAlignedOnILS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.landing.LandingAnyAttempt"><code class="docutils literal notranslate"><span class="pre">LandingAnyAttempt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.landing.LandingWithRunwayChange"><code class="docutils literal notranslate"><span class="pre">LandingWithRunwayChange</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.phases">Flight phase detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.phases.FlightPhasesOpenAP"><code class="docutils literal notranslate"><span class="pre">FlightPhasesOpenAP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.holding_pattern">Holding pattern detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.holding_pattern.MLHoldingDetection"><code class="docutils literal notranslate"><span class="pre">MLHoldingDetection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.point_merge">Point-merge detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.point_merge.PointMerge"><code class="docutils literal notranslate"><span class="pre">PointMerge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.point_merge.PointMergeParams"><code class="docutils literal notranslate"><span class="pre">PointMergeParams</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.takeoff">Take-off detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection"><code class="docutils literal notranslate"><span class="pre">PolygonBasedRunwayDetection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection"><code class="docutils literal notranslate"><span class="pre">TrackBasedRunwayDetection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation.thermals">Bonus: Thermals detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.thermals.GliderThermal"><code class="docutils literal notranslate"><span class="pre">GliderThermal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-traffic.algorithms.navigation">Protocols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.ApplyBase"><code class="docutils literal notranslate"><span class="pre">ApplyBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.ApplyIteratorBase"><code class="docutils literal notranslate"><span class="pre">ApplyIteratorBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.algorithms.navigation.ApplyOptionalBase"><code class="docutils literal notranslate"><span class="pre">ApplyOptionalBase</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.performance.html">traffic.algorithms.performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.prediction.html">traffic.algorithms.prediction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">traffic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api_reference.html">API reference</a></li>
+      <li class="breadcrumb-item active">traffic.algorithms.navigation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_reference/traffic.algorithms.navigation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="traffic-algorithms-navigation">
+<h1>traffic.algorithms.navigation<a class="headerlink" href="#traffic-algorithms-navigation" title="Link to this heading"></a></h1>
+<section id="module-traffic.algorithms.navigation.alignment">
+<span id="alignment-detection"></span><h2>Alignment detection<a class="headerlink" href="#module-traffic.algorithms.navigation.alignment" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.alignment.</span></span><span class="sig-name descname"><span class="pre">BeaconTrackBearingAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2</span> <span class="pre">min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment" title="Link to this definition"></a></dt>
+<dd><p>Iterates on segments of trajectories aligned with one of the given
+navigational beacons passed in parameter.</p>
+<p>The name of the navigational beacon is assigned in a new column
+<cite>navaid</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code></a>[<a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a>], <a class="reference internal" href="traffic.core.flightplan.html#traffic.core.flightplan.FlightPlan" title="traffic.core.flightplan.FlightPlan"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code></a>]</span>) – a set of point or identifiers constituting the flight plan.
+A <code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlan</span></code> structure can also be provided.</p></li>
+<li><p><strong>angle_precision</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – in degrees. The difference between the track angle
+and the bearing with respect to the point must be less than this
+threshold.</p></li>
+<li><p><strong>time_precision</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The maximum time interval during which the difference
+between the angles can exceed the threshold.</p></li>
+<li><p><strong>min_time</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – Only segments with a duration of at least <code class="docutils literal notranslate"><span class="pre">min_time</span></code>
+will be yielded.</p></li>
+<li><p><strong>min_distance</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – The minimal distance to a given point must be above the
+<code class="docutils literal notranslate"><span class="pre">min_distance</span></code> value to be returned.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">navaids</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">elal747</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">subset</span> <span class="o">=</span> <span class="n">elal747</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;2h30min&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s2">&quot;2h30min&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">subset</span><span class="o">.</span><span class="n">aligned</span><span class="p">([</span><span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;KAVOS&#39;</span><span class="p">],</span> <span class="n">navaids</span><span class="p">[</span><span class="s1">&#39;PEDER&#39;</span><span class="p">]]):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;aligned on </span><span class="si">{</span><span class="n">segment</span><span class="o">.</span><span class="n">navaid_max</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">segment</span><span class="o">.</span><span class="n">duration</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">aligned on KAVOS for 0 days 00:07:00</span>
+<span class="go">aligned on PEDER for 0 days 00:05:40</span>
+</pre></div>
+</div>
+<p>See also: <a class="reference internal" href="../navigation/flight_plan.html#how-to-infer-a-flight-plan-from-a-trajectory"><span class="std std-ref">How to infer a flight plan from a trajectory?</span></a></p>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.go_around">
+<span id="go-around-detection"></span><h2>Go-around detection<a class="headerlink" href="#module-traffic.algorithms.navigation.go_around" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.go_around.GoAroundDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.go_around.</span></span><span class="sig-name descname"><span class="pre">GoAroundDetection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.go_around.GoAroundDetection" title="Link to this definition"></a></dt>
+<dd><p>Detects go-arounds.</p>
+<p>The method yields pieces of trajectories with exactly two landing attempts
+(aligned on one runway) on the same airport separated by exactly one
+climbing phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – If None, the method tries to guess the landing airport
+based on the <code class="docutils literal notranslate"><span class="pre">dataset</span></code> parameter. (see
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">landing_airport()</span></code>)</p></li>
+<li><p><strong>dataset</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="../data_sources/airports.html#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a>]</span>) – database of candidate airports, only used if <code class="docutils literal notranslate"><span class="pre">airport</span></code>
+is None</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>See also:</strong> <a class="reference internal" href="../navigation/go_around.html#how-to-select-go-arounds-from-a-set-of-trajectories"><span class="std std-ref">How to select go-arounds from a set of trajectories?</span></a></p>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+</pre></div>
+</div>
+<p>By default, go arounds will be detected at Amsterdam Schiphol airport (EHAM)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">go_around</span><span class="p">()</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">amsterdam_goaround</span> <span class="o">=</span> <span class="n">GoAroundDetection</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">go_around</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">amsterdam_goaround</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There were none; however we find 5 of them at Lelystad airport.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">go_around</span><span class="p">(</span><span class="s2">&quot;EHLE&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.landing">
+<span id="landing-detection"></span><h2>Landing detection<a class="headerlink" href="#module-traffic.algorithms.navigation.landing" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.landing.LandingAlignedOnILS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.landing.</span></span><span class="sig-name descname"><span class="pre">LandingAlignedOnILS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1</span> <span class="pre">min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ft_above_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.landing.LandingAlignedOnILS" title="Link to this definition"></a></dt>
+<dd><p>Iterates on all segments of trajectory aligned with the ILS of the
+given airport. The runway number is appended as a new <code class="docutils literal notranslate"><span class="pre">ILS</span></code> column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – Airport where the ILS is located</p></li>
+<li><p><strong>angle_tolerance</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – maximum tolerance on bearing difference between
+ILS and flight trajectory.</p></li>
+<li><p><strong>min_duration</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code>]</span>) – minimum duration a flight has to spend on the ILS
+to be considered as aligned.</p></li>
+<li><p><strong>max_ft_above_airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – maximum altitude AGL, relative to the
+airport, that a flight can be to be considered as aligned.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+</pre></div>
+</div>
+<p>The detected runway identifier is available in the ILS column:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aligned</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s1">&#39;EHAM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;ILS </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;ILS&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">; landing time </span><span class="si">{</span><span class="n">aligned</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;ILS 06; landing time 20:17&#39;</span>
+</pre></div>
+</div>
+<p>We can specify the method by default:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">aligned</span> <span class="ow">in</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s1">&#39;EHLE&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">aligned</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="go">2018-05-30 16:00:55+00:00</span>
+<span class="go">2018-05-30 16:50:44+00:00</span>
+<span class="go">2018-05-30 17:21:17+00:00</span>
+<span class="go">2018-05-30 18:13:02+00:00</span>
+<span class="go">2018-05-30 19:05:22+00:00</span>
+<span class="go">2018-05-30 19:42:36+00:00</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">final</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">final</span><span class="p">(</span><span class="s2">&quot;landing(&#39;EHLE&#39;, method=&#39;default&#39;)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">final</span><span class="o">.</span><span class="n">ILS_max</span>  <span class="c1"># equivalent to final.max(&quot;ILS&quot;)</span>
+<span class="go">&#39;23&#39;</span>
+</pre></div>
+</div>
+<p>Usual built-in functions works as on any kind of iterators, here we get the
+flight segment with the latest start timestamp. (equivalent to the <cite>final</cite>
+method used above)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_aligned</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s2">&quot;EHLE&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_aligned</span><span class="o">.</span><span class="n">start</span>
+<span class="go">Timestamp(&#39;2018-05-30 19:42:36+0000&#39;, tz=&#39;UTC&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.landing.LandingAnyAttempt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.landing.</span></span><span class="sig-name descname"><span class="pre">LandingAnyAttempt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.landing.LandingAnyAttempt" title="Link to this definition"></a></dt>
+<dd><p>Iterates on landing attempts without specific airport information.</p>
+<p>First, candidates airports are identified in the neighbourhood of the
+segments of trajectory below a threshold altitude. By default, the full
+airport database is considered but it is possible to restrict it and pass a
+smaller database with the dataset parameter.</p>
+<p>If no runway information is available for the given airport, no
+trajectory segment will be provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="../data_sources/airports.html#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a>]</span>) – a subset of airports used as candidate landing airports</p></li>
+<li><p><strong>alt_threshold</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – an altitude threshold helpful to select candidate
+airports. It is important to pick a threshold significantly above the
+altitude of the candidate airports.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">attempts</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">attempts</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">attempt</span><span class="o">.</span><span class="n">airport_max</span><span class="si">}</span><span class="s2"> runway </span><span class="si">{</span><span class="n">attempt</span><span class="o">.</span><span class="n">ILS_max</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">Step 0: EHLE runway 23</span>
+<span class="go">Step 1: EHLE runway 05</span>
+<span class="go">Step 2: EHLE runway 23</span>
+<span class="go">Step 3: EHLE runway 05</span>
+<span class="go">Step 4: EHLE runway 23</span>
+<span class="go">Step 5: EHAM runway 06</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.landing.LandingWithRunwayChange">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.landing.</span></span><span class="sig-name descname"><span class="pre">LandingWithRunwayChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.landing.LandingWithRunwayChange" title="Link to this definition"></a></dt>
+<dd><p>Detects runway changes.</p>
+<p>The method yields pieces of trajectories with exactly two runway alignments
+on the same airport not separated by a climbing phase.</p>
+<p>In each piece of yielded trajectory, the <code class="docutils literal notranslate"><span class="pre">ILS</span></code> column contains the name of
+the runway targetted by the aircraft at each instant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – Airport where the ILS is located</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></span>) – are passed to the constructor of <a class="reference internal" href="#traffic.algorithms.navigation.landing.LandingAlignedOnILS" title="traffic.algorithms.navigation.landing.LandingAlignedOnILS"><code class="xref py py-class docutils literal notranslate"><span class="pre">LandingAlignedOnILS</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<p>We can reuse the trajectory from the <a class="reference internal" href="../quickstart.html#getting-started"><span class="std std-ref">Getting started</span></a> page to
+illustrate the usage of this method</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">quickstart</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span> <span class="o">=</span> <span class="n">quickstart</span><span class="p">[</span><span class="s1">&#39;AFR17YC&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;landing(airport=&#39;LFPG&#39;, method=&#39;runway_change&#39;)&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Since the trajectory has a runway change, we can print characteristics of
+each segment:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s1">&#39;LFPG&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;aligned_on_ils&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">start</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> aligned on </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">ILS_max</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;13:34 13:36 aligned on 08R&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">second</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">second</span><span class="o">.</span><span class="n">start</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">second</span><span class="o">.</span><span class="n">stop</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> aligned on </span><span class="si">{</span><span class="n">second</span><span class="o">.</span><span class="n">ILS_max</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="go">&#39;13:36 13:39 aligned on 08L&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.phases">
+<span id="flight-phase-detection"></span><h2>Flight phase detection<a class="headerlink" href="#module-traffic.algorithms.navigation.phases" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.phases.FlightPhasesOpenAP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.phases.</span></span><span class="sig-name descname"><span class="pre">FlightPhasesOpenAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">twindow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.phases.FlightPhasesOpenAP" title="Link to this definition"></a></dt>
+<dd><p>Assign a flight phase to each timestamp of a flight</p>
+<p>This implementation uses the OpenAP phase detection fuzzy logic method.</p>
+<p>Usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">climb</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">phases</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;phase == &quot;CLIMB&quot;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_climb</span> <span class="o">=</span> <span class="n">climb</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;split&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also: <a class="reference internal" href="../navigation/flight_phases.html#how-to-find-flight-phases-on-a-trajectory"><span class="std std-ref">How to find flight phases on a trajectory?</span></a></p>
+<p>We can confirm the non-empty intersection between the climb and take-off
+phases. The intersection operator <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> returns the part of the trajectory
+which is simultaneously a take-off and a climb:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s1">&#39;takeoff(&quot;EHAM&quot;)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">takeoff</span> <span class="o">&amp;</span> <span class="n">first_climb</span><span class="p">)</span><span class="o">.</span><span class="n">duration</span>
+<span class="go">Timedelta(&#39;0 days 00:00:23&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.holding_pattern">
+<span id="holding-pattern-detection"></span><h2>Holding pattern detection<a class="headerlink" href="#module-traffic.algorithms.navigation.holding_pattern" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.holding_pattern.MLHoldingDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.holding_pattern.</span></span><span class="sig-name descname"><span class="pre">MLHoldingDetection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'6</span> <span class="pre">min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2</span> <span class="pre">min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'5</span> <span class="pre">min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.holding_pattern.MLHoldingDetection" title="Link to this definition"></a></dt>
+<dd><p>Iterates on all holding pattern segments in the trajectory.</p>
+<p>This approach is based on a neuronal network model. Details will be
+published in a coming academic publication.</p>
+<p>Parameters should be left as default as they are strongly coupled with
+the proposed model.</p>
+<p>The model has been trained on manually labelled holding patterns for
+trajectories landing at different European airports including London
+Heathrow.</p>
+<p>All the parameters below are closely intricated with a model. Default
+parameters should not be changed if we stick with the provided model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the duration of each sliding window</p></li>
+<li><p><strong>step</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the step for each sliding window</p></li>
+<li><p><strong>threshold</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – the minimum duration for each sliding window</p></li>
+<li><p><strong>samples</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – each sliding window is resampled to a fixed number of points</p></li>
+<li><p><strong>model_path</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></span>) – where the models are located, by default in the same
+module directory</p></li>
+<li><p><strong>vertical_rate</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – a boolean set to True if the vertical rate should be
+taken into account in the model.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;holding_pattern&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>See also: <a class="reference internal" href="../navigation/holding_pattern.html#how-to-detect-holding-patterns-in-aircraft-trajectories"><span class="std std-ref">How to detect holding patterns in aircraft trajectories?</span></a></p>
+<p>(new in version 2.8)</p>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.point_merge">
+<span id="point-merge-detection"></span><h2>Point-merge detection<a class="headerlink" href="#module-traffic.algorithms.navigation.point_merge" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.point_merge.PointMerge">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.point_merge.</span></span><span class="sig-name descname"><span class="pre">PointMerge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_merge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runway</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.point_merge.PointMerge" title="Link to this definition"></a></dt>
+<dd><p>Iterates on all point merge segments in a trajectory before landing at a
+given airport.</p>
+<p>Only the <code class="docutils literal notranslate"><span class="pre">point_merge</span></code> argument is mandatory but other arguments may
+reduce the number of false positives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_merge</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference internal" href="#traffic.algorithms.navigation.point_merge.PointMergeParams" title="traffic.algorithms.navigation.point_merge.PointMergeParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMergeParams</span></code></a>]</span>) – The procedure point on which trajectories all align.</p></li>
+<li><p><strong>secondary_point</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a></span>) – <p>In some cases (e.g. Dublin 10R),
+aircraft align to the <code class="docutils literal notranslate"><span class="pre">point_merge</span></code> after a segment of almost
+constant distance to a secondary point.</p>
+<p>Most often, the <code class="docutils literal notranslate"><span class="pre">secondary_point</span></code> is the <code class="docutils literal notranslate"><span class="pre">point_merge</span></code> and can
+be left as <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</p></li>
+<li><p><strong>distance_interval</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</span>) – <p>A tuple of distances in nautical miles,
+corresponding to lower and upper bound distances in the AIP between
+the constant distance segments and the point merge.</p>
+<p>This parameter is ignored if left as None.</p>
+</p></li>
+<li><p><strong>delta_threshold</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – keep as default</p></li>
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – Remove false positives by specifying the landing
+airport. The algorithm will ensure all trajectories are aligned with
+one of the airport’s ILS.</p></li>
+<li><p><strong>runway</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – Remove false positives by specifying the landing
+runway. The algorithm will ensure all trajectories are aligned with
+the runway’s ILS. (ignored if <code class="docutils literal notranslate"><span class="pre">airport</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Usage:
+See <a class="reference internal" href="../navigation/point_merge.html#how-to-implement-point-merge-detection"><span class="std std-ref">How to implement point-merge detection?</span></a></p>
+<p>(new in version 2.8)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.point_merge.PointMergeParams">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.point_merge.</span></span><span class="sig-name descname"><span class="pre">PointMergeParams</span></span><a class="headerlink" href="#traffic.algorithms.navigation.point_merge.PointMergeParams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.takeoff">
+<span id="take-off-detection"></span><h2>Take-off detection<a class="headerlink" href="#module-traffic.algorithms.navigation.takeoff" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.takeoff.</span></span><span class="sig-name descname"><span class="pre">PolygonBasedRunwayDetection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ft_above_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">little_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opening</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection" title="Link to this definition"></a></dt>
+<dd><p>Identifies the take-off runway for trajectories.</p>
+<p>Iterates on all segments of trajectory matching a zone around a runway
+of the  given airport. The takeoff runway number is appended as a new
+<code class="docutils literal notranslate"><span class="pre">runway</span></code> column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – The airport from where the flight takes off.</p></li>
+<li><p><strong>max_ft_above_airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – maximum altitude AGL, relative to the
+airport, that a flight can be to be considered as aligned.</p></li>
+<li><p><strong>zone_length</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – the length of the trapeze, aligned with the runway.</p></li>
+<li><p><strong>little_base</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – the smallest base of the trapeze, on the runway
+threshold side.</p></li>
+<li><p><strong>opening</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – the angle (in degrees) of opening of the trapeze.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s1">&#39;takeoff(&quot;EHAM&quot;, method=&quot;default&quot;)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span><span class="o">.</span><span class="n">duration</span>
+<span class="go">Timedelta(&#39;0 days 00:00:25&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.takeoff.</span></span><span class="sig-name descname"><span class="pre">TrackBasedRunwayDetection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ft_above_airport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_groundspeed_kts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_vert_rate_ftmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">257</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_bearing_deg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dist_nm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection" title="Link to this definition"></a></dt>
+<dd><p>Determines the taking-off runway of a flight based on its surface trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference internal" href="traffic.core.structure.html#traffic.core.structure.Airport" title="traffic.core.structure.Airport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airport</span></code></a></span>) – The airport from where the flight takes off.</p></li>
+<li><p><strong>max_ft_above_airport</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – maximum altitude AGL, relative to the
+airport, that a flight can be to be considered as aligned.</p></li>
+<li><p><strong>min_groundspeed_kts</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – Minimum groundspeed to consider.</p></li>
+<li><p><strong>min_vert_rate_ftmin</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – Minimum vertical rate to consider.</p></li>
+<li><p><strong>maximum_bearing_deg</strong> – Maximum bearing difference to consider.</p></li>
+<li><p><strong>max_dist_nm</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span>) – Maximum distance from the airport to consider.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">elal747</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span> <span class="o">=</span> <span class="n">elal747</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;track_based&quot;</span><span class="p">,</span> <span class="n">airport</span><span class="o">=</span><span class="s2">&quot;LIRF&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">takeoff</span><span class="o">.</span><span class="n">runway_max</span>
+<span class="go">(Timedelta(&#39;0 days 00:00:40&#39;), &#39;25&#39;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data.samples</span><span class="w"> </span><span class="kn">import</span> <span class="n">belevingsvlucht</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span> <span class="o">=</span> <span class="n">belevingsvlucht</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s1">&#39;takeoff(&quot;EHAM&quot;, method=&quot;default&quot;)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">takeoff</span><span class="o">.</span><span class="n">duration</span>
+<span class="go">Timedelta(&#39;0 days 00:00:25&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation.thermals">
+<span id="bonus-thermals-detection"></span><h2>Bonus: Thermals detection<a class="headerlink" href="#module-traffic.algorithms.navigation.thermals" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.thermals.GliderThermal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.thermals.</span></span><span class="sig-name descname"><span class="pre">GliderThermal</span></span><a class="headerlink" href="#traffic.algorithms.navigation.thermals.GliderThermal" title="Link to this definition"></a></dt>
+<dd><p>Detects thermals for gliders.</p>
+</dd></dl>
+
+</section>
+<section id="module-traffic.algorithms.navigation">
+<span id="protocols"></span><h2>Protocols<a class="headerlink" href="#module-traffic.algorithms.navigation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.ApplyBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.</span></span><span class="sig-name descname"><span class="pre">ApplyBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.ApplyBase" title="Link to this definition"></a></dt>
+<dd><p>Classes following this protocol should implement an <code class="docutils literal notranslate"><span class="pre">apply</span></code> method
+which returns a <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.ApplyIteratorBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.</span></span><span class="sig-name descname"><span class="pre">ApplyIteratorBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.ApplyIteratorBase" title="Link to this definition"></a></dt>
+<dd><p>Classes following this protocol should implement an <code class="docutils literal notranslate"><span class="pre">apply</span></code> method
+which returns an iterator of <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="traffic.algorithms.navigation.ApplyOptionalBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.navigation.</span></span><span class="sig-name descname"><span class="pre">ApplyOptionalBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.navigation.ApplyOptionalBase" title="Link to this definition"></a></dt>
+<dd><p>Classes following this protocol should implement an <code class="docutils literal notranslate"><span class="pre">apply</span></code> method
+which returns <code class="docutils literal notranslate"><span class="pre">None</span></code> or a <a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="traffic.algorithms.metadata.html" class="btn btn-neutral float-left" title="traffic.algorithms.metadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="traffic.algorithms.performance.html" class="btn btn-neutral float-right" title="traffic.algorithms.performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Xavier Olive.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-RMZC6Q4BEG"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-RMZC6Q4BEG");
+</script>
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.traffic &mdash; traffic 2.11.2.dev24+gb69e5c6 documentation</title>
+  <title>traffic.core.traffic &mdash; traffic 2.11.2.dev25+g1cf10d6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=589ba22a"></script>
+      <script src="../_static/documentation_options.js?v=91653849"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -81,6 +81,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.agg_xy"><code class="docutils literal notranslate"><span class="pre">Traffic.agg_xy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.airborne"><code class="docutils literal notranslate"><span class="pre">Traffic.airborne()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.aircraft_data"><code class="docutils literal notranslate"><span class="pre">Traffic.aircraft_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.aligned"><code class="docutils literal notranslate"><span class="pre">Traffic.aligned()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.all"><code class="docutils literal notranslate"><span class="pre">Traffic.all()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.apply_time"><code class="docutils literal notranslate"><span class="pre">Traffic.apply_time()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.assign"><code class="docutils literal notranslate"><span class="pre">Traffic.assign()</span></code></a></li>
@@ -100,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.distance"><code class="docutils literal notranslate"><span class="pre">Traffic.distance()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.drop"><code class="docutils literal notranslate"><span class="pre">Traffic.drop()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.drop_duplicates"><code class="docutils literal notranslate"><span class="pre">Traffic.drop_duplicates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.emission"><code class="docutils literal notranslate"><span class="pre">Traffic.emission()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.end_time"><code class="docutils literal notranslate"><span class="pre">Traffic.end_time</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.feature_gt"><code class="docutils literal notranslate"><span class="pre">Traffic.feature_gt()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.feature_lt"><code class="docutils literal notranslate"><span class="pre">Traffic.feature_lt()</span></code></a></li>
@@ -111,14 +113,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.from_file"><code class="docutils literal notranslate"><span class="pre">Traffic.from_file()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.from_flights"><code class="docutils literal notranslate"><span class="pre">Traffic.from_flights()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.from_fr24"><code class="docutils literal notranslate"><span class="pre">Traffic.from_fr24()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.fuelflow"><code class="docutils literal notranslate"><span class="pre">Traffic.fuelflow()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.generation"><code class="docutils literal notranslate"><span class="pre">Traffic.generation()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.geoencode"><code class="docutils literal notranslate"><span class="pre">Traffic.geoencode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.go_around"><code class="docutils literal notranslate"><span class="pre">Traffic.go_around()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.groupby"><code class="docutils literal notranslate"><span class="pre">Traffic.groupby()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.has"><code class="docutils literal notranslate"><span class="pre">Traffic.has()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.holding_pattern"><code class="docutils literal notranslate"><span class="pre">Traffic.holding_pattern()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.icao24"><code class="docutils literal notranslate"><span class="pre">Traffic.icao24</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.inside_bbox"><code class="docutils literal notranslate"><span class="pre">Traffic.inside_bbox()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.iterate"><code class="docutils literal notranslate"><span class="pre">Traffic.iterate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.iterate_lazy"><code class="docutils literal notranslate"><span class="pre">Traffic.iterate_lazy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.landing"><code class="docutils literal notranslate"><span class="pre">Traffic.landing()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.landing_at"><code class="docutils literal notranslate"><span class="pre">Traffic.landing_at()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.last"><code class="docutils literal notranslate"><span class="pre">Traffic.last()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.line_geo"><code class="docutils literal notranslate"><span class="pre">Traffic.line_geo()</span></code></a></li>
@@ -126,11 +132,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.longer_than"><code class="docutils literal notranslate"><span class="pre">Traffic.longer_than()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.max_split"><code class="docutils literal notranslate"><span class="pre">Traffic.max_split()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.merge"><code class="docutils literal notranslate"><span class="pre">Traffic.merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.movement"><code class="docutils literal notranslate"><span class="pre">Traffic.movement()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.next"><code class="docutils literal notranslate"><span class="pre">Traffic.next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.parking_position"><code class="docutils literal notranslate"><span class="pre">Traffic.parking_position()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.phases"><code class="docutils literal notranslate"><span class="pre">Traffic.phases()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.pipe"><code class="docutils literal notranslate"><span class="pre">Traffic.pipe()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.plot"><code class="docutils literal notranslate"><span class="pre">Traffic.plot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.plot_wind"><code class="docutils literal notranslate"><span class="pre">Traffic.plot_wind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.point_merge"><code class="docutils literal notranslate"><span class="pre">Traffic.point_merge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.predict"><code class="docutils literal notranslate"><span class="pre">Traffic.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.pushback"><code class="docutils literal notranslate"><span class="pre">Traffic.pushback()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query"><code class="docutils literal notranslate"><span class="pre">Traffic.query()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query_ehs"><code class="docutils literal notranslate"><span class="pre">Traffic.query_ehs()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.query_opensky"><code class="docutils literal notranslate"><span class="pre">Traffic.query_opensky()</span></code></a></li>
@@ -146,6 +157,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.sort_values"><code class="docutils literal notranslate"><span class="pre">Traffic.sort_values()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.start_time"><code class="docutils literal notranslate"><span class="pre">Traffic.start_time</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.summary"><code class="docutils literal notranslate"><span class="pre">Traffic.summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.takeoff"><code class="docutils literal notranslate"><span class="pre">Traffic.takeoff()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.takeoff_from"><code class="docutils literal notranslate"><span class="pre">Traffic.takeoff_from()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_csv"><code class="docutils literal notranslate"><span class="pre">Traffic.to_csv()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.Traffic.to_excel"><code class="docutils literal notranslate"><span class="pre">Traffic.to_excel()</span></code></a></li>
@@ -160,6 +172,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.filters.html">traffic.algorithms.filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.ground.html">traffic.algorithms.ground</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.metadata.html">traffic.algorithms.metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.navigation.html">traffic.algorithms.navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.performance.html">traffic.algorithms.performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.algorithms.prediction.html">traffic.algorithms.prediction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
@@ -335,10 +352,10 @@ in order to plot density heatmaps.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.agg_time">
 <span class="sig-name descname"><span class="pre">agg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.agg_time" title="Link to this definition"></a></dt>
 <dd><p>Aggregate features on time windows.</p>
-<p>The following is performed:
+<p>The following is performed are performed in order.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 <ul class="simple">
-<li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
+<li><p>a new column <code class="docutils literal notranslate"><span class="pre">rounded</span></code> rounds the timestamp at the given rate;</p></li>
 <li><p>the groupby/agg is operated with parameters passed in kwargs;</p></li>
 <li><p>if merge is True, the new column in merged into the Flight,
 otherwise a pd.DataFrame is returned.</p></li>
@@ -385,7 +402,7 @@ int the given cell.</p></li>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type">pd.DataFrame</span></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> indexed over x and y values. It is
+<dd class="field-even"><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> indexed over x and y values. It is
 conveniently chainable with the <code class="docutils literal notranslate"><span class="pre">.to_xarray()</span></code> method in order to
 plot density heatmaps.</p>
 </dd>
@@ -426,6 +443,44 @@ when stacked for lazy evaluation.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.aligned">
+<span class="sig-name descname"><span class="pre">aligned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.aligned" title="Link to this definition"></a></dt>
+<dd><p>Detects a geometric alignment with aeronautical infrastructure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – By default, the method checks a geometric alignment with
+a navigational beacon (navaid).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding landing detection class.</p>
+<p>The following table summarizes the available methods and their
+corresponding classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;beacon&quot;</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment" title="traffic.algorithms.navigation.alignment.BeaconTrackBearingAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeaconTrackBearingAlignment</span></code></a>
+and compares the track angle of the aircraft with the bearing to
+a given point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ils&quot;</span></code> uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingAlignedOnILS" title="traffic.algorithms.navigation.landing.LandingAlignedOnILS"><code class="xref py py-class docutils literal notranslate"><span class="pre">LandingAlignedOnILS</span></code></a>
+and detects segments on trajectory aligned with the ILS of a given
+airport.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;runway&quot;</span></code>  uses
+<a class="reference internal" href="traffic.algorithms.ground.html#traffic.algorithms.ground.runway.RunwayAlignment" title="traffic.algorithms.ground.runway.RunwayAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunwayAlignment</span></code></a>
+and detects segments aligned with one of the documented runways.</p></li>
+</ul>
+<p>Usage: Check the corresponding classes which are properly documented.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.all">
 <span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.all" title="Link to this definition"></a></dt>
 <dd><p>Returns the concatenation of segments returned by flight.method().</p>
@@ -451,10 +506,10 @@ when stacked for lazy evaluation.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.apply_time">
 <span class="sig-name descname"><span class="pre">apply_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.apply_time" title="Link to this definition"></a></dt>
 <dd><p>Apply features on time windows.</p>
-<p>The following is performed:
+<p>The following is performed are performed in order.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 <ul class="simple">
-<li><p>a new column <cite>rounded</cite> rounds the timestamp at the given rate;</p></li>
+<li><p>a new column <code class="docutils literal notranslate"><span class="pre">rounded</span></code> rounds the timestamp at the given rate;</p></li>
 <li><p>the groupby/apply is operated with parameters passed in apply;</p></li>
 <li><p>if merge is True, the new column in merged into the Flight,
 otherwise a pd.DataFrame is returned.</p></li>
@@ -463,7 +518,7 @@ otherwise a pd.DataFrame is returned.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">agg_time</span><span class="p">(</span><span class="s2">&quot;10 min&quot;</span><span class="p">,</span> <span class="n">straight</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">Flight</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>returns a Flight with a new column straight with the great circle
+<p>returns a Flight with a new column <code class="docutils literal notranslate"><span class="pre">straight</span></code> with the great circle
 distance between points sampled every 10 minutes.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -474,7 +529,7 @@ distance between points sampled every 10 minutes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.assign">
 <span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.assign" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assign()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -690,9 +745,9 @@ airspeed may be decoded in EHS messages.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Check the <a class="reference external" href="#traffic.core.Flight.query_ehs">query_ehs()</a> method to
-find a way to enrich your flight with such features. Note that this
-data is not necessarily available depending on the location.</p>
+<p>Check the <a class="reference internal" href="#traffic.core.Traffic.query_ehs" title="traffic.core.Traffic.query_ehs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query_ehs()</span></code></a> method to find a way to enrich your
+flight with such features. Note that this data is not necessarily
+available depending on the location.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -719,7 +774,7 @@ projection centred on the data inside the dataframe.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.convert_dtypes">
 <span class="sig-name descname"><span class="pre">convert_dtypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.convert_dtypes" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.convert_dtypes.html#pandas.DataFrame.convert_dtypes" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert_dtypes()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -815,7 +870,7 @@ before calling the method.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.drop">
 <span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.drop" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop.html#pandas.DataFrame.drop" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -828,7 +883,7 @@ structure.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.drop_duplicates">
 <span class="sig-name descname"><span class="pre">drop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.drop_duplicates" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.drop_duplicates.html#pandas.DataFrame.drop_duplicates" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></a> method to
 the underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -836,6 +891,29 @@ structure.</p>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.emission">
+<span class="sig-name descname"><span class="pre">emission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.emission" title="Link to this definition"></a></dt>
+<dd><p>Estimate the pollutants emitted by the aircraft based on its
+trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – At the moment, only the OpenAP implementation is
+available, and is the default implementation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding fuel flow class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
@@ -901,7 +979,7 @@ lazy evaluation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.fillna">
 <span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.fillna" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillna()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -937,6 +1015,7 @@ is applied after the filter to deal with resulting NaN values.</p>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 </dd>
 </dl>
+<p>More filters are available on the <a class="reference internal" href="traffic.algorithms.filters.html#traffic-algorithms-filters"><span class="std std-ref">traffic.algorithms.filters</span></a> page</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
@@ -1003,13 +1082,13 @@ filename. Potential compression of the file is inferred by pandas itself
 based on the extension.
 :rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
 <ul class="simple">
-<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
-<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
-<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
-<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
+<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
+<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
+<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
+<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
 <li><p>.jsonl dispatch to a specific function (output of jet1090);</p></li>
-<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
-<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
+<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
+<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
 </ul>
 <p>Other extensions return None.  Specific arguments may be passed to the
 underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method with the kwargs argument.</p>
@@ -1058,12 +1137,35 @@ extended Mode-S information.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.fuelflow">
+<span class="sig-name descname"><span class="pre">fuelflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.fuelflow" title="Link to this definition"></a></dt>
+<dd><p>Estimate the mass and fuel flow of the aircraft based on its
+trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – At the moment, only the OpenAP implementation is
+available, and is the default implementation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding fuel flow class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.generation">
 <span class="sig-name descname"><span class="pre">generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.generation" title="Link to this definition"></a></dt>
 <dd><p>Fits a generative model on the traffic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="../navigation/generation.html#traffic.algorithms.generation.Generation" title="traffic.algorithms.generation.Generation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generation</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="../statistical/generation.html#traffic.algorithms.generation.Generation" title="traffic.algorithms.generation.Generation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generation</span></code></a></span></p>
 </dd>
 </dl>
 <dl class="simple">
@@ -1095,9 +1197,26 @@ trajectories.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.go_around">
+<span class="sig-name descname"><span class="pre">go_around</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.go_around" title="Link to this definition"></a></dt>
+<dd><p>Detects go-around situations in a trajectory.</p>
+<p>Usage:
+See: <a class="reference internal" href="../navigation/go_around.html#how-to-select-go-arounds-from-a-set-of-trajectories"><span class="std std-ref">How to select go-arounds from a set of trajectories?</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.groupby">
 <span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.groupby" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method to the
 underlying pandas DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1121,6 +1240,23 @@ underlying pandas DataFrame.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">aligned_on_ils</span><span class="p">(</span><span class="s2">&quot;LFBO&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.holding_pattern">
+<span class="sig-name descname"><span class="pre">holding_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.holding_pattern" title="Link to this definition"></a></dt>
+<dd><p>Detects holding patterns in a trajectory.</p>
+<p>Usage:
+See <a class="reference internal" href="../navigation/holding_pattern.html#how-to-detect-holding-patterns-in-aircraft-trajectories"><span class="std std-ref">How to detect holding patterns in aircraft trajectories?</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
@@ -1213,10 +1349,79 @@ progressbar.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.landing">
+<span class="sig-name descname"><span class="pre">landing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.landing" title="Link to this definition"></a></dt>
+<dd><p>Detects the landing phase in a trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – By default, the method detects segments on trajectory
+aligned with the ILS of a given airport.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding landing detection class.</p>
+<p>The following table summarizes the available methods and their
+corresponding classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;aligned_on_ils&quot;</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingAlignedOnILS" title="traffic.algorithms.navigation.landing.LandingAlignedOnILS"><code class="xref py py-class docutils literal notranslate"><span class="pre">LandingAlignedOnILS</span></code></a>
+and detects segments on trajectory aligned with the ILS of a given
+airport.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;anywhere&quot;</span></code> uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingAnyAttempt" title="traffic.algorithms.navigation.landing.LandingAnyAttempt"><code class="xref py py-class docutils literal notranslate"><span class="pre">LandingAnyAttempt</span></code></a>
+and detects the most plausible landing airport for all pieces of
+trajectories below a threshold altitude.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;runway_change&quot;</span></code> uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.landing.LandingWithRunwayChange" title="traffic.algorithms.navigation.landing.LandingWithRunwayChange"><code class="xref py py-class docutils literal notranslate"><span class="pre">LandingWithRunwayChange</span></code></a>
+and detects a specific subset of situations where aircraft are aligned
+on several runways during one landing phase.</p></li>
+</ul>
+<p>Usage:</p>
+<p>All the following calls are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span>  <span class="c1"># returns a flight iterator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">LandingAlignedOnILS</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>As with other <a class="reference internal" href="traffic.core.iterator.html#traffic.core.FlightIterator" title="traffic.core.FlightIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlightIterator</span></code></a>, we can:</p>
+<ul>
+<li><p>check whether an aircraft is landing at a given airport:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">has</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;landing(&#39;EHAM&#39;)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>get the first landing attempt:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">landing</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="s2">&quot;landing(&#39;EHAM&#39;)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>More details in the specific documentation for each class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.landing_at">
 <span class="sig-name descname"><span class="pre">landing_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.landing_at" title="Link to this definition"></a></dt>
-<dd><p>Returns True if the flight lands at the given airport.
-:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+<dd><p>Returns True if the flight lands at the given airport.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>airport</strong> – Airport where the ILS is located</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
@@ -1310,7 +1515,7 @@ constructor.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.merge">
 <span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.merge" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1318,6 +1523,27 @@ structure.</p>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.movement">
+<span class="sig-name descname"><span class="pre">movement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.movement" title="Link to this definition"></a></dt>
+<dd><p>Detects when the aircraft starts moving on the surface.</p>
+<p>The only available (default) method is
+<a class="reference internal" href="traffic.algorithms.ground.html#traffic.algorithms.ground.movement.StartMoving" title="traffic.algorithms.ground.movement.StartMoving"><code class="xref py py-class docutils literal notranslate"><span class="pre">StartMoving</span></code></a>. Check the
+documentation there for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the trajectory trimmed from the non-moving part.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1341,10 +1567,33 @@ structure.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.parking_position">
+<span class="sig-name descname"><span class="pre">parking_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.parking_position" title="Link to this definition"></a></dt>
+<dd><p>Detects pieces of trajectory matching documented parking positions.</p>
+<p>The only available (default) method,
+<a class="reference internal" href="traffic.algorithms.ground.html#traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection" title="traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParkingPositionGeometricIntersection</span></code></a>,
+looks at the intersection between the trajectory and a buffered version
+of the parking positions.</p>
+<p>Check the documentation of the corresponding class for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.phases">
-<span class="sig-name descname"><span class="pre">phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.phases" title="Link to this definition"></a></dt>
-<dd><p>Assign a flight phase to each timestamp of a flight
-using OpenAP phase detection fuzzy logic method.</p>
+<span class="sig-name descname"><span class="pre">phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.phases" title="Link to this definition"></a></dt>
+<dd><p>Label phases in flight trajectories.</p>
+<p>An extra <code class="docutils literal notranslate"><span class="pre">&quot;phase&quot;</span></code> column is added to the DataFrame.</p>
+<p>The only available (default) method is provided by OpenAP.</p>
+<p>Usage:
+See: <a class="reference internal" href="../navigation/flight_phases.html#how-to-find-flight-phases-on-a-trajectory"><span class="std std-ref">How to find flight phases on a trajectory?</span></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
@@ -1363,7 +1612,7 @@ using OpenAP phase detection fuzzy logic method.</p>
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The logic is similar to that of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.pipe.html#pandas.DataFrame.pipe" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pipe()</span></code></a>
+<p>The logic is similar to that of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.pipe.html#pandas.DataFrame.pipe" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pipe()</span></code></a>
 method, but the function applies on T, not on the DataFrame.</p>
 </div>
 <div class="admonition warning">
@@ -1425,9 +1674,102 @@ longitude degree.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.point_merge">
+<span class="sig-name descname"><span class="pre">point_merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.point_merge" title="Link to this definition"></a></dt>
+<dd><p>Detects point-merge structures in trajectories.</p>
+<p>Usage:
+See <a class="reference internal" href="../navigation/point_merge.html#how-to-implement-point-merge-detection"><span class="std std-ref">How to implement point-merge detection?</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the future trajectory based on the past data points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – By default, the method propagates the trajectory in a
+straight line.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding prediction class.</p>
+<p>The following table summarizes the available methods and their
+corresponding classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">straight</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.prediction.html#traffic.algorithms.prediction.straightline.StraightLinePredict" title="traffic.algorithms.prediction.straightline.StraightLinePredict"><code class="xref py py-class docutils literal notranslate"><span class="pre">StraightLinePredict</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flightplan</span></code> uses
+<code class="xref py py-class docutils literal notranslate"><span class="pre">FlightPlanPredict</span></code></p></li>
+</ul>
+<p>Example usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;straight&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="s2">&quot;2018-12-24 23:55&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Merry XMas!</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.pushback">
+<span class="sig-name descname"><span class="pre">pushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.pushback" title="Link to this definition"></a></dt>
+<dd><p>Detects the push-back phase of the trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – By default, the method identifies the start of the
+movement, the parking_position and the moment the aircraft suddenly
+changes direction the computed track angle.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding landing detection class.</p>
+<p>The following table summarizes the available methods and their
+corresponding classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;parking_area&quot;</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.ground.html#traffic.algorithms.ground.pushback.ParkingAreaBasedPushback" title="traffic.algorithms.ground.pushback.ParkingAreaBasedPushback"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParkingAreaBasedPushback</span></code></a>
+and identifies the start of the movement, an intersection with a
+documented apron area and the moment the aircraft suddenly changes
+direction in the computed track angle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;parking_position&quot;</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.ground.html#traffic.algorithms.ground.pushback.ParkingPositionBasedPushback" title="traffic.algorithms.ground.pushback.ParkingPositionBasedPushback"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParkingPositionBasedPushback</span></code></a>
+and identifies the start of the movement, the parking_position
+and the moment the aircraft suddenly changes direction in the computed
+track angle.</p></li>
+</ul>
+<p>Usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">pushback</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;LSZH&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.query">
 <span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.query" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1449,14 +1791,10 @@ database.
 <p>Making a lot of small requests can be very inefficient and may look
 like a denial of service. If you get the raw messages using a
 different channel, you can provide the resulting dataframe as a
-parameter. See the page about <a class="reference external" href="opensky_impala.html">OpenSky Impala access</a></p>
+parameter.</p>
 </div>
 <p>The data parameter expect three columns: <code class="docutils literal notranslate"><span class="pre">icao24</span></code>, <code class="docutils literal notranslate"><span class="pre">rawmsg</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mintime</span></code>, in conformance with the OpenSky API.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
@@ -1473,12 +1811,12 @@ attributes to build a request for current Flight in the OpenSky Network
 database.</p>
 <p>The kwargs argument helps overriding arguments from the query, namely
 start, stop, callsign and icao24.</p>
-<p>Returns None if no data is found.
-:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Read more about access to the OpenSky Network database <a class="reference external" href="opensky_impala.html">here</a></p>
-</div>
+<p>Returns None if no data is found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method will be stacked for lazy evaluation.</p>
@@ -1488,7 +1826,7 @@ start, stop, callsign and icao24.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.rename">
 <span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.rename" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1501,7 +1839,7 @@ structure.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.replace">
 <span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.replace" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.replace.html#pandas.DataFrame.replace" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1521,7 +1859,7 @@ of samples.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rule</strong> – <ul>
 <li><p>If the rule is a string representing
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><span>Offset aliases</span></a> for time frequencies is
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/user_guide/timeseries.html#timeseries-offset-aliases" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><span>Offset aliases</span></a> for time frequencies is
 passed, then the data is resampled along the timestamp axis, then
 interpolated (according to the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter).</p></li>
 <li><p>If the rule is an integer, the trajectory is resampled to the
@@ -1539,14 +1877,13 @@ Columns not included in any value are left as is.</p></li>
 <li><p><strong>interpolate_kw</strong> – <p>(default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
 <ul>
 <li><p>A dictionary with keyword arguments that will be passed to the
-pandas <a href="#id4"><span class="problematic" id="id5">:py:method:`pandas.Series.interpolate`</span></a> method.</p>
+pandas interpolate method.</p>
 <p>Example usage:
 To specify a fifth-degree polynomial interpolation, you can
 pass the following dictionary:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interpolate_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;polynomial&quot;</span><span class="p">,</span> <span class="s2">&quot;order&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>interpolate_kw = {“method”: “polynomial”, “order”: 5}</p>
 </li>
 </ul>
 </p></li>
@@ -1575,7 +1912,7 @@ approach is helpful to fill gaps along a great circle.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.reset_index">
 <span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.reset_index" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_index()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1646,8 +1983,8 @@ Default is None, meaning one flight is returned.</p></li>
 <dd><p>Simplifies a trajectory with Douglas-Peucker algorithm.</p>
 <p>The method uses latitude and longitude, projects the trajectory to a
 conformal projection and applies the algorithm. If x and y features are
-already present in the DataFrame (after a call to <a class="reference external" href="#traffic.core.Flight.compute_xy">compute_xy</a> for instance) then this
-projection is taken into account.</p>
+already present in the DataFrame (after a call to <a class="reference internal" href="#traffic.core.Traffic.compute_xy" title="traffic.core.Traffic.compute_xy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_xy()</span></code></a>
+for instance) then this projection is taken into account.</p>
 <p>The tolerance parameter must be defined in meters.
 :rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
 <ul class="simple">
@@ -1668,7 +2005,7 @@ specify <code class="docutils literal notranslate"><span class="pre">return_mask
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.sort_values">
 <span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.sort_values" title="Link to this definition"></a></dt>
-<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
+<dd><p>Applies the Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> method to the
 underlying pandas DataFrame and get the result back in the same
 structure.</p>
 <dl class="field-list simple">
@@ -1707,6 +2044,52 @@ information in your summary dictionary.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="traffic.core.Traffic.takeoff">
+<span class="sig-name descname"><span class="pre">takeoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.takeoff" title="Link to this definition"></a></dt>
+<dd><p>Detects the takeoff phase in a trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> – By default, the method detects segments on trajectory
+maximizing their intersection with a trapeze shape with a small base
+at runway threshold.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyTraffic</span></code></a></span></p>
+</dd>
+</dl>
+<p>If the method argument is passed as a string, then all args and kwargs
+argument of the landing method are passed to the constructor of the
+corresponding landing detection class.</p>
+<p>The following table summarizes the available methods and their
+corresponding classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;polygon_based&quot;</span></code> (default) uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection" title="traffic.algorithms.navigation.takeoff.PolygonBasedRunwayDetection"><code class="xref py py-class docutils literal notranslate"><span class="pre">PolygonBasedRunwayDetection</span></code></a>
+and detects segments on trajectory maximizing their intersection with
+a trapeze shape with a small base at runway threshold. This method
+performs better when trajectory data point is scarce at surface level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;track_based&quot;</span></code> uses
+<a class="reference internal" href="traffic.algorithms.navigation.html#traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection" title="traffic.algorithms.navigation.takeoff.TrackBasedRunwayDetection"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackBasedRunwayDetection</span></code></a>
+and detects pieces of trajectory with a strong acceleration that is
+colinear to a documented runway. This method performs better when
+data is rich at surface level, with less false positive labelled with
+the wrong runway.</p></li>
+</ul>
+<p>Usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">)</span>  <span class="c1"># returns a flight iterator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flight</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="n">PolygonBasedRunwayDetection</span><span class="p">(</span><span class="n">airport</span><span class="o">=</span><span class="s2">&quot;EHAM&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>More details in the specific documentation for each class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method will be stacked for lazy evaluation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="traffic.core.Traffic.takeoff_from">
 <span class="sig-name descname"><span class="pre">takeoff_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="traffic.core.lazy.html#traffic.core.lazy.LazyTraffic" title="traffic.core.lazy.LazyTraffic"><span class="pre">LazyTraffic</span></a></span></span><a class="headerlink" href="#traffic.core.Traffic.takeoff_from" title="Link to this definition"></a></dt>
 <dd><p>Returns True if the flight takes off from the given airport.
@@ -1721,7 +2104,7 @@ information in your summary dictionary.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_csv">
 <span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_csv" title="Link to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1735,7 +2118,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_excel">
 <span class="sig-name descname"><span class="pre">to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_excel" title="Link to this definition"></a></dt>
 <dd><p>Exports to Excel format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_excel()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1749,7 +2132,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_feather">
 <span class="sig-name descname"><span class="pre">to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_feather" title="Link to this definition"></a></dt>
 <dd><p>Exports to feather format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_feather.html#pandas.DataFrame.to_feather" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_feather()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1763,7 +2146,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_hdf">
 <span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_hdf" title="Link to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1777,7 +2160,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_json" title="Link to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1791,7 +2174,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_parquet">
 <span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_parquet" title="Link to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -1805,7 +2188,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.Traffic.to_pickle">
 <span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.Traffic.to_pickle" title="Link to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+1979.g57fd50221e)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+1992.g95280573e1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="../data_sources/export.html#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
