@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to export and store trajectory and airspace data? &mdash; traffic 2.13.dev11+g65688f0 documentation</title>
+  <title>How to export and store trajectory and airspace data? &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=45ac2479"></script>
+      <script src="../_static/documentation_options.js?v=348e83e4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -186,13 +186,13 @@ filename. Potential compression of the file is inferred by pandas itself
 based on the extension.
 :rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
 <ul class="simple">
-<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
-<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
-<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
-<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
+<li><p>.pkl.* or .parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_pickle.html#pandas.read_pickle" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_pickle()</span></code></a>;</p></li>
+<li><p>.parquet.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_parquet.html#pandas.read_parquet" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_parquet()</span></code></a>;</p></li>
+<li><p>.feather.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_feather.html#pandas.read_feather" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_feather()</span></code></a>;</p></li>
+<li><p>.json.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_json.html#pandas.read_json" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>;</p></li>
 <li><p>.jsonl dispatch to a specific function (output of jet1090);</p></li>
-<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
-<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
+<li><p>.csv.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_csv.html#pandas.read_csv" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a>;</p></li>
+<li><p>.h5.* dispatch to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.read_hdf.html#pandas.read_hdf" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></a>.</p></li>
 </ul>
 <p>Other extensions return None.  Specific arguments may be passed to the
 underlying <code class="docutils literal notranslate"><span class="pre">pandas.read_*</span></code> method with the kwargs argument.</p>
@@ -207,7 +207,7 @@ underlying <code class="docutils literal notranslate"><span class="pre">pandas.r
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_csv">
 <span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_csv" title="Link to this definition"></a></dt>
 <dd><p>Exports to CSV format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_csv()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -221,7 +221,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_hdf">
 <span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_hdf" title="Link to this definition"></a></dt>
 <dd><p>Exports to HDF format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_hdf.html#pandas.DataFrame.to_hdf" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_hdf()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -235,7 +235,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_json" title="Link to this definition"></a></dt>
 <dd><p>Exports to JSON format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_json()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -249,7 +249,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_parquet">
 <span class="sig-name descname"><span class="pre">to_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_parquet" title="Link to this definition"></a></dt>
 <dd><p>Exports to parquet format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_parquet()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">
@@ -263,7 +263,7 @@ as args and kwargs arguments.</p>
 <dt class="sig sig-object py" id="traffic.core.mixins.DataFrameMixin.to_pickle">
 <span class="sig-name descname"><span class="pre">to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.mixins.DataFrameMixin.to_pickle" title="Link to this definition"></a></dt>
 <dd><p>Exports to pickle format.</p>
-<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+2178.g592a41a1a5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
+<p>Options can be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.to_pickle.html#pandas.DataFrame.to_pickle" title="(in pandas v3.0.0.dev0+2180.g73db25d585)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.to_pickle()</span></code></a>
 as args and kwargs arguments.</p>
 <p>Read more: <a class="reference internal" href="#how-to-export-and-store-trajectory-and-airspace-data"><span class="std std-ref">How to export and store trajectory and airspace data?</span></a></p>
 <dl class="field-list simple">

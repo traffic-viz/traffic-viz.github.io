@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.13.dev11+g65688f0 documentation</title>
+  <title>How to access ADS-B data from OpenSky live API? &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=45ac2479"></script>
+      <script src="../_static/documentation_options.js?v=348e83e4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -562,109 +562,11 @@ bounds:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">opensky</span><span class="o">.</span><span class="n">api_routes</span><span class="p">(</span><span class="s2">&quot;AFR292&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~/work/traffic/traffic/src/traffic/data/adsb/opensky.py:200,</span> in <span class="ni">OpenSky.api_routes</span><span class="nt">(self, callsign)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="nd">@copy_documentation</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">REST</span><span class="o">.</span><span class="n">routes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span> <span class="k">def</span><span class="w"> </span><span class="nf">api_routes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callsign</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="ne">--&gt; </span><span class="mi">200</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest_client</span><span class="o">.</span><span class="n">routes</span><span class="p">(</span><span class="n">callsign</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:280,</span> in <span class="ni">REST.routes</span><span class="nt">(self, callsign)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span><span class="w"> </span><span class="nf">routes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callsign</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Returns the route associated to a callsign.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">280</span>     <span class="n">json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="sa">f</span><span class="s2">&quot;https://opensky-network.org/api/routes?callsign=</span><span class="si">{</span><span class="n">callsign</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s2">&quot;route&quot;</span><span class="p">])</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/pyopensky/rest.py:61,</span> in <span class="ni">REST.get</span><span class="nt">(self, query, retry)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">retry</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="k">if</span> <span class="n">limit</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;X-Rate-Limit-Remaining&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:1053,</span> in <span class="ni">Client.get</span><span class="nt">(self, url, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1037</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1038</span>     <span class="n">url</span><span class="p">:</span> <span class="n">URL</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1046</span>     <span class="n">extensions</span><span class="p">:</span> <span class="n">RequestExtensions</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1047</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span><span class="sd">     Send a `GET` request.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1050</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span><span class="sd">     **Parameters**: See `httpx.request`.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1053</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1054</span>         <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1055</span>         <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span>         <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1057</span>         <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>         <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1061</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span>         <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1063</span>     <span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:825,</span> in <span class="ni">Client.request</span><span class="nt">(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">823</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">825</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:912,</span> in <span class="ni">Client.send</span><span class="nt">(self, request, stream, auth, follow_redirects)</span>
-<span class="g g-Whitespace">    </span><span class="mi">904</span> <span class="n">follow_redirects</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">905</span>     <span class="bp">self</span><span class="o">.</span><span class="n">follow_redirects</span>
-<span class="g g-Whitespace">    </span><span class="mi">906</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">follow_redirects</span><span class="p">,</span> <span class="n">UseClientDefault</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">907</span>     <span class="k">else</span> <span class="n">follow_redirects</span>
-<span class="g g-Whitespace">    </span><span class="mi">908</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">910</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_timeout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">912</span> <span class="n">auth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_request_auth</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_auth</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">915</span>     <span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">918</span>     <span class="n">history</span><span class="o">=</span><span class="p">[],</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">920</span> <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:463,</span> in <span class="ni">BaseClient._build_request_auth</span><span class="nt">(self, request, auth)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="k">def</span><span class="w"> </span><span class="nf">_build_request_auth</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="n">auth</span><span class="p">:</span> <span class="n">AuthTypes</span> <span class="o">|</span> <span class="n">UseClientDefault</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">USE_CLIENT_DEFAULT</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Auth</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">auth</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">463</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">UseClientDefault</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_auth</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="k">if</span> <span class="n">auth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>         <span class="k">return</span> <span class="n">auth</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_client.py:449,</span> in <span class="ni">BaseClient._build_auth</span><span class="nt">(self, auth)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">449</span>     <span class="k">return</span> <span class="n">BasicAuth</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">auth</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">password</span><span class="o">=</span><span class="n">auth</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">Auth</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="k">return</span> <span class="n">auth</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_auth.py:133,</span> in <span class="ni">BasicAuth.__init__</span><span class="nt">(self, username, password)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">133</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_auth_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_auth_header</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-
-<span class="nn">File ~/work/traffic/traffic/.venv/lib/python3.11/site-packages/httpx/_auth.py:140,</span> in <span class="ni">BasicAuth._build_auth_header</span><span class="nt">(self, username, password)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">def</span><span class="w"> </span><span class="nf">_build_auth_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">140</span>     <span class="n">userpass</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">to_bytes</span><span class="p">(</span><span class="n">username</span><span class="p">),</span> <span class="n">to_bytes</span><span class="p">(</span><span class="n">password</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="n">token</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">userpass</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Basic </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span>
-
-<span class="ne">TypeError</span>: sequence item 0: expected a bytes-like object, NoneType found
+<span class="ne">AttributeError</span>: &#39;OpenSky&#39; object has no attribute &#39;api_routes&#39;
 </pre></div>
 </div>
 </div>
