@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to access airport information? &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
+  <title>How to access airport information? &mdash; traffic 2.13.dev14+g277cf21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=348e83e4"></script>
+      <script src="../_static/documentation_options.js?v=08ccc06d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -121,7 +121,7 @@
 <strong>runway information</strong> and <strong>apron layout</strong>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.data.basic.airports.Airports">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.airports.</span></span><span class="sig-name descname"><span class="pre">Airports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.airports.Airports" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.data.basic.airports.</span></span><span class="sig-name descname"><span class="pre">Airports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.data.basic.airports.Airports" title="Link to this definition"></a></dt>
 <dd><p>An airport is accessible via its ICAO or IATA code. In case of doubt,
 use the search method.</p>
 <p>The representation of an airport is based on its geographical footprint.
@@ -132,7 +132,7 @@ first time you call it) and put in cache.</p>
 </pre></div>
 </div>
 <p>Airports information can be accessed with attributes:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">latlon</span>  
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">latlon</span>
 <span class="go">(52.3086, 4.7639)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s2">&quot;EHAM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iata</span>
 <span class="go">&#39;AMS&#39;</span>
@@ -191,7 +191,7 @@ interest.</p></li>
 <a class="reference internal" href="#traffic.data.basic.airports.Airports" title="traffic.data.basic.airports.Airports"><code class="xref py py-class docutils literal notranslate"><span class="pre">Airports</span></code></a> or
 <a class="reference internal" href="navigation.html#traffic.data.basic.navaid.Navaids" title="traffic.data.basic.navaid.Navaids"><code class="xref py py-class docutils literal notranslate"><span class="pre">Navaids</span></code></a>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airways</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">])</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airways</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="n">eurofirs</span><span class="p">[</span><span class="s1">&#39;LFBB&#39;</span><span class="p">])</span>
 <span class="go">  route    id   navaid   latitude    longitude</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  A25      6    GODAN    47.64       -1.96</span>
@@ -208,7 +208,7 @@ interest.</p></li>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Bornholm&quot;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">extent</span><span class="p">(</span><span class="s2">&quot;Bornholm&quot;</span><span class="p">)</span>
 <span class="go"> name                 country   icao      iata   latitude   longitude</span>
 <span class="go">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go"> Bodilsker Airstrip   Denmark   DK-0027   nan    55.06      15.05</span>
@@ -238,7 +238,7 @@ name, city name of full name of the airport.</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">traffic.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">airports</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;large_airport&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Tokyo&#39;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;large_airport&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Tokyo&#39;</span><span class="p">)</span>
 <span class="go">  name                                 country   icao   iata   latitude   longitude</span>
 <span class="go"> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="go">  Narita International Airport           Japan   RJAA   NRT    35.76      140.4</span>
@@ -531,23 +531,23 @@ be overridden if a dictionary is passed in place of the boolean;</div>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-805f1093d7064c3e9808e5ac97005d26.vega-embed {
+  #altair-viz-941db831923d45028abcb57a16176e40.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-805f1093d7064c3e9808e5ac97005d26.vega-embed details,
-  #altair-viz-805f1093d7064c3e9808e5ac97005d26.vega-embed details summary {
+  #altair-viz-941db831923d45028abcb57a16176e40.vega-embed details,
+  #altair-viz-941db831923d45028abcb57a16176e40.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-805f1093d7064c3e9808e5ac97005d26"></div>
+<div id="altair-viz-941db831923d45028abcb57a16176e40"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-805f1093d7064c3e9808e5ac97005d26") {
-      outputDiv = document.getElementById("altair-viz-805f1093d7064c3e9808e5ac97005d26");
+    if (outputDiv.id !== "altair-viz-941db831923d45028abcb57a16176e40") {
+      outputDiv = document.getElementById("altair-viz-941db831923d45028abcb57a16176e40");
     }
 
     const paths = {

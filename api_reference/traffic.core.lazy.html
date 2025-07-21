@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.lazy &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
+  <title>traffic.core.lazy &mdash; traffic 2.13.dev14+g277cf21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=348e83e4"></script>
+      <script src="../_static/documentation_options.js?v=08ccc06d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -120,7 +120,7 @@
 <span id="traffic-core-lazy"></span><h1>traffic.core.lazy<a class="headerlink" href="#module-traffic.core.lazy" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.lazy.LazyTraffic">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.lazy.</span></span><span class="sig-name descname"><span class="pre">LazyTraffic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapped_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacked_ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tqdm_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.lazy.LazyTraffic" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.lazy.</span></span><span class="sig-name descname"><span class="pre">LazyTraffic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapped_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacked_ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterate_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tqdm_kw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.lazy.LazyTraffic" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>In the following example, <code class="docutils literal notranslate"><span class="pre">lazy_t</span></code> is not evaluated:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lazy_t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;10s&#39;</span><span class="p">)</span>
@@ -180,13 +180,17 @@ default options.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="traffic.core.lazy.apply">
 <span class="sig-prename descclassname"><span class="pre">traffic.core.lazy.</span></span><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stacked_ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.lazy.apply" title="Link to this definition"></a></dt>
-<dd><p>Recursively applies all operations on each Flight.
-:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</span></p>
+<dd><p>Recursively applies all operations on each Flight.</p>
 <ul class="simple">
 <li><p><em>map</em> operations return Flight</p></li>
 <li><p><em>filter</em> operations return a Flight if True, otherwise None</p></li>
 </ul>
 <p>Note that the only valid reduce operation is <cite>Traffic.from_flights</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="traffic.core.flight.html#traffic.core.Flight" title="traffic.core.flight.Flight"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flight</span></code></a>]</span></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

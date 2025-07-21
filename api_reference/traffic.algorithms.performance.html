@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.algorithms.performance &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
+  <title>traffic.algorithms.performance &mdash; traffic 2.13.dev14+g277cf21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=348e83e4"></script>
+      <script src="../_static/documentation_options.js?v=08ccc06d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -116,7 +116,7 @@
 <span id="traffic-algorithms-performance"></span><h1>traffic.algorithms.performance<a class="headerlink" href="#module-traffic.algorithms.performance.openap" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.performance.openap.FuelflowEstimation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.performance.openap.</span></span><span class="sig-name descname"><span class="pre">FuelflowEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typecode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.performance.openap.FuelflowEstimation" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.performance.openap.</span></span><span class="sig-name descname"><span class="pre">FuelflowEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typecode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.performance.openap.FuelflowEstimation" title="Link to this definition"></a></dt>
 <dd><p>Estimates the fuel flow with OpenAP.</p>
 <p>The OpenAP model is based on the aircraft type (actually, the most probable
 engine type) and on three features commonly available in ADS-B data:</p>
@@ -150,7 +150,7 @@ the fuel flow (in kg/s) and the total burnt fuel (in kg).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.performance.openap.PollutantEstimation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.performance.openap.</span></span><span class="sig-name descname"><span class="pre">PollutantEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typecode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.performance.openap.PollutantEstimation" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.performance.openap.</span></span><span class="sig-name descname"><span class="pre">PollutantEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typecode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.performance.openap.PollutantEstimation" title="Link to this definition"></a></dt>
 <dd><p>Estimates the fuel flow with OpenAP.</p>
 <p>The estimation method is based on the :class:FuelflowEstimation which is
 also called on the same instance.</p>

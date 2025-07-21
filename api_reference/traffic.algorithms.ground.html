@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.algorithms.ground &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
+  <title>traffic.algorithms.ground &mdash; traffic 2.13.dev14+g277cf21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=348e83e4"></script>
+      <script src="../_static/documentation_options.js?v=08ccc06d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -142,7 +142,7 @@
 <span id="airport-graphs"></span><h2>Airport graphs<a class="headerlink" href="#module-traffic.algorithms.ground.graphs" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.graphs.AirportGraph">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.graphs.</span></span><span class="sig-name descname"><span class="pre">AirportGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.graphs.</span></span><span class="sig-name descname"><span class="pre">AirportGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph" title="Link to this definition"></a></dt>
 <dd><p>Create a graph from an airport.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.graphs.AirportGraph.buffer_meter">
@@ -159,15 +159,14 @@ The buffer parameter is in meters.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.graphs.AirportGraph.components">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">components</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph.components" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">components</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph.components" title="Link to this definition"></a></dt>
 <dd><p>Confirm the number of connected components</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.graphs.AirportGraph.fix_airport_graph">
 <span class="sig-name descname"><span class="pre">fix_airport_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph.fix_airport_graph" title="Link to this definition"></a></dt>
-<dd><p>Builds an airport graph based on available information.
-:rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
+<dd><p>Builds an airport graph based on available information.</p>
 <ul class="simple">
 <li><p>merge duplicate nodes</p></li>
 <li><p>for each edge, detect every node that is geographically on the segment
@@ -175,6 +174,11 @@ The buffer parameter is in meters.</p>
 </ul>
 <p>The resulting graph should be (at least very close to) a single
 connected component graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Self</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -254,8 +258,7 @@ nodes which have a different id but the same coordinates.</p>
 <dt class="sig sig-object py" id="traffic.algorithms.ground.graphs.AirportGraph.snap_and_split">
 <span class="sig-name descname"><span class="pre">snap_and_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.graphs.AirportGraph.snap_and_split" title="Link to this definition"></a></dt>
 <dd><p>Recursive companion function to split edges when an extra node is
-located on another edge, without being topologically connected.
-:rtype: <span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+located on another edge, without being topologically connected.</p>
 <ul class="simple">
 <li><p>u, v are the indices of the nodes</p></li>
 <li><p>k is the key (because of the MultiGraph)</p></li>
@@ -265,6 +268,11 @@ located on another edge, without being topologically connected.
 </dl>
 </li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -285,7 +293,7 @@ located on another edge, without being topologically connected.
 <span id="kalman-filter-with-taxiway-constraints"></span><h2>Kalman Filter with taxiway constraints<a class="headerlink" href="#module-traffic.algorithms.ground.kalman_taxiway" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.kalman_taxiway.KalmanTaxiway">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.kalman_taxiway.</span></span><span class="sig-name descname"><span class="pre">KalmanTaxiway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xs'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.kalman_taxiway.KalmanTaxiway" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.kalman_taxiway.</span></span><span class="sig-name descname"><span class="pre">KalmanTaxiway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xs'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.kalman_taxiway.KalmanTaxiway" title="Link to this definition"></a></dt>
 <dd><p>A Kalman filter that adds a contraint to snap a trajectory
 to documented taxiways of an airport.</p>
 <dl class="field-list simple">
@@ -303,7 +311,7 @@ to documented taxiways of an airport.</p>
 <span id="movement-detection"></span><h2>Movement detection<a class="headerlink" href="#module-traffic.algorithms.ground.movement" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.movement.StartMoving">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.movement.</span></span><span class="sig-name descname"><span class="pre">StartMoving</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">3}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'5s'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.movement.StartMoving" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.movement.</span></span><span class="sig-name descname"><span class="pre">StartMoving</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'30s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">3}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'5s'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.movement.StartMoving" title="Link to this definition"></a></dt>
 <dd><p>Returns the part of the trajectory after the aircraft starts moving.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -332,7 +340,7 @@ method before applying this method if you need a distance in meters.</p>
 <span id="parking-position-detection"></span><h2>Parking-position detection<a class="headerlink" href="#module-traffic.algorithms.ground.parking_position" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.parking_position.</span></span><span class="sig-name descname"><span class="pre">ParkingPositionGeometricIntersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parking_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.parking_position.</span></span><span class="sig-name descname"><span class="pre">ParkingPositionGeometricIntersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parking_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.parking_position.ParkingPositionGeometricIntersection" title="Link to this definition"></a></dt>
 <dd><p>Generates possible parking positions at a given airport.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -371,7 +379,7 @@ be double checked for landing trajectories.</p>
 <span id="pushback-detection"></span><h2>Pushback detection<a class="headerlink" href="#module-traffic.algorithms.ground.pushback" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.pushback.ParkingAreaBasedPushback">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.pushback.</span></span><span class="sig-name descname"><span class="pre">ParkingAreaBasedPushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stand_areas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.pushback.ParkingAreaBasedPushback" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.pushback.</span></span><span class="sig-name descname"><span class="pre">ParkingAreaBasedPushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stand_areas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.pushback.ParkingAreaBasedPushback" title="Link to this definition"></a></dt>
 <dd><p>Returns the pushback part of the trajectory on ground.</p>
 <p>The method identifies the start of the movement, an intersection with a
 documented apron area and the moment the aircraft suddenly changes direction
@@ -402,7 +410,7 @@ from the airport.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.pushback.ParkingPositionBasedPushback">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.pushback.</span></span><span class="sig-name descname"><span class="pre">ParkingPositionBasedPushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">21,</span> <span class="pre">'compute_track':</span> <span class="pre">21,</span> <span class="pre">'compute_track_unwrapped':</span> <span class="pre">21}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parking_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.pushback.ParkingPositionBasedPushback" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.pushback.</span></span><span class="sig-name descname"><span class="pre">ParkingPositionBasedPushback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'compute_gs':</span> <span class="pre">21,</span> <span class="pre">'compute_track':</span> <span class="pre">21,</span> <span class="pre">'compute_track_unwrapped':</span> <span class="pre">21}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parking_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.pushback.ParkingPositionBasedPushback" title="Link to this definition"></a></dt>
 <dd><p>Returns the pushback part of the trajectory on ground.</p>
 <p>The method identifies the start of the movement, the parking_position
 and the moment the aircraft suddenly changes direction in the computed
@@ -438,7 +446,7 @@ from the airport.</p>
 <span id="runway-detection"></span><h2>Runway detection<a class="headerlink" href="#module-traffic.algorithms.ground.runway" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.algorithms.ground.runway.RunwayAlignment">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.runway.</span></span><span class="sig-name descname"><span class="pre">RunwayAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.runway.RunwayAlignment" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.algorithms.ground.runway.</span></span><span class="sig-name descname"><span class="pre">RunwayAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.algorithms.ground.runway.RunwayAlignment" title="Link to this definition"></a></dt>
 <dd><p>Iterates on all segments of trajectory matching a runway of the
 given airport.</p>
 <p>Example usage:</p>

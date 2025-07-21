@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>traffic.core.structure &mdash; traffic 2.13.dev12+g6d7d35a documentation</title>
+  <title>traffic.core.structure &mdash; traffic 2.13.dev14+g277cf21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=348e83e4"></script>
+      <script src="../_static/documentation_options.js?v=08ccc06d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/thebelab-helper.js"></script>
@@ -70,38 +70,17 @@
 <li class="toctree-l2"><a class="reference internal" href="traffic.core.mixins.html">traffic.core.mixins</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">traffic.core.structure</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Airport"><code class="docutils literal notranslate"><span class="pre">Airport</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.altitude"><code class="docutils literal notranslate"><span class="pre">Airport.altitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.area"><code class="docutils literal notranslate"><span class="pre">Airport.area</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.bounds"><code class="docutils literal notranslate"><span class="pre">Airport.bounds</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.centroid"><code class="docutils literal notranslate"><span class="pre">Airport.centroid</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.count"><code class="docutils literal notranslate"><span class="pre">Airport.count()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.country"><code class="docutils literal notranslate"><span class="pre">Airport.country</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.extent"><code class="docutils literal notranslate"><span class="pre">Airport.extent</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.geoencode"><code class="docutils literal notranslate"><span class="pre">Airport.geoencode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.geojson"><code class="docutils literal notranslate"><span class="pre">Airport.geojson()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.iata"><code class="docutils literal notranslate"><span class="pre">Airport.iata</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.icao"><code class="docutils literal notranslate"><span class="pre">Airport.icao</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.index"><code class="docutils literal notranslate"><span class="pre">Airport.index()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latitude"><code class="docutils literal notranslate"><span class="pre">Airport.latitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latlon"><code class="docutils literal notranslate"><span class="pre">Airport.latlon</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.latlon_dict"><code class="docutils literal notranslate"><span class="pre">Airport.latlon_dict</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.leaflet"><code class="docutils literal notranslate"><span class="pre">Airport.leaflet()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.longitude"><code class="docutils literal notranslate"><span class="pre">Airport.longitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.name"><code class="docutils literal notranslate"><span class="pre">Airport.name</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.project_shape"><code class="docutils literal notranslate"><span class="pre">Airport.project_shape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Airport.runways"><code class="docutils literal notranslate"><span class="pre">Airport.runways</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.altitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.altitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.count"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.count()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.country"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.country</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.iata"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.iata</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.icao"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.icao</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.index"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.index()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.latitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.latitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.longitude"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.longitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.AirportNamedTuple.name"><code class="docutils literal notranslate"><span class="pre">AirportNamedTuple.name</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.AirportPoint"><code class="docutils literal notranslate"><span class="pre">AirportPoint</span></code></a><ul>
@@ -111,32 +90,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Navaid"><code class="docutils literal notranslate"><span class="pre">Navaid</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.altitude"><code class="docutils literal notranslate"><span class="pre">Navaid.altitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.count"><code class="docutils literal notranslate"><span class="pre">Navaid.count()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.description"><code class="docutils literal notranslate"><span class="pre">Navaid.description</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.frequency"><code class="docutils literal notranslate"><span class="pre">Navaid.frequency</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.index"><code class="docutils literal notranslate"><span class="pre">Navaid.index()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latitude"><code class="docutils literal notranslate"><span class="pre">Navaid.latitude</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latlon"><code class="docutils literal notranslate"><span class="pre">Navaid.latlon</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.latlon_dict"><code class="docutils literal notranslate"><span class="pre">Navaid.latlon_dict</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.leaflet"><code class="docutils literal notranslate"><span class="pre">Navaid.leaflet()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.longitude"><code class="docutils literal notranslate"><span class="pre">Navaid.longitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.magnetic_variation"><code class="docutils literal notranslate"><span class="pre">Navaid.magnetic_variation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.name"><code class="docutils literal notranslate"><span class="pre">Navaid.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.Navaid.type"><code class="docutils literal notranslate"><span class="pre">Navaid.type</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.NavaidTuple"><code class="docutils literal notranslate"><span class="pre">NavaidTuple</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.altitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.altitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.count"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.count()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.description"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.description</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.frequency"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.frequency</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.index"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.index()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.latitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.latitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.longitude"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.longitude</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.magnetic_variation"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.magnetic_variation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.name"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#traffic.core.structure.NavaidTuple.type"><code class="docutils literal notranslate"><span class="pre">NavaidTuple.type</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#traffic.core.structure.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
@@ -195,17 +151,11 @@
 <span id="traffic-core-structure"></span><h1>traffic.core.structure<a class="headerlink" href="#module-traffic.core.structure" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">iata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FormatMixin</span></code>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.HBoxMixin" title="traffic.core.mixins.HBoxMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">HBoxMixin</span></code></a>, <a class="reference internal" href="#traffic.core.structure.AirportNamedTuple" title="traffic.core.structure.AirportNamedTuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">AirportNamedTuple</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.altitude">
-<span class="sig-name descname"><span class="pre">altitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Airport.altitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FormatMixin</span></code>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.HBoxMixin" title="traffic.core.mixins.HBoxMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">HBoxMixin</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.area">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.area" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.area" title="Link to this definition"></a></dt>
 <dd><p>Returns the area of the shape, in square meters.
 The shape is projected to an equivalent local projection before
 computing a value.</p>
@@ -213,7 +163,7 @@ computing a value.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.bounds">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.bounds" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.bounds" title="Link to this definition"></a></dt>
 <dd><p>Returns the bounds of the (bounding box of the) shape.
 Bounds are given in the following order in the origin crs:
 (west, south, east, north)</p>
@@ -221,25 +171,13 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.centroid" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.centroid" title="Link to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport.count" title="Link to this definition"></a></dt>
-<dd><p>Return number of occurrences of value.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.country">
-<span class="sig-name descname"><span class="pre">country</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Airport.country" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 1</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.extent">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.extent" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.extent" title="Link to this definition"></a></dt>
 <dd><p>Returns the extent of the (bounding box of the) shape.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -283,40 +221,15 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.iata">
-<span class="sig-name descname"><span class="pre">iata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Airport.iata" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.icao">
-<span class="sig-name descname"><span class="pre">icao</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Airport.icao" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Airport.index" title="Link to this definition"></a></dt>
-<dd><p>Return first index of value.</p>
-<p>Raises ValueError if the value is not present.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.latitude">
-<span class="sig-name descname"><span class="pre">latitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Airport.latitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 4</p>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.latlon">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.latlon" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Airport.latlon" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.latlon_dict">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.latlon_dict" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Airport.latlon_dict" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
@@ -330,18 +243,6 @@ The transformation is delegated to shapely <code class="docutils literal notrans
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/layers/geodata.html#ipyleaflet.leaflet.GeoData" title="(in ipyleaflet)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoData</span></code></a></span></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.longitude">
-<span class="sig-name descname"><span class="pre">longitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Airport.longitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 5</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Airport.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Airport.name" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 6</p>
 </dd></dl>
 
 <dl class="py method">
@@ -362,7 +263,7 @@ convenient for the area attribute.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Airport.runways">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">runways</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">RunwaysAirport</span></em><a class="headerlink" href="#traffic.core.structure.Airport.runways" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">runways</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">RunwaysAirport</span></em><a class="headerlink" href="#traffic.core.structure.Airport.runways" title="Link to this definition"></a></dt>
 <dd><p>Get runway information associated with the airport.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">airports</span><span class="p">[</span><span class="s1">&#39;EHAM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">runways</span>
 <span class="go">  latitude   longitude   bearing   name</span>
@@ -385,79 +286,18 @@ convenient for the area attribute.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">AirportNamedTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NamedTuple" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.altitude">
-<span class="sig-name descname"><span class="pre">altitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.altitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.count" title="Link to this definition"></a></dt>
-<dd><p>Return number of occurrences of value.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.country">
-<span class="sig-name descname"><span class="pre">country</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.country" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.iata">
-<span class="sig-name descname"><span class="pre">iata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.iata" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.icao">
-<span class="sig-name descname"><span class="pre">icao</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.icao" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.index" title="Link to this definition"></a></dt>
-<dd><p>Return first index of value.</p>
-<p>Raises ValueError if the value is not present.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.latitude">
-<span class="sig-name descname"><span class="pre">latitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.latitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 4</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.longitude">
-<span class="sig-name descname"><span class="pre">longitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.longitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 5</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.AirportNamedTuple.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.AirportNamedTuple.name" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 6</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.structure.AirportPoint">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">AirportPoint</span></span><a class="headerlink" href="#traffic.core.structure.AirportPoint" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">AirportPoint</span></span><a class="headerlink" href="#traffic.core.structure.AirportPoint" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.AirportPoint.latlon">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.AirportPoint.latlon" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.AirportPoint.latlon" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.AirportPoint.latlon_dict">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.AirportPoint.latlon_dict" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.AirportPoint.latlon_dict" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
@@ -477,54 +317,17 @@ convenient for the area attribute.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.structure.Navaid">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Navaid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetic_variation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Navaid" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#traffic.core.structure.NavaidTuple" title="traffic.core.structure.NavaidTuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">NavaidTuple</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.altitude">
-<span class="sig-name descname"><span class="pre">altitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.altitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 4</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Navaid.count" title="Link to this definition"></a></dt>
-<dd><p>Return number of occurrences of value.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.description">
-<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional[str]</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.description" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 7</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.frequency">
-<span class="sig-name descname"><span class="pre">frequency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional[float]</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.frequency" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 5</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Navaid.index" title="Link to this definition"></a></dt>
-<dd><p>Return first index of value.</p>
-<p>Raises ValueError if the value is not present.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.latitude">
-<span class="sig-name descname"><span class="pre">latitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.latitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Navaid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetic_variation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Navaid" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.PointMixin" title="traffic.core.mixins.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointMixin</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Navaid.latlon">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Navaid.latlon_dict">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon_dict" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latlon_dict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.LatLonDict" title="traffic.core.mixins.LatLonDict"><span class="pre">LatLonDict</span></a></em><a class="headerlink" href="#traffic.core.structure.Navaid.latlon_dict" title="Link to this definition"></a></dt>
 <dd><p>A tuple for latitude and longitude, in degrees, in this order.</p>
 </dd></dl>
 
@@ -540,106 +343,15 @@ convenient for the area attribute.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.longitude">
-<span class="sig-name descname"><span class="pre">longitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.longitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.magnetic_variation">
-<span class="sig-name descname"><span class="pre">magnetic_variation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional[float]</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.magnetic_variation" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 6</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.name" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.Navaid.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#traffic.core.structure.Navaid.type" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">NavaidTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetic_variation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.NavaidTuple" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NamedTuple" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.altitude">
-<span class="sig-name descname"><span class="pre">altitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.altitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 4</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.NavaidTuple.count" title="Link to this definition"></a></dt>
-<dd><p>Return number of occurrences of value.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.description">
-<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.description" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 7</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.frequency">
-<span class="sig-name descname"><span class="pre">frequency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.frequency" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 5</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.NavaidTuple.index" title="Link to this definition"></a></dt>
-<dd><p>Return first index of value.</p>
-<p>Raises ValueError if the value is not present.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.latitude">
-<span class="sig-name descname"><span class="pre">latitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.latitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.longitude">
-<span class="sig-name descname"><span class="pre">longitude</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.longitude" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.magnetic_variation">
-<span class="sig-name descname"><span class="pre">magnetic_variation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.magnetic_variation" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 6</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.name" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="traffic.core.structure.NavaidTuple.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#traffic.core.structure.NavaidTuple.type" title="Link to this definition"></a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="traffic.core.structure.Route">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">navaids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Route" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">traffic.core.structure.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">navaids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#traffic.core.structure.Route" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.HBoxMixin" title="traffic.core.mixins.HBoxMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">HBoxMixin</span></code></a>, <a class="reference internal" href="traffic.core.mixins.html#traffic.core.mixins.ShapelyMixin" title="traffic.core.mixins.ShapelyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapelyMixin</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Route.area">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.structure.Route.area" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#traffic.core.structure.Route.area" title="Link to this definition"></a></dt>
 <dd><p>Returns the area of the shape, in square meters.
 The shape is projected to an equivalent local projection before
 computing a value.</p>
@@ -647,7 +359,7 @@ computing a value.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Route.bounds">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Route.bounds" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Route.bounds" title="Link to this definition"></a></dt>
 <dd><p>Returns the bounds of the (bounding box of the) shape.
 Bounds are given in the following order in the origin crs:
 (west, south, east, north)</p>
@@ -655,13 +367,13 @@ Bounds are given in the following order in the origin crs:
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Route.centroid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Route.centroid" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centroid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://shapely.readthedocs.io/en/latest/reference/shapely.Point.html#shapely.Point" title="(in Shapely)"><span class="pre">Point</span></a></em><a class="headerlink" href="#traffic.core.structure.Route.centroid" title="Link to this definition"></a></dt>
 <dd><p>Returns the centroid of the shape as a shapely Point.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="traffic.core.structure.Route.extent">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Route.extent" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#traffic.core.structure.Route.extent" title="Link to this definition"></a></dt>
 <dd><p>Returns the extent of the (bounding box of the) shape.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
